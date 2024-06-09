@@ -91,7 +91,7 @@
     "url" : "https:\/\/blog.leo-immich-photos.uk\/zh-tw\/post\/ffmpeg-usage\/",
     "author" : {
       "@type": "Person",
-      "name": "ZSL 621"
+      "name": "ZSL"
     },
     "copyrightYear": "2024",
     "dateCreated": "2024-06-08T00:00:00\u002b00:00",
@@ -102,14 +102,14 @@
     "keywords": ["實用工具","影像處理","指令筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "891"
+    "wordCount": "913"
   }]
   </script>
 
 
   
   
-  <meta name="author" content="ZSL 621" />
+  <meta name="author" content="ZSL" />
   
   
   
@@ -208,7 +208,7 @@
   <div>
   <div class="cursor-pointer flex items-center nested-menu">
     
-    <a  href="/zh-tw/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Linux">
+    <a  href="/zh-tw/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="筆記">
       筆記
     </a>
     <span>
@@ -503,7 +503,7 @@
   <li class="mt-1">
     <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
-        <p class="text-bg font-bg" title="Linux">
+        <p class="text-bg font-bg" title="筆記">
             筆記
         </p>
         <span>
@@ -660,7 +660,7 @@
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
       href="/zh-tw/"
-      >欢迎来到 Blowfish! :tada:</a
+      >初學hugo真的很痛苦</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -732,7 +732,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <span>891 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">2 分鐘</span><span class="px-2 text-primary-500">&middot;</span>
+  <span>913 字</span><span class="px-2 text-primary-500">&middot;</span><span title="預計閱讀時間">2 分鐘</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
@@ -842,21 +842,21 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#基本知識">基本知識</a></li>
-    <li><a href="#安裝">安裝</a>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用方法">使用方法</a>
       <ul>
-        <li><a href="#handbrake-使用方法">HandBrake 使用方法</a></li>
-        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a></li>
+        <li><a href="#handbrake">HandBrake</a></li>
+        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a>
+          <ul>
+            <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
+            <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
+            <li><a href="#youtube-影片">YouTube 影片</a></li>
+            <li><a href="#轉碼評分">轉碼評分</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#實用指令">實用指令</a>
-      <ul>
-        <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
-        <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
-        <li><a href="#youtube-影片">YouTube 影片</a></li>
-        <li><a href="#轉碼評分">轉碼評分</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用-11秒-20mb-影片實驗">使用 11秒 20MB 影片實驗</a></li>
+    <li><a href="#實驗">實驗</a></li>
   </ul>
 </nav>
   </div>
@@ -871,21 +871,21 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#基本知識">基本知識</a></li>
-    <li><a href="#安裝">安裝</a>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用方法">使用方法</a>
       <ul>
-        <li><a href="#handbrake-使用方法">HandBrake 使用方法</a></li>
-        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a></li>
+        <li><a href="#handbrake">HandBrake</a></li>
+        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a>
+          <ul>
+            <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
+            <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
+            <li><a href="#youtube-影片">YouTube 影片</a></li>
+            <li><a href="#轉碼評分">轉碼評分</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
-    <li><a href="#實用指令">實用指令</a>
-      <ul>
-        <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
-        <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
-        <li><a href="#youtube-影片">YouTube 影片</a></li>
-        <li><a href="#轉碼評分">轉碼評分</a></li>
-      </ul>
-    </li>
-    <li><a href="#使用-11秒-20mb-影片實驗">使用 11秒 20MB 影片實驗</a></li>
+    <li><a href="#實驗">實驗</a></li>
   </ul>
 </nav>
   </div>
@@ -1096,13 +1096,25 @@ CLI: FFmpeg</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew install ffmpeg
 </span></span></code></pre></div>
 
-<h2 class="relative group">HandBrake 使用方法 
-    <div id="handbrake-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor"></div>
+<h1 class="relative group">使用方法 
+    <div id="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#handbrake-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">HandBrake 
+    <div id="handbrake" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#handbrake" aria-label="定位點">#</a>
     </span>        
     
 </h2>
@@ -1126,19 +1138,7 @@ CLI: FFmpeg</p>
 </h2>
 
 
-<h1 class="relative group">實用指令 
-    <div id="%E5%AF%A6%E7%94%A8%E6%8C%87%E4%BB%A4" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E7%94%A8%E6%8C%87%E4%BB%A4" aria-label="定位點">#</a>
-    </span>        
-    
-</h1>
-
-
-<h2 class="relative group">轉換整個資料夾 
+<h3 class="relative group">轉換整個資料夾 
     <div id="%E8%BD%89%E6%8F%9B%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" class="anchor"></div>
     
     <span
@@ -1147,7 +1147,7 @@ CLI: FFmpeg</p>
             style="text-decoration-line: none !important;" href="#%E8%BD%89%E6%8F%9B%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h3>
 <p>將文件夾中的 <code>\*.mov</code> 轉換為 h.265 並輸出到 <code>../output</code> 文件夾</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">for file in *.mov;
 </span></span><span class="line"><span class="cl">    do ffmpeg -i &#34;$file&#34; -c:v libx265 -tag:v hvc1 -crf 28 &#34;$../output/{file%.mov}.mp4&#34;;
@@ -1155,7 +1155,7 @@ CLI: FFmpeg</p>
 </span></span></code></pre></div><p>加上 hvc1 標籤以支援蘋果設備讀取。</p>
 
 
-<h2 class="relative group">Two-Pass Conversion 
+<h3 class="relative group">Two-Pass Conversion 
     <div id="two-pass-conversion" class="anchor"></div>
     
     <span
@@ -1164,7 +1164,7 @@ CLI: FFmpeg</p>
             style="text-decoration-line: none !important;" href="#two-pass-conversion" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h3>
 <details>
 	<summary>What is two-pass?</summary>
 <p><a href="https://www.pcdvd.com.tw/printthread.php?t=1109930&amp;page=2&amp;pp=10" target="_blank">Source</a></p>
@@ -1180,7 +1180,7 @@ CLI: FFmpeg</p>
 </span></span><span class="line"><span class="cl">done
 </span></span></code></pre></div>
 
-<h2 class="relative group">YouTube 影片 
+<h3 class="relative group">YouTube 影片 
     <div id="youtube-%E5%BD%B1%E7%89%87" class="anchor"></div>
     
     <span
@@ -1189,12 +1189,12 @@ CLI: FFmpeg</p>
             style="text-decoration-line: none !important;" href="#youtube-%E5%BD%B1%E7%89%87" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h3>
 <p>YouTube 1080p 影片的畫質設定 <a href="https://www.reddit.com/r/ffmpeg/comments/r1qwyy/best_streaming_settings_for_youtube/" target="_blank">(Source)</a></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ffmpeg -i &lt;INPUT&gt; -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=bt709 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -ar 48000 -ac 2 -b:a 320k -profile:v high -level 4.0 -bf 2 -coder 1 -pix_fmt yuv420p -b:v 10M -threads 4 -cpu-used 0 -r 30 -g 15 -movflags +faststart &lt;OUTPUT&gt;
 </span></span></code></pre></div>
 
-<h2 class="relative group">轉碼評分 
+<h3 class="relative group">轉碼評分 
     <div id="%E8%BD%89%E7%A2%BC%E8%A9%95%E5%88%86" class="anchor"></div>
     
     <span
@@ -1203,7 +1203,7 @@ CLI: FFmpeg</p>
             style="text-decoration-line: none !important;" href="#%E8%BD%89%E7%A2%BC%E8%A9%95%E5%88%86" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h3>
 <p>VMAF 是 Netflix 開發的客觀全參考視訊品質指標。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ffmpeg -i &#34;outputFile&#34; -i &#34;sourceFile&#34; -lavfi libvmaf=log_fmt=json:log_path=output.json -f null -
 </span></span></code></pre></div><p>Find your vmaf models for macOS brew install</p>
@@ -1212,16 +1212,17 @@ CLI: FFmpeg</p>
 </span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -i output.mp4 -lavfi libvmaf=&#34;model_path=/path/model/vmaf_v0.6.1.pkl&#34; -f null -
 </span></span></code></pre></div>
 
-<h1 class="relative group">使用 11秒 20MB 影片實驗 
-    <div id="%E4%BD%BF%E7%94%A8-11%E7%A7%92-20mb-%E5%BD%B1%E7%89%87%E5%AF%A6%E9%A9%97" class="anchor"></div>
+<h1 class="relative group">實驗 
+    <div id="%E5%AF%A6%E9%A9%97" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8-11%E7%A7%92-20mb-%E5%BD%B1%E7%89%87%E5%AF%A6%E9%A9%97" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E9%A9%97" aria-label="定位點">#</a>
     </span>        
     
 </h1>
+<p>使用 11秒 20MB 的影片實驗，不同長度和解析度的影片可能也會導致結果不同。</p>
 <table>
 <thead>
 <tr>
@@ -1363,7 +1364,7 @@ CLI: FFmpeg</p>
         
       
       <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-      alt="ZSL 621" src="/img/global/zsl_hu6a261a55c341595934acdabfa7063634_484432_192x192_fill_q75_h2_box_center_2.webp" />
+      alt="ZSL" src="/img/global/zsl_hu6a261a55c341595934acdabfa7063634_484432_192x192_fill_q75_h2_box_center_2.webp" />
     
   
   <div class="place-self-center">
@@ -1372,7 +1373,7 @@ CLI: FFmpeg</p>
       作者
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
-      ZSL 621
+      ZSL
     </div>
     
     
@@ -1950,8 +1951,8 @@ CLI: FFmpeg</p>
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/zh-tw/author/zsl621/"
-            title="zsL621">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/zh-tw/author/zsl/"
+            title="ZSL">
             
             作者
           </a>
@@ -2021,7 +2022,7 @@ CLI: FFmpeg</p>
     <p class="text-sm text-neutral-500 dark:text-neutral-400">
       &copy;
       2024
-      ZSL 621
+      ZSL
     </p>
     
 
