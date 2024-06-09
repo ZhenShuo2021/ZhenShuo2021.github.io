@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>部署紀錄 on ZSL Blog</title>
+    <link>https://ZhenShuo2021.github.io/zh-tw/series/%E9%83%A8%E7%BD%B2%E7%B4%80%E9%8C%84/</link>
+    <description>Recent content in 部署紀錄 on ZSL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL 621</copyright>
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ZhenShuo2021.github.io/zh-tw/series/%E9%83%A8%E7%BD%B2%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO</title>
+      <link>https://ZhenShuo2021.github.io/zh-tw/post/blog-cloudflare-ddns/</link>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ZhenShuo2021.github.io/zh-tw/post/blog-cloudflare-ddns/</guid>
+      <description>架站紀錄（無固定IP，Cloudflar</description>
+      
+    </item>
+    
+  </channel>
+</rss>

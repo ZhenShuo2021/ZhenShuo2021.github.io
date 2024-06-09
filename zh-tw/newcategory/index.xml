@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Newcategory on ZSL Blog</title>
+    <link>https://ZhenShuo2021.github.io/zh-tw/newcategory/</link>
+    <description>Recent content in Newcategory on ZSL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL 621</copyright>
+    <atom:link href="https://ZhenShuo2021.github.io/zh-tw/newcategory/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
