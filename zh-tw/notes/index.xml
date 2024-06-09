@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ZSL Blog</title>
-    <link>https://ZhenShuo2021.github.io/zh-tw/notes/</link>
+    <link>https://blog.leo-immich-photos.uk/zh-tw/notes/</link>
     <description>Recent content in Linux on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL 621</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ZhenShuo2021.github.io/zh-tw/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/notes/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

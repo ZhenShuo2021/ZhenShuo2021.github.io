@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>作者 on ZSL Blog</title>
-    <link>https://ZhenShuo2021.github.io/zh-tw/author/</link>
+    <link>https://blog.leo-immich-photos.uk/zh-tw/author/</link>
     <description>Recent content in 作者 on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL 621</copyright>
-    <atom:link href="https://ZhenShuo2021.github.io/zh-tw/author/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.leo-immich-photos.uk/zh-tw/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>zsL621</title>
-      <link>https://ZhenShuo2021.github.io/zh-tw/author/zsl621/</link>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/author/zsl621/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ZhenShuo2021.github.io/zh-tw/author/zsl621/</guid>
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/author/zsl621/</guid>
       <description>被強迫學 go, css 還有 html。</description>
       
     </item>
