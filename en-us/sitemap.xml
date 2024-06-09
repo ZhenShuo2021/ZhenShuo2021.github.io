@@ -241,18 +241,18 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/en-us/author/zsl621/</loc>
+    <loc>https://blog.leo-immich-photos.uk/en-us/author/zsl/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/author/zsl621/"
+      href="https://blog.leo-immich-photos.uk/zh-tw/author/zsl/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/author/zsl621/"
+      href="https://blog.leo-immich-photos.uk/en-us/author/zsl/"
     />
   </url>
 </urlset>
