@@ -19,6 +19,12 @@
     />
   </url>
   <url>
+    <loc>https://ZhenShuo2021.github.io/zh-tw/post/common-docker-comments/</loc>
+    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://ZhenShuo2021.github.io/zh-tw/post/ffmpeg-usage/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
