@@ -1,0 +1,29 @@
+# 主頁設定
+languageCode = "zh-tw"
+languageName = "中文🇹🇼"
+weight = 1
+title = "ZSL"
+
+[params]
+  displayName = "中文🇹🇼"
+  isoCode = "zh-tw"
+  rtl = false
+  dateFormat = "2006年1月2日"
+  #logo = "img/global/zsl.webp"
+  description = "ZSL 的小空間"
+
+[author]
+  name = "ZSL"
+  image = "img/zsl.webp"
+  #headline = "The Empire of Shinonome Umi"
+  bio = "正事不做。"
+  links = [
+    { email = "mailto:leo01412123@gmail.com" },
+    { youtube = "https://www.youtube.com/@umi_shinonome/videos" },
+    { instagram = "https://www.instagram.com/umi_portrait/" },
+    { tiktok = "https://www.tiktok.com/@shinonome_umi" },
+    { egg = "https://shinonomeumi-fc.com/" },
+    { dribbble = "https://ppe.jp/" },
+    { x-twitter = "https://x.com/sinonome_umi/" },
+    { github = "https://github.com/ZhenShuo2021/" },
+  ]

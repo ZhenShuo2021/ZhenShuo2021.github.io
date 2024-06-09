@@ -1,0 +1,416 @@
+html {
+    font-size: 13pt;
+}
+
+.album-cover {
+    width: 20rem;
+}
+
+/* 選擇柔和的連結色調 */
+.article-content a {
+    color: rgb(var(--color-primary-600));
+    /* 使用淡藍色 */
+}
+
+/* 懸停時底線改為粗線並增加距離 */
+.article-content a:hover,
+.article-content a:focus {
+    color: rgb(var(--color-primary-700));
+    /* 設定連結懸停和聚焦狀態下的顏色 */
+    text-decoration: underline;
+    /* 添加連結懸停時的底線 */
+    text-decoration-thickness: 1.82px;
+    /* 設定底線的粗線 */
+    text-decoration-skip-ink: none;
+    /* 避免底線與文字重疊 */
+    text-underline-offset: 4.5px;
+    /* 增加底線與文字的距離*/
+}
+
+
+
+
+
+
+
+
+
+
+/* footnote區 */
+/* 縮小 footnote 字體 */
+.footnotes {
+    font-size: 0.7em;
+}
+
+/* footnote 引用樣式 */
+.footnote-ref::before {
+    content: "[";
+}
+
+.footnote-ref::after {
+    content: "]";
+}
+
+/* 調整 sup 標籤樣式 */
+sup {
+    font-size: xx-small;
+    vertical-align: super;
+}
+
+/* 移除原本的編號樣式 */
+.footnotes ol {
+    list-style-type: none;
+    /* 移除原本的編號 */
+    padding-left: 0;
+}
+
+/* 修改 footnote 列表項的樣式 */
+.footnotes ol li {
+    counter-increment: footnote;
+    /* 增加計數器 */
+    position: relative;
+    margin-left: 2em;
+    /* 調整左邊距，使其與文章內容有適當間隔 */
+    line-height: 1.8;
+    /* 調整行高，使超連結可以正確顯示 */
+    margin-bottom: -1.2em;
+    /* 調整每個 footnote 間的距離 */
+}
+
+.footnotes ol li:before {
+    content: "[" counter(footnote) "]";
+    /* 使用計數器顯示編號 */
+    font-weight: normal;
+    position: absolute;
+    left: -1.5em;
+    /* 將編號設置在列表項的左側 */
+}
+
+/* 將原始編號隱藏 */
+.footnotes ol li a:first-child {
+    display: inline-block;
+    /* 保留超連結的顯示 */
+}
+
+
+
+
+
+
+
+
+
+
+/* Shortcode 區 */
+/* hint shortcode */
+.book-hint {
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    border-left: 6px solid;
+    border-radius: 4px;
+    font-style: normal;
+    /* 確保文字不斜體 */
+    font-weight: normal;
+    /* 確保文字不粗體 */
+}
+
+.book-hint .hint-content {
+    margin: 0;
+    font-style: normal;
+    /* 確保文字不斜體 */
+    font-weight: normal;
+    /* 確保文字不粗體 */
+}
+
+.book-hint .hint-content>p:first-child {
+    margin-top: 0;
+    font-style: normal;
+    /* 確保文字不斜體 */
+    font-weight: normal;
+    /* 確保文字不粗體 */
+}
+
+.book-hint .hint-content>p:last-child {
+    margin-bottom: 0;
+    font-style: normal;
+    /* 確保文字不斜體 */
+    font-weight: normal;
+    /* 確保文字不粗體 */
+}
+
+/* 新增針對標題元素的樣式 */
+.book-hint .hint-content > h1,
+.book-hint .hint-content > h2,
+.book-hint .hint-content > h3,
+.book-hint .hint-content > h4,
+.book-hint .hint-content > h5,
+.book-hint .hint-content > h6 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Info hint */
+.book-hint.info {
+    border-color: #2196f3;
+    background-color: rgba(33, 150, 243, 0.2);
+}
+
+/* Warning hint */
+.book-hint.warning {
+    border-color: #ffeb3b;
+    background-color: rgba(255, 235, 59, 0.2);
+}
+
+/* Danger hint */
+.book-hint.danger {
+    border-color: #f44336;
+    background-color: rgba(244, 67, 54, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+/* expand shortcode */
+/* 常規樣式 */
+.expand-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    /* 預設背景顏色 */
+    width: 100%;
+    transition: max-width 0.3s ease-in-out;
+}
+
+body.zen-mode-enable .zen-mode-content {
+  max-width: 100% !important;
+}
+
+.expand-toggle {
+    display: none;
+}
+
+.expand-title {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    /* 調整上下邊距 */
+    background-color: #f7f7f7;
+    /* 預設背景顏色 */
+    color: #333;
+    /* 預設文字顏色 */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: normal;
+    /* 取消粗體樣式 */
+}
+
+.expand-title:hover {
+    background-color: #e0e0e0;
+}
+
+.expand-title .expand-icon {
+    margin-right: 0.5rem;
+    /* 調整圖標與文字之間的距離 */
+}
+
+.expand-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    background-color: rgba(var(--color-neutral), 0.1);
+    padding: 0 1.8rem;
+}
+
+.expand-toggle:checked~.expand-content {
+    max-height: 50000px;
+    /* 可以根據需要調整 */
+    transition: max-height 0.8s ease-in-out;
+
+}
+
+.expand-inner {
+    margin: -0.5rem 0;
+    /* 使用負邊距縮短內容區域與邊框的距離 */
+    padding: 0.5rem 0;
+    /* 可根據需要調整 */
+    color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
+    /* 預設文字顏色 */
+}
+
+/* 暗色模式樣式 */
+.dark .expand-wrapper {
+    border-color: #444;
+    /* 暗色模式下的邊框顏色 */
+}
+
+.dark .expand-title {
+    background-color: rgb(var(--color-neutral-800));
+    /* 暗色模式下的標題背景顏色 */
+    color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
+    /* 暗色模式下的標題文字顏色 */
+}
+
+.dark .expand-title:hover {
+    background-color: rgb(var(--color-neutral-800), 0.8);
+    /* 暗色模式下的標題懸停背景顏色 */
+}
+
+.dark .expand-content {
+    background-color: rgb(var(--color-neutral-800), 0.7);
+    /* 暗色模式下的內容背景顏色 */
+}
+
+.dark .expand-inner {
+    color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
+    /* 暗色模式下的內容文字顏色 */
+}
+
+
+
+
+
+
+
+
+
+
+/* 進度條 progress bar */
+/* 基本樣式 */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 2.25px;
+    background-color: #e60000;
+    /* 紅色進度條 */
+    z-index: 9999;
+}
+
+#progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    /* 光暈的範圍，可以根據需要調整 */
+    background: linear-gradient(rgba(227, 52, 47, 0.7),
+            rgba(227, 52, 47, 0.5));
+    /* 兩階段漸層光暈 */
+    filter: blur(20px);
+    /* 光暈的模糊度，可以根據需要調整 */
+    z-index: 9999;
+}
+
+/* 暗色模式 */
+.dark #progress-bar {
+    background-color: #20c2db;
+    /* 暗色模式下的進度條顏色 */
+}
+
+.dark #progress-bar::before {
+    background: linear-gradient(rgba(34, 210, 236, 0.7),
+            /* 使用與背景顏色相近的顏色 */
+            rgba(34, 210, 236, 0.5));
+    /* 暗色模式下的兩階段漸層光暈 */
+}
+
+
+
+
+
+
+
+
+
+
+/* series 選輯 選集 */
+/* 普通模式樣式 */
+.summary-current {
+    /* background-color: rgb(var(--color-primary-200)); 淺藍色背景 */
+    color: #000; /* 黑色文字 */
+    font-weight: bold;
+    padding-left: 10px;
+    border-left: 3px solid rgb(var(--color-primary-500)); /* 藍色左邊框 */
+}
+
+.summary-other {
+    padding-left: 10px;
+    border-left: 3px solid transparent;  /* 藍色左邊框 */
+}
+
+/* 深色模式樣式 */
+.dark .summary-current {
+        /* background-color: rgb(var(--color-neutral-900)); 深藍色背景 */
+        color: #fff; /* 白色文字 */
+        border-left: 3px solid rgb(var(--color-primary-400)); /* 藍色左邊框 */
+    }
+
+.dark .summary-other {
+        border-left: 3px solid transparent;  /* 藍色左邊框 */
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+/* badge.html */
+.badge {
+  display: inline-block;
+  padding: 0.3em .45em;
+  background-color: transparent;
+  border-radius: 0.725rem;
+  margin-right: 0.05rem;
+  margin-bottom: 0.05rem;
+}
+
+.badge:hover {
+  background-color: rgb(var(--color-primary-200));
+}
+
+.dark .badge:hover {
+  background-color: rgb(var(--color-primary-700));
+}
+
+.basicHtml-div {
+    margin-bottom: -.6em; /* 調整底部間距 */
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+/* custom highlight color */
+/* <span class="bg-color"> */
+.bg-color {
+    background-color: rgb(var(--color-primary-300));
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.dark .bg-color {
+    background-color: rgb(var(--color-primary-700));
+}
+

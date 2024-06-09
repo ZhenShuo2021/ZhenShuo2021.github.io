@@ -1,0 +1,357 @@
+{{ define "main" }}
+
+{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+{{ $heroStyle := .Params.heroStyle }}
+{{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
+{{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
+{{ if templates.Exists $heroStyle }}
+{{ partial $heroStyle . }}
+{{ else }}
+{{ partial "partials/hero/basic.html" . }}
+{{ end }}
+{{ end }}
+
+{{ $currentLang := $.Site.Language.Lang }}
+{{ $months := index $.Site.Data.months $currentLang }}
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const postItems = document.querySelectorAll('.post-item');
+        postItems.forEach(item => {
+            item.addEventListener('mouseenter', function () {
+                this.classList.add('post-item-hover');
+            });
+            item.addEventListener('mouseleave', function () {
+                this.classList.remove('post-item-hover');
+            });
+        });
+
+        // 為每個月份標題設置隨機漸變背景
+        const monthTitles = document.querySelectorAll('.month-title');
+        monthTitles.forEach(title => {
+            const [color1, color2, color3] = generateContrastingColors(false);
+            const [color4, color5, color6] = generateContrastingColors(true);
+            const angle1 = generateRandomAngle();
+            const angle2 = generateRandomAngle();
+            // 為每個月份標題設置兩組不同的漸變效果
+            title.style.setProperty('--gradient-1', `linear-gradient(${angle1}deg, ${color1}, ${color2})`);
+            title.style.setProperty('--gradient-2', `linear-gradient(${angle2}deg, ${color4}, ${color5})`);
+        });
+    });
+
+    function generateContrastingColors(isDarkMode) {
+        // 隨機選擇一個基礎色相
+        const baseColor = Math.random() * 360;
+
+        // 在基礎色相的基礎上較大幅度偏移，以產生更顯著不同的顏色
+        const c1 = baseColor;
+        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360; // 使第二個顏色與第一個顏色有較大的差異
+        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360; // 增加第三個顏色的偏移
+        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360; // 增加第四個顏色的偏移
+
+        // 將顏色的亮度和飽和度調整為暗色系或亮色系
+        const adjustColor = (color, isDarkMode) => {
+            const lightness = isDarkMode ? 40 : 75; // 暗色模式較暗，亮色模式較亮
+            const saturation = 100; // 暗色模式和亮色模式的飽和度
+            return `hsl(${color}, ${saturation}%, ${lightness}%)`;
+        };
+
+        // 生成暗色系或亮色系的顏色
+        const color1 = adjustColor(c1, isDarkMode);
+        const color2 = adjustColor(c2, isDarkMode);
+        const color3 = adjustColor(c3, isDarkMode);
+
+        // 返回顏色字符串
+        return [color1, color2, color3];
+    }
+
+    function generateRandomAngle() {
+        const step = 15; // 每個選項的角度步長
+        const minAngle = 30; // 最小角度
+        const maxAngle = 150; // 最大角度
+        const totalSteps = (maxAngle - minAngle) / step + 1; // 計算在此範圍內總共多少個步驟
+        const randomStep = Math.floor(Math.random() * totalSteps); // 隨機選擇一個步驟
+        const randomAngle = minAngle + randomStep * step; // 計算隨機角度
+        return randomAngle;
+    }
+</script>
+
+
+<style>
+    /* 全部寬度 */
+    .timeline {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* 年份容器 */
+    .year-container {
+        margin-bottom: 40px;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
+        background-color: rgba(var(--color-neutral-300), 0.5);
+    }
+
+    /* 年份標頭 文字與背景 */
+    .year {
+        background-color: #d9d4d4 !important;
+        padding: 10px 20px;
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 年文章數 */
+    .post-count {
+        background-color: #007bff;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+    .content {
+    padding: 20px;
+    }
+
+    /* 月份容器 */
+    .month-container {
+        margin-bottom: 30px;
+    }
+
+    /* 月份文字 */
+    .month-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #333;
+        background: var(--gradient-1);
+        padding: 0.6rem 1rem;
+        border-radius: 40px;
+        border: transparent;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+
+        /* 使用 Flexbox 來居中文本 */
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        /* 設定行高，使文字垂直居中 */
+        line-height: 1;
+
+    }
+
+    /* 個別文章 */
+    .post-list {
+        list-style-type: none;
+        padding: 2px;
+    }
+
+    /* 個別文章背景 */
+    .post-item { 
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
+        background: rgba(var(--color-neutral-100), 0.95);
+    }
+
+    /* 個別文章懸浮 */
+    .post-item-hover {
+        transform: scale(1.01);
+        background: rgba(var(--color-neutral-100), 0.95) !important;
+    }
+
+    /* 個別文章內部佈局 */
+    .post-item-inner {
+        display: grid;
+        grid-template-areas:
+            "date details"
+            "date category";
+        grid-template-columns: auto 1fr;
+        gap: 1px;
+        background-color: transparent;
+        padding-bottom: 0.4em;
+    }
+
+    /* 文章日期文字 */
+    .post-date {
+        font-size: 14px;
+        color: rgb(var(--color-neutral-500));
+        margin-right: 11px;
+        margin-left: 4px;
+        white-space: nowrap;
+        /* 防止日期文字換行 */
+        grid-area: date;
+        /* 這是什麼魔術 */
+    }
+
+    /* 文章標題容器 */
+    .post-details {
+        grid-area: details;
+    }
+
+    /* 文章標題文字(連結部分) */
+    .post-title {
+        font-size: 20px;
+        color: rgb(var(--color-neutral-800)) !important;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    /* 文章標籤 */
+    .tag-and-category {
+        grid-area: category;
+    }
+
+    /* 深色模式樣式 */
+    .dark .year {
+        background-color: rgba(var(--color-neutral-900), 0.95) !important;
+        color: rgb(var(--color-neutral-100));
+    }
+
+    .dark .year-container {
+        border: 1px solid rgb(var(--color-neutral-900));
+        background-color: rgba(var(--color-neutral-800), 0.3);
+    }
+
+    .dark .month-title {
+        color: rgb(var(--color-neutral-100));
+        background: var(--gradient-2);
+    }
+
+    .dark .post-item {
+        background-color: rgba(var(--color-neutral-800), 0.4);
+    }
+
+    .dark .post-item-hover {
+        background-color: rgba(var(--color-neutral-800), 0.8) !important;
+    }
+
+    .dark .post-date {
+        color: rgb(var(--color-neutral-100));
+    }
+
+    .dark .post-title {
+        color: rgb(var(--color-neutral-100)) !important;
+    }
+
+    @media (max-width: 768px) {
+        .timeline {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0px;
+        }
+
+        .post-list {
+            padding: 2px;
+        }
+
+        .post-item {
+            width: 100%;
+            margin-bottom: 12px;
+            background-color: rgba(var(--color-neutral-100), 0.95);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .post-item-inner {
+            display: grid;
+            grid-template-areas:
+                "date"
+                "details"
+                "category";
+            grid-template-columns: 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 0;
+            padding: 5.5px;
+            margin-bottom: 1px;
+        }
+
+        .post-date {
+            margin-left: 0px;
+            grid-area: date;
+            margin-top: -1.2em;
+            margin-bottom: -.8em;
+            padding: -3px 0;
+            font-size: 0.6em;
+            color: rgb(var(--color-neutral-500));
+            padding: 0px;
+        }
+
+        .post-details {
+            grid-area: details;
+            margin-bottom: 0.1rem;
+            padding: 0px;
+            /* margin-left: 5px; */
+        }
+
+        .tag-and-category {
+            padding: 0px;
+            grid-area: category;
+            margin-top: 0px;
+            /* margin-left: 5px; */
+        }
+    }
+</style>
+
+
+<article class="timeline">
+
+<header id="single_header" class="mt-5 max-w-prose">
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        {{ .Title | emojify }}
+    </h1>
+</header>
+
+<div class="article-content max-w-prose mb-20">
+    <br>
+    {{ .Content }}
+</div>
+
+<section class="all-posts mt-8 text-neutral">
+{{ range .Site.RegularPages.GroupByDate "2006" }}
+    <div class="year-container">
+    
+        <div class="year">
+            {{ .Key }}
+            <span class="post-count">{{ len .Pages }}</span>
+        </div>
+
+        <div class="content">
+            {{ range .Pages.GroupByDate "January" }}
+            <div class="month-container">
+                
+                <span class="month-title">{{ index $months .Key }}</span>
+                {{ range where .Pages "Params.exclude" "ne" true }}
+                <ul class="post-list">
+                <li class="post-item">
+                    <div class="post-item-inner">
+                    <div class="post-date">{{ .Date.Format "1月2日" }}</div>
+                    <div class="post-details"><a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a></div>
+                    {{ partial "tag-and-category.html" . }}
+                    </div>
+                </li>
+                </ul>
+                {{ end }}
+
+            </div>
+            {{ end }}
+        </div>
+        
+    </div>
+{{ end }}
+</section>
+
+</article>
+<!-- <script src="{{ "js/archives.js" | relURL }}"></script> -->
+
+{{ end }}
