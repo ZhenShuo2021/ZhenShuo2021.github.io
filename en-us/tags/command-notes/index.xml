@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Command Notes on ZSL Blog</title>
-    <link>https://ZhenShuo2021.github.io/en-us/tags/command-notes/</link>
+    <link>https://blog.leo-immich-photos.uk/en-us/tags/command-notes/</link>
     <description>Recent content in Command Notes on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL 621</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ZhenShuo2021.github.io/en-us/tags/command-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/en-us/tags/command-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO</title>
-      <link>https://ZhenShuo2021.github.io/en-us/post/blog-cloudflare-ddns/</link>
+      <link>https://blog.leo-immich-photos.uk/en-us/post/blog-cloudflare-ddns/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://ZhenShuo2021.github.io/en-us/post/blog-cloudflare-ddns/</guid>
+      <guid>https://blog.leo-immich-photos.uk/en-us/post/blog-cloudflare-ddns/</guid>
       <description>Site Setup Log (No Static IP, Cloudflare Tunnel + DDNS-GO) # Concept # No specific concept, just looking for a secure way to access the external network.</description>
       
     </item>
