@@ -9,6 +9,16 @@
     <copyright>© 2024 ZSL 621</copyright>
     <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://ZhenShuo2021.github.io/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Docker常見指令</title>
+      <link>https://ZhenShuo2021.github.io/zh-tw/post/common-docker-comments/</link>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://ZhenShuo2021.github.io/zh-tw/post/common-docker-comments/</guid>
+      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
+      
+    </item>
+    
+    <item>
       <title>FFmpeg筆記</title>
       <link>https://ZhenShuo2021.github.io/zh-tw/post/ffmpeg-usage/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
