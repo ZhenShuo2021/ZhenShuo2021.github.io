@@ -19,6 +19,12 @@
     />
   </url>
   <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</loc>
+    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-comments/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -41,13 +47,13 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</loc>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/notes/git/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/notes/git/</loc>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -79,6 +85,12 @@
       hreflang="zh-tw"
       href="https://blog.leo-immich-photos.uk/zh-tw/series/"
     />
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/</loc>
@@ -135,7 +147,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</loc>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</loc>
+    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E6%9E%B6%E7%AB%99/</loc>
+    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -164,12 +188,6 @@
   </url>
   <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-comments/</loc>
-    <lastmod>2024-06-08T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/series/%E9%83%A8%E7%BD%B2%E7%B4%80%E9%8C%84/</loc>
     <lastmod>2024-06-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

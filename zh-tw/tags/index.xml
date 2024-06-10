@@ -9,7 +9,7 @@
     <copyright>© 2024 ZSL</copyright>
     <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>cloudflare</title>
+      <title>Cloudflare</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/cloudflare/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
@@ -19,7 +19,17 @@
     </item>
     
     <item>
-      <title>git</title>
+      <title>Docker</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</link>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Git</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
@@ -29,7 +39,7 @@
     </item>
     
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/linux/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
@@ -49,11 +59,11 @@
     </item>
     
     <item>
-      <title>架站紀錄</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</link>
+      <title>架站</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</guid>
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</guid>
       <description></description>
       
     </item>

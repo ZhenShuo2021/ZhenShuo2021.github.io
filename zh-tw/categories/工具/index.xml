@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on ZSL Blog</title>
+    <link>https://blog.leo-immich-photos.uk/zh-tw/categories/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on ZSL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/categories/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FFmpeg筆記</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/ffmpeg-usage/</link>
+      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/ffmpeg-usage/</guid>
+      <description>結果轉完分數只有60。 基本知識 # CRF 越高壓</description>
+      
+    </item>
+    
+  </channel>
+</rss>
