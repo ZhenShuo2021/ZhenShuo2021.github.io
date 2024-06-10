@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>笔记 on ZSL Blog</title>
-    <link>https://blog.leo-immich-photos.uk/zh-tw/categories/notes/</link>
+    <link>http://localhost:1313/zh-tw/categories/notes/</link>
     <description>Recent content in 笔记 on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <atom:link href="https://blog.leo-immich-photos.uk/zh-tw/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/zh-tw/categories/notes/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
