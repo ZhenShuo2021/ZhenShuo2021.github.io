@@ -2,68 +2,68 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Welcome to Blowfish! :tada: on ZSL Blog</title>
-    <link>https://blog.leo-immich-photos.uk/en-us/tags/</link>
+    <link>http://localhost:1313/en-us/tags/</link>
     <description>Recent content in Welcome to Blowfish! :tada: on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/en-us/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en-us/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cloudflare</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/cloudflare/</link>
+      <link>http://localhost:1313/en-us/tags/cloudflare/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/cloudflare/</guid>
+      <guid>http://localhost:1313/en-us/tags/cloudflare/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Command Notes</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/command-notes/</link>
+      <link>http://localhost:1313/en-us/tags/command-notes/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/command-notes/</guid>
+      <guid>http://localhost:1313/en-us/tags/command-notes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Commend Notes</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/commend-notes/</link>
+      <link>http://localhost:1313/en-us/tags/commend-notes/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/commend-notes/</guid>
+      <guid>http://localhost:1313/en-us/tags/commend-notes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Image Processing</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/image-processing/</link>
+      <link>http://localhost:1313/en-us/tags/image-processing/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/image-processing/</guid>
+      <guid>http://localhost:1313/en-us/tags/image-processing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Site Setup Log</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/site-setup-log/</link>
+      <link>http://localhost:1313/en-us/tags/site-setup-log/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/site-setup-log/</guid>
+      <guid>http://localhost:1313/en-us/tags/site-setup-log/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Useful Tools</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/tags/useful-tools/</link>
+      <link>http://localhost:1313/en-us/tags/useful-tools/</link>
       <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/tags/useful-tools/</guid>
+      <guid>http://localhost:1313/en-us/tags/useful-tools/</guid>
       <description></description>
       
     </item>
