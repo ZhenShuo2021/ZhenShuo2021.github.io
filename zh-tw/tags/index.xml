@@ -7,51 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Cloudflare</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/cloudflare/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/cloudflare/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Docker</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Git</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/linux/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/linux/</guid>
-      <description></description>
-      
-    </item>
-    
+    <lastBuildDate>Fri, 07 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>指令筆記</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/</guid>
       <description></description>
@@ -59,19 +19,9 @@
     </item>
     
     <item>
-      <title>架站</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>實用工具</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
@@ -81,9 +31,59 @@
     <item>
       <title>影像處理</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/git/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/linux/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/docker/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cloudflare</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/cloudflare/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/cloudflare/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>架站</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99/</guid>
       <description></description>
       
     </item>

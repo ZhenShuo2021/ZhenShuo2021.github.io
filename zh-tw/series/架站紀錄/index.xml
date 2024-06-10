@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/blog-cloudflare-ddns/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/post/blog-cloudflare-ddns/</guid>
       <description>1. 思路 # 沒有思路，只是想找安全上[1][</description>
