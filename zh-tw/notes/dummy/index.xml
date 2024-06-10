@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <atom:link href="https://blog.leo-immich-photos.uk/zh-tw/notes/dummy/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 1999 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/notes/dummy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>別進來，這是測試</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/test-hugo/</link>
+      <pubDate>Thu, 09 Sep 1999 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/test-hugo/</guid>
+      <description>Carousel # Previous Nextsads Shortcode # Math # \(f(a,b,c) = (a^2+b^2+c^2)^3\) Super skill Figure # Best Umi Photo by Jr</description>
+      
+    </item>
+    
   </channel>
 </rss>

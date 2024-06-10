@@ -7,21 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sat, 08 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/categories/%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker常見指令</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-comments/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-comments/</guid>
-      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
-      
-    </item>
-    
+    <lastBuildDate>Sun, 02 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/categories/%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用git指令</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</guid>
       <description>本地使用 # 新建資料夾並初始化 git init 特定檔案</description>
@@ -30,11 +20,21 @@
     
     <item>
       <title>常用linux指令</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-comments/</link>
-      <pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-commands/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-comments/</guid>
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-commands/</guid>
       <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
+      
+    </item>
+    
+    <item>
+      <title>Docker常見指令</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-commands/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-commands/</guid>
+      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
       
     </item>
     
