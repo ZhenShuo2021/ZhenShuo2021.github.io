@@ -25,22 +25,6 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/en-us/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/"
-    />
-  </url>
-  <url>
     <loc>https://blog.leo-immich-photos.uk/en-us/tags/image-processing/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -83,6 +67,22 @@
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/en-us/</loc>
+    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://blog.leo-immich-photos.uk/zh-tw/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://blog.leo-immich-photos.uk/en-us/"
+    />
   </url>
   <url>
     <loc>https://blog.leo-immich-photos.uk/en-us/tags/cloudflare/</loc>
@@ -151,6 +151,21 @@
     />
   </url>
   <url>
+    <loc>https://blog.leo-immich-photos.uk/en-us/notes/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://blog.leo-immich-photos.uk/zh-tw/notes/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://blog.leo-immich-photos.uk/en-us/notes/"
+    />
+  </url>
+  <url>
     <loc>https://blog.leo-immich-photos.uk/en-us/author/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -193,21 +208,6 @@
       rel="alternate"
       hreflang="en"
       href="https://blog.leo-immich-photos.uk/en-us/categories/"
-    />
-  </url>
-  <url>
-    <loc>https://blog.leo-immich-photos.uk/en-us/notes/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/notes/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/notes/"
     />
   </url>
   <url>

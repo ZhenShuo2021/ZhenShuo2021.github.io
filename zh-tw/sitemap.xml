@@ -19,6 +19,22 @@
     />
   </url>
   <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/</loc>
+    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://blog.leo-immich-photos.uk/en-us/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://blog.leo-immich-photos.uk/zh-tw/"
+    />
+  </url>
+  <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -38,22 +54,6 @@
       rel="alternate"
       hreflang="zh-tw"
       href="https://blog.leo-immich-photos.uk/zh-tw/categories/"
-    />
-  </url>
-  <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/"
     />
   </url>
   <url>
