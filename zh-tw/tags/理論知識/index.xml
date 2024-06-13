@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>理論知識 on ZSL Blog</title>
+    <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E7%90%86%E8%AB%96%E7%9F%A5%E8%AD%98/</link>
+    <description>Recent content in 理論知識 on ZSL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Fri, 14 Jun 2024 02:45:40 +0800</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/%E7%90%86%E8%AB%96%E7%9F%A5%E8%AD%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rician Fading</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/rayleigh-fading/</link>
+      <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/rayleigh-fading/</guid>
+      <description>整理生成Rician fading的方法。</description>
+      
+    </item>
+    
+  </channel>
+</rss>
