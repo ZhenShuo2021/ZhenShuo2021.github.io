@@ -9,6 +9,16 @@
     <copyright>© 2024 ZSL</copyright>
     <lastBuildDate>Fri, 14 Jun 2024 02:45:40 +0800</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Rician Fading</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/rayleigh-fading/</link>
+      <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/rayleigh-fading/</guid>
+      <description>整理生成Rician fading的方法。</description>
+      
+    </item>
+    
+    <item>
       <title>FFmpeg筆記</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/ffmpeg-usage/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
