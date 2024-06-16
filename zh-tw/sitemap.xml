@@ -281,6 +281,12 @@
     />
   </url>
   <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/notes/dummy/</loc>
     <lastmod>1999-09-09T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>

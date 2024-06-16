@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+<html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
   data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
-  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="content-language" content="zh-tw" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>ZSL &middot; ZSL Blog</title>
-  <meta name="title" content="ZSL &middot; ZSL Blog" />
+  <title>Exiftool &middot; ZSL Blog</title>
+  <meta name="title" content="Exiftool &middot; ZSL Blog" />
+  
+  <meta name="description" content="整理常用的exiftool使用方法" />
+  <meta name="keywords" content="指令筆記, 實用工具, " />
   
   
-  
-  
-  
-  <link rel="canonical" href="https://blog.leo-immich-photos.uk/en-us/author/zsl/" />
+  <link rel="canonical" href="https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/" />
   
   
   
@@ -61,45 +61,49 @@
   
   
   
-  <meta property="og:url" content="https://blog.leo-immich-photos.uk/en-us/author/zsl/">
+  <meta property="og:url" content="https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/">
   <meta property="og:site_name" content="ZSL Blog">
-  <meta property="og:title" content="ZSL">
-  <meta property="og:description" content="Forced to learn go, css, and html.">
-  <meta property="og:locale" content="en">
+  <meta property="og:title" content="Exiftool">
+  <meta property="og:description" content="整理常用的exiftool使用方法">
+  <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
-    <meta property="article:section" content="author">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-03-19T00:00:00+00:00">
+    <meta property="article:tag" content="指令筆記">
+    <meta property="article:tag" content="實用工具">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="ZSL">
-  <meta name="twitter:description" content="Forced to learn go, css, and html.">
+  <meta name="twitter:title" content="Exiftool">
+  <meta name="twitter:description" content="整理常用的exiftool使用方法">
 
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Author",
-    "name": "ZSL",
-    "headline": "ZSL",
-    
-    "abstract": "Forced to learn go, css, and html.",
-    "inLanguage": "en",
-    "url" : "https:\/\/blog.leo-immich-photos.uk\/en-us\/author\/zsl\/",
+    "articleSection": "初學hugo真的很痛苦",
+    "name": "Exiftool",
+    "headline": "Exiftool",
+    "description": "整理常用的exiftool使用方法",
+    "abstract": "Scripts Link (GitHub) This script modifies date tags by the folder name. Use this for albums downloaded from network. 1.",
+    "inLanguage": "zh-tw",
+    "url" : "https:\/\/blog.leo-immich-photos.uk\/zh-tw\/post\/exiftool\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
     },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-03-19T00:00:00\u002b00:00",
+    "datePublished": "2024-03-19T00:00:00\u002b00:00",
     
+    "dateModified": "2024-03-19T00:00:00\u002b00:00",
     
-    
-    
-    
-    
-    
+    "keywords": ["指令筆記","實用工具"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "7"
+    "wordCount": "321"
   }]
   </script>
 
@@ -107,14 +111,6 @@
   
   
   <meta name="author" content="ZSL" />
-  
-  
-  
-  <link href="https://x.com/sinonome_umi/" rel="me" />
-  
-  
-  <link href="https://github.com/ZhenShuo2021/" rel="me" />
-  
   
   
   
@@ -156,7 +152,7 @@
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>快轉到主要內容</a>
   </div>
   
   
@@ -171,7 +167,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/en-us/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL Blog</a>
+            <a href="/zh-tw/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL Blog</a>
             
 
         </nav>
@@ -180,10 +176,10 @@
             
             
             
-  <a href="/en-us/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/zh-tw/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
-        All Post
+        文章
     </p>
 </a>
 
@@ -191,10 +187,10 @@
 
             
             
-  <a href="/en-us/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/zh-tw/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
-        Essay
+        隨筆
     </p>
 </a>
 
@@ -205,8 +201,8 @@
   <div>
   <div class="cursor-pointer flex items-center nested-menu">
     
-    <a  href="/en-us/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="">
-      Notes
+    <a  href="/zh-tw/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="">
+      筆記
     </a>
     <span>
       
@@ -234,21 +230,21 @@
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en-us/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <a href="/zh-tw/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
           
           <p class="text-sm font-sm" title="">
             linux
           </p>
         </a>
         
-        <a href="/en-us/notes/git/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <a href="/zh-tw/notes/git/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
           
           <p class="text-sm font-sm" title="">
             git
           </p>
         </a>
         
-        <a href="/en-us/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <a href="/zh-tw/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
           
           <p class="text-sm font-sm" title="">
             假的！
@@ -266,41 +262,6 @@
             
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="mr-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">EN</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/zh-tw/author/zsl/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">
-            繁體中文
-          </p>
-        </a>
-        
-        <a href="/en-us/author/zsl/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">
-            English
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -341,41 +302,6 @@
             <span></span>
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="mr-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">EN</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/zh-tw/author/zsl/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">
-            繁體中文
-          </p>
-        </a>
-        
-        <a href="/en-us/author/zsl/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="ZSL">
-            English
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -444,10 +370,10 @@
 
                     
   <li class="mt-1">
-    <a href="/en-us/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/zh-tw/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            All Post
+            文章
         </p>
     </a>
 </li>
@@ -459,10 +385,10 @@
 
                     
   <li class="mt-1">
-    <a href="/en-us/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/zh-tw/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            Essay
+            隨筆
         </p>
     </a>
 </li>
@@ -477,7 +403,7 @@
     <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            Notes
+            筆記
         </p>
         <span>
             
@@ -504,7 +430,7 @@
 </li>
 
 <li class="mt-1">
-    <a href="/en-us/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/zh-tw/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-sm font-small" title="">
             linux
@@ -513,7 +439,7 @@
 </li>
 
 <li class="mt-1">
-    <a href="/en-us/notes/git/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/zh-tw/notes/git/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-sm font-small" title="">
             git
@@ -522,7 +448,7 @@
 </li>
 
 <li class="mt-1">
-    <a href="/en-us/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/zh-tw/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-sm font-small" title="">
             假的！
@@ -623,7 +549,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      ZSL
+      Exiftool
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -668,7 +594,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>7 words</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-primary-500">&middot;</span><span>321 字</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
@@ -676,9 +602,9 @@
 <span class="mb-[2px]">
     <span id="zen-mode-button"
           class="text-lg hover:text-primary-500"
-          title="Enable zen mode"
-          data-title-i18n-disable="Enable zen mode"
-          data-title-i18n-enable="Disable zen mode">
+          title=""
+          data-title-i18n-disable=""
+          data-title-i18n-enable="">
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
@@ -723,6 +649,13 @@
   
   
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工具
+  </span>
+</span>
+  </span>
   
   
   
@@ -730,6 +663,27 @@
   
   
   
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    實用工具
+  </span>
+</span>
+  </span>
   
   
   
@@ -754,7 +708,104 @@
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
-    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         
+
+<details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目錄
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
+    style="max-height: 450px; overflow-y: auto;">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-requirements">1. Requirements</a></li>
+    <li><a href="#2-usage">2. Usage</a></li>
+    <li><a href="#3-convert-photos-to-ascending-time">3. Convert Photos to Ascending Time</a></li>
+    <li><a href="#4-other-exif-commands">4. Other EXIF Commands</a>
+      <ul>
+        <li><a href="#41-basic-usage">4.1 Basic Usage</a></li>
+        <li><a href="#42-copying-exif">4.2 Copying EXIF</a></li>
+        <li><a href="#43-other-commands">4.3 Other Commands</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目錄
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
+    style="max-height: 450px; overflow-y: auto;">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-requirements">1. Requirements</a></li>
+    <li><a href="#2-usage">2. Usage</a></li>
+    <li><a href="#3-convert-photos-to-ascending-time">3. Convert Photos to Ascending Time</a></li>
+    <li><a href="#4-other-exif-commands">4. Other EXIF Commands</a>
+      <ul>
+        <li><a href="#41-basic-usage">4.1 Basic Usage</a></li>
+        <li><a href="#42-copying-exif">4.2 Copying EXIF</a></li>
+        <li><a href="#43-other-commands">4.3 Other Commands</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+ 
+<script>
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+</script>
+
+   </div>
+      </div>
+      
 
       <div class="min-w-0 min-h-0 max-w-fit">
         
@@ -762,8 +813,151 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p><font size="5">Forced to learn go, css, and html.</font></p>
+          <a
+  class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
+  href="https://github.com/ZhenShuo2021/blog-script/tree/main/exiftool"
+  target="_self"
+  role="button"
+>
+  
+Scripts Link (GitHub)
 
+</a>
+
+<p>This script modifies date tags by the folder name. Use this for albums downloaded from network.</p>
+
+
+<h1 class="relative group">1. Requirements 
+    <div id="1-requirements" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-requirements" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p><a href="http://www.sno.phy.queensu.ca/~phil/exiftool/" target="_blank">ExifTool</a><br>
+For Windows users, you might need to install WSL or Git Bash to run the bash script. This script has not been tested on Windows.</p>
+
+
+<h1 class="relative group">2. Usage 
+    <div id="2-usage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2-usage" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<ol>
+<li>Create a base folder and name your subfolder in the format &ldquo;YYYYMMDD title&rdquo;.</li>
+<li>Grant permission and run the script:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">chmod 755 /path/to/script.sh
+</span></span><span class="line"><span class="cl">/path/to/script.sh &#34;/base/folder/name&#34;
+</span></span></code></pre></div></li>
+</ol>
+<p>Enjoy the organized EXIF dates!</p>
+<p>Notes:</p>
+<ol>
+<li>Modifications are based on the DateTimeOriginal in EXIF. If absent, we use CreateDate instead.</li>
+<li>Ensure there is a backup for your pictures. You can delete the &ldquo;-overwrite_original&rdquo; to reserve original photo.</li>
+<li>Nested subfolders are not supported.</li>
+</ol>
+
+
+<h1 class="relative group">3. Convert Photos to Ascending Time 
+    <div id="3-convert-photos-to-ascending-time" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#3-convert-photos-to-ascending-time" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>When file has exact same time, sort by modify time might out of order.<br>
+<a href="%28https://photo.stackexchange.com/questions/60342/how-can-i-incrementally-date-photos%29">source</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Set all photos to same date.</span>
+</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="o">-</span><span class="n">datetimeoriginal</span><span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> <span class="o">-</span><span class="n">filemodifydate</span><span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> <span class="n">DIR</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Increase time for each file by 10s ordered by file name.</span>
+</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="s1">&#39;-datetimeoriginal+&lt;0:0:${filesequence}0&#39;</span> <span class="s1">&#39;-filemodifydate+&lt;0:0:${filesequence}0&#39;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">filename</span> <span class="n">DIR</span>
+</span></span></code></pre></div>
+
+<h1 class="relative group">4. Other EXIF Commands 
+    <div id="4-other-exif-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4-other-exif-commands" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">4.1 Basic Usage 
+    <div id="41-basic-usage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#41-basic-usage" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>Increment 20 seconds by filename</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="s1">&#39;-FileModifyDate+&lt;0:0:${FileSequence; $_*=20}&#39;</span> <span class="o">-</span><span class="n">FileOrder</span> <span class="n">Filename</span>
+</span></span></code></pre></div><p>Loose display</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">s1</span> <span class="n">FILE</span><span class="o">/</span><span class="n">DIR</span>
+</span></span></code></pre></div><p>Only display specified info</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">DateTimeOriginal</span> <span class="n">FILE</span><span class="o">/</span><span class="n">DIR</span>
+</span></span></code></pre></div><p>Assign DateTimeOriginal to other AllDates</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="k">if</span> <span class="s1">&#39;$DateTimeOriginal&#39;</span> <span class="o">-</span><span class="n">P</span> <span class="s2">&#34;-AllDates&lt;DateTimeOriginal&#34;</span>  <span class="s2">&#34;-FileModifyDate&lt;DateTimeOriginal&#34;</span> <span class="n">FILE</span>
+</span></span></code></pre></div>
+
+<h2 class="relative group">4.2 Copying EXIF 
+    <div id="42-copying-exif" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#42-copying-exif" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>Copy exif info from <a href="https://exiftool.org/forum/index.php?topic=11385.0" target="_blank">another file</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">tagsFromFile</span> <span class="n">source</span><span class="o">.</span><span class="n">mpeg</span> <span class="o">-</span><span class="n">FileModifyDate</span> <span class="n">destination</span><span class="o">.</span><span class="n">mp4</span>
+</span></span></code></pre></div><p><strong>Compare the Metadata of two Files</strong>
+<a href="https://exiftool.org/forum/index.php?topic=3276.0" target="_blank">Source</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="n">a</span><span class="o">.</span><span class="n">jpg</span> <span class="n">b</span><span class="o">.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">G1</span> <span class="o">-</span><span class="n">w</span> <span class="n">txt</span>
+</span></span><span class="line"><span class="cl"><span class="n">diff</span> <span class="n">a</span><span class="o">.</span><span class="n">txt</span> <span class="n">b</span><span class="o">.</span><span class="n">txt</span>
+</span></span></code></pre></div><p><strong>Copy all tags from another file</strong>
+<a href="https://exiftool.org/forum/index.php?topic=12962.msg" target="_blank">Source</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">tagsfromfile</span> <span class="n">A</span><span class="o">.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">all</span><span class="p">:</span><span class="n">all</span> <span class="n">B</span><span class="o">.</span><span class="n">jpg</span>
+</span></span></code></pre></div><p>Copy exif info from another folder with <a href="https://exiftool.org/forum/index.php?topic=10322.0" target="_blank">same name</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">TagsFromFile</span> <span class="n">c</span><span class="p">:</span>\<span class="n">exiftool</span>\<span class="n">mpg</span>\<span class="o">%</span><span class="n">f</span><span class="o">.</span><span class="n">mpg</span> <span class="o">-</span><span class="n">FileCreateDate</span> <span class="o">-</span><span class="n">FileModifyDate</span> <span class="n">c</span><span class="p">:</span>\<span class="n">exiftool</span>\<span class="n">mp4</span>
+</span></span></code></pre></div><p>Other copying example from <a href="https://exiftool.org/exiftool_pod.html#COPYING-EXAMPLES" target="_blank">official website</a>.</p>
+
+
+<h2 class="relative group">4.3 Other Commands 
+    <div id="43-other-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#43-other-commands" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p><strong>Rename file by dates</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Good naming policy avoids EXIF missing forever</span>
+</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">d</span> <span class="o">%</span><span class="n">Y</span><span class="o">%</span><span class="n">m</span><span class="o">%</span><span class="n">d_</span><span class="o">%</span><span class="n">H</span><span class="o">%</span><span class="n">M</span><span class="o">%%-</span><span class="n">c</span><span class="s1">&#39;-DEVICE_MODEL&#39;</span><span class="o">.%%</span><span class="n">e</span> <span class="s2">&#34;-filename&lt;DateTimeOriginal&#34;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">DateTimeOriginal</span> <span class="n">FILE</span>
+</span></span></code></pre></div><p><a href="https://exiftool.org/forum/index.php?topic=12361.0" target="_blank">Categorize by device model</a><br>
+Surprisingly useful for managing photos from different phones.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="s2">&#34;-directory&lt;</span><span class="si">%d</span><span class="s2">/${model;}&#34;</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span>
+</span></span></code></pre></div>
         </div>
         
         
@@ -788,55 +982,16 @@
   <div class="place-self-center">
     
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      Author
+      作者
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       ZSL
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Sloth is good.</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">正事不做。</div>
     
     <div class="text-2xl sm:text-lg">
-  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
-    
-      
-        <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://x.com/sinonome_umi/"
-          target="_blank"
-          aria-label="X-Twitter"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
-  </span>
-
-</span></a
-        >
-      
-    
-      
-        <a
-          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
-          href="https://github.com/ZhenShuo2021/"
-          target="_blank"
-          aria-label="Github"
-          rel="me noopener noreferrer"
-          ><span class="inline-block align-text-bottom">
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
-
-  </span>
-
-</span></a
-        >
-      
-    
-  </div>
-
 </div>
   </div>
 </div>
@@ -860,9 +1015,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://blog.leo-immich-photos.uk/en-us/author/zsl/&amp;text=ZSL"
-      title="Tweet on Twitter"
-      aria-label="Tweet on Twitter"
+      href="https://twitter.com/intent/tweet/?url=https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/&amp;text=Exiftool"
+      title="推到 Twitter"
+      aria-label="推到 Twitter"
       >
       
 
@@ -878,9 +1033,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://blog.leo-immich-photos.uk/en-us/author/zsl/&amp;quote=ZSL"
-      title="Share on Facebook"
-      aria-label="Share on Facebook"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/&amp;quote=Exiftool"
+      title="分享到 Facebook"
+      aria-label="分享到 Facebook"
       >
       
 
@@ -897,9 +1052,9 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://blog.leo-immich-photos.uk/en-us/author/zsl/&amp;subject=ZSL"
-      title="Send via email"
-      aria-label="Send via email"
+      href="mailto:?body=https://blog.leo-immich-photos.uk/zh-tw/post/exiftool/&amp;subject=Exiftool"
+      title="以電子郵件發送"
+      aria-label="以電子郵件發送"
       >
       
 
@@ -928,12 +1083,9 @@
           
           
         
-          
-          
-        
       <script>
-        var oid = "views_author\/ZSL\/index.md"
-        var oid_likes = "likes_author\/ZSL\/index.md"
+        var oid = "views_posts\/exiftool\/index.md"
+        var oid_likes = "likes_posts\/exiftool\/index.md"
       </script>
       
       
@@ -945,6 +1097,43 @@
 
     
   
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/zh-tw/post/blog-cloudflare-ddns/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >架站紀錄：無固定IP + Cloudflare tunnel + DDNS-GO</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">2024-05-08</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
 
 
     
@@ -954,7 +1143,7 @@
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
   <a href="#the-top"
     class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="Scroll to top" title="Scroll to top">
+    aria-label="捲動到頁頂" title="捲動到頁頂">
     &uarr;
   </a>
 </div>
@@ -966,26 +1155,26 @@
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/author/zsl/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/zh-tw/author/zsl/"
             title="">
             
-            Authors
+            作者
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/tags/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/zh-tw/tags/"
             title="">
             
-            Tags
+            標簽
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/categories/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/zh-tw/categories/"
             title="">
             
-            Categories
+            分類
           </a>
         </li>
         
@@ -1046,9 +1235,9 @@
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
       
       
-      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+      以 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 製作
     </p>
     
 
