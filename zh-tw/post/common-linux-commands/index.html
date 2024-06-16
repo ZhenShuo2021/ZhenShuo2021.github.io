@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.0cb95d2db338f89d008aeae7cbdd426d56bb32bfaffe18d24b347a69b1ae1123d84bbd340aaf26374dd04adc3c91d9fc3dc12a2d1370873e57df75a6d63c45f9.css"
-    integrity="sha512-DLldLbM4&#43;J0Aiurny91CbVa7Mr&#43;v/hjSSzR6abGuESPYS700Cq8mN03QStw8kdn8PcEqLRNwhz5X33Wm1jxF&#43;Q==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5931dd5dd832315de4d7e433d0f2d486ec0afd4605b4bacaa52134708fb3ccd8b9ec568f58133719072dd4a1e4c94618d77760fa4a3f8986ae64b3da4af44e86.css"
+    integrity="sha512-WTHdXdgyMV3k1&#43;Qz0PLUhuwK/UYFtLrKpSE0cI&#43;zzNi57FaPWBM3GQct1KHkyUYY13dg&#43;ko/iYauZLPaSvROhg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -103,7 +103,7 @@
     "keywords": ["Linux","指令筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "34"
+    "wordCount": "193"
   }]
   </script>
 
@@ -594,7 +594,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>34 字</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>193 字</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
@@ -728,6 +728,8 @@
       <ul>
         <li><a href="#搬移整個資料夾">搬移整個資料夾</a></li>
         <li><a href="#容量檢查">容量檢查</a></li>
+        <li><a href="#列出記憶體佔用">列出記憶體佔用</a></li>
+        <li><a href="#建立開機自動執行">建立開機自動執行</a></li>
       </ul>
     </li>
   </ul>
@@ -748,6 +750,8 @@
       <ul>
         <li><a href="#搬移整個資料夾">搬移整個資料夾</a></li>
         <li><a href="#容量檢查">容量檢查</a></li>
+        <li><a href="#列出記憶體佔用">列出記憶體佔用</a></li>
+        <li><a href="#建立開機自動執行">建立開機自動執行</a></li>
       </ul>
     </li>
   </ul>
@@ -835,6 +839,58 @@
 </span></span><span class="line"><span class="cl">df -h
 </span></span><span class="line"><span class="cl">sudo ncdu -x /path
 </span></span></code></pre></div>
+
+<h2 class="relative group">列出記憶體佔用 
+    <div id="%E5%88%97%E5%87%BA%E8%A8%98%E6%86%B6%E9%AB%94%E4%BD%94%E7%94%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%88%97%E5%87%BA%E8%A8%98%E6%86%B6%E9%AB%94%E4%BD%94%E7%94%A8" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ps aux --sort=-%mem | head -n 10
+</span></span></code></pre></div>
+
+<h2 class="relative group">建立開機自動執行 
+    <div id="%E5%BB%BA%E7%AB%8B%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%BB%BA%E7%AB%8B%E9%96%8B%E6%A9%9F%E8%87%AA%E5%8B%95%E5%9F%B7%E8%A1%8C" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>這裡用docker-compose示範，五步驟分別是建立.service檔、reload .service、啟用、開始、查看狀態。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">stirling</span><span class="o">-</span><span class="n">pdf</span><span class="o">.</span><span class="n">service</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 建立完成再執行以下指令</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">enable</span> <span class="n">stirling</span><span class="o">-</span><span class="n">pdf</span><span class="o">.</span><span class="n">service</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">start</span> <span class="n">stirling</span><span class="o">-</span><span class="n">pdf</span><span class="o">.</span><span class="n">service</span>
+</span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">status</span> <span class="n">stirling</span><span class="o">-</span><span class="n">pdf</span><span class="o">.</span><span class="n">service</span>
+</span></span></code></pre></div><p>其中.service指令為：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[Unit]
+</span></span><span class="line"><span class="cl">Description=Docker Compose app
+</span></span><span class="line"><span class="cl">Requires=docker.service
+</span></span><span class="line"><span class="cl">After=docker.service
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Service]
+</span></span><span class="line"><span class="cl">Type=simple
+</span></span><span class="line"><span class="cl">Restart=always
+</span></span><span class="line"><span class="cl">RestartSec=3
+</span></span><span class="line"><span class="cl">StartLimitInterval=1200
+</span></span><span class="line"><span class="cl">StartLimitBurst=10
+</span></span><span class="line"><span class="cl">TimeoutStartSec=1200
+</span></span><span class="line"><span class="cl">WorkingDirectory=/home/yourname/yourapp
+</span></span><span class="line"><span class="cl">ExecStart=/usr/local/bin/docker-compose up -d
+</span></span><span class="line"><span class="cl">ExecStop=/usr/local/bin/docker-compose down
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">[Install]
+</span></span><span class="line"><span class="cl">WantedBy=multi-user.target
+</span></span></code></pre></div><p>參考資料<sup><sup><a href="https://hackmd.io/@ezplus-2020/H1soa90V9" target="_blank">1</a><a href="https://hackmd.io/@ezplus-2020/H1soa90V9" target="_blank">2</a></sup></sup></p>
+
         </div>
         
         
@@ -1225,6 +1281,149 @@
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     指令筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/zh-tw/post/exiftool/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/global/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/zh-tw/post/exiftool/">Exiftool</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-primary-500">&middot;</span><span>321 字</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工具
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/zh-tw/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    實用工具
   </span>
 </span>
   </span>

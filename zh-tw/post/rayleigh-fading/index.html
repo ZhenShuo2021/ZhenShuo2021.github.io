@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.0cb95d2db338f89d008aeae7cbdd426d56bb32bfaffe18d24b347a69b1ae1123d84bbd340aaf26374dd04adc3c91d9fc3dc12a2d1370873e57df75a6d63c45f9.css"
-    integrity="sha512-DLldLbM4&#43;J0Aiurny91CbVa7Mr&#43;v/hjSSzR6abGuESPYS700Cq8mN03QStw8kdn8PcEqLRNwhz5X33Wm1jxF&#43;Q==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5931dd5dd832315de4d7e433d0f2d486ec0afd4605b4bacaa52134708fb3ccd8b9ec568f58133719072dd4a1e4c94618d77760fa4a3f8986ae64b3da4af44e86.css"
+    integrity="sha512-WTHdXdgyMV3k1&#43;Qz0PLUhuwK/UYFtLrKpSE0cI&#43;zzNi57FaPWBM3GQct1KHkyUYY13dg&#43;ko/iYauZLPaSvROhg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -102,7 +102,7 @@
     "keywords": ["理論知識"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "418"
+    "wordCount": "470"
   }]
   </script>
 
@@ -726,7 +726,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-14 02:45:40 &#43;0800 CST">2024-06-14</time><span class="px-2 text-primary-500">&middot;</span><span>418 字</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-06-14 02:45:40 &#43;0800 CST">2024-06-14</time><span class="px-2 text-primary-500">&middot;</span><span>470 字</span><span class="px-2 text-primary-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
@@ -852,8 +852,8 @@
     <li><a href="#method-2">Method 2</a></li>
     <li><a href="#method-3">Method 3</a></li>
     <li><a href="#method-4">Method 4</a></li>
-    <li><a href="#method-4-1">Method 4</a></li>
     <li><a href="#method-5">Method 5</a></li>
+    <li><a href="#method-6">Method 6</a></li>
   </ul>
 </nav>
   </div>
@@ -872,8 +872,8 @@
     <li><a href="#method-2">Method 2</a></li>
     <li><a href="#method-3">Method 3</a></li>
     <li><a href="#method-4">Method 4</a></li>
-    <li><a href="#method-4-1">Method 4</a></li>
     <li><a href="#method-5">Method 5</a></li>
+    <li><a href="#method-6">Method 6</a></li>
   </ul>
 </nav>
   </div>
@@ -935,13 +935,11 @@
   整理生成Rician fading的方法。
 </div>
 
-<p>先說結論，method 1是 Emil Björnson 回覆的應該可信度最高；method 2/3 少了 Emil 說的 LOS path random phase，而 method 2/3 不同處是 NLOS path的 \(\sigma\) 以及分母的 \(2k+1\)</p>
-<p>TODO:</p>
+<p>先說結論：</p>
 <ol>
-<li>對method 2/3: 查原文書確認些分母是 \(k+1\) 或 \(2k+1\)</li>
-<li>對method 2/3: 查原文書對Rayleigh fading 母數 \(\sigma\) 的解釋</li>
-<li>確認 method 4 中對 Nakagami fading 的模擬是否正確</li>
-<li>確認 method 5 錯在哪裡</li>
+<li>method 1是 Emil Björnson 回覆的可信度最高。</li>
+<li>method 2/3 少了 Emil 說的 LOS path random phase，而 method 2/3 不同處是 NLOS path的 \(\sigma\) 以及分母的 \(2k+1\)。</li>
+<li>method 4/5 應該是不同的 formatting 方式。</li>
 </ol>
 
 
@@ -955,13 +953,13 @@
     </span>        
     
 </h1>
-<p><a href="https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab" target="_blank">https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab</a>
-有Emil Björnson大神回覆可信度應該很高。
+<p><a href="https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab" target="_blank">https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab</a></p>
+<p>有 Emil Björnson 大神回覆可信度最高，他本人也寫了一篇<a href="https://ma-mimo.ellintech.se/2020/03/02/rician-fading-a-channel-model-often-misunderstood/" target="_blank">文章</a>解釋 rician fading 很多人都做錯。跟<a href="https://www.mathworks.com/help/comm/ug/fading-channels.html" target="_blank">MATLAB</a>和<a href="https://web.xidian.edu.cn/bmbai/files/20150129_145929.pdf" target="_blank">這裡</a>的生成方式一樣。
 $$
 \footnotesize
 \begin{aligned}
-&amp;h_{\text{LOS}} &amp;&amp;= e^{(2\pi j\mathcal{N}(1,1))} \newline
-&amp;h_{\text{NLOS}} &amp;&amp;= \sqrt{\frac{1}{2}}(\mathcal{N}(1, 1) + j\mathcal{N}(1, 1)) \newline
+&amp;h_{\text{LOS}} &amp;&amp;= e^{(j2\pi\mathcal{N}(1,1))} \newline
+&amp;h_{\text{NLOS}} &amp;&amp;= \mathcal{CN}(0, \sigma^2) \newline
 &amp;h &amp;&amp;= h_{\text{LOS}}\sqrt{\dfrac{K}{K + 1}} + h_{\text{NLOS}}\sqrt{\frac{1}{K + 1}}
 \end{aligned}
 $$</p>
@@ -1002,7 +1000,7 @@ $$</p>
 \footnotesize
 \begin{align}
 &amp;h_{\text{NLOS}} &amp;&amp;= (\mathcal{N}(1,N)+j\mathcal{N}(1,N)) \newline
-&amp;h &amp;&amp;= \sqrt{\dfrac{K}{K+1}}+h_{\text{NLOS}}\sqrt{\dfrac{1}{2(K+1)}}
+&amp;h &amp;&amp;= \left|\sqrt{\dfrac{K}{K+1}}+h_{\text{NLOS}}\sqrt{\dfrac{1}{2(K+1)}}\right|
 \end{align}
 $$</p>
 
@@ -1027,13 +1025,13 @@ $$</p>
 $$</p>
 
 
-<h1 class="relative group">Method 4 
-    <div id="method-4-1" class="anchor"></div>
+<h1 class="relative group">Method 5 
+    <div id="method-5" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#method-4-1" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#method-5" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1069,23 +1067,37 @@ $$</p>
     ><strong>測試此篇的nakagami fading是否正確！！</strong></span>
 </div>
 
-<div class="highlight my-class" id="my-codeblock"><pre tabindex="0" class="chroma"><code class="language-MATLAB" data-lang="MATLAB"><span class="line"><span class="ln">1</span><span class="cl"><span class="c">% LOS components</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>  <span class="n">b</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="c">% in-phase component</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="nb">i</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="nb">randn</span><span class="p">([</span><span class="mi">1</span> <span class="nb">size</span><span class="p">]);</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="c">% quadtature component</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">q</span> <span class="p">=</span> <span class="n">b</span> <span class="o">+</span> <span class="nb">randn</span><span class="p">([</span><span class="mi">1</span> <span class="nb">size</span><span class="p">]);</span>
-</span></span><span class="line"><span class="ln">7</span><span class="cl"><span class="c">% build fading component</span>
-</span></span><span class="line"><span class="ln">8</span><span class="cl"><span class="n">s</span> <span class="p">=</span> <span class="p">(</span><span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="nb">j</span><span class="o">*</span><span class="n">q</span><span class="p">);</span>
-</span></span></code></pre></div>
+<div class="highlight code-table" id="my-codeblock"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-MATLAB" data-lang="MATLAB"><span class="line"><span class="cl"><span class="c">% LOS components</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">K</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>  <span class="n">b</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c">% in-phase component</span>
+</span></span><span class="line"><span class="cl"><span class="nb">i</span> <span class="p">=</span> <span class="n">a</span> <span class="o">+</span> <span class="nb">randn</span><span class="p">([</span><span class="mi">1</span> <span class="nb">size</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="c">% quadtature component</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span> <span class="p">=</span> <span class="n">b</span> <span class="o">+</span> <span class="nb">randn</span><span class="p">([</span><span class="mi">1</span> <span class="nb">size</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="c">% build fading component</span>
+</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="p">=</span> <span class="p">(</span><span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="nb">j</span><span class="o">*</span><span class="n">q</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 
-<h1 class="relative group">Method 5 
-    <div id="method-5" class="anchor"></div>
+<h1 class="relative group">Method 6 
+    <div id="method-6" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#method-5" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#method-6" aria-label="定位點">#</a>
     </span>        
     
 </h1>
@@ -1126,13 +1138,32 @@ $$</p>
     ><strong>此篇理論值與模擬不同，需要檢查為何錯誤！！</strong></span>
 </div>
 
-<div class="highlight my-class" id="my-codeblock"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="ln">1</span><span class="cl"><span class="n">mean</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">k1</span><span class="o">/</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>  <span class="o">%</span> <span class="n">mean</span>
-</span></span><span class="line"><span class="ln">2</span><span class="cl"><span class="n">sigma</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">1</span><span class="p">)));</span>  <span class="o">%</span><span class="n">variance</span>
-</span></span><span class="line"><span class="ln">3</span><span class="cl"><span class="n">Nr2</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="o">+</span><span class="n">mean</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">4</span><span class="cl"><span class="n">Ni2</span> <span class="o">=</span> <span class="n">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">;</span>
-</span></span><span class="line"><span class="ln">5</span><span class="cl"><span class="o">%</span> <span class="n">To</span> <span class="n">generate</span> <span class="n">the</span> <span class="n">Rician</span> <span class="n">Random</span> <span class="n">Variable</span>
-</span></span><span class="line"><span class="ln">6</span><span class="cl"><span class="n">h_rac</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">Nr2</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">Ni2</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>  <span class="o">%</span><span class="n">Rician</span> <span class="n">fading</span> <span class="n">coefficient</span>
-</span></span></code></pre></div>
+<div class="highlight code-table" id="my-codeblock"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-MATLAB" data-lang="MATLAB"><span class="line"><span class="cl"><span class="n">mean</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">k1</span><span class="o">/</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>  <span class="c">% mean</span>
+</span></span><span class="line"><span class="cl"><span class="n">sigma</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="mi">1</span><span class="p">)));</span>  <span class="c">%variance</span>
+</span></span><span class="line"><span class="cl"><span class="n">Nr2</span> <span class="p">=</span> <span class="nb">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="o">+</span><span class="n">mean</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Ni2</span> <span class="p">=</span> <span class="nb">randn</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sigma</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c">% To generate the Rician Random Variable</span>
+</span></span><span class="line"><span class="cl"><span class="n">h_rac</span> <span class="p">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">Nr2</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">Ni2</span><span class="o">.^</span><span class="mi">2</span><span class="p">);</span>  <span class="c">%Rician fading coefficient</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>TODO:</p>
+<ol>
+<li>對method 2/3: 查原文書確認些分母是 \(k+1\) 或 \(2k+1\)</li>
+<li>對method 2/3: 查原文書對Rayleigh fading 母數 \(\sigma\) 的解釋</li>
+<li>確認 method 4 中對 Nakagami fading 的模擬是否正確</li>
+<li>確認 method 5 錯在哪裡</li>
+</ol>
+
         </div>
         
         
@@ -1600,7 +1631,7 @@ $$</p>
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>34 字</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>193 字</span>
   
 
   
