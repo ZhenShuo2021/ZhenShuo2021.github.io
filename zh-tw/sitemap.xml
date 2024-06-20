@@ -57,10 +57,32 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/</loc>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2024-06-20T21:30:40+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/</loc>
+    <lastmod>2024-06-20T21:30:40+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/</loc>
+    <lastmod>2024-06-20T21:30:40+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://blog.leo-immich-photos.uk/en-us/tags/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://blog.leo-immich-photos.uk/zh-tw/tags/"
+    />
   </url>
   <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/post/rayleigh-fading/</loc>
@@ -111,22 +133,6 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/</loc>
-    <lastmod>2024-06-14T02:45:40+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/tags/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/tags/"
-    />
-  </url>
-  <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/post/ffmpeg-usage/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -161,12 +167,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/</loc>
-    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/notes/git/</loc>
     <lastmod>2024-06-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -190,12 +190,6 @@
   </url>
   <url>
     <loc>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</loc>
-    <lastmod>2024-06-02T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://blog.leo-immich-photos.uk/zh-tw/categories/%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2024-06-02T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
