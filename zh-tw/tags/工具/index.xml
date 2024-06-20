@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on ZSL Blog</title>
+    <link>http://localhost:1313/zh-tw/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on ZSL Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Thu, 20 Jun 2024 21:30:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/zh-tw/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Webp Performance</title>
+      <link>http://localhost:1313/zh-tw/post/webp-performance/</link>
+      <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/zh-tw/post/webp-performance/</guid>
+      <description>快速看完 # 看完這張圖這篇文章就不用看了。</description>
+      
+    </item>
+    
+  </channel>
+</rss>
