@@ -260,21 +260,6 @@
     />
   </url>
   <url>
-    <loc>https://blog.leo-immich-photos.uk/en-us/notes/git/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://blog.leo-immich-photos.uk/zh-tw/notes/git/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://blog.leo-immich-photos.uk/en-us/notes/git/"
-    />
-  </url>
-  <url>
     <loc>https://blog.leo-immich-photos.uk/en-us/notes/linux/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -347,6 +332,21 @@
       rel="alternate"
       hreflang="en"
       href="https://blog.leo-immich-photos.uk/en-us/author/zsl/"
+    />
+  </url>
+  <url>
+    <loc>https://blog.leo-immich-photos.uk/en-us/archives/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://blog.leo-immich-photos.uk/zh-tw/archives/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://blog.leo-immich-photos.uk/en-us/archives/"
     />
   </url>
 </urlset>

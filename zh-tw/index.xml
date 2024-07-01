@@ -7,7 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 20 Jun 2024 21:30:40 +0800</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>客製化Hugo</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</guid>
+      <description>此篇基於hugo blowfish theme完成。 超連結</description>
+      
+    </item>
+    
+    <item>
+      <title>基礎練習</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/c-practice-2/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/c-practice-2/</guid>
+      <description>1. 矩陣乘法 # 一般方法 # static inline inline只</description>
+      
+    </item>
+    
+    <item>
+      <title>變數宣告</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/c-practice-1/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/c-practice-1/</guid>
+      <description>1. 基礎宣告 # Syntax Description int a a is an integer int *a a is a pointer</description>
+      
+    </item>
+    
     <item>
       <title>WebP Performance</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/webp-performance/</link>
@@ -39,12 +69,12 @@
     </item>
     
     <item>
-      <title>常用git指令</title>
+      <title>git指令</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</guid>
-      <description>本地使用 # 新建資料夾並初始化 git init 特定檔案</description>
+      <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
       
     </item>
     
