@@ -275,21 +275,6 @@
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/newcategory/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/newcategory/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/newcategory/"
-    />
-  </url>
-  <url>
     <loc>https://www.zsl0621.cc/en-us/essay/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
