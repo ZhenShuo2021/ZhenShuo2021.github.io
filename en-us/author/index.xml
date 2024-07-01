@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Author on ZSL Blog</title>
-    <link>https://blog.leo-immich-photos.uk/en-us/author/</link>
-    <description>Recent content in Author on ZSL Blog</description>
+    <title>Author on ZSL&#39;s Blog</title>
+    <link>https://www.zsl0621.cc/en-us/author/</link>
+    <description>Recent content in Author on ZSL&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <atom:link href="https://blog.leo-immich-photos.uk/en-us/author/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.zsl0621.cc/en-us/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ZSL</title>
-      <link>https://blog.leo-immich-photos.uk/en-us/author/zsl/</link>
+      <link>https://www.zsl0621.cc/en-us/author/zsl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/en-us/author/zsl/</guid>
+      <guid>https://www.zsl0621.cc/en-us/author/zsl/</guid>
       <description>Forced to learn go, css, and html.</description>
       
     </item>

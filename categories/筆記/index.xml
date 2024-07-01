@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>筆記 on ZSL&#39;s Blog</title>
+    <link>https://www.zsl0621.cc/categories/%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in 筆記 on ZSL&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/categories/%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>客製化Hugo</title>
+      <link>https://www.zsl0621.cc/post/custom-hugo/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/custom-hugo/</guid>
+      <description>此篇基於hugo blowfish theme完成。 超連結</description>
+      
+    </item>
+    
+    <item>
+      <title>基礎練習</title>
+      <link>https://www.zsl0621.cc/post/c-practice-2/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/c-practice-2/</guid>
+      <description>1. 矩陣乘法 # 一般方法 # static inline inline只</description>
+      
+    </item>
+    
+    <item>
+      <title>變數宣告</title>
+      <link>https://www.zsl0621.cc/post/c-practice-1/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/c-practice-1/</guid>
+      <description>1. 基礎宣告 # Syntax Description int a a is an integer int *a a is a pointer</description>
+      
+    </item>
+    
+    <item>
+      <title>WebP Performance</title>
+      <link>https://www.zsl0621.cc/post/webp-performance/</link>
+      <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/webp-performance/</guid>
+      <description>快速看完 # 看完這張圖這篇文章就不用看了。</description>
+      
+    </item>
+    
+    <item>
+      <title>git指令</title>
+      <link>https://www.zsl0621.cc/post/common-git-comments/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/common-git-comments/</guid>
+      <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
+      
+    </item>
+    
+    <item>
+      <title>常用linux指令</title>
+      <link>https://www.zsl0621.cc/post/common-linux-commands/</link>
+      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/common-linux-commands/</guid>
+      <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
+      
+    </item>
+    
+    <item>
+      <title>Docker常見指令</title>
+      <link>https://www.zsl0621.cc/post/common-docker-commands/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/common-docker-commands/</guid>
+      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
+      
+    </item>
+    
+  </channel>
+</rss>

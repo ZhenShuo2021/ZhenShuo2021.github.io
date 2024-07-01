@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>架站紀錄 on ZSL Blog</title>
-    <link>https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</link>
+    <link>http://localhost:1313/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</link>
     <description>Recent content in 架站紀錄 on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-tw/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>客製化Hugo</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</link>
+      <link>http://localhost:1313/zh-tw/post/custom-hugo/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</guid>
+      <guid>http://localhost:1313/zh-tw/post/custom-hugo/</guid>
       <description>此篇基於hugo blowfish theme完成。 超連結</description>
       
     </item>

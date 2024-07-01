@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C語言 on ZSL&#39;s Blog</title>
+    <link>https://www.zsl0621.cc/tags/c%E8%AA%9E%E8%A8%80/</link>
+    <description>Recent content in C語言 on ZSL&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Thu, 27 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/c%E8%AA%9E%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基礎練習</title>
+      <link>https://www.zsl0621.cc/post/c-practice-2/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/c-practice-2/</guid>
+      <description>1. 矩陣乘法 # 一般方法 # static inline inline只</description>
+      
+    </item>
+    
+    <item>
+      <title>變數宣告</title>
+      <link>https://www.zsl0621.cc/post/c-practice-1/</link>
+      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/post/c-practice-1/</guid>
+      <description>1. 基礎宣告 # Syntax Description int a a is an integer int *a a is a pointer</description>
+      
+    </item>
+    
+  </channel>
+</rss>
