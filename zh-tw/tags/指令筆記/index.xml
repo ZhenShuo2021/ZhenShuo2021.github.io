@@ -7,7 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 07 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>客製化Hugo</title>
+      <link>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/custom-hugo/</guid>
+      <description>此篇基於hugo blowfish theme完成。 超連結</description>
+      
+    </item>
+    
     <item>
       <title>FFmpeg筆記</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/ffmpeg-usage/</link>
@@ -19,12 +29,12 @@
     </item>
     
     <item>
-      <title>常用git指令</title>
+      <title>git指令</title>
       <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-git-comments/</guid>
-      <description>本地使用 # 新建資料夾並初始化 git init 特定檔案</description>
+      <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
       
     </item>
     
