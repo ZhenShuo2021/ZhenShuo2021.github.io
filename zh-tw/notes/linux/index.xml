@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on ZSL Blog</title>
-    <link>https://blog.leo-immich-photos.uk/zh-tw/notes/linux/</link>
+    <link>http://localhost:1313/zh-tw/notes/linux/</link>
     <description>Recent content in Linux on ZSL Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.leo-immich-photos.uk/zh-tw/notes/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/zh-tw/notes/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用linux指令</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-commands/</link>
+      <link>http://localhost:1313/zh-tw/post/common-linux-commands/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-linux-commands/</guid>
+      <guid>http://localhost:1313/zh-tw/post/common-linux-commands/</guid>
       <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
       
     </item>
     
     <item>
       <title>Docker常見指令</title>
-      <link>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-commands/</link>
+      <link>http://localhost:1313/zh-tw/post/common-docker-commands/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.leo-immich-photos.uk/zh-tw/post/common-docker-commands/</guid>
+      <guid>http://localhost:1313/zh-tw/post/common-docker-commands/</guid>
       <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
       
     </item>
