@@ -10,10 +10,10 @@
     <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>常用linux指令</title>
-      <link>https://www.zsl0621.cc/post/common-linux-commands/</link>
+      <link>https://www.zsl0621.cc/posts/common-linux-commands/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/common-linux-commands/</guid>
+      <guid>https://www.zsl0621.cc/posts/common-linux-commands/</guid>
       <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
       
     </item>
