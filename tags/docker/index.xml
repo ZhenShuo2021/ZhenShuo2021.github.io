@@ -10,10 +10,10 @@
     <lastBuildDate>Mon, 27 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker常見指令</title>
-      <link>https://www.zsl0621.cc/post/common-docker-commands/</link>
+      <link>https://www.zsl0621.cc/posts/common-docker-commands/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/common-docker-commands/</guid>
+      <guid>https://www.zsl0621.cc/posts/common-docker-commands/</guid>
       <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
       
     </item>

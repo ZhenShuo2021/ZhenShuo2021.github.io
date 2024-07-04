@@ -10,100 +10,100 @@
     <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>客製化Hugo</title>
-      <link>https://www.zsl0621.cc/post/custom-hugo/</link>
+      <link>https://www.zsl0621.cc/posts/custom-hugo/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/custom-hugo/</guid>
+      <guid>https://www.zsl0621.cc/posts/custom-hugo/</guid>
       <description>此篇基於hugo blowfish theme完成。 超連結</description>
       
     </item>
     
     <item>
       <title>WebP Performance</title>
-      <link>https://www.zsl0621.cc/post/webp-performance/</link>
+      <link>https://www.zsl0621.cc/posts/webp-performance/</link>
       <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/webp-performance/</guid>
+      <guid>https://www.zsl0621.cc/posts/webp-performance/</guid>
       <description>快速看完 # 看完這張圖這篇文章就不用看了。</description>
       
     </item>
     
     <item>
       <title>Rician Fading</title>
-      <link>https://www.zsl0621.cc/post/rayleigh-fading/</link>
+      <link>https://www.zsl0621.cc/posts/rayleigh-fading/</link>
       <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/rayleigh-fading/</guid>
+      <guid>https://www.zsl0621.cc/posts/rayleigh-fading/</guid>
       <description>整理生成Rician fading的方法。</description>
       
     </item>
     
     <item>
       <title>FFmpeg筆記</title>
-      <link>https://www.zsl0621.cc/post/ffmpeg-usage/</link>
+      <link>https://www.zsl0621.cc/posts/ffmpeg-usage/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/ffmpeg-usage/</guid>
+      <guid>https://www.zsl0621.cc/posts/ffmpeg-usage/</guid>
       <description>結果轉完分數只有60。 基本知識 # CRF 越高壓</description>
       
     </item>
     
     <item>
       <title>git指令</title>
-      <link>https://www.zsl0621.cc/post/common-git-comments/</link>
+      <link>https://www.zsl0621.cc/posts/common-git-comments/</link>
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/common-git-comments/</guid>
+      <guid>https://www.zsl0621.cc/posts/common-git-comments/</guid>
       <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
       
     </item>
     
     <item>
       <title>常用linux指令</title>
-      <link>https://www.zsl0621.cc/post/common-linux-commands/</link>
+      <link>https://www.zsl0621.cc/posts/common-linux-commands/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/common-linux-commands/</guid>
+      <guid>https://www.zsl0621.cc/posts/common-linux-commands/</guid>
       <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
       
     </item>
     
     <item>
       <title>Docker常見指令</title>
-      <link>https://www.zsl0621.cc/post/common-docker-commands/</link>
+      <link>https://www.zsl0621.cc/posts/common-docker-commands/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/common-docker-commands/</guid>
+      <guid>https://www.zsl0621.cc/posts/common-docker-commands/</guid>
       <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
       
     </item>
     
     <item>
       <title>架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO</title>
-      <link>https://www.zsl0621.cc/post/blog-cloudflare-ddns/</link>
+      <link>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/blog-cloudflare-ddns/</guid>
+      <guid>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</guid>
       <description>1. 思路 # 沒有思路，只是想找安全上[1][</description>
       
     </item>
     
     <item>
       <title>Exiftool</title>
-      <link>https://www.zsl0621.cc/post/exiftool/</link>
+      <link>https://www.zsl0621.cc/posts/exiftool/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/exiftool/</guid>
+      <guid>https://www.zsl0621.cc/posts/exiftool/</guid>
       <description>Scripts Link (GitHub) This script modifies date tags by the folder name. Use this for albums downloaded from network. 1.</description>
       
     </item>
     
     <item>
       <title>別進來，這是測試</title>
-      <link>https://www.zsl0621.cc/post/test-hugo/</link>
+      <link>https://www.zsl0621.cc/posts/test-hugo/</link>
       <pubDate>Thu, 09 Sep 1999 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/post/test-hugo/</guid>
+      <guid>https://www.zsl0621.cc/posts/test-hugo/</guid>
       <description>Carousel # Press CTRL+ALT+Delete to end the session. Most salamanders are nocturnal, and hunt for insects, worms, and other small</description>
       
     </item>

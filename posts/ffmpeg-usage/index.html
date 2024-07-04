@@ -1,0 +1,2064 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+  data-auto-appearance="true"><head>
+  <meta charset="utf-8" />
+  
+  <meta http-equiv="content-language" content="zh-tw" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>FFmpeg筆記 &middot; ZSL&#39;s Blog</title>
+  <meta name="title" content="FFmpeg筆記 &middot; ZSL&#39;s Blog" />
+  
+  <meta name="description" content="ZSL 的小空間" />
+  <meta name="keywords" content="實用工具, 影像處理, 指令筆記, " />
+  
+  
+  <link rel="canonical" href="https://www.zsl0621.cc/posts/ffmpeg-usage/" />
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.282fb84e03b4c36981a4e5f19c7a734dfd46ac5fa8eae4faf030fa085267dab1c7700edcabd2f0d98f47355453de42293e4e0d3015e6d682761ea3919e7e3cf4.css"
+    integrity="sha512-KC&#43;4TgO0w2mBpOXxnHpzTf1GrF&#43;o6uT68DD6CFJn2rHHcA7cq9Lw2Y9HNVRT3kIpPk4NMBXm1oJ2HqORnn489A==" />
+  
+  
+  <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+  
+  
+  
+  
+  
+  
+  <script defer type="text/javascript" id="script-bundle" src="/js/main.bundle.min.b89ac69ff9802fd5418564a45dada46f018c4ac81ae1bf932b5b6592063cf05a524e658c0ed84f3b96023c793cc651ac796e79381a45512a08354ba66739c767.js"
+    integrity="sha512-uJrGn/mAL9VBhWSkXa2kbwGMSsga4b&#43;TK1tlkgY88FpSTmWMDthPO5YCPHk8xlGseW55OBpFUSoINUumZznHZw==" data-copy="" data-copied=""></script>
+  
+  
+  <script src="/%20js/zoom.min.js"></script>
+  
+  
+  
+  
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.zsl0621.cc/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.zsl0621.cc/android-chrome-512x512.png">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.zsl0621.cc/apple-touch-icon.png">
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zsl0621.cc/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zsl0621.cc/favicon-16x16.png">
+<link rel="shortcut icon" href="https://www.zsl0621.cc/favicon.ico">
+
+
+<link rel="manifest" href="https://www.zsl0621.cc/site.webmanifest">
+
+  
+  
+  
+  <meta name="google-site-verification" content="googlee722738e1de41a1a" />
+  
+  
+  
+  
+  
+  <meta property="og:url" content="https://www.zsl0621.cc/posts/ffmpeg-usage/">
+  <meta property="og:site_name" content="ZSL&#39;s Blog">
+  <meta property="og:title" content="FFmpeg筆記">
+  <meta property="og:description" content="結果轉完分數只有60。 基本知識 # CRF 越高壓">
+  <meta property="og:locale" content="zh_tw">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-06-07T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-06-07T00:00:00+00:00">
+    <meta property="article:tag" content="實用工具">
+    <meta property="article:tag" content="影像處理">
+    <meta property="article:tag" content="指令筆記">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FFmpeg筆記">
+  <meta name="twitter:description" content="結果轉完分數只有60。 基本知識 # CRF 越高壓">
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "初學hugo真的很痛苦",
+    "name": "FFmpeg筆記",
+    "headline": "FFmpeg筆記",
+    
+    "abstract": "結果轉完分數只有60。 基本知識 # CRF 越高壓",
+    "inLanguage": "zh-tw",
+    "url" : "https:\/\/www.zsl0621.cc\/posts\/ffmpeg-usage\/",
+    "author" : {
+      "@type": "Person",
+      "name": "ZSL"
+    },
+    "copyrightYear": "2024",
+    "dateCreated": "2024-06-07T00:00:00\u002b00:00",
+    "datePublished": "2024-06-07T00:00:00\u002b00:00",
+    
+    "dateModified": "2024-06-07T00:00:00\u002b00:00",
+    
+    "keywords": ["實用工具","影像處理","指令筆記"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "913"
+  }]
+  </script>
+
+
+  
+  
+  <meta name="author" content="ZSL" />
+  
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.js" integrity=""></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XMT1S11VE4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XMT1S11VE4');
+</script>
+
+
+  
+  
+  <meta name="theme-color" />
+  
+  
+</head><body
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  <div id="the-top" class="absolute flex self-center">
+    <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+      href="#main-content"><span
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>快轉到主要內容</a>
+  </div>
+  
+  
+  <div class="min-h-[148px]"></div>
+<div class="fixed inset-x-0 pl-[24px] pr-[24px]" style="z-index:100">
+  <div id="menu-blur" class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div>
+  <div class="relative max-w-[64rem] ml-auto mr-auto">
+    <div style="padding-left:0;padding-right:0;padding-top:2px;padding-bottom:3px"
+    class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start space-x-3">
+    
+    <div class="flex flex-1 items-center justify-between">
+        <nav class="flex space-x-3">
+
+            
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL&rsquo;s Blog</a>
+            
+
+        </nav>
+        <nav class="hidden md:flex items-center space-x-5 md:ml-12 h-12">
+
+            
+            
+            
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        文章
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        隨筆
+    </p>
+</a>
+
+
+
+            
+             
+  <div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    
+    <a  href="/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="">
+      筆記
+    </a>
+    <span>
+      
+
+  <span class="relative block icon">
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+
+  </span>
+
+
+    </span>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+          
+          <p class="text-sm font-sm" title="">
+            linux
+          </p>
+        </a>
+        
+        <a href="/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+          
+          <p class="text-sm font-sm" title="">
+            假的！
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            
+            
+
+            
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">繁體中文</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/ffmpeg-usage/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">
+            繁體中文
+          </p>
+        </a>
+        
+        <a href="/en-us/posts/ffmpeg-usage/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">
+            English
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            
+
+
+            
+            
+            <div
+                class="ltr:mr-14 rtl:ml-14 flex items-center">
+                <button id="appearance-switcher" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+                    <div class="flex items-center justify-center dark:hidden">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                    </div>
+                    <div class="items-center justify-center hidden dark:flex">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                    </div>
+                </button>
+            </div>
+            
+
+        </nav>
+        <div class="flex md:hidden items-center space-x-5 md:ml-12 h-12">
+
+            <span></span>
+
+            
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">繁體中文</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/ffmpeg-usage/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">
+            繁體中文
+          </p>
+        </a>
+        
+        <a href="/en-us/posts/ffmpeg-usage/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">
+            English
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+            
+
+            
+            
+            <button id="appearance-switcher-mobile" aria-label="Dark mode switcher" type="button" class="text-base hover:text-primary-600 dark:hover:text-primary-400" style="margin-right:5px">
+                <div class="flex items-center justify-center dark:hidden">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+
+  </span>
+
+
+                </div>
+                <div class="items-center justify-center hidden dark:flex">
+                    
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+
+  </span>
+
+
+                </div>
+            </button>
+            
+
+        </div>
+    </div>
+    <div class="-my-2 -mr-2 md:hidden">
+
+        <label id="menu-button" for="menu-controller" class="block">
+            <input type="checkbox" id="menu-controller" class="hidden" />
+            
+            <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+
+  </span>
+
+
+            </div>
+            <div id="menu-wrapper" style="padding-top:5px;"
+                class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50">
+                <ul
+                    class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+
+                    <li>
+                        <span
+                            class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+
+  </span>
+
+</span>
+                    </li>
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            文章
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/essay/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            隨筆
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                     
+  <li class="mt-1">
+    <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            筆記
+        </p>
+        <span>
+            
+
+  <span class="relative block icon">
+    <svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+
+  </span>
+
+
+        </span>
+    </a>
+</li>
+
+<li class="mt-1">
+    <a href="/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-sm font-small" title="">
+            linux
+        </p>
+    </a>
+</li>
+
+<li class="mt-1">
+    <a href="/notes/dummy/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-sm font-small" title="">
+            假的！
+        </p>
+    </a>
+</li>
+
+<li class="mb-2"></li>
+
+
+
+
+                    
+
+                </ul>
+                
+                
+
+            </div>
+        </label>
+    </div>
+</div>
+
+
+
+
+<script>
+    (function () {
+        var $mainmenu = $('.main-menu');
+        var path = window.location.pathname;
+        $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+            $(e).children('p').addClass('active');
+        });
+    })();
+</script>
+
+
+  </div>
+</div>
+<script>
+  window.addEventListener('scroll', function (e) {
+    var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    var background_blur = document.getElementById('menu-blur');
+    background_blur.style.opacity = (scroll / 300);
+  });
+</script>
+
+  
+  <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      
+
+
+<article>
+  
+  
+  
+  
+  
+  
+ 
+  
+   
+  
+ 
+
+
+
+<div id="hero" class="h-[150px] md:h-[200px]"></div>
+
+
+
+    
+    <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
+    style="background-image:url(/img/global/background_hu98a5ebcc75b004cc2f2a301b757e6310_365554_1200x0_resize_q75_h2_box_2.webp);">
+    
+
+
+    <div class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal">
+    </div>
+    <div
+        class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal">
+    </div>
+</div>
+
+<div id="background-blur" class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+<script>
+    window.addEventListener('scroll', function (e) {
+        var scroll = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+        var background_blur = document.getElementById('background-blur');
+        background_blur.style.opacity = (scroll / 300)
+    });
+</script>
+
+  
+  
+
+  <header id="single_header" class="mt-5 max-w-prose">
+    
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+      FFmpeg筆記
+    </h1>
+    <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+      
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">2024-06-07</time><span class="px-2 text-primary-500">&middot;</span><span>913 字</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+<script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
+
+<span class="mb-[2px]">
+    <span id="zen-mode-button"
+          class="text-lg hover:text-primary-500"
+          title=""
+          data-title-i18n-disable=""
+          data-title-i18n-enable="">
+        <span class="inline-block align-text-bottom">
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg>
+  </span>
+
+</span>
+    </span>
+</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工具
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    實用工具
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    影像處理
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+
+    
+
+  </header>
+  
+  <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    
+     <div
+      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+      <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
+
+         
+
+<details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目錄
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
+    style="max-height: 450px; overflow-y: auto;">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本知識">基本知識</a></li>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用方法">使用方法</a>
+      <ul>
+        <li><a href="#handbrake">HandBrake</a></li>
+        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a>
+          <ul>
+            <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
+            <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
+            <li><a href="#youtube-影片">YouTube 影片</a></li>
+            <li><a href="#轉碼評分">轉碼評分</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#實驗">實驗</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    目錄
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
+    style="max-height: 450px; overflow-y: auto;">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基本知識">基本知識</a></li>
+    <li><a href="#安裝">安裝</a></li>
+    <li><a href="#使用方法">使用方法</a>
+      <ul>
+        <li><a href="#handbrake">HandBrake</a></li>
+        <li><a href="#ffmpeg-使用方法">FFmpeg 使用方法</a>
+          <ul>
+            <li><a href="#轉換整個資料夾">轉換整個資料夾</a></li>
+            <li><a href="#two-pass-conversion">Two-Pass Conversion</a></li>
+            <li><a href="#youtube-影片">YouTube 影片</a></li>
+            <li><a href="#轉碼評分">轉碼評分</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#實驗">實驗</a></li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+ 
+<script>
+  (function () {
+    var $toc = $('#TableOfContents');
+    if ($toc.length > 0) {
+      var $window = $(window);
+
+      function onScroll() {
+        var currentScroll = $window.scrollTop();
+        var h = $('.anchor');
+        var id = "";
+        h.each(function (i, e) {
+          e = $(e);
+          if (e.offset().top - $(window).height()/3 <= currentScroll) {
+            id = decodeURIComponent(e.attr('id'));
+          }
+        });
+        var active = $toc.find('a.active');      
+        if (active.length == 1 && active.eq(0).attr('href') == '#' + id) return true;
+
+        active.each(function (i, e) {
+          
+            $(e).removeClass('active');
+          
+        });
+        $toc.find('a[href="#' + id + '"]').addClass('active')
+        $toc.find('a[href="#' + id + '"]').parentsUntil('#TableOfContents').each(function (i, e) {
+          $(e).children('a').parents('ul').show();          
+        });
+      }
+
+      $window.on('scroll', onScroll);
+      $(document).ready(function () {
+        
+        onScroll();
+      });
+    }
+  })();
+</script>
+
+   </div>
+      </div>
+      
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+        
+
+
+        <div class="article-content max-w-prose mb-20">
+          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  結果轉完分數只有60。
+</div>
+
+
+
+<h1 class="relative group">基本知識 
+    <div id="%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AD%98" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AD%98" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>CRF 越高壓縮率越高，畫質越低。而 CRF 值越低，畫質越高，但文件大小也越大。CRF 範圍是指數級的，因此增加 CRF 值 +6 會導致位元率/文件大小大約減半 <a href="https://trac.ffmpeg.org/wiki/Encode/H.264" target="_blank">(來源)</a>。</p>
+<p>預設 CRF 值：</p>
+<ul>
+<li><a href="https://trac.ffmpeg.org/wiki/Encode/H.264" target="_blank">H.264</a>: 23</li>
+<li><a href="https://trac.ffmpeg.org/wiki/Encode/H.265" target="_blank">H.265 (x265)</a>: 28</li>
+<li><a href="https://trac.ffmpeg.org/wiki/Encode/VP9" target="_blank">VP9</a>: 31</li>
+<li><a href="https://trac.ffmpeg.org/wiki/Encode/AV1" target="_blank">AV1</a>: 35</li>
+</ul>
+<p>每個編解碼器的 CRF 是獨立的。推薦的 CRF 設置也可以在 <a href="https://handbrake.fr/docs/en/1.7.0/workflow/adjust-quality.html" target="_blank">這裡</a> 找到。</p>
+<p>迷思：CRF 18 為視覺無損。考慮CRF 12 才能使高解析度的影片在超大屏幕上恰好視覺無損，那 CRF 18 如何能視覺無損？</p>
+<p><a href="https://www.reddit.com/r/ffmpeg/comments/jc88v3/what_crf_is_visual_lossless_for_4k/" target="_blank">The_Vista_Group@reddit:</a></p>
+<blockquote>
+<p>Visual lossless quality always depends on the source. That&rsquo;s why there are various encoder parameters to tweak.</p>
+</blockquote>
+
+
+<h1 class="relative group">安裝 
+    <div id="%E5%AE%89%E8%A3%9D" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AE%89%E8%A3%9D" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+
+  
+
+
+
+<div
+  
+    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
+  >
+
+  <span
+    
+      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
+    >
+
+    
+
+  <span class="relative block icon">
+    <?xml version="1.0" encoding="UTF-8"?>
+<!-- Generator: Adobe Illustrator 19.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg width="1cm" height="1cm" enable-background="new 0 0 842 595" inkscape:version="1.2.1 (9c6d41e, 2022-07-14)" sodipodi:docname="egg.svg" version="1.1" viewBox="0 0 37.795 37.795" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"><sodipodi:namedview bordercolor="#000000" borderopacity="0.25" inkscape:current-layer="Слой_1" inkscape:cx="58.350567" inkscape:cy="34.370882" inkscape:deskcolor="#d1d1d1" inkscape:document-units="cm" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:showpageshadow="2" inkscape:window-height="667" inkscape:window-maximized="0" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="25" inkscape:zoom="3.1276474" pagecolor="#ffffff" showgrid="false"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<g transform="translate(-368.11 -183.75)">
+	<path d="m389.28 187.61c5.327 0 14.042 2.914 13.602 13.019-0.495 11.389-7.384 13.731-14.882 13.731-7.499 0-10.104 6.566-15.545 1.663-3.297-2.972 0.411-8.506 3e-3 -12.817-1.329-14.053 11.495-15.596 16.822-15.596z" clip-rule="evenodd" fill="#faecb5" fill-rule="evenodd"/>
+	<path d="m388.18 189.74c3.978 0 10.484 2.176 10.156 9.721-0.37 8.504-5.514 10.254-11.113 10.254-5.6 0-7.545 4.903-11.607 1.242-2.462-2.22 0.307-6.353 2e-3 -9.572-0.992-10.493 8.584-11.645 12.562-11.645z" clip-rule="evenodd" fill="#ffffff" fill-rule="evenodd"/>
+	
+		<path d="m376.41 218.74c-1.411 0-2.916-0.546-4.628-2.088-2.511-2.262-1.704-5.657-0.993-8.651 0.395-1.662 0.802-3.379 0.665-4.826-0.332-3.503 0.164-6.535 1.473-9.012 0.262-0.495 0.876-0.685 1.372-0.424 0.496 0.262 0.686 0.877 0.423 1.373-1.12 2.122-1.54 4.771-1.246 7.873 0.168 1.78-0.279 3.664-0.712 5.485-0.664 2.8-1.239 5.217 0.378 6.674 2.694 2.428 4.359 1.61 7.116 0.254 1.974-0.971 4.432-2.179 7.75-2.179 6.198 0 13.375-1.45 13.868-12.76 0.146-3.36-0.775-6.105-2.739-8.156-2.684-2.803-6.847-3.802-9.848-3.802-2.975 0-8.518 0.478-12.225 3.683-0.424 0.366-1.066 0.32-1.433-0.104s-0.319-1.066 0.104-1.433c4.205-3.634 10.296-4.177 13.553-4.177 3.42 0 8.189 1.164 11.314 4.429 2.362 2.467 3.474 5.714 3.302 9.65-0.24 5.52-1.999 9.526-5.227 11.909-2.546 1.88-6.036 2.794-10.67 2.794-2.846 0-4.975 1.047-6.854 1.97-1.569 0.769-3.091 1.518-4.743 1.518z"/>
+	
+	
+		<ellipse transform="matrix(.9454 -.3259 .3259 .9454 -43.747 137.78)" cx="389.38" cy="199.47" rx="6.731" ry="5.79" clip-rule="evenodd" fill="#f78e1e" fill-rule="evenodd"/>
+	
+		<path d="m388.73 206.05c-0.967 0-1.917-0.175-2.799-0.526-1.744-0.694-3.019-1.986-3.588-3.637-0.095-0.275-0.169-0.56-0.222-0.848-0.066-0.368 0.178-0.719 0.545-0.786 0.369-0.068 0.72 0.178 0.787 0.545 0.04 0.22 0.097 0.438 0.169 0.648 0.439 1.273 1.436 2.274 2.808 2.82 1.407 0.561 3.035 0.574 4.582 0.041s2.819-1.547 3.583-2.855c0.745-1.276 0.913-2.679 0.475-3.951-0.439-1.274-1.436-2.274-2.808-2.82-1.407-0.56-3.036-0.574-4.582-0.041-0.75 0.259-1.439 0.632-2.046 1.108-0.294 0.23-0.719 0.18-0.95-0.114s-0.18-0.72 0.114-0.951c0.726-0.57 1.547-1.016 2.441-1.323 1.853-0.639 3.815-0.617 5.524 0.063 1.744 0.694 3.018 1.985 3.588 3.637 0.569 1.651 0.361 3.454-0.585 5.075-0.927 1.587-2.458 2.814-4.311 3.453-0.897 0.308-1.819 0.462-2.725 0.462zm-5.915-6.414c-0.044 0-0.09-4e-3 -0.136-0.014-0.366-0.074-0.603-0.432-0.528-0.798 0.157-0.775 0.462-1.523 0.906-2.226 0.2-0.316 0.617-0.41 0.934-0.211 0.316 0.2 0.411 0.618 0.211 0.934-0.355 0.564-0.599 1.16-0.723 1.772-0.066 0.323-0.348 0.543-0.664 0.543z"/>
+	
+	
+		<ellipse transform="matrix(.9454 -.3259 .3259 .9454 -43.408 137.14)" cx="387.62" cy="198.13" rx="2.966" ry="2.551" clip-rule="evenodd" fill="#ffc917" fill-rule="evenodd"/>
+</g>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</svg>
+
+  </span>
+
+
+  </span>
+
+  <span
+    
+      class="dark:text-neutral-300"
+    >目前使用HandBrake (v1.8.0) 有異常旋轉問題！</span>
+</div>
+
+<p>GUI: <a href="https://handbrake.fr/downloads.php" target="_blank">HandBrake</a>. It uses FFmpeg as its backend.<br>
+CLI: FFmpeg</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew install ffmpeg
+</span></span></code></pre></div>
+
+<h1 class="relative group">使用方法 
+    <div id="%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">HandBrake 
+    <div id="handbrake" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#handbrake" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<pre><code>1. 選擇一個 `Preset`
+2. 點擊 `Open Source`
+3. 選擇 `title` 並單獨調整
+4. 將此標題添加到隊列
+5. 添加所有文件到隊列後，開始轉換。
+</code></pre>
+
+
+<h2 class="relative group">FFmpeg 使用方法 
+    <div id="ffmpeg-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ffmpeg-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">轉換整個資料夾 
+    <div id="%E8%BD%89%E6%8F%9B%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BD%89%E6%8F%9B%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
+<p>將文件夾中的 <code>\*.mov</code> 轉換為 h.265 並輸出到 <code>../output</code> 文件夾</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">for file in *.mov;
+</span></span><span class="line"><span class="cl">    do ffmpeg -i &#34;$file&#34; -c:v libx265 -tag:v hvc1 -crf 28 &#34;$../output/{file%.mov}.mp4&#34;;
+</span></span><span class="line"><span class="cl">done
+</span></span></code></pre></div><p>加上 hvc1 標籤以支援蘋果設備讀取。</p>
+
+
+<h3 class="relative group">Two-Pass Conversion 
+    <div id="two-pass-conversion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#two-pass-conversion" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
+<details>
+	<summary>What is two-pass?</summary>
+<p><a href="https://www.pcdvd.com.tw/printthread.php?t=1109930&amp;page=2&amp;pp=10" target="_blank">Source</a></p>
+<blockquote>
+<p>我昨天研究了一下，根據國外論壇的討論，發現 multi-pass 並非是用來增強畫質，而是用來控制流量而已。</p>
+<p>簡單地說，如果用 CRF（恒定質量）壓出一個 1GB 的影片，再用 2-pass 壓出同樣大小的影片，兩者畫質是幾乎沒有分別的。2-pass 畫質比較好是指和 CBR、ABR 的比較。如果沒有需要精確的流量控制，事實上並不需要用 multi-pass。而 pass 越多次，會越接近設定的流量。</p>
+</blockquote>
+</details>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">for file in *.mov; do
+</span></span><span class="line"><span class="cl">  base=&#34;${file%.mov}&#34;
+</span></span><span class="line"><span class="cl">  ffmpeg -y -i &#34;$file&#34; -c:v libx265 -b:v 1500k -x265-params pass=1 -an -f null /dev/null &amp;&amp; \
+</span></span><span class="line"><span class="cl">  ffmpeg -i &#34;$file&#34; -c:v libx265 -b:v 1500k -x265-params pass=2 -c:a copy &#34;../output/${base}.mp4&#34;
+</span></span><span class="line"><span class="cl">done
+</span></span></code></pre></div>
+
+<h3 class="relative group">YouTube 影片 
+    <div id="youtube-%E5%BD%B1%E7%89%87" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#youtube-%E5%BD%B1%E7%89%87" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
+<p>YouTube 1080p 影片的畫質設定 <a href="https://www.reddit.com/r/ffmpeg/comments/r1qwyy/best_streaming_settings_for_youtube/" target="_blank">(Source)</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ffmpeg -i &lt;INPUT&gt; -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=bt709 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -ar 48000 -ac 2 -b:a 320k -profile:v high -level 4.0 -bf 2 -coder 1 -pix_fmt yuv420p -b:v 10M -threads 4 -cpu-used 0 -r 30 -g 15 -movflags +faststart &lt;OUTPUT&gt;
+</span></span></code></pre></div>
+
+<h3 class="relative group">轉碼評分 
+    <div id="%E8%BD%89%E7%A2%BC%E8%A9%95%E5%88%86" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E8%BD%89%E7%A2%BC%E8%A9%95%E5%88%86" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
+<p>VMAF 是 Netflix 開發的客觀全參考視訊品質指標。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ffmpeg -i &#34;outputFile&#34; -i &#34;sourceFile&#34; -lavfi libvmaf=log_fmt=json:log_path=output.json -f null -
+</span></span></code></pre></div><p>Find your vmaf models for macOS brew install</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">brew list libvmaf
+</span></span><span class="line"><span class="cl">find &#34;outputPath&#34; -name &#34;vmaf_v0.6.1.pkl&#34;
+</span></span><span class="line"><span class="cl">ffmpeg -i input.mp4 -i output.mp4 -lavfi libvmaf=&#34;model_path=/path/model/vmaf_v0.6.1.pkl&#34; -f null -
+</span></span></code></pre></div>
+
+<h1 class="relative group">實驗 
+    <div id="%E5%AF%A6%E9%A9%97" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E5%AF%A6%E9%A9%97" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>使用 11秒 20MB 的影片實驗，不同長度和解析度的影片可能也會導致結果不同。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">使用方式</th>
+<th style="text-align:left">File Size</th>
+<th style="text-align:right">Harmonic Mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">compare itself</td>
+<td style="text-align:left">20MB</td>
+<td style="text-align:right">99.954336</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>-x265-params lossless=1</code></td>
+<td style="text-align:left">240MB</td>
+<td style="text-align:right">63.249678</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CRF=16</code></td>
+<td style="text-align:left">17.5MB</td>
+<td style="text-align:right">62.898537</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CRF=22</code></td>
+<td style="text-align:left">6.5MB</td>
+<td style="text-align:right">62.083465</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>CRF=28</code></td>
+<td style="text-align:left">2.6MB</td>
+<td style="text-align:right">60.153667</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>two-pass rate=1500</code></td>
+<td style="text-align:left">2.1MB</td>
+<td style="text-align:right">58.481517</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>handbreak rate=1500</code></td>
+<td style="text-align:left">2.3MB</td>
+<td style="text-align:right">59.386817</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>handbreak</code></td>
+<td style="text-align:left">6.7MB</td>
+<td style="text-align:right">62.118861</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>ffmpeg預設</code></td>
+<td style="text-align:left">2.4MB</td>
+<td style="text-align:right">58.975480</td>
+</tr>
+</tbody>
+</table>
+<details>
+  <summary>Full vmaf report</summary>
+<p>compare itself<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 97.427842,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 99.954852,<br>
+&ldquo;harmonic_mean&rdquo;: 99.954336<br>
+}</p>
+<p>使用 <code>-x265-params lossless=1</code><br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 92.043819,<br>
+&ldquo;harmonic_mean&rdquo;: 63.249678<br>
+}</p>
+<p>使用 <code>crf=16</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 91.293176,<br>
+&ldquo;harmonic_mean&rdquo;: 62.898537<br>
+}</p>
+<p>使用 <code>crf=22</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 89.517049,<br>
+&ldquo;harmonic_mean&rdquo;: 62.083465<br>
+}</p>
+<p>使用 <code>crf=28</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 85.081152,<br>
+&ldquo;harmonic_mean&rdquo;: 60.153667<br>
+}</p>
+<p>使用 <code>two-pass rate=1500</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 99.919186,<br>
+&ldquo;mean&rdquo;: 81.759161,<br>
+&ldquo;harmonic_mean&rdquo;: 58.481517<br>
+}</p>
+<p>使用 <code>handbreak rate=1500</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 83.455953,<br>
+&ldquo;harmonic_mean&rdquo;: 59.386817<br>
+}</p>
+<p>使用 <code>handbreak</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 89.575997,<br>
+&ldquo;harmonic_mean&rdquo;: 62.118861<br>
+}</p>
+<p>使用 <code>ffmpeg預設</code>:<br>
+&ldquo;vmaf&rdquo;: {<br>
+&ldquo;min&rdquo;: 0.000000,<br>
+&ldquo;max&rdquo;: 100.000000,<br>
+&ldquo;mean&rdquo;: 82.775001,<br>
+&ldquo;harmonic_mean&rdquo;: 58.975480<br>
+}</p>
+</details>
+
+        </div>
+        
+        
+
+          
+            
+            
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
+      alt="ZSL" src="/img/global/zsl_hu6a261a55c341595934acdabfa7063634_484432_192x192_fill_q75_h2_box_center_2.webp" />
+    
+  
+  <div class="place-self-center">
+    
+    <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+      作者
+    </div>
+    <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+      ZSL
+    </div>
+    
+    
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">正事不做。</div>
+    
+    <div class="text-2xl sm:text-lg">
+</div>
+  </div>
+</div>
+
+          
+
+          
+
+          
+          <div class="mb-10"></div>
+          
+
+        
+
+        
+        
+  
+  <section class="flex flex-row flex-wrap justify-center pt-4 text-xl">
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/ffmpeg-usage/&amp;text=FFmpeg%e7%ad%86%e8%a8%98"
+      title="推到 Twitter"
+      aria-label="推到 Twitter"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/ffmpeg-usage/&amp;quote=FFmpeg%e7%ad%86%e8%a8%98"
+      title="分享到 Facebook"
+      aria-label="分享到 Facebook"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+      
+      <a
+      target="_blank"
+      class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+      href="mailto:?body=https://www.zsl0621.cc/posts/ffmpeg-usage/&amp;subject=FFmpeg%e7%ad%86%e8%a8%98"
+      title="以電子郵件發送"
+      aria-label="以電子郵件發送"
+      >
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+
+  </span>
+
+
+    </a>
+      
+    
+  </section>
+
+
+        
+
+
+<h2 class="mt-8 text-2xl font-extrabold mb-10">相關文章</h2>
+<section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+  
+  
+
+  <a href="/posts/exiftool/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/global/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/exiftool/">Exiftool</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-primary-500">&middot;</span><span>321 字</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    工具
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    實用工具
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/posts/common-git-comments/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/global/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/common-git-comments/">git指令</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-primary-500">&middot;</span><span>926 字</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/git/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Git
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/posts/common-linux-commands/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/global/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/common-linux-commands/">常用linux指令</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>193 字</span>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/linux/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Linux
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    指令筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+</section>
+
+  
+      </div>
+     
+      
+      
+        
+        
+          
+          
+        
+          
+          
+        
+      <script>
+        var oid = "views_posts\/ffmpeg-usage\/index.md"
+        var oid_likes = "likes_posts\/ffmpeg-usage\/index.md"
+      </script>
+      
+      
+      
+      <script type="text/javascript" src="/js/page.min.0860cf4e04fa2d72cc33ddba263083464d48f67de06114529043cb4623319efed4f484fd7f1730df5abea0e2da6f3538855634081d02f2d6e920b956f063e823.js" integrity="sha512-CGDPTgT6LXLMM926JjCDRk1I9n3gYRRSkEPLRiMxnv7U9IT9fxcw31q&#43;oOLabzU4hVY0CB0C8tbpILlW8GPoIw=="></script>
+  
+    </section>
+  <footer class="pt-8 max-w-prose print:hidden">
+
+    
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/posts/common-git-comments/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >git指令</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/rayleigh-fading/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Rician Fading</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-06-14 02:45:40 &#43;0800 CST">2024-06-14</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+    
+  </footer>
+</article>
+
+      <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
+  <a href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="捲動到頁頂" title="捲動到頁頂">
+    &uarr;
+  </a>
+</div>
+    </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+    <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400">
+      <ul class="flex flex-col list-none sm:flex-row">
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/author/zsl/"
+            title="">
+            
+            作者
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
+            title="">
+            
+            標籤
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/categories/"
+            title="">
+            
+            分類
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="archives"
+            title="">
+            
+            所有文章
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="https://x.com/sinonome_umi"
+            title="">
+            
+            <span >
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg>
+  </span>
+
+
+            </span>
+            
+            
+          </a>
+        </li>
+        
+        <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="https://github.com/ZhenShuo2021"
+            title="">
+            
+            <span >
+                
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+
+  </span>
+
+
+            </span>
+            
+            
+          </a>
+        </li>
+        
+      </ul>
+    </nav>
+    
+  
+  <div class="flex items-center justify-between">
+
+    
+    
+    <p class="text-sm text-neutral-500 dark:text-neutral-400">
+      &copy;
+      2024
+      ZSL
+    </p>
+    
+
+    
+    
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">
+      
+      
+      以 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 製作
+    </p>
+    
+
+  </div>
+  <script>
+    
+    mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+      margin: 24,
+      background: 'rgba(0,0,0,0.5)',
+      scrollOffset: 0,
+    })
+    
+  </script>
+  
+  
+  <script type="text/javascript" src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js" integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+
+  </div>
+</body>
+
+
+</html>
