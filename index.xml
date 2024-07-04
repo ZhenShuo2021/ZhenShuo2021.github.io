@@ -19,26 +19,6 @@
     </item>
     
     <item>
-      <title>基礎練習</title>
-      <link>https://www.zsl0621.cc/post/c-practice-2/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/post/c-practice-2/</guid>
-      <description>1. 矩陣乘法 # 一般方法 # static inline inline只</description>
-      
-    </item>
-    
-    <item>
-      <title>變數宣告</title>
-      <link>https://www.zsl0621.cc/post/c-practice-1/</link>
-      <pubDate>Thu, 27 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/post/c-practice-1/</guid>
-      <description>1. 基礎宣告 # Syntax Description int a a is an integer int *a a is a pointer</description>
-      
-    </item>
-    
-    <item>
       <title>WebP Performance</title>
       <link>https://www.zsl0621.cc/post/webp-performance/</link>
       <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
