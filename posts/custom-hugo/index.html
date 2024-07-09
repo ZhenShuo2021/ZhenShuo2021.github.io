@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>客製化Hugo &middot; ZSL&#39;s Blog</title>
-  <meta name="title" content="客製化Hugo &middot; ZSL&#39;s Blog" />
+  <title>架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog</title>
+  <meta name="title" content="架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog" />
   
   <meta name="description" content="Custom hugo layouts" />
   <meta name="keywords" content="hugo, 指令筆記, 架站紀錄, " />
@@ -76,7 +76,7 @@
   
   <meta property="og:url" content="https://www.zsl0621.cc/posts/custom-hugo/">
   <meta property="og:site_name" content="ZSL&#39;s Blog">
-  <meta property="og:title" content="客製化Hugo">
+  <meta property="og:title" content="架站紀錄：客製化Hugo">
   <meta property="og:description" content="Custom hugo layouts">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
@@ -90,7 +90,7 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="客製化Hugo">
+  <meta name="twitter:title" content="架站紀錄：客製化Hugo">
   <meta name="twitter:description" content="Custom hugo layouts">
 
   
@@ -99,10 +99,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "初學hugo真的很痛苦",
-    "name": "客製化Hugo",
-    "headline": "客製化Hugo",
+    "name": "架站紀錄：客製化Hugo",
+    "headline": "架站紀錄：客製化Hugo",
     "description": "Custom hugo layouts",
-    "abstract": "此篇基於hugo blowfish theme完成。 超連結",
+    "abstract": "此客製化基於 hugo blowfish theme 完成。 超連結 # 游標移動",
     "inLanguage": "zh-tw",
     "url" : "https:\/\/www.zsl0621.cc\/posts\/custom-hugo\/",
     "author" : {
@@ -118,7 +118,7 @@
     "keywords": ["hugo","指令筆記","架站紀錄"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "674"
+    "wordCount": "1279"
   }]
   </script>
 
@@ -556,7 +556,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      客製化Hugo
+      架站紀錄：客製化Hugo
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -601,7 +601,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-primary-500">&middot;</span><span>674 字</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>1279 字</span><span class="px-2 text-neutral-500">&VerticalLine;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
@@ -736,6 +736,12 @@
     <li><a href="#超連結">超連結</a></li>
     <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
     <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
+    <li><a href="#修復網站-logo">修復網站 logo</a></li>
+    <li><a href="#修改註腳">修改註腳</a></li>
+    <li><a href="#修改選集功能">修改選集功能</a></li>
+    <li><a href="#修改文章資訊">修改文章資訊</a></li>
+    <li><a href="#todo">TODO</a></li>
   </ul>
 </nav>
   </div>
@@ -753,6 +759,12 @@
     <li><a href="#超連結">超連結</a></li>
     <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
     <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
+    <li><a href="#修復網站-logo">修復網站 logo</a></li>
+    <li><a href="#修改註腳">修改註腳</a></li>
+    <li><a href="#修改選集功能">修改選集功能</a></li>
+    <li><a href="#修改文章資訊">修改文章資訊</a></li>
+    <li><a href="#todo">TODO</a></li>
   </ul>
 </nav>
   </div>
@@ -809,7 +821,7 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        架站紀錄 - 本文屬於一個選集。
+        架站紀錄
     </summary>
     
     
@@ -817,7 +829,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            § 1: 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO
+            #1 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO
         </a>
     </div>
     
@@ -825,7 +837,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        <a href="https://www.zsl0621.cc/posts/custom-hugo/">
+            #2 [本文] 架站紀錄：客製化Hugo 
+        </a>
     </div>
     
     
@@ -836,7 +850,7 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>此篇基於hugo blowfish theme完成。</p>
+          <p>此客製化基於 hugo blowfish theme 完成。</p>
 
 
 <h1 class="relative group">超連結 
@@ -876,7 +890,7 @@
     
 </h1>
 <p>列出所有文章，無論是哪一種分類（目前還無法套用本站背景圖片）</p>
-<p>在assets/css/custom.css新增以下：</p>
+<p>在 <code>assets/css/custom.css</code> 新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.container {
 </span></span><span class="line"><span class="cl">    max-width: 800px;
 </span></span><span class="line"><span class="cl">    margin: 0 auto;
@@ -923,7 +937,7 @@
 </span></span><span class="line"><span class="cl">  .post-title:hover {
 </span></span><span class="line"><span class="cl">    text-decoration: underline;
 </span></span><span class="line"><span class="cl">  }
-</span></span></code></pre></div><p>在layouts/_default/archives.html新增以下：</p>
+</span></span></code></pre></div><p>在 <code>layouts/_default/archives.html</code> 新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ define &#34;main&#34; }}
 </span></span><span class="line"><span class="cl">&lt;article class=&#34;max-w-full prose dark:prose-invert&#34; style=&#34;background-image: url(&#39;/img/background.webp&#39;); background-size: cover; background-position: center;&#34;&gt;
 </span></span><span class="line"><span class="cl">    &lt;header class=&#34;mb-4&#34;&gt;
@@ -955,7 +969,7 @@
 </span></span></code></pre></div><p>最後，在menus.zh-tw.toml新增：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[[footer]]
 </span></span><span class="line"><span class="cl">  name = &#34;所有文章&#34;
-</span></span><span class="line"><span class="cl">  url = &#34;archives&#34;
+</span></span><span class="line"><span class="cl">  pageRef = &#34;archives&#34;
 </span></span><span class="line"><span class="cl">  weight = 40
 </span></span></code></pre></div>
 
@@ -970,7 +984,7 @@
     
 </h1>
 <p>ToC過長時增加滾輪</p>
-<p>把layouts/partials/toc.html，&lt;details open class&gt;整段換成以下：</p>
+<p>把 <code>layouts/partials/toc.html</code> 中 <code>\&lt;details open class\&gt;</code> 整段換成以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;details open class=&#34;toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block&#34;&gt;
 </span></span><span class="line"><span class="cl">  &lt;summary
 </span></span><span class="line"><span class="cl">    class=&#34;block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden&#34;&gt;
@@ -994,6 +1008,178 @@
 </span></span><span class="line"><span class="cl">  &lt;/div&gt;
 </span></span><span class="line"><span class="cl">&lt;/details&gt;
 </span></span></code></pre></div>
+
+<h1 class="relative group">修改網頁標籤名稱 
+    <div id="%E4%BF%AE%E6%94%B9%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>把 blowfish 預設的 dot 改為 dash，找到 <code>layouts/partials/head.html</code> 中以下片段：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;title&gt;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;meta name=&#34;title&#34; content=&#34;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&#34; /&gt;
+</span></span></code></pre></div><p>把 <code>&amp;middot</code> 改為 <code>&amp;#45</code>。</p>
+
+
+<h1 class="relative group">修復網站 logo 
+    <div id="%E4%BF%AE%E5%BE%A9%E7%B6%B2%E7%AB%99-logo" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E5%BE%A9%E7%B6%B2%E7%AB%99-logo" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。<br>
+在 <code>layouts/partials</code> 新增 favicons.html ，新增以下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;192x192&#34; href=&#34;{{ &#34;android-chrome-192x192.png&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;512x512&#34; href=&#34;{{ &#34;android-chrome-512x512.png&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;apple-touch-icon&#34; sizes=&#34;180x180&#34; href=&#34;{{ &#34;apple-touch-icon.png&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;32x32&#34; href=&#34;{{ &#34;favicon-32x32.png&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;16x16&#34; href=&#34;{{ &#34;favicon-16x16.png&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;shortcut icon&#34; href=&#34;{{ &#34;favicon.ico&#34; | absURL }}&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;link rel=&#34;manifest&#34; href=&#34;{{ &#34;site.webmanifest&#34; | absURL }}&#34;&gt;
+</span></span></code></pre></div>
+
+<h1 class="relative group">修改註腳 
+    <div id="%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>縮小 footnote 字體以及修改標籤樣式。<br>
+在 <code>assets/css/custom.css</code> 中，新增以下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* 縮小 footnote 字體 */
+</span></span><span class="line"><span class="cl">.footnotes {
+</span></span><span class="line"><span class="cl">    font-size: 0.7em;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* footnote 引用樣式 */
+</span></span><span class="line"><span class="cl">.footnote-ref::before {
+</span></span><span class="line"><span class="cl">    content: &#34;[&#34;;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">.footnote-ref::after {
+</span></span><span class="line"><span class="cl">    content: &#34;]&#34;;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* 調整 sup 標籤樣式 */
+</span></span><span class="line"><span class="cl">sup {
+</span></span><span class="line"><span class="cl">    font-size: xx-small;
+</span></span><span class="line"><span class="cl">    vertical-align: super;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* 移除原本的編號樣式 */
+</span></span><span class="line"><span class="cl">.footnotes ol {
+</span></span><span class="line"><span class="cl">    list-style-type: none; /* 移除原本的編號 */
+</span></span><span class="line"><span class="cl">    padding-left: 0;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* 修改 footnote 列表項的樣式 */
+</span></span><span class="line"><span class="cl">.footnotes ol li {
+</span></span><span class="line"><span class="cl">    counter-increment: footnote; /* 增加計數器 */
+</span></span><span class="line"><span class="cl">    position: relative;
+</span></span><span class="line"><span class="cl">    margin-left: 2em; /* 調整左邊距，使其與文章內容有適當間隔 */
+</span></span><span class="line"><span class="cl">    line-height: 1.8; /* 調整行高，使超連結可以正確顯示 */
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">.footnotes ol li:before {
+</span></span><span class="line"><span class="cl">    content: &#34;[&#34; counter(footnote) &#34;]&#34;; /* 使用計數器顯示編號 */
+</span></span><span class="line"><span class="cl">    font-weight: normal;
+</span></span><span class="line"><span class="cl">    position: absolute;
+</span></span><span class="line"><span class="cl">    left: -1.5em; /* 將編號設置在列表項的左側 */
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* 將原始編號隱藏 */
+</span></span><span class="line"><span class="cl">.footnotes ol li a:first-child {
+</span></span><span class="line"><span class="cl">    display: inline-block; /* 保留超連結的顯示 */
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div>
+
+<h1 class="relative group">修改選集功能 
+    <div id="%E4%BF%AE%E6%94%B9%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<ol>
+<li>把選集功能後面的「- 本文屬於一個選集。」刪掉。</li>
+<li>修改選集樣式並把本文也加上超連結。</li>
+</ol>
+<p>刪掉「- 本文屬於一個選集。」：找到 <code>layouts/partials/series/series_base.html</code> ，修改為</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ if .Params.series }}
+</span></span><span class="line"><span class="cl">    &lt;summary
+</span></span><span class="line"><span class="cl">        class=&#34;py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100&#34;&gt;
+</span></span><span class="line"><span class="cl">        {{ index .Params.series 0 }}
+</span></span><span class="line"><span class="cl">    &lt;/summary&gt;
+</span></span><span class="line"><span class="cl">    {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+</span></span><span class="line"><span class="cl">    {{ range $post := sort (index .Site.Taxonomies.series $seriesName) &#34;Params.series_order&#34; }}
+</span></span><span class="line"><span class="cl">    {{ if eq $post.Permalink $.Page.Permalink }}
+</span></span><span class="line"><span class="cl">    &lt;div
+</span></span><span class="line"><span class="cl">        class=&#34;py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;a href=&#34;{{$post.Permalink}}&#34;&gt;
+</span></span><span class="line"><span class="cl">            {{ i18n &#34;article.part&#34; }}{{ $post.Params.series_order }} {{ i18n &#34;article.this_article&#34; }} {{ $post.Params.title}} 
+</span></span><span class="line"><span class="cl">        &lt;/a&gt;
+</span></span><span class="line"><span class="cl">    &lt;/div&gt;
+</span></span><span class="line"><span class="cl">    {{ else }}
+</span></span><span class="line"><span class="cl">    &lt;div
+</span></span><span class="line"><span class="cl">        class=&#34;py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;a href=&#34;{{$post.Permalink}}&#34;&gt;
+</span></span><span class="line"><span class="cl">            {{ i18n &#34;article.part&#34; }}{{ $post.Params.series_order }} {{ $post.Params.title}}
+</span></span><span class="line"><span class="cl">        &lt;/a&gt;
+</span></span><span class="line"><span class="cl">    &lt;/div&gt;
+</span></span><span class="line"><span class="cl">    {{end}}
+</span></span><span class="line"><span class="cl">    {{end}}
+</span></span><span class="line"><span class="cl">{{end}}
+</span></span></code></pre></div><p><code>$post.Permalink</code> 裡面就是選集樣式。再去 i18n 中把修改自己語言的檔案，我的改成以下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">part: &#34;#&#34;
+</span></span><span class="line"><span class="cl">this_article: &#34;[本文]&#34;
+</span></span></code></pre></div>
+
+<h1 class="relative group">修改文章資訊 
+    <div id="%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<p>加上編輯時間就後就顯得凌亂，修改樣式。把 <code>layouts/partials/article-meta/basic.html</code> 中的</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ delimit . &#34;&lt;span class=\&#34;px-2 text-primary-500\&#34;&gt;&amp;middot;&lt;/span&gt;&#34; | safeHTML }}
+</span></span></code></pre></div><p>改為</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ delimit . &#34;&lt;span class=\&#34;px-2 text-neutral-500\&#34;&gt;&amp;VerticalLine;&lt;/span&gt;&#34; | safeHTML }}
+</span></span></code></pre></div>
+
+<h1 class="relative group">TODO 
+    <div id="todo" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#todo" aria-label="定位點">#</a>
+    </span>        
+    
+</h1>
+<ol>
+<li>增加 ToC 寬度</li>
+</ol>
+
         </div>
         
         
@@ -1047,7 +1233,7 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        架站紀錄 - 本文屬於一個選集。
+        架站紀錄
     </summary>
     
     
@@ -1055,7 +1241,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            § 1: 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO
+            #1 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO
         </a>
     </div>
     
@@ -1063,7 +1249,9 @@
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        § 2: 本文
+        <a href="https://www.zsl0621.cc/posts/custom-hugo/">
+            #2 [本文] 架站紀錄：客製化Hugo 
+        </a>
     </div>
     
     
@@ -1079,7 +1267,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/custom-hugo/&amp;text=%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/custom-hugo/&amp;text=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1097,7 +1285,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/custom-hugo/&amp;quote=%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/custom-hugo/&amp;quote=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1116,7 +1304,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/posts/custom-hugo/&amp;subject=%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
+      href="mailto:?body=https://www.zsl0621.cc/posts/custom-hugo/&amp;subject=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e5%ae%a2%e8%a3%bd%e5%8c%96Hugo"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -1195,7 +1383,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-primary-500">&middot;</span><span>926 字</span>
+  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>926 字</span>
   
 
   
@@ -1332,7 +1520,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-primary-500">&middot;</span><span>193 字</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>193 字</span>
   
 
   
@@ -1469,7 +1657,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-primary-500">&middot;</span><span>96 字</span>
+  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>96 字</span>
   
 
   
@@ -1659,7 +1847,7 @@
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="archives"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/archives/"
             title="">
             
             所有文章
