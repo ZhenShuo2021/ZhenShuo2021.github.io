@@ -215,6 +215,38 @@
     />
   </url>
   <url>
+    <loc>https://www.zsl0621.cc/en-us/author/</loc>
+    <lastmod>1998-06-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/author/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/author/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/author/zsl/</loc>
+    <lastmod>1998-06-21T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/author/zsl/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/author/zsl/"
+    />
+  </url>
+  <url>
     <loc>https://www.zsl0621.cc/en-us/notes/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -227,21 +259,6 @@
       rel="alternate"
       hreflang="en"
       href="https://www.zsl0621.cc/en-us/notes/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/en-us/author/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/author/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/author/"
     />
   </url>
   <url>
@@ -302,21 +319,6 @@
       rel="alternate"
       hreflang="en"
       href="https://www.zsl0621.cc/en-us/notes/dummy/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/en-us/author/zsl/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/author/zsl/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/author/zsl/"
     />
   </url>
   <url>

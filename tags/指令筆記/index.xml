@@ -14,7 +14,7 @@
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/custom-hugo/</guid>
-      <description>此客製化基於 hugo blowfish theme 完成。 超連結 # 游標移動</description>
+      <description>客製化 Hugo 各種設定。</description>
       
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/ffmpeg-usage/</guid>
-      <description>結果轉完分數只有60。 基本知識 # CRF 越高壓</description>
+      <description>結果轉完分數只有60</description>
       
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-git-comments/</guid>
-      <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
+      <description>只講重點，網路上教學廢話好多好煩</description>
       
     </item>
     
@@ -44,17 +44,17 @@
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-linux-commands/</guid>
-      <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
+      <description>紀錄常用的 linux 指令</description>
       
     </item>
     
     <item>
-      <title>Docker常見指令</title>
+      <title>常用Docker指令</title>
       <link>https://www.zsl0621.cc/posts/common-docker-commands/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-docker-commands/</guid>
-      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
+      <description>紀錄常用的 docker 指令</description>
       
     </item>
     
@@ -64,7 +64,7 @@
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</guid>
-      <description>1. 思路 # 沒有思路，只是想找安全上[1][</description>
+      <description>紀錄把一台破電腦裝成 NAS 的過程</description>
       
     </item>
     
@@ -74,7 +74,7 @@
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/exiftool/</guid>
-      <description>Scripts Link (GitHub) This script modifies date tags by the folder name. Use this for albums downloaded from network. 1.</description>
+      <description>一些 Exif 指令和腳本。</description>
       
     </item>
     
