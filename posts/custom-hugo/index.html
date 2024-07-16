@@ -11,7 +11,7 @@
   <title>架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog</title>
   <meta name="title" content="架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog" />
   
-  <meta name="description" content="Custom hugo layouts" />
+  <meta name="description" content="客製化 Hugo 各種設定。" />
   <meta name="keywords" content="hugo, 指令筆記, 架站紀錄, " />
   
   
@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.282fb84e03b4c36981a4e5f19c7a734dfd46ac5fa8eae4faf030fa085267dab1c7700edcabd2f0d98f47355453de42293e4e0d3015e6d682761ea3919e7e3cf4.css"
-    integrity="sha512-KC&#43;4TgO0w2mBpOXxnHpzTf1GrF&#43;o6uT68DD6CFJn2rHHcA7cq9Lw2Y9HNVRT3kIpPk4NMBXm1oJ2HqORnn489A==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9ab27f83d71fcfb8216322bde24ad553761c04ea16c416d2a0267ed8dcda1eaeb82bd81359d5ff15eda30478c4986f63836c8a56b1a63cb27233d07157f49302.css"
+    integrity="sha512-mrJ/g9cfz7ghYyK94krVU3YcBOoWxBbSoCZ&#43;2NzaHq64K9gTWdX/Fe2jBHjEmG9jg2yKVrGmPLJyM9BxV/STAg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -98,11 +98,11 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "初學hugo真的很痛苦",
+    "articleSection": "文章列表",
     "name": "架站紀錄：客製化Hugo",
     "headline": "架站紀錄：客製化Hugo",
     "description": "Custom hugo layouts",
-    "abstract": "此客製化基於 hugo blowfish theme 完成。 超連結 # 游標移動",
+    "abstract": "客製化 Hugo 各種設定。",
     "inLanguage": "zh-tw",
     "url" : "https:\/\/www.zsl0621.cc\/posts\/custom-hugo\/",
     "author" : {
@@ -118,7 +118,7 @@
     "keywords": ["hugo","指令筆記","架站紀錄"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1279"
+    "wordCount": "1353"
   }]
   </script>
 
@@ -171,7 +171,7 @@
   
   
 </head><body
-  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
@@ -601,10 +601,10 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>1279 字</span><span class="px-2 text-neutral-500">&VerticalLine;</span>
+  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-neutral-500">&middot;</span><span>1353 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
-<script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
+<script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
 
 <span class="mb-[2px]">
     <span id="zen-mode-button"
@@ -721,27 +721,25 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         
-
-<details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
   </summary>
   <div
-    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#超連結">超連結</a></li>
     <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#table-of-contents"><del>Table of Contents</del></a></li>
     <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
     <li><a href="#修復網站-logo">修復網站 logo</a></li>
-    <li><a href="#修改註腳">修改註腳</a></li>
+    <li><a href="#修改註腳文章引用">修改註腳（文章引用）</a></li>
     <li><a href="#修改選集功能">修改選集功能</a></li>
     <li><a href="#修改文章資訊">修改文章資訊</a></li>
-    <li><a href="#todo">TODO</a></li>
+    <li><a href="#todo">ToDo</a></li>
   </ul>
 </nav>
   </div>
@@ -752,26 +750,50 @@
     目錄
   </summary>
   <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#超連結">超連結</a></li>
     <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
-    <li><a href="#table-of-contents">Table of Contents</a></li>
+    <li><a href="#table-of-contents"><del>Table of Contents</del></a></li>
     <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
     <li><a href="#修復網站-logo">修復網站 logo</a></li>
-    <li><a href="#修改註腳">修改註腳</a></li>
+    <li><a href="#修改註腳文章引用">修改註腳（文章引用）</a></li>
     <li><a href="#修改選集功能">修改選集功能</a></li>
     <li><a href="#修改文章資訊">修改文章資訊</a></li>
-    <li><a href="#todo">TODO</a></li>
+    <li><a href="#todo">ToDo</a></li>
   </ul>
 </nav>
   </div>
 </details>
 
- 
 <script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -808,8 +830,9 @@
       });
     }
   })();
-</script>
 
+
+</script>
    </div>
       </div>
       
@@ -973,7 +996,7 @@
 </span></span><span class="line"><span class="cl">  weight = 40
 </span></span></code></pre></div>
 
-<h1 class="relative group">Table of Contents 
+<h1 class="relative group"><del>Table of Contents</del> 
     <div id="table-of-contents" class="anchor"></div>
     
     <span
@@ -983,7 +1006,18 @@
     </span>        
     
 </h1>
-<p>ToC過長時增加滾輪</p>
+<p>
+<div class="flex mt-2">
+<span
+  class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
+>
+  <span class="flex flex-row items-center">
+    
+    <span>在 <a href="https://github.com/nunocoracao/blowfish/releases/tag/v2.71.0" target="_blank">v2.71.0</a> 修正</span>
+  </span>
+</span>
+</div>
+ToC過長時增加滾輪</p>
 <p>把 <code>layouts/partials/toc.html</code> 中 <code>\&lt;details open class\&gt;</code> 整段換成以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;details open class=&#34;toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block&#34;&gt;
 </span></span><span class="line"><span class="cl">  &lt;summary
@@ -1047,17 +1081,17 @@
 </span></span><span class="line"><span class="cl">&lt;link rel=&#34;manifest&#34; href=&#34;{{ &#34;site.webmanifest&#34; | absURL }}&#34;&gt;
 </span></span></code></pre></div>
 
-<h1 class="relative group">修改註腳 
-    <div id="%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3" class="anchor"></div>
+<h1 class="relative group">修改註腳（文章引用） 
+    <div id="%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" aria-label="定位點">#</a>
     </span>        
     
 </h1>
-<p>縮小 footnote 字體以及修改標籤樣式。<br>
+<p>縮小 footnote 字體以及修改標籤樣式，讓他長得比較像論文格式。<br>
 在 <code>assets/css/custom.css</code> 中，新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* 縮小 footnote 字體 */
 </span></span><span class="line"><span class="cl">.footnotes {
@@ -1091,6 +1125,7 @@
 </span></span><span class="line"><span class="cl">    position: relative;
 </span></span><span class="line"><span class="cl">    margin-left: 2em; /* 調整左邊距，使其與文章內容有適當間隔 */
 </span></span><span class="line"><span class="cl">    line-height: 1.8; /* 調整行高，使超連結可以正確顯示 */
+</span></span><span class="line"><span class="cl">    margin-bottom: -1.2em; /* 調整每個 footnote 間的距離 */
 </span></span><span class="line"><span class="cl">}
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">.footnotes ol li:before {
@@ -1166,7 +1201,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ delimit . &#34;&lt;span class=\&#34;px-2 text-neutral-500\&#34;&gt;&amp;VerticalLine;&lt;/span&gt;&#34; | safeHTML }}
 </span></span></code></pre></div>
 
-<h1 class="relative group">TODO 
+<h1 class="relative group">ToDo 
     <div id="todo" class="anchor"></div>
     
     <span
@@ -1178,6 +1213,10 @@
 </h1>
 <ol>
 <li>增加 ToC 寬度</li>
+<li>邊界線對比度過低</li>
+<li>閱讀進度比例</li>
+<li>深色模式中超連結的顏色</li>
+<li>深色模式中所有文章的日期顏色</li>
 </ol>
 
         </div>
@@ -1383,7 +1422,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>926 字</span>
+  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&middot;</span><span>926 字</span>
   
 
   
@@ -1457,6 +1496,10 @@
         </div>
 
         
+        <div class="py-1 prose dark:prose-invert">
+          只講重點，網路上教學廢話好多好煩
+        </div>
+        
       </div>
       <div class="px-6 pt-4 pb-2">
 
@@ -1520,7 +1563,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>193 字</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&middot;</span><span>230 字</span>
   
 
   
@@ -1594,6 +1637,10 @@
         </div>
 
         
+        <div class="py-1 prose dark:prose-invert">
+          紀錄常用的 linux 指令
+        </div>
+        
       </div>
       <div class="px-6 pt-4 pb-2">
 
@@ -1616,7 +1663,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/common-docker-commands/">Docker常見指令</div>
+          href="/posts/common-docker-commands/">常用Docker指令</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1657,7 +1704,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>96 字</span>
+  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-neutral-500">&middot;</span><span>96 字</span>
   
 
   
@@ -1730,6 +1777,10 @@
 
         </div>
 
+        
+        <div class="py-1 prose dark:prose-invert">
+          紀錄常用的 docker 指令
+        </div>
         
       </div>
       <div class="px-6 pt-4 pb-2">
@@ -1936,6 +1987,5 @@
 
   </div>
 </body>
-
 
 </html>

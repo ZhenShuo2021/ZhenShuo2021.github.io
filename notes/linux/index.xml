@@ -14,17 +14,17 @@
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-linux-commands/</guid>
-      <description>搬移整個資料夾 # mv source/folder/ dest/folder/ &amp;#34;final / is must&amp;#34; 容量檢查 #</description>
+      <description>紀錄常用的 linux 指令</description>
       
     </item>
     
     <item>
-      <title>Docker常見指令</title>
+      <title>常用Docker指令</title>
       <link>https://www.zsl0621.cc/posts/common-docker-commands/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-docker-commands/</guid>
-      <description>Show ID and Stop # docker ps docker container stop [ID] Run, Stop, Restart # docker compose up -d docker</description>
+      <description>紀錄常用的 docker 指令</description>
       
     </item>
     

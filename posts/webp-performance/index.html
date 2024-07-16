@@ -11,7 +11,7 @@
   <title>WebP Performance &#45; ZSL&#39;s Blog</title>
   <meta name="title" content="WebP Performance &#45; ZSL&#39;s Blog" />
   
-  <meta name="description" content="Webp Performance form Google WebP Project Team" />
+  <meta name="description" content="WebP 與 AVIF 的壓縮率比較" />
   <meta name="keywords" content="影像處理, " />
   
   
@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.282fb84e03b4c36981a4e5f19c7a734dfd46ac5fa8eae4faf030fa085267dab1c7700edcabd2f0d98f47355453de42293e4e0d3015e6d682761ea3919e7e3cf4.css"
-    integrity="sha512-KC&#43;4TgO0w2mBpOXxnHpzTf1GrF&#43;o6uT68DD6CFJn2rHHcA7cq9Lw2Y9HNVRT3kIpPk4NMBXm1oJ2HqORnn489A==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9ab27f83d71fcfb8216322bde24ad553761c04ea16c416d2a0267ed8dcda1eaeb82bd81359d5ff15eda30478c4986f63836c8a56b1a63cb27233d07157f49302.css"
+    integrity="sha512-mrJ/g9cfz7ghYyK94krVU3YcBOoWxBbSoCZ&#43;2NzaHq64K9gTWdX/Fe2jBHjEmG9jg2yKVrGmPLJyM9BxV/STAg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -95,11 +95,11 @@
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "初學hugo真的很痛苦",
+    "articleSection": "文章列表",
     "name": "WebP Performance",
     "headline": "WebP Performance",
     "description": "Webp Performance form Google WebP Project Team",
-    "abstract": "快速看完 # 看完這張圖這篇文章就不用看了。",
+    "abstract": "WebP 與 AVIF 的壓縮率比較",
     "inLanguage": "zh-tw",
     "url" : "https:\/\/www.zsl0621.cc\/posts\/webp-performance\/",
     "author" : {
@@ -115,7 +115,7 @@
     "keywords": ["影像處理"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "413"
+    "wordCount": "408"
   }]
   </script>
 
@@ -168,7 +168,7 @@
   
   
 </head><body
-  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
@@ -598,10 +598,10 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-20 21:30:40 &#43;0800 CST">2024-06-20</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>413 字</span><span class="px-2 text-neutral-500">&VerticalLine;</span>
+  <time datetime="2024-06-20 21:30:40 &#43;0800 CST">2024-06-20</time><span class="px-2 text-neutral-500">&middot;</span><span>408 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
-<script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
+<script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
 
 <span class="mb-[2px]">
     <span id="zen-mode-button"
@@ -702,21 +702,18 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         
-
-<details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     目錄
   </summary>
   <div
-    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#快速看完">快速看完</a></li>
     <li><a href="#正文">正文</a></li>
-    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
   </div>
@@ -727,20 +724,43 @@
     目錄
   </summary>
   <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#快速看完">快速看完</a></li>
     <li><a href="#正文">正文</a></li>
-    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
   </div>
 </details>
 
- 
 <script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -777,8 +797,9 @@
       });
     }
   })();
-</script>
 
+
+</script>
    </div>
       </div>
       
@@ -831,30 +852,27 @@
     
 </h1>
 <p>最近用WebP轉存圖片轉得很開心，壓二次元圖隨便都是80%以上壓縮率，現在來關心一下他的解碼性能。</p>
-<p>根據 Google Group 上的討論<a href="#ref1"><sup>[1]</sup></a>， WebP 的解碼速度是弱於 JPG 的，畢竟 JPG 都已經發展這麼久了軟硬體都已經很成熟。這麼說來 WebP 除了壓縮率以外沒有優勢嗎？並不是， WebP 是為了網路而生，把下載時間也算進來整體載入速度是提高的，如果有增量解碼載入速度提升更多。</p>
-<p>至於轉換品質，這裡有一個懶人包<a href="#ref2"><sup>[2]</sup></a>的設定，簡單來說80~85是一個甜蜜點。<br>
+<p>根據 Google Group 上的討論<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>， WebP 的解碼速度是弱於 JPG 的，畢竟 JPG 都已經發展這麼久了軟硬體都已經很成熟。這麼說來 WebP 除了壓縮率以外沒有優勢嗎？並不是， WebP 是為了網路而生，把下載時間也算進來整體載入速度是提高的，如果有增量解碼載入速度提升更多。</p>
+<p>至於轉換品質，這裡有一個懶人包<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>的設定，簡單來說80~85是一個甜蜜點。<br>
 (註：不過請注意此專案沒有給出 AVIF 的單位映射，AVIF quality 為0~63，他把全部都換成1~100了，而且使用DSSIM而非常見的SSIM作為指標，除此之外根據圖片不同可能轉了之後反而容量更大)</p>
-<p>其實這應該是第二篇，第一篇是各種次世代編碼的選擇，不過這篇資料都在手上就先寫出來了。最後附上其他評測<a href="#ref3"><sup>[3]</sup></a> <a href="#ref4"><sup>[4]</sup></a>：</p>
-
-
-<h1 class="relative group">Reference 
-    <div id="reference" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#reference" aria-label="定位點">#</a>
-    </span>        
-    
-</h1>
-<p><a id="ref1"></a>
-<a href="https://groups.google.com/a/webmproject.org/g/webp-discuss/c/hn3LwO6_bS0" target="_blank">[1]</a> Comparative Analysis on WebP and JPEG Decoding Performance, Google Group, Oct. 2023.<br>
-<a id="ref2"></a>
-<a href="https://www.industrialempathy.com/posts/avif-webp-quality-settings/" target="_blank">[2]</a> AVIF and WebP encoding quality settings, Feb. 2021.<br>
-<a href="ref3"></a>
-<a href="https://cloudinary.com/blog/contemplating-codec-comparisons" target="_blank">[3]</a> Contemplating Codec Comparisons, Cloudinary, Dec. 2022.<br>
-<a href="ref4"></a>
-<a href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study" target="_blank">[4]</a> Lossless and Transparency Encoding in WebP, Aug. 2017.</p>
+<p>其實這應該是第二篇，第一篇是各種次世代編碼的選擇，不過這篇資料都在手上就先寫出來了。最後<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>是其他評測。</p>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://groups.google.com/a/webmproject.org/g/webp-discuss/c/hn3LwO6_bS0" target="_blank">Comparative Analysis on WebP and JPEG Decoding Performance, Google Group, Oct. 2023.</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.industrialempathy.com/posts/avif-webp-quality-settings/" target="_blank">AVIF and WebP encoding quality settings, cramforce@Github, Feb. 2021.</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://cloudinary.com/blog/contemplating-codec-comparisons" target="_blank">Contemplating Codec Comparisons, JON SNEYERS, Cloudinary, Dec. 2022.</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://developers.google.com/speed/webp/docs/webp_lossless_alpha_study" target="_blank">Lossless and Transparency Encoding in WebP, J. Alakuijala and V. Rabaud, Google Inc., Aug. 2017.</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         </div>
         
@@ -1008,6 +1026,8 @@
 
 
 
+  
+
 
 
   
@@ -1029,7 +1049,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">2024-06-07</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>913 字</span>
+  <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">2024-06-07</time><span class="px-2 text-neutral-500">&middot;</span><time datetime="2024-07-16 00:00:00 &#43;0000 UTC">上次編輯: 2024-07-16</time><span class="px-2 text-neutral-500">&middot;</span><span>1037 字</span>
   
 
   
@@ -1111,6 +1131,10 @@
         </div>
 
         
+        <div class="py-1 prose dark:prose-invert">
+          結果轉完分數只有60
+        </div>
+        
       </div>
       <div class="px-6 pt-4 pb-2">
 
@@ -1174,7 +1198,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>926 字</span>
+  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&middot;</span><span>926 字</span>
   
 
   
@@ -1248,6 +1272,10 @@
         </div>
 
         
+        <div class="py-1 prose dark:prose-invert">
+          只講重點，網路上教學廢話好多好煩
+        </div>
+        
       </div>
       <div class="px-6 pt-4 pb-2">
 
@@ -1311,7 +1339,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&VerticalLine;</span><span>193 字</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&middot;</span><span>230 字</span>
   
 
   
@@ -1384,6 +1412,10 @@
 
         </div>
 
+        
+        <div class="py-1 prose dark:prose-invert">
+          紀錄常用的 linux 指令
+        </div>
         
       </div>
       <div class="px-6 pt-4 pb-2">
@@ -1612,6 +1644,5 @@
 
   </div>
 </body>
-
 
 </html>

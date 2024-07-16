@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>初學hugo真的很痛苦 on ZSL&#39;s Blog</title>
+    <title>文章列表 on ZSL&#39;s Blog</title>
     <link>https://www.zsl0621.cc/posts/</link>
-    <description>Recent content in 初學hugo真的很痛苦 on ZSL&#39;s Blog</description>
+    <description>Recent content in 文章列表 on ZSL&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/custom-hugo/</guid>
-      <description>此客製化基於 hugo blowfish theme 完成。 超連結 # 游標移動</description>
+      <description>客製化 Hugo 各種設定。</description>
       
     </item>
     
@@ -24,7 +24,7 @@
       <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/webp-performance/</guid>
-      <description>快速看完 # 看完這張圖這篇文章就不用看了。</description>
+      <description>WebP 與 AVIF 的壓縮率比較</description>
       
     </item>
     
@@ -34,7 +34,7 @@
       <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/rayleigh-fading/</guid>
-      <description>整理生成Rician fading的方法。</description>
+      <description>整理生成Rician fading的方法</description>
       
     </item>
     
@@ -44,7 +44,7 @@
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/ffmpeg-usage/</guid>
-      <description>結果轉完分數只有60。 基本知識 # CRF 越高壓</description>
+      <description>結果轉完分數只有60</description>
       
     </item>
     
@@ -54,7 +54,7 @@
       <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/common-git-comments/</guid>
-      <description>網路上教學廢話好多好煩。 沒人想看你把一堆</description>
+      <description>只講重點，網路上教學廢話好多好煩</description>
       
     </item>
     
@@ -64,7 +64,7 @@
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</guid>
-      <description>1. 思路 # 沒有思路，只是想找安全上[1][</description>
+      <description>紀錄把一台破電腦裝成 NAS 的過程</description>
       
     </item>
     
@@ -74,7 +74,7 @@
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/exiftool/</guid>
-      <description>Scripts Link (GitHub) This script modifies date tags by the folder name. Use this for albums downloaded from network. 1.</description>
+      <description>一些 Exif 指令和腳本。</description>
       
     </item>
     
