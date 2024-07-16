@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog</title>
-  <meta name="title" content="架站紀錄：客製化Hugo &#45; ZSL&#39;s Blog" />
+  <title>架站紀錄：客製化Hugo &middot; ZSL&#39;s Blog</title>
+  <meta name="title" content="架站紀錄：客製化Hugo &middot; ZSL&#39;s Blog" />
   
   <meta name="description" content="客製化 Hugo 各種設定。" />
   <meta name="keywords" content="hugo, 指令筆記, 架站紀錄, " />
@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.9ab27f83d71fcfb8216322bde24ad553761c04ea16c416d2a0267ed8dcda1eaeb82bd81359d5ff15eda30478c4986f63836c8a56b1a63cb27233d07157f49302.css"
-    integrity="sha512-mrJ/g9cfz7ghYyK94krVU3YcBOoWxBbSoCZ&#43;2NzaHq64K9gTWdX/Fe2jBHjEmG9jg2yKVrGmPLJyM9BxV/STAg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6e944381533766d46bff93f14f3a174b25164b55b75edd29e5309b9edd5c5fd223731fc4b886d8cb3f6728d43bed95e14032854779ab886bfe338967906dbd22.css"
+    integrity="sha512-bpRDgVM3ZtRr/5PxTzoXSyUWS1W3Xt0p5TCbnt1cX9Ijcx/EuIbYyz9nKNQ77ZXhQDKFR3mriGv&#43;M4lnkG29Ig==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -46,7 +46,7 @@
     integrity="sha512-uJrGn/mAL9VBhWSkXa2kbwGMSsga4b&#43;TK1tlkgY88FpSTmWMDthPO5YCPHk8xlGseW55OBpFUSoINUumZznHZw==" data-copy="" data-copied=""></script>
   
   
-  <script src="/%20js/zoom.min.js"></script>
+  <script src="/js/zoom.min.js"></script>
   
   
   
@@ -118,7 +118,7 @@
     "keywords": ["hugo","指令筆記","架站紀錄"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1353"
+    "wordCount": "2276"
   }]
   </script>
 
@@ -167,10 +167,11 @@
 
   
   
-  <meta name="theme-color" />
+  <meta name="theme-color"/>
   
   
-</head><body
+</head>
+<body
   class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
@@ -553,6 +554,7 @@
   
   
 
+  <div id="progress-bar"></div>
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
@@ -601,7 +603,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-neutral-500">&middot;</span><span>1353 字</span><span class="px-2 text-neutral-500">&middot;</span>
+  <time datetime="2024-07-01 00:00:00 &#43;0000 UTC">2024-07-01</time><span class="px-2 text-neutral-500">&middot;</span><span>2276 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -714,6 +716,7 @@
     
 
   </header>
+  <script src="/js/progress-bar.js"></script>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
@@ -731,15 +734,36 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#超連結">超連結</a></li>
-    <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
-    <li><a href="#table-of-contents"><del>Table of Contents</del></a></li>
-    <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
-    <li><a href="#修復網站-logo">修復網站 logo</a></li>
-    <li><a href="#修改註腳文章引用">修改註腳（文章引用）</a></li>
-    <li><a href="#修改選集功能">修改選集功能</a></li>
-    <li><a href="#修改文章資訊">修改文章資訊</a></li>
-    <li><a href="#todo">ToDo</a></li>
+    <li><a href="#i-新增功能">I. 新增功能</a>
+      <ul>
+        <li><a href="#1-超連結">1. 超連結</a></li>
+        <li><a href="#2-文章存檔頁面">2. 文章存檔頁面</a></li>
+        <li><a href="#3-簡碼---hint">3. 簡碼 - hint</a></li>
+        <li><a href="#4-簡碼---expand">4. 簡碼 - expand</a></li>
+        <li><a href="#5-閱讀進度">5. 閱讀進度</a></li>
+      </ul>
+    </li>
+    <li><a href="#ii-修復功能">II. 修復功能</a>
+      <ul>
+        <li><a href="#1-頁面目次"><del>1. 頁面目次</del></a></li>
+        <li><a href="#2-網站-logo">2. 網站 logo</a></li>
+        <li><a href="#3-網頁標籤名稱">3. 網頁標籤名稱</a></li>
+        <li><a href="#4-註腳文章引用">4. 註腳（文章引用）</a></li>
+        <li><a href="#5-選集功能">5. 選集功能</a></li>
+        <li><a href="#6-文章資訊間隔符號">6. 文章資訊間隔符號</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-todo">III. ToDo</a>
+      <ul>
+        <li><a href="#1-增加-toc-寬度">1. 增加 ToC 寬度</a></li>
+        <li><a href="#2-修改-toc-font-size">2. 修改 ToC font size</a></li>
+        <li><a href="#3-邊界線對比度過低">3. 邊界線對比度過低</a></li>
+        <li><a href="#4-閱讀進度">4. <del>閱讀進度</del></a></li>
+        <li><a href="#5-深色模式中超連結的顏色">5. 深色模式中超連結的顏色</a></li>
+        <li><a href="#6-深色模式中所有文章的日期顏色">6. 深色模式中所有文章的日期顏色</a></li>
+        <li><a href="#7-hugo-原生-highlight-shortcode-border-與-markdown-不同">7. Hugo 原生 highlight shortcode border 與 MarkDown 不同</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -753,15 +777,36 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#超連結">超連結</a></li>
-    <li><a href="#文章存檔頁面">文章存檔頁面</a></li>
-    <li><a href="#table-of-contents"><del>Table of Contents</del></a></li>
-    <li><a href="#修改網頁標籤名稱">修改網頁標籤名稱</a></li>
-    <li><a href="#修復網站-logo">修復網站 logo</a></li>
-    <li><a href="#修改註腳文章引用">修改註腳（文章引用）</a></li>
-    <li><a href="#修改選集功能">修改選集功能</a></li>
-    <li><a href="#修改文章資訊">修改文章資訊</a></li>
-    <li><a href="#todo">ToDo</a></li>
+    <li><a href="#i-新增功能">I. 新增功能</a>
+      <ul>
+        <li><a href="#1-超連結">1. 超連結</a></li>
+        <li><a href="#2-文章存檔頁面">2. 文章存檔頁面</a></li>
+        <li><a href="#3-簡碼---hint">3. 簡碼 - hint</a></li>
+        <li><a href="#4-簡碼---expand">4. 簡碼 - expand</a></li>
+        <li><a href="#5-閱讀進度">5. 閱讀進度</a></li>
+      </ul>
+    </li>
+    <li><a href="#ii-修復功能">II. 修復功能</a>
+      <ul>
+        <li><a href="#1-頁面目次"><del>1. 頁面目次</del></a></li>
+        <li><a href="#2-網站-logo">2. 網站 logo</a></li>
+        <li><a href="#3-網頁標籤名稱">3. 網頁標籤名稱</a></li>
+        <li><a href="#4-註腳文章引用">4. 註腳（文章引用）</a></li>
+        <li><a href="#5-選集功能">5. 選集功能</a></li>
+        <li><a href="#6-文章資訊間隔符號">6. 文章資訊間隔符號</a></li>
+      </ul>
+    </li>
+    <li><a href="#iii-todo">III. ToDo</a>
+      <ul>
+        <li><a href="#1-增加-toc-寬度">1. 增加 ToC 寬度</a></li>
+        <li><a href="#2-修改-toc-font-size">2. 修改 ToC font size</a></li>
+        <li><a href="#3-邊界線對比度過低">3. 邊界線對比度過低</a></li>
+        <li><a href="#4-閱讀進度">4. <del>閱讀進度</del></a></li>
+        <li><a href="#5-深色模式中超連結的顏色">5. 深色模式中超連結的顏色</a></li>
+        <li><a href="#6-深色模式中所有文章的日期顏色">6. 深色模式中所有文章的日期顏色</a></li>
+        <li><a href="#7-hugo-原生-highlight-shortcode-border-與-markdown-不同">7. Hugo 原生 highlight shortcode border 與 MarkDown 不同</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -873,19 +918,32 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <p>此客製化基於 hugo blowfish theme 完成。</p>
+          <p>此客製化基於 hugo blowfish theme 完成。<br>
+大部分的程式都由 GPT 完成，偉哉 GPT。</p>
 
 
-<h1 class="relative group">超連結 
-    <div id="%E8%B6%85%E9%80%A3%E7%B5%90" class="anchor"></div>
+<h1 class="relative group">I. 新增功能 
+    <div id="i-%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%B6%85%E9%80%A3%E7%B5%90" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#i-%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
     </span>        
     
 </h1>
+
+
+<h2 class="relative group">1. 超連結 
+    <div id="1-%E8%B6%85%E9%80%A3%E7%B5%90" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-%E8%B6%85%E9%80%A3%E7%B5%90" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
 <p>游標移動到連結時變色+底線</p>
 <p>在assets/css/custom.css新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.article-content a {
@@ -902,17 +960,17 @@
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></div>
 
-<h1 class="relative group">文章存檔頁面 
-    <div id="%E6%96%87%E7%AB%A0%E5%AD%98%E6%AA%94%E9%A0%81%E9%9D%A2" class="anchor"></div>
+<h2 class="relative group">2. 文章存檔頁面 
+    <div id="2-%E6%96%87%E7%AB%A0%E5%AD%98%E6%AA%94%E9%A0%81%E9%9D%A2" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%96%87%E7%AB%A0%E5%AD%98%E6%AA%94%E9%A0%81%E9%9D%A2" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#2-%E6%96%87%E7%AB%A0%E5%AD%98%E6%AA%94%E9%A0%81%E9%9D%A2" aria-label="定位點">#</a>
     </span>        
     
-</h1>
-<p>列出所有文章，無論是哪一種分類（目前還無法套用本站背景圖片）</p>
+</h2>
+<p>列出所有文章，無論是哪一種分類</p>
 <p>在 <code>assets/css/custom.css</code> 新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.container {
 </span></span><span class="line"><span class="cl">    max-width: 800px;
@@ -962,32 +1020,117 @@
 </span></span><span class="line"><span class="cl">  }
 </span></span></code></pre></div><p>在 <code>layouts/_default/archives.html</code> 新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ define &#34;main&#34; }}
-</span></span><span class="line"><span class="cl">&lt;article class=&#34;max-w-full prose dark:prose-invert&#34; style=&#34;background-image: url(&#39;/img/background.webp&#39;); background-size: cover; background-position: center;&#34;&gt;
-</span></span><span class="line"><span class="cl">    &lt;header class=&#34;mb-4&#34;&gt;
-</span></span><span class="line"><span class="cl">        &lt;h1 class=&#34;text-4xl font-extrabold&#34;&gt;{{ .Title }}&lt;/h1&gt;
+</span></span><span class="line"><span class="cl">{{ .Scratch.Set &#34;scope&#34; &#34;single&#34; }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;style&gt;
+</span></span><span class="line"><span class="cl">    body {
+</span></span><span class="line"><span class="cl">        font-family: Arial, sans-serif;
+</span></span><span class="line"><span class="cl">        background-color: #f5f5f5;
+</span></span><span class="line"><span class="cl">        color: #333;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .timeline {
+</span></span><span class="line"><span class="cl">        max-width: 800px;
+</span></span><span class="line"><span class="cl">        margin: 0 auto;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .container {
+</span></span><span class="line"><span class="cl">        padding: 10px 0;
+</span></span><span class="line"><span class="cl">        background-color: inherit;
+</span></span><span class="line"><span class="cl">        width: 100%;
+</span></span><span class="line"><span class="cl">        margin-bottom: 20px;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .date {
+</span></span><span class="line"><span class="cl">        padding: 15px;
+</span></span><span class="line"><span class="cl">        color: #000000;
+</span></span><span class="line"><span class="cl">        font-weight: bold;
+</span></span><span class="line"><span class="cl">        font-size: 1.8em;
+</span></span><span class="line"><span class="cl">        text-align: left;
+</span></span><span class="line"><span class="cl">        border-radius: 6px;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .content {
+</span></span><span class="line"><span class="cl">        padding: 20px 30px;
+</span></span><span class="line"><span class="cl">        background-color: white;
+</span></span><span class="line"><span class="cl">        border-radius: 6px;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .content h2 {
+</span></span><span class="line"><span class="cl">        margin-top: 0;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .content p {
+</span></span><span class="line"><span class="cl">        margin: 10px 0;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    .post-date {
+</span></span><span class="line"><span class="cl">        color: #999;
+</span></span><span class="line"><span class="cl">        margin-right: 10px;
+</span></span><span class="line"><span class="cl">    }
+</span></span><span class="line"><span class="cl">&lt;/style&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;article class=&#34;timeline&#34;&gt;
+</span></span><span class="line"><span class="cl">    {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+</span></span><span class="line"><span class="cl">    {{ $heroStyle := .Params.heroStyle }}
+</span></span><span class="line"><span class="cl">    {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
+</span></span><span class="line"><span class="cl">    {{ $heroStyle := print &#34;partials/hero/&#34; $heroStyle &#34;.html&#34; }}
+</span></span><span class="line"><span class="cl">    {{ if templates.Exists $heroStyle }}
+</span></span><span class="line"><span class="cl">    {{ partial $heroStyle . }}
+</span></span><span class="line"><span class="cl">    {{ else }}
+</span></span><span class="line"><span class="cl">    {{ partial &#34;partials/hero/basic.html&#34; . }}
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">    {{ end }}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;header id=&#34;single_header&#34; class=&#34;mt-5 max-w-prose&#34;&gt;
+</span></span><span class="line"><span class="cl">        {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
+</span></span><span class="line"><span class="cl">        {{ partial &#34;breadcrumbs.html&#34; . }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">        &lt;h1 class=&#34;mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral&#34;&gt;
+</span></span><span class="line"><span class="cl">            {{ .Title | emojify }}
+</span></span><span class="line"><span class="cl">        &lt;/h1&gt;
 </span></span><span class="line"><span class="cl">    &lt;/header&gt;
-</span></span><span class="line"><span class="cl">    &lt;section class=&#34;all-posts&#34;&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    &lt;section class=&#34;all-posts mt-8 article-content&#34;&gt;
 </span></span><span class="line"><span class="cl">        {{ range .Site.RegularPages.GroupByDate &#34;2006&#34; }}
-</span></span><span class="line"><span class="cl">            &lt;h2 class=&#34;text-2xl font-bold mt-8 mb-4&#34;&gt;{{ .Key }}&lt;/h2&gt;
-</span></span><span class="line"><span class="cl">            {{ range .Pages.GroupByDate &#34;January&#34; }}
-</span></span><span class="line"><span class="cl">                &lt;div class=&#34;relative&#34;&gt;
-</span></span><span class="line"><span class="cl">                    &lt;h3 class=&#34;relative text-xl font-semibold mt-6 mb-3 text-gray-600 dark:text-gray-400&#34;&gt;
-</span></span><span class="line"><span class="cl">                        {{ index $.Site.Data.month (printf &#34;%d&#34; .Key) }}
-</span></span><span class="line"><span class="cl">                        &lt;span class=&#34;absolute left-0 top-0 h-full border-l-2 border-gray-300 dark:border-gray-600&#34;&gt;&lt;/span&gt;
-</span></span><span class="line"><span class="cl">                    &lt;/h3&gt;
-</span></span><span class="line"><span class="cl">                    &lt;ul class=&#34;list-none pl-6&#34;&gt;
-</span></span><span class="line"><span class="cl">                        {{ range .Pages }}
-</span></span><span class="line"><span class="cl">                            &lt;li class=&#34;mb-3 flex items-start&#34;&gt;
-</span></span><span class="line"><span class="cl">                                &lt;span class=&#34;text-gray-500 dark:text-gray-400 mr-2&#34;&gt;{{ .Date.Format &#34;01-02&#34; }}&lt;/span&gt;
-</span></span><span class="line"><span class="cl">                                &lt;a href=&#34;{{ .Permalink }}&#34; class=&#34;text-primary-600 dark:text-primary-400 hover:underline&#34;&gt;{{ .Title }}&lt;/a&gt;
-</span></span><span class="line"><span class="cl">                            &lt;/li&gt;
-</span></span><span class="line"><span class="cl">                        {{ end }}
-</span></span><span class="line"><span class="cl">                    &lt;/ul&gt;
-</span></span><span class="line"><span class="cl">                &lt;/div&gt;
-</span></span><span class="line"><span class="cl">            {{ end }}
+</span></span><span class="line"><span class="cl">        &lt;div class=&#34;container&#34;&gt;
+</span></span><span class="line"><span class="cl">            &lt;div class=&#34;date&#34;&gt;{{ .Key }}&lt;/div&gt;
+</span></span><span class="line"><span class="cl">            &lt;div class=&#34;content&#34;&gt;
+</span></span><span class="line"><span class="cl">                {{ range .Pages.GroupByDate &#34;January&#34; }}
+</span></span><span class="line"><span class="cl">                &lt;h3 class=&#34;text-xl font-semibold mt-6 mb-3&#34;&gt;
+</span></span><span class="line"><span class="cl">                    {{ index $.Site.Data.month (printf &#34;%d&#34; .Key) }}
+</span></span><span class="line"><span class="cl">                &lt;/h3&gt;
+</span></span><span class="line"><span class="cl">                &lt;ul class=&#34;list-none&#34; style=&#34;padding-left: 1.2em;&#34;&gt;
+</span></span><span class="line"><span class="cl">                    {{ range .Pages }}
+</span></span><span class="line"><span class="cl">                    &lt;li class=&#34;mb-3 flex items-start&#34;&gt;
+</span></span><span class="line"><span class="cl">                        &lt;span class=&#34;post-date&#34;&gt;{{ .Date.Format &#34;01-02&#34; }}&lt;/span&gt;
+</span></span><span class="line"><span class="cl">                        &lt;a href=&#34;{{ .Permalink }}&#34; class=&#34;text-primary-600 dark:text-primary-400 hover:underline&#34;&gt;{{ .Title }}&lt;/a&gt;
+</span></span><span class="line"><span class="cl">                    &lt;/li&gt;
+</span></span><span class="line"><span class="cl">                    {{ end }}
+</span></span><span class="line"><span class="cl">                &lt;/ul&gt;
+</span></span><span class="line"><span class="cl">                {{ end }}
+</span></span><span class="line"><span class="cl">            &lt;/div&gt;
+</span></span><span class="line"><span class="cl">        &lt;/div&gt;
 </span></span><span class="line"><span class="cl">        {{ end }}
 </span></span><span class="line"><span class="cl">    &lt;/section&gt;
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    &lt;footer class=&#34;pt-8 max-w-prose print:hidden&#34;&gt;
+</span></span><span class="line"><span class="cl">        {{ partial &#34;article-pagination.html&#34; . }}
+</span></span><span class="line"><span class="cl">        {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
+</span></span><span class="line"><span class="cl">        {{ if templates.Exists &#34;partials/comments.html&#34; }}
+</span></span><span class="line"><span class="cl">        &lt;div class=&#34;pt-3&#34;&gt;
+</span></span><span class="line"><span class="cl">            &lt;hr class=&#34;border-dotted border-neutral-300 dark:border-neutral-600&#34; /&gt;
+</span></span><span class="line"><span class="cl">            &lt;div class=&#34;pt-3&#34;&gt;
+</span></span><span class="line"><span class="cl">                {{ partial &#34;comments.html&#34; . }}
+</span></span><span class="line"><span class="cl">            &lt;/div&gt;
+</span></span><span class="line"><span class="cl">        &lt;/div&gt;
+</span></span><span class="line"><span class="cl">        {{ else }}
+</span></span><span class="line"><span class="cl">        {{ warnf &#34;[BLOWFISH] Comments are enabled for %s but no comments partial exists.&#34; .File.Path }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">        {{ end }}
+</span></span><span class="line"><span class="cl">    &lt;/footer&gt;
 </span></span><span class="line"><span class="cl">&lt;/article&gt;
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">{{ end }}
 </span></span></code></pre></div><p>最後，在menus.zh-tw.toml新增：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[[footer]]
@@ -996,28 +1139,260 @@
 </span></span><span class="line"><span class="cl">  weight = 40
 </span></span></code></pre></div>
 
-<h1 class="relative group"><del>Table of Contents</del> 
-    <div id="table-of-contents" class="anchor"></div>
+<h2 class="relative group">3. 簡碼 - hint 
+    <div id="3-%E7%B0%A1%E7%A2%BC---hint" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#table-of-contents" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#3-%E7%B0%A1%E7%A2%BC---hint" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>移植 <a href="https://github.com/alex-shpak/hugo-book" target="_blank">alex-shpak/hugo-book</a> 的 hint short 過來，裡面要換<strong>兩行</strong>請用 <em>&lt;br&gt;&lt;/br&gt;</em>。
+<div class="book-hint info">
+  <strong>Markdown content</strong><br>
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+</div>
+</p>
+<div class="book-hint warning">
+  <strong>Markdown content</strong><br>
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+</div>
+
+<div class="book-hint danger">
+  <strong>Markdown content</strong><br>
+Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
+</div>
+
+<p>在 <code>assets/css/custom.css</code> 加入</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* Info hint */
+</span></span><span class="line"><span class="cl">.book-hint.info {
+</span></span><span class="line"><span class="cl">    border-color: #2196f3;
+</span></span><span class="line"><span class="cl">    background-color: rgba(33, 150, 243, 0.1);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* Warning hint */
+</span></span><span class="line"><span class="cl">.book-hint.warning {
+</span></span><span class="line"><span class="cl">    border-color: #ffeb3b;
+</span></span><span class="line"><span class="cl">    background-color: rgba(255, 235, 59, 0.1);
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/* Danger hint */
+</span></span><span class="line"><span class="cl">.book-hint.danger {
+</span></span><span class="line"><span class="cl">    border-color: #f44336;
+</span></span><span class="line"><span class="cl">    background-color: rgba(244, 67, 54, 0.1);
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div><p>新增 <code>layouts/shortcodes/hint.html</code> 並貼上</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;blockquote class=&#34;book-hint {{ .Get 0 }}&#34;&gt;
+</span></span><span class="line"><span class="cl">  {{ .Inner | .Page.RenderString }}
+</span></span><span class="line"><span class="cl">&lt;/blockquote&gt;
+</span></span></code></pre></div>
+
+<h2 class="relative group">4. 簡碼 - expand 
+    <div id="4-%E7%B0%A1%E7%A2%BC---expand" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4-%E7%B0%A1%E7%A2%BC---expand" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>比較美觀的 expand UI，一樣從 <a href="https://github.com/alex-shpak/hugo-book" target="_blank">alex-shpak/hugo-book</a> 拿來的。</p>
+<div class="expand-wrapper prose dark:prose-invert">
+  <input id="expand-3" class="expand-toggle" type="checkbox" >
+  <label for="expand-3" class="expand-title">Click to expand
+  </label>
+  <div class="expand-content">
+    <div class="expand-inner">
+      <p><strong>Markdown content</strong></p>
+<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa</p>
+
+    </div>
+  </div>
+</div>
+<div class="expand-wrapper prose dark:prose-invert">
+  <input id="expand-4" class="expand-toggle" type="checkbox" >
+  <label for="expand-4" class="expand-title">Ans
+  </label>
+  <div class="expand-content">
+    <div class="expand-inner">
+      <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">square</span><span class="p">(</span><span class="k">volatile</span> <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+    </div>
+  </div>
+</div>
+<p>新增 <code>layouts/shortcodes/expand.html</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;div class=&#34;expand-wrapper prose dark:prose-invert&#34;&gt;
+</span></span><span class="line"><span class="cl">  &lt;input id=&#34;{{ .Get &#34;id&#34; | default (printf &#34;expand-%d&#34; (.Ordinal)) }}&#34; class=&#34;expand-toggle&#34; type=&#34;checkbox&#34; {{ if or (.Get &#34;open&#34;) (in .Params &#34;open&#34;) }}checked{{ end }}&gt;
+</span></span><span class="line"><span class="cl">  &lt;label for=&#34;{{ .Get &#34;id&#34; | default (printf &#34;expand-%d&#34; (.Ordinal)) }}&#34; class=&#34;expand-title&#34;&gt;
+</span></span><span class="line"><span class="cl">    {{- $summary := cond .IsNamedParams (.Get &#34;title&#34;) (.Get 0) -}}
+</span></span><span class="line"><span class="cl">    {{ $summary | .Page.RenderString }}
+</span></span><span class="line"><span class="cl">  &lt;/label&gt;
+</span></span><span class="line"><span class="cl">  &lt;div class=&#34;expand-content&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;div class=&#34;expand-inner&#34;&gt;
+</span></span><span class="line"><span class="cl">      {{ .Inner | .Page.RenderString }}
+</span></span><span class="line"><span class="cl">    &lt;/div&gt;
+</span></span><span class="line"><span class="cl">  &lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;/div&gt;
+</span></span></code></pre></div><p>新增 <code>assets/css/custom.css</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">wrapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">margin</span><span class="o">-</span><span class="n">bottom</span><span class="p">:</span> <span class="mi">1</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">width</span><span class="p">:</span> <span class="mi">100</span><span class="o">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">toggle</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">:</span> <span class="n">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">font</span><span class="o">-</span><span class="n">weight</span><span class="p">:</span> <span class="n">bold</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cursor</span><span class="p">:</span> <span class="n">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="p">:</span> <span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mf">0.5</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">50</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transition</span><span class="p">:</span> <span class="n">background</span><span class="o">-</span><span class="n">color</span> <span class="mf">0.3</span><span class="n">s</span> <span class="nb">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">700</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span><span class="p">::</span><span class="n">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">content</span><span class="p">:</span> <span class="s1">&#39;▶&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">display</span><span class="p">:</span> <span class="n">inline</span><span class="o">-</span><span class="n">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">margin</span><span class="o">-</span><span class="n">right</span><span class="p">:</span> <span class="mf">0.5</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transition</span><span class="p">:</span> <span class="n">transform</span> <span class="mf">0.3</span><span class="n">s</span> <span class="nb">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">toggle</span><span class="p">:</span><span class="n">checked</span> <span class="o">+</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">toggle</span><span class="p">:</span><span class="n">checked</span> <span class="o">+</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span><span class="p">::</span><span class="n">before</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="mi">90</span><span class="n">deg</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">max</span><span class="o">-</span><span class="n">height</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">overflow</span><span class="p">:</span> <span class="n">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">transition</span><span class="p">:</span> <span class="nb">max</span><span class="o">-</span><span class="n">height</span> <span class="mf">0.3</span><span class="n">s</span> <span class="nb">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">toggle</span><span class="p">:</span><span class="n">checked</span> <span class="o">~</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">max</span><span class="o">-</span><span class="n">height</span><span class="p">:</span> <span class="mi">1000</span><span class="n">px</span><span class="p">;</span> <span class="o">/*</span> <span class="err">根据需要调整</span> <span class="o">*/</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">inner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">padding</span><span class="p">:</span> <span class="mi">1</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="p">:</span> <span class="mi">1</span><span class="n">px</span> <span class="n">solid</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="o">-</span><span class="n">top</span><span class="p">:</span> <span class="n">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="o">-</span><span class="n">radius</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mf">0.5</span><span class="n">rem</span> <span class="mf">0.5</span><span class="n">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">50</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">700</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="o">/*</span> <span class="err">深色模式样式</span> <span class="o">*/</span>
+</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="n">root</span><span class="p">[</span><span class="n">data</span><span class="o">-</span><span class="n">theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="p">]</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="n">root</span><span class="p">[</span><span class="n">data</span><span class="o">-</span><span class="n">theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="p">]</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">inner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">border</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">700</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">800</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">300</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="n">root</span><span class="p">[</span><span class="n">data</span><span class="o">-</span><span class="n">theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="p">]</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">toggle</span><span class="p">:</span><span class="n">checked</span> <span class="o">+</span> <span class="o">.</span><span class="n">expand</span><span class="o">-</span><span class="n">title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">background</span><span class="o">-</span><span class="n">color</span><span class="p">:</span> <span class="k">var</span><span class="p">(</span><span class="o">--</span><span class="n">color</span><span class="o">-</span><span class="n">neutral</span><span class="o">-</span><span class="mi">700</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div>
+
+<h2 class="relative group">5. 閱讀進度 
+    <div id="5-%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#5-%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>加上文章閱讀進度比例。</p>
+<ol>
+<li>在 <code>themes/blowfish/tailwind.config.js</code> 加入</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">plugins</span><span class="o">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">require</span><span class="p">(</span><span class="s2">&#34;@tailwindcss/typography&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@tailwindcss/forms&#39;</span><span class="p">),</span>
+</span></span><span class="line hl"><span class="cl">    <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;tailwind-scrollbar&#39;</span><span class="p">)({</span> <span class="nx">preferredStrategy</span><span class="o">:</span> <span class="s1">&#39;pseudoelements&#39;</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span></span></span></code></pre></div>
+<ol start="2">
+<li>在 <code>static/js/progress-bar.js</code> 貼上</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;scroll&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">scrollTop</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">scrollHeight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollHeight</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">clientHeight</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">clientHeight</span> <span class="o">||</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">scrollPercent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">scrollTop</span> <span class="o">/</span> <span class="p">(</span><span class="nx">scrollHeight</span> <span class="o">-</span> <span class="nx">clientHeight</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;progress-bar&#39;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="nx">scrollPercent</span> <span class="o">+</span> <span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><ol start="3">
+<li>在 <code>layouts/_default/single.html</code> 找到 <code>\&lt;header&gt; \&lt;header&gt;</code> ，在他的前後分別貼上</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;progress-bar&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">js</span><span class="err">/</span><span class="na">progress-bar</span><span class="err">.</span><span class="na">js</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">relURL</span> <span class="err">}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div><ol start="4">
+<li>在 <code>assets/css/custom.css</code> 貼上</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">#</span><span class="nn">progress-bar</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">position</span><span class="p">:</span> <span class="kc">fixed</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">left</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">0</span><span class="kt">%</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">height</span><span class="p">:</span> <span class="mi">3</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#dc3434</span><span class="p">;</span> <span class="c">/* You can change this color */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">z-index</span><span class="p">:</span> <span class="mi">50</span><span class="p">;</span> <span class="c">/* 99999 */</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div><p>有趣的是 Safari 和 Chrome 渲染的方式不一樣， Chrome的進度調在 header 磁磚後還是會透出半透明效果，而 Safari 就直接被擋住了。所以如果要兼顧 Safari 可以把 z-index 設為 99999。</p>
+
+
+<h1 class="relative group">II. 修復功能 
+    <div id="ii-%E4%BF%AE%E5%BE%A9%E5%8A%9F%E8%83%BD" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#ii-%E4%BF%AE%E5%BE%A9%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
     </span>        
     
 </h1>
-<p>
+
+
+<h2 class="relative group"><del>1. 頁面目次</del> 
+    <div id="1-%E9%A0%81%E9%9D%A2%E7%9B%AE%E6%AC%A1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-%E9%A0%81%E9%9D%A2%E7%9B%AE%E6%AC%A1" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
 <div class="flex mt-2">
 <span
   class="rounded-full bg-primary-500 dark:bg-primary-400 text-neutral-50 dark:text-neutral-800 px-1.5 py-[1px] text-xs font-normal"
 >
   <span class="flex flex-row items-center">
     
-    <span>在 <a href="https://github.com/nunocoracao/blowfish/releases/tag/v2.71.0" target="_blank">v2.71.0</a> 修正</span>
+    <span>此問題已於 blowfish v2.71.0 修正</span>
   </span>
 </span>
 </div>
-ToC過長時增加滾輪</p>
+<p>ToC過長時增加滾輪。</p>
 <p>把 <code>layouts/partials/toc.html</code> 中 <code>\&lt;details open class\&gt;</code> 整段換成以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;details open class=&#34;toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block&#34;&gt;
 </span></span><span class="line"><span class="cl">  &lt;summary
@@ -1043,34 +1418,18 @@ ToC過長時增加滾輪</p>
 </span></span><span class="line"><span class="cl">&lt;/details&gt;
 </span></span></code></pre></div>
 
-<h1 class="relative group">修改網頁標籤名稱 
-    <div id="%E4%BF%AE%E6%94%B9%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" class="anchor"></div>
+<h2 class="relative group">2. 網站 logo 
+    <div id="2-%E7%B6%B2%E7%AB%99-logo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#2-%E7%B6%B2%E7%AB%99-logo" aria-label="定位點">#</a>
     </span>        
     
-</h1>
-<p>把 blowfish 預設的 dot 改為 dash，找到 <code>layouts/partials/head.html</code> 中以下片段：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;title&gt;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&lt;/title&gt;
-</span></span><span class="line"><span class="cl">&lt;meta name=&#34;title&#34; content=&#34;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&#34; /&gt;
-</span></span></code></pre></div><p>把 <code>&amp;middot</code> 改為 <code>&amp;#45</code>。</p>
-
-
-<h1 class="relative group">修復網站 logo 
-    <div id="%E4%BF%AE%E5%BE%A9%E7%B6%B2%E7%AB%99-logo" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E5%BE%A9%E7%B6%B2%E7%AB%99-logo" aria-label="定位點">#</a>
-    </span>        
-    
-</h1>
-<p>favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。<br>
-在 <code>layouts/partials</code> 新增 favicons.html ，新增以下：</p>
+</h2>
+<p>favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。</p>
+<p>在 <code>layouts/partials</code> 新增 favicons.html ，新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;192x192&#34; href=&#34;{{ &#34;android-chrome-192x192.png&#34; | absURL }}&#34;&gt;
 </span></span><span class="line"><span class="cl">&lt;link rel=&#34;icon&#34; type=&#34;image/png&#34; sizes=&#34;512x512&#34; href=&#34;{{ &#34;android-chrome-512x512.png&#34; | absURL }}&#34;&gt;
 </span></span><span class="line"><span class="cl">&lt;link rel=&#34;apple-touch-icon&#34; sizes=&#34;180x180&#34; href=&#34;{{ &#34;apple-touch-icon.png&#34; | absURL }}&#34;&gt;
@@ -1081,18 +1440,35 @@ ToC過長時增加滾輪</p>
 </span></span><span class="line"><span class="cl">&lt;link rel=&#34;manifest&#34; href=&#34;{{ &#34;site.webmanifest&#34; | absURL }}&#34;&gt;
 </span></span></code></pre></div>
 
-<h1 class="relative group">修改註腳（文章引用） 
-    <div id="%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" class="anchor"></div>
+<h2 class="relative group">3. 網頁標籤名稱 
+    <div id="3-%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#3-%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" aria-label="定位點">#</a>
     </span>        
     
-</h1>
-<p>縮小 footnote 字體以及修改標籤樣式，讓他長得比較像論文格式。<br>
-在 <code>assets/css/custom.css</code> 中，新增以下：</p>
+</h2>
+<p>把 blowfish 預設的 dot 改為 dash。</p>
+<p>找到 <code>layouts/partials/head.html</code> 中以下片段：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;title&gt;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;meta name=&#34;title&#34; content=&#34;{{ .Title | emojify }} &amp;middot; {{ .Site.Title | emojify }}&#34; /&gt;
+</span></span></code></pre></div><p>把 <code>&amp;middot</code> 改為 <code>&amp;#45</code>。</p>
+
+
+<h2 class="relative group">4. 註腳（文章引用） 
+    <div id="4-%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4-%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>縮小 footnote 字體以及修改標籤樣式，讓他長得比較像論文格式。</p>
+<p>在 <code>assets/css/custom.css</code> 中，新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">/* 縮小 footnote 字體 */
 </span></span><span class="line"><span class="cl">.footnotes {
 </span></span><span class="line"><span class="cl">    font-size: 0.7em;
@@ -1141,16 +1517,16 @@ ToC過長時增加滾輪</p>
 </span></span><span class="line"><span class="cl">}
 </span></span></code></pre></div>
 
-<h1 class="relative group">修改選集功能 
-    <div id="%E4%BF%AE%E6%94%B9%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" class="anchor"></div>
+<h2 class="relative group">5. 選集功能 
+    <div id="5-%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#5-%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
     </span>        
     
-</h1>
+</h2>
 <ol>
 <li>把選集功能後面的「- 本文屬於一個選集。」刪掉。</li>
 <li>修改選集樣式並把本文也加上超連結。</li>
@@ -1185,39 +1561,116 @@ ToC過長時增加滾輪</p>
 </span></span><span class="line"><span class="cl">this_article: &#34;[本文]&#34;
 </span></span></code></pre></div>
 
-<h1 class="relative group">修改文章資訊 
-    <div id="%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A" class="anchor"></div>
+<h2 class="relative group">6. 文章資訊間隔符號 
+    <div id="6-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#6-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" aria-label="定位點">#</a>
     </span>        
     
-</h1>
+</h2>
 <p>加上編輯時間就後就顯得凌亂，修改樣式。把 <code>layouts/partials/article-meta/basic.html</code> 中的</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ delimit . &#34;&lt;span class=\&#34;px-2 text-primary-500\&#34;&gt;&amp;middot;&lt;/span&gt;&#34; | safeHTML }}
 </span></span></code></pre></div><p>改為</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">{{ delimit . &#34;&lt;span class=\&#34;px-2 text-neutral-500\&#34;&gt;&amp;VerticalLine;&lt;/span&gt;&#34; | safeHTML }}
 </span></span></code></pre></div>
 
-<h1 class="relative group">ToDo 
-    <div id="todo" class="anchor"></div>
+<h1 class="relative group">III. ToDo 
+    <div id="iii-todo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#todo" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#iii-todo" aria-label="定位點">#</a>
     </span>        
     
 </h1>
-<ol>
-<li>增加 ToC 寬度</li>
-<li>邊界線對比度過低</li>
-<li>閱讀進度比例</li>
-<li>深色模式中超連結的顏色</li>
-<li>深色模式中所有文章的日期顏色</li>
-</ol>
+
+
+<h2 class="relative group">1. 增加 ToC 寬度 
+    <div id="1-%E5%A2%9E%E5%8A%A0-toc-%E5%AF%AC%E5%BA%A6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-%E5%A2%9E%E5%8A%A0-toc-%E5%AF%AC%E5%BA%A6" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">2. 修改 ToC font size 
+    <div id="2-%E4%BF%AE%E6%94%B9-toc-font-size" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2-%E4%BF%AE%E6%94%B9-toc-font-size" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">3. 邊界線對比度過低 
+    <div id="3-%E9%82%8A%E7%95%8C%E7%B7%9A%E5%B0%8D%E6%AF%94%E5%BA%A6%E9%81%8E%E4%BD%8E" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#3-%E9%82%8A%E7%95%8C%E7%B7%9A%E5%B0%8D%E6%AF%94%E5%BA%A6%E9%81%8E%E4%BD%8E" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">4. <del>閱讀進度</del> 
+    <div id="4-%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#4-%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">5. 深色模式中超連結的顏色 
+    <div id="5-%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F%E4%B8%AD%E8%B6%85%E9%80%A3%E7%B5%90%E7%9A%84%E9%A1%8F%E8%89%B2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#5-%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F%E4%B8%AD%E8%B6%85%E9%80%A3%E7%B5%90%E7%9A%84%E9%A1%8F%E8%89%B2" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">6. 深色模式中所有文章的日期顏色 
+    <div id="6-%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F%E4%B8%AD%E6%89%80%E6%9C%89%E6%96%87%E7%AB%A0%E7%9A%84%E6%97%A5%E6%9C%9F%E9%A1%8F%E8%89%B2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#6-%E6%B7%B1%E8%89%B2%E6%A8%A1%E5%BC%8F%E4%B8%AD%E6%89%80%E6%9C%89%E6%96%87%E7%AB%A0%E7%9A%84%E6%97%A5%E6%9C%9F%E9%A1%8F%E8%89%B2" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+
+
+<h2 class="relative group">7. Hugo 原生 highlight shortcode border 與 MarkDown 不同 
+    <div id="7-hugo-%E5%8E%9F%E7%94%9F-highlight-shortcode-border-%E8%88%87-markdown-%E4%B8%8D%E5%90%8C" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#7-hugo-%E5%8E%9F%E7%94%9F-highlight-shortcode-border-%E8%88%87-markdown-%E4%B8%8D%E5%90%8C" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
 
         </div>
         

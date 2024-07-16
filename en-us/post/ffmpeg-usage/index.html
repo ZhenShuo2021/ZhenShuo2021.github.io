@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="en" />
@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>FFmpeg Notes &middot; ZSL&#39;s Blog</title>
-  <meta name="title" content="FFmpeg Notes &middot; ZSL&#39;s Blog" />
+  <title>FFmpeg Notes &#45; ZSL&#39;s Blog</title>
+  <meta name="title" content="FFmpeg Notes &#45; ZSL&#39;s Blog" />
   
   
   <meta name="keywords" content="useful tools, image processing, commend notes, " />
   
   
-  <link rel="canonical" href="https://www.zsl0621.cc/en-us/post/ffmpeg-usage/" />
+  <link rel="canonical" href="http://localhost:1313/en-us/post/ffmpeg-usage/" />
   
   
   
@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.282fb84e03b4c36981a4e5f19c7a734dfd46ac5fa8eae4faf030fa085267dab1c7700edcabd2f0d98f47355453de42293e4e0d3015e6d682761ea3919e7e3cf4.css"
-    integrity="sha512-KC&#43;4TgO0w2mBpOXxnHpzTf1GrF&#43;o6uT68DD6CFJn2rHHcA7cq9Lw2Y9HNVRT3kIpPk4NMBXm1oJ2HqORnn489A==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.6e944381533766d46bff93f14f3a174b25164b55b75edd29e5309b9edd5c5fd223731fc4b886d8cb3f6728d43bed95e14032854779ab886bfe338967906dbd22.css"
+    integrity="sha512-bpRDgVM3ZtRr/5PxTzoXSyUWS1W3Xt0p5TCbnt1cX9Ijcx/EuIbYyz9nKNQ77ZXhQDKFR3mriGv&#43;M4lnkG29Ig==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -51,28 +51,30 @@
   
   
   
-<link rel="icon" type="image/png" sizes="192x192" href="https://www.zsl0621.cc/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://www.zsl0621.cc/android-chrome-512x512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="http://localhost:1313/android-chrome-512x512.png">
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.zsl0621.cc/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/apple-touch-icon.png">
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.zsl0621.cc/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.zsl0621.cc/favicon-16x16.png">
-<link rel="shortcut icon" href="https://www.zsl0621.cc/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="shortcut icon" href="http://localhost:1313/favicon.ico">
 
 
-<link rel="manifest" href="https://www.zsl0621.cc/site.webmanifest">
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
 
+  
+  
+  
+  <meta name="google-site-verification" content="googlee722738e1de41a1a" />
   
   
   
   
   
-  
-  
-  <meta property="og:url" content="https://www.zsl0621.cc/en-us/post/ffmpeg-usage/">
+  <meta property="og:url" content="http://localhost:1313/en-us/post/ffmpeg-usage/">
   <meta property="og:site_name" content="ZSL&#39;s Blog">
   <meta property="og:title" content="FFmpeg Notes">
   <meta property="og:description" content="However only get 60 for vmaf score. FFmpeg Usage # Basic Knowledge # CRF (Constant Rate Factor): The higher CRF the higher loss.">
@@ -101,7 +103,7 @@
     
     "abstract": "However only get 60 for vmaf score. FFmpeg Usage # Basic Knowledge # CRF (Constant Rate Factor): The higher CRF the higher loss.",
     "inLanguage": "en",
-    "url" : "https:\/\/www.zsl0621.cc\/en-us\/post\/ffmpeg-usage\/",
+    "url" : "http:\/\/localhost:1313\/en-us\/post\/ffmpeg-usage\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
@@ -176,7 +178,7 @@
   
   
 </head><body
-  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32">
+  class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
@@ -295,7 +297,7 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">EN🇺🇸</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
@@ -303,13 +305,13 @@
         
         <a href="/post/ffmpeg-usage/" class="flex items-center">
           <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">
-            繁體中文
+            中文🇹🇼
           </p>
         </a>
         
         <a href="/en-us/post/ffmpeg-usage/" class="flex items-center">
           <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">
-            English
+            EN🇺🇸
           </p>
         </a>
         
@@ -370,7 +372,7 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">EN</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">EN🇺🇸</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
@@ -378,13 +380,13 @@
         
         <a href="/post/ffmpeg-usage/" class="flex items-center">
           <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg筆記">
-            繁體中文
+            中文🇹🇼
           </p>
         </a>
         
         <a href="/en-us/post/ffmpeg-usage/" class="flex items-center">
           <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="FFmpeg Notes">
-            English
+            EN🇺🇸
           </p>
         </a>
         
@@ -628,6 +630,7 @@
   
   
 
+  <div id="progress-bar"></div>
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
@@ -676,10 +679,10 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">7 June 2024</time><span class="px-2 text-primary-500">&middot;</span><span>602 words</span><span class="px-2 text-primary-500">&middot;</span>
+  <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">7 June 2024</time><span class="px-2 text-neutral-500">&middot;</span><span>602 words</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
-<script type="text/javascript" src="/js/zen-mode.min.ccc8b2a0c4505216444ca25530c7328aa0bef94f43dabaf3e598e1b4271de9eec76c1cb35917471a4f7ccb8d84051b3acef42baa30724ac3a667fcf1fec4432a.js" integrity="sha512-zMiyoMRQUhZETKJVMMcyiqC&#43;&#43;U9D2rrz5ZjhtCcd6e7HbByzWRdHGk98y42EBRs6zvQrqjBySsOmZ/zx/sRDKg=="></script>
+<script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
 
 <span class="mb-[2px]">
     <span id="zen-mode-button"
@@ -779,6 +782,7 @@
     
 
   </header>
+  <script src="/js/progress-bar.js"></script>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
@@ -786,16 +790,14 @@
       class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-[140px]">
 
-         
-
-<details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+         <details open id="TOCView"
+  class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
     Table of Contents
   </summary>
   <div
-    class="min-w-[220px] py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#ffmpeg-usage">FFmpeg Usage</a>
@@ -824,8 +826,7 @@
     Table of Contents
   </summary>
   <div
-    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600"
-    style="max-height: 450px; overflow-y: auto;">
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
     <li><a href="#ffmpeg-usage">FFmpeg Usage</a>
@@ -849,8 +850,33 @@
   </div>
 </details>
 
- 
 <script>
+
+  var margin = 200;
+  var marginError = 50;
+
+  (function () {
+    var $window = $(window);
+    var $toc = $('#TOCView');
+    var tocHeight = $toc.height();
+
+    function onResize() {
+      var windowAndMarginHeight = $window.height() - margin;
+      if(tocHeight >= windowAndMarginHeight) {
+        $toc.css("overflow-y", "scroll")
+        $toc.css("max-height", (windowAndMarginHeight + marginError) + "px")
+      } else {
+        $toc.css("overflow-y", "hidden")
+        $toc.css("max-height", "9999999px")
+      }
+    }
+
+    $window.on('resize', onResize);
+    $(document).ready(onResize);
+  })();
+
+
+
   (function () {
     var $toc = $('#TableOfContents');
     if ($toc.length > 0) {
@@ -887,8 +913,9 @@
       });
     }
   })();
-</script>
 
+
+</script>
    </div>
       </div>
       
@@ -1291,7 +1318,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/en-us/post/ffmpeg-usage/&amp;text=FFmpeg%20Notes"
+      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/en-us/post/ffmpeg-usage/&amp;text=FFmpeg%20Notes"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1309,7 +1336,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/en-us/post/ffmpeg-usage/&amp;quote=FFmpeg%20Notes"
+      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/en-us/post/ffmpeg-usage/&amp;quote=FFmpeg%20Notes"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1328,7 +1355,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/en-us/post/ffmpeg-usage/&amp;subject=FFmpeg%20Notes"
+      href="mailto:?body=http://localhost:1313/en-us/post/ffmpeg-usage/&amp;subject=FFmpeg%20Notes"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -1407,7 +1434,7 @@ CLI: FFmpeg</p>
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">8 May 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1009 words</span>
+  <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">8 May 2024</time><span class="px-2 text-neutral-500">&middot;</span><span>1009 words</span>
   
 
   
@@ -1478,6 +1505,10 @@ CLI: FFmpeg</p>
 
         </div>
 
+        
+        <div class="py-1 prose dark:prose-invert">
+          Site Setup Log (No Static IP, Cloudflare Tunnel + DDNS-GO) # Concept # No specific concept, just looking for a secure way to access the external network.
+        </div>
         
       </div>
       <div class="px-6 pt-4 pb-2">
@@ -1709,6 +1740,5 @@ CLI: FFmpeg</p>
 
   </div>
 </body>
-
 
 </html>
