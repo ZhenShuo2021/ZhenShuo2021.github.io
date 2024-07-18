@@ -116,7 +116,7 @@
     "keywords": ["git","指令筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "926"
+    "wordCount": "1264"
   }]
   </script>
 
@@ -533,7 +533,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/img/background_hu98a5ebcc75b004cc2f2a301b757e6310_365554_1200x0_resize_q75_h2_box_2.webp);">
+    style="background-image:url(/img/background.webp);">
     
 
 
@@ -607,7 +607,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&middot;</span><span>926 字</span><span class="px-2 text-neutral-500">&middot;</span>
+  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024-06-02</time><span class="px-2 text-neutral-500">&middot;</span><span>1264 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -744,13 +744,19 @@
             <li><a href="#5-分支">5. 分支</a></li>
           </ul>
         </li>
-        <li><a href="#上傳到-github">上傳到 Github</a></li>
+        <li><a href="#上傳到-github">上傳到 Github</a>
+          <ul>
+            <li><a href="#1-ssh">1. SSH</a></li>
+            <li><a href="#2-optional-gpg">2. (Optional) GPG</a></li>
+          </ul>
+        </li>
         <li><a href="#還原工作階段2">還原工作階段</a></li>
       </ul>
     </li>
     <li><a href="#正式工作篇">正式工作篇</a>
       <ul>
         <li><a href="#別用-git-pull">別用 git pull?</a></li>
+        <li><a href="#rebase-vs-cherry-pick">rebase vs cherry-pick</a></li>
       </ul>
     </li>
   </ul>
@@ -778,13 +784,19 @@
             <li><a href="#5-分支">5. 分支</a></li>
           </ul>
         </li>
-        <li><a href="#上傳到-github">上傳到 Github</a></li>
+        <li><a href="#上傳到-github">上傳到 Github</a>
+          <ul>
+            <li><a href="#1-ssh">1. SSH</a></li>
+            <li><a href="#2-optional-gpg">2. (Optional) GPG</a></li>
+          </ul>
+        </li>
         <li><a href="#還原工作階段2">還原工作階段</a></li>
       </ul>
     </li>
     <li><a href="#正式工作篇">正式工作篇</a>
       <ul>
         <li><a href="#別用-git-pull">別用 git pull?</a></li>
+        <li><a href="#rebase-vs-cherry-pick">rebase vs cherry-pick</a></li>
       </ul>
     </li>
   </ul>
@@ -985,10 +997,22 @@
     </span>        
     
 </h2>
+
+
+<h3 class="relative group">1. SSH 
+    <div id="1-ssh" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-ssh" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
 <ol>
 <li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key" target="_blank">產生ssh金鑰</a></li>
-<li>Setting&gt;Email勾選 &ldquo;<a href="https://stackoverflow.com/questions/48536030/github-shows-that-my-commits-have-been-pushed-by-2-authors-me-and-me" target="_blank">Block command line pushes that expose my email</a>&rdquo;</li>
-<li>回到terminal設定名稱及<a href="https://stackoverflow.com/questions/43863522/error-your-push-would-publish-a-private-email-address" target="_blank">email</a></li>
+<li>(Optional) 隱藏信箱Setting&gt;Email勾選 &ldquo;Block command line pushes that expose my email&rdquo;，如要隱藏信箱，請到 <code>https://api.github.com/users/你的github名稱</code> 查看下面需要的 ID</li>
+<li>設定名稱及信箱，如不需隱藏信箱則直接打自己的信箱</li>
 </ol>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global user.name &#34;NAME&#34;
 </span></span><span class="line"><span class="cl">git config --global user.email &#34;{ID}+{username}@users.noreply.github.com&#34;
@@ -996,6 +1020,22 @@
 <li>上傳 <code>git push -u origin main</code></li>
 </ol>
 
+
+<h3 class="relative group">2. (Optional) GPG 
+    <div id="2-optional-gpg" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2-optional-gpg" aria-label="定位點">#</a>
+    </span>        
+    
+</h3>
+<p>請直接看 <a href="https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/" target="_blank">利用 GPG 簽署 git commit</a> 的教學。<br>
+如果要隱藏信箱在 GPG 設定時需使用剛剛設定的 noreply 信箱。<br>
+如果已經有 GPG key，可以用以下指令刪除：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">git config --global --unset-all user.signingkey
+</span></span></code></pre></div>
 
 <h2 class="relative group">還原工作階段<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> 
     <div id="%E9%82%84%E5%8E%9F%E5%B7%A5%E4%BD%9C%E9%9A%8E%E6%AE%B52" class="anchor"></div>
@@ -1070,6 +1110,26 @@ Git Cherry Pick</li>
 </h2>
 <p>By <a href="https://www.youtube.com/watch?v=xN1-2p06Urc" target="_blank">Philomatics</a></p>
 <p>原理是避免 git pull 產生一堆無用的 merge conflict。其實這和码农高天的用法是一樣的，只是合併成 git pull &ndash;rebase。如果沒衝突那很好，有衝突則 git rebase &ndash;abort 回復再做一般的 git pull。</p>
+
+
+<h2 class="relative group">rebase vs cherry-pick 
+    <div id="rebase-vs-cherry-pick" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#rebase-vs-cherry-pick" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>Rebase: 將一個分支的所有變更移到另一個分支的頂端，用於保持線性歷史<br>
+   （把此分支的修改放旁邊，加入 main 的修改，再想辦法把剛剛的修改放進來）</p>
+<p>Cherry-pick: 選擇性地將單個 commit 應用到另一個分支，適用於只需要特定更改的情況<br>
+   （從別的分支拿功能來用）</p>
+<p>選用：<br>
+Rebase 移動整個分支，cherry-pick 只移動單個 commit<br>
+Rebase 重寫歷史，cherry-pick 保留原始歷史<br>
+Rebase 用於整合分支，cherry-pick 用於選擇性地應用更改</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -1099,10 +1159,8 @@ Git Cherry Pick</li>
     
     
       
-        
-      
       <img class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4" width="96" height="96"
-      alt="ZSL" src="/img/zsl_hu6a261a55c341595934acdabfa7063634_484432_192x192_fill_q75_h2_box_center_2.webp" />
+      alt="ZSL" src="/img/zsl.webp" />
     
   
   <div class="place-self-center">
@@ -1208,7 +1266,7 @@ Git Cherry Pick</li>
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured.webp);"></div>
         
       
 
@@ -1349,7 +1407,7 @@ Git Cherry Pick</li>
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured.webp);"></div>
         
       
 
@@ -1490,7 +1548,7 @@ Git Cherry Pick</li>
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
-        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured_hu98a5ebcc75b004cc2f2a301b757e6310_365554_600x0_resize_q75_h2_box_2.webp);"></div>
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured.webp);"></div>
         
       
 
