@@ -277,6 +277,21 @@
     />
   </url>
   <url>
+    <loc>https://www.zsl0621.cc/en-us/jottings/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/jottings/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/jottings/"
+    />
+  </url>
+  <url>
     <loc>https://www.zsl0621.cc/en-us/notes/linux/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -292,18 +307,18 @@
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/essay/</loc>
+    <loc>https://www.zsl0621.cc/en-us/notes/personal/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/essay/"
+      href="https://www.zsl0621.cc/notes/personal/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/essay/"
+      href="https://www.zsl0621.cc/en-us/notes/personal/"
     />
   </url>
   <url>
