@@ -28,8 +28,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.190f3a31e1b9b8fd054603471fb6c33211bea59b4d136154f6ebd134946087a98c4682d5e3e9a2a1e68237b000ec2a9463f6dd1c6ac7c329b03b6c2dd0e0f42e.css"
-    integrity="sha512-GQ86MeG5uP0FRgNHH7bDMhG&#43;pZtNE2FU9uvRNJRgh6mMRoLV4&#43;mioeaCN7AA7CqUY/bdHGrHwymwO2wt0OD0Lg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.683bd350fd0a1d4f8f37cb110c844517a6f30cc412f57f1cefd8be97ea066c9ab42107dbd333f4bd611d95e606c8260d584c55a04024d5d4e491a20ed30b29f6.css"
+    integrity="sha512-aDvTUP0KHU&#43;PN8sRDIRFF6bzDMQS9X8c79i&#43;l&#43;oGbJq0IQfb0zP0vWEdleYGyCYNWExVoEAk1dTkkaIO0wsp9g==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -116,7 +116,7 @@
     "keywords": ["Linux","指令筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "230"
+    "wordCount": "526"
   }]
   </script>
 
@@ -153,6 +153,8 @@
   
   
 
+
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XMT1S11VE4"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -161,6 +163,8 @@
 
   gtag('config', 'G-XMT1S11VE4');
 </script>
+
+
 
 
   
@@ -552,7 +556,9 @@
   
   
 
-  <div id="progress-bar"></div>
+  
+    <div id="progress-bar"></div>
+  
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
@@ -601,7 +607,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&middot;</span><span>230 字</span><span class="px-2 text-neutral-500">&middot;</span>
+  <time datetime="2024-05-30 00:00:00 &#43;0000 UTC">2024-05-30</time><span class="px-2 text-neutral-500">&middot;</span><span>526 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -706,7 +712,9 @@
     
 
   </header>
-  <script src="/js/progress-bar.js"></script>
+  
+   <script src="/js/progress-bar.js"></script>
+  
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
@@ -726,11 +734,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#搬移整個資料夾">搬移整個資料夾</a></li>
-        <li><a href="#複製並保留文件屬性">複製並保留文件屬性</a></li>
-        <li><a href="#容量檢查">容量檢查</a></li>
+        <li><a href="#文件移動">文件移動</a></li>
+        <li><a href="#檢視硬碟容量">檢視硬碟容量</a></li>
         <li><a href="#列出記憶體佔用">列出記憶體佔用</a></li>
         <li><a href="#建立開機自動執行">建立開機自動執行</a></li>
+        <li><a href="#smb-掛載">SMB 掛載</a></li>
       </ul>
     </li>
   </ul>
@@ -748,11 +756,11 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#搬移整個資料夾">搬移整個資料夾</a></li>
-        <li><a href="#複製並保留文件屬性">複製並保留文件屬性</a></li>
-        <li><a href="#容量檢查">容量檢查</a></li>
+        <li><a href="#文件移動">文件移動</a></li>
+        <li><a href="#檢視硬碟容量">檢視硬碟容量</a></li>
         <li><a href="#列出記憶體佔用">列出記憶體佔用</a></li>
         <li><a href="#建立開機自動執行">建立開機自動執行</a></li>
+        <li><a href="#smb-掛載">SMB 掛載</a></li>
       </ul>
     </li>
   </ul>
@@ -838,49 +846,37 @@
         <div class="article-content max-w-prose mb-20">
           
 
-<h2 class="relative group">搬移整個資料夾 
-    <div id="%E6%90%AC%E7%A7%BB%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" class="anchor"></div>
+<h2 class="relative group">文件移動 
+    <div id="%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8B%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E6%90%AC%E7%A7%BB%E6%95%B4%E5%80%8B%E8%B3%87%E6%96%99%E5%A4%BE" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%96%87%E4%BB%B6%E7%A7%BB%E5%8B%95" aria-label="定位點">#</a>
     </span>        
     
 </h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mv source/folder/ dest/folder/
-</span></span><span class="line"><span class="cl">&#34;final / is must&#34;
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mv source/ dest/        # 搬移整個資料夾
+</span></span><span class="line"><span class="cl">cp -rfp source/ dest/   # 複製並保留文件屬性
+</span></span><span class="line"><span class="cl"># r: 包含子目錄
+</span></span><span class="line"><span class="cl"># f: 強制複製
+</span></span><span class="line"><span class="cl"># p: 保留原始文件屬性
+</span></span><span class="line"><span class="cl">cp source/* dest        # 只搬資料夾內檔案
 </span></span></code></pre></div>
 
-<h2 class="relative group">複製並保留文件屬性 
-    <div id="%E8%A4%87%E8%A3%BD%E4%B8%A6%E4%BF%9D%E7%95%99%E6%96%87%E4%BB%B6%E5%B1%AC%E6%80%A7" class="anchor"></div>
+<h2 class="relative group">檢視硬碟容量 
+    <div id="%E6%AA%A2%E8%A6%96%E7%A1%AC%E7%A2%9F%E5%AE%B9%E9%87%8F" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E8%A4%87%E8%A3%BD%E4%B8%A6%E4%BF%9D%E7%95%99%E6%96%87%E4%BB%B6%E5%B1%AC%E6%80%A7" aria-label="定位點">#</a>
-    </span>        
-    
-</h2>
-<p>r: copy directories recursively
-f: if an existing destination file cannot be opened, remove it and try again
-p: preserve the specified attributes</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cp -rfp source/folder/ dest/folder/
-</span></span></code></pre></div>
-
-<h2 class="relative group">容量檢查 
-    <div id="%E5%AE%B9%E9%87%8F%E6%AA%A2%E6%9F%A5" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E5%AE%B9%E9%87%8F%E6%AA%A2%E6%9F%A5" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#%E6%AA%A2%E8%A6%96%E7%A1%AC%E7%A2%9F%E5%AE%B9%E9%87%8F" aria-label="定位點">#</a>
     </span>        
     
 </h2>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">du /home -h | sort -nr | tail
 </span></span><span class="line"><span class="cl">df -h
-</span></span><span class="line"><span class="cl">sudo ncdu -x /path
+</span></span><span class="line"><span class="cl">sudo ncdu -x /path                 # ncdu 好用「非常多」
 </span></span></code></pre></div>
 
 <h2 class="relative group">列出記憶體佔用 
@@ -906,7 +902,7 @@ p: preserve the specified attributes</p>
     </span>        
     
 </h2>
-<p>這裡用docker-compose示範，五步驟分別是建立.service檔、reload .service、啟用、開始、查看狀態。</p>
+<p>這裡用docker-compose示範，五步驟分別是建立.service檔、reload .service、啟用、開始、查看狀態。參考資料<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="n">system</span><span class="o">/</span><span class="n">stirling</span><span class="o">-</span><span class="n">pdf</span><span class="o">.</span><span class="n">service</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 建立完成再執行以下指令</span>
 </span></span><span class="line"><span class="cl"><span class="n">sudo</span> <span class="n">systemctl</span> <span class="n">daemon</span><span class="o">-</span><span class="n">reload</span>
@@ -932,7 +928,43 @@ p: preserve the specified attributes</p>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">[Install]
 </span></span><span class="line"><span class="cl">WantedBy=multi-user.target
-</span></span></code></pre></div><p>參考資料<sup><sup><a href="https://hackmd.io/@ezplus-2020/H1soa90V9" target="_blank">1</a><a href="https://hackmd.io/@ezplus-2020/H1soa90V9" target="_blank">2</a></sup></sup></p>
+</span></span></code></pre></div><p>開機自動化也可以使用以下<a href="https://www.kwchang0831.dev/photoprism" target="_blank">方式</a>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># nano /etc/rc.local
+</span></span><span class="line"><span class="cl">mount /path/mount
+</span></span><span class="line"><span class="cl">exit 0
+</span></span></code></pre></div><p>設定開機自動掛載smb。</p>
+
+
+<h2 class="relative group">SMB 掛載 
+    <div id="smb-%E6%8E%9B%E8%BC%89" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#smb-%E6%8E%9B%E8%BC%89" aria-label="定位點">#</a>
+    </span>        
+    
+</h2>
+<p>在 <code>etc/fstab</code> 最下方新增：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 格式
+</span></span><span class="line"><span class="cl">&lt;IP&gt;/&lt;遠端資料夾&gt; &lt;掛載本地資料夾&gt; cifs credentials=&lt;證書路徑&gt;,_netdev,x-systemd.automount,file_mode=0777,dir_mode=0777 0 0
+</span></span><span class="line"><span class="cl"># 範例
+</span></span><span class="line"><span class="cl">//192.168.50.98/immich/external-lib /home/leo/photo cifs credentials=/home/leo/.cifs,_netdev 0 0
+</span></span><span class="line"><span class="cl"># _netdev: 強制系統辨識成網路硬碟
+</span></span><span class="line"><span class="cl"># x-systemd.automount: 自動掛載
+</span></span><span class="line"><span class="cl"># file_mode/dir_mode: 文件權限
+</span></span><span class="line"><span class="cl"># 0 0: dump備份和fsck檢查
+</span></span></code></pre></div><p>逗號後面可選但<a href="https://rain.tips/2024/02/06/%E5%AF%A6%E6%88%B0%E6%95%99%E5%AD%B8%EF%BC%9A%E5%AF%A6%E7%8F%BEubuntu%E7%92%B0%E5%A2%83%E4%B8%AD%E9%AB%98%E6%95%88%E7%9A%84%E7%A1%AC%E7%A2%9F%E5%85%B1%E4%BA%AB/" target="_blank">兩個零</a>還是要保留。證書格式為：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">username=遠端SMB帳戶
+</span></span><span class="line"><span class="cl">password=密碼
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://hackmd.io/@ezplus-2020/H1soa90V9" target="_blank">https://hackmd.io/@ezplus-2020/H1soa90V9</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
         </div>
         
@@ -1107,7 +1139,7 @@ p: preserve the specified attributes</p>
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-neutral-500">&middot;</span><span>96 字</span>
+  <time datetime="2024-05-27 00:00:00 &#43;0000 UTC">2024-05-27</time><span class="px-2 text-neutral-500">&middot;</span><span>149 字</span>
   
 
   
