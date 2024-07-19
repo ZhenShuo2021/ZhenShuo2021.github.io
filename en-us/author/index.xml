@@ -2,19 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Author on ZSL&#39;s Blog</title>
-    <link>https://www.zsl0621.cc/en-us/author/</link>
+    <link>http://localhost:1313/en-us/author/</link>
     <description>Recent content in Author on ZSL&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sun, 21 Jun 1998 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/author/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jun 1998 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en-us/author/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ZSL</title>
-      <link>https://www.zsl0621.cc/en-us/author/zsl/</link>
+      <title>About</title>
+      <link>http://localhost:1313/en-us/author/zsl/</link>
       <pubDate>Sun, 21 Jun 1998 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/author/zsl/</guid>
-      <description>Forced to learn go, css, and html.</description>
+      <guid>http://localhost:1313/en-us/author/zsl/</guid>
+      <description>Translate by ChatGPT GPT4o-mini
+Origin # When I came across various useful pieces of information online, I used to bookmark them.</description>
       
     </item>
     
