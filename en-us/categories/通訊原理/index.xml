@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>通訊原理 on ZSL&#39;s Blog</title>
-    <link>https://www.zsl0621.cc/en-us/categories/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/</link>
+    <link>http://localhost:1313/en-us/categories/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/</link>
     <description>Recent content in 通訊原理 on ZSL&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 14 Jun 2024 02:45:40 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/categories/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jun 2024 02:45:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/en-us/categories/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rician Fading</title>
-      <link>https://www.zsl0621.cc/en-us/posts/rician-fading/</link>
+      <link>http://localhost:1313/en-us/posts/rician-fading/</link>
       <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/rician-fading/</guid>
+      <guid>http://localhost:1313/en-us/posts/rician-fading/</guid>
       <description>Methods of Rician fading generation founds on the internet.</description>
       
     </item>
