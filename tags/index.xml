@@ -1,13 +1,43 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>標籤 on ZSL&#39;s Blog</title>
+    <title>標籤 on ZSL</title>
     <link>https://www.zsl0621.cc/tags/</link>
-    <description>Recent content in 標籤 on ZSL&#39;s Blog</description>
+    <description>Recent content in 標籤 on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2024 07:12:50 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://www.zsl0621.cc/tags/linux/</link>
+      <pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/tags/linux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Tmux</title>
+      <link>https://www.zsl0621.cc/tags/tmux/</link>
+      <pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/tags/tmux/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>教學</title>
+      <link>https://www.zsl0621.cc/tags/%E6%95%99%E5%AD%B8/</link>
+      <pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/tags/%E6%95%99%E5%AD%B8/</guid>
+      <description></description>
+      
+    </item>
+    
     <item>
       <title>Hugo</title>
       <link>https://www.zsl0621.cc/tags/hugo/</link>
@@ -79,16 +109,6 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://www.zsl0621.cc/tags/linux/</link>
-      <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/tags/linux/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
       <title>Docker</title>
       <link>https://www.zsl0621.cc/tags/docker/</link>
       <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
@@ -114,6 +134,26 @@
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/tags/%E6%9E%B6%E7%AB%99/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Exiftool</title>
+      <link>https://www.zsl0621.cc/tags/exiftool/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/tags/exiftool/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>照片</title>
+      <link>https://www.zsl0621.cc/tags/%E7%85%A7%E7%89%87/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/tags/%E7%85%A7%E7%89%87/</guid>
       <description></description>
       
     </item>

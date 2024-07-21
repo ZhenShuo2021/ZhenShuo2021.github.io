@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Place for articles. on ZSL&#39;s Blog</title>
+    <title>Place for articles. on ZSL</title>
     <link>https://www.zsl0621.cc/en-us/posts/</link>
-    <description>Recent content in Place for articles. on ZSL&#39;s Blog</description>
+    <description>Recent content in Place for articles. on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
@@ -20,10 +20,10 @@
     
     <item>
       <title>FFmpeg Notes</title>
-      <link>https://www.zsl0621.cc/en-us/posts/ffmpeg-usage/</link>
+      <link>https://www.zsl0621.cc/en-us/posts/ffmpeg/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/ffmpeg-usage/</guid>
+      <guid>https://www.zsl0621.cc/en-us/posts/ffmpeg/</guid>
       <description>Basic knowledge of FFmpeg.</description>
       
     </item>
@@ -35,6 +35,16 @@
       
       <guid>https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/</guid>
       <description>My log of setting old PC as NAS.</description>
+      
+    </item>
+    
+    <item>
+      <title>使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</title>
+      <link>https://www.zsl0621.cc/en-us/posts/exiftool/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/en-us/posts/exiftool/</guid>
+      <description>修改 EXIF 資訊的腳本，主要用於網路下載的相簿。</description>
       
     </item>
     

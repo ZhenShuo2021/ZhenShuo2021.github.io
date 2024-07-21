@@ -197,19 +197,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/ffmpeg-usage/</loc>
+    <loc>https://www.zsl0621.cc/en-us/posts/ffmpeg/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/ffmpeg-usage/"
+      href="https://www.zsl0621.cc/posts/ffmpeg/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/ffmpeg-usage/"
+      href="https://www.zsl0621.cc/en-us/posts/ffmpeg/"
     />
   </url>
   <url>
@@ -291,6 +291,108 @@
     />
   </url>
   <url>
+    <loc>https://www.zsl0621.cc/en-us/tags/exiftool/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/tags/exiftool/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/tags/exiftool/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/categories/%E5%B7%A5%E5%85%B7/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/categories/%E5%B7%A5%E5%85%B7/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/categories/%E5%B7%A5%E5%85%B7%E4%BA%8C/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/posts/exiftool/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/posts/exiftool/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/posts/exiftool/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/tags/%E7%85%A7%E7%89%87/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/tags/%E7%85%A7%E7%89%87/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/tags/%E7%85%A7%E7%89%87/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-03-19T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/"
+    />
+  </url>
+  <url>
     <loc>https://www.zsl0621.cc/en-us/about/</loc>
     <lastmod>1998-06-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -304,6 +406,21 @@
       rel="alternate"
       hreflang="en"
       href="https://www.zsl0621.cc/en-us/about/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/en-us/archives/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/archives/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/archives/"
     />
   </url>
   <url>
@@ -349,21 +466,6 @@
       rel="alternate"
       hreflang="en"
       href="https://www.zsl0621.cc/en-us/notes/linux/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/en-us/archives/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/archives/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/archives/"
     />
   </url>
 </urlset>

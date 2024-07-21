@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>筆記 on ZSL&#39;s Blog</title>
+    <title>筆記 on ZSL</title>
     <link>https://www.zsl0621.cc/notes/</link>
-    <description>Recent content in 筆記 on ZSL&#39;s Blog</description>
+    <description>Recent content in 筆記 on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2024 07:12:50 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/notes/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
