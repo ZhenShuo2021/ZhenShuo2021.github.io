@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>指令筆記 on ZSL</title>
+    <link>https://www.zsl0621.cc/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in 指令筆記 on ZSL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</title>
+      <link>https://www.zsl0621.cc/en-us/posts/exiftool/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/en-us/posts/exiftool/</guid>
+      <description>修改 EXIF 資訊的腳本，主要用於網路下載的相簿。</description>
+      
+    </item>
+    
+  </channel>
+</rss>

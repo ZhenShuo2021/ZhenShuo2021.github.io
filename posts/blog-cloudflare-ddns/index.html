@@ -8,11 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO &middot; ZSL&#39;s Blog</title>
-  <meta name="title" content="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO &middot; ZSL&#39;s Blog" />
+  <title>架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問 - ZSL</title>
+  <meta name="title" content="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問 - ZSL" />
   
-  <meta name="description" content="紀錄把一台破電腦裝成 NAS 的過程" />
+  <meta name="description" content="2024年最新教程:使用Cloudflare Tunnel和DDNS實現安全外網訪問,無需開放端口。包含域名設置、API獲取、DDNS配置和Tunnel搭建的完整步驟,適合家庭服務器使用,安全又便宜。" />
   <meta name="keywords" content="架站, Cloudflare, 指令筆記, " />
+    
+  
   
   
   <link rel="canonical" href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/" />
@@ -75,9 +77,9 @@
   
   
   <meta property="og:url" content="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-  <meta property="og:site_name" content="ZSL&#39;s Blog">
-  <meta property="og:title" content="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">
-  <meta property="og:description" content="了解如何手动构建 CF。">
+  <meta property="og:site_name" content="ZSL">
+  <meta property="og:title" content="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
+  <meta property="og:description" content="2024年最新教程:使用Cloudflare Tunnel和DDNS實現安全外網訪問,無需開放端口。包含域名設置、API獲取、DDNS配置和Tunnel搭建的完整步驟,適合家庭服務器使用,安全又便宜。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -90,8 +92,8 @@
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">
-  <meta name="twitter:description" content="了解如何手动构建 CF。">
+  <meta name="twitter:title" content="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
+  <meta name="twitter:description" content="2024年最新教程:使用Cloudflare Tunnel和DDNS實現安全外網訪問,無需開放端口。包含域名設置、API獲取、DDNS配置和Tunnel搭建的完整步驟,適合家庭服務器使用,安全又便宜。">
 
   
   <script type="application/ld+json">
@@ -99,9 +101,9 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "文章列表",
-    "name": "架站紀錄：無固定IP \u002b Cloudflare tunnel \u002b DDNS-GO",
-    "headline": "架站紀錄：無固定IP \u002b Cloudflare tunnel \u002b DDNS-GO",
-    "description": "了解如何手动构建 CF。",
+    "name": "架站紀錄：Cloudflare Tunnel\u002bDDNS 無需開放通訊埠實現安全外網訪問",
+    "headline": "架站紀錄：Cloudflare Tunnel\u002bDDNS 無需開放通訊埠實現安全外網訪問",
+    "description": "2024年最新教程:使用Cloudflare Tunnel和DDNS實現安全外網訪問,無需開放端口。包含域名設置、API獲取、DDNS配置和Tunnel搭建的完整步驟,適合家庭服務器使用,安全又便宜。",
     "abstract": "紀錄把一台破電腦裝成 NAS 的過程",
     "inLanguage": "zh-tw",
     "url" : "https:\/\/www.zsl0621.cc\/posts\/blog-cloudflare-ddns\/",
@@ -221,7 +223,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL&rsquo;s Blog</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL</a>
             
 
         </nav>
@@ -332,14 +334,14 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">中文🇹🇼</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">中文🇹🇼</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
         <a href="/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
             中文🇹🇼
           </p>
         </a>
@@ -407,14 +409,14 @@
 
 
     </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">中文🇹🇼</div>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">中文🇹🇼</div>
   </div>
   <div class="absolute menuhide">
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
         <a href="/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
             中文🇹🇼
           </p>
         </a>
@@ -686,7 +688,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      架站紀錄：無固定IP + Cloudflare tunnel + DDNS-GO
+      架站紀錄：Cloudflare Tunnel+DDNS 無需開放通訊埠實現安全外網訪問
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -1017,7 +1019,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            #1 [本文] 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO 
+            #1 [本文] 架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問 
         </a>
     </div>
     
@@ -1026,7 +1028,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/custom-hugo/">
-            #2 架站紀錄：客製化Hugo
+            #2 架站紀錄：Hugo Blowfish 的客製化設計與功能增強指南
         </a>
     </div>
     
@@ -1641,7 +1643,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            #1 [本文] 架站紀錄：無固定IP &#43; Cloudflare tunnel &#43; DDNS-GO 
+            #1 [本文] 架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問 
         </a>
     </div>
     
@@ -1650,7 +1652,7 @@
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
         <a href="https://www.zsl0621.cc/posts/custom-hugo/">
-            #2 架站紀錄：客製化Hugo
+            #2 架站紀錄：Hugo Blowfish 的客製化設計與功能增強指南
         </a>
     </div>
     
@@ -1667,7 +1669,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1686,7 +1688,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;text=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;text=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1704,7 +1706,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="發送到 Reddit"
       aria-label="發送到 Reddit"
       >
@@ -1723,7 +1725,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title=""
       aria-label=""
       >
@@ -1742,7 +1744,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title=""
       aria-label=""
       >
@@ -1761,7 +1763,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;description=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;description=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="釘到 Pinterest"
       aria-label="釘到 Pinterest"
       >
@@ -1780,7 +1782,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;quote=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;quote=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1799,7 +1801,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;subject=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9a%e7%84%a1%e5%9b%ba%e5%ae%9aIP%20&#43;%20Cloudflare%20tunnel%20&#43;%20DDNS-GO"
+      href="mailto:?body=https://www.zsl0621.cc/posts/blog-cloudflare-ddns/&amp;subject=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aCloudflare%20Tunnel&#43;DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e9%80%9a%e8%a8%8a%e5%9f%a0%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -1837,7 +1839,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/exiftool/">Exiftool</div>
+          href="/posts/exiftool/">使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1878,7 +1880,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-neutral-500">&middot;</span><span>321 字</span>
+  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-neutral-500">&middot;</span><span>642 字</span>
   
 
   
@@ -1942,6 +1944,22 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/exiftool/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Exiftool
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%85%A7%E7%89%87/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    照片
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -1953,7 +1971,7 @@
 
         
         <div class="py-1 prose dark:prose-invert">
-          一些 Exif 指令和腳本。
+          修改 EXIF 資訊的腳本，主要用於網路下載的相簿。
         </div>
         
       </div>
@@ -2013,7 +2031,7 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Exiftool</span
+                  >使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
@@ -2030,7 +2048,7 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >git指令</span
+                  >Git 基礎概念與實戰指令</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   

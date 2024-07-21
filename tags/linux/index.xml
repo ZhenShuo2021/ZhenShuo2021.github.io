@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on ZSL&#39;s Blog</title>
+    <title>Linux on ZSL</title>
     <link>https://www.zsl0621.cc/tags/linux/</link>
-    <description>Recent content in Linux on ZSL&#39;s Blog</description>
+    <description>Recent content in Linux on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 30 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Jul 2024 07:12:50 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>常用linux指令</title>
-      <link>https://www.zsl0621.cc/posts/common-linux-commands/</link>
+      <title>tmux 使用教學</title>
+      <link>https://www.zsl0621.cc/posts/tmux/</link>
+      <pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/tmux/</guid>
+      <description>學會使用 tmux 來管理多視窗，讓程序在 SSH 斷線後繼續運行，提高工作效率。本文介紹 tmux 的安裝、基本使用方法以及如何在終端操作中高效應用。</description>
+      
+    </item>
+    
+    <item>
+      <title>常用Linux指令</title>
+      <link>https://www.zsl0621.cc/posts/useful-linux-commands/</link>
       <pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/common-linux-commands/</guid>
-      <description>紀錄常用的 linux 指令</description>
+      <guid>https://www.zsl0621.cc/posts/useful-linux-commands/</guid>
+      <description>常用的 Linux 指令小抄</description>
+      
+    </item>
+    
+    <item>
+      <title>常用Docker指令</title>
+      <link>https://www.zsl0621.cc/posts/useful-docker-commands/</link>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/useful-docker-commands/</guid>
+      <description>常用的 docker 指令小抄</description>
       
     </item>
     

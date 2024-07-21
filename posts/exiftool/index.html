@@ -8,11 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Exiftool &middot; ZSL&#39;s Blog</title>
-  <meta name="title" content="Exiftool &middot; ZSL&#39;s Blog" />
+  <title>使用ExifTool根據文件夾名稱自動更新照片EXIF資訊 - ZSL</title>
+  <meta name="title" content="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊 - ZSL" />
   
-  <meta name="description" content="一些 Exif 指令和腳本。" />
-  <meta name="keywords" content="指令筆記, 實用工具, " />
+  <meta name="description" content="使用腳本根據文件夾名稱批量修改照片日期資訊，適合整理從網路下載的相簿，保障照片日期的準確性與一致性，並提供其他EXIF命令以便更好管理照片。" />
+  <meta name="keywords" content="指令筆記, 實用工具, Exiftool, 照片, " />
+    
+  
   
   
   <link rel="canonical" href="https://www.zsl0621.cc/posts/exiftool/" />
@@ -75,9 +77,9 @@
   
   
   <meta property="og:url" content="https://www.zsl0621.cc/posts/exiftool/">
-  <meta property="og:site_name" content="ZSL&#39;s Blog">
-  <meta property="og:title" content="Exiftool">
-  <meta property="og:description" content="整理常用的exiftool使用方法">
+  <meta property="og:site_name" content="ZSL">
+  <meta property="og:title" content="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+  <meta property="og:description" content="使用腳本根據文件夾名稱批量修改照片日期資訊，適合整理從網路下載的相簿，保障照片日期的準確性與一致性，並提供其他EXIF命令以便更好管理照片。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -85,11 +87,13 @@
     <meta property="article:modified_time" content="2024-03-19T00:00:00+00:00">
     <meta property="article:tag" content="指令筆記">
     <meta property="article:tag" content="實用工具">
+    <meta property="article:tag" content="Exiftool">
+    <meta property="article:tag" content="照片">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Exiftool">
-  <meta name="twitter:description" content="整理常用的exiftool使用方法">
+  <meta name="twitter:title" content="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+  <meta name="twitter:description" content="使用腳本根據文件夾名稱批量修改照片日期資訊，適合整理從網路下載的相簿，保障照片日期的準確性與一致性，並提供其他EXIF命令以便更好管理照片。">
 
   
   <script type="application/ld+json">
@@ -97,10 +101,10 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "文章列表",
-    "name": "Exiftool",
-    "headline": "Exiftool",
-    "description": "整理常用的exiftool使用方法",
-    "abstract": "一些 Exif 指令和腳本。",
+    "name": "使用ExifTool根據文件夾名稱自動更新照片EXIF資訊",
+    "headline": "使用ExifTool根據文件夾名稱自動更新照片EXIF資訊",
+    "description": "使用腳本根據文件夾名稱批量修改照片日期資訊，適合整理從網路下載的相簿，保障照片日期的準確性與一致性，並提供其他EXIF命令以便更好管理照片。",
+    "abstract": "修改 EXIF 資訊的腳本，主要用於網路下載的相簿。",
     "inLanguage": "zh-tw",
     "url" : "https:\/\/www.zsl0621.cc\/posts\/exiftool\/",
     "author" : {
@@ -113,10 +117,10 @@
     
     "dateModified": "2024-03-19T00:00:00\u002b00:00",
     
-    "keywords": ["指令筆記","實用工具"],
+    "keywords": ["指令筆記","實用工具","Exiftool","照片"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "321"
+    "wordCount": "642"
   }]
   </script>
 
@@ -219,7 +223,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL&rsquo;s Blog</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL</a>
             
 
         </nav>
@@ -318,6 +322,41 @@
             
 
             
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">中文🇹🇼</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/exiftool/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+            中文🇹🇼
+          </p>
+        </a>
+        
+        <a href="/en-us/posts/exiftool/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+            EN🇺🇸
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
             
@@ -358,6 +397,41 @@
             <span></span>
 
             
+<div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    <span class="mr-1">
+      
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
+  </span>
+
+
+    </span>
+    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">中文🇹🇼</div>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+        <a href="/posts/exiftool/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+            中文🇹🇼
+          </p>
+        </a>
+        
+        <a href="/en-us/posts/exiftool/" class="flex items-center">
+          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="使用ExifTool根據文件夾名稱自動更新照片EXIF資訊">
+            EN🇺🇸
+          </p>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
             
@@ -614,7 +688,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Exiftool
+      使用ExifTool根據文件夾名稱自動更新照片EXIF資訊
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -659,7 +733,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-neutral-500">&middot;</span><span>321 字</span><span class="px-2 text-neutral-500">&middot;</span>
+  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">2024-03-19</time><span class="px-2 text-neutral-500">&middot;</span><span>642 字</span><span class="px-2 text-neutral-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -744,6 +818,22 @@
 </span>
   </span>
   
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/exiftool/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Exiftool
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%85%A7%E7%89%87/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    照片
+  </span>
+</span>
+  </span>
+  
   
   
   
@@ -784,14 +874,14 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-requirements">1. Requirements</a></li>
-    <li><a href="#2-usage">2. Usage</a></li>
-    <li><a href="#3-convert-photos-to-ascending-time">3. Convert Photos to Ascending Time</a></li>
-    <li><a href="#4-other-exif-commands">4. Other EXIF Commands</a>
+    <li><a href="#1-需求">1. 需求</a></li>
+    <li><a href="#2-使用方法">2. 使用方法</a></li>
+    <li><a href="#3-將照片按時間順序排列">3. 將照片按時間順序排列</a></li>
+    <li><a href="#4-其他exif命令">4. 其他EXIF命令</a>
       <ul>
-        <li><a href="#41-basic-usage">4.1 Basic Usage</a></li>
-        <li><a href="#42-copying-exif">4.2 Copying EXIF</a></li>
-        <li><a href="#43-other-commands">4.3 Other Commands</a></li>
+        <li><a href="#41-基本用法">4.1 基本用法</a></li>
+        <li><a href="#42-複製exif資訊">4.2 複製EXIF資訊</a></li>
+        <li><a href="#43-其他命令">4.3 其他命令</a></li>
       </ul>
     </li>
   </ul>
@@ -807,14 +897,14 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#1-requirements">1. Requirements</a></li>
-    <li><a href="#2-usage">2. Usage</a></li>
-    <li><a href="#3-convert-photos-to-ascending-time">3. Convert Photos to Ascending Time</a></li>
-    <li><a href="#4-other-exif-commands">4. Other EXIF Commands</a>
+    <li><a href="#1-需求">1. 需求</a></li>
+    <li><a href="#2-使用方法">2. 使用方法</a></li>
+    <li><a href="#3-將照片按時間順序排列">3. 將照片按時間順序排列</a></li>
+    <li><a href="#4-其他exif命令">4. 其他EXIF命令</a>
       <ul>
-        <li><a href="#41-basic-usage">4.1 Basic Usage</a></li>
-        <li><a href="#42-copying-exif">4.2 Copying EXIF</a></li>
-        <li><a href="#43-other-commands">4.3 Other Commands</a></li>
+        <li><a href="#41-基本用法">4.1 基本用法</a></li>
+        <li><a href="#42-複製exif資訊">4.2 複製EXIF資訊</a></li>
+        <li><a href="#43-其他命令">4.3 其他命令</a></li>
       </ul>
     </li>
   </ul>
@@ -898,151 +988,147 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <br>
-<a
+          <a
   class="!rounded-md bg-primary-600 px-4 py-2 !text-neutral !no-underline hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
   href="https://github.com/ZhenShuo2021/blog-script/tree/main/exiftool"
   target="_self"
   role="button"
 >
   
-Scripts Link (GitHub)
+腳本鏈接 (GitHub)
 
 </a>
 
-<p>This script modifies date info by the folder name. Use this for albums downloaded from network.</p>
+<p>這個腳本根據文件夾名稱修改照片的日期資訊，適用於從網路下載的相簿。</p>
 
 
-<h1 class="relative group">1. Requirements 
-    <div id="1-requirements" class="anchor"></div>
+<h1 class="relative group">1. 需求 
+    <div id="1-%E9%9C%80%E6%B1%82" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#1-requirements" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#1-%E9%9C%80%E6%B1%82" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <p><a href="http://www.sno.phy.queensu.ca/~phil/exiftool/" target="_blank">ExifTool</a><br>
-For Windows users, you might need to install WSL or Git Bash to run the bash script. This script has not been tested on Windows.</p>
+Windows用戶可能需要安裝WSL或Git Bash來運行這個bash腳本。此腳本尚未在Windows上測試。</p>
 
 
-<h1 class="relative group">2. Usage 
-    <div id="2-usage" class="anchor"></div>
+<h1 class="relative group">2. 使用方法 
+    <div id="2-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#2-usage" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#2-%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 <ol>
-<li>Create a base folder and name your subfolder in the format &ldquo;YYYYMMDD title&rdquo;.</li>
-<li>Grant permission and run the script:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">chmod 755 /path/to/script.sh
-</span></span><span class="line"><span class="cl">/path/to/script.sh &#34;/base/folder/name&#34;
-</span></span></code></pre></div></li>
+<li>創建一個基礎文件夾，並按“YYYYMMDD 標題”的格式命名子文件夾。</li>
+<li>授予權限並執行：</li>
 </ol>
-<p>Enjoy the organized EXIF dates!</p>
-<p>Notes:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">chmod <span class="m">755</span> /path/to/script.sh
+</span></span><span class="line"><span class="cl">/path/to/script.sh <span class="s2">&#34;/base/folder/name&#34;</span>
+</span></span></code></pre></div><p>享受組織良好的EXIF日期吧！（這句翻譯成中文也太怪！）</p>
+<p>注意事項：</p>
 <ol>
-<li>Modifications are based on the DateTimeOriginal in EXIF. If absent, we use CreateDate instead.</li>
-<li>Ensure there is a backup for your pictures. You can delete the &ldquo;-overwrite_original&rdquo; to reserve original photo.</li>
-<li>Nested subfolders are not supported.</li>
+<li>修改是基於EXIF中的DateTimeOriginal。如果缺失，則使用CreateDate。</li>
+<li>確保為您的照片備份。您可以刪除&quot;-overwrite_original&quot;以保留原始照片。</li>
+<li>不支持嵌套子文件夾。</li>
 </ol>
 
 
-<h1 class="relative group">3. Convert Photos to Ascending Time 
-    <div id="3-convert-photos-to-ascending-time" class="anchor"></div>
+<h1 class="relative group">3. 將照片按時間順序排列 
+    <div id="3-%E5%B0%87%E7%85%A7%E7%89%87%E6%8C%89%E6%99%82%E9%96%93%E9%A0%86%E5%BA%8F%E6%8E%92%E5%88%97" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#3-convert-photos-to-ascending-time" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#3-%E5%B0%87%E7%85%A7%E7%89%87%E6%8C%89%E6%99%82%E9%96%93%E9%A0%86%E5%BA%8F%E6%8E%92%E5%88%97" aria-label="定位點">#</a>
     </span>        
     
 </h1>
-<p>When file has exact same time, sort by modify time might out of order.<br>
-<a href="%28https://photo.stackexchange.com/questions/60342/how-can-i-incrementally-date-photos%29">source</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Set all photos to same date.</span>
-</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="o">-</span><span class="n">datetimeoriginal</span><span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> <span class="o">-</span><span class="n">filemodifydate</span><span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> <span class="n">DIR</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Increase time for each file by 10s ordered by file name.</span>
-</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="s1">&#39;-datetimeoriginal+&lt;0:0:${filesequence}0&#39;</span> <span class="s1">&#39;-filemodifydate+&lt;0:0:${filesequence}0&#39;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">filename</span> <span class="n">DIR</span>
+<p>當文件具有相同的時間時，按修改時間排序可能會導致順序錯亂。<a href="https://photo.stackexchange.com/questions/60342/how-can-i-incrementally-date-photos" target="_blank">來源</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 將所有照片設置為相同日期。</span>
+</span></span><span class="line"><span class="cl">exiftool -overwrite_original -datetimeoriginal<span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> -filemodifydate<span class="o">=</span><span class="s1">&#39;2022:06:14 14:10:00&#39;</span> DIR
+</span></span><span class="line"><span class="cl"><span class="c1"># 按文件名順序每個文件增加10秒。</span>
+</span></span><span class="line"><span class="cl">exiftool -overwrite_original <span class="s1">&#39;-datetimeoriginal+&lt;0:0:${filesequence}0&#39;</span> <span class="s1">&#39;-filemodifydate+&lt;0:0:${filesequence}0&#39;</span> -fileorder filename DIR
 </span></span></code></pre></div>
 
-<h1 class="relative group">4. Other EXIF Commands 
-    <div id="4-other-exif-commands" class="anchor"></div>
+<h1 class="relative group">4. 其他EXIF命令 
+    <div id="4-%E5%85%B6%E4%BB%96exif%E5%91%BD%E4%BB%A4" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#4-other-exif-commands" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#4-%E5%85%B6%E4%BB%96exif%E5%91%BD%E4%BB%A4" aria-label="定位點">#</a>
     </span>        
     
 </h1>
 
 
-<h2 class="relative group">4.1 Basic Usage 
-    <div id="41-basic-usage" class="anchor"></div>
+<h2 class="relative group">4.1 基本用法 
+    <div id="41-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#41-basic-usage" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#41-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95" aria-label="定位點">#</a>
     </span>        
     
 </h2>
-<p>Increment 20 seconds by filename</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">overwrite_original</span> <span class="s1">&#39;-FileModifyDate+&lt;0:0:${FileSequence; $_*=20}&#39;</span> <span class="o">-</span><span class="n">FileOrder</span> <span class="n">Filename</span>
-</span></span></code></pre></div><p>Loose display</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">s1</span> <span class="n">FILE</span><span class="o">/</span><span class="n">DIR</span>
-</span></span></code></pre></div><p>Only display specified info</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">DateTimeOriginal</span> <span class="n">FILE</span><span class="o">/</span><span class="n">DIR</span>
-</span></span></code></pre></div><p>Assign DateTimeOriginal to other AllDates</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">r</span> <span class="o">-</span><span class="k">if</span> <span class="s1">&#39;$DateTimeOriginal&#39;</span> <span class="o">-</span><span class="n">P</span> <span class="s2">&#34;-AllDates&lt;DateTimeOriginal&#34;</span>  <span class="s2">&#34;-FileModifyDate&lt;DateTimeOriginal&#34;</span> <span class="n">FILE</span>
+<p>按文件名每20秒遞增</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -overwrite_original <span class="s1">&#39;-FileModifyDate+&lt;0:0:${FileSequence; $_*=20}&#39;</span> -FileOrder Filename
+</span></span></code></pre></div><p>鬆散顯示</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -s1 FILE/DIR
+</span></span></code></pre></div><p>只顯示指定資訊</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -DateTimeOriginal FILE/DIR
+</span></span></code></pre></div><p>將DateTimeOriginal分配給其他所有日期</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -r -if <span class="s1">&#39;$DateTimeOriginal&#39;</span> -P <span class="s2">&#34;-AllDates&lt;DateTimeOriginal&#34;</span> <span class="s2">&#34;-FileModifyDate&lt;DateTimeOriginal&#34;</span> FILE
 </span></span></code></pre></div>
 
-<h2 class="relative group">4.2 Copying EXIF 
-    <div id="42-copying-exif" class="anchor"></div>
+<h2 class="relative group">4.2 複製EXIF資訊 
+    <div id="42-%E8%A4%87%E8%A3%BDexif%E8%B3%87%E8%A8%8A" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#42-copying-exif" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#42-%E8%A4%87%E8%A3%BDexif%E8%B3%87%E8%A8%8A" aria-label="定位點">#</a>
     </span>        
     
 </h2>
-<p>Copy exif info from <a href="https://exiftool.org/forum/index.php?topic=11385.0" target="_blank">another file</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">tagsFromFile</span> <span class="n">source</span><span class="o">.</span><span class="n">mpeg</span> <span class="o">-</span><span class="n">FileModifyDate</span> <span class="n">destination</span><span class="o">.</span><span class="n">mp4</span>
-</span></span></code></pre></div><p><strong>Compare the Metadata of two Files</strong>
-<a href="https://exiftool.org/forum/index.php?topic=3276.0" target="_blank">Source</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="n">a</span><span class="o">.</span><span class="n">jpg</span> <span class="n">b</span><span class="o">.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">G1</span> <span class="o">-</span><span class="n">w</span> <span class="n">txt</span>
-</span></span><span class="line"><span class="cl"><span class="n">diff</span> <span class="n">a</span><span class="o">.</span><span class="n">txt</span> <span class="n">b</span><span class="o">.</span><span class="n">txt</span>
-</span></span></code></pre></div><p><strong>Copy all tags from another file</strong>
-<a href="https://exiftool.org/forum/index.php?topic=12962.msg" target="_blank">Source</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">tagsfromfile</span> <span class="n">A</span><span class="o">.</span><span class="n">jpg</span> <span class="o">-</span><span class="n">all</span><span class="p">:</span><span class="n">all</span> <span class="n">B</span><span class="o">.</span><span class="n">jpg</span>
-</span></span></code></pre></div><p>Copy exif info from another folder with <a href="https://exiftool.org/forum/index.php?topic=10322.0" target="_blank">same name</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">TagsFromFile</span> <span class="n">c</span><span class="p">:</span>\<span class="n">exiftool</span>\<span class="n">mpg</span>\<span class="o">%</span><span class="n">f</span><span class="o">.</span><span class="n">mpg</span> <span class="o">-</span><span class="n">FileCreateDate</span> <span class="o">-</span><span class="n">FileModifyDate</span> <span class="n">c</span><span class="p">:</span>\<span class="n">exiftool</span>\<span class="n">mp4</span>
-</span></span></code></pre></div><p>Other copying example from <a href="https://exiftool.org/exiftool_pod.html#COPYING-EXAMPLES" target="_blank">official website</a>.</p>
+<p>從<a href="https://exiftool.org/forum/index.php?topic=11385.0" target="_blank">另一文件</a>複製EXIF資訊</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -tagsFromFile source.mpeg -FileModifyDate destination.mp4
+</span></span></code></pre></div><p><strong>比較兩個文件的元數據</strong>
+<a href="https://exiftool.org/forum/index.php?topic=3276.0" target="_blank">來源</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool a.jpg b.jpg -a -G1 -w txt
+</span></span><span class="line"><span class="cl">diff a.txt b.txt
+</span></span></code></pre></div><p><strong>從另一文件複製所有標籤</strong>
+<a href="https://exiftool.org/exiftool_pod.html#COPYING-EXAMPLES" target="_blank">來源</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -tagsfromfile A.jpg -all
+</span></span><span class="line"><span class="cl">B.jpg
+</span></span></code></pre></div><p>從具有<a href="https://exiftool.org/forum/index.php?topic=10322.0" target="_blank">相同名稱</a>的另一文件夾複製EXIF資訊</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -TagsFromFile ./exiftool/mpg%f.mpg -FileCreateDate -FileModifyDate ./exiftool/mp4
+</span></span></code></pre></div><p><a href="https://exiftool.org/exiftool_pod.html#COPYING-EXAMPLES" target="_blank">官方網站</a> 有更多複製範例。</p>
 
 
-<h2 class="relative group">4.3 Other Commands 
-    <div id="43-other-commands" class="anchor"></div>
+<h2 class="relative group">4.3 其他命令 
+    <div id="43-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#43-other-commands" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#43-%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4" aria-label="定位點">#</a>
     </span>        
     
 </h2>
-<p><strong>Rename file by dates</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Good naming policy avoids EXIF missing forever</span>
-</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">d</span> <span class="o">%</span><span class="n">Y</span><span class="o">%</span><span class="n">m</span><span class="o">%</span><span class="n">d_</span><span class="o">%</span><span class="n">H</span><span class="o">%</span><span class="n">M</span><span class="o">%%-</span><span class="n">c</span><span class="s1">&#39;-DEVICE_MODEL&#39;</span><span class="o">.%%</span><span class="n">e</span> <span class="s2">&#34;-filename&lt;DateTimeOriginal&#34;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">DateTimeOriginal</span> <span class="n">FILE</span>
-</span></span></code></pre></div><p><a href="https://exiftool.org/forum/index.php?topic=12361.0" target="_blank">Categorize by device model</a><br>
-Surprisingly useful for managing photos from different phones.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="s2">&#34;-directory&lt;</span><span class="si">%d</span><span class="s2">/${model;}&#34;</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span>
+<p><strong>按日期重命名文件</strong>：良好的命名規則可永遠避免EXIF遺失</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool -d %Y%m%d_%H%M%%-c<span class="s1">&#39;-DEVICE_MODEL&#39;</span>.%%e <span class="s2">&#34;-filename&lt;DateTimeOriginal&#34;</span> -fileorder DateTimeOriginal FILE
+</span></span></code></pre></div><p><a href="https://exiftool.org/forum/index.php?topic=12361.0" target="_blank">按設備型號分類</a>：對管理來自不同手機的照片非常有用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">exiftool <span class="s2">&#34;-directory&lt;%d/</span><span class="si">${</span><span class="nv">model</span><span class="p">;</span><span class="si">}</span><span class="s2">&#34;</span> -r .
 </span></span></code></pre></div>
         </div>
         
@@ -1323,7 +1409,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/exiftool/&amp;title=Exiftool"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/exiftool/&amp;title=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1342,7 +1428,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/exiftool/&amp;text=Exiftool"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/exiftool/&amp;text=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1360,7 +1446,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=Exiftool"
+      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="發送到 Reddit"
       aria-label="發送到 Reddit"
       >
@@ -1379,7 +1465,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=Exiftool"
+      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title=""
       aria-label=""
       >
@@ -1398,7 +1484,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=Exiftool"
+      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/exiftool/&amp;resubmit=true&amp;title=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title=""
       aria-label=""
       >
@@ -1417,7 +1503,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/exiftool/&amp;description=Exiftool"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/exiftool/&amp;description=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="釘到 Pinterest"
       aria-label="釘到 Pinterest"
       >
@@ -1436,7 +1522,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/exiftool/&amp;quote=Exiftool"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/exiftool/&amp;quote=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1455,7 +1541,7 @@ Surprisingly useful for managing photos from different phones.</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/posts/exiftool/&amp;subject=Exiftool"
+      href="mailto:?body=https://www.zsl0621.cc/posts/exiftool/&amp;subject=%e4%bd%bf%e7%94%a8ExifTool%e6%a0%b9%e6%93%9a%e6%96%87%e4%bb%b6%e5%a4%be%e5%90%8d%e7%a8%b1%e8%87%aa%e5%8b%95%e6%9b%b4%e6%96%b0%e7%85%a7%e7%89%87EXIF%e8%b3%87%e8%a8%8a"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -1482,6 +1568,9 @@ Surprisingly useful for managing photos from different phones.</p>
       
       
         
+        
+          
+          
         
           
           
@@ -1515,7 +1604,7 @@ Surprisingly useful for managing photos from different phones.</p>
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >架站紀錄：無固定IP + Cloudflare tunnel + DDNS-GO</span
+                  >架站紀錄：Cloudflare Tunnel+DDNS 無需開放通訊埠實現安全外網訪問</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
