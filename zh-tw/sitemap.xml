@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/categories/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -76,7 +76,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/categories/%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -108,7 +108,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/tags/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -140,7 +140,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/tags/hugo/</loc>
-    <lastmod>2024-07-19T01:00:00+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -204,7 +204,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/series/</loc>
-    <lastmod>2024-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -220,7 +220,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/posts/</loc>
-    <lastmod>2024-07-16T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -236,7 +236,7 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -252,19 +252,19 @@
   </url>
   <url>
     <loc>https://www.zsl0621.cc/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</loc>
-    <lastmod>2024-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.zsl0621.cc/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</loc>
-    <lastmod>2024-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.zsl0621.cc/posts/custom-hugo/</loc>
-    <lastmod>2024-07-01T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
