@@ -777,75 +777,77 @@
 </div>
 
 
+<div style="height: .6rem;"></div>
 
 
-<div class="flex flex-row flex-wrap items-center">
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+  <div class="flex flex-col space-y-2">
+    
+    
+      <div class="flex flex-row items-center">
+        <span class="mr-2 text-neutral-500 dark:text-neutral-400" style="margin-right:0.3em">分類</span>
+        <div class="flex flex-wrap -mx-1">
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     工具
   </span>
 </span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7%E4%BA%8C/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+            </span>
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7%E4%BA%8C/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     工具二
   </span>
 </span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+            </span>
+          
+        </div>
+      </div>
+    
+    
+    
+      <div class="flex flex-row items-center">
+        <span class="mr-2 text-neutral-500 dark:text-neutral-400" style="margin-right:0.3em">標籤</span>
+        <div class="flex flex-wrap -mx-1">
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     指令筆記
   </span>
 </span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+            </span>
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     實用工具
   </span>
 </span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/exiftool/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+            </span>
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/tags/exiftool/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     Exiftool
   </span>
 </span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E7%85%A7%E7%89%87/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
+            </span>
+          
+            <span class="px-1" onclick="window.open(&#34;/en-us/tags/%E7%85%A7%E7%89%87/&#34;,'_self');">
+              <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     照片
   </span>
 </span>
-  </span>
-  
-  
-  
-  
-</div>
+            </span>
+          
+        </div>
+      </div>
+    
+  </div>
 
 
 
@@ -1142,7 +1144,7 @@ For Windows users, you might need to install WSL or Git Bash to run the bash scr
 </h2>
 <p><strong>Rename file by dates</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="c1"># Good naming policy avoids EXIF missing forever</span>
-</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">d</span> <span class="o">%</span><span class="n">Y</span><span class="o">%</span><span class="n">m</span><span class="o">%</span><span class="n">d_</span><span class="o">%</span><span class="n">H</span><span class="o">%</span><span class="n">M</span><span class="o">%%-</span><span class="n">c</span><span class="s1">&#39;-DEVICE_MODEL&#39;</span><span class="o">.%%</span><span class="n">e</span> <span class="s2">&#34;-filename&lt;DateTimeOriginal&#34;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">DateTimeOriginal</span> <span class="n">FILE</span>
+</span></span><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="o">-</span><span class="n">d</span> <span class="o">%</span><span class="n">Y</span><span class="o">%</span><span class="n">m</span><span class="o">%</span><span class="n">d_</span><span class="o">%</span><span class="n">H</span><span class="o">%</span><span class="n">M</span><span class="o">%%-</span><span class="n">c</span><span class="s1">&#39;-DEVICE_MODEL&#39;</span><span class="err">.</span><span class="o">%%</span><span class="n">e</span> <span class="s2">&#34;-filename&lt;DateTimeOriginal&#34;</span> <span class="o">-</span><span class="n">fileorder</span> <span class="n">DateTimeOriginal</span> <span class="n">FILE</span>
 </span></span></code></pre></div><p><a href="https://exiftool.org/forum/index.php?topic=12361.0" target="_blank">Categorize by device model</a><br>
 Surprisingly useful for managing photos from different phones.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">exiftool</span> <span class="s2">&#34;-directory&lt;</span><span class="si">%d</span><span class="s2">/${model;}&#34;</span> <span class="o">-</span><span class="n">r</span> <span class="o">.</span>
