@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.77eb11ad08b3707b95daabf240c94014d2a0fa36a01c6761e5d2a2577cba709edb8f63ffe180fd2466acc96eeb21670d6d8c52e7d13c99135779a02f8c0ba91d.css"
-    integrity="sha512-d&#43;sRrQizcHuV2qvyQMlAFNKg&#43;jagHGdh5dKiV3y6cJ7bj2P/4YD9JGasyW7rIWcNbYxS59E8mRNXeaAvjAupHQ==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.75f0050cc0af5fff7d200fffc11e034b852a41c947648d76b0103200ba53a03ea6e3f18e10cefaf5ca89cd1ab8161a3187c82c316c3b128c7f49916cba779ffb.css"
+    integrity="sha512-dfAFDMCvX/99IA//wR4DS4UqQclHZI12sBAyALpToD6m4/GOEM769cqJzRq4Fhoxh8gsMWw7Eox/SZFsunef&#43;w==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -126,7 +126,7 @@
     "keywords": ["Hugo","指令筆記","架站紀錄"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1586"
+    "wordCount": "1867"
   }]
   </script>
 
@@ -705,9 +705,18 @@
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
-    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
+	 height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+	<g id="Icons">
+		<g id="expand">
+			<polygon id="arrow_2_" style="fill:currentColor; fill-rule:evenodd;clip-rule:evenodd;" points="17.303,8.283 12,13.586 6.697,8.283 5.283,9.697
+				12,16.414 18.717,9.697 		"/>
+		</g>
+	</g>
+	<g id="Guides" style="display:none;">
+	</g>
 </svg>
+
   </span>
 
 </span>
@@ -1252,32 +1261,55 @@
     </span>        
     
 </h2>
-<p>移植 <a href="https://github.com/alex-shpak/hugo-book" target="_blank">alex-shpak/hugo-book</a> 的 <a href="https://hugo-book-demo.netlify.app/docs/shortcodes/hints/" target="_blank">hint shortcode</a>，裡面要換<strong>兩行</strong>請用 <em>&lt;br&gt;&lt;/br&gt;</em>。
-<div class="book-hint info">
-  <strong>Markdown content</strong><br>
+<p>移植 <a href="https://github.com/alex-shpak/hugo-book" target="_blank">alex-shpak/hugo-book</a> 的 <a href="https://hugo-book-demo.netlify.app/docs/shortcodes/hints/" target="_blank">hint shortcode</a>。
+<blockquote class="book-hint info">
+  <div class="hint-content">
+    <strong>Markdown content</strong><br>
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-</div>
+  </div>
+</blockquote>
 </p>
-<div class="book-hint warning">
-  <strong>Markdown content</strong><br>
+<blockquote class="book-hint warning">
+  <div class="hint-content">
+    <strong>Markdown content</strong><br>
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-</div>
+  </div>
+</blockquote>
 
-<div class="book-hint danger">
-  <strong>Markdown content</strong><br>
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
-</div>
+<blockquote class="book-hint danger">
+  <div class="hint-content">
+    <p><strong>Markdown content</strong></p>
+<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa</p>
+
+  </div>
+</blockquote>
 
 <p>在 <code>assets/css/custom.css</code> 加入</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 調整 padding 以縮小上下距離 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 調整 margin 以縮小上下距離 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">em</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">border-left</span><span class="p">:</span> <span class="mi">6</span><span class="kt">px</span> <span class="kc">solid</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">4</span><span class="kt">px</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">line-height</span><span class="p">:</span> <span class="mf">1.4</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c">/* 調整 line-height 以縮小上下距離 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不斜體 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不粗體 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不斜體 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不粗體 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">p</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不斜體 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不粗體 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">p</span><span class="p">:</span><span class="nd">last-child</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不斜體 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 確保文字不粗體 */</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
@@ -1298,9 +1330,32 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 </span></span><span class="line"><span class="cl">    <span class="k">border-color</span><span class="p">:</span> <span class="mh">#f44336</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">244</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">expand-wrapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 為所有在 hint 內的 expand 添加上邊距 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span><span class="o">&gt;</span><span class="nt">p</span><span class="p">:</span><span class="nd">first-child</span><span class="o">+</span><span class="p">.</span><span class="nc">expand-wrapper</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span><span class="o">&gt;</span><span class="p">.</span><span class="nc">expand-wrapper</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 如果 expand 是 hint 中的第一個元素或緊跟在第一個段落後面，則移除頂部邊距 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h1</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h2</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h3</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h4</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h5</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">book-hint</span> <span class="p">.</span><span class="nc">hint-content</span> <span class="o">&gt;</span> <span class="nt">h6</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>新增 <code>layouts/shortcodes/hint.html</code> 並貼上</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">blockquote</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;book-hint {{ .Get 0 }}&#34;</span><span class="p">&gt;</span>
-</span></span><span class="line"><span class="cl">  {{ .Inner | .Page.RenderString }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;hint-content&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {{ .Inner | .Page.RenderString }}
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">blockquote</span><span class="p">&gt;</span>
 </span></span></code></pre></div>
 
@@ -1314,38 +1369,55 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
     </span>        
     
 </h2>
-<p>比較美觀的 expand UI，一樣從 <a href="https://github.com/alex-shpak/hugo-book" target="_blank">alex-shpak/hugo-book</a> 拿來的。</p>
+<p>比較美觀的 expand UI，一樣從 <a href="https://hugo-book-demo.netlify.app/docs/shortcodes/expand/" target="_blank">alex-shpak/hugo-book</a> 拿來的，範例如下：
 <div class="expand-wrapper prose dark:prose-invert">
   <input id="expand-3" class="expand-toggle" type="checkbox" >
-  <label for="expand-3" class="expand-title">Click to expand
+  <label for="expand-3" class="expand-title">
+    <span class="expand-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </span>Example
   </label>
   <div class="expand-content">
     <div class="expand-inner">
-      <p><strong>Markdown content</strong></p>
-<p>Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa</p>
+      <p>可用 Markdown 語法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></div><ol>
+<li>list 1</li>
+<li><strong>list 2 (bold)</strong></li>
+</ol>
+<ul>
+<li>5</li>
+</ul>
+<blockquote class="book-hint info">
+  <div class="hint-content">
+    <h2> Title </h2>
+<p>支援內部渲染 hint shortcode</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></div><ol>
+<li>list 1</li>
+<li><strong>list 2 (bold)</strong></li>
+</ol>
+<ul>
+<li>5</li>
+</ul>
+  </div>
+</blockquote>
 
     </div>
   </div>
 </div>
-<div class="expand-wrapper prose dark:prose-invert">
-  <input id="expand-4" class="expand-toggle" type="checkbox" >
-  <label for="expand-4" class="expand-title">Ans
-  </label>
-  <div class="expand-content">
-    <div class="expand-inner">
-      <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">square</span><span class="p">(</span><span class="k">volatile</span> <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span><span class="n">b</span> <span class="o">=</span> <span class="o">*</span><span class="n">ptr</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div>
-    </div>
-  </div>
-</div>
+</p>
 <p>新增 <code>layouts/shortcodes/expand.html</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;expand-wrapper prose dark:prose-invert&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;{{ .Get &#34;</span><span class="na">id</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">default</span> <span class="err">(</span><span class="na">printf</span> <span class="err">&#34;</span><span class="na">expand-</span><span class="err">%</span><span class="na">d</span><span class="err">&#34;</span> <span class="err">(.</span><span class="na">Ordinal</span><span class="err">))</span> <span class="err">}}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;expand-toggle&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="err">{{</span> <span class="na">if</span> <span class="na">or</span> <span class="err">(.</span><span class="na">Get</span> <span class="err">&#34;</span><span class="na">open</span><span class="err">&#34;)</span> <span class="err">(</span><span class="na">in</span> <span class="err">.</span><span class="na">Params</span> <span class="err">&#34;</span><span class="na">open</span><span class="err">&#34;)</span> <span class="err">}}</span><span class="na">checked</span><span class="err">{{</span> <span class="na">end</span> <span class="err">}}</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;{{ .Get &#34;</span><span class="na">id</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">default</span> <span class="err">(</span><span class="na">printf</span> <span class="err">&#34;</span><span class="na">expand-</span><span class="err">%</span><span class="na">d</span><span class="err">&#34;</span> <span class="err">(.</span><span class="na">Ordinal</span><span class="err">))</span> <span class="err">}}&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;expand-title&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;expand-icon&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">svg</span> <span class="na">xmlns</span><span class="o">=</span><span class="s">&#34;http://www.w3.org/2000/svg&#34;</span> <span class="na">width</span><span class="o">=</span><span class="s">&#34;24&#34;</span> <span class="na">height</span><span class="o">=</span><span class="s">&#34;24&#34;</span> <span class="na">viewBox</span><span class="o">=</span><span class="s">&#34;0 0 24 24&#34;</span> <span class="na">fill</span><span class="o">=</span><span class="s">&#34;none&#34;</span> <span class="na">stroke</span><span class="o">=</span><span class="s">&#34;currentColor&#34;</span> <span class="na">stroke-width</span><span class="o">=</span><span class="s">&#34;2&#34;</span> <span class="na">stroke-linecap</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">stroke-linejoin</span><span class="o">=</span><span class="s">&#34;round&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;feather feather-chevron-down&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">polyline</span> <span class="na">points</span><span class="o">=</span><span class="s">&#34;6 9 12 15 18 9&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">polyline</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">svg</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="cl">    {{- $summary := cond .IsNamedParams (.Get &#34;title&#34;) (.Get 0) -}}
 </span></span><span class="line"><span class="cl">    {{ $summary | .Page.RenderString }}
 </span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
@@ -1357,73 +1429,80 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 </span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </span></span></code></pre></div><p>新增 <code>assets/css/custom.css</code></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-wrapper</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">%</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-toggle</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-title</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-50</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="k">background-color</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-700</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-title</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;▶&#39;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">display</span><span class="p">:</span> <span class="kc">inline-block</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-right</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="k">transform</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-toggle</span><span class="p">:</span><span class="nd">checked</span> <span class="o">+</span> <span class="p">.</span><span class="nc">expand-title</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-200</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-toggle</span><span class="p">:</span><span class="nd">checked</span> <span class="o">+</span> <span class="p">.</span><span class="nc">expand-title</span><span class="p">::</span><span class="nd">before</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transform</span><span class="p">:</span> <span class="nb">rotate</span><span class="p">(</span><span class="mi">90</span><span class="kt">deg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ddd</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-radius</span><span class="p">:</span> <span class="mi">8</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">box-shadow</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">2</span><span class="kt">px</span> <span class="mi">5</span><span class="kt">px</span> <span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span> <span class="c">/* 預設背景顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-toggle</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mf">0.75</span><span class="kt">rem</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span> <span class="c">/* 調整上下邊距 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#f7f7f7</span><span class="p">;</span> <span class="c">/* 預設背景顏色 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span> <span class="c">/* 預設文字顏色 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">cursor</span><span class="p">:</span> <span class="kc">pointer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">transition</span><span class="p">:</span> <span class="k">background-color</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">,</span> <span class="kc">color</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">font-weight</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;</span> <span class="c">/* 取消粗體樣式 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-title</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#e0e0e0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-title</span> <span class="p">.</span><span class="nc">expand-icon</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin-right</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span> <span class="c">/* 調整圖標與文字之間的距離 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-content</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">max-height</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="k">overflow</span><span class="p">:</span> <span class="kc">hidden</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="k">max-height</span> <span class="mf">0.3</span><span class="kt">s</span> <span class="kc">ease</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">transition</span><span class="p">:</span> <span class="k">max-height</span> <span class="mf">0.5</span><span class="kt">s</span> <span class="nb">cubic-bezier</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-toggle</span><span class="p">:</span><span class="nd">checked</span> <span class="o">~</span> <span class="p">.</span><span class="nc">expand-content</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">max-height</span><span class="p">:</span> <span class="mi">1000</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 根据需要调整 */</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="nc">expand-inner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">padding</span><span class="p">:</span> <span class="mi">1</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-top</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-radius</span><span class="p">:</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mf">0.5</span><span class="kt">rem</span> <span class="mf">0.5</span><span class="kt">rem</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-50</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-700</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="c">/* 深色模式样式 */</span>
-</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="nd">root</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">expand-title</span><span class="o">,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="nd">root</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">expand-inner</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">border-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-700</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-800</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-300</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  
-</span></span><span class="line"><span class="cl">  <span class="p">:</span><span class="nd">root</span><span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s2">&#34;dark&#34;</span><span class="o">]</span> <span class="p">.</span><span class="nc">expand-toggle</span><span class="p">:</span><span class="nd">checked</span> <span class="o">+</span> <span class="p">.</span><span class="nc">expand-title</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nf">var</span><span class="p">(</span><span class="o">--</span><span class="kc">color</span><span class="o">-</span><span class="n">neutral</span><span class="mi">-700</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></div><p>有趣的是 Safari 和 Chrome 渲染的方式不一樣， Chrome的進度調在 header 磁磚後還是會透出半透明效果，而 Safari 就直接被擋住了。所以如果要兼顧 Safari 可以把 z-index 設為 99999。</p>
-
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-toggle</span><span class="p">:</span><span class="nd">checked</span> <span class="o">~</span> <span class="p">.</span><span class="nc">expand-content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">max-height</span><span class="p">:</span> <span class="mi">8000</span><span class="kt">px</span><span class="p">;</span> <span class="c">/* 可以根據需要調整 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">transition</span><span class="p">:</span> <span class="k">max-height</span> <span class="mf">0.8</span><span class="kt">s</span> <span class="kc">ease-in-out</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">expand-inner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">margin</span><span class="p">:</span> <span class="mf">-0.5</span><span class="kt">rem</span> <span class="mi">0</span><span class="p">;</span> <span class="c">/* 使用負邊距縮短內容區域與邊框的距離 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">padding</span><span class="p">:</span> <span class="mf">0.5</span><span class="kt">rem</span> <span class="mi">0</span><span class="p">;</span> <span class="c">/* 可根據需要調整 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span> <span class="c">/* 預設文字顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">/* 暗色模式樣式 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">expand-wrapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">border-color</span><span class="p">:</span> <span class="mh">#444</span><span class="p">;</span> <span class="c">/* 暗色模式下的邊框顏色 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#222</span><span class="p">;</span> <span class="c">/* 暗色模式下的背景顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">expand-title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#333</span><span class="p">;</span> <span class="c">/* 暗色模式下的標題背景顏色 */</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#e0e0e0</span><span class="p">;</span> <span class="c">/* 暗色模式下的標題文字顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">expand-title</span><span class="p">:</span><span class="nd">hover</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#444</span><span class="p">;</span> <span class="c">/* 暗色模式下的標題懸停背景顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">expand-content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">background-color</span><span class="p">:</span> <span class="mh">#2c2c2c</span><span class="p">;</span> <span class="c">/* 暗色模式下的內容背景顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">dark</span> <span class="p">.</span><span class="nc">expand-inner</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">color</span><span class="p">:</span> <span class="mh">#e0e0e0</span><span class="p">;</span> <span class="c">/* 暗色模式下的內容文字顏色 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 
 <h2 class="relative group">6. 自動加上編輯時間 
     <div id="6-%E8%87%AA%E5%8B%95%E5%8A%A0%E4%B8%8A%E7%B7%A8%E8%BC%AF%E6%99%82%E9%96%93" class="anchor"></div>
@@ -1458,11 +1537,15 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
     </span>        
     
 </h2>
-<div class="book-hint info">
-  <p>Google 以不再用 keywords 為 SEO 關鍵字。</p>
+<p>Google 以不再用 keywords 為 SEO 關鍵字。
 <div class="expand-wrapper prose dark:prose-invert">
-  <input id="expand-0" class="expand-toggle" type="checkbox" >
-  <label for="expand-0" class="expand-title">原文
+  <input id="expand-4" class="expand-toggle" type="checkbox" >
+  <label for="expand-4" class="expand-title">
+    <span class="expand-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </span>原文
   </label>
   <div class="expand-content">
     <div class="expand-inner">
@@ -1482,16 +1565,16 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
     </div>
   </div>
 </div>
-
-</div>
-
+</p>
 
 <br><br><br>
 <div class="max-w-fit">
   
-  <div class="book-hint info">
-  文章更新：<time datetime="2024-07-22 00:00:00 &#43;0000 UTC">這篇文章已經在 <b>2024年7月22日</b> 更新！</time>
-</div>
+  <blockquote class="book-hint info">
+  <div class="hint-content">
+    文章更新：<time datetime="2024-07-22 00:00:00 &#43;0000 UTC">這篇文章已經在 <b>2024年7月22日</b> 更新！</time>
+  </div>
+</blockquote>
 
     
   
