@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>架站紀錄 on ZSL</title>
-    <link>https://www.zsl0621.cc/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</link>
+    <link>http://localhost:1313/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/</link>
     <description>Recent content in 架站紀錄 on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Mon, 01 Jul 2024 12:09:01 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 12:09:01 +0800</lastBuildDate><atom:link href="http://localhost:1313/series/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（三）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-3/</link>
+      <title>修復 Hugo Blowfish 的問題</title>
+      <link>http://localhost:1313/posts/hugo-blowfish-fix/</link>
       <pubDate>Mon, 01 Jul 2024 12:09:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-3/</guid>
+      <guid>http://localhost:1313/posts/hugo-blowfish-fix/</guid>
       <description>修復 blowfish 相關的功能問題。</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（二）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-2/</link>
+      <title>Hugo Blowfish 的進階客製化</title>
+      <link>http://localhost:1313/posts/hugo-blowfish-features/</link>
       <pubDate>Mon, 01 Jul 2024 12:05:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-2/</guid>
-      <description>客製化 Hugo 各種設定。</description>
+      <guid>http://localhost:1313/posts/hugo-blowfish-features/</guid>
+      <description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（一）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-1/</link>
+      <title>Hugo Blowfish Theme 的基礎設定與配置</title>
+      <link>http://localhost:1313/posts/hugo-blowfish-setup/</link>
       <pubDate>Mon, 01 Jul 2024 12:01:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-1/</guid>
-      <description>客製化 Hugo 各種設定。</description>
+      <guid>http://localhost:1313/posts/hugo-blowfish-setup/</guid>
+      <description>Hugo Blowfish 的基礎設定教學（或者說紀錄）。</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問</title>
-      <link>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</link>
+      <title>利用Cloudflare Tunnel和DDNS無需開放端口實現安全外網訪問</title>
+      <link>http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</guid>
+      <guid>http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/</guid>
       <description>紀錄把一台破電腦裝成 NAS 的過程</description>
       
     </item>

@@ -8,16 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>架站紀錄：Hugo Blowfish 客製化與功能增強（三） - ZSL</title>
-  <meta name="title" content="架站紀錄：Hugo Blowfish 客製化與功能增強（三） - ZSL" />
+  <title>Hugo Blowfish 的問題修復 - ZSL</title>
+  <meta name="title" content="Hugo Blowfish 的問題修復 - ZSL" />
   
-  <meta name="description" content="探索如何基於 Hugo Blowfish Theme 進行網頁客製化設計，涵蓋SEO優化、CSS樣式修改、文章存檔頁面設計、閱讀進度顯示等多項實用功能，並提供詳細的程式碼實作指南。" />
-  <meta name="keywords" content="Hugo, 指令筆記, 架站紀錄, " />
+  <meta name="description" content="本篇文章針對 Hugo Blowfish 主題常見問題提供詳細的修復步驟，幫助你解決頁面目次、對比度和網站標籤名稱等問題，提升網站使用體驗。" />
+  <meta name="keywords" content="Hugo, 筆記, " />
     
   
   
   
-  <link rel="canonical" href="https://www.zsl0621.cc/posts/custom-hugo-3/" />
+  <link rel="canonical" href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/" />
   
   
   
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.75f0050cc0af5fff7d200fffc11e034b852a41c947648d76b0103200ba53a03ea6e3f18e10cefaf5ca89cd1ab8161a3187c82c316c3b128c7f49916cba779ffb.css"
-    integrity="sha512-dfAFDMCvX/99IA//wR4DS4UqQclHZI12sBAyALpToD6m4/GOEM769cqJzRq4Fhoxh8gsMWw7Eox/SZFsunef&#43;w==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f934e2ba7b3bf8b42d8c377aa0fd4f865361afabdc6621e95464372a418e275d637df0fd87150fce54271c837f76b2c1136d0217338a94360e128f85a35f1436.css"
+    integrity="sha512-&#43;TTiuns7&#43;LQtjDd6oP1PhlNhr6vcZiHpVGQ3KkGOJ11jffD9hxUPzlQnHIN/drLBE20CFzOKlDYOEo&#43;Fo18UNg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -80,26 +80,25 @@
   
   
   
-  <meta property="og:url" content="https://www.zsl0621.cc/posts/custom-hugo-3/">
+  <meta property="og:url" content="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
   <meta property="og:site_name" content="ZSL">
-  <meta property="og:title" content="架站紀錄：Hugo Blowfish 客製化與功能增強（三）">
-  <meta property="og:description" content="探索如何基於 Hugo Blowfish Theme 進行網頁客製化設計，涵蓋SEO優化、CSS樣式修改、文章存檔頁面設計、閱讀進度顯示等多項實用功能，並提供詳細的程式碼實作指南。">
+  <meta property="og:title" content="Hugo Blowfish 的問題修復">
+  <meta property="og:description" content="本篇文章針對 Hugo Blowfish 主題常見問題提供詳細的修復步驟，幫助你解決頁面目次、對比度和網站標籤名稱等問題，提升網站使用體驗。">
   <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-07-01T12:09:01+08:00">
     <meta property="article:modified_time" content="2024-07-22T00:00:00+00:00">
     <meta property="article:tag" content="Hugo">
-    <meta property="article:tag" content="指令筆記">
-    <meta property="article:tag" content="架站紀錄">
-      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/custom-hugo-2/">
-      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/custom-hugo-1/">
-      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
+    <meta property="article:tag" content="筆記">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="架站紀錄：Hugo Blowfish 客製化與功能增強（三）">
-  <meta name="twitter:description" content="探索如何基於 Hugo Blowfish Theme 進行網頁客製化設計，涵蓋SEO優化、CSS樣式修改、文章存檔頁面設計、閱讀進度顯示等多項實用功能，並提供詳細的程式碼實作指南。">
+  <meta name="twitter:title" content="Hugo Blowfish 的問題修復">
+  <meta name="twitter:description" content="本篇文章針對 Hugo Blowfish 主題常見問題提供詳細的修復步驟，幫助你解決頁面目次、對比度和網站標籤名稱等問題，提升網站使用體驗。">
 
   
   <script type="application/ld+json">
@@ -107,12 +106,12 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "文章列表",
-    "name": "架站紀錄：Hugo Blowfish 客製化與功能增強（三）",
-    "headline": "架站紀錄：Hugo Blowfish 客製化與功能增強（三）",
-    "description": "探索如何基於 Hugo Blowfish Theme 進行網頁客製化設計，涵蓋SEO優化、CSS樣式修改、文章存檔頁面設計、閱讀進度顯示等多項實用功能，並提供詳細的程式碼實作指南。",
+    "name": "Hugo Blowfish 的問題修復",
+    "headline": "Hugo Blowfish 的問題修復",
+    "description": "本篇文章針對 Hugo Blowfish 主題常見問題提供詳細的修復步驟，幫助你解決頁面目次、對比度和網站標籤名稱等問題，提升網站使用體驗。",
     "abstract": "修復 blowfish 相關的功能問題。",
     "inLanguage": "zh-tw",
-    "url" : "https:\/\/www.zsl0621.cc\/posts\/custom-hugo-3\/",
+    "url" : "https:\/\/www.zsl0621.cc\/posts\/hugo-blowfish-fix\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
@@ -123,10 +122,10 @@
     
     "dateModified": "2024-07-22T00:00:00\u002b00:00",
     
-    "keywords": ["Hugo","指令筆記","架站紀錄"],
+    "keywords": ["Hugo","筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1081"
+    "wordCount": "1076"
   }]
   </script>
 
@@ -648,7 +647,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      架站紀錄：Hugo Blowfish 客製化與功能增強（三）
+      Hugo Blowfish 的問題修復
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -705,18 +704,9 @@
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-	 height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-	<g id="Icons">
-		<g id="expand">
-			<polygon id="arrow_2_" style="fill:currentColor; fill-rule:evenodd;clip-rule:evenodd;" points="17.303,8.283 12,13.586 6.697,8.283 5.283,9.697
-				12,16.414 18.717,9.697 		"/>
-		</g>
-	</g>
-	<g id="Guides" style="display:none;">
-	</g>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
 </svg>
-
   </span>
 
 </span>
@@ -753,10 +743,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/hugo/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    筆記
+    Hugo
   </span>
 </span>
   </span>
@@ -777,18 +767,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    指令筆記
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    架站紀錄
+    筆記
   </span>
 </span>
   </span>
@@ -836,18 +818,14 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#修復功能">修復功能</a>
-      <ul>
-        <li><a href="#1-頁面目次-toc">1. 頁面目次 ToC</a></li>
-        <li><a href="#2-改善對比度">2. 改善對比度</a></li>
-        <li><a href="#3-網站-logo">3. 網站 logo</a></li>
-        <li><a href="#4-網頁標籤名稱">4. 網頁標籤名稱</a></li>
-        <li><a href="#5-註腳文章引用">5. 註腳（文章引用）</a></li>
-        <li><a href="#6-美化選集功能">6. 美化選集功能</a></li>
-        <li><a href="#7-關閉相關文章簡介">7. 關閉相關文章簡介</a></li>
-        <li><a href="#7-文章資訊間隔符號">7. 文章資訊間隔符號</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-頁面目次-toc">1. 頁面目次 ToC</a></li>
+    <li><a href="#2-改善對比度">2. 改善對比度</a></li>
+    <li><a href="#3-網站-logo">3. 網站 logo</a></li>
+    <li><a href="#4-網頁標籤名稱">4. 網頁標籤名稱</a></li>
+    <li><a href="#5-註腳文章引用">5. 註腳（文章引用）</a></li>
+    <li><a href="#6-美化選集功能">6. 美化選集功能</a></li>
+    <li><a href="#7-關閉相關文章簡介">7. 關閉相關文章簡介</a></li>
+    <li><a href="#8-文章資訊間隔符號">8. 文章資訊間隔符號</a></li>
   </ul>
 </nav>
   </div>
@@ -861,18 +839,14 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#修復功能">修復功能</a>
-      <ul>
-        <li><a href="#1-頁面目次-toc">1. 頁面目次 ToC</a></li>
-        <li><a href="#2-改善對比度">2. 改善對比度</a></li>
-        <li><a href="#3-網站-logo">3. 網站 logo</a></li>
-        <li><a href="#4-網頁標籤名稱">4. 網頁標籤名稱</a></li>
-        <li><a href="#5-註腳文章引用">5. 註腳（文章引用）</a></li>
-        <li><a href="#6-美化選集功能">6. 美化選集功能</a></li>
-        <li><a href="#7-關閉相關文章簡介">7. 關閉相關文章簡介</a></li>
-        <li><a href="#7-文章資訊間隔符號">7. 文章資訊間隔符號</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-頁面目次-toc">1. 頁面目次 ToC</a></li>
+    <li><a href="#2-改善對比度">2. 改善對比度</a></li>
+    <li><a href="#3-網站-logo">3. 網站 logo</a></li>
+    <li><a href="#4-網頁標籤名稱">4. 網頁標籤名稱</a></li>
+    <li><a href="#5-註腳文章引用">5. 註腳（文章引用）</a></li>
+    <li><a href="#6-美化選集功能">6. 美化選集功能</a></li>
+    <li><a href="#7-關閉相關文章簡介">7. 關閉相關文章簡介</a></li>
+    <li><a href="#8-文章資訊間隔符號">8. 文章資訊間隔符號</a></li>
   </ul>
 </nav>
   </div>
@@ -955,42 +929,42 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        架站紀錄
+        自架 NAS 紀錄
     </summary>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            #1 架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
+            #1 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-1/">
-            #2 架站紀錄：Hugo Blowfish 客製化與功能增強（一）
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
+            #2 Hugo Blowfish 的基礎設定
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-2/">
-            #3 架站紀錄：Hugo Blowfish 客製化與功能增強（二）
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+            #3  Hugo Blowfish 的問題修復 
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-3/">
-            #4 [本文] 架站紀錄：Hugo Blowfish 客製化與功能增強（三） 
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+            #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
     
@@ -1008,19 +982,7 @@
 大部分的程式都由 GPT 完成，偉哉 GPT。</p>
 
 
-<h1 class="relative group">修復功能 
-    <div id="%E4%BF%AE%E5%BE%A9%E5%8A%9F%E8%83%BD" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#%E4%BF%AE%E5%BE%A9%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
-    </span>        
-    
-</h1>
-
-
-<h2 class="relative group">1. 頁面目次 ToC 
+<h1 class="relative group">1. 頁面目次 ToC 
     <div id="1-%E9%A0%81%E9%9D%A2%E7%9B%AE%E6%AC%A1-toc" class="anchor"></div>
     
     <span
@@ -1029,10 +991,8 @@
             style="text-decoration-line: none !important;" href="#1-%E9%A0%81%E9%9D%A2%E7%9B%AE%E6%AC%A1-toc" aria-label="定位點">#</a>
     </span>        
     
-</h2>
-<blockquote class="book-hint info">
-  <div class="hint-content">
-    <p>此問題官方已於 blowfish v2.71.0 修正，不過此功能官方目前還沒有很完整。</p>
+</h1>
+<p>此問題官方已於 blowfish v2.71.0 修正，不過ToC官方目前還沒有很完整。
 <div class="expand-wrapper prose dark:prose-invert">
   <input id="expand-0" class="expand-toggle" type="checkbox" >
   <label for="expand-0" class="expand-title">
@@ -1072,13 +1032,10 @@
     </div>
   </div>
 </div>
-
-  </div>
-</blockquote>
+</p>
 
 
-
-<h2 class="relative group">2. 改善對比度 
+<h1 class="relative group">2. 改善對比度 
     <div id="2-%E6%94%B9%E5%96%84%E5%B0%8D%E6%AF%94%E5%BA%A6" class="anchor"></div>
     
     <span
@@ -1087,7 +1044,7 @@
             style="text-decoration-line: none !important;" href="#2-%E6%94%B9%E5%96%84%E5%B0%8D%E6%AF%94%E5%BA%A6" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>在 <code>assets/css/schemes/blowfish.css</code> 修改以下三項：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">--color-neutral-300</span><span class="o">:</span> <span class="nt">216</span><span class="o">,</span> <span class="nt">227</span><span class="o">,</span> <span class="nt">240</span><span class="o">;</span>  <span class="err">#</span> <span class="nt">文字顏色</span> 
 </span></span><span class="line"><span class="cl"><span class="nt">--color-neutral-500</span><span class="o">:</span> <span class="nt">88</span><span class="o">,</span> <span class="nt">102</span><span class="o">,</span> <span class="nt">122</span><span class="o">;</span>   <span class="err">#</span> <span class="nt">文章資訊顏色</span>
@@ -1099,7 +1056,7 @@
 </span></span><span class="line"><span class="cl"><span class="nt">--tw-prose-hr</span><span class="p">:</span><span class="nd">rgba</span><span class="o">(</span><span class="nt">var</span><span class="o">(</span><span class="nt">--color-neutral-7</span><span class="o">),</span> <span class="nt">1</span><span class="o">);</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">3. 網站 logo 
+<h1 class="relative group">3. 網站 logo 
     <div id="3-%E7%B6%B2%E7%AB%99-logo" class="anchor"></div>
     
     <span
@@ -1108,7 +1065,7 @@
             style="text-decoration-line: none !important;" href="#3-%E7%B6%B2%E7%AB%99-logo" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。</p>
 <p>在 <code>layouts/partials</code> 新增 favicons.html ，新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;icon&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;image/png&#34;</span> <span class="na">sizes</span><span class="o">=</span><span class="s">&#34;192x192&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">android-chrome-192x192</span><span class="err">.</span><span class="na">png</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;</span>
@@ -1121,7 +1078,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;manifest&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ &#34;</span><span class="na">site</span><span class="err">.</span><span class="na">webmanifest</span><span class="err">&#34;</span> <span class="err">|</span> <span class="na">absURL</span> <span class="err">}}&#34;</span><span class="p">&gt;</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">4. 網頁標籤名稱 
+<h1 class="relative group">4. 網頁標籤名稱 
     <div id="4-%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" class="anchor"></div>
     
     <span
@@ -1130,7 +1087,7 @@
             style="text-decoration-line: none !important;" href="#4-%E7%B6%B2%E9%A0%81%E6%A8%99%E7%B1%A4%E5%90%8D%E7%A8%B1" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>把 blowfish 預設的 dot 改為 dash。</p>
 <p>找到 <code>layouts/partials/head.html</code> 中以下片段：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ .Title | emojify }} <span class="ni">&amp;middot;</span> {{ .Site.Title | emojify }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
@@ -1138,7 +1095,7 @@
 </span></span></code></pre></div><p>把 <code>&amp;middot</code> 改為 <code>-</code>。</p>
 
 
-<h2 class="relative group">5. 註腳（文章引用） 
+<h1 class="relative group">5. 註腳（文章引用） 
     <div id="5-%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" class="anchor"></div>
     
     <span
@@ -1147,7 +1104,7 @@
             style="text-decoration-line: none !important;" href="#5-%E8%A8%BB%E8%85%B3%E6%96%87%E7%AB%A0%E5%BC%95%E7%94%A8" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>縮小 footnote 字體以及修改標籤樣式，讓他長得比較像論文格式。</p>
 <p>在 <code>assets/css/custom.css</code> 中，新增以下：</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* 縮小 footnote 字體 */</span>
@@ -1198,7 +1155,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">6. 美化選集功能 
+<h1 class="relative group">6. 美化選集功能 
     <div id="6-%E7%BE%8E%E5%8C%96%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" class="anchor"></div>
     
     <span
@@ -1207,7 +1164,7 @@
             style="text-decoration-line: none !important;" href="#6-%E7%BE%8E%E5%8C%96%E9%81%B8%E9%9B%86%E5%8A%9F%E8%83%BD" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <ol>
 <li>把選集功能後面的「- 本文屬於一個選集。」刪掉。</li>
 <li>修改選集樣式並把本文也加上超連結。</li>
@@ -1242,7 +1199,7 @@
 </span></span><span class="line"><span class="cl"><span class="nx">this_article</span><span class="err">:</span> <span class="s2">&#34;[本文]&#34;</span>
 </span></span></code></pre></div>
 
-<h2 class="relative group">7. 關閉相關文章簡介 
+<h1 class="relative group">7. 關閉相關文章簡介 
     <div id="7-%E9%97%9C%E9%96%89%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0%E7%B0%A1%E4%BB%8B" class="anchor"></div>
     
     <span
@@ -1251,7 +1208,7 @@
             style="text-decoration-line: none !important;" href="#7-%E9%97%9C%E9%96%89%E7%9B%B8%E9%97%9C%E6%96%87%E7%AB%A0%E7%B0%A1%E4%BB%8B" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>主目錄想要有文章簡介，但是相關文章也出現簡介就太亂。</p>
 <p>在 <code>layouts/partials/article-link/card-related.html</code> 註解掉</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
@@ -1261,16 +1218,16 @@
 </span></span><span class="line"><span class="cl">{{ end }}
 </span></span></code></pre></div>
 
-<h2 class="relative group">7. 文章資訊間隔符號 
-    <div id="7-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" class="anchor"></div>
+<h1 class="relative group">8. 文章資訊間隔符號 
+    <div id="8-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#7-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" aria-label="定位點">#</a>
+            style="text-decoration-line: none !important;" href="#8-%E6%96%87%E7%AB%A0%E8%B3%87%E8%A8%8A%E9%96%93%E9%9A%94%E7%AC%A6%E8%99%9F" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <p>加上編輯時間就後就顯得凌亂，修改樣式。把 <code>layouts/partials/article-meta/basic.html</code> 中的</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">{{ delimit . &#34;<span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">\&#34;px-2</span> <span class="na">text-primary-500</span><span class="err">\&#34;</span><span class="p">&gt;</span><span class="ni">&amp;middot;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>&#34; | safeHTML }}
 </span></span></code></pre></div><p>改為</p>
@@ -1486,42 +1443,42 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        架站紀錄
+        自架 NAS 紀錄
     </summary>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/blog-cloudflare-ddns/">
-            #1 架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
+            #1 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-1/">
-            #2 架站紀錄：Hugo Blowfish 客製化與功能增強（一）
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
+            #2 Hugo Blowfish 的基礎設定
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-2/">
-            #3 架站紀錄：Hugo Blowfish 客製化與功能增強（二）
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+            #3  Hugo Blowfish 的問題修復 
         </a>
     </div>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/posts/custom-hugo-3/">
-            #4 [本文] 架站紀錄：Hugo Blowfish 客製化與功能增強（三） 
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+            #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
     
@@ -1538,7 +1495,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1557,7 +1514,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;text=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;text=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1575,7 +1532,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="發送到 Reddit"
       aria-label="發送到 Reddit"
       >
@@ -1594,7 +1551,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title=""
       aria-label=""
       >
@@ -1613,7 +1570,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;resubmit=true&amp;title=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title=""
       aria-label=""
       >
@@ -1632,7 +1589,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;description=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;description=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="釘到 Pinterest"
       aria-label="釘到 Pinterest"
       >
@@ -1651,7 +1608,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;quote=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;quote=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1670,7 +1627,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/posts/custom-hugo-3/&amp;subject=%e6%9e%b6%e7%ab%99%e7%b4%80%e9%8c%84%ef%bc%9aHugo%20Blowfish%20%e5%ae%a2%e8%a3%bd%e5%8c%96%e8%88%87%e5%8a%9f%e8%83%bd%e5%a2%9e%e5%bc%b7%ef%bc%88%e4%b8%89%ef%bc%89"
+      href="mailto:?body=https://www.zsl0621.cc/posts/hugo-blowfish-fix/&amp;subject=Hugo%20Blowfish%20%e7%9a%84%e5%95%8f%e9%a1%8c%e4%bf%ae%e5%be%a9"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -1696,7 +1653,7 @@
   
   
 
-  <a href="/posts/custom-hugo-2/" class="min-w-full">
+  <a href="/posts/hugo-blowfish-features/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
@@ -1708,7 +1665,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/custom-hugo-2/">架站紀錄：Hugo Blowfish 客製化與功能增強（二）</div>
+          href="/posts/hugo-blowfish-features/">Hugo Blowfish 的進階客製化</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1779,10 +1736,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/hugo/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    筆記
+    Hugo
   </span>
 </span>
   </span>
@@ -1803,18 +1760,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    指令筆記
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    架站紀錄
+    筆記
   </span>
 </span>
   </span>
@@ -1839,7 +1788,7 @@
   
   
 
-  <a href="/posts/custom-hugo-1/" class="min-w-full">
+  <a href="/posts/hugo-blowfish-setup/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
@@ -1851,7 +1800,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/custom-hugo-1/">架站紀錄：Hugo Blowfish 客製化與功能增強（一）</div>
+          href="/posts/hugo-blowfish-setup/">Hugo Blowfish 的基礎設定</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1922,10 +1871,10 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/hugo/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    筆記
+    Hugo
   </span>
 </span>
   </span>
@@ -1946,18 +1895,10 @@
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    指令筆記
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%9E%B6%E7%AB%99%E7%B4%80%E9%8C%84/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    架站紀錄
+    筆記
   </span>
 </span>
   </span>
@@ -1982,7 +1923,7 @@
   
   
 
-  <a href="/posts/common-git-comments/" class="min-w-full">
+  <a href="/posts/cloudflare-tunnel-ddns-guide/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
@@ -1994,7 +1935,7 @@
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/posts/common-git-comments/">Git 基礎概念與實戰指令</div>
+          href="/posts/cloudflare-tunnel-ddns-guide/">利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -2033,7 +1974,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-06-02 00:00:00 &#43;0000 UTC">2024年6月2日</time>
+  <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">2024年5月8日</time>
   
 
   
@@ -2065,34 +2006,42 @@
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/nas/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    NAS
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/cloudflare/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Cloudflare
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%95%99%E5%AD%B8/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    教學
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
     筆記
-  </span>
-</span>
-  </span>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/git/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Git
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    指令筆記
   </span>
 </span>
   </span>
@@ -2128,8 +2077,8 @@
           
         
       <script>
-        var oid = "views_posts\/custom-hugo-3\/index.md"
-        var oid_likes = "likes_posts\/custom-hugo-3\/index.md"
+        var oid = "views_posts\/hugo-blowfish-fix\/index.md"
+        var oid_likes = "likes_posts\/hugo-blowfish-fix\/index.md"
       </script>
       
       
@@ -2149,7 +2098,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/custom-hugo-2/">
+            <a class="flex group mr-3" href="/posts/hugo-blowfish-features/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -2161,7 +2110,7 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >架站紀錄：Hugo Blowfish 客製化與功能增強（二）</span
+                  >Hugo Blowfish 的進階客製化</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
