@@ -7,14 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sun, 21 Jul 2024 07:12:50 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>關於本站</title>
+      <link>https://www.zsl0621.cc/about/</link>
+      <pubDate>Tue, 23 Jul 2024 08:55:01 +0800</pubDate>
+      
+      <guid>https://www.zsl0621.cc/about/</guid>
+      <description>在網路上搜尋資料時常常遇到各種問題，包括但不限於：過長的前言廢話、無關緊要的搞笑圖片、內容錯誤、資訊散落在各個網站、進入網頁廣告、要求登入、限制付費會員、載入慢、爬蟲垃圾網站、鎖定滑鼠、鎖定複製，於是</description>
+      
+    </item>
+    
     <item>
       <title>tmux 使用教學</title>
       <link>https://www.zsl0621.cc/posts/tmux/</link>
       <pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/tmux/</guid>
-      <description>學會使用 tmux 來管理多視窗，讓程序在 SSH 斷線後繼續運行，提高工作效率。本文介紹 tmux 的安裝、基本使用方法以及如何在終端操作中高效應用。</description>
+      <description>使用 tmux 管理多視窗，讓程序在 SSH 斷線後繼續運行。本文介紹 tmux 的安裝、基本使用方法以及整理常用的指令。</description>
       
     </item>
     
@@ -29,11 +39,41 @@
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 的客製化與功能增強</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo/</link>
+      <title>為何要寫部落格</title>
+      <link>https://www.zsl0621.cc/posts/20240723/</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/20240723/</guid>
+      <description>&lt;kbd&gt; AAA &lt;/kbd&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（一）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-1/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo/</guid>
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-1/</guid>
+      <description>客製化 Hugo 各種設定。</description>
+      
+    </item>
+    
+    <item>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（二）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-2/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-2/</guid>
+      <description>客製化 Hugo 各種設定。</description>
+      
+    </item>
+    
+    <item>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（三）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-3/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-3/</guid>
       <description>客製化 Hugo 各種設定。</description>
       
     </item>
@@ -125,16 +165,6 @@
       
       <guid>https://www.zsl0621.cc/posts/test-hugo/</guid>
       <description>&lt;kbd&gt;ALT&lt;/kbd&gt; + &lt;kbd&gt;F4&lt;/kbd&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>關於本站</title>
-      <link>https://www.zsl0621.cc/about/</link>
-      <pubDate>Sun, 21 Jun 1998 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/about/</guid>
-      <description>緣起 # 從資料庫放到爆炸開始。 身為資訊整理大師平常在網路上看到各種有用資訊都會用書籤存起來，存久了以後發現書籤快爆炸了需要書籤之外的管理方式，一開始先用 Word 慢慢複製貼上結果發現更痛苦，沒有連結只能用檔案系</description>
       
     </item>
     

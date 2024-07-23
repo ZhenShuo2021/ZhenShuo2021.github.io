@@ -9,11 +9,31 @@
     <copyright>© 2024 ZSL</copyright>
     <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>架站紀錄：Hugo Blowfish 的客製化與功能增強</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo/</link>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（一）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-1/</link>
       <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo/</guid>
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-1/</guid>
+      <description>客製化 Hugo 各種設定。</description>
+      
+    </item>
+    
+    <item>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（二）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-2/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-2/</guid>
+      <description>客製化 Hugo 各種設定。</description>
+      
+    </item>
+    
+    <item>
+      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（三）</title>
+      <link>https://www.zsl0621.cc/posts/custom-hugo-3/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/custom-hugo-3/</guid>
       <description>客製化 Hugo 各種設定。</description>
       
     </item>
@@ -45,16 +65,6 @@
       
       <guid>https://www.zsl0621.cc/posts/ffmpeg/</guid>
       <description>介紹FFmpeg基本指令，以及轉檔實驗。</description>
-      
-    </item>
-    
-    <item>
-      <title>Git 基礎概念與實戰指令</title>
-      <link>https://www.zsl0621.cc/posts/common-git-comments/</link>
-      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/posts/common-git-comments/</guid>
-      <description>只講重點，網路上教學廢話好多好煩</description>
       
     </item>
     
