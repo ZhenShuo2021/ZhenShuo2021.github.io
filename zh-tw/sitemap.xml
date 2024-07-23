@@ -3,14 +3,46 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.zsl0621.cc/tags/linux/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <loc>https://www.zsl0621.cc/</loc>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/tags/%E7%AD%86%E8%A8%98/</loc>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.zsl0621.cc/notes/</loc>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/notes/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/notes/"
+    />
+  </url>
+  <url>
     <loc>https://www.zsl0621.cc/notes/linux/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
@@ -25,6 +57,60 @@
     />
   </url>
   <url>
+    <loc>https://www.zsl0621.cc/notes/personal/</loc>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/notes/personal/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/notes/personal/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/tags/</loc>
+    <lastmod>2099-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/tags/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/tags/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/about/</loc>
+    <lastmod>2024-07-23T08:55:01+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.zsl0621.cc/en-us/about/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="https://www.zsl0621.cc/about/"
+    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/tags/linux/</loc>
+    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.zsl0621.cc/tags/tmux/</loc>
     <lastmod>2024-07-21T07:12:50+08:00</lastmod>
     <changefreq>daily</changefreq>
@@ -35,22 +121,6 @@
     <lastmod>2024-07-21T07:12:50+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/</loc>
-    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/"
-    />
   </url>
   <url>
     <loc>https://www.zsl0621.cc/categories/</loc>
@@ -88,38 +158,6 @@
       rel="alternate"
       hreflang="zh-tw"
       href="https://www.zsl0621.cc/categories/%E7%AD%86%E8%A8%98/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/notes/</loc>
-    <lastmod>2024-07-21T07:12:50+08:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/notes/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/notes/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/tags/</loc>
-    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/tags/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/tags/"
     />
   </url>
   <url>
@@ -187,20 +225,22 @@
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/notes/personal/</loc>
-    <lastmod>2024-07-19T01:00:00+08:00</lastmod>
+    <loc>https://www.zsl0621.cc/posts/20240723/</loc>
+    <lastmod>2024-07-17T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/notes/personal/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/notes/personal/"
-    />
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/tags/%E7%A2%8E%E5%BF%B5/</loc>
+    <lastmod>2024-07-17T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/categories/%E9%9A%A8%E7%AD%86/</loc>
+    <lastmod>2024-07-17T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.zsl0621.cc/series/</loc>
@@ -263,7 +303,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/posts/custom-hugo/</loc>
+    <loc>https://www.zsl0621.cc/posts/custom-hugo-1/</loc>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/posts/custom-hugo-2/</loc>
+    <lastmod>2024-07-22T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.zsl0621.cc/posts/custom-hugo-3/</loc>
     <lastmod>2024-07-22T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -483,22 +535,6 @@
     <lastmod>2000-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/about/</loc>
-    <lastmod>1998-06-21T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/about/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/about/"
-    />
   </url>
   <url>
     <loc>https://www.zsl0621.cc/authors/</loc>

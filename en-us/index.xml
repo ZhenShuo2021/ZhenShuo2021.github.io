@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 小抄</title>
       <link>https://www.zsl0621.cc/en-us/posts/hugo-cheatsheet/</link>
@@ -64,8 +64,9 @@
       <pubDate>Sun, 21 Jun 1998 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/en-us/about/</guid>
-      <description>Translate by ChatGPT GPT4o-mini
-Origin # When I came across various useful pieces of information online, I used to bookmark them. After a while, my bookmarks were almost exploding, so I switched to Word, which was even more painful. Eventually, I used Apple Notes as a temporary solution. Apple Notes has its advantages; it&amp;rsquo;s unbeatable on Apple devices. However, once you step out of the Apple comfort zone, you&amp;rsquo;ll find that the features you need are just not available. When my phone was about to break, I realized the Apple ecosystem was too restrictive. After researching other note-taking systems, I discovered Markdown, which is great.</description>
+      <description>Translate by Claude 3.5 sonnet Searching for information online is often a pain in the ass. You run into all sorts of crap: long-winded intros full of fluff, irrelevant memes, incorrect info, content scattered across different sites, pop-up ads, login walls, paywalls, slow loading times, spam sites, disabled right-clicks, and copy restrictions. Fed up with this nonsense, I decided to make my own blog as a personal knowledge base. The key feature of this blog is:
+No BS, Just the Good Stuff Of course, this mainly applies to technical articles.
+Besides that, there&amp;rsquo;ll be some random musings too. That&amp;rsquo;s pretty much the gist of it.</description>
       
     </item>
     

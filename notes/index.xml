@@ -7,6 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Sun, 21 Jul 2024 07:12:50 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git 基礎概念與實戰指令</title>
+      <link>https://www.zsl0621.cc/posts/common-git-comments/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/common-git-comments/</guid>
+      <description>只講重點，網路上教學廢話好多好煩</description>
+      
+    </item>
+    
   </channel>
 </rss>
