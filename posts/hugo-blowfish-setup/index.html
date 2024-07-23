@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="en-us" dir="ltr" class="scroll-smooth" data-default-appearance="light"
+<html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
   data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
-  <meta http-equiv="content-language" content="en" />
+  <meta http-equiv="content-language" content="zh-tw" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO - ZSL</title>
-  <meta name="title" content="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO - ZSL" />
+  <title>Hugo Blowfish 的基礎設定 - ZSL</title>
+  <meta name="title" content="Hugo Blowfish 的基礎設定 - ZSL" />
   
-  <meta name="description" content="2024 guide: Secure remote access using Cloudflare Tunnel and DDNS, no port forwarding. Includes domain setup, API token, DDNS config, and Tunnel build steps. Ideal for home servers: safe and affordable." />
-  <meta name="keywords" content="Site Setup Log, Cloudflare, Command Notes, " />
+  <meta name="description" content="介紹如何對 Hugo Blowfish Theme 進行基礎設定與配置，包括修改 permalink、frontmatter 及如何避免網頁被 Google 搜尋。" />
+  <meta name="keywords" content="Hugo, 筆記, " />
     
   
   
   
-  <link rel="canonical" href="https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/" />
+  <link rel="canonical" href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/" />
   
   
   
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.75f0050cc0af5fff7d200fffc11e034b852a41c947648d76b0103200ba53a03ea6e3f18e10cefaf5ca89cd1ab8161a3187c82c316c3b128c7f49916cba779ffb.css"
-    integrity="sha512-dfAFDMCvX/99IA//wR4DS4UqQclHZI12sBAyALpToD6m4/GOEM769cqJzRq4Fhoxh8gsMWw7Eox/SZFsunef&#43;w==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.f934e2ba7b3bf8b42d8c377aa0fd4f865361afabdc6621e95464372a418e275d637df0fd87150fce54271c837f76b2c1136d0217338a94360e128f85a35f1436.css"
+    integrity="sha512-&#43;TTiuns7&#43;LQtjDd6oP1PhlNhr6vcZiHpVGQ3KkGOJ11jffD9hxUPzlQnHIN/drLBE20CFzOKlDYOEo&#43;Fo18UNg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -80,50 +80,52 @@
   
   
   
-  <meta property="og:url" content="https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/">
+  <meta property="og:url" content="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
   <meta property="og:site_name" content="ZSL">
-  <meta property="og:title" content="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">
-  <meta property="og:description" content="2024 guide: Secure remote access using Cloudflare Tunnel and DDNS, no port forwarding. Includes domain setup, API token, DDNS config, and Tunnel build steps. Ideal for home servers: safe and affordable.">
-  <meta property="og:locale" content="en">
+  <meta property="og:title" content="Hugo Blowfish 的基礎設定">
+  <meta property="og:description" content="介紹如何對 Hugo Blowfish Theme 進行基礎設定與配置，包括修改 permalink、frontmatter 及如何避免網頁被 Google 搜尋。">
+  <meta property="og:locale" content="zh_tw">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-05-08T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-05-08T00:00:00+00:00">
-    <meta property="article:tag" content="Site Setup Log">
-    <meta property="article:tag" content="Cloudflare">
-    <meta property="article:tag" content="Command Notes">
+    <meta property="article:published_time" content="2024-07-01T12:01:01+08:00">
+    <meta property="article:modified_time" content="2024-07-22T00:00:00+00:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="筆記">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
 
   
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">
-  <meta name="twitter:description" content="2024 guide: Secure remote access using Cloudflare Tunnel and DDNS, no port forwarding. Includes domain setup, API token, DDNS config, and Tunnel build steps. Ideal for home servers: safe and affordable.">
+  <meta name="twitter:title" content="Hugo Blowfish 的基礎設定">
+  <meta name="twitter:description" content="介紹如何對 Hugo Blowfish Theme 進行基礎設定與配置，包括修改 permalink、frontmatter 及如何避免網頁被 Google 搜尋。">
 
   
   <script type="application/ld+json">
   [{
     "@context": "https://schema.org",
     "@type": "Article",
-    "articleSection": "Place for articles.",
-    "name": "Site Setup Log: No Static IP \u002b Cloudflare Tunnel \u002b DDNS-GO",
-    "headline": "Site Setup Log: No Static IP \u002b Cloudflare Tunnel \u002b DDNS-GO",
-    "description": "2024 guide: Secure remote access using Cloudflare Tunnel and DDNS, no port forwarding. Includes domain setup, API token, DDNS config, and Tunnel build steps. Ideal for home servers: safe and affordable.",
-    "abstract": "My log of setting old PC as NAS.",
-    "inLanguage": "en",
-    "url" : "https:\/\/www.zsl0621.cc\/en-us\/posts\/blog-cloudflare-ddns\/",
+    "articleSection": "文章列表",
+    "name": "Hugo Blowfish 的基礎設定",
+    "headline": "Hugo Blowfish 的基礎設定",
+    "description": "介紹如何對 Hugo Blowfish Theme 進行基礎設定與配置，包括修改 permalink、frontmatter 及如何避免網頁被 Google 搜尋。",
+    "abstract": "Hugo Blowfish 的基礎設定教學（或者說紀錄）。",
+    "inLanguage": "zh-tw",
+    "url" : "https:\/\/www.zsl0621.cc\/posts\/hugo-blowfish-setup\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
     },
     "copyrightYear": "2024",
-    "dateCreated": "2024-05-08T00:00:00\u002b00:00",
-    "datePublished": "2024-05-08T00:00:00\u002b00:00",
+    "dateCreated": "2024-07-01T12:01:01\u002b08:00",
+    "datePublished": "2024-07-01T12:01:01\u002b08:00",
     
-    "dateModified": "2024-05-08T00:00:00\u002b00:00",
+    "dateModified": "2024-07-22T00:00:00\u002b00:00",
     
-    "keywords": ["Site Setup Log","Cloudflare","Command Notes"],
+    "keywords": ["Hugo","筆記"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1009"
+    "wordCount": "440"
   }]
   </script>
 
@@ -211,7 +213,7 @@
   <div id="the-top" class="absolute flex self-center">
     <a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
       href="#main-content"><span
-        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a>
+        class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>快轉到主要內容</a>
   </div>
   
   
@@ -226,7 +228,7 @@
         <nav class="flex space-x-3">
 
             
-            <a href="/en-us/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL</a>
+            <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">ZSL</a>
             
 
         </nav>
@@ -235,10 +237,10 @@
             
             
             
-  <a href="/en-us/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
-        All Posts
+        文章
     </p>
 </a>
 
@@ -249,8 +251,8 @@
   <div>
   <div class="cursor-pointer flex items-center nested-menu">
     
-    <a  href="/en-us/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="">
-      Notes
+    <a  href="/notes/"   class="text-base font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="">
+      筆記
     </a>
     <span>
       
@@ -278,14 +280,14 @@
     <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
       <div class="flex flex-col space-y-3">
         
-        <a href="/en-us/notes/personal/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <a href="/notes/personal/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
           
           <p class="text-sm font-sm" title="">
-            Personal Notes
+            個人筆記
           </p>
         </a>
         
-        <a href="/en-us/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        <a href="/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
           
           <p class="text-sm font-sm" title="">
             Linux
@@ -301,10 +303,21 @@
 
             
             
-  <a href="/en-us/jottings/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  <a href="/jottings/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
     
     <p class="text-base font-medium" title="">
-        Jottings
+        隨筆
+    </p>
+</a>
+
+
+
+            
+            
+  <a href="/posts/hugo-cheatsheet/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-base font-medium" title="">
+        小抄
     </p>
 </a>
 
@@ -314,41 +327,6 @@
             
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="mr-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">EN🇺🇸</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
-            中文🇹🇼
-          </p>
-        </a>
-        
-        <a href="/en-us/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">
-            EN🇺🇸
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -401,41 +379,6 @@
             <span></span>
 
             
-<div>
-  <div class="cursor-pointer flex items-center nested-menu">
-    <span class="mr-1">
-      
-
-  <span class="relative block icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
-    <path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"/></svg>
-  </span>
-
-
-    </span>
-    <div class="text-sm font-medium text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">EN🇺🇸</div>
-  </div>
-  <div class="absolute menuhide">
-    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
-      <div class="flex flex-col space-y-3">
-        
-        <a href="/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問">
-            中文🇹🇼
-          </p>
-        </a>
-        
-        <a href="/en-us/posts/blog-cloudflare-ddns/" class="flex items-center">
-          <p class="text-sm font-sm text-gray-500 hover:text-primary-600 dark:hover:text-primary-400" title="Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO">
-            EN🇺🇸
-          </p>
-        </a>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
             
@@ -516,10 +459,10 @@
 
                     
   <li class="mt-1">
-    <a href="/en-us/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/posts/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            All Posts
+            文章
         </p>
     </a>
 </li>
@@ -534,7 +477,7 @@
     <a class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            Notes
+            筆記
         </p>
         <span>
             
@@ -561,16 +504,16 @@
 </li>
 
 <li class="mt-1">
-    <a href="/en-us/notes/personal/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/notes/personal/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-sm font-small" title="">
-            Personal Notes
+            個人筆記
         </p>
     </a>
 </li>
 
 <li class="mt-1">
-    <a href="/en-us/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/notes/linux/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-sm font-small" title="">
             Linux
@@ -587,10 +530,25 @@
 
                     
   <li class="mt-1">
-    <a href="/en-us/jottings/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    <a href="/jottings/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
         
         <p class="text-bg font-bg" title="">
-            Jottings
+            隨筆
+        </p>
+    </a>
+</li>
+
+
+
+
+                    
+
+                    
+  <li class="mt-1">
+    <a href="/posts/hugo-cheatsheet/"  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+        
+        <p class="text-bg font-bg" title="">
+            小抄
         </p>
     </a>
 </li>
@@ -689,7 +647,7 @@
   <header id="single_header" class="mt-5 max-w-prose">
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Site Setup Log: No Static IP + Cloudflare Tunnel + DDNS-GO
+      Hugo Blowfish 的基礎設定
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -732,7 +690,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">8 May 2024</time><span class="px-2 text-neutral-500">&middot;</span>
+  <time datetime="2024-07-01 12:01:01 &#43;0800 CST">2024年7月1日</time><span class="px-2 text-neutral-500">&middot;</span>
 
 
 <script type="text/javascript" src="/js/zen-mode.min.63c8a202661f4a2063fdc2706685d668e8ea3da613da2224e9da527e5876e4f53dcac39ab60732626fb4151feae5d430d0cf44731e5d3c726522fcc1519c1547.js" integrity="sha512-Y8iiAmYfSiBj/cJwZoXWaOjqPaYT2iIk6dpSflh25PU9ysOatgcyYm&#43;0FR/q5dQw0M9Ecx5dPHJlIvzBUZwVRw=="></script>
@@ -740,24 +698,15 @@
 <span class="mb-[2px]">
     <span id="zen-mode-button"
           class="text-lg hover:text-primary-500"
-          title="Enable zen mode"
-          data-title-i18n-disable="Enable zen mode"
-          data-title-i18n-enable="Disable zen mode">
+          title=""
+          data-title-i18n-disable=""
+          data-title-i18n-enable="">
         <span class="inline-block align-text-bottom">
 
   <span class="relative block icon">
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px"
-	 height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-	<g id="Icons">
-		<g id="expand">
-			<polygon id="arrow_2_" style="fill:currentColor; fill-rule:evenodd;clip-rule:evenodd;" points="17.303,8.283 12,13.586 6.697,8.283 5.283,9.697
-				12,16.414 18.717,9.697 		"/>
-		</g>
-	</g>
-	<g id="Guides" style="display:none;">
-	</g>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
 </svg>
-
   </span>
 
 </span>
@@ -794,32 +743,34 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/site-setup-log/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/hugo/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Site Setup Log
+    Hugo
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/cloudflare/&#34;,'_self');">
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/hugo/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Cloudflare
+    Hugo
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/command-notes/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Command Notes
+    筆記
   </span>
 </span>
   </span>
@@ -861,36 +812,17 @@
   class="toc-right mt-0 overflow-y-scroll overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
   <summary
     class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    目錄
   </summary>
   <div
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#site-setup-log-no-static-ip-cloudflare-tunnel--ddns-go">Site Setup Log (No Static IP, Cloudflare Tunnel + DDNS-GO)</a>
-      <ul>
-        <li><a href="#concept">Concept</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-        <li><a href="#configuring-ddns">Configuring DDNS</a>
-          <ul>
-            <li><a href="#i-domain">I. Domain</a></li>
-            <li><a href="#ii-obtain-cloudflare-api-token">II. Obtain Cloudflare API Token</a></li>
-            <li><a href="#iii-configuring-ddns-service">III. Configuring DDNS Service</a></li>
-          </ul>
-        </li>
-        <li><a href="#configuring-cloudflare-tunnel">Configuring Cloudflare Tunnel</a>
-          <ul>
-            <li><a href="#i-install-cloudflared">I. Install Cloudflared</a></li>
-            <li><a href="#ii-configure-tunnelhttpsdeveloperscloudflarecomcloudflare-oneconnectionsconnect-networksget-startedcreate-local-tunnel">II. <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel">Configure Tunnel</a></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#additional-options">Additional Options</a>
-      <ul>
-        <li><a href="#notes">Notes</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-基本知識">1. 基本知識</a></li>
+    <li><a href="#2-設定-permalink">2. 設定 permalink</a></li>
+    <li><a href="#3-修改預設-frontmatter">3. 修改預設 frontmatter</a></li>
+    <li><a href="#4-設定網頁不被-google-搜尋">4. 設定網頁不被 Google 搜尋</a></li>
+    <li><a href="#5-todo">5. ToDo</a></li>
   </ul>
 </nav>
   </div>
@@ -898,36 +830,17 @@
 <details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
   <summary
     class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
-    Table of Contents
+    目錄
   </summary>
   <div
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#site-setup-log-no-static-ip-cloudflare-tunnel--ddns-go">Site Setup Log (No Static IP, Cloudflare Tunnel + DDNS-GO)</a>
-      <ul>
-        <li><a href="#concept">Concept</a></li>
-        <li><a href="#getting-started">Getting Started</a></li>
-        <li><a href="#configuring-ddns">Configuring DDNS</a>
-          <ul>
-            <li><a href="#i-domain">I. Domain</a></li>
-            <li><a href="#ii-obtain-cloudflare-api-token">II. Obtain Cloudflare API Token</a></li>
-            <li><a href="#iii-configuring-ddns-service">III. Configuring DDNS Service</a></li>
-          </ul>
-        </li>
-        <li><a href="#configuring-cloudflare-tunnel">Configuring Cloudflare Tunnel</a>
-          <ul>
-            <li><a href="#i-install-cloudflared">I. Install Cloudflared</a></li>
-            <li><a href="#ii-configure-tunnelhttpsdeveloperscloudflarecomcloudflare-oneconnectionsconnect-networksget-startedcreate-local-tunnel">II. <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel">Configure Tunnel</a></a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#additional-options">Additional Options</a>
-      <ul>
-        <li><a href="#notes">Notes</a></li>
-      </ul>
-    </li>
+    <li><a href="#1-基本知識">1. 基本知識</a></li>
+    <li><a href="#2-設定-permalink">2. 設定 permalink</a></li>
+    <li><a href="#3-修改預設-frontmatter">3. 修改預設 frontmatter</a></li>
+    <li><a href="#4-設定網頁不被-google-搜尋">4. 設定網頁不被 Google 搜尋</a></li>
+    <li><a href="#5-todo">5. ToDo</a></li>
   </ul>
 </nav>
   </div>
@@ -1010,15 +923,42 @@
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Deployment Records
+        自架 NAS 紀錄
     </summary>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/">
-            Part1 [This Article] Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO 
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
+            #1 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
+            #2  Hugo Blowfish 的基礎設定 
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+            #3 Hugo Blowfish 的問題修復
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+            #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
     
@@ -1032,306 +972,106 @@
 
 
         <div class="article-content max-w-prose mb-20">          
-          
+          <p>Blowfish 是高度客製化的主題，一進去 config 也是多到眼花撩亂，這邊稍微紀錄一下本站的設定。</p>
 
-<h1 class="relative group">Site Setup Log (No Static IP, Cloudflare Tunnel + DDNS-GO) 
-    <div id="site-setup-log-no-static-ip-cloudflare-tunnel--ddns-go" class="anchor"></div>
+
+<h1 class="relative group">1. 基本知識 
+    <div id="1-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AD%98" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#site-setup-log-no-static-ip-cloudflare-tunnel--ddns-go" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#1-%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AD%98" aria-label="定位點">#</a>
     </span>        
     
 </h1>
+<p>Hugo 對於渲染設定都放在 assets 以及 layouts 資料夾中，如果主資料夾有檔案就會使用主資料夾的檔案進行渲染，反之用 theme 資料夾的對應檔案夾進行渲染。</p>
+<p>Public 是完整的網站，不用動他，但是要部屬網站時可以清掉 .git 以外的檔案清除調試時生成的檔案。</p>
+<p>Static 中的檔案會原封不動放到 public 中，而 assets 中的檔案會被 Hugo 處理。以 blowfish 而言，static 放 robots.txt 等設定文件，圖片/custom.css/js 都放在 assets。</p>
 
 
-<h2 class="relative group">Concept 
-    <div id="concept" class="anchor"></div>
+<h1 class="relative group">2. 設定 permalink 
+    <div id="2-%E8%A8%AD%E5%AE%9A-permalink" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#concept" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#2-%E8%A8%AD%E5%AE%9A-permalink" aria-label="定位點">#</a>
     </span>        
     
-</h2>
-<p>No specific concept, just looking for a secure way to access the external network. Directly using port forwarding is equivalent to running unprotected. Using DDNS still requires port forwarding. <a href="https://www.youtube.com/watch?v=_Qrd7oJMp6w" target="_blank">ZeroTier/TailScale</a> is for personal use only, VPN routers are outdated, <a href="https://www.youtube.com/watch?v=ZfeZNbqIWTo" target="_blank">FRP</a> requires renting a VPS for relay. After eliminating other options, Cloudflared Tunnel (CT) is the safest and cheapest method.</p>
-<p>This setup uses a registered domain for DDNS resolution without opening ports to ensure internal network security. Other requirements use CNAME with encrypted transmission via CT. This strange method is due to the inability to connect using CT dashboard methods found online. It may still require opening ports, resulting in this cobbled-together solution.</p>
-<p>Regarding DDNS, do not use the Cloudflare API, it will be frustrating.</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li>No need to rent a VPS server, the cheapest domain costs $5/year.</li>
-<li>Cloudflared&rsquo;s reverse proxy protects against DDoS, encrypts transmission, hides host IP, and requires no open local ports.</li>
-<li>If the domain is purchased through Cloudflared, certificates are automatically configured, no need for auto-renewal every three months.</li>
-<li>Each service port uses individually configured CNAMEs.</li>
-</ul>
-<p><strong>Disadvantages</strong></p>
-<ul>
-<li>The original domain used for updating DDNS cannot be used, but www can be used as CNAME with 80% similarity.</li>
-<li>To use the original domain, port forwarding on the router is required.</li>
-<li>[Not yet tested] Cloudflare only supports ports 80/443, other services like SMB cannot use the proxy and must open ports directly.</li>
-</ul>
+</h1>
+<p>從一開始就做好檔案管理，詳情請見 <a href="https://ivonblog.com/posts/same-url-for-hugo-pages-from-different-sections/" target="_blank">調整Hugo的permalinks，讓不同目錄下的頁面產生同一個網址</a></p>
 
 
-<h2 class="relative group">Getting Started 
-    <div id="getting-started" class="anchor"></div>
+<h1 class="relative group">3. 修改預設 frontmatter 
+    <div id="3-%E4%BF%AE%E6%94%B9%E9%A0%90%E8%A8%AD-frontmatter" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#getting-started" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#3-%E4%BF%AE%E6%94%B9%E9%A0%90%E8%A8%AD-frontmatter" aria-label="定位點">#</a>
     </span>        
     
-</h2>
-<p>This setup requires DDNS and Cloudflare Tunnel, so the tutorial is divided into two parts. Changes needed in the instructions will be framed with &lt;&gt;. Configuration is as follows, please adjust for your environment:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">USER_NAME=leo # DIR name in ubuntu-server
-</span></span><span class="line"><span class="cl">TUNNEL_NAME=ubuntu-server
-</span></span><span class="line"><span class="cl">DomainName=leo-photos.uk
-</span></span><span class="line"><span class="cl">ServerLocalIP=192.168.50.100
-</span></span><span class="line"><span class="cl">PortPhotoprism=2342
-</span></span><span class="line"><span class="cl">PortImmich=2283
+</h1>
+<p>把 <code>archetypes/default.md</code> 改成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#39;{{ replace .File.ContentBaseName &#34;-&#34; &#34; &#34; | title }}&#39;
+</span></span><span class="line"><span class="cl">date: {{ .Date }}
+</span></span><span class="line"><span class="cl">draft: true
+</span></span><span class="line"><span class="cl">summary: 
+</span></span><span class="line"><span class="cl">tags: []
+</span></span><span class="line"><span class="cl">categories: []
+</span></span><span class="line"><span class="cl">series: []
+</span></span><span class="line"><span class="cl">series_order: 
+</span></span><span class="line"><span class="cl">progress_bar: true
+</span></span><span class="line"><span class="cl">---
 </span></span></code></pre></div>
 
-<h2 class="relative group">Configuring DDNS 
-    <div id="configuring-ddns" class="anchor"></div>
+<h1 class="relative group">4. 設定網頁不被 Google 搜尋 
+    <div id="4-%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E4%B8%8D%E8%A2%AB-google-%E6%90%9C%E5%B0%8B" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#configuring-ddns" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-
-
-<h3 class="relative group">I. Domain 
-    <div id="i-domain" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#i-domain" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>Purchase a domain: I purchased mine from Cloudflare Domain Registration. Ensure the domain is short, as CNAME entries will be used. If purchased from another registrar, use the change nameserver function, note that no-ip cannot be transferred.</li>
-<li>Manage DNS for the purchased domain: Go to the Cloudflare homepage, select the domain, go to the DNS section, and add a record with <strong>Type A, leo-photos.uk, 1.2.3.4</strong>.</li>
-<li>1.2.3.4 can be any IP, it will be automatically corrected during dynamic DNS updates.</li>
-<li>Using a proxy will route the domain through Cloudflare servers to hide the IP; without a proxy, it is exposed.</li>
-</ol>
-
-
-<h3 class="relative group">II. Obtain Cloudflare API Token 
-    <div id="ii-obtain-cloudflare-api-token" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ii-obtain-cloudflare-api-token" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>Go to the Cloudflare homepage, click the profile icon in the upper right, then My Profile &gt; API Tokens &gt; Create Token.</li>
-<li>Select <code>Edit zone DNS</code>, choose your domain in Zone Resources, and proceed to Summary, then next step.</li>
-<li>The generated token will be long and used later. The following command can test if the token is valid and active:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl -X GET <span class="s2">&#34;https://api.cloudflare.com/client/v4/zones?name=leo-photos.uk&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>	-H <span class="s2">&#34;Authorization: Bearer &lt;your-token&gt;&#34;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>	-H <span class="s2">&#34;Content-Type: application/json&#34;</span>
-</span></span></code></pre></div></li>
-</ol>
-
-
-<h3 class="relative group">III. Configuring DDNS Service 
-    <div id="iii-configuring-ddns-service" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#iii-configuring-ddns-service" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Use <a href="https://github.com/jeessy2/ddns-go" target="_blank">DDNS-GO</a> for automatic IP retrieval (<a href="https://zhuanlan.zhihu.com/p/670026839" target="_blank">Guide</a>)</p>
-<ol>
-<li>Deploy DDNS-GO using Docker:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">docker run -d --name ddns-go --restart<span class="o">=</span>always -p 9876:9876 -v /opt/ddns-go:/root jeessy/ddns-go
-</span></span></code></pre></div></li>
-<li>Access <code>http://&lt;192.168.50.100&gt;:9876</code>, choose Cloudflare, paste the token, enter the domain, set the username and password, then save.</li>
-</ol>
-
-
-<h2 class="relative group">Configuring Cloudflare Tunnel 
-    <div id="configuring-cloudflare-tunnel" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#configuring-cloudflare-tunnel" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Follow the <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/#5-start-routing-traffic" target="_blank">official tutorial</a> for commands. Note that after step four, we will configure <code>run as service</code>. Below are the complete steps for Linux:</p>
-
-
-<h3 class="relative group">I. Install Cloudflared 
-    <div id="i-install-cloudflared" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#i-install-cloudflared" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>Add GPG key, Cloudflare apt repo, update, and install:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo mkdir -p --mode<span class="o">=</span><span class="m">0755</span> /usr/share/keyrings
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg <span class="p">|</span> sudo tee /usr/share/keyrings/cloudflare-main.gpg &gt;/dev/null
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> main&#34;</span> <span class="p">|</span> sudo tee /etc/apt/sources.list.d/cloudflared.list
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install cloudflared
-</span></span></code></pre></div></li>
-</ol>
-
-
-<h3 class="relative group">II. <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel" target="_blank">Configure Tunnel</a> 
-    <div id="ii-configure-tunnelhttpsdeveloperscloudflarecomcloudflare-oneconnectionsconnect-networksget-startedcreate-local-tunnel" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#ii-configure-tunnelhttpsdeveloperscloudflarecomcloudflare-oneconnectionsconnect-networksget-startedcreate-local-tunnel" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ol>
-<li>
-<p>Login to Cloudflared, visit the displayed URL to log in, Cloudflare will automatically add an API Token for the Tunnel:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cloudflared tunnel login
-</span></span></code></pre></div></li>
-<li>
-<p>Create the Tunnel:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cloudflared tunnel create &lt;ubuntu-server&gt;
-</span></span></code></pre></div></li>
-<li>
-<p>List Tunnel UUID:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cloudflared tunnel list
-</span></span></code></pre></div></li>
-<li>
-<p>Create a configuration file
-In <code>/home/leo</code>, create a <code>config.yml</code> file using <code>nano</code>. If only one port is in use, use the following format:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l">http://&lt;localhost:2283&gt;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">tunnel</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;Tunnel-UUID&gt;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">credentials-file</span><span class="p">:</span><span class="w"> </span><span class="l">/home/leo/.cloudflared/&lt;Tunnel-UUID&gt;.json</span><span class="w">
-</span></span></span></code></pre></div></li>
-</ol>
-<p>For multiple ports, use the following <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/configuration-file/" target="_blank">format</a>, specifying different CNAMEs for each port:
-<code>yaml tunnel: &lt;Tunnel-UUID&gt; credentials-file: /home/leo/.cloudflared/&lt;Tunnel-UUID&gt;.json ingress: - hostname: &lt;immich.leo-photos.uk&gt; service: http://&lt;localhost:2283&gt; - hostname: &lt;photoprism.leo-photos.uk&gt; service: http://&lt;localhost:2342&gt; - service: http_status:404 </code></p>
-<p>A copy of this file should also be placed in <code>/etc/cloudflared</code>. Use the <code>cp</code> command to copy the file:
-<code>sh sudo cp ~/.cloudflared/config.yml /etc/cloudflared/config.yml </code></p>
-<ol start="5">
-<li>
-<p>Configure <a href="https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/as-a-service/linux/" target="_blank">run as service</a> to run the tunnel in the background</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo cloudflared service install
-</span></span><span class="line"><span class="cl">sudo systemctl start cloudflared
-</span></span><span class="line"><span class="cl">sudo systemctl status cloudflared
-</span></span><span class="line"><span class="cl">sudo systemctl restart cloudflared
-</span></span></code></pre></div></li>
-<li>
-<p>Register route DNS
-Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on the official website</strong>, not locally.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># &lt;Tunnel-Name&gt; / &lt;hostname&gt;</span>
-</span></span><span class="line"><span class="cl">cloudflared tunnel route dns &lt;ubuntu-server&gt; &lt;immich.leo-photos.uk&gt;
-</span></span></code></pre></div></li>
-<li>
-<p>Done</p>
-<p>Start the tunnel</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># cloudflared tunnel run &lt;ubuntu-server&gt;</span>
-</span></span><span class="line"><span class="cl">sudo systemctl restart cloudflared
-</span></span></code></pre></div></li>
-</ol>
-
-
-<h1 class="relative group">Additional Options 
-    <div id="additional-options" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#additional-options" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#4-%E8%A8%AD%E5%AE%9A%E7%B6%B2%E9%A0%81%E4%B8%8D%E8%A2%AB-google-%E6%90%9C%E5%B0%8B" aria-label="定位點">#</a>
     </span>        
     
 </h1>
-<p>The free version on the Cloudflare website also offers many security options. Select the purchased domain:</p>
-<ol>
-<li>Quick Start Guide, check the necessary options</li>
-<li>DNS &gt; DNS Settings &gt; DNSSEC</li>
-<li>SSL/TLS &gt; Overview &gt; Encryption Mode: Full (strict)</li>
-<li>SSL/TLS &gt; Edge Certificates</li>
-<li>Security: WAF Template: mTLS-enforced authentication</li>
-<li>Security: WAF Zone lockdown: Country not equal to Taiwan</li>
-<li>Security: Bots <a href="https://www.cnblogs.com/louqianzhu/p/17446080.html" target="_blank">but reportedly has issues</a></li>
-<li>Security: DDoS &gt; Block, High</li>
-<li>Security: Security Level, Browser Integrity Check</li>
-<li>Speed: Optimization HTTP/2 to Origin off, HTTP/3 (with QUIC)</li>
-<li>Rules: Last time modifying this resulted in connectivity issues</li>
-<li>Network: WebSockets off, gRPC off, Onion Routing off</li>
-<li>Zero Trust &gt; Settings &gt; Network &gt; Proxy</li>
-</ol>
+<p>noindex 為不被搜尋索引，nofollow 為不被索引頁面連結，<a href="https://www.yesharris.com/seo-basic/meta-robots-and-robots-txt/" target="_blank">來源</a>。</p>
+<p>在 front matter 中加入 <code>robots: &quot;noindex, nofollow&quot;</code>。</p>
 
 
-<h2 class="relative group">Notes 
-    <div id="notes" class="anchor"></div>
+<h1 class="relative group">5. ToDo 
+    <div id="5-todo" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#notes" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#5-todo" aria-label="定位點">#</a>
     </span>        
     
-</h2>
+</h1>
 <ol>
-<li>
-<p>The dashboard methods found online did not work for me, so I used the CLI method.</p>
-</li>
-<li>
-<p>There are many &ldquo;changes&rdquo; online; be careful when copying and pasting.</p>
-</li>
-<li>
-<p>A record = IPv4, AAAA record = IPv6.</p>
-</li>
-<li>
-<p>It turns out that using no-ip cannot transfer nameservers to Cloudflare.</p>
-</li>
-<li>
-<p>You can manage Cloudflared with the following commands:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">sudo systemctl status cloudflared
-</span></span><span class="line"><span class="cl">sudo systemctl start cloudflared
-</span></span><span class="line"><span class="cl">sudo systemctl restart cloudflared
-</span></span><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> cloudflared
-</span></span></code></pre></div></li>
-<li>
-<p><strong>Remove Cloudflared</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Sequentially remove service, auto start, config, cloudflared</span>
-</span></span><span class="line"><span class="cl">sudo cloudflared service uninstall
-</span></span><span class="line"><span class="cl">sudo rm /etc/systemd/system/cloudflared.service
-</span></span><span class="line"><span class="cl">sudo rm /etc/cloudflared/config.yml
-</span></span><span class="line"><span class="cl">sudo rm -r ~/.cloudflared
-</span></span><span class="line"><span class="cl">sudo apt-get remove cloudflared
-</span></span></code></pre></div></li>
-<li>
-<p><strong>Useful commands</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cloudflared tunnel delete &lt;Tunnel-UUID or NAME&gt;
-</span></span></code></pre></div></li>
+<li><del>超連結</del></li>
+<li><del>增加 ToC 寬度</del></li>
+<li>修改 ToC 字體大小</li>
+<li><del>邊界線對比度過低</del></li>
+<li><del>文字對比度過低</del></li>
+<li><del>閱讀進度</del></li>
+<li><del>深色模式中超連結的顏色</del></li>
+<li><del>深色模式中所有文章的日期顏色</del></li>
 </ol>
 
 <br><br><br>
 <div class="max-w-fit">
+  
+  <blockquote class="book-hint info">
+  <div class="hint-content">
+    文章更新：<time datetime="2024-07-22 00:00:00 &#43;0000 UTC">這篇文章已經在 <b>2024年7月22日</b> 更新！</time>
+  </div>
+</blockquote>
+
+    
   
 </div>
         </div>
@@ -1357,14 +1097,14 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
   <div class="place-self-center">
     
     <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
-      Author
+      作者
     </div>
     <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
       ZSL
     </div>
     
     
-    <div class="text-sm text-neutral-700 dark:text-neutral-400">Sloth is good.</div>
+    <div class="text-sm text-neutral-700 dark:text-neutral-400">正事不做。</div>
     
     <div class="text-2xl sm:text-lg">
   <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
@@ -1532,15 +1272,42 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
     
     <summary
         class="py-1 text-lg font-semibold cursor-pointer bg-primary-200 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-primary-800 dark:text-neutral-100">
-        Deployment Records
+        自架 NAS 紀錄
     </summary>
     
     
     
     <div
-        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
-        <a href="https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/">
-            Part1 [This Article] Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO 
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
+            #1 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
+            #2  Hugo Blowfish 的基礎設定 
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+            #3 Hugo Blowfish 的問題修復
+        </a>
+    </div>
+    
+    
+    
+    <div
+        class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+            #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
     
@@ -1557,9 +1324,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;title=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Share on LinkedIn"
-      aria-label="Share on LinkedIn"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="分享到 LinkedIn"
+      aria-label="分享到 LinkedIn"
       >
       
 
@@ -1576,9 +1343,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;text=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Tweet on Twitter"
-      aria-label="Tweet on Twitter"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;text=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="推到 Twitter"
+      aria-label="推到 Twitter"
       >
       
 
@@ -1594,9 +1361,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Submit to Reddit"
-      aria-label="Submit to Reddit"
+      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="發送到 Reddit"
+      aria-label="發送到 Reddit"
       >
       
 
@@ -1613,7 +1380,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
+      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
       title=""
       aria-label=""
       >
@@ -1632,7 +1399,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;resubmit=true&amp;title=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
+      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;resubmit=true&amp;title=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
       title=""
       aria-label=""
       >
@@ -1651,9 +1418,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;description=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Pin on Pinterest"
-      aria-label="Pin on Pinterest"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;description=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="釘到 Pinterest"
+      aria-label="釘到 Pinterest"
       >
       
 
@@ -1670,9 +1437,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;quote=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Share on Facebook"
-      aria-label="Share on Facebook"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;quote=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="分享到 Facebook"
+      aria-label="分享到 Facebook"
       >
       
 
@@ -1689,9 +1456,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/&amp;subject=Site%20Setup%20Log:%20No%20Static%20IP%20&#43;%20Cloudflare%20Tunnel%20&#43;%20DDNS-GO"
-      title="Send via email"
-      aria-label="Send via email"
+      href="mailto:?body=https://www.zsl0621.cc/posts/hugo-blowfish-setup/&amp;subject=Hugo%20Blowfish%20%e7%9a%84%e5%9f%ba%e7%a4%8e%e8%a8%ad%e5%ae%9a"
+      title="以電子郵件發送"
+      aria-label="以電子郵件發送"
       >
       
 
@@ -1710,12 +1477,12 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
         
 
 
-<h2 class="mt-8 text-2xl font-extrabold mb-10">Related</h2>
+<h2 class="mt-8 text-2xl font-extrabold mb-10">相關文章</h2>
 <section class="w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3">
   
   
 
-  <a href="/en-us/posts/exiftool/" class="min-w-full">
+  <a href="/posts/cloudflare-tunnel-ddns-guide/" class="min-w-full">
     
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
         
@@ -1727,7 +1494,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
 
         
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="/en-us/posts/exiftool/">使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</div>
+          href="/posts/cloudflare-tunnel-ddns-guide/">利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</div>
         
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -1766,7 +1533,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">19 March 2024</time>
+  <time datetime="2024-05-08 00:00:00 &#43;0000 UTC">2024年5月8日</time>
   
 
   
@@ -1798,18 +1565,10 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/nas/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    工具
-  </span>
-</span>
-  </span>
-  
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/categories/%E5%B7%A5%E5%85%B7%E4%BA%8C/&#34;,'_self');">
-    <span class="flex" style="cursor: pointer;">
-  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    工具二
+    NAS
   </span>
 </span>
   </span>
@@ -1822,34 +1581,296 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
   
   
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E6%8C%87%E4%BB%A4%E7%AD%86%E8%A8%98/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/cloudflare/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    指令筆記
+    Cloudflare
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E5%AF%A6%E7%94%A8%E5%B7%A5%E5%85%B7/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E6%95%99%E5%AD%B8/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    實用工具
+    教學
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/exiftool/&#34;,'_self');">
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    Exiftool
+    筆記
   </span>
 </span>
   </span>
   
-  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/en-us/tags/%E7%85%A7%E7%89%87/&#34;,'_self');">
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/posts/webp-performance/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/webp-performance/">WebP圖片壓縮與解碼性能</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-06-20 21:30:40 &#43;0800 CST">2024年6月20日</time>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E7%A7%91%E6%8A%80%E6%96%B0%E7%9F%A5/&#34;,'_self');">
     <span class="flex" style="cursor: pointer;">
   <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-    照片
+    科技新知
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E5%BD%B1%E5%83%8F%E8%99%95%E7%90%86/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    影像處理
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    筆記
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+</div>
+
+
+
+        </div>
+
+        
+      </div>
+      <div class="px-6 pt-4 pb-2">
+
+      </div>
+    </div>
+  </a>
+
+  
+  
+
+  <a href="/posts/rician-fading/" class="min-w-full">
+    
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+        
+        <div class="w-full thumbnail_card_related nozoom" style="background-image:url(/img/featured.webp);"></div>
+        
+      
+
+      <div class="px-6 py-4">
+
+        
+        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+          href="/posts/rician-fading/">Rician Fading生成方式，包含Emil Björnson大師的正解</div>
+        
+
+        <div class="text-sm text-neutral-500 dark:text-neutral-400">
+          
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  <time datetime="2024-06-14 02:45:40 &#43;0800 CST">2024年6月14日</time>
+  
+
+  
+  
+</div>
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+
+
+<div class="flex flex-row flex-wrap items-center">
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/categories/%E9%80%9A%E8%A8%8A%E5%8E%9F%E7%90%86/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    通訊原理
+  </span>
+</span>
+  </span>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%90%86%E8%AB%96%E7%9F%A5%E8%AD%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    理論知識
+  </span>
+</span>
+  </span>
+  
+  <span style="margin-top:0.5rem" class="mr-2" onclick="window.open(&#34;/tags/%E7%AD%86%E8%A8%98/&#34;,'_self');">
+    <span class="flex" style="cursor: pointer;">
+  <span class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    筆記
   </span>
 </span>
   </span>
@@ -1884,12 +1905,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
           
           
         
-          
-          
-        
       <script>
-        var oid = "views_posts\/blog-cloudflare-ddns\/index.md"
-        var oid_likes = "likes_posts\/blog-cloudflare-ddns\/index.md"
+        var oid = "views_posts\/hugo-blowfish-setup\/index.md"
+        var oid_likes = "likes_posts\/hugo-blowfish-setup\/index.md"
       </script>
       
       
@@ -1909,7 +1927,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/en-us/posts/exiftool/">
+            <a class="flex group mr-3" href="/posts/webp-performance/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1921,11 +1939,11 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</span
+                  >WebP圖片壓縮與解碼性能</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-03-19 00:00:00 &#43;0000 UTC">19 March 2024</time>
+                    <time datetime="2024-06-20 21:30:40 &#43;0800 CST">2024年6月20日</time>
                   
                 </span>
               </span>
@@ -1934,15 +1952,15 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
         </span>
         <span>
           
-            <a class="flex text-right group ml-3" href="/en-us/posts/ffmpeg/">
+            <a class="flex text-right group ml-3" href="/posts/hugo-blowfish-features/">
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >FFmpeg Notes</span
+                  >Hugo Blowfish 的進階客製化</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
-                    <time datetime="2024-06-07 00:00:00 &#43;0000 UTC">7 June 2024</time>
+                    <time datetime="2024-07-01 12:05:01 &#43;0800 CST">2024年7月1日</time>
                   
                 </span>
               </span>
@@ -1969,7 +1987,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
   <a href="#the-top"
     class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
-    aria-label="Scroll to top" title="Scroll to top">
+    aria-label="捲動到頁頂" title="捲動到頁頂">
     &uarr;
   </a>
 </div>
@@ -1981,34 +1999,34 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
       <ul class="flex flex-col list-none sm:flex-row">
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/about/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/about/"
             title="">
             
-            About
+            關於本站
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/tags/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/tags/"
             title="">
             
-            Tags
+            標籤
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/categories/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/categories/"
             title="">
             
-            Categories
+            分類
           </a>
         </li>
         
         <li class="flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0">
-          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/en-us/archives/"
+          <a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="/archives/"
             title="">
             
-            Archives
+            所有文章
           </a>
         </li>
         
@@ -2032,9 +2050,9 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
     <p class="text-xs text-neutral-500 dark:text-neutral-400">
       
       
-      Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+      以 <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
         href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
-        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+        href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a> 製作
     </p>
     
 
@@ -2057,7 +2075,7 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://www.zsl0621.cc/en-us/"
+  data-url="https://www.zsl0621.cc/"
   style="z-index:500"
 >
   <div
@@ -2080,14 +2098,14 @@ Register one route DNS for each CNAME. <strong>Route DNS can only be deleted on 
           type="search"
           id="search-query"
           class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
-          placeholder="Search"
+          placeholder="搜尋"
           tabindex="0"
         />
       </form>
       <button
         id="close-search-button"
         class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
-        title="Close (Esc)"
+        title="關閉 (Esc)"
       >
         
 

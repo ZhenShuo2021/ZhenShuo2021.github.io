@@ -10,10 +10,10 @@
     <lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/command-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO</title>
-      <link>https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/</link>
+      <link>https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/blog-cloudflare-ddns/</guid>
+      <guid>https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/</guid>
       <description>My log of setting old PC as NAS.</description>
       
     </item>

@@ -44,37 +44,37 @@
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/posts/20240723/</guid>
-      <description>&lt;kbd&gt; AAA &lt;/kbd&gt;</description>
+      <description>緣起 # 從資料庫放到爆炸開始。 身為資訊整理大師平常在網路上看到各種有用資訊都會用書籤保存，久了以後發現快爆炸了需要書籤之外的管理方式；一開始先用 Word 慢慢複製貼上結果發現更痛苦，沒有連結只能用檔案系統來管理</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（三）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-3/</link>
+      <title>Hugo Blowfish 的問題修復</title>
+      <link>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</link>
       <pubDate>Mon, 01 Jul 2024 12:09:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-3/</guid>
+      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</guid>
       <description>修復 blowfish 相關的功能問題。</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（二）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-2/</link>
+      <title>Hugo Blowfish 的進階客製化</title>
+      <link>https://www.zsl0621.cc/posts/hugo-blowfish-features/</link>
       <pubDate>Mon, 01 Jul 2024 12:05:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-2/</guid>
-      <description>客製化 Hugo 各種設定。</description>
+      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-features/</guid>
+      <description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description>
       
     </item>
     
     <item>
-      <title>架站紀錄：Hugo Blowfish 客製化與功能增強（一）</title>
-      <link>https://www.zsl0621.cc/posts/custom-hugo-1/</link>
+      <title>Hugo Blowfish 的基礎設定</title>
+      <link>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</link>
       <pubDate>Mon, 01 Jul 2024 12:01:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/custom-hugo-1/</guid>
-      <description>客製化 Hugo 各種設定。</description>
+      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</guid>
+      <description>Hugo Blowfish 的基礎設定教學（或者說紀錄）。</description>
       
     </item>
     
@@ -139,11 +139,11 @@
     </item>
     
     <item>
-      <title>架站紀錄：Cloudflare Tunnel&#43;DDNS 無需開放通訊埠實現安全外網訪問</title>
-      <link>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</link>
+      <title>利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</title>
+      <link>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/blog-cloudflare-ddns/</guid>
+      <guid>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</guid>
       <description>紀錄把一台破電腦裝成 NAS 的過程</description>
       
     </item>

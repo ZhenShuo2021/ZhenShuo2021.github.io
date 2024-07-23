@@ -18,5 +18,15 @@
       
     </item>
     
+    <item>
+      <title>利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</title>
+      <link>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</guid>
+      <description>紀錄把一台破電腦裝成 NAS 的過程</description>
+      
+    </item>
+    
   </channel>
 </rss>
