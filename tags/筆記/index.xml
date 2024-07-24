@@ -7,24 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Jul 2024 12:45:01 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>筆記分類：Linux</title>
-      <link>https://www.zsl0621.cc/notes/linux/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
+      <title>Hugo Blowfish 的進階客製化</title>
+      <link>https://www.zsl0621.cc/posts/hugo-blowfish-features/</link>
+      <pubDate>Mon, 01 Jul 2024 12:45:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/notes/linux/</guid>
-      <description>先放一些常見linux指令。</description>
-      
-    </item>
-    
-    <item>
-      <title>筆記分類：個人筆記</title>
-      <link>https://www.zsl0621.cc/notes/personal/</link>
-      <pubDate>Thu, 01 Jan 2099 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/notes/personal/</guid>
-      <description>ZSL 的什麼都有個人筆記</description>
+      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-features/</guid>
+      <description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description>
       
     </item>
     
@@ -35,16 +25,6 @@
       
       <guid>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</guid>
       <description>修復 blowfish 相關的功能問題。</description>
-      
-    </item>
-    
-    <item>
-      <title>Hugo Blowfish 的進階客製化</title>
-      <link>https://www.zsl0621.cc/posts/hugo-blowfish-features/</link>
-      <pubDate>Mon, 01 Jul 2024 12:05:01 +0800</pubDate>
-      
-      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-features/</guid>
-      <description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description>
       
     </item>
     
@@ -75,16 +55,6 @@
       
       <guid>https://www.zsl0621.cc/posts/rician-fading/</guid>
       <description>整理生成Rician fading的方法</description>
-      
-    </item>
-    
-    <item>
-      <title>FFmpeg筆記</title>
-      <link>https://www.zsl0621.cc/posts/ffmpeg/</link>
-      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.zsl0621.cc/posts/ffmpeg/</guid>
-      <description>介紹FFmpeg基本指令，以及轉檔實驗。</description>
       
     </item>
     
