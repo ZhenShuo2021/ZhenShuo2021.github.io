@@ -32,8 +32,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.97219d1db912d9c26543589b9953a8ae62750c400cd4631bd1d95c30f577601faa5fafa4b36b2f83e0cef213e1047a1d4b7f9c11d46054d061a97439b973fc82.css"
-    integrity="sha512-lyGdHbkS2cJlQ1ibmVOormJ1DEAM1GMb0dlcMPV3YB&#43;qX6&#43;ks2svg&#43;DO8hPhBHodS3&#43;cEdRgVNBhqXQ5uXP8gg==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a12b5e62c216c878c1ba109547fd70492bc7b9b5af2997f763e4cee89de3efbb622282136ee8714d68cd583a5e450d9f786afc9336349e79262fc077d2bb6dea.css"
+    integrity="sha512-oSteYsIWyHjBuhCVR/1wSSvHubWvKZf3Y&#43;TO6J3j77tiIoITbuhxTWjNWDpeRQ2feGr8kzY0nnkmL8B30rtt6g==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -624,88 +624,221 @@
     <main id="main-content" class="grow">
       
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const postItems = document.querySelectorAll('.post-item');
+        postItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.classList.add('post-item-hover');
+            });
+            item.addEventListener('mouseleave', function() {
+                this.classList.remove('post-item-hover');
+            });
+        });
+    
+        
+        const monthTitles = document.querySelectorAll('.month-title');
+        monthTitles.forEach(title => {
+            const [color1, color2, color3] = generateContrastingColors(false);
+            const [color4, color5, color6] = generateContrastingColors(true);
+            const angle1 = generateRandomAngle();
+            const angle2 = generateRandomAngle();
+            
+            title.style.setProperty('--gradient-1', `linear-gradient(${angle1}deg, ${color1}, ${color2})`);
+            title.style.setProperty('--gradient-2', `linear-gradient(${angle2}deg, ${color4}, ${color5})`);
+        });
+    });
+    
+    function generateContrastingColors(isDarkMode) {
+        
+        const baseColor = Math.random() * 360;
+    
+        
+        const c1 = baseColor;
+        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360; 
+        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360; 
+        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360; 
+    
+        
+        const adjustColor = (color, isDarkMode) => {
+            const lightness = isDarkMode ? 40 : 75; 
+            const saturation = 100; 
+            return `hsl(${color}, ${saturation}%, ${lightness}%)`;
+        };
+    
+        
+        const color1 = adjustColor(c1, isDarkMode);
+        const color2 = adjustColor(c2, isDarkMode);
+        const color3 = adjustColor(c3, isDarkMode);
+    
+        
+        return [color1, color2, color3];
+    }
+    
+    function generateRandomAngle() {
+        const step = 15; 
+        const minAngle = 30; 
+        const maxAngle = 150; 
+        const totalSteps = (maxAngle - minAngle) / step + 1; 
+        const randomStep = Math.floor(Math.random() * totalSteps); 
+        const randomAngle = minAngle + randomStep * step; 
+        return randomAngle;
+    }
+</script>
+
+
+
 
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        color: #333;
-    }
+ 
+ 
+.timeline {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    .timeline {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+ 
+.year-container {
+    margin-bottom: 40px ;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
+    background-color: rgba(var(--color-neutral-300), 0.5);
+}
 
-    .container {
-        padding: 10px 0;
-        background-color: inherit;
-        width: 100%;
-        margin-bottom: 20px;
-    }
+ 
+.year {
+    background-color: #d9d4d4 !important;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
 
-    .date {
-        padding: 15px;
-        color: #000000;
-        font-weight: bold;
-        font-size: 1.8em;
-        text-align: left;
-        border-radius: 6px;
-    }
+ 
+.post-count {
+    background-color: #007bff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
 
-    .content {
-        padding: 20px 30px;
-        background-color: white;
-        border-radius: 6px;
-    }
+ 
+.month-container {
+    margin-bottom: 30px;
+}
 
-    .content h2 {
-        margin-top: 0;
-    }
-
-    .content p {
-        margin: 10px 0;
-    }
-
-    .post-date {
-        color: #6e6e6e;
-        margin-right: 10px;
-    }
+.month-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: var(--gradient-1);
+    padding: 0.6rem 1rem;
+    border-radius: 40px;
+    border: transparent;
+    text-transform: uppercase;
+    
+     
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
      
-    .dark body {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
-    }
+    line-height: 1;
+    
+}
 
-    .dark .container {
-        background-color: inherit;
-    }
 
-    .dark .date {
-        color: #ffffff;
-    }
 
-    .dark .content {
-        background-color: #2a2a2a;
-    }
+.dark .month-title {
+    background: var(--gradient-2);
+}
 
-    .dark .content h2 {
-        color: #f0f0f0;
-    }
+ 
+.post-list {
+    list-style-type: none;
+    padding: 2px;
+}
 
-    .dark .post-date {
-        color: #bbbbbb;
-    }
+ 
+.post-item {
+    transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
+    background: rgba(var(--color-neutral-100), 0.95);
+}
+
+ 
+.post-item-hover {
+    transform: scale(1.01);
+    background: rgba(var(--color-neutral-100), 0.95) !important;
+}
+
+.post-item-inner {
+    display: flex;
+    align-items: flex-start;
+    background-color: transparent;
+}
+
+ 
+.post-date {
+    font-size: 14px;
+    color: rgb(var(--color-neutral-500));
+    margin-right: 11px;
+    margin-left: 4px;
+    white-space: nowrap;  
+}
+
+ 
+.post-title {
+    font-size: 20px;
+    color: rgb(var(--color-neutral-800)) !important;
+    text-decoration: none;
+    font-weight: bold;
+} 
+
+ 
+.dark .year {
+    background-color: rgba(var(--color-neutral-900), 0.95) !important;
+    color: rgb(var(--color-neutral-100));
+}
+
+.dark .year-container {
+    border: 1px solid rgb(var(--color-neutral-900));
+    background-color: rgba(var(--color-neutral-800), 0.3);
+}
+
+.dark .month-title {
+    color: rgb(var(--color-neutral-100));
+}
+
+.dark .post-item {
+    background-color: rgba(var(--color-neutral-800), 0.4);
+}
+
+.dark .post-item-hover {
+    background-color: rgba(var(--color-neutral-800),0.8) !important;
+}
+
+.dark .post-date {
+    color: rgb(var(--color-neutral-100));
+}
+
+.dark .post-title {
+    color: rgb(var(--color-neutral-100)) !important;
+}
+
 </style>
 
-<article class="timeline">
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
  
   
    
@@ -740,157 +873,1613 @@
     });
 </script>
 
-    
-    
 
-    <header id="single_header" class="mt-5 max-w-prose">
-        
-        <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-            所有文章
-        </h1>
-    </header>
 
-    <section class="all-posts mt-8 article-content">
-        
-        <div class="container">
-            <div class="date">2024</div>
-            <div class="content">
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-23</span>
-                        <a href="http://localhost:1313/about/" class="text-primary-600 dark:text-primary-400 hover:underline">關於本站</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-21</span>
-                        <a href="http://localhost:1313/posts/tmux/" class="text-primary-600 dark:text-primary-400 hover:underline">tmux 使用教學</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-19</span>
-                        <a href="http://localhost:1313/posts/hugo-cheatsheet/" class="text-primary-600 dark:text-primary-400 hover:underline">Hugo 小抄</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-17</span>
-                        <a href="http://localhost:1313/posts/20240723/" class="text-primary-600 dark:text-primary-400 hover:underline">為何要寫部落格</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-01</span>
-                        <a href="http://localhost:1313/posts/hugo-blowfish-features/" class="text-primary-600 dark:text-primary-400 hover:underline">Hugo Blowfish 的進階客製化</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-01</span>
-                        <a href="http://localhost:1313/posts/hugo-blowfish-fix/" class="text-primary-600 dark:text-primary-400 hover:underline">Hugo Blowfish 的問題修復</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">07-01</span>
-                        <a href="http://localhost:1313/posts/hugo-blowfish-setup/" class="text-primary-600 dark:text-primary-400 hover:underline">Hugo Blowfish 的基礎設定</a>
-                    </li>
-                    
-                </ul>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">06-20</span>
-                        <a href="http://localhost:1313/posts/webp-performance/" class="text-primary-600 dark:text-primary-400 hover:underline">WebP圖片壓縮與解碼性能</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">06-14</span>
-                        <a href="http://localhost:1313/posts/rician-fading/" class="text-primary-600 dark:text-primary-400 hover:underline">Rician Fading生成方式，包含Emil Björnson大師的正解</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">06-07</span>
-                        <a href="http://localhost:1313/posts/ffmpeg/" class="text-primary-600 dark:text-primary-400 hover:underline">FFmpeg筆記</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">06-02</span>
-                        <a href="http://localhost:1313/posts/common-git-comments/" class="text-primary-600 dark:text-primary-400 hover:underline">Git 基礎概念與實戰指令</a>
-                    </li>
-                    
-                </ul>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">05-30</span>
-                        <a href="http://localhost:1313/posts/useful-linux-commands/" class="text-primary-600 dark:text-primary-400 hover:underline">常用Linux指令</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">05-27</span>
-                        <a href="http://localhost:1313/posts/useful-docker-commands/" class="text-primary-600 dark:text-primary-400 hover:underline">常用Docker指令</a>
-                    </li>
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">05-08</span>
-                        <a href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/" class="text-primary-600 dark:text-primary-400 hover:underline">利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</a>
-                    </li>
-                    
-                </ul>
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">03-19</span>
-                        <a href="http://localhost:1313/posts/exiftool/" class="text-primary-600 dark:text-primary-400 hover:underline">使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</a>
-                    </li>
-                    
-                </ul>
-                
+
+
+
+
+<article class="timeline">
+
+<header id="single_header" class="mt-5 max-w-prose">
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        所有文章
+    </h1>
+</header>
+
+
+<div class="article-content max-w-prose mb-20">          
+    <br>
+    <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+  <sub>沒想到花了一半的程式碼/九成的時間在搞漸層&hellip;</sub>
+</div>
+
+
+</div>
+
+<section class="all-posts mt-8 text-neutral">
+
+    <div class="year-container">
+
+    <div class="year">
+        2024
+        <span class="post-count">18</span>
+    </div>
+
+    <div class="content">
+    
+    <div class="month-container">
+        <span class="month-title">
+            七月
+        </span>
+
+        <ul class="post-list">
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月21日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/tmux/" class="post-title">tmux 使用教學</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/linux" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Linux
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/tmux" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  tmux
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%95%99%e5%ad%b8" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  教學
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="container">
-            <div class="date">2000</div>
-            <div class="content">
-                
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">01-01</span>
-                        <a href="http://localhost:1313/posts/test-hugo/" class="text-primary-600 dark:text-primary-400 hover:underline">別進來💢💢💢，這是測試🥵</a>
-                    </li>
-                    
-                </ul>
-                
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月19日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/clean-linux-settings/" class="post-title">清除 Linux 殘存設定</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/linux" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Linux
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
             </div>
-        </div>
-        
-    </section>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月19日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/hugo-cheatsheet/" class="post-title">Hugo 小抄</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月17日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/20240723/" class="post-title">為何要寫部落格</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e9%9a%a8%e7%ad%86" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  隨筆
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%a2%8e%e5%bf%b5" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  碎念
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月1日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/hugo-blowfish-features/" class="post-title">Hugo Blowfish 的進階客製化</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月1日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/hugo-blowfish-fix/" class="post-title">Hugo Blowfish 的問題修復</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">7月1日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/hugo-blowfish-setup/" class="post-title">Hugo Blowfish 的基礎設定</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/hugo" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Hugo
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+        </ul>
+
+    </div>
     
-    <footer class="pt-8 max-w-prose print:hidden">
-        
-  
+    <div class="month-container">
+        <span class="month-title">
+            六月
+        </span>
+
+        <ul class="post-list">
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月27日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/c-practice-1/" class="post-title">C 變數宣告</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
 
 
-        
-    </footer>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/c%e8%aa%9e%e8%a8%80" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  C語言
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月27日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/c-practice-2/" class="post-title">基礎練習</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/c%e8%aa%9e%e8%a8%80" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  C語言
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月20日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/webp-performance/" class="post-title">WebP圖片壓縮與解碼性能</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%a7%91%e6%8a%80%e6%96%b0%e7%9f%a5" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  科技新知
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%bd%b1%e5%83%8f%e8%99%95%e7%90%86" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  影像處理
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月14日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/rician-fading/" class="post-title">Rician Fading生成方式，包含Emil Björnson大師的正解Rician Fading生成方式，包含Emil Björnson大師的正解</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e9%80%9a%e8%a8%8a%e5%8e%9f%e7%90%86" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  通訊原理
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%90%86%e8%ab%96%e7%9f%a5%e8%ad%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  理論知識
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月7日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/ffmpeg/" class="post-title">FFmpeg筆記</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e5%b7%a5%e5%85%b7" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  工具
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%af%a6%e7%94%a8%e5%b7%a5%e5%85%b7" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  實用工具
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%bd%b1%e5%83%8f%e8%99%95%e7%90%86" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  影像處理
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">6月2日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/common-git-comments/" class="post-title">Git 基礎概念與實戰指令</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/git" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  git
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+        </ul>
+
+    </div>
+    
+    <div class="month-container">
+        <span class="month-title">
+            五月
+        </span>
+
+        <ul class="post-list">
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">5月30日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/useful-linux-commands/" class="post-title">常用Linux指令</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/linux" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Linux
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">5月27日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/useful-docker-commands/" class="post-title">常用Docker指令</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/linux" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Linux
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/docker" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Docker
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">5月8日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/" class="post-title">利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/nas" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  NAS
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cloudflare" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Cloudflare
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%95%99%e5%ad%b8" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  教學
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+        </ul>
+
+    </div>
+    
+    <div class="month-container">
+        <span class="month-title">
+            三月
+        </span>
+
+        <ul class="post-list">
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">3月19日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/exiftool/" class="post-title">使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e5%b7%a5%e5%85%b7" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  工具
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%af%a6%e7%94%a8%e5%b7%a5%e5%85%b7" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  實用工具
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/exiftool" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  Exiftool
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%85%a7%e7%89%87" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  照片
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/cheatsheet" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  cheatsheet
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+        </ul>
+
+    </div>
+    
+    </div>
+    </div>
+
+    <div class="year-container">
+
+    <div class="year">
+        2000
+        <span class="post-count">1</span>
+    </div>
+
+    <div class="content">
+    
+    <div class="month-container">
+        <span class="month-title">
+            一月
+        </span>
+
+        <ul class="post-list">
+            
+            <li class="post-item">
+            <div class="post-item-inner">
+                <span class="post-date">1月1日</span>
+                <div class="post-details">
+                    <a href="http://localhost:1313/posts/test-hugo/" class="post-title">別進來💢💢💢，這是測試🥵</a>
+
+                    <div class="">
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M88 48C101.3 48 112 58.75 112 72V120C112 133.3 101.3 144 88 144H40C26.75 144 16 133.3 16 120V72C16 58.75 26.75 48 40 48H88zM480 64C497.7 64 512 78.33 512 96C512 113.7 497.7 128 480 128H192C174.3 128 160 113.7 160 96C160 78.33 174.3 64 192 64H480zM480 224C497.7 224 512 238.3 512 256C512 273.7 497.7 288 480 288H192C174.3 288 160 273.7 160 256C160 238.3 174.3 224 192 224H480zM480 384C497.7 384 512 398.3 512 416C512 433.7 497.7 448 480 448H192C174.3 448 160 433.7 160 416C160 398.3 174.3 384 192 384H480zM16 232C16 218.7 26.75 208 40 208H88C101.3 208 112 218.7 112 232V280C112 293.3 101.3 304 88 304H40C26.75 304 16 293.3 16 280V232zM88 368C101.3 368 112 378.7 112 392V440C112 453.3 101.3 464 88 464H40C26.75 464 16 453.3 16 440V392C16 378.7 26.75 368 40 368H88z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/categories/%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+                    <div class="basicHtml-div">
+                        
+                        <div class="flex flex-wrap items-center mr-4 mb-2">
+                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
+                        
+
+  <span class="relative block icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M48 32H197.5C214.5 32 230.7 38.74 242.7 50.75L418.7 226.7C443.7 251.7 443.7 292.3 418.7 317.3L285.3 450.7C260.3 475.7 219.7 475.7 194.7 450.7L18.75 274.7C6.743 262.7 0 246.5 0 229.5V80C0 53.49 21.49 32 48 32L48 32zM112 176C129.7 176 144 161.7 144 144C144 126.3 129.7 112 112 112C94.33 112 80 126.3 80 144C80 161.7 94.33 176 112 176z"/></svg>
+
+  </span>
+
+
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e6%8c%87%e4%bb%a4%e7%ad%86%e8%a8%98" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  指令筆記
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%af%a6%e7%94%a8%e5%b7%a5%e5%85%b7" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  實用工具
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        <span class="mr-1 mb-1">
+                        <a href="/tags/%e5%bd%b1%e5%83%8f%e8%99%95%e7%90%86" class="inline-block relative">
+                        <span class="badge badge-tag
+border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+  影像處理
+</span>
+ 
+                        </a>
+                        </span>
+                        
+                        </div>
+                        
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            </li>
+            
+        </ul>
+
+    </div>
+    
+    </div>
+    </div>
+
+</section>
+
 </article>
+
+    
+
 
 
       <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0">
