@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  data-auto-appearance="true"><head>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="zh-tw" />
@@ -17,7 +17,7 @@
   
   
   
-  <link rel="canonical" href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/" />
+  <link rel="canonical" href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/" />
   
   
   
@@ -30,8 +30,8 @@
   
   
   
-  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.a12b5e62c216c878c1ba109547fd70492bc7b9b5af2997f763e4cee89de3efbb622282136ee8714d68cd583a5e450d9f786afc9336349e79262fc077d2bb6dea.css"
-    integrity="sha512-oSteYsIWyHjBuhCVR/1wSSvHubWvKZf3Y&#43;TO6J3j77tiIoITbuhxTWjNWDpeRQ2feGr8kzY0nnkmL8B30rtt6g==" />
+  <link type="text/css" rel="stylesheet" href="/css/main.bundle.min.5b13bf843c76e120db269dca9c923ee4747eb4a438314673a1ccb44572133c57d05dbbe2540754d629177271e3b4c07df4bbd3cdc4246f1bdd6b89f11c16e882.css"
+    integrity="sha512-WxO/hDx24SDbJp3KnJI&#43;5HR&#43;tKQ4MUZzocy0RXITPFfQXbviVAdU1ikXcnHjtMB99LvTzcQkbxvda4nxHBbogg==" />
   
   
   <script type="text/javascript" src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
@@ -57,19 +57,19 @@
   
   
   
-<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313/favicon/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="http://localhost:1313/favicon/android-chrome-512x512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://www.zsl0621.cc/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://www.zsl0621.cc/favicon/android-chrome-512x512.png">
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.zsl0621.cc/favicon/apple-touch-icon.png">
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
-<link rel="shortcut icon" href="http://localhost:1313/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.zsl0621.cc/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.zsl0621.cc/favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="https://www.zsl0621.cc/favicon/favicon.ico">
 
 
-<link rel="manifest" href="http://localhost:1313/favicon/site.webmanifest">
+<link rel="manifest" href="https://www.zsl0621.cc/favicon/site.webmanifest">
 
   
   
@@ -80,7 +80,7 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/">
+  <meta property="og:url" content="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
   <meta property="og:site_name" content="ZSL">
   <meta property="og:title" content="利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問">
   <meta property="og:description" content="了解如何利用 Cloudflare Tunnel 提供安全且便宜的方式來上外網，不需開啟本機端口。本文介紹選擇 Cloudflare Tunnel 的原因以及其優缺點。">
@@ -92,9 +92,9 @@
     <meta property="article:tag" content="Cloudflare">
     <meta property="article:tag" content="教學">
     <meta property="article:tag" content="筆記">
-      <meta property="og:see_also" content="http://localhost:1313/posts/hugo-blowfish-features/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/hugo-blowfish-fix/">
-      <meta property="og:see_also" content="http://localhost:1313/posts/hugo-blowfish-setup/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
+      <meta property="og:see_also" content="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
 
   
   <meta name="twitter:card" content="summary">
@@ -112,7 +112,7 @@
     "description": "了解如何利用 Cloudflare Tunnel 提供安全且便宜的方式來上外網，不需開啟本機端口。本文介紹選擇 Cloudflare Tunnel 的原因以及其優缺點。",
     "abstract": "紀錄把一台破電腦裝成 NAS 的過程",
     "inLanguage": "zh-tw",
-    "url" : "http:\/\/localhost:1313\/posts\/cloudflare-tunnel-ddns-guide\/",
+    "url" : "https:\/\/www.zsl0621.cc\/posts\/cloudflare-tunnel-ddns-guide\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
@@ -190,6 +190,15 @@
   
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XMT1S11VE4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-XMT1S11VE4');
+</script>
 
 
 
@@ -1074,7 +1083,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
-        <a href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
             #1  利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問 
         </a>
     </div>
@@ -1083,7 +1092,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-setup/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
             #2 Hugo Blowfish 的基礎設定
         </a>
     </div>
@@ -1092,7 +1101,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-fix/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
             #3 Hugo Blowfish 的問題修復
         </a>
     </div>
@@ -1101,7 +1110,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-features/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
             #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
@@ -1645,7 +1654,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-current">
-        <a href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/">
+        <a href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/">
             #1  利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問 
         </a>
     </div>
@@ -1654,7 +1663,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-setup/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-setup/">
             #2 Hugo Blowfish 的基礎設定
         </a>
     </div>
@@ -1663,7 +1672,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-fix/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-fix/">
             #3 Hugo Blowfish 的問題修復
         </a>
     </div>
@@ -1672,7 +1681,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     
     <div
         class="py-1 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600 summary-other">
-        <a href="http://localhost:1313/posts/hugo-blowfish-features/">
+        <a href="https://www.zsl0621.cc/posts/hugo-blowfish-features/">
             #4 Hugo Blowfish 的進階客製化
         </a>
     </div>
@@ -1690,7 +1699,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1709,7 +1718,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;text=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;text=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1727,7 +1736,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="發送到 Reddit"
       aria-label="發送到 Reddit"
       >
@@ -1746,7 +1755,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title=""
       aria-label=""
       >
@@ -1765,7 +1774,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;resubmit=true&amp;title=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title=""
       aria-label=""
       >
@@ -1784,7 +1793,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;description=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;description=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="釘到 Pinterest"
       aria-label="釘到 Pinterest"
       >
@@ -1803,7 +1812,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;quote=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;quote=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1822,7 +1831,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/&amp;subject=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
+      href="mailto:?body=https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/&amp;subject=%e5%88%a9%e7%94%a8%20Cloudflare%20Tunnel%20%e5%92%8c%20DDNS%20%e7%84%a1%e9%9c%80%e9%96%8b%e6%94%be%e7%ab%af%e5%8f%a3%e5%af%a6%e7%8f%be%e5%ae%89%e5%85%a8%e5%a4%96%e7%b6%b2%e8%a8%aa%e5%95%8f"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -2242,7 +2251,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="http://localhost:1313/"
+  data-url="https://www.zsl0621.cc/"
   style="z-index:500"
 >
   <div

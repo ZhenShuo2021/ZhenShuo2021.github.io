@@ -2,58 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ZSL</title>
-    <link>http://localhost:1313/en-us/categories/</link>
+    <link>https://www.zsl0621.cc/en-us/categories/</link>
     <description>Recent content in Categories on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/en-us/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>指令</title>
-      <link>http://localhost:1313/en-us/categories/%E6%8C%87%E4%BB%A4/</link>
+      <title>Hugo</title>
+      <link>https://www.zsl0621.cc/en-us/categories/hugo/</link>
       <pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate>
       
-      <guid>http://localhost:1313/en-us/categories/%E6%8C%87%E4%BB%A4/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>筆記</title>
-      <link>http://localhost:1313/en-us/categories/%E7%AD%86%E8%A8%98/</link>
-      <pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate>
-      
-      <guid>http://localhost:1313/en-us/categories/%E7%AD%86%E8%A8%98/</guid>
+      <guid>https://www.zsl0621.cc/en-us/categories/hugo/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Wireless Communication</title>
-      <link>http://localhost:1313/en-us/categories/wireless-communication/</link>
+      <link>https://www.zsl0621.cc/en-us/categories/wireless-communication/</link>
       <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
       
-      <guid>http://localhost:1313/en-us/categories/wireless-communication/</guid>
+      <guid>https://www.zsl0621.cc/en-us/categories/wireless-communication/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Tools</title>
-      <link>http://localhost:1313/en-us/categories/tools/</link>
+      <link>https://www.zsl0621.cc/en-us/categories/tools/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en-us/categories/tools/</guid>
+      <guid>https://www.zsl0621.cc/en-us/categories/tools/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>NAS</title>
-      <link>http://localhost:1313/en-us/categories/nas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <link>https://www.zsl0621.cc/en-us/categories/nas/</link>
+      <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/en-us/categories/nas/</guid>
+      <guid>https://www.zsl0621.cc/en-us/categories/nas/</guid>
       <description></description>
       
     </item>
