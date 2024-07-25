@@ -9,6 +9,16 @@
     <copyright>© 2024 ZSL</copyright>
     <lastBuildDate>Fri, 19 Jul 2024 07:07:30 +0800</lastBuildDate><atom:link href="http://localhost:1313/jottings/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>清除 Linux 殘存設定</title>
+      <link>http://localhost:1313/posts/clean-linux-settings/</link>
+      <pubDate>Fri, 19 Jul 2024 07:07:30 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/clean-linux-settings/</guid>
+      <description>在 ubunutu server 安裝 gallery-dl 時，由於之前有安裝過導致錯誤的設定殘留，在網路上查老半天都找不到要怎麼清除，最後還是請出 GPT 大神，基礎操作類他還是很擅長的。這裡也給其他網路上的資訊 https://ivonblog.com/</description>
+      
+    </item>
+    
+    <item>
       <title>為何要寫部落格</title>
       <link>http://localhost:1313/posts/20240723/</link>
       <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>

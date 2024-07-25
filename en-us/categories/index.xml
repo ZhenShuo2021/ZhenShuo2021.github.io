@@ -41,9 +41,19 @@
     <item>
       <title>Tools</title>
       <link>http://localhost:1313/en-us/categories/tools/</link>
-      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
       <guid>http://localhost:1313/en-us/categories/tools/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>NAS</title>
+      <link>http://localhost:1313/en-us/categories/nas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en-us/categories/nas/</guid>
       <description></description>
       
     </item>
