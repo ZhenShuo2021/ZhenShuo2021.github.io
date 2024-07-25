@@ -11,7 +11,11 @@ hugo.linux
 
 # Temporary lock file while building
 /.hugo_build.lock
-/deploy.sh
-/start.scpt
-/start.app
+.hugo_build.lock
+deploy.sh
+start.scpt
+start.app
 .DS_Store
+
+# For Hugo blowfish
+exampleSite/
