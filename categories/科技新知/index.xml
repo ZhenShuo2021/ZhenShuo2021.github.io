@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>科技新知 on ZSL</title>
-    <link>https://www.zsl0621.cc/categories/%E7%A7%91%E6%8A%80%E6%96%B0%E7%9F%A5/</link>
+    <link>http://localhost:1313/categories/%E7%A7%91%E6%8A%80%E6%96%B0%E7%9F%A5/</link>
     <description>Recent content in 科技新知 on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 20 Jun 2024 21:30:40 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/categories/%E7%A7%91%E6%8A%80%E6%96%B0%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Jun 2024 21:30:40 +0800</lastBuildDate><atom:link href="http://localhost:1313/categories/%E7%A7%91%E6%8A%80%E6%96%B0%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WebP圖片壓縮與解碼性能</title>
-      <link>https://www.zsl0621.cc/posts/webp-performance/</link>
+      <link>http://localhost:1313/posts/webp-performance/</link>
       <pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/webp-performance/</guid>
+      <guid>http://localhost:1313/posts/webp-performance/</guid>
       <description>WebP 與 AVIF 的壓縮率比較</description>
       
     </item>

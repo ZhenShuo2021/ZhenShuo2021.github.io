@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on ZSL</title>
-    <link>https://www.zsl0621.cc/en-us/tags/hugo/</link>
+    <link>http://localhost:1313/en-us/tags/hugo/</link>
     <description>Recent content in Hugo on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/en-us/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 小抄</title>
-      <link>https://www.zsl0621.cc/en-us/posts/hugo-cheatsheet/</link>
+      <link>http://localhost:1313/en-us/posts/hugo-cheatsheet/</link>
       <pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/hugo-cheatsheet/</guid>
+      <guid>http://localhost:1313/en-us/posts/hugo-cheatsheet/</guid>
       <description>&lt;kbd&gt;Hugo cheatsheets ❤️‍🩹&lt;/kbd&gt;</description>
       
     </item>

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on ZSL</title>
-    <link>https://www.zsl0621.cc/en-us/notes/</link>
+    <link>http://localhost:1313/en-us/notes/</link>
     <description>Recent content in Notes on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Jan 2099 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en-us/notes/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
