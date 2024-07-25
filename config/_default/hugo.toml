@@ -1,0 +1,79 @@
+# -- Site Configuration --
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/getting-started/
+
+theme = "blowfish" # UNCOMMENT THIS LINE
+baseURL = "https://www.zsl0621.cc/"
+defaultContentLanguage = "zh-tw"
+defaultContentLanguageInSubdir = false
+
+languageCode = "zh-tw"
+languageName = "繁體中文"
+weight = 1
+
+# pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
+
+enableRobotsTXT = false
+
+summaryLength = 100
+hasCJKLanguage = true  # 字數統計才會對
+
+buildDrafts = false
+buildFuture = true
+
+enableEmoji = true
+
+googleAnalytics = "G-XMT1S11VE4"
+
+[imaging]
+  anchor = 'Smart'
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+  series = "series"
+  #newcategory = "newcategory"
+
+[sitemap]
+  changefreq = 'daily'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[related]
+  threshold = 0
+  toLower = false
+
+    [[related.indices]]
+        name = "tags"
+        weight = 100
+
+    [[related.indices]]
+        name = "categories"
+        weight = 100
+
+    [[related.indices]]
+        name = "series"
+        weight = 50
+
+    [[related.indices]]
+        name = "authors"
+        weight = 20
+
+    [[related.indices]]
+        name = "date"
+        weight = 10
+
+    [[related.indices]]
+      applyFilter = false
+      name = 'fragmentrefs'
+      type = 'fragments'
+      weight = 10
+
+[permalinks]
+  posts = '/posts/:filename/'
+  notes = '/posts/:filename/'
+  jottings = '/posts/:filename/'
