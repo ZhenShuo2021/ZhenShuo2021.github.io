@@ -49,12 +49,12 @@
     </item>
     
     <item>
-      <title>使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</title>
+      <title>Automatically Update Photo EXIF Information Based on Folder Names Using ExifTool</title>
       <link>https://www.zsl0621.cc/en-us/posts/exiftool/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
       <guid>https://www.zsl0621.cc/en-us/posts/exiftool/</guid>
-      <description>修改 EXIF 資訊的腳本，主要用於網路下載的相簿。</description>
+      <description>A script to modify EXIF information, mainly for photo albums downloaded from the internet.</description>
       
     </item>
     
