@@ -14,3 +14,4 @@ hugo.linux
 /deploy.sh
 /start.scpt
 /start.app
+.DS_Store

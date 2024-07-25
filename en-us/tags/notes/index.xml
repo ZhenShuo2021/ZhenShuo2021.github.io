@@ -2,28 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Notes on ZSL</title>
-    <link>https://www.zsl0621.cc/en-us/tags/notes/</link>
+    <link>http://localhost:1313/en-us/tags/notes/</link>
     <description>Recent content in Notes on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en-us/tags/notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Site Setup Log: No Static IP &#43; Cloudflare Tunnel &#43; DDNS-GO</title>
-      <link>https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/</link>
+      <link>http://localhost:1313/en-us/posts/cloudflare-tunnel-ddns-guide/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/</guid>
+      <guid>http://localhost:1313/en-us/posts/cloudflare-tunnel-ddns-guide/</guid>
       <description>My log of setting old PC as NAS.</description>
       
     </item>
     
     <item>
       <title>Automatically Update Photo EXIF Information Based on Folder Names Using ExifTool</title>
-      <link>https://www.zsl0621.cc/en-us/posts/exiftool/</link>
+      <link>http://localhost:1313/en-us/posts/exiftool/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/posts/exiftool/</guid>
+      <guid>http://localhost:1313/en-us/posts/exiftool/</guid>
       <description>A script to modify EXIF information, mainly for photo albums downloaded from the internet.</description>
       
     </item>

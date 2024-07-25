@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-tw" dir="ltr" class="scroll-smooth" data-default-appearance="light"
-  data-auto-appearance="true"><head>
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   
   <meta http-equiv="content-language" content="zh-tw" />
@@ -17,7 +17,7 @@
   
   
   
-  <link rel="canonical" href="https://www.zsl0621.cc/posts/ffmpeg/" />
+  <link rel="canonical" href="http://localhost:1313/posts/ffmpeg/" />
   
   
   
@@ -57,19 +57,19 @@
   
   
   
-<link rel="icon" type="image/png" sizes="192x192" href="https://www.zsl0621.cc/favicon/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="https://www.zsl0621.cc/favicon/android-chrome-512x512.png">
+<link rel="icon" type="image/png" sizes="192x192" href="http://localhost:1313/favicon/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="http://localhost:1313/favicon/android-chrome-512x512.png">
 
 
-<link rel="apple-touch-icon" sizes="180x180" href="https://www.zsl0621.cc/favicon/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="http://localhost:1313/favicon/apple-touch-icon.png">
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.zsl0621.cc/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.zsl0621.cc/favicon/favicon-16x16.png">
-<link rel="shortcut icon" href="https://www.zsl0621.cc/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon/favicon-16x16.png">
+<link rel="shortcut icon" href="http://localhost:1313/favicon/favicon.ico">
 
 
-<link rel="manifest" href="https://www.zsl0621.cc/favicon/site.webmanifest">
+<link rel="manifest" href="http://localhost:1313/favicon/site.webmanifest">
 
   
   
@@ -80,7 +80,7 @@
   
   
   
-  <meta property="og:url" content="https://www.zsl0621.cc/posts/ffmpeg/">
+  <meta property="og:url" content="http://localhost:1313/posts/ffmpeg/">
   <meta property="og:site_name" content="ZSL">
   <meta property="og:title" content="FFmpeg筆記">
   <meta property="og:description" content="深入探討FFmpeg與HandBrake的CRF設定，幫助您在高效壓縮影片的同時保持最佳畫質。了解CRF值的影響、不同編解碼器的推薦設置及如何使用這些工具進行影片轉碼。">
@@ -88,7 +88,7 @@
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2024-06-07T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-07-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-07-25T00:00:00+00:00">
     <meta property="article:tag" content="指令筆記">
     <meta property="article:tag" content="實用工具">
     <meta property="article:tag" content="影像處理">
@@ -109,7 +109,7 @@
     "description": "深入探討FFmpeg與HandBrake的CRF設定，幫助您在高效壓縮影片的同時保持最佳畫質。了解CRF值的影響、不同編解碼器的推薦設置及如何使用這些工具進行影片轉碼。",
     "abstract": "介紹FFmpeg基本指令，以及轉檔實驗。",
     "inLanguage": "zh-tw",
-    "url" : "https:\/\/www.zsl0621.cc\/posts\/ffmpeg\/",
+    "url" : "http:\/\/localhost:1313\/posts\/ffmpeg\/",
     "author" : {
       "@type": "Person",
       "name": "ZSL"
@@ -118,12 +118,12 @@
     "dateCreated": "2024-06-07T00:00:00\u002b00:00",
     "datePublished": "2024-06-07T00:00:00\u002b00:00",
     
-    "dateModified": "2024-07-16T00:00:00\u002b00:00",
+    "dateModified": "2024-07-25T00:00:00\u002b00:00",
     
     "keywords": ["指令筆記","實用工具","影像處理"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1052"
+    "wordCount": "1152"
   }]
   </script>
 
@@ -187,15 +187,6 @@
   
 
 
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XMT1S11VE4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XMT1S11VE4');
-</script>
 
 
 
@@ -1056,7 +1047,27 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 
 
         <div class="article-content max-w-prose mb-20">          
-          <div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+          <p><blockquote class="book-hint info">
+  <div class="hint-content">
+    <h3>2024/7/25 更新</h3>
+<p>看到網路上有人手動設定 thread 就研究了一下這參數的設定，<a href="https://obsproject.com/forum/threads/can-you-please-explain-x264-option-threads.76917/" target="_blank">預設</a>是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-C" data-lang="C"><span class="line"><span class="cl"><span class="n">h</span><span class="o">-&gt;</span><span class="n">param</span><span class="p">.</span><span class="n">i_threads</span> <span class="o">=</span> <span class="nf">x264_cpu_num_processors</span><span class="p">()</span> <span class="o">*</span> <span class="p">(</span><span class="n">h</span><span class="o">-&gt;</span><span class="n">param</span><span class="p">.</span><span class="n">b_sliced_threads</span><span class="o">?</span><span class="mi">2</span><span class="o">:</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+</span></span></code></pre></div><p>也就是沒有 sliced 用 1 倍 CPU 核心數的線程數，反之 1.5 倍，而 sliced 指的是把每幀切成小圖片處理。根據自己隨手亂做的實驗，預設就很好了不用自己手動調整。</p>
+
+  </div>
+</blockquote>
+<br>
+<blockquote class="book-hint info">
+  <div class="hint-content">
+    <h3>2024/7/16 更新</h3>
+<p>寫這篇的時候其實是覺得 H.265 跟 AV1 好酷，結果發現還有更新的 AV2 已經在理論階段，以及 H.266/VVC 硬體解碼已經<a href="https://www.techpowerup.com/review/intel-lunar-lake-technical-deep-dive/5.html" target="_blank">實裝</a>，甚至 MPEG-5 已經在 PhotoPrism <a href="https://github.com/photoprism/photoprism/issues/4314" target="_blank">支援</a>。然而 H.266 似乎會重蹈 H.265 的覆轍死在複雜的專利權上（<a href="https://www.youtube.com/watch?v=6xUhpZXPbBM" target="_blank">出自 VLC 創辦人</a>）。</p>
+<p>最後，令人意外的是字結跳動 / 夏普 / 聯發科在 H.266 <a href="https://www.chttl.com.tw/_news/n_tech07.html" target="_blank">專利數</a>上竟然貢獻這麼高。</p>
+
+  </div>
+</blockquote>
+</p>
+<hr>
+<div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
   結果轉完分數只有60。
 </div>
 
@@ -1386,62 +1397,13 @@ CLI: FFmpeg</p>
 &ldquo;harmonic_mean&rdquo;: 58.975480<br>
 }</p>
 </details>
-<p>
-  
-
-
-
-<div
-  
-    class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900"
-  >
-
-  <span
-    
-      class="text-primary-400 ltr:pr-3 rtl:pl-3 flex items-center"
-    >
-
-    
-
-  <span class="relative block icon">
-    <?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg fill="#000000" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512 512" xml:space="preserve">
-<g>
-	<g>
-		<path d="M511.959,185.212L512,15.045l-67.587,67.587l-7.574-7.574c-48.332-48.332-112.594-74.95-180.946-74.95
-			C114.792,0.107,0,114.901,0,256s114.792,255.893,255.893,255.893S511.785,397.099,511.785,256h-49.528
-			c0,113.79-92.575,206.365-206.365,206.365S49.528,369.79,49.528,256S142.103,49.635,255.893,49.635
-			c55.124,0,106.947,21.465,145.925,60.443l7.574,7.574l-67.58,67.58L511.959,185.212z"/>
-	</g>
-</g>
-<g>
-	<g>
-		<polygon points="255.893,256 255.893,165.199 206.365,165.199 206.365,305.528 346.693,305.528 346.693,256 		"/>
-	</g>
-</g>
-</svg>
-  </span>
-
-
-  </span>
-
-  <span
-    
-      class="dark:text-neutral-300"
-    >更新</span>
-</div>
-<br>
-寫這篇的時候其實是覺得 H.265 跟 AV1 好酷，結果發現還有更新的 AV2 已經在理論階段，以及 H.266/VVC 硬體解碼已經<a href="https://www.techpowerup.com/review/intel-lunar-lake-technical-deep-dive/5.html" target="_blank">實裝</a>，甚至 MPEG-5 已經在 PhotoPrism <a href="https://github.com/photoprism/photoprism/issues/4314" target="_blank">支援</a>。然而 H.266 似乎會重蹈 H.265 的覆轍死在複雜的專利權上（<a href="https://www.youtube.com/watch?v=6xUhpZXPbBM" target="_blank">出自 VLC 創辦人</a>）。</p>
-<p>最後，令人意外的是字結跳動 / 夏普 / 聯發科在 H.266 <a href="https://www.chttl.com.tw/_news/n_tech07.html" target="_blank">專利數</a>上竟然貢獻這麼高。</p>
 
 <br><br><br>
 <div class="max-w-fit">
   
   <blockquote class="book-hint info">
   <div class="hint-content">
-    文章更新：<time datetime="2024-07-16 00:00:00 &#43;0000 UTC">這篇文章已經在 <b>2024年7月16日</b> 更新！</time>
+    文章更新：<time datetime="2024-07-25 00:00:00 &#43;0000 UTC">這篇文章已經在 <b>2024年7月25日</b> 更新！</time>
   </div>
 </blockquote>
 
@@ -1650,7 +1612,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.zsl0621.cc/posts/ffmpeg/&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/ffmpeg/&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
       title="分享到 LinkedIn"
       aria-label="分享到 LinkedIn"
       >
@@ -1669,7 +1631,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=https://www.zsl0621.cc/posts/ffmpeg/&amp;text=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/ffmpeg/&amp;text=FFmpeg%e7%ad%86%e8%a8%98"
       title="推到 Twitter"
       aria-label="推到 Twitter"
       >
@@ -1687,7 +1649,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=https://www.zsl0621.cc/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://reddit.com/submit/?url=http://localhost:1313/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
       title="發送到 Reddit"
       aria-label="發送到 Reddit"
       >
@@ -1706,7 +1668,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=https://www.zsl0621.cc/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
       title=""
       aria-label=""
       >
@@ -1725,7 +1687,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://t.me/share/url?url=https://www.zsl0621.cc/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://t.me/share/url?url=http://localhost:1313/posts/ffmpeg/&amp;resubmit=true&amp;title=FFmpeg%e7%ad%86%e8%a8%98"
       title=""
       aria-label=""
       >
@@ -1744,7 +1706,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=https://www.zsl0621.cc/posts/ffmpeg/&amp;description=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/ffmpeg/&amp;description=FFmpeg%e7%ad%86%e8%a8%98"
       title="釘到 Pinterest"
       aria-label="釘到 Pinterest"
       >
@@ -1763,7 +1725,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=https://www.zsl0621.cc/posts/ffmpeg/&amp;quote=FFmpeg%e7%ad%86%e8%a8%98"
+      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/ffmpeg/&amp;quote=FFmpeg%e7%ad%86%e8%a8%98"
       title="分享到 Facebook"
       aria-label="分享到 Facebook"
       >
@@ -1782,7 +1744,7 @@ CLI: FFmpeg</p>
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=https://www.zsl0621.cc/posts/ffmpeg/&amp;subject=FFmpeg%e7%ad%86%e8%a8%98"
+      href="mailto:?body=http://localhost:1313/posts/ffmpeg/&amp;subject=FFmpeg%e7%ad%86%e8%a8%98"
       title="以電子郵件發送"
       aria-label="以電子郵件發送"
       >
@@ -2519,7 +2481,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 <div
   id="search-wrapper"
   class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh]"
-  data-url="https://www.zsl0621.cc/"
+  data-url="http://localhost:1313/"
   style="z-index:500"
 >
   <div

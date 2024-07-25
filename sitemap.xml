@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>https://www.zsl0621.cc/zh-tw/sitemap.xml</loc>
+    <loc>http://localhost:1313/zh-tw/sitemap.xml</loc>
     
       <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>https://www.zsl0621.cc/en-us/sitemap.xml</loc>
+    <loc>http://localhost:1313/en-us/sitemap.xml</loc>
     
       <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     

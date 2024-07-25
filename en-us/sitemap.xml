@@ -3,414 +3,414 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.zsl0621.cc/en-us/notes/</loc>
+    <loc>http://localhost:1313/en-us/notes/</loc>
     <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/notes/"
+      href="http://localhost:1313/notes/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/notes/"
+      href="http://localhost:1313/en-us/notes/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/notes/linux/</loc>
+    <loc>http://localhost:1313/en-us/notes/linux/</loc>
     <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/notes/linux/"
+      href="http://localhost:1313/notes/linux/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/notes/linux/"
+      href="http://localhost:1313/en-us/notes/linux/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/notes/personal/</loc>
+    <loc>http://localhost:1313/en-us/notes/personal/</loc>
     <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/notes/personal/"
+      href="http://localhost:1313/notes/personal/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/notes/personal/"
+      href="http://localhost:1313/en-us/notes/personal/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/</loc>
+    <loc>http://localhost:1313/en-us/</loc>
     <lastmod>2099-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/"
+      href="http://localhost:1313/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/"
+      href="http://localhost:1313/en-us/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/categories/</loc>
+    <loc>http://localhost:1313/en-us/categories/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/categories/"
+      href="http://localhost:1313/categories/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/categories/"
+      href="http://localhost:1313/en-us/categories/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/hugo/</loc>
+    <loc>http://localhost:1313/en-us/tags/hugo/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/tags/hugo/"
+      href="http://localhost:1313/tags/hugo/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/tags/hugo/"
+      href="http://localhost:1313/en-us/tags/hugo/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/hugo-cheatsheet/</loc>
+    <loc>http://localhost:1313/en-us/posts/hugo-cheatsheet/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/hugo-cheatsheet/"
+      href="http://localhost:1313/posts/hugo-cheatsheet/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/hugo-cheatsheet/"
+      href="http://localhost:1313/en-us/posts/hugo-cheatsheet/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/</loc>
+    <loc>http://localhost:1313/en-us/tags/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/tags/"
+      href="http://localhost:1313/tags/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/tags/"
+      href="http://localhost:1313/en-us/tags/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/categories/%E6%8C%87%E4%BB%A4/</loc>
+    <loc>http://localhost:1313/en-us/categories/%E6%8C%87%E4%BB%A4/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/categories/%E7%AD%86%E8%A8%98/</loc>
+    <loc>http://localhost:1313/en-us/categories/%E7%AD%86%E8%A8%98/</loc>
     <lastmod>2024-07-19T01:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/categories/%E7%AD%86%E8%A8%98/"
+      href="http://localhost:1313/categories/%E7%AD%86%E8%A8%98/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/categories/%E7%AD%86%E8%A8%98/"
+      href="http://localhost:1313/en-us/categories/%E7%AD%86%E8%A8%98/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/</loc>
+    <loc>http://localhost:1313/en-us/posts/</loc>
     <lastmod>2024-06-14T02:45:40+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/"
+      href="http://localhost:1313/posts/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/"
+      href="http://localhost:1313/en-us/posts/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/rician-fading/</loc>
+    <loc>http://localhost:1313/en-us/posts/rician-fading/</loc>
     <lastmod>2024-06-14T02:45:40+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/rician-fading/"
+      href="http://localhost:1313/posts/rician-fading/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/rician-fading/"
+      href="http://localhost:1313/en-us/posts/rician-fading/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/theoretical-knowledge/</loc>
+    <loc>http://localhost:1313/en-us/tags/theoretical-knowledge/</loc>
     <lastmod>2024-06-14T02:45:40+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/categories/wireless-communication/</loc>
+    <loc>http://localhost:1313/en-us/categories/wireless-communication/</loc>
     <lastmod>2024-06-14T02:45:40+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/commend-notes/</loc>
+    <loc>http://localhost:1313/en-us/tags/commend-notes/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/ffmpeg/</loc>
+    <loc>http://localhost:1313/en-us/posts/ffmpeg/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/ffmpeg/"
+      href="http://localhost:1313/posts/ffmpeg/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/ffmpeg/"
+      href="http://localhost:1313/en-us/posts/ffmpeg/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/image-processing/</loc>
+    <loc>http://localhost:1313/en-us/tags/image-processing/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/useful-tools/</loc>
+    <loc>http://localhost:1313/en-us/tags/useful-tools/</loc>
     <lastmod>2024-06-07T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/cloudflare/</loc>
+    <loc>http://localhost:1313/en-us/tags/cloudflare/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/tags/cloudflare/"
+      href="http://localhost:1313/tags/cloudflare/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/tags/cloudflare/"
+      href="http://localhost:1313/en-us/tags/cloudflare/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/series/deployment-records/</loc>
+    <loc>http://localhost:1313/en-us/series/deployment-records/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/notes/</loc>
+    <loc>http://localhost:1313/en-us/tags/notes/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/series/</loc>
-    <lastmod>2024-05-08T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link
-      rel="alternate"
-      hreflang="zh-tw"
-      href="https://www.zsl0621.cc/series/"
-    />
-    <xhtml:link
-      rel="alternate"
-      hreflang="en"
-      href="https://www.zsl0621.cc/en-us/series/"
-    />
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/site-setup-log/</loc>
-    <lastmod>2024-05-08T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/</loc>
+    <loc>http://localhost:1313/en-us/series/</loc>
     <lastmod>2024-05-08T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/"
+      href="http://localhost:1313/series/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/cloudflare-tunnel-ddns-guide/"
+      href="http://localhost:1313/en-us/series/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/posts/exiftool/</loc>
+    <loc>http://localhost:1313/en-us/tags/site-setup-log/</loc>
+    <lastmod>2024-05-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>http://localhost:1313/en-us/posts/cloudflare-tunnel-ddns-guide/</loc>
+    <lastmod>2024-05-08T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link
+      rel="alternate"
+      hreflang="zh-tw"
+      href="http://localhost:1313/posts/cloudflare-tunnel-ddns-guide/"
+    />
+    <xhtml:link
+      rel="alternate"
+      hreflang="en"
+      href="http://localhost:1313/en-us/posts/cloudflare-tunnel-ddns-guide/"
+    />
+  </url>
+  <url>
+    <loc>http://localhost:1313/en-us/posts/exiftool/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/posts/exiftool/"
+      href="http://localhost:1313/posts/exiftool/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/posts/exiftool/"
+      href="http://localhost:1313/en-us/posts/exiftool/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/command-notes/</loc>
+    <loc>http://localhost:1313/en-us/tags/command-notes/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/exiftool/</loc>
+    <loc>http://localhost:1313/en-us/tags/exiftool/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/tags/exiftool/"
+      href="http://localhost:1313/tags/exiftool/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/tags/exiftool/"
+      href="http://localhost:1313/en-us/tags/exiftool/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/photos/</loc>
+    <loc>http://localhost:1313/en-us/tags/photos/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/categories/tools/</loc>
+    <loc>http://localhost:1313/en-us/categories/tools/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/tags/utility-tools/</loc>
+    <loc>http://localhost:1313/en-us/tags/utility-tools/</loc>
     <lastmod>2024-03-19T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/about/</loc>
+    <loc>http://localhost:1313/en-us/about/</loc>
     <lastmod>1998-06-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/about/"
+      href="http://localhost:1313/about/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/about/"
+      href="http://localhost:1313/en-us/about/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/archives/</loc>
+    <loc>http://localhost:1313/en-us/archives/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/archives/"
+      href="http://localhost:1313/archives/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/archives/"
+      href="http://localhost:1313/en-us/archives/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/authors/</loc>
+    <loc>http://localhost:1313/en-us/authors/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/authors/"
+      href="http://localhost:1313/authors/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/authors/"
+      href="http://localhost:1313/en-us/authors/"
     />
   </url>
   <url>
-    <loc>https://www.zsl0621.cc/en-us/jottings/</loc>
+    <loc>http://localhost:1313/en-us/jottings/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
     <xhtml:link
       rel="alternate"
       hreflang="zh-tw"
-      href="https://www.zsl0621.cc/jottings/"
+      href="http://localhost:1313/jottings/"
     />
     <xhtml:link
       rel="alternate"
       hreflang="en"
-      href="https://www.zsl0621.cc/en-us/jottings/"
+      href="http://localhost:1313/en-us/jottings/"
     />
   </url>
 </urlset>

@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on ZSL</title>
-    <link>https://www.zsl0621.cc/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <description>Recent content in Hugo on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo 小抄</title>
-      <link>https://www.zsl0621.cc/posts/hugo-cheatsheet/</link>
+      <link>http://localhost:1313/posts/hugo-cheatsheet/</link>
       <pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/hugo-cheatsheet/</guid>
+      <guid>http://localhost:1313/posts/hugo-cheatsheet/</guid>
       <description>&lt;kbd&gt;Hugo cheatsheets ❤️‍🩹&lt;/kbd&gt;</description>
       
     </item>
     
     <item>
       <title>Hugo Blowfish 的進階客製化</title>
-      <link>https://www.zsl0621.cc/posts/hugo-blowfish-features/</link>
+      <link>http://localhost:1313/posts/hugo-blowfish-features/</link>
       <pubDate>Mon, 01 Jul 2024 12:45:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-features/</guid>
+      <guid>http://localhost:1313/posts/hugo-blowfish-features/</guid>
       <description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description>
       
     </item>
     
     <item>
       <title>Hugo Blowfish 的問題修復</title>
-      <link>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</link>
+      <link>http://localhost:1313/posts/hugo-blowfish-fix/</link>
       <pubDate>Mon, 01 Jul 2024 12:09:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</guid>
+      <guid>http://localhost:1313/posts/hugo-blowfish-fix/</guid>
       <description>修復 blowfish 相關的功能問題。</description>
       
     </item>
     
     <item>
       <title>Hugo Blowfish 的基礎設定</title>
-      <link>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</link>
+      <link>http://localhost:1313/posts/hugo-blowfish-setup/</link>
       <pubDate>Mon, 01 Jul 2024 12:01:01 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</guid>
+      <guid>http://localhost:1313/posts/hugo-blowfish-setup/</guid>
       <description>Hugo Blowfish 的基礎設定教學（或者說紀錄）。</description>
       
     </item>

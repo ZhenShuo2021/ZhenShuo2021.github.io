@@ -2,128 +2,128 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ZSL</title>
-    <link>https://www.zsl0621.cc/en-us/tags/</link>
+    <link>http://localhost:1313/en-us/tags/</link>
     <description>Recent content in Tags on ZSL</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 ZSL</copyright>
-    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Jul 2024 01:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/en-us/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo</title>
-      <link>https://www.zsl0621.cc/en-us/tags/hugo/</link>
+      <link>http://localhost:1313/en-us/tags/hugo/</link>
       <pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/hugo/</guid>
+      <guid>http://localhost:1313/en-us/tags/hugo/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Theoretical Knowledge</title>
-      <link>https://www.zsl0621.cc/en-us/tags/theoretical-knowledge/</link>
+      <link>http://localhost:1313/en-us/tags/theoretical-knowledge/</link>
       <pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/theoretical-knowledge/</guid>
+      <guid>http://localhost:1313/en-us/tags/theoretical-knowledge/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Commend Notes</title>
-      <link>https://www.zsl0621.cc/en-us/tags/commend-notes/</link>
+      <link>http://localhost:1313/en-us/tags/commend-notes/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/commend-notes/</guid>
+      <guid>http://localhost:1313/en-us/tags/commend-notes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Image Processing</title>
-      <link>https://www.zsl0621.cc/en-us/tags/image-processing/</link>
+      <link>http://localhost:1313/en-us/tags/image-processing/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/image-processing/</guid>
+      <guid>http://localhost:1313/en-us/tags/image-processing/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Useful Tools</title>
-      <link>https://www.zsl0621.cc/en-us/tags/useful-tools/</link>
+      <link>http://localhost:1313/en-us/tags/useful-tools/</link>
       <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/useful-tools/</guid>
+      <guid>http://localhost:1313/en-us/tags/useful-tools/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Cloudflare</title>
-      <link>https://www.zsl0621.cc/en-us/tags/cloudflare/</link>
+      <link>http://localhost:1313/en-us/tags/cloudflare/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/cloudflare/</guid>
+      <guid>http://localhost:1313/en-us/tags/cloudflare/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Notes</title>
-      <link>https://www.zsl0621.cc/en-us/tags/notes/</link>
+      <link>http://localhost:1313/en-us/tags/notes/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/notes/</guid>
+      <guid>http://localhost:1313/en-us/tags/notes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Site Setup Log</title>
-      <link>https://www.zsl0621.cc/en-us/tags/site-setup-log/</link>
+      <link>http://localhost:1313/en-us/tags/site-setup-log/</link>
       <pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/site-setup-log/</guid>
+      <guid>http://localhost:1313/en-us/tags/site-setup-log/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Command Notes</title>
-      <link>https://www.zsl0621.cc/en-us/tags/command-notes/</link>
+      <link>http://localhost:1313/en-us/tags/command-notes/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/command-notes/</guid>
+      <guid>http://localhost:1313/en-us/tags/command-notes/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Exiftool</title>
-      <link>https://www.zsl0621.cc/en-us/tags/exiftool/</link>
+      <link>http://localhost:1313/en-us/tags/exiftool/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/exiftool/</guid>
+      <guid>http://localhost:1313/en-us/tags/exiftool/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Photos</title>
-      <link>https://www.zsl0621.cc/en-us/tags/photos/</link>
+      <link>http://localhost:1313/en-us/tags/photos/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/photos/</guid>
+      <guid>http://localhost:1313/en-us/tags/photos/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Utility Tools</title>
-      <link>https://www.zsl0621.cc/en-us/tags/utility-tools/</link>
+      <link>http://localhost:1313/en-us/tags/utility-tools/</link>
       <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.zsl0621.cc/en-us/tags/utility-tools/</guid>
+      <guid>http://localhost:1313/en-us/tags/utility-tools/</guid>
       <description></description>
       
     </item>
