@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Utility Tools on ZSL</title>
+    <link>https://www.zsl0621.cc/en-us/tags/utility-tools/</link>
+    <description>Recent content in Utility Tools on ZSL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2024 ZSL</copyright>
+    <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.zsl0621.cc/en-us/tags/utility-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automatically Update Photo EXIF Information Based on Folder Names Using ExifTool</title>
+      <link>https://www.zsl0621.cc/en-us/posts/exiftool/</link>
+      <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.zsl0621.cc/en-us/posts/exiftool/</guid>
+      <description>A script to modify EXIF information, mainly for photo albums downloaded from the internet.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
