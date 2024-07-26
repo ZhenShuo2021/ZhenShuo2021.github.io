@@ -1,0 +1,36 @@
+<div class="tag-and-category">
+    <div class="basicHtml-div">
+        {{ with .Params.categories }}
+        <div class="flex flex-wrap items-center mr-4 mb-2">
+            <span class="text-sm text-neutral-500 dark:text-neutral-400"
+                  style="font-size: 1rem; position: relative; top: 0.0em; left: -0.0em; margin-right: .5rem;">
+                {{ partial "icon.html" "list" }}
+            </span>
+            {{ range . }}
+            <span class="mr-1 mb-1">
+                <a href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}" class="inline-block relative">
+                    {{ partial "badge.html" . }}
+                </a>
+            </span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    <div class="basicHtml-div">
+        {{ with .Params.tags }}
+        <div class="flex flex-wrap items-center mr-4 mb-2">
+            <span class="text-sm text-neutral-500 dark:text-neutral-400"
+                  style="font-size: 1rem; position: relative; top: 0.2em; left: -0.0em; margin-right: .5rem;">
+                {{ partial "icon.html" "tag" }}
+            </span>
+            {{ range . }}
+            <span class="mr-1" style="margin-bottom: -1.5px;">
+                <a href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}" class="inline-block relative">
+                    {{ partial "badge.html" . }}
+                </a>
+            </span>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
