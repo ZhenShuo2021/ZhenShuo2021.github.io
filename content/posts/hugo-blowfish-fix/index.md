@@ -280,13 +280,18 @@ this_article: "[本文]"
 {{ delimit . "<span class=\"px-2 text-neutral-500\">&VerticalLine;</span>" | safeHTML }}
 ```
 
-# 10. ~~頁面目次 ToC~~
+# 10. 模糊設定
+去主題的 github 搜尋 `backdrop-blur path:*.html` 裡面有所有能調整的頁面，選你想要的調整，內建 .backdrop-blur (8px) .backdrop-blur-sm (4px) .backdrop-blur-2xl (40px)。
+
+相同位置下的 `scroll / 300` 是漸層距離。
+
+# 11. ~~頁面目次 ToC~~
 
 此問題官方已於 blowfish v2.71.0 修正，不過ToC官方目前還沒有很完整。
 {{<expand 原文>}}
 ToC過長時增加滾輪。
 
-把 `layouts/partials/toc.html` 中 `\<details open class\>` 整段換成以下：
+把 `layouts/partials/toc.html` 中 `<details open class>` 整段換成以下：
 
 ```html
 <details open class="toc-right mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
