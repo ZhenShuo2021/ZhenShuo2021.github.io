@@ -17,14 +17,12 @@ series_order: 3
 # 1. 標籤與分類分別顯示
 
 這超麻煩不過改完後很滿意。我應該是唯一一個修好他的人。  
-`card.html` 因為沒用到所以暫時沒改，如果要修正請照著邏輯：「不要整塊都是連結，只有圖片跟 title 是連結。」
 
-{{< expand "實在是太長了，放在摺疊欄位裡" >}}
 1. 把 `partials/badge.html` 改成
 ```html
 <span class="badge badge-tag
 border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
-  {{ .name }}
+  {{ . }}
 </span>
 ```
 
@@ -46,7 +44,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       {{ range . }}
         <span class="mr-1 mb-1">
           <a href="{{ printf "/categories/%s" (urlize . | lower) }}" class="inline-block relative">
-            {{ partial "badge.html" (dict "name" . "taxonomy" "categories") }}
+            {{ partial "badge.html" . }}
           </a>
         </span>
       {{ end }}
@@ -63,7 +61,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
       {{ range . }}
         <span class="mr-1 mb-1">
           <a href="{{ printf "/tags/%s" (urlize . | lower) }}" class="inline-block relative">
-            {{ partial "badge.html" (dict "name" . "taxonomy" "tags") }}
+            {{ partial "badge.html" . }}
           </a>
         </span>
       {{ end }}
@@ -72,185 +70,13 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
   </div>
   {{ end }}
 </div>
-
 {{ end }}
 ```
 
-3. **整個** `article-link/card-related.html` 改成
-```html
-{{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-<!-- {{ with .Params.externalUrl }}
-<a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
-  {{ else }}
-  <a href="{{ .RelPermalink }}" class="min-w-full">
-    {{ end }} -->
-    <div
-      class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+3. 修改 article-link  
+這太多要改直接放[連結](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/main/layouts/partials/article-link)，其實就是把整個都能按改成只有圖片跟標題能按。
 
-      {{ $link := .RelPermalink }}
-      {{ if .Params.externalUrl }}
-        {{ $link = .Params.externalUrl }}
-      {{ end }}
-
-
-
-
-      {{- with $.Params.images -}}
-      {{- range first 6 . }}
-      <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-      {{- else -}}
-      {{- $images := $.Resources.ByType "image" -}}
-      {{- $featured := $images.GetMatch "*feature*" -}}
-      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-      {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
-      {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{
-      end -}}
-      {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-      {{ with . }}
-      <a href="{{ $link }}" class="block">
-      <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-      </a>
-      {{ end }}
-      {{ else }}
-      {{ with .Resize "600x" }}
-      <a href="{{ $link }}" class="block">
-      <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-      </a>
-      {{ end }}
-      {{ end }}
-      {{- else -}}
-      {{- with $.Site.Params.images }}
-      <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
-      {{- end -}}
-      {{- end -}}
-
-
-      {{ if and .Draft .Site.Params.article.showDraftLabel }}
-      <span class="absolute top-0 right-0 m-2">
-        {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-      </span>
-      {{ end }}
-
-      <div class="px-6 py-4">
-
-        {{ with .Params.externalUrl }}
-        <div>
-          <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-            {{ $.Title | emojify }}
-            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
-              <span class="rtl:hidden">&#8599;</span>
-              <span class="ltr:hidden">&#8598;</span>
-            </span>
-          </div>
-        </div>
-        {{ else }}
-        <a href="{{ $link }}" class="block">
-        <div
-          class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
-        </a>
-        {{ end }}
-
-        <div class="text-sm text-neutral-500 dark:text-neutral-400">
-          {{ partial "article-meta/basic.html" . }}
-        </div>
-
-      </div>
-      <div class="px-6 pt-4 pb-2">
-
-      </div>
-    </div>
-```
-
-4. `article-link/simple.html` 找到 `{{ with .Params.externalUrl }}`，整段改成
-```html
-
-{{ $link := .RelPermalink }}
-{{ if .Params.externalUrl }}
-  {{ $link = .Params.externalUrl }}
-{{ end }} 
-{{ with .Params.externalUrl }}
-  <div class="{{ $articleClasses }}" data-href="{{ . }}" data-target="_blank" data-rel="external">
-{{ else }}
-  <div class="{{ $articleClasses }}" data-href="{{ .RelPermalink }}">
-{{ end }}
-    {{- with $.Params.images -}}
-    {{- range first 6 . }}
-    <meta property="og:image" content="{{ . | absURL }}" />{{ end -}}
-    {{- else -}}
-    {{- $images := $.Resources.ByType "image" -}}
-    {{- $featured := $images.GetMatch "feature" -}}
-    {{- if not $featured }}{{ $featured = $images.GetMatch "{cover,thumbnail}" }}{{ end -}}
-    {{ if and .Params.featureimage (not $featured) }}
-    {{- $url:= .Params.featureimage -}}
-    {{ $featured = resources.GetRemote $url }}
-    {{ end }}
-    <a href="{{ $link }}" class="block w-full md:w-auto">
-    {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
-    {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
-    {{- with $featured -}}
-    {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
-    {{- else -}}
-    {{- with $.Site.Params.images }}
-    <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
-    {{- end -}}
-    {{- end -}}
-  </a>
-
-    <div class="{{ $articleInnerClasses }}">
-    <a href="{{ $link }}" class="block w-full md:w-auto">
-      <div class="items-center text-left text-xl font-semibold">
-        {{ with .Params.externalUrl }}
-        <div>
-          <div
-            class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
-            {{ $.Title | emojify }}
-            <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
-              <span class="rtl:hidden">&#8599;</span>
-              <span class="ltr:hidden">&#8598;</span>
-            </span>
-          </div>
-        </div>
-        {{ else }}
-        <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
-        {{ end }}
-        {{ if and .Draft .Site.Params.article.showDraftLabel }}
-        <div class=" ltr:ml-2 rtl:mr-2">
-          {{ partial "badge.html" (i18n "article.draft" | emojify) }}
-        </div>
-        {{ end }}
-        {{ if templates.Exists "partials/extend-article-link.html" }}
-        {{ partial "extend-article-link.html" . }}
-        {{ end }}
-      </div>
-    </a>
-      <div class="text-sm text-neutral-500 dark:text-neutral-400">
-        {{ partial "article-meta/basic.html" . }}
-      </div>
-      {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
-      <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Params.summary | .RenderString }}
-      </div>
-      {{ end }}
-    </div>
-  </div>
-```
-
-5. `custom.css` 加入
+4. `custom.css` 加入
 ```css
 .badge {
   display: inline-block;
@@ -275,12 +101,19 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
     padding: 0;
 }
 ```
-{{< /expand >}}
+
+
+# 2. 文章封面
+
+發現 Blowfish 預設無法單獨設定文章縮圖，於是把 Cover 關鍵字拿來當文章縮圖。文章圖片的關鍵字有四個並分為兩種：  
+- cover/thumbnail/featured: 縮圖+進入文章後的照片  
+- background: 只有進入後的照片  
+
+把 `layouts/partials/hero` 中所有的 `*cover*,` 刪掉即可。
 
 
 
-
-# 2. 改善對比度
+# 3. 改善對比度
 
 在 `assets/css/schemes/blowfish.css` 修改以下三項：
 ```css
@@ -297,7 +130,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 --tw-prose-hr:rgba(var(--color-neutral-7), 1);
 ```
 
-# 3. 網站 logo
+# 4. 網站 logo
 
 favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。順便改放在 /static/image 資料夾中
 
@@ -313,7 +146,7 @@ favicons 應該直接放在 static 資料夾中就可以直接使用，但不知
 <link rel="manifest" href="{{ "site.webmanifest" | absURL }}">
 ```
 
-# 4. 網頁標籤名稱
+# 5. 網頁標籤名稱
 
 把 blowfish 預設的 dot 改為 dash。
 
@@ -325,7 +158,7 @@ favicons 應該直接放在 static 資料夾中就可以直接使用，但不知
 把 `&middot` 改為 `-`。
 
 
-# 5. 註腳（文章引用）
+# 6. 註腳（文章引用）
 
 縮小 footnote 字體以及修改標籤樣式，讓他長得比較像論文格式。  
 
@@ -381,7 +214,7 @@ sup {
 ```
 
 
-# 6. 美化選集功能
+# 7. 美化選集功能
 
 1. 把選集功能後面的「- 本文屬於一個選集。」刪掉。
 2. 修改選集樣式並把本文也加上超連結。
@@ -421,7 +254,7 @@ part: "#"
 this_article: "[本文]"
 ```
 
-# 7. 關閉相關文章簡介
+# 8. 關閉相關文章簡介
 主目錄想要有文章簡介，但是相關文章也出現簡介就太亂。
 
 在 `layouts/partials/article-link/card-related.html` 註解掉
@@ -435,8 +268,7 @@ this_article: "[本文]"
 ```
 
 
-
-# 8. 文章資訊間隔符號
+# 9. 文章資訊間隔符號
 
 加上編輯時間就後就顯得凌亂，修改樣式。把 `layouts/partials/article-meta/basic.html` 中的
 ```html
@@ -448,7 +280,7 @@ this_article: "[本文]"
 {{ delimit . "<span class=\"px-2 text-neutral-500\">&VerticalLine;</span>" | safeHTML }}
 ```
 
-# 9. ~~頁面目次 ToC~~
+# 10. ~~頁面目次 ToC~~
 
 此問題官方已於 blowfish v2.71.0 修正，不過ToC官方目前還沒有很完整。
 {{<expand 原文>}}

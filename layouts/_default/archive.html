@@ -116,6 +116,10 @@
         font-size: 14px;
     }
 
+    .content {
+    padding: 20px;
+    }
+
     /* 月份容器 */
     .month-container {
         margin-bottom: 30px;
@@ -125,10 +129,13 @@
     .month-title {
         font-size: 1.2rem;
         font-weight: 700;
+        color: #333;
         background: var(--gradient-1);
         padding: 0.6rem 1rem;
         border-radius: 40px;
         border: transparent;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
         text-transform: uppercase;
 
         /* 使用 Flexbox 來居中文本 */
@@ -148,7 +155,11 @@
     }
 
     /* 個別文章背景 */
-    .post-item {
+    .post-item { 
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
         transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
         background: rgba(var(--color-neutral-100), 0.95);
     }
