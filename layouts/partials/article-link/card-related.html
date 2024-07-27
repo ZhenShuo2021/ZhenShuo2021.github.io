@@ -1,4 +1,10 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
+
+{{ $link := .RelPermalink }}
+{{ if .Params.externalUrl }}
+  {{ $link = .Params.externalUrl }}
+{{ end }}
+
 <!-- {{ with .Params.externalUrl }}
 <a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
   {{ else }}
@@ -6,14 +12,6 @@
     {{ end }} -->
     <div
       class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
-
-      {{ $link := .RelPermalink }}
-      {{ if .Params.externalUrl }}
-        {{ $link = .Params.externalUrl }}
-      {{ end }}
-
-
-
 
       {{- with $.Params.images -}}
       {{- range first 6 . }}
@@ -69,6 +67,7 @@
           </div>
         </div>
         {{ else }}
+        
         <a href="{{ $link }}" class="block">
         <div
           class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"

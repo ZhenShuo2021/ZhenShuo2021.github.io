@@ -1,9 +1,15 @@
 {{ $disableImageOptimization := .Page.Site.Params.disableImageOptimization | default false }}
-{{ with .Params.externalUrl }}
+
+{{ $link := .RelPermalink }}
+{{ if .Params.externalUrl }}
+  {{ $link = .Params.externalUrl }}
+{{ end }}
+
+<!-- {{ with .Params.externalUrl }}
 <a href="{{ . }}" target="_blank" rel="external" class="min-w-full">
   {{ else }}
   <a href="{{ .RelPermalink }}" class="min-w-full">
-    {{ end }}
+    {{ end }} -->
     <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
       {{- with $.Params.images -}}
@@ -20,6 +26,7 @@
       {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
       {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
       {{- with $featured -}}
+      <a href="{{ $link }}" class="block">
       {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
         <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
@@ -33,6 +40,7 @@
       {{- with $.Site.Params.images }}
       <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
       {{- end -}}
+      </a>
       {{- end -}}
 
 
@@ -56,8 +64,10 @@
           </div>
         </div>
         {{ else }}
+        <a href="{{ $link }}" class="block">
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
           href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
+        </a>
         {{ end }}
 
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
@@ -74,4 +84,4 @@
 
       </div>
     </div>
-  </a>
+  <!-- </a> -->
