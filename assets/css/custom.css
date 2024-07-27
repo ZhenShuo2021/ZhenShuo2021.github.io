@@ -184,7 +184,6 @@ sup {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    background-color: #fff;
     /* 預設背景顏色 */
     width: 100%;
     transition: max-width 0.3s ease-in-out;
@@ -226,7 +225,7 @@ body.zen-mode-enable .zen-mode-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    background-color: #fff;
+    background-color: rgba(var(--color-neutral), 0.1);
     padding: 0 1.8rem;
 }
 
@@ -242,7 +241,7 @@ body.zen-mode-enable .zen-mode-content {
     /* 使用負邊距縮短內容區域與邊框的距離 */
     padding: 0.5rem 0;
     /* 可根據需要調整 */
-    color: #333;
+    color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
     /* 預設文字顏色 */
 }
 
@@ -250,29 +249,27 @@ body.zen-mode-enable .zen-mode-content {
 .dark .expand-wrapper {
     border-color: #444;
     /* 暗色模式下的邊框顏色 */
-    background-color: #222;
-    /* 暗色模式下的背景顏色 */
 }
 
 .dark .expand-title {
-    background-color: #333;
+    background-color: rgb(var(--color-neutral-800));
     /* 暗色模式下的標題背景顏色 */
-    color: #e0e0e0;
+    color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
     /* 暗色模式下的標題文字顏色 */
 }
 
 .dark .expand-title:hover {
-    background-color: #444;
+    background-color: rgb(var(--color-neutral-800), 0.8);
     /* 暗色模式下的標題懸停背景顏色 */
 }
 
 .dark .expand-content {
-    background-color: #2c2c2c;
+    background-color: rgb(var(--color-neutral-800), 0.7);
     /* 暗色模式下的內容背景顏色 */
 }
 
 .dark .expand-inner {
-    color: #e0e0e0;
+    color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
     /* 暗色模式下的內容文字顏色 */
 }
 
