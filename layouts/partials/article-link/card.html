@@ -44,11 +44,11 @@
       {{- end -}}
 
 
-      {{ if and .Draft .Site.Params.article.showDraftLabel }}
+      <!-- {{ if and .Draft .Site.Params.article.showDraftLabel }}
       <span class="absolute top-0 right-0 m-2">
         {{ partial "badge.html" (i18n "article.draft" | emojify) }}
       </span>
-      {{ end }}
+      {{ end }} -->
 
       <div class="px-6 py-4">
 
@@ -66,7 +66,11 @@
         {{ else }}
         <a href="{{ $link }}" class="block">
         <div class="font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
-          href="{{ .RelPermalink }}">{{ .Title | emojify }}</div>
+          href="{{ .RelPermalink }}">{{ .Title | emojify }}
+          {{ if and .Draft .Site.Params.article.showDraftLabel }}
+          <span style="position: relative; top: -0.1em;">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+          {{ end }}
+        </div>
         </a>
         {{ end }}
 

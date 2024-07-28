@@ -139,12 +139,12 @@ sup {
 }
 
 /* 新增針對標題元素的樣式 */
-.book-hint .hint-content > h1,
-.book-hint .hint-content > h2,
-.book-hint .hint-content > h3,
-.book-hint .hint-content > h4,
-.book-hint .hint-content > h5,
-.book-hint .hint-content > h6 {
+.book-hint .hint-content>h1,
+.book-hint .hint-content>h2,
+.book-hint .hint-content>h3,
+.book-hint .hint-content>h4,
+.book-hint .hint-content>h5,
+.book-hint .hint-content>h6 {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
@@ -190,7 +190,7 @@ sup {
 }
 
 body.zen-mode-enable .zen-mode-content {
-  max-width: 100% !important;
+    max-width: 100% !important;
 }
 
 .expand-toggle {
@@ -337,27 +337,33 @@ body.zen-mode-enable .zen-mode-content {
 /* 普通模式樣式 */
 .summary-current {
     /* background-color: rgb(var(--color-primary-200)); 淺藍色背景 */
-    color: #000; /* 黑色文字 */
+    color: #000;
+    /* 黑色文字 */
     font-weight: bold;
     padding-left: 10px;
-    border-left: 3px solid rgb(var(--color-primary-500)); /* 藍色左邊框 */
+    border-left: 3px solid rgb(var(--color-primary-500));
+    /* 藍色左邊框 */
 }
 
 .summary-other {
     padding-left: 10px;
-    border-left: 3px solid transparent;  /* 藍色左邊框 */
+    border-left: 3px solid transparent;
+    /* 藍色左邊框 */
 }
 
 /* 深色模式樣式 */
 .dark .summary-current {
-        /* background-color: rgb(var(--color-neutral-900)); 深藍色背景 */
-        color: #fff; /* 白色文字 */
-        border-left: 3px solid rgb(var(--color-primary-400)); /* 藍色左邊框 */
-    }
+    /* background-color: rgb(var(--color-neutral-900)); 深藍色背景 */
+    color: #fff;
+    /* 白色文字 */
+    border-left: 3px solid rgb(var(--color-primary-400));
+    /* 藍色左邊框 */
+}
 
 .dark .summary-other {
-        border-left: 3px solid transparent;  /* 藍色左邊框 */
-    }
+    border-left: 3px solid transparent;
+    /* 藍色左邊框 */
+}
 
 
 
@@ -372,24 +378,25 @@ body.zen-mode-enable .zen-mode-content {
 
 /* badge.html */
 .badge {
-  display: inline-block;
-  padding: 0.3em .45em;
-  background-color: transparent;
-  border-radius: 0.725rem;
-  margin-right: 0.05rem;
-  margin-bottom: 0.05rem;
+    display: inline-block;
+    padding: 0.3em .45em;
+    background-color: transparent;
+    border-radius: 0.725rem;
+    margin-right: 0.05rem;
+    margin-bottom: 0.05rem;
 }
 
 .badge:hover {
-  background-color: rgb(var(--color-primary-200));
+    background-color: rgb(var(--color-primary-200));
 }
 
 .dark .badge:hover {
-  background-color: rgb(var(--color-primary-700));
+    background-color: rgb(var(--color-primary-700));
 }
 
 .basicHtml-div {
-    margin-bottom: -.6em; /* 調整底部間距 */
+    margin-bottom: -.6em;
+    /* 調整底部間距 */
     padding: 0;
 }
 
@@ -410,7 +417,86 @@ body.zen-mode-enable .zen-mode-content {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
+
 .dark .bg-color {
     background-color: rgb(var(--color-primary-700));
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+/* tag cloud 標籤雲 標籤 分類 taxonomy taxonomies */
+.tag-cloud {
+    display: block;
+    min-height: calc(100vh - 360px);
+    max-width: 85%;
+    margin: 60px auto 80px;
+    padding: 0px 15px;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.tag-cloud-item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(var(--color-neutral-800), var(--tw-text-opacity));
+}
+
+.dark .tag-cloud-item {
+    color: rgb(var(--color-neutral-100), var(--tw-text-opacity));
+}
+
+.tag-cloud-item li {
+    display: inline-block;
+    list-style: none;
+    padding: 0px;
+}
+
+.tag-wrapper {
+    display: inline-block;
+    /* background-color: #f0f0f0; */
+    border-radius: 20px;
+    padding: 2px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tag-title {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.tag-wrapper:hover {
+    transform: scale(1.05);
+}
+ 
+
+@media (max-width: 768px) {
+    .tag-cloud {
+        max-width: 120%;
+        font-size: 19px;
+        line-height: 1.8;
+        margin: 100px auto;
+    }
+
+    .tag-wrapper {
+        padding: 0px 0px;
+    }
+
+    .tag-cloud {
+        padding: 0px;
+    }
+}
+ 
