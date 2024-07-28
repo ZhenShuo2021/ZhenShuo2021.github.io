@@ -10,7 +10,7 @@ title = "ZSL"
   rtl = false
   dateFormat = "2 January 2006"
   #logo = "img/blowfish_logo_transparent.png"
-  #description = "ZSL's Space."
+  #description = "ZSL's Notes Space."
 
 [author]
   name = "ZSL"

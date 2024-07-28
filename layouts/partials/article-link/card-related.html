@@ -29,14 +29,14 @@
       {{- with $featured -}}
       {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
       {{ with . }}
-      <a href="{{ $link }}" class="block">
-      <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+      <a href="{{ $link }}" class="block" aria-label="{{ $.Title }}">
+      <div class="w-full thumbnail_card_related nozoom"  alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
       </a>
       {{ end }}
       {{ else }}
       {{ with .Resize "600x" }}
       <a href="{{ $link }}" class="block">
-      <div class="w-full thumbnail_card_related nozoom" style="background-image:url({{ .RelPermalink }});"></div>
+      <div class="w-full thumbnail_card_related nozoom"  alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
       </a>
       {{ end }}
       {{ end }}

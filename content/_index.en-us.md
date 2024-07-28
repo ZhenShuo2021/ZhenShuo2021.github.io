@@ -1,6 +1,6 @@
 ---
 title: "ZSL's blog"
-description: "Recording things on the internet"
+description: "ZSL's Note Space"
 ---
 
 

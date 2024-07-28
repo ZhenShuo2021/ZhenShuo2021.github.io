@@ -19,8 +19,8 @@ mainSections = ["posts","notes"]  # 主文章資料夾，用於「最近的文�
 disableImageOptimization = true
 disableTextInHeader = false
 
-defaultBackgroundImage = "/img/1111830258087415808_3-4-5x.webp"
-defaultFeaturedImage = "/img/327615696_124786186955330_7629166424647011877_n.jpg"
+defaultBackgroundImage = "/img/1111830258087415808_3-5-5x-downsample.webp"
+defaultFeaturedImage = "/img/feature-crop.webp"
 
 highlightCurrentMenuArea = true
 smartTOC = true

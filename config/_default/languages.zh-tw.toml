@@ -10,7 +10,7 @@ title = "ZSL"
   rtl = false
   dateFormat = "2006年1月2日"
   #logo = "img/global/zsl.webp"
-  description = "ZSL 的小空間"
+  description = "ZSL 的筆記空間"
 
 [author]
   name = "ZSL"

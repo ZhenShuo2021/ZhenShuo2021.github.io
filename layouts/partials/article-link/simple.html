@@ -52,15 +52,15 @@
     {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
     {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
     
-    <a href="{{ $link }}" class="block w-full md:w-auto">
+    <a href="{{ $link }}" class="block w-full md:w-auto" aria-label="{{ $.Title }}">
     {{- with $featured -}}
     {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        <div class="{{ $articleImageClasses }}" alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
         {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
+        <div class="{{ $articleImageClasses }}" alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
     {{- else -}}

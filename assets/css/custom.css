@@ -452,6 +452,7 @@ body.zen-mode-enable .zen-mode-content {
     flex-wrap: wrap;
     justify-content: center;
     color: rgb(var(--color-neutral-800), var(--tw-text-opacity));
+    font-weight: 500; /* 粗體 */
 }
 
 .dark .tag-cloud-item {
