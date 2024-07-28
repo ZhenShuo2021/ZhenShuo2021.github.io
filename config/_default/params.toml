@@ -107,6 +107,8 @@ favicon = "favicon.ico"
   showLikes = false
   showTableOfContents = true
   cardView = false
+  maxFontSize = 36  # 設定最大字體大小
+  minFontSize = 14  # 設定最小字體大小
 
 [term]
   showHero = true
