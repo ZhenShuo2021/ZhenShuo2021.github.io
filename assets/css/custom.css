@@ -500,3 +500,168 @@ body.zen-mode-enable .zen-mode-content {
     }
 }
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.chroma .k,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .nc,
+.chroma .fm,
+.chroma .nn,
+.chroma .vc,
+.chroma .o {
+    color: rgb(var(--color-neutral-800));
+}
+
+/* KeywordConstant */
+.chroma .kc {
+    color: rgb(var(--color-primary-600));
+    font-weight: 500;
+}
+
+.chroma .kt,
+.chroma .nv,
+.chroma .vi,
+.chroma .vm,
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo {
+  color: rgb(var(--color-primary-600));
+}
+
+.chroma .lntd,
+.chroma .lntd pre {
+    color: rgb(var(--color-neutral-900));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.prose .chroma {
+    @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
+  }
+
+ 
+  
+  /* NameAttribute */
+  /* NameBuiltin */
+  /* NameBuiltinPseudo */
+  /* NameOther */
+  /* NameProperty */
+  /* NameTag */
+  .chroma .na,
+  .chroma .nb,
+  .chroma .bp,
+  .chroma .nx,
+  .chroma .py,
+  .chroma .nt {
+    @apply text-secondary-800 dark:text-secondary-300;
+  }
+  
+ 
+  
+  /* Literal */
+  /* LiteralDate */
+  /* LiteralString */
+  /* LiteralStringAffix */
+  /* LiteralStringBacktick */
+  /* LiteralStringChar */
+  /* LiteralStringDelimiter */
+  /* LiteralStringDoc */
+  /* LiteralStringDouble */
+  /* LiteralStringHeredoc */
+  /* LiteralStringInterpol */
+  /* LiteralStringOther */
+  /* LiteralStringSingle */
+  /* GenericInserted */
+  /* GenericOutput */
+  /* GenericPrompt */
+  .chroma .l,
+  .chroma .ld,
+  .chroma .s,
+  .chroma .sa,
+  .chroma .sb,
+  .chroma .sc,
+  .chroma .dl,
+  .chroma .sd,
+  .chroma .s2,
+  .chroma .sh,
+  .chroma .si,
+  .chroma .sx,
+  .chroma .s1,
+  .chroma .gi,
+  .chroma .go,
+  .chroma .gp {
+    @apply text-primary-800 dark:text-primary-400;
+  }
+   
+  .dark{
+    .chroma .l,
+    .chroma .ld,
+    .chroma .s,
+    .chroma .sa,
+    .chroma .sb,
+    .chroma .sc,
+    .chroma .dl,
+    .chroma .sd,
+    .chroma .s2,
+    .chroma .sh,
+    .chroma .si,
+    .chroma .sx,
+    .chroma .s1,
+    .chroma .gi,
+    .chroma .go,
+    .chroma .gp {
+        color: rgb(var(--color-neutral-100));
+
+    }
+  }
+  
+  /* OperatorWord */
+  .chroma .ow {
+    @apply font-semibold text-primary-400 dark:text-primary-600;
+  }
+ 
