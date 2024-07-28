@@ -19,7 +19,7 @@ cp -rfp source/ dest/   # 複製並保留文件屬性
 cp source/* dest        # 只搬資料夾內檔案
 ```
 
-## 縮寫指令
+## 縮寫指令✨
 如我要把 `hugo new content` 縮寫成 `hnc`，則
 ```
 echo "alias hnc='hugo new content'" >> ~/.bashrc && source ~/.bashrc
@@ -33,12 +33,13 @@ df -h
 sudo ncdu -x /path                 # ncdu 好用「非常多」
 ```
 
-## 列出記憶體佔用
+## 檢視記憶體佔用
+列出前十大記憶體使用
 ```
 ps aux --sort=-%mem | head -n 10
 ```
 
-## 建立開機自動執行
+## 開機自動執行
 這裡用docker-compose示範，五步驟分別是建立.service檔、reload .service、啟用、開始、查看狀態。參考資料[^1]。
 
 ```
@@ -80,7 +81,6 @@ exit 0
 ```
 設定開機自動掛載smb。
 
-[^1]: [https://hackmd.io/@ezplus-2020/H1soa90V9](https://hackmd.io/@ezplus-2020/H1soa90V9)
 
 ## SMB 掛載
 
@@ -101,3 +101,12 @@ username=遠端SMB帳戶
 password=密碼
 ```
 
+## 列出時間
+```shell
+date
+timedatectl
+hwclock
+cal -H
+uptime
+who -b
+```

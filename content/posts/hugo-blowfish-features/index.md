@@ -8,7 +8,7 @@ description: "探索 Hugo Blowfish 主題的多種客製化選項，從頁面樣
 tags: ["Hugo", "筆記"]
 categories: ["Hugo"]
 series: ["自架 NAS 紀錄"]
-series_order: 4
+series_order: 6
 ---
 
 此客製化基於 hugo blowfish theme 完成。  
