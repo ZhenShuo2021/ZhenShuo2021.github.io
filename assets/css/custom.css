@@ -152,19 +152,19 @@ sup {
 /* Info hint */
 .book-hint.info {
     border-color: #2196f3;
-    background-color: rgba(33, 150, 243, 0.2);
+    background-color: rgba(33, 150, 243, 0.4);
 }
 
 /* Warning hint */
 .book-hint.warning {
     border-color: #ffeb3b;
-    background-color: rgba(255, 235, 59, 0.2);
+    background-color: rgba(255, 235, 59, 0.35);
 }
 
 /* Danger hint */
 .book-hint.danger {
     border-color: #f44336;
-    background-color: rgba(244, 67, 54, 0.2);
+    background-color: rgba(244, 67, 54, 0.4);
 }
 
 
@@ -452,7 +452,8 @@ body.zen-mode-enable .zen-mode-content {
     flex-wrap: wrap;
     justify-content: center;
     color: rgb(var(--color-neutral-800), var(--tw-text-opacity));
-    font-weight: 500; /* 粗體 */
+    font-weight: 500;
+    /* 粗體 */
 }
 
 .dark .tag-cloud-item {
@@ -481,7 +482,7 @@ body.zen-mode-enable .zen-mode-content {
 .tag-wrapper:hover {
     transform: scale(1.05);
 }
- 
+
 
 @media (max-width: 768px) {
     .tag-cloud {
@@ -499,7 +500,6 @@ body.zen-mode-enable .zen-mode-content {
         padding: 0px;
     }
 }
- 
 
 
 
@@ -510,158 +510,39 @@ body.zen-mode-enable .zen-mode-content {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.chroma .k,
-.chroma .kd,
-.chroma .kn,
-.chroma .kp,
-.chroma .kr,
-.chroma .nc,
-.chroma .fm,
-.chroma .nn,
-.chroma .vc,
-.chroma .o {
-    color: rgb(var(--color-neutral-800));
-}
-
-/* KeywordConstant */
-.chroma .kc {
-    color: rgb(var(--color-primary-600));
-    font-weight: 500;
-}
-
-.chroma .kt,
-.chroma .nv,
-.chroma .vi,
-.chroma .vm,
-.chroma .m,
-.chroma .mb,
-.chroma .mf,
-.chroma .mh,
-.chroma .mi,
-.chroma .il,
-.chroma .mo {
-  color: rgb(var(--color-primary-600));
-}
-
-.chroma .lntd,
-.chroma .lntd pre {
-    color: rgb(var(--color-neutral-900));
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.prose .chroma {
-    @apply static rounded-md text-neutral-700 bg-neutral-50 dark:bg-neutral-700 dark:text-neutral-200;
-  }
 
  
-  
-  /* NameAttribute */
-  /* NameBuiltin */
-  /* NameBuiltinPseudo */
-  /* NameOther */
-  /* NameProperty */
-  /* NameTag */
-  .chroma .na,
-  .chroma .nb,
-  .chroma .bp,
-  .chroma .nx,
-  .chroma .py,
-  .chroma .nt {
-    @apply text-secondary-800 dark:text-secondary-300;
-  }
-  
- 
-  
-  /* Literal */
-  /* LiteralDate */
-  /* LiteralString */
-  /* LiteralStringAffix */
-  /* LiteralStringBacktick */
-  /* LiteralStringChar */
-  /* LiteralStringDelimiter */
-  /* LiteralStringDoc */
-  /* LiteralStringDouble */
-  /* LiteralStringHeredoc */
-  /* LiteralStringInterpol */
-  /* LiteralStringOther */
-  /* LiteralStringSingle */
-  /* GenericInserted */
-  /* GenericOutput */
-  /* GenericPrompt */
-  .chroma .l,
-  .chroma .ld,
-  .chroma .s,
-  .chroma .sa,
-  .chroma .sb,
-  .chroma .sc,
-  .chroma .dl,
-  .chroma .sd,
-  .chroma .s2,
-  .chroma .sh,
-  .chroma .si,
-  .chroma .sx,
-  .chroma .s1,
-  .chroma .gi,
-  .chroma .go,
-  .chroma .gp {
-    @apply text-primary-800 dark:text-primary-400;
-  }
-   
-  .dark{
-    .chroma .l,
-    .chroma .ld,
-    .chroma .s,
-    .chroma .sa,
-    .chroma .sb,
-    .chroma .sc,
-    .chroma .dl,
-    .chroma .sd,
-    .chroma .s2,
-    .chroma .sh,
-    .chroma .si,
-    .chroma .sx,
-    .chroma .s1,
-    .chroma .gi,
-    .chroma .go,
-    .chroma .gp {
-        color: rgb(var(--color-neutral-100));
+pre {
+    white-space: pre !important;
+    overflow-x: auto !important;
 
-    }
-  }
-  
-  /* OperatorWord */
-  .chroma .ow {
-    @apply font-semibold text-primary-400 dark:text-primary-600;
-  }
- 
+    tab-size: 2 !important;
+    -moz-tab-size: 2 !important;
+
+    padding: 0 !important;
+    position: relative;
+}
+.copy-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    padding: 1.2px 12px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    border-radius: 0 0 0 10px; /* 左下角圓弧 */
+    transition: background-color 0.3s ease; /* 平滑過渡效果 */
+}
+
+.copy-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* 滑鼠經過時顯示背景顏色 */
+}
+
+.dark .copy-btn {
+    background-color: transparent;
+}
+
+.dark .copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 暗黑模式下滑鼠經過時的背景顏色 */
+}

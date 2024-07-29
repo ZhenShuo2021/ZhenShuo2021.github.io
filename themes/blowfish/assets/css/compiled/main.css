@@ -1190,7 +1190,7 @@ select {
   --tw-prose-captions:rgba(var(--color-neutral-500), 1);
   --tw-prose-kbd:#111827;
   --tw-prose-kbd-shadows:17 24 39;
-  --tw-prose-code:rgba(var(--color-secondary-700), 1);
+  --tw-prose-code:rgba(var(--color-neutral-600), 1);
   --tw-prose-pre-code:rgba(var(--color-neutral-700), 1);
   --tw-prose-pre-bg:rgba(var(--color-neutral-50), 1);
   --tw-prose-th-borders:rgba(var(--color-neutral-500), 1);
@@ -1208,7 +1208,7 @@ select {
   --tw-prose-invert-captions:rgba(var(--color-neutral-400), 1);
   --tw-prose-invert-kbd:#fff;
   --tw-prose-invert-kbd-shadows:255 255 255;
-  --tw-prose-invert-code:rgba(var(--color-secondary-400), 1);
+  --tw-prose-invert-code:#c18f5e;
   --tw-prose-invert-pre-code:rgba(var(--color-neutral-200), 1);
   --tw-prose-invert-pre-bg:rgba(var(--color-neutral-700), 1);
   --tw-prose-invert-th-borders:rgba(var(--color-neutral-500), 1);

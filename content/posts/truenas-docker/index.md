@@ -2,7 +2,7 @@
 title: 'TrueNAS Docker'
 date: 2024-07-28T22:52:57+08:00
 draft: false
-summary: "列出幾個常見的 docker-compose.yml 以便衣鍵部屬。"
+summary: "列出幾個常見的 docker-compose.yml 以便一鍵部屬。"
 tags: ["NAS", "Docker", "cheatsheet"]
 categories: ["NAS"]
 series: ["自架 NAS 紀錄"]
