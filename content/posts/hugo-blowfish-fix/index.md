@@ -79,25 +79,25 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 4. `custom.css` 加入
 ```css
 .badge {
-  display: inline-block;
-  padding: 0.3em .45em;
-  color: text-color-neutral;
-  background-color: transparent;
-  border-radius: 0.725rem;
-  margin-right: 0.05rem;
-  margin-bottom: 0.05rem;
+    display: inline-block;
+    padding: 0.3em .45em;
+    background-color: transparent;
+    border-radius: 0.725rem;
+    margin-right: 0.05rem;
+    margin-bottom: 0.05rem;
 }
 
 .badge:hover {
-  background-color: rgb(var(--color-primary-100));
+    background-color: rgb(var(--color-primary-200));
 }
 
 .dark .badge:hover {
-  background-color: rgb(var(--color-primary-700));
+    background-color: rgb(var(--color-primary-700));
 }
 
 .basicHtml-div {
-    margin-bottom: -.6em; /* 調整底部間距 */
+    margin-bottom: -.6em;
+    /* 調整底部間距 */
     padding: 0;
 }
 ```
