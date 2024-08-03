@@ -93,9 +93,9 @@ s = (i + 1j*q);
 
 
 ```
-mean = sqrt(k1/(k1+1));  % mean
+mu = sqrt(k1/(k1+1));  % mean
 sigma = sqrt(1/(2*(k1+1)));  %variance
-Nr2 = randn(N, 1)*sigma+mean;
+Nr2 = randn(N, 1)*sigma+mu;
 Ni2 = randn(N, 1)*sigma;
 % To generate the Rician Random Variable
 h_rac = sqrt(Nr2.^2+Ni2.^2);  %Rician fading coefficient
