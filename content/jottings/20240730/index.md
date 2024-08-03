@@ -1,7 +1,7 @@
 ---
 title: 'AMD 產品命名'
 date: 2024-07-30T11:18:52+08:00
-draft: true
+draft: false
 summary: 備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。  
 showSummary: false
 tags: ["備份"]
@@ -14,6 +14,24 @@ progress_bar: true
 備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。  
 [原文](https://www.ptt.cc/bbs/PC_Shopping/M.1722274491.A.150.html)
 
+# 表格
+
+| 型號                    | 架構              | 型號                    | 架構              |
+|:-------------------------|:-----------------------:|:-------------------------|:-----------------------:|
+| Ryzen 1000系列          | ZEN架構               | Ryzen 7 5700            | ZEN3架構（APU版本）  |
+| Ryzen 2000系列          | ZEN+架構              | Ryzen 5 5600X           | ZEN3架構              |
+| 2000G系列APU            | ZEN架構               | Ryzen 5 5600            | ZEN3架構              |
+| Ryzen 3000系列          | ZEN2架構              | Ryzen 5 5500            | ZEN3架構（砍內顯）   |
+| 3000G系列APU            | ZEN+架構              | Ryzen 7000系列          | ZEN4架構              |
+| Ryzen 4000系列          | ZEN2架構 <br>（APU專屬）   | Ryzen 8000系列          | ZEN4架構（APU）      |
+| Ryzen 5000系列          | ZEN3架構              | 7500F                   | ZEN4架構              |
+| 5000G系列               | ZEN3架構              | 8500F                   | 2x ZEN4核心 <br> 4x ZEN4c核心 |
+| Ryzen 7 5700X           | ZEN3架構              |
+
+
+
+
+# 原文
 ---
 
 
