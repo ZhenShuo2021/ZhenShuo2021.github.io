@@ -252,19 +252,19 @@ body.zen-mode-enable .zen-mode-content {
 }
 
 .dark .expand-title {
-    background-color: rgb(var(--color-neutral-800));
+    background-color: rgb(var(--color-neutral-900));
     /* 暗色模式下的標題背景顏色 */
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
     /* 暗色模式下的標題文字顏色 */
 }
 
 .dark .expand-title:hover {
-    background-color: rgb(var(--color-neutral-800), 0.8);
+    background-color: rgb(var(--color-neutral-900), 0.75);
     /* 暗色模式下的標題懸停背景顏色 */
 }
 
 .dark .expand-content {
-    background-color: rgb(var(--color-neutral-800), 0.7);
+    background-color: rgb(var(--color-neutral-900), 0.3);
     /* 暗色模式下的內容背景顏色 */
 }
 
@@ -526,7 +526,8 @@ pre {
     position: absolute;
     top: 0;
     right: 0;
-    background: transparent;
+    color: #fff;
+    background: rgb(var(--color-secondary-800), 0.8);
     border: none;
     padding: 1.2px 12px;
     cursor: pointer;
@@ -536,7 +537,7 @@ pre {
 }
 
 .copy-btn:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* 滑鼠經過時顯示背景顏色 */
+    background-color: rgba(var(--color-secondary-700), 0.2); /* 滑鼠經過時顯示背景顏色 */
 }
 
 .dark .copy-btn {
@@ -546,3 +547,5 @@ pre {
 .dark .copy-btn:hover {
     background-color: rgba(255, 255, 255, 0.1); /* 暗黑模式下滑鼠經過時的背景顏色 */
 }
+
+

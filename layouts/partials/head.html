@@ -14,17 +14,12 @@
   <meta name="title" content="{{ .Title | emojify }} - {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with (.Params.Description | default .Params.Summary) | default .Site.Params.description -}}
+  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
-  
-  {{- $mytags := .Params.Tags | default slice -}}
-  {{- $mykeywords := .Params.Keywords | default .Site.Params.keywords -}}
-  {{- $allKeywords := $mytags | append $mykeywords | uniq -}}
-  {{ if $allKeywords }}
-  <meta name="keywords" content="{{ delimit $allKeywords ", " }}" />
-  {{ end }}  
-  
+  {{ with  .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+  {{- end }}
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
@@ -79,7 +74,8 @@
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  <script src="{{ "js/zoom.min.js" | relURL }}"></script>
+  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}
+  <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
@@ -151,12 +147,11 @@
   </script>
   {{ end }}
   {{ end }}
-  
-  {{ partial "scripts.html" . }}
-    
 
-  <!-- <link id="light-mode-css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-one-light.min.css">
-  <link id="dark-mode-css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-one-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> -->
-  
+
+
+
+  {{ partial "scripts.html" . }}
 </head>
+  
+  
