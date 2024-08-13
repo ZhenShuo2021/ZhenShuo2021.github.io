@@ -1,5 +1,16 @@
+@font-face {
+    font-family: font;
+    src: url('/fonts/LXGWWenKaiTC-Regular.woff2');
+}
+
 html {
-    font-size: 13pt;
+    font-size: 1.1em;
+    font-family: font;
+}
+
+strong, b {
+    font-weight: bold;
+    -webkit-text-stroke: 0.25px;   
 }
 
 .album-cover {
