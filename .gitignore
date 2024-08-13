@@ -13,6 +13,8 @@ hugo.linux
 /.hugo_build.lock
 .hugo_build.lock
 deploy.sh
+deploy.scpt
+deploy.app
 start.scpt
 start.app
 .DS_Store
