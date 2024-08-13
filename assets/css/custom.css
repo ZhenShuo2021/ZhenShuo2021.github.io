@@ -1,11 +1,11 @@
-@font-face {
+/* @font-face {
     font-family: font;
     src: url('/fonts/LXGWWenKaiTC-Regular.woff2');
-}
+} */
 
 html {
     font-size: 1.1em;
-    font-family: font;
+    font-family: 'LXGW WenKai', sans-serif;
 }
 
 strong, b {
