@@ -527,7 +527,7 @@ pre {
     top: 0;
     right: 0;
     color: #fff;
-    background: rgb(var(--color-secondary-800), 0.8);
+    background: rgb(var(--color-secondary-800), 0.);
     border: none;
     padding: 1.2px 12px;
     cursor: pointer;
@@ -537,7 +537,7 @@ pre {
 }
 
 .copy-btn:hover {
-    background-color: rgba(var(--color-secondary-700), 0.2); /* 滑鼠經過時顯示背景顏色 */
+    background-color: rgba(255, 255, 255, 0.1); /* 滑鼠經過時顯示背景顏色 */
 }
 
 .dark .copy-btn {
