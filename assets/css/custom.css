@@ -1,3 +1,4 @@
+/* 基礎顏色設定 Basic color settings */
 /* @font-face {
     font-family: font;
     src: url('/fonts/LXGWWenKaiTC-Regular.woff2');
@@ -13,10 +14,24 @@ strong, b {
     -webkit-text-stroke: 0.25px;   
 }
 
+.prose {
+    --tw-prose-quote-borders:rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-quote-borders:rgba(var(--color-primary-400), 1);
+    /* --tw-prose-code:rgba(var(--color-secondary-700), 1); */
+    --tw-prose-code: rgba(var(--color-neutral-700), var(--tw-text-opacity, 1));
+}
+
+.bg-primary-200 {
+    --tw-bg-opacity:0.95;
+    background-color:rgba(var(--color-primary-400), var(--tw-bg-opacity)); 
+  }
+
 .album-cover {
     width: 20rem;
 }
 
+
+/* 連結顏色 Link colors */
 .article-content a {
     text-decoration: none;
     color: #9a3d1f;
@@ -60,7 +75,7 @@ strong, b {
 
 
 
-/* footnote區 */
+/* 頁末 footnote */
 /* 縮小 footnote 字體 */
 .footnotes {
     font-size: 0.7em;
@@ -125,12 +140,12 @@ sup {
 
 
 
-/* Shortcode 區 */
+/* 簡碼 Shortcode 區 */
 /* hint shortcode */
 .book-hint {
     padding: 0.5em 1em;
     margin: 1em 0;
-    border-left: 6px solid;
+    border-left: 3px solid;
     border-radius: 4px;
     font-style: normal;
     font-weight: normal;
@@ -166,20 +181,26 @@ sup {
 
 /* Info hint */
 .book-hint.info {
-    border-color: #2196f3;
-    background-color: rgba(33, 150, 243, 0.4);
+    --color: 0, 123, 255;
+    --opacity: 0.35;
+    border-color: rgb(var(--color));
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 /* Warning hint */
 .book-hint.warning {
-    border-color: #ffeb3b;
-    background-color: rgba(255, 235, 59, 0.35);
+    --color: 255, 193, 7;
+    --opacity: 0.3;
+    border-color: rgb(var(--color));
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 /* Danger hint */
 .book-hint.danger {
-    border-color: #f44336;
-    background-color: rgba(244, 67, 54, 0.4);
+    --color: 220, 53, 69;
+    --opacity: 0.4;
+    border-color: rgb(var(--color)); 
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 
@@ -192,14 +213,12 @@ sup {
 
 
 /* expand shortcode */
-/* 常規樣式 */
 .expand-wrapper {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    /* 預設背景顏色 */
     width: 100%;
     transition: max-width 0.3s ease-in-out;
 }
@@ -216,15 +235,11 @@ body.zen-mode-enable .zen-mode-content {
     display: flex;
     align-items: center;
     padding: 0.75rem 1rem;
-    /* 調整上下邊距 */
     background-color: #f7f7f7;
-    /* 預設背景顏色 */
     color: #333;
-    /* 預設文字顏色 */
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: normal;
-    /* 取消粗體樣式 */
 }
 
 .expand-title:hover {
@@ -246,7 +261,6 @@ body.zen-mode-enable .zen-mode-content {
 
 .expand-toggle:checked~.expand-content {
     max-height: 50000px;
-    /* 可以根據需要調整 */
     transition: max-height 0.8s ease-in-out;
 
 }
@@ -255,37 +269,29 @@ body.zen-mode-enable .zen-mode-content {
     margin: -0.5rem 0;
     /* 使用負邊距縮短內容區域與邊框的距離 */
     padding: 0.5rem 0;
-    /* 可根據需要調整 */
     color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
-    /* 預設文字顏色 */
 }
 
 /* 暗色模式樣式 */
 .dark .expand-wrapper {
     border-color: #444;
-    /* 暗色模式下的邊框顏色 */
 }
 
 .dark .expand-title {
     background-color: rgb(var(--color-neutral-900));
-    /* 暗色模式下的標題背景顏色 */
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
-    /* 暗色模式下的標題文字顏色 */
 }
 
 .dark .expand-title:hover {
     background-color: rgb(var(--color-neutral-900), 0.75);
-    /* 暗色模式下的標題懸停背景顏色 */
 }
 
 .dark .expand-content {
     background-color: rgb(var(--color-neutral-900), 0.3);
-    /* 暗色模式下的內容背景顏色 */
 }
 
 .dark .expand-inner {
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
-    /* 暗色模式下的內容文字顏色 */
 }
 
 
@@ -298,7 +304,6 @@ body.zen-mode-enable .zen-mode-content {
 
 
 /* 進度條 progress bar */
-/* 基本樣式 */
 #progress-bar {
     position: fixed;
     top: 0;
@@ -306,7 +311,6 @@ body.zen-mode-enable .zen-mode-content {
     width: 0%;
     height: 1.8px;
     background-color: rgb(var(--color-primary-700));
-    /* 紅色進度條 */
     z-index: 9999;
 }
 
@@ -317,19 +321,17 @@ body.zen-mode-enable .zen-mode-content {
     left: 0;
     width: 100%;
     height: 10px;
-    /* 光暈的範圍，可以根據需要調整 */
+    /* 光暈範圍 */
     /* background: linear-gradient(rgba(var(--color-primary-700), 0.7),
             rgba(var(--color-primary-700), 0.5)); */
-    /* 兩階段漸層光暈 */
+    /* 漸層光暈 */
     filter: blur(5px);
-    /* 光暈的模糊度，可以根據需要調整 */
+    /* 光暈模糊度 */
     z-index: 9999;
 }
 
-/* 暗色模式 */
 .dark #progress-bar {
     background-color: rgb(var(--color-primary-50));
-    /* 暗色模式下的進度條顏色 */
 }
 
 /* .dark #progress-bar::before {
@@ -346,38 +348,45 @@ body.zen-mode-enable .zen-mode-content {
 
 
 /* series 選輯 選集 */
-/* 普通模式樣式 */
 .summary-current {
-    /* background-color: rgb(var(--color-primary-200)); 淺藍色背景 */
+    /* background-color: rgba(var(--color-primary-200), 0.7); */
     color: #000;
-    /* 黑色文字 */
     font-weight: bold;
-    padding-left: 10px;
-    border-left: 3px solid rgb(var(--color-primary-500));
-    /* 藍色左邊框 */
+    padding-left: 20px;
+    border-left: transparent;
+    position: relative;
+    border-radius: 4px; /* 確保主元素有圓角 */
+}
+
+.summary-current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: rgba(var(--color-primary-400), var(--tw-bg-opacity)); /* Same as .bg-primary-200 */
+    border-radius: 10px;
 }
 
 .summary-other {
-    padding-left: 10px;
     border-left: 3px solid transparent;
-    /* 藍色左邊框 */
 }
 
 /* 深色模式樣式 */
 .dark .summary-current {
-    /* background-color: rgb(var(--color-neutral-900)); 深藍色背景 */
+    /* background-color: rgba(var(--color-primary-800), 0.7); */
     color: #fff;
-    /* 白色文字 */
-    border-left: 3px solid rgb(var(--color-primary-400));
-    /* 藍色左邊框 */
+}
+
+.dark .summary-current::before {
+    background-color: rgba(var(--color-primary-700), var(--tw-bg-opacity));
+    /* border-radius: 10px; */
 }
 
 .dark .summary-other {
     border-left: 3px solid transparent;
-    /* 藍色左邊框 */
 }
-
-
 
 
 
