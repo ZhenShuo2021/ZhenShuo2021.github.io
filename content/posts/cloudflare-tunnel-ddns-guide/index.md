@@ -2,7 +2,7 @@
 title: 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
 date: "2024-05-08"
 draft: false
-description: "了解如何利用 Cloudflare Tunnel 提供安全且便宜的方式來上外網，不需開啟本機端口。本文介紹選擇 Cloudflare Tunnel 的原因以及其優缺點。"
+description: 
 summary: 紀錄把一台破電腦裝成 NAS 的過程
 tags: ["Cloudflare", "教學", "筆記"]
 categories: ["NAS"]

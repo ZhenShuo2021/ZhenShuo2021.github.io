@@ -4,7 +4,7 @@ date: 2024-07-21T07:12:50+08:00
 draft: false
 author: "ZSL"
 slug: 'tmux'
-summary: "使用 tmux 管理多視窗，讓程序在 SSH 斷線後繼續運行。本文介紹 tmux 的安裝、基本使用方法以及整理常用的指令。"
+summary: "使用 tmux 管理多視窗，讓程序在 SSH 斷線後繼續運行。介紹 tmux 的安裝、基本使用方法以及整理常用的指令。"
 tags: ["Linux", "tmux", "教學", "cheatsheet"]
 categories: ["筆記"]
 series: []

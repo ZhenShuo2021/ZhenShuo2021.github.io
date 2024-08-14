@@ -1,6 +1,6 @@
 ---
 title: "使用ExifTool根據文件夾名稱自動更新照片EXIF資訊"
-description: "使用腳本根據文件夾名稱批量修改照片日期資訊，適合整理從網路下載的相簿，保障照片日期的準確性與一致性，並提供其他EXIF命令以便更好管理照片。"
+description: 
 date: 2024-03-19
 draft: false
 summary: 修改 EXIF 資訊的腳本，主要用於網路下載的相簿。

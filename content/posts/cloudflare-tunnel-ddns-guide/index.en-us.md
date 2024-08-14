@@ -2,7 +2,7 @@
 title: "Site Setup Log: No Static IP + Cloudflare Tunnel + DDNS-GO"
 date: 2024-05-08
 draft: false
-description: "2024 guide: Secure remote access using Cloudflare Tunnel and DDNS, no port forwarding. Includes domain setup, API token, DDNS config, and Tunnel build steps. Ideal for home servers: safe and affordable."
+description: 
 summary: My log of setting old PC as NAS.
 tags: ["Site Setup Log", "Cloudflare", "Notes"]
 categories: ["NAS"]

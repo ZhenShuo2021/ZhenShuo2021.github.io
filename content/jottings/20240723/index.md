@@ -2,7 +2,7 @@
 title: "為何要寫部落格"
 date: 2024-07-17
 draft: false
-description: 緣起 從資料庫放到爆炸開始。 身為資訊整理大師平常在網路上看到各種有用資訊都會用書籤保存，久了以後發現快爆炸了需要書籤之外的管理方式；一開始先用 Word 慢慢複製貼上結果發現更痛苦，沒有連結只能用檔案系統來管理非常麻煩，沒過多久就改用 Apple Notes 先暫時擋一下。
+description: 
 showSummary: false
 tags: ["碎念"]
 categories: ["隨筆"]

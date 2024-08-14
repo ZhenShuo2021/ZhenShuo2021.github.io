@@ -4,7 +4,7 @@ date: 2024-07-01T12:01:01+08:00
 lastmod: 2024-07-28
 draft: false
 summary: Hugo Blowfish 的基礎設定教學（或者說紀錄）。
-description: "介紹如何對 Hugo Blowfish Theme 進行基礎設定與配置，包括修改 permalink、frontmatter 及如何避免網頁被 Google 搜尋。"
+description: 
 tags: ["Hugo", "筆記"]
 categories: ["Hugo"]
 series: ["自架 NAS 紀錄"]

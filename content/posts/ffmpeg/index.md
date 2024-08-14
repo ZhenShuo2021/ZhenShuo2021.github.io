@@ -3,7 +3,7 @@ title: FFmpeg筆記
 date: 2024-06-07
 lastmod: 2024-07-25
 draft: false
-description: 深入探討FFmpeg與HandBrake的CRF設定，幫助您在高效壓縮影片的同時保持最佳畫質。了解CRF值的影響、不同編解碼器的推薦設置及如何使用這些工具進行影片轉碼。
+description: 
 summary: 介紹FFmpeg基本指令，以及轉檔實驗。
 tags: ["指令筆記","實用工具","影像處理", "cheatsheet"]
 categories: ["工具"]

@@ -2,7 +2,7 @@
 title: Git 基礎概念與實戰指令
 date: 2024-06-02
 draft: false
-description: "講述Git版本控制系統的使用方法。包括基本概念解釋、常用指令說明,以及實際工作中的應用技巧。適合各階段的開發者參考,有助於提高專案管理效率。文章剔除了冗長的版本號列舉,直接聚焦於實用知識點。"
+description: 
 summary: 只講重點，網路上教學廢話好多好煩
 tags: ["git", "指令筆記", "cheatsheet"]
 categories: ["筆記"]

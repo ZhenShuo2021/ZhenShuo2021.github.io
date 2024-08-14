@@ -2,7 +2,7 @@
 title: "WebP圖片壓縮與解碼性能"
 date: 2024-06-20T21:30:40+08:00
 draft: false
-description: "討論WebP圖片格式的壓縮與解碼性能，並比較其與JPEG的優劣。提供最佳品質設定的建議，幫助你有效提升網頁載入速度。適合想瞭解WebP圖片格式優勢的讀者。"
+description: 
 summary: WebP 與 AVIF 的壓縮率比較
 tags: ["影像處理", "筆記"]
 categories: ["科技新知"]

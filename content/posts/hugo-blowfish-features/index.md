@@ -4,7 +4,7 @@ date: 2024-07-01T12:45:01+08:00
 lastmod: 2024-07-25
 draft: false
 summary: 補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。
-description: "探索 Hugo Blowfish 主題的多種客製化選項，從頁面樣式到網站標籤名稱，提供詳細設定指引，讓你的網站更具個性化和專業感。"
+description: 
 tags: ["Hugo", "筆記"]
 categories: ["Hugo"]
 series: ["自架 NAS 紀錄"]
