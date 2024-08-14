@@ -77,3 +77,4 @@ googleAnalytics = "G-XMT1S11VE4"
   posts = '/posts/:filename/'
   notes = '/posts/:filename/'
   jottings = '/posts/:filename/'
+  timeline = '/posts/:filename/'
