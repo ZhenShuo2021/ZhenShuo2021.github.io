@@ -17,27 +17,40 @@ strong, b {
     width: 20rem;
 }
 
-/* 選擇柔和的連結色調 */
 .article-content a {
-    color: rgb(var(--color-primary-600));
-    /* 使用淡藍色 */
+    text-decoration: none;
+    color: #9a3d1f;
+    background-image: linear-gradient(#9a3d1f, #9a3d1f), linear-gradient(to right top, #fbcda5, #fbcda5);
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 2px, 0% 0%;
+    padding-bottom: 2px;
+    transition: background-size 0.15s ease;
 }
 
-/* 懸停時底線改為粗線並增加距離 */
-.article-content a:hover,
-.article-content a:focus {
-    color: rgb(var(--color-primary-700));
-    /* 設定連結懸停和聚焦狀態下的顏色 */
-    text-decoration: underline;
-    /* 添加連結懸停時的底線 */
-    text-decoration-thickness: 1.82px;
-    /* 設定底線的粗線 */
-    text-decoration-skip-ink: none;
-    /* 避免底線與文字重疊 */
-    text-underline-offset: 4.5px;
-    /* 增加底線與文字的距離*/
+.dark .article-content a {
+    color: #e6511f;
+    background-image: linear-gradient(#e6511f, #e6511f), linear-gradient(to right top, #ffd5b0, #ffd5b0);
 }
 
+.article-content a:hover {
+    color: #9a3d1f;
+    background-size: 100% 2px, 100% 100%;
+}
+
+.dark .article-content a:hover {
+    color: #e6511f;
+    background-size: 100% 2px, 100% 100%;
+}
+
+
+.article-content a[href^="#fnref"] {
+    position: relative;
+    top: 0.35em;
+    left: 0.3em;
+    background: none;
+    padding-bottom: 0;
+}
 
 
 
@@ -292,7 +305,7 @@ body.zen-mode-enable .zen-mode-content {
     left: 0;
     width: 0%;
     height: 1.8px;
-    background-color: #e60000;
+    background-color: rgb(var(--color-primary-700));
     /* 紅色進度條 */
     z-index: 9999;
 }
@@ -305,26 +318,23 @@ body.zen-mode-enable .zen-mode-content {
     width: 100%;
     height: 10px;
     /* 光暈的範圍，可以根據需要調整 */
-    background: linear-gradient(rgba(227, 52, 47, 0.7),
-            rgba(227, 52, 47, 0.5));
+    /* background: linear-gradient(rgba(var(--color-primary-700), 0.7),
+            rgba(var(--color-primary-700), 0.5)); */
     /* 兩階段漸層光暈 */
-    filter: blur(20px);
+    filter: blur(5px);
     /* 光暈的模糊度，可以根據需要調整 */
     z-index: 9999;
 }
 
 /* 暗色模式 */
 .dark #progress-bar {
-    background-color: #20c2db;
+    background-color: rgb(var(--color-primary-50));
     /* 暗色模式下的進度條顏色 */
 }
 
-.dark #progress-bar::before {
-    background: linear-gradient(rgba(34, 210, 236, 0.7),
-            /* 使用與背景顏色相近的顏色 */
-            rgba(34, 210, 236, 0.5));
-    /* 暗色模式下的兩階段漸層光暈 */
-}
+/* .dark #progress-bar::before {
+    background: linear-gradient(rgba(var(--color-primary-700), 0.7), rgba(var(--color-primary-700), 0.5));
+} */
 
 
 
