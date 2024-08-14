@@ -6,7 +6,7 @@
 
 html {
     font-size: 1.1em;
-    font-family: 'LXGW WenKai', sans-serif;
+    font-family: 'LXGW WenKai TC', sans-serif;
 }
 
 strong, b {
@@ -145,7 +145,7 @@ sup {
 .book-hint {
     padding: 0.5em 1em;
     margin: 1em 0;
-    border-left: 3px solid;
+    border-left: 3.5px solid;
     border-radius: 4px;
     font-style: normal;
     font-weight: normal;

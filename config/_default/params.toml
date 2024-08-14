@@ -17,7 +17,7 @@ enableCodeCopy = true
 mainSections = ["posts","notes", "jottings"]  # 主文章資料夾，用於「最近的文章」
 # robots = ""
 
-disableImageOptimization = false
+disableImageOptimization = true
 disableTextInHeader = false
 
 defaultBackgroundImage = "/img/1111830258087415808_3-4-5x1.webp"
