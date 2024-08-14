@@ -3,8 +3,8 @@ global:
 
 article:
   anchor_label: "定位點"
-  date: "{{ .Date }}"
-  date_updated: "這篇文章已經在 <b>{{ .Date }}</b> 更新！"
+  date: "{{ .Date }}發布"
+  date_updated: "{{ .Date }}更新"
   draft: "草稿"
   edit_title: "編輯內容"
   reading_time:

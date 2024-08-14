@@ -120,33 +120,24 @@ sup {
     border-left: 6px solid;
     border-radius: 4px;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 .book-hint .hint-content {
     margin: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 .book-hint .hint-content>p:first-child {
     margin-top: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
-    font-weight: normal;
-    /* 確保文字不粗體 */
-}
+    font-weight: normal;}
 
 .book-hint .hint-content>p:last-child {
     margin-bottom: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 /* 新增針對標題元素的樣式 */
@@ -300,7 +291,7 @@ body.zen-mode-enable .zen-mode-content {
     top: 0;
     left: 0;
     width: 0%;
-    height: 2.25px;
+    height: 1.8px;
     background-color: #e60000;
     /* 紅色進度條 */
     z-index: 9999;
@@ -312,7 +303,7 @@ body.zen-mode-enable .zen-mode-content {
     top: 0;
     left: 0;
     width: 100%;
-    height: 15px;
+    height: 10px;
     /* 光暈的範圍，可以根據需要調整 */
     background: linear-gradient(rgba(227, 52, 47, 0.7),
             rgba(227, 52, 47, 0.5));
@@ -533,12 +524,13 @@ pre {
     padding: 0 !important;
     position: relative;
 }
+
 .copy-btn {
     position: absolute;
     top: 0;
     right: 0;
-    color: #fff;
-    background: rgb(var(--color-secondary-800), 0.);
+    color: var(--text-color-neutral-700);
+    background: rgb(var(--color-neutral-700), 0.);
     border: none;
     padding: 1.2px 12px;
     cursor: pointer;
@@ -548,7 +540,7 @@ pre {
 }
 
 .copy-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 滑鼠經過時顯示背景顏色 */
+    background-color: rgba(var(--color-neutral-700), 0.3); /* 滑鼠經過時顯示背景顏色 */
 }
 
 .dark .copy-btn {
