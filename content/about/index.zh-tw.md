@@ -3,6 +3,7 @@ title: "關於本站"
 date: 2024-07-23T08:55:01+08:00
 exclude: true
 showZenMode: false
+noArchive: true
 summary: 
 slug: 
 tags: []

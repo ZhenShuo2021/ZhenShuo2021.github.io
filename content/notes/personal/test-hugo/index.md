@@ -3,6 +3,7 @@ title: "別進來💢💢💢，這是測試🥵"
 date: 2000-01-01
 draft: false
 description: "就說這邊放測試，不要亂點🥵"
+noArchive: True
 slug: "test-hugo"
 summary: <kbd>ALT</kbd> + <kbd>F4</kbd>
 robots: "noindex"
