@@ -73,7 +73,7 @@ progress bar
 
   </header>
   {{ if ne .Params.progress_bar false }}
-   <script src="{{ "js/progress-bar.js" | relURL }}"></script>
+   <script src="{{ "js/progress-bar.js" | relURL }}" defer></script>
   {{ end }}
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
