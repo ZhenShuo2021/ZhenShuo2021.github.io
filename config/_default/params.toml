@@ -78,7 +78,7 @@ favicon = "favicon.ico"
   showTaxonomies = true 
   showAuthorsBadges = true
   showWordCount = false
-  sharingLinks = [ "linkedin", "twitter", "reddit", "whatsapp", "telegram", "pinterest", "facebook", "email"]
+  sharingLinks = [ "linkedin", "twitter", "facebook", "email"]
   showZenMode = true
 
 [list]
