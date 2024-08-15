@@ -5,13 +5,49 @@
 } */
 
 html {
-    font-size: 1.1em;
+    font-size: 1em;
     font-family: 'LXGW WenKai TC', sans-serif;
 }
 
 strong, b {
     font-weight: bold;
     -webkit-text-stroke: 0.25px;   
+}
+
+.article-content{
+    --font-size: 0.875rem;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+p, li, ol, ul, span {
+    font-size: var(--font-size);
+}
+
+h1.relative.group {
+    font-size: 1.85rem;
+}
+
+h2.relative.group {
+    font-size: 1.55rem;
+}
+
+h3.relative.group {
+    font-size: 1.45rem;
+}
+
+h4.relative.group {
+    font-size: 1.3rem;
+}
+
+h5.relative.group {
+    font-size: 1.15rem;
+}
+
+h6.relative.group {
+    font-size: 1rem;
 }
 
 .prose {
@@ -30,6 +66,9 @@ strong, b {
     width: 20rem;
 }
 
+p {
+    word-wrap: break-word;
+}
 
 /* 連結顏色 Link colors */
 .article-content a {
@@ -221,6 +260,7 @@ sup {
     margin-bottom: 1rem;
     width: 100%;
     transition: max-width 0.3s ease-in-out;
+    font-size: var(--font-size);
 }
 
 body.zen-mode-enable .zen-mode-content {
@@ -234,7 +274,7 @@ body.zen-mode-enable .zen-mode-content {
 .expand-title {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     background-color: #f7f7f7;
     color: #333;
     cursor: pointer;
