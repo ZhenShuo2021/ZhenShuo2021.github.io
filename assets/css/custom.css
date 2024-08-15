@@ -98,13 +98,13 @@ p {
 }
 
 
-.article-content a[href^="#fnref"] {
+/* .article-content a[href^="#fnref"] {
     position: relative;
     top: 0.35em;
     left: 0.3em;
     background: none;
     padding-bottom: 0;
-}
+} */
 
 
 
@@ -116,12 +116,16 @@ p {
 
 /* 頁末 footnote */
 /* 縮小 footnote 字體 */
-.footnotes a {
+.footnote-ref {
     background-image: none !important;
 }
 
-.footnotes {
-    font-size: 0.7em;
+.footnotes a {
+    background-image: none;
+}
+
+.footnotes, .footnotes p, .footnotes li, .footnotes ol, .footnotes ul, .footnotes span {
+     font-size: 0.5rem; 
 }
 
 /* footnote 引用樣式 */
@@ -174,6 +178,11 @@ sup {
     /* 保留超連結的顯示 */
 }
 
+.footnote-backref {
+    /* margin-left: 1em;
+    display: inline-block; */
+    vertical-align: -0.15em;
+}
 
 
 
