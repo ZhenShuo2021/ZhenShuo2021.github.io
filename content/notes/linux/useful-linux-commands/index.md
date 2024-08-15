@@ -9,7 +9,7 @@ tags: ["Linux", "指令筆記", "cheatsheet"]
 categories: ["筆記"]
 ---
 
-## 文件移動
+# 文件移動
 ```
 mv source/ dest/        # 搬移整個資料夾
 cp -rfp source/ dest/   # 複製並保留文件屬性
@@ -19,27 +19,27 @@ cp -rfp source/ dest/   # 複製並保留文件屬性
 cp source/* dest        # 只搬資料夾內檔案
 ```
 
-## 縮寫指令✨
+# 縮寫指令✨
 如我要把 `hugo new content` 縮寫成 `hnc`，則
 ```
 echo "alias hnc='hugo new content'" >> ~/.bashrc && source ~/.bashrc
 ```
 macOS 則是改為 zshrc。
 
-## 檢視硬碟容量
+# 檢視硬碟容量
 ```
 du /home -h | sort -nr | tail
 df -h
 sudo ncdu -x /path                 # ncdu 好用「非常多」
 ```
 
-## 檢視記憶體佔用
+# 檢視記憶體佔用
 列出前十大記憶體使用
 ```
 ps aux --sort=-%mem | head -n 10
 ```
 
-## 開機自動執行
+# 開機自動執行
 這裡用docker-compose示範，五步驟分別是建立.service檔、reload .service、啟用、開始、查看狀態。參考資料[^1]。
 
 ```
@@ -82,7 +82,7 @@ exit 0
 設定開機自動掛載smb。
 
 
-## SMB 掛載
+# SMB 掛載
 
 在 `etc/fstab` 最下方新增：
 ```
@@ -101,7 +101,7 @@ username=遠端SMB帳戶
 password=密碼
 ```
 
-## 列出時間
+# 列出時間
 ```shell
 date
 timedatectl

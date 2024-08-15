@@ -116,6 +116,10 @@ p {
 
 /* 頁末 footnote */
 /* 縮小 footnote 字體 */
+.footnotes a {
+    background-image: none !important;
+}
+
 .footnotes {
     font-size: 0.7em;
 }
