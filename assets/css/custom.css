@@ -15,14 +15,15 @@ strong, b {
 }
 
 .article-content{
-    --font-size: 0.875rem;
+    --font-size: 0.85rem;
 }
 
 p {
     word-wrap: break-word;
 }
 
-p, li, ol, ul, span {
+p, li, ol, ul {
+    /* remove span for katex */
     font-size: var(--font-size);
 }
 
@@ -77,9 +78,9 @@ p {
     background-image: linear-gradient(#9a3d1f, #9a3d1f), linear-gradient(to right top, #fbcda5, #fbcda5);
     background-position: 0 100%, 0 100%;
     background-repeat: no-repeat;
-    background-size: 100% 2px, 0% 0%;
+    background-size: 100% 1px, 0% 0%;
     padding-bottom: 2px;
-    transition: background-size 0.15s ease;
+    transition: background-size 0.30s ease;
 }
 
 .dark .article-content a {
@@ -89,7 +90,7 @@ p {
 
 .article-content a:hover {
     color: #9a3d1f;
-    background-size: 100% 2px, 100% 100%;
+    background-size: 100% 1px, 100% 100%;
 }
 
 .dark .article-content a:hover {
@@ -116,16 +117,12 @@ p {
 
 /* 頁末 footnote */
 /* 縮小 footnote 字體 */
-.footnote-ref {
-    background-image: none !important;
-}
-
 .footnotes a {
-    background-image: none;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, #fbcda5, #fbcda5) !important;
 }
 
 .footnotes, .footnotes p, .footnotes li, .footnotes ol, .footnotes ul, .footnotes span {
-     font-size: 0.5rem; 
+     font-size: 0.7rem; 
 }
 
 /* footnote 引用樣式 */
@@ -139,28 +136,24 @@ p {
 
 /* 調整 sup 標籤樣式 */
 sup {
-    font-size: xx-small;
     vertical-align: super;
 }
 
 /* 移除原本的編號樣式 */
 .footnotes ol {
     list-style-type: none;
-    /* 移除原本的編號 */
     padding-left: 0;
 }
 
 /* 修改 footnote 列表項的樣式 */
 .footnotes ol li {
+    font-size: 0.75rem;
     counter-increment: footnote;
     /* 增加計數器 */
     position: relative;
     margin-left: 2em;
-    /* 調整左邊距，使其與文章內容有適當間隔 */
     line-height: 1.8;
-    /* 調整行高，使超連結可以正確顯示 */
     margin-bottom: -1.2em;
-    /* 調整每個 footnote 間的距離 */
 }
 
 .footnotes ol li:before {
@@ -168,7 +161,7 @@ sup {
     /* 使用計數器顯示編號 */
     font-weight: normal;
     position: absolute;
-    left: -1.5em;
+    left: -1.2em;
     /* 將編號設置在列表項的左側 */
 }
 
@@ -181,10 +174,17 @@ sup {
 .footnote-backref {
     /* margin-left: 1em;
     display: inline-block; */
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, #fbcda5, #fbcda5) !important;
+    font-size: 0.75rem;
     vertical-align: -0.15em;
 }
 
-
+.footnote-ref {
+    /* margin-left: 1em;
+    display: inline-block; */
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, #fbcda5, #fbcda5) !important;
+    font-size: 0.75rem;
+}
 
 
 
@@ -271,10 +271,12 @@ sup {
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    width: 100%;
-    transition: max-width 0.3s ease-in-out;
+    width: 100%; /* 確保元素寬度為100% */
     font-size: var(--font-size);
+    /* 移除 max-width 的限制 */
+    max-width: none; 
 }
+
 
 body.zen-mode-enable .zen-mode-content {
     max-width: 100% !important;
@@ -347,6 +349,14 @@ body.zen-mode-enable .zen-mode-content {
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
 }
 
+.expand-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.expand-toggle:checked + .expand-title .expand-icon {
+    transform: rotate(-180deg); /* 展開時旋轉180度 */
+}
 
 
 
@@ -585,14 +595,11 @@ body.zen-mode-enable .zen-mode-content {
 
 
 
- 
 pre {
     white-space: pre !important;
     overflow-x: auto !important;
-
     tab-size: 2 !important;
     -moz-tab-size: 2 !important;
-
     padding: 0 !important;
     position: relative;
 }
@@ -601,18 +608,25 @@ pre {
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--text-color-neutral-700);
-    background: rgb(var(--color-neutral-700), 0.);
     border: none;
     padding: 1.2px 12px;
     cursor: pointer;
     font-size: 0.875rem;
-    border-radius: 0 0 0 10px; /* 左下角圓弧 */
-    transition: background-color 0.3s ease; /* 平滑過渡效果 */
+    border-radius: 0 0 0 10px;
+    background-color: transparent;
+    color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    pointer-events: none;
+}
+
+pre:hover .copy-btn {
+    background-color: rgba(var(--color-neutral-700), 0.3);
+    color: var(--text-color-neutral-700);
+    pointer-events: auto;
 }
 
 .copy-btn:hover {
-    background-color: rgba(var(--color-neutral-700), 0.3); /* 滑鼠經過時顯示背景顏色 */
+    background-color: rgba(var(--color-neutral-700), 0.3);
 }
 
 .dark .copy-btn {
@@ -620,7 +634,5 @@ pre {
 }
 
 .dark .copy-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* 暗黑模式下滑鼠經過時的背景顏色 */
+    background-color: rgba(255, 255, 255, 0.1);
 }
-
-
