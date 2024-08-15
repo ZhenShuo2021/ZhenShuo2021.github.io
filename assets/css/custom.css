@@ -83,6 +83,13 @@ p {
     text-decoration-color:rgba(var(--color-primary-800), 1)
 }
 
+/* Scroll bar width */
+.scrollbar-thin::-webkit-scrollbar {
+    display:block;
+    width:10px;
+    height:8px
+}
+
 /* 連結顏色 Link colors */
 .article-content a {
     text-decoration: none;
@@ -379,7 +386,7 @@ body.zen-mode-enable .zen-mode-content {
 }
 
 .expand-toggle:checked + .expand-title .expand-icon {
-    transform: rotate(-180deg); /* 展開時旋轉180度 */
+    transform: rotate(-180deg);
 }
 
 
