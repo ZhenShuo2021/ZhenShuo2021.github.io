@@ -17,11 +17,6 @@ progress bar
   {{ end }}
   {{ end }}
 
-
-  <!-- Progress bar control -->
-  {{ if ne .Params.progress_bar false }}
-  <div id="progress-bar"></div>
-  {{ end }}
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
     {{ partial "breadcrumbs.html" . }}
@@ -72,9 +67,6 @@ progress bar
     {{ end }}
 
   </header>
-  {{ if ne .Params.progress_bar false }}
-   <script src="{{ "js/progress-bar.js" | relURL }}" defer></script>
-  {{ end }}
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
     
@@ -98,12 +90,6 @@ progress bar
 
         <div class="article-content max-w-prose mb-20">          
           {{ .Content }}
-<!-- <div>
-  {{ if ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02") }}
-    {{- $lastmodContent := partial "meta/date-updated.html" .Lastmod -}}
-    {{ (printf "{{%% hint info %%}}文章更新：%s{{%% /hint %%}}" $lastmodContent) | markdownify }}
-  {{ end }}
-</div> -->
         </div>
         
         
@@ -170,5 +156,40 @@ progress bar
     {{ end }}
     {{ end }}
   </footer>
+
+  {{ if ne .Params.progress_bar false }}
+    <progress id="content_progress" value="0"></progress>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var winHeight = window.innerHeight,
+            progressBar = document.querySelector('#content_progress');
+    
+        function updateProgress() {
+          var docHeight = document.documentElement.scrollHeight;
+          progressBar.max = docHeight - winHeight;
+          progressBar.value = window.scrollY;
+        }
+    
+        updateProgress();
+    
+        var isTicking = false;
+        document.addEventListener('scroll', function () {
+          if (!isTicking) {
+            isTicking = true;
+            window.requestAnimationFrame(function() {
+              updateProgress();
+              isTicking = false;
+            });
+          }
+        });
+    
+        window.addEventListener('resize', function () {
+          winHeight = window.innerHeight;
+          updateProgress();
+        });
+      });
+    </script>
+  {{ end }}
+  
 </article>
 {{ end }}
