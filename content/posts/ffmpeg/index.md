@@ -41,7 +41,7 @@ CRF 越高壓縮率越高，畫質越低。而 CRF 值越低，畫質越高，�
 GUI: [HandBrake](https://handbrake.fr/downloads.php). It uses FFmpeg as its backend.  
 CLI: FFmpeg
 
-```
+```sh
 brew install ffmpeg
 ```
 
@@ -61,7 +61,7 @@ brew install ffmpeg
 將文件夾中的 `\*.mov` 轉換為 h.265 並輸出到 `../output` 文件夾
 
 
-```
+```sh
 for file in *.mov;
     do ffmpeg -i "$file" -c:v libx265 -tag:v hvc1 -crf 28 "$../output/{file%.mov}.mp4";
 done
@@ -81,7 +81,7 @@ done
 
 </details>
 
-```
+```sh
 for file in *.mov; do
   base="${file%.mov}"
   ffmpeg -y -i "$file" -c:v libx265 -b:v 1500k -x265-params pass=1 -an -f null /dev/null && \
@@ -93,7 +93,7 @@ done
 
 YouTube 1080p 影片的畫質設定 [(Source)](https://www.reddit.com/r/ffmpeg/comments/r1qwyy/best_streaming_settings_for_youtube/)
 
-```
+```sh
 ffmpeg -i <INPUT> -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=bt709 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -ar 48000 -ac 2 -b:a 320k -profile:v high -level 4.0 -bf 2 -coder 1 -pix_fmt yuv420p -b:v 10M -threads 4 -cpu-used 0 -r 30 -g 15 -movflags +faststart <OUTPUT>
 ```
 
@@ -101,13 +101,13 @@ ffmpeg -i <INPUT> -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=b
 
 VMAF 是 Netflix 開發的客觀全參考視訊品質指標。
 
-```
+```sh
 ffmpeg -i "outputFile" -i "sourceFile" -lavfi libvmaf=log_fmt=json:log_path=output.json -f null -
 ```
 
 Find your vmaf models for macOS brew install
 
-```
+```sh
 brew list libvmaf
 # find "outputPath" -name "vmaf_v0.6.1.pkl"
 find "/opt/homebrew/Cellar/libvmaf/3.0.0" -name "vmaf_v*.pkl"
@@ -217,7 +217,7 @@ compare itself
 <h3>2024/7/25 更新</h3>
 
 看到網路上有人手動設定 thread 就研究了一下這參數的設定，[預設](https://obsproject.com/forum/threads/can-you-please-explain-x264-option-threads.76917/)是
-```C
+```c
 h->param.i_threads = x264_cpu_num_processors() * (h->param.b_sliced_threads?2:3)/2;
 ```
 也就是沒有 sliced 用 1 倍 CPU 核心數的線程數，反之 1.5 倍，而 sliced 指的是把每幀切成小圖片處理。根據自己隨手亂做的實驗，預設就很好了不用自己手動調整。

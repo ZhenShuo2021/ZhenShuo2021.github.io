@@ -77,7 +77,7 @@ $$
 **Test if the Nakagami fading in this method is correct!!**
 {{< /alert >}}
 
-``` MATLAB{class="code-table" id="my-codeblock" lineNos=table tabWidth=2}
+```matlab
 % LOS components
 a = sqrt(K/2);  b = a;
 % in-phase component
@@ -96,7 +96,7 @@ s = (i + 1j*q);
 Theoretical values differ from simulation results in this method. Need to check why!
 {{< /alert >}}
 
-``` MATLAB{class="code-table" id="my-codeblock" lineNos=table tabWidth=2}
+```matlab
 mean = sqrt(k1/(k1+1));  % mean
 sigma = sqrt(1/(2*(k1+1)));  %variance
 Nr2 = randn(N, 1)*sigma+mean;

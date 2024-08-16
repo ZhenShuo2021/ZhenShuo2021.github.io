@@ -64,7 +64,7 @@ series_order: 1
 - 可能會被意想不到地改變，編譯器就不會去假設這個變量的值了。
 - 精確地說：優化器必須每次都小心地重新讀取這個變量的值，而不是使用保存在寄存器裡的備份。下面是volatile變量的幾個例子：
     1. [中斷處理程式](https://hackmd.io/@JDTyeH_URrKEf6JNBF_sZw/ryoaj1Tk9)中(ISR)可能被修改的全域變數（因ISR不可有參數，透過全域變數與主程式或其他函數分享資料可能會改變）
-    ```C
+    ```c
     volatile int flag = 0;
 
     void ISR() {
@@ -78,7 +78,7 @@ series_order: 1
     }
     ```
     2. [多線程](https://yuchungchuang.wordpress.com/2018/07/24/c-%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%923-%E4%BA%92%E6%96%A5%E9%8E%96-mutex/)應用程式中(multi-threaded application) 的全域變數；
-    ```C
+    ```c
     volatile int shared_var = 0;
 
     void* thread_function(void* arg) {
@@ -93,7 +93,7 @@ series_order: 1
 1. 一個參數既可以是const還可以是volatile嗎？解釋為什麼。
 2. 一個指針可以是volatile 嗎？解釋為什麼。  
 3. 下面的函數有什麼錯誤：
-``` C
+```c
 int square(volatile int *ptr)
 {return *ptr * *ptr;}
 ```
@@ -104,7 +104,7 @@ Ans:
 2. 是的。儘管這並不很常見。一個例子是當一個中服務子程序修該一個指向一個buffer的指針時。
 3. 由於*ptr指向一個volatile型參數，編譯器將產生類似下面的代碼：
 
-```C
+```c
 int square(volatile int *ptr){
     int a, b;
     a = *ptr;b = *ptr;
@@ -114,7 +114,7 @@ int square(volatile int *ptr){
 
 由於*ptr的值可能被意想不到地改變，因此a和b可能是不同的。結果，這段代碼可能返不是你所期望的平方值！正確的代碼如下：
 
-```C
+```c
 long square(volatile int *ptr){
     int a;
     a = *ptr;

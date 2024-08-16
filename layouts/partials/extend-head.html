@@ -4,25 +4,39 @@
 curl -O <URL>
 openssl dgst -sha256 -binary <File Name> | openssl base64 -A
 -->
-<!-- <link rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"
-    href="https://cdn.jsdelivr.net/npm/@fontsource/lxgw-wenkai-tc@5.0.2/index.min.css"
-    integrity="lemzlp84wIRvAtax+ZFKqjvPKBP24shMNbG10/pdT7k=" /> -->
 
-<link id="light-mode-css" rel="stylesheet" as="style" crossorigin="anonymous" referrerpolicy="no-referrer"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/nnfx-light.min.css"
-    integrity="sha256-roHDdCpzJHruZzg09T0xn8BZQy6PDIWCR2mjy3Sp1iA=" />
+<!-- 
+<script>
+  function addCopyButtons() {
+    document.body.addEventListener('click', function (event) {
+      if (event.target.matches('.copy-btn')) {
+        handleCopy(event.target);
+      }
+    });
 
-<link id="dark-mode-css" rel="stylesheet" as="style" crossorigin="anonymous" referrerpolicy="no-referrer"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/nnfx-dark.min.css"
-    integrity="sha256-aZYmPW0FYMBJ2LAv+S8cuVc7kCUaKqoq12pf4YMakFY="  media="print" onload="this.media='all'" />
+    const codeBlocks = document.querySelectorAll('pre');
+    codeBlocks.forEach((block) => {
+      const button = document.createElement('button');
+      button.textContent = 'Copy';
+      button.classList.add('copy-btn');
+      block.appendChild(button);
+    });
+  }
 
-<script crossorigin="anonymous" referrerpolicy="no-referrer"
-    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"
-    integrity="sha256-Rx75rpDEB69ED83Ejt/utWIQazJnvRLZkHHBYvtS7TI="></script>
-    
-<!-- <script crossorigin="anonymous" referrerpolicy="no-referrer" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/matlab.min.js"
-    integrity="sha256-b4Mp6eYO0H7GNjWkL4yUNrSbUg/lKvwuxk9KZWdKtCg="></script> -->
+  function handleCopy(button) {
+    const pre = button.closest('pre');
+    const code = pre.querySelector('code').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      button.textContent = 'Copied!';
+      setTimeout(() => {
+        button.textContent = 'Copy';
+      }, 2000);
+    });
+  }
 
-<script>hljs.highlightAll();</script>
-<script src="{{ "js/hljs-copy.js" | absURL }}"></script>
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', addCopyButtons);
+  } else {
+    addCopyButtons();
+  }
+</script> -->

@@ -7,7 +7,6 @@
 
 
 [highlight]
-  noClasses = false
   codeFences = false
 
 [tableOfContents]

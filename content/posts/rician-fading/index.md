@@ -74,7 +74,7 @@ $$
 **測試此篇的nakagami fading是否正確！！**
 {{< /alert >}}
 
-```
+```matlab
 % LOS components
 a = sqrt(K/2);  b = a;
 % in-phase component
@@ -93,7 +93,7 @@ s = (i + 1j*q);
 {{< /alert >}}
 
 
-```
+```matlab
 mu = sqrt(k1/(k1+1));  % mean
 sigma = sqrt(1/(2*(k1+1)));  %variance
 Nr2 = randn(N, 1)*sigma+mu;

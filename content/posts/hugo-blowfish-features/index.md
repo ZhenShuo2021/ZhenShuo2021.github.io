@@ -556,7 +556,7 @@ series_order: 6
 {{< /expand >}}
 
 在 `content/archives` 新增 _index.md：
-```
+```yaml
 ---
 title: "所有文章"
 layout: "archive"
@@ -714,7 +714,7 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 比較美觀的 expand UI，一樣從 [alex-shpak/hugo-book](https://hugo-book-demo.netlify.app/docs/shortcodes/expand/) 拿來的，範例如下：
 {{< expand "Example"  >}}
 可用 Markdown 語法
-```C
+```c
 int x = 1;
 ```
 1. list 1
@@ -725,7 +725,7 @@ int x = 1;
 <h2> Title </h2>
 
 支援內部渲染 hint shortcode
-```C
+```c
 int x = 1;
 ```
 1. list 1
