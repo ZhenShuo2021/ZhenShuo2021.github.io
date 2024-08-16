@@ -10,8 +10,8 @@ html {
 }
 
 strong, b {
-    font-weight: bold;
-    -webkit-text-stroke: 0.25px;   
+    font-weight: 700;
+    -webkit-text-stroke: 0.1px;   
 }
 
 .article-content{
