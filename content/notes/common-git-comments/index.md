@@ -20,26 +20,26 @@ git是一個版本管理工具，實際使用時有三個層面，分別是你�
 
 # 基礎指令篇
 ### 1. 初始化
-```
+```git-commit
 git init
 ```
 ### 2. 索引檔案
-```
+```git-commit
 git add <file-name>
 git add . # 新增全部檔案
 git reset <file-name> # 移除索引檔案
 ```
 ### 3. 提交版本並附註 
-```
+```git-commit
 git commit -m <comments>
 ```
 ### 4. 查看狀態 
-```
+```git-commit
 git status
 git log
 ```
 ### 5. 分支
-```
+```git-commit
 git branch # 查看
 git branch <name> # 新建
 git checkout <name> # 切換
@@ -55,13 +55,13 @@ git merge "NAME" # 合併
 1. [產生ssh金鑰](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
 2. (Optional) 隱藏信箱Setting>Email勾選 "Block command line pushes that expose my email"，如要隱藏信箱，請到 `https://api.github.com/users/你的github名稱` 查看下面需要的 ID
 3. 設定名稱及信箱，如不需隱藏信箱則直接打自己的信箱
-``` git
+```sh
 git config --global user.name "NAME"
 git config --global user.email "{ID}+{username}@users.noreply.github.com"
 ```
 4. 上傳 `git push -u origin main`
 5. (選用) 新建的 git 連接既有的 github repo
-```
+```git-commit
 git remote add origin git@github.com:your-username/your-repo.git
 ssh -T git@github.com
 git remote set-url origin git@github.com:ZhenShuo2021/ZhenShuo2021.github.io.git
@@ -71,14 +71,14 @@ git remote set-url origin git@github.com:ZhenShuo2021/ZhenShuo2021.github.io.git
 請直接看 [利用 GPG 簽署 git commit](https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/) 的教學。  
 如果要隱藏信箱在 GPG 設定時需使用剛剛設定的 noreply 信箱。  
 如果已經有 GPG key，可以用以下指令刪除：
-```
+```git-commit
 git config --global --unset-all user.signingkey
 ```
 
 
 
 ## 還原工作階段[^2]
-```
+```git-commit
 # 軟重置：只刪 commit
 git reset --soft <commit-hash>
 
@@ -95,7 +95,7 @@ git reset --hard <commit-hash>
 
 - [進階] 新增部分commit
 Git Cherry Pick
-```
+```git-commit
 # Apply 特定 commit 到當前分支
 git cherry-pick <commit-hash>
 
@@ -107,7 +107,7 @@ git cherry-pick <commit-hash1> <commit-hash2> ...
 By [码农高天](https://www.youtube.com/watch?v=uj8hjLyEBmU)
 
 一開始都一樣
-```
+```git-commit
 git clone xxx.git
 git checkout -b <my-feature>
 git add <file>
@@ -118,7 +118,7 @@ git commit -m <comments>
 因為遠端更新，所以回到 main branch 同步遠端的新 commit，之後 rebase[^1] main branch，這樣就可以push。
 
 [^1]: rebase: 把此分支的修改放旁邊，加入 main 的修改，再想辦法把剛剛的修改放進來。可能需要處理 rebase conflict。
-```
+```git-commit
 git checkout main
 git pull origin main
 git checkout <my-featuer>
@@ -130,7 +130,7 @@ git push -f origin <my-feature>
 ```
 
 遠端都處理好剛剛的分支後，刪除 branch 再同步 main branch。
-```
+```git-commit
 git checkout main
 git branch -D <my-feature>
 git pull origin main

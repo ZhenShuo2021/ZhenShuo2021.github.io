@@ -623,17 +623,26 @@ body.zen-mode-enable .zen-mode-content {
 
 
 
-
-pre {
-    white-space: pre !important;
-    overflow-x: auto !important;
-    tab-size: 2 !important;
-    -moz-tab-size: 2 !important;
-    padding: 0 !important;
-    position: relative;
+.dark .shiki,
+.dark .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* 可选，用于定义字体样式 */
+    /* font-style: var(--shiki-dark-font-style) !important; */
+    /* font-weight: var(--shiki-dark-font-weight) !important; */
+    /* text-decoration: var(--shiki-dark-text-decoration) !important; */
 }
 
-.copy-btn {
+pre {
+    position: relative;
+  }
+  pre button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+pre button {
     position: absolute;
     top: 0;
     right: 0;
@@ -648,20 +657,20 @@ pre {
     pointer-events: none;
 }
 
-pre:hover .copy-btn {
+pre:hover button {
     background-color: rgba(var(--color-neutral-700), 0.3);
     color: var(--text-color-neutral-700);
     pointer-events: auto;
 }
 
-.copy-btn:hover {
+pre button:hover {
     background-color: rgba(var(--color-neutral-700), 0.3);
 }
 
-.dark .copy-btn {
+.dark pre button {
     background-color: transparent;
 }
 
-.dark .copy-btn:hover {
+.dark pre button:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }

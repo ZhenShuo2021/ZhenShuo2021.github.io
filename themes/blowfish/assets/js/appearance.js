@@ -1,12 +1,6 @@
 const sitePreference = document.documentElement.getAttribute("data-default-appearance");
 const userPreference = localStorage.getItem("appearance");
 
-const setHighlightJsTheme = () => {
-  const isDarkMode = document.documentElement.classList.contains("dark");
-  document.getElementById('light-mode-css').disabled = isDarkMode;
-  document.getElementById('dark-mode-css').disabled = !isDarkMode;
-};
-
 if ((sitePreference === "dark" && userPreference === null) || userPreference === "dark") {
   document.documentElement.classList.add("dark");
 }
@@ -25,7 +19,6 @@ if (document.documentElement.getAttribute("data-auto-appearance") === "true") {
     } else {
       document.documentElement.classList.remove("dark");
     }
-    setHighlightJsTheme();
   });
 }
 
@@ -35,7 +28,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   updateMeta();
   this.updateLogo?.(getTargetAppearance());
-  setHighlightJsTheme();  // Add this line to apply the correct theme on page load
 
   if (switcher) {
     switcher.addEventListener("click", () => {
@@ -44,12 +36,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
       localStorage.setItem("appearance", targetAppearance);
       updateMeta();
       this.updateLogo?.(targetAppearance);
-      setHighlightJsTheme();  // Add this line to apply the correct theme when switched
     });
     switcher.addEventListener("contextmenu", (event) => {
       event.preventDefault();
       localStorage.removeItem("appearance");
-      setHighlightJsTheme();  // Add this line to apply the correct theme when reset
     });
   }
   if (switcherMobile) {
@@ -59,12 +49,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
       localStorage.setItem("appearance", targetAppearance);
       updateMeta();
       this.updateLogo?.(targetAppearance);
-      setHighlightJsTheme();  // Add this line to apply the correct theme when switched
     });
     switcherMobile.addEventListener("contextmenu", (event) => {
       event.preventDefault();
       localStorage.removeItem("appearance");
-      setHighlightJsTheme();  // Add this line to apply the correct theme when reset
     });
   }
 });

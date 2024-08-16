@@ -38,7 +38,7 @@ Myth: CRF 18 is visually lossless. For ultra-high-resolution videos on large scr
 GUI: [HandBrake](https://handbrake.fr/downloads.php). It uses FFmpeg as its backend.  
 CLI: FFmpeg
 
-```
+```sh
 brew install ffmpeg
 ```
 
@@ -58,7 +58,7 @@ HandBrake (v1.8.0) has a rotation issue in my experience!
 
 Outputs to ../output folder
 
-```
+```sh
 for file in *.mov;
     do ffmpeg -i "$file" -c:v libx265 -tag:v hvc1 -crf 28 "$../output/{file%.mov}.mp4";
 done
@@ -78,7 +78,7 @@ Add the hvc1 tag for compatibility with Apple devices.
 
 </details>
 
-```
+```sh
 for file in *.mov; do
   base="${file%.mov}"
   ffmpeg -y -i "$file" -c:v libx265 -b:v 1500k -x265-params pass=1 -an -f null /dev/null && \
@@ -90,7 +90,7 @@ done
 
 YouTube 1080p configure [(Source)](https://www.reddit.com/r/ffmpeg/comments/r1qwyy/best_streaming_settings_for_youtube/)
 
-```
+```sh
 ffmpeg -i <INPUT> -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=bt709 -color_primaries bt709 -color_trc bt709 -colorspace bt709 -c:a aac -ar 48000 -ac 2 -b:a 320k -profile:v high -level 4.0 -bf 2 -coder 1 -pix_fmt yuv420p -b:v 10M -threads 4 -cpu-used 0 -r 30 -g 15 -movflags +faststart <OUTPUT>
 ```
 
@@ -98,13 +98,13 @@ ffmpeg -i <INPUT> -c:v libx264 -preset slow -crf 18 -vf scale=out_color_matrix=b
 
 VMAF is an objective full-reference video quality metric.
 
-```
+```sh
 ffmpeg -i "outputFile" -i "sourceFile" -lavfi libvmaf=log_fmt=json:log_path=output.json -f null -
 ```
 
 Find the VMAF models for macOS with brew install
 
-```
+```sh
 brew list libvmaf
 find "outputPath" -name "vmaf_v0.6.1.pkl"
 ffmpeg -i input.mp4 -i output.mp4 -lavfi libvmaf="model_path=/path/model/vmaf_v0.6.1.pkl" -f null -

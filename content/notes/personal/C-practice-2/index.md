@@ -23,7 +23,7 @@ series_order: 2
   [Source2](https://read01.com/zh-tw/3APOEG.html#.X75Tay2l1QJ)
 </details>
 
-```C
+```c
 #include <stdio.h>
 
 #define R1 2
@@ -67,7 +67,7 @@ int main()
 ```
 
 ## 2D malloc
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -122,7 +122,7 @@ int main()
 }
 ```
 ## 1D array 模擬 2D array
-```C
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
