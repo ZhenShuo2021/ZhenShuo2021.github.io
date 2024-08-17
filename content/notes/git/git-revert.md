@@ -1,5 +1,5 @@
 ---
-title: 'git 回到過去'
+title: 'Git 回到過去'
 date: 2024-08-17T00:07:33+08:00
 draft: false
 summary: 
@@ -17,6 +17,9 @@ progress_bar: true
 - git restore 恢復工作區文件
 - git switch 切換或創建新分支
 
+**什麼時候需要回到過去？**  
+當你需要舊版本的一些功能，或者舊版本是穩定版本，又或者 de 某些只出現在舊版本的 bug 時。
+
 # 回到過去
 如果我想回到某個 commit，從該 commit 開始修改：
 
@@ -26,9 +29,8 @@ git switch -d <hash>
 ```
 
 這個指令會：
-1. 切換到指定的 commit，進入"分離頭指針"（detached HEAD[^1]）模式
-2. 用於檢視舊版本代碼或進行臨時測試
-3. 在這個狀態下的修改容易被丟棄，不會自動保存
+1. 切換到指定的 commit，進入 detached HEAD[^1]模式
+2. 用於檢視舊版本或進行臨時測試，這個狀態下的修改容易被丟棄，不會自動保存
 4. 等同於舊版 `git checkout <hash>`
 
 如果不需要回到以前，直接使用 `git switch -c` 創建新分支。
