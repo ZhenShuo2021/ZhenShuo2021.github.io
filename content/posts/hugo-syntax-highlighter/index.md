@@ -1,5 +1,5 @@
 ---
-title: 'Hugo Syntax Highlighter'
+title: 'Hugo 語法上色 Hugo Syntax Highlighter'
 date: 2024-08-17T08:48:26+08:00
 draft: false
 summary: 
@@ -11,17 +11,17 @@ series_order:
 progress_bar: true
 ---
 
-突然有點感受到水影片的感覺了，是的這篇很水。
+突然有點能體會到水影片的感覺了，是的這篇文章很水。
 
-這篇是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。
+這是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。
 
 # Chroma
 這是 Hugo 內建的語法上色方式，以 Blowfish 主題來說可以在 `assets/css/compiled/main.css` 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會跑去修改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，這裡兩個都發生了於是考慮別的上色方式。
 
-一樣保持著一勞永逸的想法（雖然成功率好像滿低的）先去查到底哪個 highlighter 好，18/19年那些文章大概都說 Prism.js，說維護的比較勤 contributor 比較多，那就先選 Prism.js 好了
+一樣保持著一勞永逸的想法（雖然成功率好像滿低的）先去查到底哪個 highlighter 好，2018 2019年那些文章大概都說 Prism.js，說維護的比較勤 contributor 比較多，那就先選 Prism.js 好了
 
 # Prism.js 和 Highlight.js
-就說是來水文章的，這兩個對我來說根本沒啥差別 Prism.js 裝好沒半小時去官方 Github 看發現上次更新已經是 2022，於是果斷換成 Highlight.js，裝了也很輕鬆兩行 `<link>` `<script>` 就搞定，只是痛苦這裡才開始，首先在之前我已經知道 PageSpeed Insights 這個邪惡的東西，裝完之後手賤去測試果然慢了不少，因為他是用戶載入頁面後即時渲染的；再來是暗色模式支援，還自己寫了四個 javascript 搞定亮暗主題轉換問題：
+就說是來水文章的，這兩個對我來說根本沒啥差別，Prism.js 裝好沒半小時去官方 Github 看發現上次更新已經是 2022，於是果斷換成 Highlight.js，裝了也很輕鬆兩行 `<link>` `<script>` 就搞定，只是痛苦這裡才開始。首先，我已經知道 PageSpeed Insights 這個邪惡的東西，裝完之後手賤去測試果然慢了不少，因為他是用戶載入頁面後即時渲染的；再來是暗色模式支援，還自己寫了四個 javascript 搞定亮暗主題轉換問題：
 
 
 {{< expand "幫 Highlight.js 加了一堆東西" >}}
@@ -139,7 +139,7 @@ pre {
 ```
 {{< /expand >}}
 
-奇怪不是兩個 javascript 嗎？哪來的四個，因為有兩個寫完之後發現寫太爛了打掉重練，加 Highlight.js 確實是像教學一樣 ([[1]](https://note.qidong.name/2017/06/24/hugo-highlight/)[[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/)[[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)) 一樣複製貼上就結束了，只是把改成 Highlight.js 缺失的主題切換和複製按鈕我都要重新寫，那些 CSP referrerpolicy, defer/async, crossorigin, integrity 那些教學也沒講到，然後查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
+奇怪不是兩個 javascript 嗎？哪來的四個，因為還有兩個寫完之後發現寫太爛了打掉重練，單純只加 Highlight.js 確實是像教學[[1]](https://note.qidong.name/2017/06/24/hugo-highlight/), [[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/), [[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)一樣複製貼上就結束了，但是改成 Highlight.js 缺失的主題切換和複製按鈕我都要重新寫，那些 CSP referrerpolicy, defer/async, crossorigin, integrity 教學也沒講到，查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
 
 ```js
 // Cloudflare Workers
@@ -192,7 +192,7 @@ async function handleRequest(request) {
 }
 ```
 
-越搞越多跟一開始預想三行優雅解決完全不一樣...都破百行了，最重要的是原本用好的[超過100分](/posts/20240728/)經過字體和高亮 CDN 以及我外行人亂寫的 javascript，速度直接噴到剩下50分：
+越搞越多跟想像的三行優雅解決完全不一樣...都破百行了，最重要的是原本用好的[超過100分](/posts/20240728/)經過字體和高亮 CDN 以及我外行人寫的 javascript，速度直接噴到剩下50分：
 ![hljs-mobile](hljs-2.webp "Highlight.js 手機版跑分結果")
 ![hljs-desktop](hljs-1.webp "Highlight.js 桌面版跑分結果")
 原本的沒有存結果，這是用 Cloudflare Pages Rollbacks 功能留下來的頁面跑分的，應該也享受他們的 CDN 服務，記得剛部屬完 Highlight.js 後手機測速有時候還跑不到50分。
@@ -207,5 +207,9 @@ async function handleRequest(request) {
 
 # 後記
 當然這些成績還是要被 CDN 快取完才會有，剛部屬完馬上測試成績會很差，不過光我一個人隨便點幾次就快取到了。
+
+複製功能自己寫完發現其實是 Blowfish 的 [bug](https://github.com/nunocoracao/blowfish/issues/1691)，暫時就先不放了。
+
+eallion 寫的 Shiki 教學就是我最喜歡的那種，有介紹原因，直接教學，沒有廢話，沒有拖泥帶水，清楚了當。
 
 最後，你說70分和100分體感有差嗎？完全沒差，但是我比較爽。

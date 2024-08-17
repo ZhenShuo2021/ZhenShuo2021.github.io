@@ -2,8 +2,7 @@
 title: 'Git 回到過去'
 date: 2024-08-17T00:07:33+08:00
 draft: false
-summary: 
-showSummary: false
+showSummary: true
 tags: ["筆記", "git", "cheatsheet"]
 categories: ["git"]
 series: []
@@ -33,18 +32,18 @@ git switch -d <hash>
 2. 用於檢視舊版本或進行臨時測試，這個狀態下的修改容易被丟棄，不會自動保存
 4. 等同於舊版 `git checkout <hash>`
 
-如果不需要回到以前，直接使用 `git switch -c` 創建新分支。
+如果不需要回到以前，直接使用 `git switch -c` 創建新分支，c = create。
 
 [^1]: 沒有家的 HEAD，如果有記 hash 可以找回，否則會被 git gc 機制一段時間後丟掉。
 
 # 新增 feature
-接下來開始修改文件，依照工作量有兩種方式：
+接下來修改文件，完成後合併回主分支，依照工作量有兩種合併方式：
 
-- 如果只是小 feature:  
+- 只是小 feature:  
 使用cherry-pick: 修改完成 add commit 之後，直接回到 main branch `git switch main`，並且撿回剛剛的 commit `git cherry-pick <new-hash>`
 
-- 如果需要延伸修改:  
-新建分支: 用新的 branch 儲存，`git switch -c <new-branch>`，接下來依照[前一篇教學](/posts/git-intro/)的正式工作篇完成合併。
+- 需要延伸修改:  
+新建分支: 用新的 branch 儲存，`git switch -c <new-branch>`，接下來依照[前一篇教學](/posts/git-intro#s1)的正式工作篇完成合併。
 
 
 
