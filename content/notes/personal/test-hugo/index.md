@@ -15,13 +15,6 @@ Just make sure everything is ok 👊
 
 {{< katex >}}
 
-# 錨點
-```md
-# xxx{#id}
-...
-[goto](#id)
-```
-
 # Carousel
 {{< carousel images="{https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8MTYlM0E5fGVufDB8fDB8fHww,gallery/03.jpg,gallery/01.jpg,gallery/02.jpg,gallery/04.jpg}" >}}
 

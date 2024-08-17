@@ -22,6 +22,7 @@ disableTextInHeader = false
 
 defaultBackgroundImage = "/img/1111830258087415808_3-4-5x1.webp"
 defaultFeaturedImage = "/img/feature-crop.webp"
+descriptionLength = 120
 
 highlightCurrentMenuArea = true
 smartTOC = true
