@@ -2,7 +2,7 @@
 title: 'Git 回到過去'
 date: 2024-08-17T00:07:33+08:00
 draft: false
-showSummary: true
+showSummary: false
 tags: ["筆記", "git", "cheatsheet"]
 categories: ["git"]
 series: []

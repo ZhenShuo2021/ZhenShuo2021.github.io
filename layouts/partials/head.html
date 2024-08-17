@@ -1,4 +1,4 @@
-<!-- preload fonts -->
+<!-- Custom: preload fonts, meta name descriptionLength -->
 <head>
   <meta charset="utf-8" />
   {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
@@ -15,9 +15,10 @@
   <meta name="title" content="{{ .Title | emojify }} - {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
+  {{ with .Params.Summary | default .Params.Description | default (truncate (int .Site.Params.descriptionLength) .Plain) -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
+
   {{ with  .Params.Tags | default .Site.Params.keywords -}}
   <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
   {{- end }}
