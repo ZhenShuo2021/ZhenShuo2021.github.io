@@ -20,7 +20,7 @@ mainSections = ["posts","notes", "jottings"]  # 主文章資料夾，用於「�
 disableImageOptimization = true
 disableTextInHeader = false
 
-defaultBackgroundImage = "/img/1111830258087415808_3-4-5x1.webp"
+defaultBackgroundImage = "/img/1111830258087415808_3-5-5x-downsample.webp"
 defaultFeaturedImage = "/img/feature-crop.webp"
 descriptionLength = 120
 

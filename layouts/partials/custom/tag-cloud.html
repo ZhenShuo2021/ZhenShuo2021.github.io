@@ -8,24 +8,93 @@
 {{ $fontStep := div $fontSpread $spread }}
 <!-- from: https://github.com/fox-forks/hugo-natrium-theme/blob/24d4d4b86c2f1058b035b749cb85541f8ba70bae/layouts/taxonomy/tag.terms.html -->
 
+<style>
+  /* tag cloud 標籤雲 標籤 分類 taxonomy taxonomies */
+  .tag-cloud {
+    display: block;
+    min-height: calc(100vh - 360px);
+    max-width: 85%;
+    margin: 60px auto 80px;
+    padding: 0px 15px;
+    font-size: 19px;
+    line-height: 1.7;
+  }
+
+  .tag-cloud-item {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(var(--color-neutral-800), var(--tw-text-opacity));
+    font-weight: 500;
+    /* 粗體 */
+  }
+
+  .dark .tag-cloud-item {
+    color: rgb(var(--color-neutral-100), var(--tw-text-opacity));
+  }
+
+  .tag-cloud-item li {
+    display: inline-block;
+    list-style: none;
+    padding: 0px;
+  }
+
+  .tag-wrapper {
+    display: inline-block;
+    /* background-color: #f0f0f0; */
+    border-radius: 20px;
+    padding: 2px 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .tag-title {
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .tag-wrapper:hover {
+    transform: scale(1.05);
+  }
+
+
+  @media (max-width: 768px) {
+    .tag-cloud {
+      max-width: 120%;
+      font-size: 19px;
+      line-height: 1.8;
+      margin: 100px auto;
+    }
+
+    .tag-wrapper {
+      padding: 0px 0px;
+    }
+
+    .tag-cloud {
+      padding: 0px;
+    }
+  }
+</style>
+
 <main class="tag-cloud">
   <div class="tag-cloud-content">
     {{ if not (eq (len $.Site.Taxonomies.tags) 0) }}
-      <ul class="tag-cloud-item">
-        {{ range $name, $taxonomy := .Data.Terms }}
-          {{ $currentTagCount := len $taxonomy.Pages }}
-          {{ $count := len $taxonomy.Pages }}
-          {{ $weigth := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
-          {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
-          <li>
-            <span class="tag-wrapper">
-                <a href="{{ .Page.RelPermalink }}" class="tag-title" style="font-size:{{$currentFontSize}}{{$fontUnit}}">
-                  {{ $taxonomy.Page.Title }} ({{ len $taxonomy.Pages }})
-                </a>
-              </span>
-          </li>
-        {{ end }}
-      </ul>
+    <ul class="tag-cloud-item">
+      {{ range $name, $taxonomy := .Data.Terms }}
+      {{ $currentTagCount := len $taxonomy.Pages }}
+      {{ $count := len $taxonomy.Pages }}
+      {{ $weigth := div (sub (math.Log $count) (math.Log $min)) (sub (math.Log $max) (math.Log $min)) }}
+      {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
+      <li>
+        <span class="tag-wrapper">
+          <a href="{{ .Page.RelPermalink }}" class="tag-title" style="font-size:{{$currentFontSize}}{{$fontUnit}}">
+            {{ $taxonomy.Page.Title }} ({{ len $taxonomy.Pages }})
+          </a>
+        </span>
+      </li>
+      {{ end }}
+    </ul>
     {{ end }}
   </div>
 </main>
