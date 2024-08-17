@@ -71,15 +71,14 @@ done
 
 ### Two-Pass Conversion
 
-<details>
-	<summary>What is two-pass?</summary>
+{{< expand "What is two-pass?" >}}
 
-[Source](https://www.pcdvd.com.tw/printthread.php?t=1109930&page=2&pp=10)
->我昨天研究了一下，根據國外論壇的討論，發現 multi-pass 並非是用來增強畫質，而是用來控制流量而已。
->
->簡單地說，如果用 CRF（恒定質量）壓出一個 1GB 的影片，再用 2-pass 壓出同樣大小的影片，兩者畫質是幾乎沒有分別的。2-pass 畫質比較好是指和 CBR、ABR 的比較。如果沒有需要精確的流量控制，事實上並不需要用 multi-pass。而 pass 越多次，會越接近設定的流量。
 
-</details>
+我昨天研究了一下，根據國外論壇的討論，發現 multi-pass 並非是用來增強畫質，而是用來控制流量而已。
+> 簡單地說，如果用 CRF（恒定質量）壓出一個 1GB 的影片，再用 2-pass 壓出同樣大小的影片，兩者畫質是幾乎沒有分別的。2-pass 畫質比較好是指和 CBR、ABR 的比較。如果沒有需要精確的流量控制，事實上並不需要用 multi-pass。而 pass 越多次，會越接近設定的流量。[Source](https://www.pcdvd.com.tw/printthread.php?t=1109930&page=2&pp=10)
+
+
+{{< /expand >}}
 
 ```sh
 for file in *.mov; do
@@ -113,10 +112,6 @@ brew list libvmaf
 find "/opt/homebrew/Cellar/libvmaf/3.0.0" -name "vmaf_v*.pkl"
 ffmpeg -i input.mp4 -i output.mp4 -lavfi libvmaf="model_path=/path/model/vmaf_v0.6.1.pkl" -f null -
 ```
-
-ffmpeg -i bug.mov -i bug.mov \ 
-    -lavfi "libvmaf=model_path=/opt/homebrew/Cellar/libvmaf/model/vmaf_v0.6.1.json" \
-    -f null -
 
 # 實驗
 
@@ -214,18 +209,21 @@ compare itself
 {{< /expand >}}
 
 {{< hint "info" >}}
-<h3>2024/7/25 更新</h3>
-
-看到網路上有人手動設定 thread 就研究了一下這參數的設定，[預設](https://obsproject.com/forum/threads/can-you-please-explain-x264-option-threads.76917/)是
-```c
-h->param.i_threads = x264_cpu_num_processors() * (h->param.b_sliced_threads?2:3)/2;
-```
-也就是沒有 sliced 用 1 倍 CPU 核心數的線程數，反之 1.5 倍，而 sliced 指的是把每幀切成小圖片處理。根據自己隨手亂做的實驗，預設就很好了不用自己手動調整。
-{{< /hint >}}  
-{{< hint "info" >}}
 <h3>2024/7/16 更新</h3>
 
 寫這篇的時候其實是覺得 H.265 跟 AV1 好酷，結果發現還有更新的 AV2 已經在理論階段，以及 H.266/VVC 硬體解碼已經[實裝](https://www.techpowerup.com/review/intel-lunar-lake-technical-deep-dive/5.html)，甚至 MPEG-5 已經在 PhotoPrism [支援](https://github.com/photoprism/photoprism/issues/4314)。然而 H.266 似乎會重蹈 H.265 的覆轍死在複雜的專利權上（[出自 VLC 創辦人](https://www.youtube.com/watch?v=6xUhpZXPbBM)）。
 
 最後，令人意外的是字結跳動 / 夏普 / 聯發科在 H.266 [專利數](https://www.chttl.com.tw/_news/n_tech07.html)上竟然貢獻這麼高。
+{{< /hint >}}  
+
+
+{{< hint "info" >}}
+<h3>2024/7/25 更新</h3>
+
+看到網路上有人手動設定 thread 就研究了一下這參數的設定，[預設](https://obsproject.com/forum/threads/can-you-please-explain-x264-option-threads.76917/)是
+沒有 sliced 用 1 倍 CPU 核心數的線程數，反之 1.5 倍，而 sliced 指的是把每幀切成小圖片處理。根據自己隨手亂做的實驗，預設就很好了不用自己手動調整。
+
+```c
+h->param.i_threads = x264_cpu_num_processors() * (h->param.b_sliced_threads?2:3)/2;
+```
 {{< /hint >}}  

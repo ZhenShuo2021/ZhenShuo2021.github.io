@@ -12,9 +12,9 @@ series_order: 1
 
 # 1. 思路
 
-沒有思路，只是想找安全上外網的方式[<sup>\[1\]</sup>](https://forum.gamer.com.tw/C.php?bsn=60030&snA=604173#:~:text=21%3A32%20%E7%B7%A8%E8%BC%AF-,%E5%BE%88%E5%A4%9A%E6%96%B9%E6%B3%95,%3E%3E%E4%B8%AD%E8%BD%89%E4%BC%BA%E6%9C%8D%E5%99%A8%E9%A0%BB%E5%AF%AC%E6%9C%89%E9%99%90,-%E6%9C%80%E7%A9%A9%E5%AE%9A%3E%E7%AC%AC)[<sup>\[2\]</sup>](https://www.mobile01.com/topicdetail.php?f=494&t=6381761)，直接使用port fowarding等同裸奔，使用DDNS還是得port foward，[ZeroTier/TailScale](https://www.youtube.com/watch?v=_Qrd7oJMp6w)只能個人使用，用 VPN 路由器太舊，[FRP](https://www.youtube.com/watch?v=ZfeZNbqIWTo)內網穿透需要租VPS做中轉，刪去法後 Cloudflared Tunnel (CT) 是最安全且便宜的方式。
+沒有思路，只是想找安全上外網的方式[[1]](https://forum.gamer.com.tw/C.php?bsn=60030&snA=604173#:~:text=21%3A32%20%E7%B7%A8%E8%BC%AF-,%E5%BE%88%E5%A4%9A%E6%96%B9%E6%B3%95,%3E%3E%E4%B8%AD%E8%BD%89%E4%BC%BA%E6%9C%8D%E5%99%A8%E9%A0%BB%E5%AF%AC%E6%9C%89%E9%99%90,-%E6%9C%80%E7%A9%A9%E5%AE%9A%3E%E7%AC%AC)[[2]](https://www.mobile01.com/topicdetail.php?f=494&t=6381761)，直接使用port fowarding等同裸奔，使用DDNS還是得port foward，[ZeroTier/TailScale](https://www.youtube.com/watch?v=_Qrd7oJMp6w)只能個人使用，用 VPN 路由器太舊，[FRP](https://www.youtube.com/watch?v=ZfeZNbqIWTo)內網穿透需要租VPS做中轉，刪去法後 Cloudflared Tunnel (CT) 是最安全且便宜的方式。
 
-這次使用註冊域名做 DDNS 解析不開 port 保證內網安全，其他需求使用 CNAME 經過 CT 加密傳輸，會有這種奇怪的方法其實是網路上只要用到 CT dashboard 的方法我都連不上[<sup>\[3\]</sup>](https://medium.com/@zetavg/%E4%BD%BF%E7%94%A8-cloudflare-tunnel-%E4%BD%9C%E7%82%BA%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84-ngrok-%E6%9B%BF%E4%BB%A3%E5%93%81-6b0aaef97557)[<sup>\[4\]</sup>](https://www.sakamoto.blog/cloudflare-tunnel/)，可能還是得開 port，東拼西湊就變成這樣了。
+這次使用註冊域名做 DDNS 解析不開 port 保證內網安全，其他需求使用 CNAME 經過 CT 加密傳輸，會有這種奇怪的方法其實是網路上只要用到 CT dashboard 的方法我都連不上[[3]](https://medium.com/@zetavg/%E4%BD%BF%E7%94%A8-cloudflare-tunnel-%E4%BD%9C%E7%82%BA%E4%BD%8E%E6%88%90%E6%9C%AC%E7%9A%84-ngrok-%E6%9B%BF%E4%BB%A3%E5%93%81-6b0aaef97557)[[4]](https://www.sakamoto.blog/cloudflare-tunnel/)，可能還是得開 port，東拼西湊就變成這樣了。
 
 關於 DDNS，不要用 Cloudflare API，會用到自己想死。
 
@@ -29,7 +29,7 @@ series_order: 1
 
 - 原始域名拿去更新 DDNS 無法使用，但可以使用 www 當 CNAME 有八成像。
 - 若要使用原始域名可以在路由器開啟 port forwarding。
-{{< keyword >}}[已解決] 使用 tailscale 作內網穿透可存取包含 http / SMB / docker 等服務。{{< /keyword >}}
+> [已解決] 使用 tailscale 作內網穿透可存取包含 http / SMB / docker 等服務。
 - ~~[還沒試過] Cloudflare 只支援80/443 port，SMB等服務無法使用 proxy，只能直接開 port~~
 
 # 2. 開始

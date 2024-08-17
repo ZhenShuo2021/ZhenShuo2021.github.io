@@ -137,7 +137,7 @@ git cherry-pick <commit-hash>
 git cherry-pick <commit-hash1> <commit-hash2> ...
 ```
 
-# 正式工作篇{#s1}
+# 正式工作篇 {#s1}
 By [码农高天](https://www.youtube.com/watch?v=uj8hjLyEBmU)
 
 一開始都一樣

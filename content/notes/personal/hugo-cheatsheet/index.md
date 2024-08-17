@@ -10,6 +10,15 @@ categories: ["筆記"]
 
 很難記所以寫了一份小抄
 
+# 錨點
+```md
+# xxx {#id}
+中間要空格
+...
+[goto](/posts/url#id/)
+```
+
+
 # 1. Icon
 
 
@@ -156,3 +165,4 @@ Text
 [咕咕 learn or earn](https://blog.laoda.de/)  
 [Sulv's Blog](https://www.sulvblog.cn/)  
 [KID's Blog](https://blog.jyhsu.tw/)  
+[Hexo stellar theme](https://xaoxuu.com/)
