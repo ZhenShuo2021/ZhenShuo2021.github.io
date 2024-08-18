@@ -1,9 +1,9 @@
 ---
-title: 'Mixed Cheatsheet'
+title: '小抄'
 date: 2024-08-17T11:24:23+08:00
-draft: true
-summary: 
-showSummary: false
+draft: false
+summary: "各種指令用的小抄"
+showSummary: true
 tags: []
 categories: []
 series: []

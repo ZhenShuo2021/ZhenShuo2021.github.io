@@ -14,7 +14,7 @@ autoSwitchAppearance = true
 enableSearch = true
 enableCodeCopy = true
 
-mainSections = ["posts","notes", "jottings"]  # 主文章資料夾，用於「最近的文章」
+mainSections = ["posts","notes"]  # 主文章資料夾，用於「最近的文章」
 # robots = ""
 
 disableImageOptimization = true
