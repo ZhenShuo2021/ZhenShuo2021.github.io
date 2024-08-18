@@ -60,7 +60,7 @@ Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and ot
 ```
 
 # Mermaid
-<div style="background-color:#eeefff; padding: 20px">
+<pre style="background-color:#eeefff; padding: 20px">
 {{< mermaid >}}
 gitGraph TB:
   commit id:"v0.1" tag:"v0.1"
@@ -118,4 +118,4 @@ gitGraph TB:
   checkout algorithm
   commit id:"新增HOG演算法"
 {{< /mermaid >}}
-</div>
+</pre>
