@@ -1,6 +1,6 @@
 ---
 title: "筆記分類：Linux"
-date: 2099-01-01
+date: 2024-01-01
 description: "Article of Linux."
 showDate: false
 robots: "noindex, nofollow"

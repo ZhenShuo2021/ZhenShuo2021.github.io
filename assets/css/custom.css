@@ -1,55 +1,56 @@
-/* 基礎顏色設定 Basic color settings */
-/* @font-face {
-    font-family: font;
-    src: url('/fonts/LXGWWenKaiTC-Regular.woff2');
-} */
-
+/* Safari filter */ 
+/* https://www.zhangxinxu.com/wordpress/2024/07/css-safari-detect/ */
+@supports not (image-rendering: optimizeSpeed) {
 html {
-    font-size: 1em;
-    font-family: 'LXGW WenKai TC', sans-serif;
+    font-family: 'LXGW WenKai Screen', Arial, sans-serif;
 }
+}
+
 
 strong, b {
     font-weight: 700;
     -webkit-text-stroke: 0.1px;
 }
 
-.article-content {
-    --font-size: 0.9rem;
-}
-
 p {
     word-wrap: break-word;
 }
 
-p, li, ol, ul {
-    /* remove span for katex */
-    font-size: var(--font-size);
+/* larger font for screen > 768px */
+@media (min-width: 768px) {
+    .article-content {
+        --font-size: 0.9rem;
+    }
+      
+    p, li, ol, ul {
+        font-size: var(--font-size);
+    }
+    
+    h1.relative.group {
+        font-size: 1.85rem;
+    }
+    
+    h2.relative.group {
+        font-size: 1.55rem;
+    }
+    
+    h3.relative.group {
+        font-size: 1.45rem;
+    }
+    
+    h4.relative.group {
+        font-size: 1.3rem;
+    }
+    
+    h5.relative.group {
+        font-size: 1.15rem;
+    }
+    
+    h6.relative.group {
+        font-size: 1rem;
+    }
 }
-
-h1.relative.group {
-    font-size: 1.85rem;
-}
-
-h2.relative.group {
-    font-size: 1.55rem;
-}
-
-h3.relative.group {
-    font-size: 1.45rem;
-}
-
-h4.relative.group {
-    font-size: 1.3rem;
-}
-
-h5.relative.group {
-    font-size: 1.15rem;
-}
-
-h6.relative.group {
-    font-size: 1rem;
-}
+  
 
 .prose {
     --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
@@ -505,6 +506,7 @@ body.zen-mode-enable .zen-mode-content {
     border-radius: 0.725rem;
     margin-right: 0.05rem;
     margin-bottom: 0.05rem;
+    white-space: nowrap;
 }
 
 .badge:hover {

@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.zsl0621.cc/zh-tw/sitemap.xml
+Sitemap: https://www.zsl0621.cc/sitemap.xml
