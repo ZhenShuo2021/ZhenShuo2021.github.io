@@ -18,10 +18,15 @@
   weight = 10
 
 
+[[main]]
+  name = "隨筆"
+  pageRef = "jottings"
+  weight = 20
+
 
 [[main]]
   name = "筆記"
-  weight = 20
+  weight = 30
   pageRef = "notes"
 
 [[main]]
@@ -36,22 +41,28 @@
   pageRef = "notes/linux"
   weight = 20
 
-
-
 [[main]]
-  name = "隨筆"
-  pageRef = "jottings"
+  name = "Git"
+  parent = "筆記"
+  pageRef = "notes/git"
   weight = 30
-
-
 
 
 [[main]]
   name = "小抄"
+  parent = "筆記"
   pageRef = "hugo-cheatsheet"
   weight = 50
 
+[[main]]
+  name = "標籤"
+  pageRef = "tags"
+  weight = 60
 
+[[main]]
+  name = "分類"
+  pageRef = "categories"
+  weight = 70
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
@@ -61,16 +72,6 @@
   name = "關於本站"
   pageRef = "about"
   weight = 10
-
-[[footer]]
-  name = "標籤"
-  pageRef = "tags"
-  weight = 20
-
-[[footer]]
-  name = "分類"
-  pageRef = "categories"
-  weight = 30
 
 #[[footer]]
 #  name = "系列文集"

@@ -6,4 +6,4 @@ robots: "noindex, nofollow"
 ---
 
 
-之後會貼上來
+這裡比較像日記
