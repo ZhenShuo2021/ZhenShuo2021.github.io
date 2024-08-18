@@ -1,10 +1,10 @@
 ---
-title: 'Hugo 語法上色 Hugo Syntax Highlighter'
+title: 'Hugo 語法上色 Syntax Highlighter'
 date: 2024-08-17T08:48:26+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["筆記","Hugo","PageSpeed","Cloudflare"]
+tags: ["筆記","Hugo","PageSpeed","Cloudflare", "CDN"]
 categories: ["Hugo"]
 series: []
 series_order: 
@@ -206,10 +206,53 @@ async function handleRequest(request) {
 完美，回來了。
 
 # 後記
-當然這些成績還是要被 CDN 快取完才會有，剛部屬完馬上測試成績會很差，不過光我一個人隨便點幾次就快取到了。
-
 複製功能自己寫完發現其實是 Blowfish 的 [bug](https://github.com/nunocoracao/blowfish/issues/1691)，暫時就先不放了。
 
-eallion 寫的 Shiki 教學就是我最喜歡的那種，有介紹原因，直接教學，沒有廢話，沒有拖泥帶水，清楚了當。
+[eallion](https://www.eallion.com) 寫的 Shiki 教學就是我最喜歡的那種，有介紹原因，直接教學，沒有廢話，沒有拖泥帶水，清楚了當。
 
 最後，你說70分和100分體感有差嗎？完全沒差，但是我比較爽。
+
+---
+
+{{< hint info >}}
+更新：發現速度除了 Highlight.js 以外字型影響也很大
+{{< /hint >}}
+
+當初看了這篇[文章](https://blog.user.today/cloudflare-fonts-boost-website-speed/)把字體從 cdnjs (Cloudflare 的 CDN 服務)換成了 Google Fonts 速度直接大暴跌，那時沒注意到導致花了很久除錯，這邊附上使用 LXGW 字體各種 CDN 的速度：
+
+| 來源                                         | 手機 / 桌面 |
+|---------------------------------------------|-----------|
+| no custom font                              | 99 / 100  |
+| Google Fonts                                | 72 / 71   |
+| jsdelivr lxgw-wenkai-screen-web             | 66 / 93   |
+| jsdelivr lxgw-wenkai-screen-webfont\@1.7.0  | 88 / 99   |
+| cdnjs lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css | 93 / 100   |
+
+網路世界變化很快不到一年就大洗牌，另外幫他的文章勘誤（或者說更新），至少在測試日期 (2024/8/18) 我的測試結果是這樣的：
+
+> 在檢視原始碼時，發現本來網頁 head 內如果有 <link href="https://fonts.googleapis.com/css2?family=...." rel="stylesheet"> 的原始碼，現在會人間蒸發，直接替換成一大串如下圖的 Embedded CSS/Internal CSS:  
+
+我的網頁沒有出現這些 CSS，就是原本的 `<link>` 而已。
+
+> 改用 Cloudflare Fonts 真的有比較快?  
+
+有。現在回去看他寫的 `看似用了 Cloudflare Fonts 之後載入的字體檔會變小`、`所以使用者的網路可以減少流量消耗、更快下載完頁面內容? 不一定` 這兩句都很怪。  
+檔案大小方面，第一句照他的話來說 Google 就是沒有切檔案全部下載，那 ***檔案絕對會比較小***；載入時間方面，單純就是看檔案大小除以傳輸速度，檔案大小已經比較小了，實際測試 Google Fonts 至少在測試的這幾天是遠遠慢於 Cloudflare 的。
+
+
+> 必須要網站在 Cloudflare 中是設定 Proxied 的狀態
+
+我的網站分別架設在 Cloudflare/Github Pages，只有 Cloudflare 有開啟代理，實際測試兩者皆成功套用字體
+
+> 憑空產生一個 /cf-fonts/ 的請求路徑
+
+使用 Github Pages 沒有，會跳轉自己設定的 404 錯誤，而在 Cloudflare Pages 的網站會進 HTTP ERROR 404。
+
+
+> 實測之後得知，在某些條件下，用了 Cloudflare Fonts 不一定會讓網頁變快，反而可能變慢，但是體感可能完全感覺不出來。
+
+確實沒差，但我只是想跑分。
+
+> 這個服務還在 beta 測試版，以後可能還會變更好。
+
+這句話應該寫在網站第一行...我認真看完之後照作才發現現在已經改善很多，雖然他仍然是測試版。
