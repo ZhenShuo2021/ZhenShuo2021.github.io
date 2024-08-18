@@ -11,14 +11,14 @@ series_order:
 progress_bar: true
 ---
 
-突然有點能體會到水影片的感覺了，是的這篇文章很水。
+有點能體會到水影片的感覺了，是的這篇文章很水。
 
 這是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。
 
 # Chroma
-這是 Hugo 內建的語法上色方式，以 Blowfish 主題來說可以在 `assets/css/compiled/main.css` 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會跑去修改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，這裡兩個都發生了於是考慮別的上色方式。
+這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 `assets/css/compiled/main.css` 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。
 
-一樣保持著一勞永逸的想法（雖然成功率好像滿低的）先去查到底哪個 highlighter 好，2018 2019年那些文章大概都說 Prism.js，說維護的比較勤 contributor 比較多，那就先選 Prism.js 好了
+一樣保持著一勞永逸的想法（雖然真的一勞永逸的次數好像滿少的）先去查哪個 highlighter 好，2018 2019年那些文章大概都說 Prism.js，說維護的比較勤 contributor 比較多，那就先選 Prism.js 好了。
 
 # Prism.js 和 Highlight.js
 就說是來水文章的，這兩個對我來說根本沒啥差別，Prism.js 裝好沒半小時去官方 Github 看發現上次更新已經是 2022，於是果斷換成 Highlight.js，裝了也很輕鬆兩行 `<link>` `<script>` 就搞定，只是痛苦這裡才開始。首先，我已經知道 PageSpeed Insights 這個邪惡的東西，裝完之後手賤去測試果然慢了不少，因為他是用戶載入頁面後即時渲染的；再來是暗色模式支援，還自己寫了四個 javascript 搞定亮暗主題轉換問題：
@@ -139,7 +139,7 @@ pre {
 ```
 {{< /expand >}}
 
-奇怪不是兩個 javascript 嗎？哪來的四個，因為還有兩個寫完之後發現寫太爛了打掉重練，單純只加 Highlight.js 確實是像教學[[1]](https://note.qidong.name/2017/06/24/hugo-highlight/), [[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/), [[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)一樣複製貼上就結束了，但是改成 Highlight.js 缺失的主題切換和複製按鈕我都要重新寫，那些 CSP referrerpolicy, defer/async, crossorigin, integrity 教學也沒講到，查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
+奇怪不是兩個 javascript 嗎，哪來的四個？因為還有兩個寫完發現寫太爛打掉重練，單純只加上 Highlight.js 確實是像教學[[1]](https://note.qidong.name/2017/06/24/hugo-highlight/), [[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/), [[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)一樣複製貼上就結束了，但是改成 Highlight.js 後缺失的主題切換和複製按鈕都要重新寫，關於 CSP referrerpolicy, defer/async, crossorigin, integrity 的設定教學也沒講到，查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
 
 ```js
 // Cloudflare Workers
@@ -218,35 +218,42 @@ async function handleRequest(request) {
 更新：發現速度除了 Highlight.js 以外字型影響也很大
 {{< /hint >}}
 
-當初看了這篇[文章](https://blog.user.today/cloudflare-fonts-boost-website-speed/)把字體從 cdnjs (Cloudflare 的 CDN 服務)換成了 Google Fonts 速度直接大暴跌，那時沒注意到導致花了很久除錯，這邊附上使用 LXGW 字體各種 CDN 的速度：
+當初看了這篇[文章](https://blog.user.today/cloudflare-fonts-boost-website-speed/)把字體從 Cloudflare Fonts 換成 Google Fonts 速度大暴跌，那時沒注意到導致花了很久除錯，這邊附上使用 LXGW 字體各種 CDN 的速度，改完馬上測試，未被 CDN 服務商快取：
+
 
 | 來源                                         | 手機 / 桌面 |
 |---------------------------------------------|-----------|
-| no custom font                              | 99 / 100  |
-| Google Fonts                                | 72 / 71   |
-| jsdelivr lxgw-wenkai-screen-web             | 66 / 93   |
-| jsdelivr lxgw-wenkai-screen-webfont\@1.7.0  | 88 / 99   |
-| cdnjs lxgw-wenkai-webfont/1.7.0/lxgwwenkai-regular.min.css | 93 / 100   |
+| Default font                            | 99 / 100  |
+| Google Fonts                            | 55 / 72   |
+| Cloudflare Fonts (cdnjs)                | 60 / 85   |
+| jsdelivr `lxgw-wenkai-*`                |           |
+| - tc-web, screen-webfont                | 55 / 70±5 |
+| - tc-webfont                            | 58 / 82   |
+| - screen-web                            | 59 / 87   |
+| - screen-web + preload/preconnect       | 86 / 92   |
+| - screen-web + preload/preconnect/CDN cache      | 90 / 99   |
 
-網路世界變化很快不到一年就大洗牌，另外幫他的文章勘誤（或者說更新），至少在測試日期 (2024/8/18) 我的測試結果是這樣的：
 
-> 在檢視原始碼時，發現本來網頁 head 內如果有 <link href="https://fonts.googleapis.com/css2?family=...." rel="stylesheet"> 的原始碼，現在會人間蒸發，直接替換成一大串如下圖的 Embedded CSS/Internal CSS:  
+網路世界變化很快不到一年就大洗牌，另外幫他的文章勘誤（或者說更新），至少在今天 (2024/8/18) 我的測試結果是這樣的：
 
-我的網頁沒有出現這些 CSS，就是原本的 `<link>` 而已。
+> 原始碼，現在會人間蒸發，直接替換成一大串如下圖的 Embedded CSS/Internal CSS  
 
-> 改用 Cloudflare Fonts 真的有比較快?  
+現在沒有這些 CSS，就是原本的 `<link>` 而已。
 
-有。現在回去看他寫的 `看似用了 Cloudflare Fonts 之後載入的字體檔會變小`、`所以使用者的網路可以減少流量消耗、更快下載完頁面內容? 不一定` 這兩句都很怪。  
-檔案大小方面，第一句照他的話來說 Google 就是沒有切檔案全部下載，那 ***檔案絕對會比較小***；載入時間方面，單純就是看檔案大小除以傳輸速度，檔案大小已經比較小了，實際測試 Google Fonts 至少在測試的這幾天是遠遠慢於 Cloudflare 的。
+> 改用 Cloudflare Fonts 真的有比較快、看似用了 Cloudflare Fonts 之後載入的字體檔會變小、所以使用者的網路可以減少流量消耗、更快下載完頁面內容? 不一定`
 
+有。檔案大小以一篇中文 1300 字的文章進行測試，看圖可以知道 Google 和其他 CDN 的策略不同。載入時間單純就是看檔案大小除以傳輸速度，檔案大小已經比較小了，測試都用官方推薦載入語法，測試結果 Google Fonts 至少在這幾天慢於 Cloudflare 的，而且 Cloudflare 還讓了 preconnect/preload 兩個設定。
+
+{{< carousel images="{woff-cdnjs.webp,woff-jsdelivr.webp,woff-google.webp}" aspectRatio="21-9"  interval="500" >}}
+{{< lead >}} 三種 CDN 的字體切割，Google Font 策略明顯不同於其他兩者 {{< /lead >}}
 
 > 必須要網站在 Cloudflare 中是設定 Proxied 的狀態
 
-我的網站分別架設在 Cloudflare/Github Pages，只有 Cloudflare 有開啟代理，實際測試兩者皆成功套用字體
+我的網站分別部署在 Cloudflare/Github Pages，只有 Cloudflare 有開啟代理，實際測試兩者皆成功套用字體
 
 > 憑空產生一個 /cf-fonts/ 的請求路徑
 
-使用 Github Pages 沒有，會跳轉自己設定的 404 錯誤，而在 Cloudflare Pages 的網站會進 HTTP ERROR 404。
+使用 Github Pages 沒有，會跳轉自己設定的 404 錯誤，部署在 Cloudflare Pages 的網站會進 HTTP ERROR 404。
 
 
 > 實測之後得知，在某些條件下，用了 Cloudflare Fonts 不一定會讓網頁變快，反而可能變慢，但是體感可能完全感覺不出來。
