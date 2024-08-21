@@ -14,7 +14,7 @@ progress_bar: true
 # 開頭
 [上一篇](/posts/20240730/)寫完那個表格之後感到一股火，對比度實在太低了寫到很不爽，又深深感到 blowfish 配色真的是要大改，有夠不清楚，從[問題修復](/hugo-blowfish-fix/)到[進階客製化](/hugo-blowfish-features/)已經改夠多東西了，連基礎的語法渲染都改成 highlight.js，現在還有表格，之後不知道還會發現多少東西要改，才想到我幹嘛不直接找一個配色正常的模版來用，改 code 就算了調整配色我完全不會啊。除此之外也發現對於知識網站來說 blowfish 沒有左側 list 可以方便查詢。
 
-照慣例要先有需求才有目標，網路上很多文章都沒提到這點。我的需求是：
+照慣例要先有需求才有目標，網路上很多文章都沒提到這點。作為個人知識庫來說，我的需求是：
 - 主要是找 docs 類的主題
 - 右側 ToC 有目前位置 highlight 顯示
 - 左側列表折疊功能而不是進入新網頁
@@ -34,11 +34,7 @@ progress_bar: true
 7. [Toha](https://github.com/hugo-toha/toha) 好看，主要功能感覺是自我介紹的作品集網站，但是 doc 和 blog 功能也做出來了
 
 ## Doks
-看到又快又安全還能不心動嗎，於是選擇了 Doks，然後就遇到各種問題：h1 只能放標題，ToC 只顯示到 h3，npm run dev？我的 hugo server 呢，為甚麼 layouts 裡幾乎啥都沒有？稍微研究才知道他用 npm 管理所有套件，連基礎 layouts 都放在套件包裡面，然後猜猜他到底用了多少個套件：
-
-<h2 style="color:red; text-align: center;">256個！ </h2>
-
-太扯了吧，然後我好不容易找到我要改的套件，改老半天發現他的表格一樣對比度低，front matter 不用他限定的直接停機，deploy 問題很多[^1]，youtube embed 是用 hugo 內建的 iframe[^3] 而不是 npm lite-youtube-embed （都標榜很快套件也 256 個了不捨得用這個==?雖然很好改），甚至連語法渲染都會有 render hook 的問題[^2]，照他的解法還不是絕對成功，連 katex 語法也跟其他人不太一樣（讀不到\footnotesize語法），雖然都能解決但就很麻煩，我是來找現成的不是繼續幫自己搞事的，然後最後一根稻草是井字開頭如果幫他加上數字比如 `# 1. xxx` ToC highlight 功能直些失效...
+看到又快又安全還能不心動嗎，於是選擇了 Doks，然後就遇到各種問題：h1 只能放標題，ToC 只顯示到 h3，npm run dev？我的 hugo server 呢，為甚麼 layouts 裡幾乎啥都沒有？稍微研究才知道 npm 這個套件管理器，但是連基礎 layouts 都放在套件包裡面，然後總共用了**256個套件...**太扯了吧，然後好不容易找到我要改的套件，改老半天發現 Doks 的表格一樣對比度低，front matter **不用他限定的直接停機**，deploy 問題很多[^1]，youtube embed 是用 hugo 內建的 iframe[^3] 而不是 npm youtube lite （都標榜很快套件也 256 個了不捨得用這個==?雖然很好改），甚至連渲染都會有 render hook 的問題[^2]，照他的解法還不是絕對成功，katex 語法也跟其他人不太一樣（讀不到\footnotesize語法），雖然都能解決但就很麻煩，我是來找現成的不是繼續幫自己搞事的，然後最後一根稻草是井字開頭如果幫他加上數字比如 `# 1. xxx` ToC highlight 功能直些失效...
 
 [^1]: https://github.com/gethyas/doks/discussions/696
 [^2]: https://github.com/gethyas/doks/discussions/1261

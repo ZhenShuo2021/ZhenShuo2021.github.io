@@ -8,14 +8,16 @@ tags: ["git", "筆記", "cheatsheet"]
 categories: ["git"]
 ---
 
-{{< lead >}}網路上教學廢話好多好煩。
+{{< lead >}}
+網路上教學廢話好多好煩。
 
-沒人想看你把一堆 commit 版本號打出來，我還要一個一個對你在講哪個 commit，有夠蠢。{{< /lead >}}
+沒人想看你把一堆 commit 版本號打出來，我還要一個一個對你在講哪個 commit，有夠蠢。
+{{< /lead >}}
 
-剛開始學 git 的時候東一篇西一篇就是不知道完整的流程，每個步驟都要上網查，光這篇文章的資訊可能就分散在四五個不同頁面很浪費時間，一開始只想先能動，之後遇到問題再說，所以這篇以能動起來為準，並且給出多個基礎指令，至少出現問題知道怎麼查。
+剛開始學 git 的時候東一篇西一篇就是不知道完整的流程，每個步驟都要上網查，光這篇文章的資訊可能就分散在四五個不同頁面很浪費時間，一開始只想先能動，之後遇到問題再說，所以這篇以能動起來為原則，並且給出多個基礎指令，至少出現問題知道怎麼查。
 
 # 原理篇
-git是一個版本管理工具，實際使用時有三個層面，分別是你的硬碟、本地儲存庫 (git)、遠端儲存庫 (github/gitlab)。你的硬碟什麼版本都不知道只放檔案當前狀態，儲存庫儲存所有版本，遠端儲存庫是最後同步共享的地方。
+Git 是一個版本管理工具，實際使用時有三個層面，分別是你的硬碟、本地儲存庫 (git)、遠端儲存庫 (github/gitlab)。你的硬碟什麼版本都不知道只放檔案當前狀態，儲存庫儲存所有版本，遠端儲存庫是最後同步共享的地方。
 
 撰寫程式時，commit 提交到本地儲存庫，push 到遠端讓大家看。
 
@@ -46,7 +48,7 @@ sequenceDiagram
 
 
 ### 版本狀態（可先跳過）
-Git 可以看作一顆樹，每次 commit 都有獨一無二的 hash，並且指向上次的 commit 以紀錄每次版本變更，可新建分支功能，可以作為功能開發/修復緊急 bug 使用。
+Git 可以看作一顆樹，每次 commit 都有獨一無二的 hash，並且指向上次的 commit 以紀錄每次版本變更，可新建分支功能，作為功能開發/修復緊急 bug 使用。
 
 # 基礎指令篇
 ### 1. 初始化
@@ -55,38 +57,61 @@ git init
 ```
 ### 2. 索引檔案
 ```sh
-git add <file-name>
-git add .               # 索引全部檔案
-git reset <file-name>   # 移除索引檔案
-git reset               # 移除全部索引
+git add [file-name]
+git add .                   # 索引全部檔案
+git reset [file-name]       # 移除索引檔案
+git reset                   # 移除全部索引
 ```
 ### 3. 提交版本並附註 
 到這步就可以跑起基本的 git 了。
 ```sh
-git commit -m <comments>
+git commit -m [comments]
 ```
 ### 4. 查看狀態 
 ```sh
-git status
-git log
+git status                  # 檔案狀態（新增A、修改M、刪除D、未追蹤U）
+git log                     # 提交歷史
 ```
-### 5. 分支
+
+### 5. 還原（重要）[^2]
+這是使用度非常高的指令
+```sh
+# 軟重置：只刪 commit，其他不動
+git reset --soft [hash]
+
+# 混合重置：預設方式，刪 commit 和 add
+git reset --mixed [hash]
+
+# 硬重置：除了 commit 和 add 以外，連你的寫的程式都刪了，謹慎使用！
+git reset --hard [hash]
+```
+
+[^2]: 工作目錄 (Working Directory)：硬碟實際編輯的檔案。  
+預存區 (Staging Area)：預存你的變更，準備提交 (add的位置)。  
+儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。
+暫存區 (Stash)：(先不用看) 還不想 commit 卻要跑到其他地方操作的暫存區域。
+
+### 5. 分支（可先跳過）
 當你工作變複雜一條分支不夠用就會用到這些。
 ```sh
-git branch                            # 查看
-git branch <name>                     # 新建
-git checkout <name>                   # 切換
-git branch -D <name>                  # 刪除
-git branch -m <old-name> <new-name>   # 改名
-git merge "NAME"                      # 合併
+git branch                  # 查看
+git branch [name]           # 新建
+git checkout [name]         # 切換
+git branch -D [name]        # 刪除
+git branch -m [old] [new]   # 改名
+git merge "NAME"            # 合併
 ```
 
 
-## 上傳到 Github
+## 上傳到遠端儲存庫
+
+最常見的遠端儲存庫就是 Github 了，這裡以 Github 為例。
+
 ### 1. SSH
 
-1. [產生ssh金鑰](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)
-2. (Optional) 隱藏信箱Setting>Email勾選 "Block command line pushes that expose my email"，如要隱藏信箱，請到 `https://api.github.com/users/你的github名稱` 查看下面需要的 ID
+Github 已不支援帳號密碼登入，只能用 SSH 認證。  
+1. [產生ssh金鑰](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)，官網教學寫的非常詳細。
+2. (選用) 隱藏信箱Setting>Email勾選 "Block command line pushes that expose my email"，如要隱藏信箱，請到 `https://api.github.com/users/你的github名稱` 查看下面需要的 ID。
 3. 設定名稱及信箱，如不需隱藏信箱則直接打自己的信箱
 ```sh
 git config --global user.name "NAME"
@@ -100,42 +125,38 @@ ssh -T git@github.com
 git remote set-url origin git@github.com:ZhenShuo2021/ZhenShuo2021.github.io.git
 ```
 
-### 2. (Optional) GPG
-請直接看 [利用 GPG 簽署 git commit](https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/) 的教學。  
+### 2. GPG
+(選用) 請直接看 [利用 GPG 簽署 git commit](https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/) 的教學。  
 如果要隱藏信箱在 GPG 設定時需使用剛剛設定的 noreply 信箱。  
 如果已經有 GPG key，可以用以下指令刪除：
 ```sh
 git config --global --unset-all user.signingkey
 ```
 
+### 3. 遠端常用指令
 
-
-## 還原工作階段[^2]
 ```sh
-# 軟重置：只刪 commit
-git reset --soft <hash>
-
-# 混合重置：預設方式，刪 commit 和 add
-git reset --mixed <hash>
-
-# 硬重置：連你的寫的程式都刪了
-git reset --hard <hash>
+git clone [remote.git] [dir]         # 克隆遠端倉庫，dir為可選
+git push [origin] [branch]           # 推送到遠端，後兩項可選
+git pull [origin] [branch]           # 拉取並合併，後兩項可選
+git fetch [remote]                   # 拉取但不合併
+git remote -v                        # 顯示遠端倉庫
+git remote add [name] [remote.git]   # 增加遠端倉庫並指定名稱
+git remote remove [name]             # 刪除遠端倉庫
+git remote rename [old-name] [new]   # 重命名遠端倉庫
+git remote set-url [name] [url]      # 更改遠端倉庫的 URL
+git ls-remote [remote]               # 顯示遠端倉庫訊息
 ```
 
-[^2]: 工作目錄 (Working Directory)：硬碟實際編輯的檔案。  
-預存區 (Staging Area)：預存你的變更，準備提交 (add的位置)。  
-儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。
-暫存區 (Stash)：(先不用看) 還不想 commit 卻要跑到其他地方操作的暫存區域。
-
-- [進階] 新增部分commit
+<!-- - [進階] 新增部分 commit  
 Git Cherry Pick
 ```sh
-# Apply 特定 commit 到當前分支
+# 挑選特定 commit 到當前分支
 git cherry-pick <commit-hash>
 
 # 可以連續挑選多個 commit 
 git cherry-pick <commit-hash1> <commit-hash2> ...
-```
+``` -->
 
 # 正式工作篇 {#s1}
 By [码农高天](https://www.youtube.com/watch?v=uj8hjLyEBmU)
@@ -194,7 +215,7 @@ sequenceDiagram
     Note over CO: 4. git commit -m comments
     ST->>CO: 提交更改
 
-    Note over RM: 5. (Optional) git push origin my-feature
+    Note over RM: 5. (可選) git push origin my-feature
     CO->>RM: 推送分支到遠端
 
     Note over WD: 6. git checkout main
@@ -222,11 +243,11 @@ By [Philomatics](https://www.youtube.com/watch?v=xN1-2p06Urc)
 
 原理是避免 git pull 產生一堆無用的 merge conflict。其實這和码农高天的用法是一樣的，只是合併成 git pull --rebase。如果沒衝突那很好，有衝突則 git rebase --abort 回復再做一般的 git pull。
 
-## rebase vs cherry-pick
+<!-- ## rebase vs cherry-pick
 Rebase: 將一個分支的**所有變更**移到另一個分支的頂端，用於保持線性歷史  
 Cherry-pick: 提取單個 commit 到另一個分支，用於只需要特定更改的情況  
 
 
 選用：  
 Rebase 移動整個分支，cherry-pick 只移動單個 commit  
-Rebase 用於整合分支，cherry-pick 用於選擇性地應用更改  
+Rebase 用於整合分支，cherry-pick 用於選擇性地應用更改   -->
