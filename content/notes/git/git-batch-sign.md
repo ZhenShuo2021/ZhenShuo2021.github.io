@@ -43,7 +43,7 @@ gpg: [stdin]: clear-sign failed: Inappropriate ioctl for device
 ```
 
 # 解決
-發現是終端設定不知為何跑掉，使用以下指令告訴 gpg 使用當前終端進行操作即可解決
+發現是終端設定不知為何跑掉，使用以下指令告訴 gpg 使用當前終端操作，即可正常提交 commit
 ```sh
 export GPG_TTY=$(tty)
 ```
