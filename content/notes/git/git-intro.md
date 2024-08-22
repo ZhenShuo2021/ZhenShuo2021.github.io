@@ -8,14 +8,16 @@ tags: ["git", "筆記", "cheatsheet"]
 categories: ["git"]
 ---
 
-{{< lead >}}網路上教學廢話好多好煩。
+{{< lead >}}
+網路上教學廢話好多好煩。
 
-沒人想看你把一堆 commit 版本號打出來，我還要一個一個對你在講哪個 commit，有夠蠢。{{< /lead >}}
+沒人想看你把一堆 commit 版本號打出來，我還要一個一個對你在講哪個 commit，有夠蠢。
+{{< /lead >}}
 
-剛開始學 git 的時候東一篇西一篇就是不知道完整的流程，每個步驟都要上網查，光這篇文章的資訊可能就分散在四五個不同頁面很浪費時間，一開始只想先能動，之後遇到問題再說，所以這篇以能動起來為準，並且給出多個基礎指令，至少出現問題知道怎麼查。
+剛開始學 git 的時候東一篇西一篇就是不知道完整的流程，每個步驟都要上網查，光這篇文章的資訊可能就分散在四五個不同頁面很浪費時間，一開始只想先能動，之後遇到問題再說，所以這篇以能動起來為原則，並且給出多個基礎指令，至少出現問題知道怎麼查。
 
 # 原理篇
-git是一個版本管理工具，實際使用時有三個層面，分別是你的硬碟、本地儲存庫 (git)、遠端儲存庫 (github/gitlab)。你的硬碟什麼版本都不知道只放檔案當前狀態，儲存庫儲存所有版本，遠端儲存庫是最後同步共享的地方。
+Git 是一個版本管理工具，實際使用時有三個層面，分別是你的硬碟、本地儲存庫 (git)、遠端儲存庫 (github/gitlab)。你的硬碟什麼版本都不知道只放檔案當前狀態，儲存庫儲存所有版本，遠端儲存庫是最後同步共享的地方。
 
 撰寫程式時，commit 提交到本地儲存庫，push 到遠端讓大家看。
 
@@ -46,7 +48,7 @@ sequenceDiagram
 
 
 ### 版本狀態（可先跳過）
-Git 可以看作一顆樹，每次 commit 都有獨一無二的 hash，並且指向上次的 commit 以紀錄每次版本變更，可新建分支功能，可以作為功能開發/修復緊急 bug 使用。
+Git 可以看作一顆樹，每次 commit 都有獨一無二的 hash，並且指向上次的 commit 以紀錄每次版本變更，可新建分支功能，作為功能開發/修復緊急 bug 使用。
 
 # 基礎指令篇
 ### 1. 初始化
@@ -67,11 +69,11 @@ git commit -m [comments]
 ```
 ### 4. 查看狀態 
 ```sh
-git status
-git log
+git status                  # 檔案狀態（新增A、修改M、刪除D、未追蹤U）
+git log                     # 提交歷史
 ```
 
-### 5. （重要）還原工作階段[^2]
+### 5. 還原（重要）[^2]
 這是使用度非常高的指令
 ```sh
 # 軟重置：只刪 commit，其他不動
@@ -80,7 +82,7 @@ git reset --soft [hash]
 # 混合重置：預設方式，刪 commit 和 add
 git reset --mixed [hash]
 
-# 硬重置：連你的寫的程式都刪了
+# 硬重置：除了 commit 和 add 以外，連你的寫的程式都刪了，謹慎使用！
 git reset --hard [hash]
 ```
 
@@ -89,7 +91,7 @@ git reset --hard [hash]
 儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。
 暫存區 (Stash)：(先不用看) 還不想 commit 卻要跑到其他地方操作的暫存區域。
 
-### 5. 分支
+### 5. 分支（可先跳過）
 當你工作變複雜一條分支不夠用就會用到這些。
 ```sh
 git branch                  # 查看
@@ -109,7 +111,7 @@ git merge "NAME"            # 合併
 
 Github 已不支援帳號密碼登入，只能用 SSH 認證。  
 1. [產生ssh金鑰](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key)，官網教學寫的非常詳細。
-2. ( ) 隱藏信箱Setting>Email勾選 "Block command line pushes that expose my email"，如要隱藏信箱，請到 `https://api.github.com/users/你的github名稱` 查看下面需要的 ID。
+2. (選用) 隱藏信箱Setting>Email勾選 "Block command line pushes that expose my email"，如要隱藏信箱，請到 `https://api.github.com/users/你的github名稱` 查看下面需要的 ID。
 3. 設定名稱及信箱，如不需隱藏信箱則直接打自己的信箱
 ```sh
 git config --global user.name "NAME"
@@ -123,8 +125,8 @@ ssh -T git@github.com
 git remote set-url origin git@github.com:ZhenShuo2021/ZhenShuo2021.github.io.git
 ```
 
-### 2. (可選) GPG
-請直接看 [利用 GPG 簽署 git commit](https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/) 的教學。  
+### 2. GPG
+(選用) 請直接看 [利用 GPG 簽署 git commit](https://blog.puckwang.com/posts/2019/sign_git_commit_with_gpg/) 的教學。  
 如果要隱藏信箱在 GPG 設定時需使用剛剛設定的 noreply 信箱。  
 如果已經有 GPG key，可以用以下指令刪除：
 ```sh
@@ -133,25 +135,17 @@ git config --global --unset-all user.signingkey
 
 ### 3. 遠端常用指令
 
-<!-- ```sh
---filter=blob:none       # 不要下載大文件 blobs
---depth=1                # 淺克隆，只複製第一層
---shallow-since=[date]   # 淺克隆，限定日期
---no-checkout            # 不會把文件提放到工作目錄
---sparse                 # 大型目錄用，只提取根目錄檔案
-``` -->
-
 ```sh
-git clone [remote.git] [dir]         # 克隆遠端倉庫到本地資料夾，dir為可選
-git remote -v                        # 顯示已配置的遠端倉庫及其 URL
-git push [origin] [branch]           # 推送到遠端分支，後兩項可選
-git pull [origin] [branch]           # 從遠端分支拉取並合併，後兩項可選
-git fetch [remote]                   # 從遠端分支拉取但不合併
-git remote add [name] [remote.git]   # 增加新的遠端倉庫並指定名稱
-git remote remove [name]             # 刪除指定名稱的遠端倉庫
-git remote rename [old-name] [new]   # 重命名指定的遠端倉庫
-git remote set-url [name] [url]      # 更改指定遠端倉庫的 URL
-git ls-remote [remote]               # 顯示遠端倉庫的引用信息
+git clone [remote.git] [dir]         # 克隆遠端倉庫，dir為可選
+git push [origin] [branch]           # 推送到遠端，後兩項可選
+git pull [origin] [branch]           # 拉取並合併，後兩項可選
+git fetch [remote]                   # 拉取但不合併
+git remote -v                        # 顯示遠端倉庫
+git remote add [name] [remote.git]   # 增加遠端倉庫並指定名稱
+git remote remove [name]             # 刪除遠端倉庫
+git remote rename [old-name] [new]   # 重命名遠端倉庫
+git remote set-url [name] [url]      # 更改遠端倉庫的 URL
+git ls-remote [remote]               # 顯示遠端倉庫訊息
 ```
 
 <!-- - [進階] 新增部分 commit  
