@@ -17,3 +17,9 @@ progress_bar: true
 ```sh
 magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 ```
+
+H.264 and H.265 Hardware Decoding  
+https://www.pugetsystems.com/labs/articles/What-H-264-and-H-265-Hardware-Decoding-is-Supported-in-Premiere-Pro-2120/
+
+Github markdown highlight
+https://github.com/orgs/community/discussions/16925  
