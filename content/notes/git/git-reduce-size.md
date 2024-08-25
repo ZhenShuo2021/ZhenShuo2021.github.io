@@ -1,11 +1,11 @@
 ---
-title: 'Git Reduce Size'
+title: 'Git 減少 clone 空間'
 date: 2024-08-22T21:03:25+08:00
 draft: false
 summary: 
 showSummary: false
-tags: []
-categories: []
+tags: ["git","筆記"]
+categories: ["git"]
 series: []
 series_order: 
 progress_bar: true
@@ -24,7 +24,7 @@ progress_bar: true
 也可以設定 `--filter=blob:limit=1m` 限制檔案大小為 1MB
 
 # Sparse Checkout
-組合拳就是 `git clone --filter=blob:none --depth=1 --no-checkout --sparse`，先不要切換到任何分支，這時候工作目錄會是空的。下一步就是取出需要的檔案，使用錐形模式，只取出 `data` `src` 資料夾內容：
+組合拳就是 `git clone --filter=blob:none --depth=1 --no-checkout --sparse`，這個指令會先不切換到分支，所以工作目錄會是空的。下一步就是取出需要的檔案，使用錐形模式，只取出 `data` `src` 資料夾內容：
 
 ```sh
 git sparse-checkout init --cone

@@ -60,9 +60,9 @@ git switch -d <hash>
 ```sh
 git stash push -m "<msg>"   # 也可不命名
 git stash list              # 列出所有暫存檔案
-git stash pop stash@{2}     # 還原檔案，沒指定會找最近的pop
-git stash drop stash@{2}    # 還原檔案後可選擇刪掉stash
-git stash apply stash@{2}   # 還原檔案並刪掉該暫存，等同pop+drop
+git stash pop stash@{2}     # 還原檔案並且刪除暫存，沒指定會找最近的
+git stash drop stash@{2}    # 刪除指定暫存
+git stash apply stash@{2}   # 還原檔案但不刪除該暫存
 git stash clear             # 清除所有stash
 ```
 

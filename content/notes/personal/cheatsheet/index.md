@@ -17,3 +17,17 @@ progress_bar: true
 ```sh
 magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 ```
+
+# Python
+pip 一次刪除所有套件
+```sh
+pip freeze | xargs pip uninstall -y && rm -rf build
+```
+
+H.264 and H.265 Hardware Decoding  
+https://www.pugetsystems.com/labs/articles/What-H-264-and-H-265-Hardware-Decoding-is-Supported-in-Premiere-Pro-2120/
+
+Github markdown highlight
+https://github.com/orgs/community/discussions/16925  
+
+docusaurus

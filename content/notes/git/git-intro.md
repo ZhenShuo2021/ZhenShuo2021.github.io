@@ -88,7 +88,7 @@ git reset --hard [hash]
 
 [^2]: 工作目錄 (Working Directory)：硬碟實際編輯的檔案。  
 預存區 (Staging Area)：預存你的變更，準備提交 (add的位置)。  
-儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。
+儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。   
 暫存區 (Stash)：(先不用看) 還不想 commit 卻要跑到其他地方操作的暫存區域。
 
 ### 5. 分支（可先跳過）
@@ -142,10 +142,6 @@ git pull [origin] [branch]           # 拉取並合併，後兩項可選
 git fetch [remote]                   # 拉取但不合併
 git remote -v                        # 顯示遠端倉庫
 git remote add [name] [remote.git]   # 增加遠端倉庫並指定名稱
-git remote remove [name]             # 刪除遠端倉庫
-git remote rename [old-name] [new]   # 重命名遠端倉庫
-git remote set-url [name] [url]      # 更改遠端倉庫的 URL
-git ls-remote [remote]               # 顯示遠端倉庫訊息
 ```
 
 <!-- - [進階] 新增部分 commit  
@@ -164,10 +160,10 @@ By [码农高天](https://www.youtube.com/watch?v=uj8hjLyEBmU)
 一開始都一樣
 ```sh
 git clone xxx.git                # 拉取遠端儲存庫
-git checkout -b <my-feature>     # 新建分支進行工作
+git checkout -b [my-feature]     # 新建分支進行工作
 git add <file>
-git commit -m <comments>
-# git push origin <my-feature>
+git commit -m [comments]
+# git push origin [my-feature]
 ```
 
 因為遠端更新，所以回到 main branch 同步遠端的新 commit，之後 rebase[^1] main branch，這樣就可以push。
@@ -176,9 +172,9 @@ git commit -m <comments>
 ```sh
 git checkout main                # 回到main分支
 git pull origin main             # 從遠端倉庫更新到main分支到本地
-git checkout <my-feature>        # 回到feature分支
+git checkout [my-feature]        # 回到feature分支
 git rebase main                  # 把"feature"的更新接到main之後
-git push -f origin <my-feature>  # 推送到遠端
+git push -f origin [my-feature]  # 推送到遠端
 ```
 
 接下來可以:
@@ -188,9 +184,9 @@ git push -f origin <my-feature>  # 推送到遠端
 
 遠端都處理好剛剛的分支後，刪除 branch 再同步 main branch。
 ```sh
-git checkout main
-git branch -D <my-feature>
-git pull origin main
+git checkout main                 # 回到main分支
+git pull origin main              # 推送main
+git branch -D [my-feature]        # 刪除完成的my-feature
 ```
 
 完整版的架構圖：
