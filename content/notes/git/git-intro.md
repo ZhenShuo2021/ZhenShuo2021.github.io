@@ -88,7 +88,7 @@ git reset --hard [hash]
 
 [^2]: 工作目錄 (Working Directory)：硬碟實際編輯的檔案。  
 預存區 (Staging Area)：預存你的變更，準備提交 (add的位置)。  
-儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。
+儲存庫 (Repository)：保存所有版本歷史的地方 (commit的位置)。   
 暫存區 (Stash)：(先不用看) 還不想 commit 卻要跑到其他地方操作的暫存區域。
 
 ### 5. 分支（可先跳過）
