@@ -1,5 +1,5 @@
 ---
-title: 'Git Reduce Size'
+title: 'Git 減少 clone 空間'
 date: 2024-08-22T21:03:25+08:00
 draft: false
 summary: 
