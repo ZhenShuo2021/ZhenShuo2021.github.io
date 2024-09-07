@@ -10,6 +10,10 @@ categories: ["筆記"]
 
 很難記所以寫了一份小抄
 
+# 清理資料夾
+`hugo --cleanDestinationDir`
+
+
 # 錨點
 ```md
 # xxx {#id}
