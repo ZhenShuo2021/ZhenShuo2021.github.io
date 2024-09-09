@@ -9,6 +9,7 @@ categories: ["git"]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/git/reduce-size
 ---
 
 使用 git clone 遠端儲存庫，當儲存庫過大而你不需要全部資料的時候可以使用以下指令。

@@ -7,6 +7,7 @@ description: "常用 Linux 指令小抄，包含硬碟監視，記憶體佔用�
 summary: 常用的 Linux 指令小抄
 tags: ["Linux", "指令筆記", "cheatsheet"]
 categories: ["筆記"]
+externalUrl: https://docs.zsl0621.cc/docs/Linux/useful-linux-commands
 ---
 
 # 文件移動

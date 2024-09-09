@@ -10,6 +10,7 @@ categories: ["筆記"]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/Linux/tmux
 ---
 
 {{<lead>}}

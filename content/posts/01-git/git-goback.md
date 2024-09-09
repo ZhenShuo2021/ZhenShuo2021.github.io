@@ -8,6 +8,7 @@ categories: ["git"]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/git/flashback-commit
 ---
 
 # 前言
