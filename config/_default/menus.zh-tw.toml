@@ -25,44 +25,44 @@
 
 
 [[main]]
-  name = "筆記"
+  name = '筆記 {{< icon "link" >}}'
   weight = 30
-  pageRef = "notes"
-
-[[main]]
-  name = "個人筆記"
-  parent = "筆記"
-  weight = 10
-  pageRef = "notes/personal"
-
-[[main]]
-  name = "Linux"
-  parent = "筆記"
-  pageRef = "notes/linux"
-  weight = 20
+  url = "https://docs.zsl0621.cc/docs/intro"
 
 [[main]]
   name = "Git"
-  parent = "筆記"
-  pageRef = "notes/git"
-  weight = 30
-
+  parent = '筆記 {{< icon "link" >}}'
+  weight = 10
+  url = "https://docs.zsl0621.cc/docs/category/git/"
 
 [[main]]
-  name = "小抄"
-  parent = "筆記"
-  pageRef = "hugo-cheatsheet"
-  weight = 50
+  name = "Linux"
+  parent = '筆記 {{< icon "link" >}}'
+  url = "https://docs.zsl0621.cc/docs/category/linux/"
+  weight = 20
+
+# [[main]]
+#   name = "Git"
+#   parent = "筆記"
+#   pageRef = "notes/git"
+#   weight = 30
+
+
+# [[main]]
+#   name = "小抄"
+#   parent = "筆記"
+#   pageRef = "hugo-cheatsheet"
+#   weight = 50
 
 [[main]]
   name = "標籤"
   pageRef = "tags"
-  weight = 60
+  weight = 1
 
 [[main]]
   name = "分類"
   pageRef = "categories"
-  weight = 70
+  weight = 2
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
