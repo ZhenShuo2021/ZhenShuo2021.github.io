@@ -8,6 +8,7 @@ tags: ["Linux", "指令筆記"]
 categories: ["筆記"]
 series: []
 series_order: 
+externalUrl: https://docs.zsl0621.cc/docs/Linux/clean-settings
 ---
 
 在 ubunutu server 安裝 gallery-dl 時，由於之前有安裝過導致錯誤的設定殘留，在網路上查老半天都找不到要怎麼清除，最後還是請出 GPT 大神，基礎操作類他還是很擅長的。這裡也給其他網路上的資訊 https://ivonblog.com/posts/linux-uninstall-application/。

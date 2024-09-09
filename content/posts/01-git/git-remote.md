@@ -9,6 +9,7 @@ categories: ["git"]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/git/remote-commands
 ---
 
 這篇介紹遠端工作時常用的指令。  

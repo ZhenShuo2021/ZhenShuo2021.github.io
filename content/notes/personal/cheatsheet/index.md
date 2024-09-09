@@ -17,7 +17,7 @@ progress_bar: true
 ```sh
 magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 ```
-[ImageMagick 一鍵批量更改圖片尺寸](https://home.gamer.com.tw/creationDetail.php?sn=5897078)
+使用範例 [[1]](https://home.gamer.com.tw/creationDetail.php?sn=5897078) [[2]](https://yuliyang.com/imagemagick-bulk-image-processing/)
 
 # Python
 

@@ -9,6 +9,7 @@ categories: ["git"]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/git/edit-commits
 ---
 
 前言  
