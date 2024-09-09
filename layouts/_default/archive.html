@@ -334,7 +334,18 @@
                     <li class="post-item">
                         <div class="post-item-inner">
                             <div class="post-date">{{ .Date.Format "1月2日" }}</div>
-                            <div class="post-details"><a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                            <div class="post-details">
+                                {{ if .Params.externalUrl }}
+                                <a href="{{ .Params.externalUrl }}" class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral" target="_blank">
+                                    {{ .Title }}
+                                    <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
+                                        <span class="rtl:hidden">&#8599;</span>
+                                        <span class="ltr:hidden">&#8598;</span>
+                                    </span>
+                                </a>
+                                {{ else }}
+                                <a href="{{ .Permalink }}" class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">{{ .Title }}</a>
+                                {{ end }}
                             </div>
                             {{ partial "custom/tag-and-category.html" . }}
                         </div>
