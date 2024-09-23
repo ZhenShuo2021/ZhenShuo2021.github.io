@@ -56,7 +56,7 @@ p {
     --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
     --tw-prose-invert-quote-borders: rgba(var(--color-primary-400), 1);
     /* --tw-prose-code:rgba(var(--color-secondary-700), 1); */
-    --tw-prose-code: rgba(var(--color-neutral-700), var(--tw-text-opacity, 1));
+    --tw-prose-code: rgba(var(--color-secondary-700), var(--tw-text-opacity, 1));
 }
 
 .bg-primary-200 {
