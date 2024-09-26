@@ -20,6 +20,8 @@ progress_bar: true
 
 想說還有得救，先進後台管理頁面點了 scrub，結果也沒用，繼續抱著僥倖心態先清除錯誤 `sudo zfs clear`，然後不到 12 小時後半夜四點又寄信給我，心理想說完ㄌ，不信邪手動打 `sudo zfs scrub HGST10T` (註：這裡名稱直接打幫分區取的名字而不是 /dev/sdx) 還是一樣，最後只好跟賣家溝通退貨，還好他是個好人可以退貨。
 
+> 更新：退貨前忘記先拿正常運作的硬碟交換線材測試，因為[線材和電源](https://blog.user.today/10-free-truenas-note/)也可能造成問題。
+
 <br>
 
 # 學到了什麼
@@ -32,12 +34,13 @@ progress_bar: true
 2. `zpool status -v` `zfs clear` `zfs scrub <pool>` 的使用，其中 scrub 有點類似 `fsck` 但不一樣，網路上說一樣的是錯誤資訊，詳情請見這份[文檔](https://illumos.org/books/zfs-admin/gavwg.html)，簡單來說 fsck 檢查文件系統結構性故障，zfs scrub 使用 checksum 修復數據層面故障
 3. oracle 建議每個月 scrub 一次硬碟
 4. 原來 TrueNAS 可以用 zfs 指令，剛學的時候沒加 sudo 不能就以為他鎖住了（packages 相關的全被鎖住）
-5. 既然可以用之後可以限制一下 zfs 記憶體用量，甚至還有過 free mem 0 Bytes
+5. 既然可以用之後可以限制一下 zfs 記憶體用量，甚至還有過 free mem 0 Bytes (24.04.0 版[這個方法](https://jose.scjtqs.com/truenas/2023-10-08-1972/truenas-scale-%E8%B0%83%E6%95%B4%E9%BB%98%E8%AE%A4%E7%9A%84-arc%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E8%A7%84%E5%88%99.html)沒用)
 
 ## 硬碟
 1. 即使全盤掃描無壞軌，S.M.A.R.T. 資訊也良好，硬碟也可能有問題
 2. 學習到新的硬碟參數：裝載/卸載週期 (load/unload cycles) 代表磁頭上下的次數
 3. 再次提醒自己硬碟工作溫度 45 度以下，最好在 40 度
+4. 實際使用時間約在 MTBF 標示的一半，但是 [AFR 數值比較重要](https://www.seagate.com/tw/zh/support/kb/hard-disk-drive-reliability-and-mtbf-afr-174791en/)
 
 # 硬碟產品調查
 接著是自己的筆記，免的每次研究完隔一陣子就忘記
