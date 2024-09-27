@@ -1,5 +1,5 @@
 ---
-title: 第一次嘗試寫 Dockerfile
+title: 第一天學習 Docker 該知道的基礎知識
 date: 2024-09-26T21:43:27+08:00
 draft: false
 summary: 
@@ -55,6 +55,8 @@ Docker 容器比傳統虛擬機輕量，因為它們共享主機的作業系統�
 ![strange.jpg](strange.jpg "這很奇異～～～")
 
 # 撰寫 Dockerfile
+其實這篇文章原本不是教學，標題是「第一次嘗試寫 Dockerfile」範圍只有這裡，只是想記錄我的構建過程，但是看到某教學之後就越寫越多...
+
 直接開戰，我認為沒那麼難理解只是資源太分散
 
 ```dockerfile
@@ -86,7 +88,7 @@ ENTRYPOINT ["python", "-m", "p5d"]
 [用 Dive 看 Docker Image 裡面每一層的內容](https://blog.gslin.org/archives/2018/11/27/8581/%E7%94%A8-dive-%E7%9C%8B-docker-image-%E8%A3%A1%E9%9D%A2%E6%AF%8F%E4%B8%80%E5%B1%A4%E7%9A%84%E5%85%A7%E5%AE%B9/)
 
 # 使用多段構建
-其實我原本只想寫這裡，只是找資料時又看到某教學才發現被誤導那麼久就變成抱怨文章。基礎版是上面的 python slim，加上下面兩段構建版本，以及 `--virtual` 共三個版本：
+基礎版是上面的 python slim，加上下面兩段構建版本，以及 `--virtual` 共三個版本：
 
 ```dockerfile
 FROM python:3.10-alpine
@@ -136,19 +138,22 @@ VOLUME ["/mnt/local_folder", "/mnt/remote_folder"]
 ENTRYPOINT ["python", "-m", "p5d"]
 ```
 
-1. slim 直接開戰：老子直接 apt-get 安裝字體包
-1. alpine：單純改成 slim 安裝必要編譯工具後沒刪除
-2. alpine --virtual：用於刪除後續用不到的包，要和刪除放在同一行使用才可以刪除
+1. slim：直接 apt-get 安裝字體包後刪除不必要字體
+1. alpine：改成 slim 安裝編譯工具後沒刪除編譯工具
+2. alpine --virtual：用於刪除之後用不到的包，要和刪除放在同一行使用才可以刪除
 3. alpine 多段構建：用 FROM 分隔不同階段，用於減少鏡像容量，例如 alpine 沒有編譯功能，編譯完成後直接複製到下一階段使用
 
 
 容量分別是
 
-| slim 安裝字體包後刪除  | alpine 沒刪除  | alpine `--virtual`     | 多階段構建減少容量 |
-| ------------------- | ------------- | ---------------------- | ------------------- |
-| 402MB               | 462MB         |   245MB                | 226MB               |
+| 方式                 | 大小          |
+|--------------------|--------------|
+| slim 安裝字體包      | 402MB        |
+| alpine 沒刪除        | 462MB        |
+| alpine `--virtual`   | 245MB        |
+| 多階段構建減少容量   | 226MB        |
 
-可以看到什麼都不管使用 slim 就有誇張的 402MB，alpine 雖然本體小，但是加上編譯工具反而變大，用另外兩種方式優化之後可降低將近 50% 容量。進入容器內部觀察，發現 /usr/local/lib/python3.10 就佔據 190 MB 都是單一小檔最大只有 1MB，本機 .venv 資料夾約為 130MB，本以為優化空間也差不多了，但是由於我是 NAS 過來的手上一堆鏡像可以參考，發現專業專案的 python 資料夾還更小，所以一定有優化空間，目前最大障礙是 matplotlib 需求 numpy，兩個都是容量怪物。
+可以看到什麼都不管，直接使用 slim 檔案來到誇張的 402MB，alpine 雖然本體小，但是加上編譯工具反而變大，用另外兩種方式優化之後可降低將近 50% 容量。進入容器內部觀察，發現 /usr/local/lib/python3.10 就佔據 190 MB，都是單一小檔最大只有 1MB，而我本機開發端的 .venv 資料夾約為 130MB，約多出 60MB。本以為優化空間也差不多了，但是由於我是 NAS 過來的手上一堆鏡像可以參考，發現專業專案的 python 資料夾還更小，所以一定有優化空間，目前已知最大問題是 matplotlib 和他需求的 numpy 兩個都是容量怪物。
 
 # 構建和執行指令
 構建
