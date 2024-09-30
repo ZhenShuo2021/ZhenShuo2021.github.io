@@ -47,12 +47,23 @@
 #   pageRef = "notes/git"
 #   weight = 30
 
+[[main]]
+  name = "免費軟體"
+  parent = '筆記 {{< icon "link" >}}'
+  pageRef = "posts/awesome-free-software"
+  weight = 90
 
-# [[main]]
-#   name = "小抄"
-#   parent = "筆記"
-#   pageRef = "hugo-cheatsheet"
-#   weight = 50
+[[main]]
+  name = "Hugo 小抄"
+  parent = '筆記 {{< icon "link" >}}'
+  pageRef = "cheatsheet-hugo"
+  weight = 100
+
+[[main]]
+  name = "各種小抄"
+  parent = '筆記 {{< icon "link" >}}'
+  pageRef = "cheatsheet-misc"
+  weight = 200
 
 [[main]]
   name = "標籤"

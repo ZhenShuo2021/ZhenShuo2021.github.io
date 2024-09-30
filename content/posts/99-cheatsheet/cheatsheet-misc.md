@@ -100,11 +100,12 @@ def update_config(self, options: dict[str, Any]) -> None:
 # Misc
 [H.264 and H.265 硬體解碼支援列表](https://www.pugetsystems.com/labs/articles/What-H-264-and-H-265-Hardware-Decoding-is-Supported-in-Premiere-Pro-2120/)
 
+[DDR4 vs. DDR5 on Intel Core i9-12900K Alder Lake Review](https://www.techpowerup.com/review/intel-core-i9-12900k-alder-lake-ddr4-vs-ddr5/2.html) DDR5  isn't worth the money.
+
 [Github Alerts highlight](https://github.com/orgs/community/discussions/16925)
 
 VSC 遠端連線[1](https://xenby.com/b/221-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8-visual-studio-code-%E9%80%8F%E9%81%8E-ssh-%E9%80%B2%E8%A1%8C%E9%81%A0%E7%AB%AF%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC)  [2](https://gist.github.com/SHANG-TING/d792af5480492626cf57a50aab4f7776#%e9%83%a8%e5%b1%ac%e5%85%ac%e9%96%8b%e9%87%91%e9%91%b0)
 
-[docusaurus](https://github.com/Ouch1978/ouch1978.github.io)
 
 
 
