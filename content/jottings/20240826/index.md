@@ -5,7 +5,7 @@ draft: false
 summary: 
 showSummary: false
 tags: ["廢文", "Python"]
-categories: ["程式語言"]
+categories: ["隨筆", "程式語言"]
 series: []
 series_order: 
 progress_bar: true
