@@ -159,14 +159,12 @@ Text
 
 # 6. 部落格參考
 
+[Code and Me](https://blog.kyomind.tw/)
+[伊果的沒人看筆記本](https://igouist.github.io/)
 [大大的小蜗牛](https://www.eallion.com/)  
 [拆解整合的旅人 by Ernest Chiang](https://www.ernestchiang.com/zh/)  
-[Gea-Suan Lin's BLOG 幹壞事是進步最大的原動力](https://blog.gslin.org/)  
 [CRE0809's Blog](https://blog.cre0809.com/)  
 [老苏的blog 聚沙成塔，集腋成裘](https://laosu.tech/)  
-[資工小廢物](https://blog.giveanornot.com/zh-hant/)  
-[Opsnull](https://blog.opsnull.com/)  
 [咕咕 learn or earn](https://blog.laoda.de/)  
 [Sulv's Blog](https://www.sulvblog.cn/)  
-[KID's Blog](https://blog.jyhsu.tw/)  
 [Hexo stellar theme](https://xaoxuu.com/)
