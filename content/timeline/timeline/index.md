@@ -1,8 +1,8 @@
 ---
-title: '時間軸'
+title: 時間軸
 date: 2024-08-15T00:49:30+08:00
 draft: false
-slug: 'timeline'
+slug: timeline
 summary: 
 showSummary: false
 noArchive: true
@@ -15,6 +15,9 @@ progress_bar: true
 
 
 這是一個隱藏頁面，比廢話更廢話的地方。
+
+- 20241012
+連 [yt-dlp](https://github.com/yt-dlp/yt-dlp/issues/1918) 將近 100k stars 都沒有做多執行緒了，我當時想幫我的 P5D 寫多執行緒還真是想太多了啊。
 
 * 20240822  
 看了[這個](https://www.facebook.com/groups/honestaudio/posts/3643080962672094)更覺得應該要自託管文章，或者至少做好基礎備份，Github 被盜了至少電腦裡還有一份，如果多處部署還有多個鏡像網站可以用，至少不會像這樣被盜之後整組壞掉。
