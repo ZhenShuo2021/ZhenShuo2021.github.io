@@ -12,7 +12,7 @@ title = "ZSL"
   #logo = "img/global/zsl.webp"
   description = "ZSL 的筆記空間"
 
-[author]
+[params.author]
   name = "ZSL"
   image = "img/zsl.webp"
   #headline = "The Empire of Shinonome Umi"
