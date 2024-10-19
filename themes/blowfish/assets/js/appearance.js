@@ -33,7 +33,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     switcher.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
       var targetAppearance = getTargetAppearance();
-      localStorage.setItem("appearance", targetAppearance);
+      localStorage.setItem(
+        "appearance",
+        targetAppearance
+      );
       updateMeta();
       this.updateLogo?.(targetAppearance);
     });
@@ -46,7 +49,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     switcherMobile.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
       var targetAppearance = getTargetAppearance();
-      localStorage.setItem("appearance", targetAppearance);
+      localStorage.setItem(
+        "appearance",
+        targetAppearance
+      );
       updateMeta();
       this.updateLogo?.(targetAppearance);
     });
@@ -56,6 +62,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 });
+
 
 var updateMeta = () => {
   var elem, style;
