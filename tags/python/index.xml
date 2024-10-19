@@ -1,1 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on ZSL</title><link>https://www.zsl0621.cc/tags/python/</link><description>Recent content in Python on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Sat, 05 Oct 2024 07:07:20 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Ultimate Numba Guide Speed Up Python Numerical Computation</title><link>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</link><pubDate>Sat, 05 Oct 2024 07:07:20 +0800</pubDate><guid>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</guid><description>嘔心瀝血超過萬字的終極 Numba 教學指南，絕對是你在中文圈能找到的最好教學。</description></item><item><title>Code Review: facebook_crawler</title><link>https://www.zsl0621.cc/posts/facebook_crawler/</link><pubDate>Sat, 28 Sep 2024 00:13:29 +0800</pubDate><guid>https://www.zsl0621.cc/posts/facebook_crawler/</guid><description>前段時間認真寫了自己的第一個小專案，關注的重點在於可讀性高、可維護性高和可擴展性高的程式碼，版本從研究所時期的等級（能動就好）到最終版我個人還是覺得算不錯了，就想幫自己寫一個 code review 記錄過程，但是一直因為怠惰沒有動筆，直到看到這篇文章</description></item><item><title>20240826</title><link>https://www.zsl0621.cc/posts/20240826/</link><pubDate>Mon, 26 Aug 2024 02:42:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240826/</guid><description>Python dis 码农高天 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。 import dis def example(): with open('file.txt', 'r') as file: content = file.read() dis.dis(example) 輸出： (.venv) leo@MBP P5D % python3 t.py 2 0 RESUME 0 3 2 LOAD_GLOBAL 1 (NULL + open) 12 LOAD_CONST 1</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on ZSL</title><link>https://www.zsl0621.cc/tags/python/</link><description>Recent content in Python on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Sat, 05 Oct 2024 07:07:20 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Ultimate Numba Guide Speed Up Python Numerical Computation</title><link>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</link><pubDate>Sat, 05 Oct 2024 07:07:20 +0800</pubDate><guid>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</guid><description>嘔心瀝血超過萬字的終極 Numba 教學指南，絕對是你在中文圈能找到的最好教學。</description></item><item><title>Code Review: facebook_crawler</title><link>https://www.zsl0621.cc/posts/facebook_crawler/</link><pubDate>Sat, 28 Sep 2024 00:13:29 +0800</pubDate><guid>https://www.zsl0621.cc/posts/facebook_crawler/</guid><description>前段時間認真寫了自己的第一個小專案，關注的重點在於可讀性高、可維護性高和可擴展性高的程式碼，版本從研究所時期的等級（能動就好）到最終版我個人還是覺得算不錯了，就想幫自己寫一個 code review 記錄過程，但是一直因為怠惰沒有動筆，直到看到這篇文章</description></item><item><title>20240826</title><link>https://www.zsl0621.cc/posts/20240826/</link><pubDate>Mon, 26 Aug 2024 02:42:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240826/</guid><description>&lt;blockquote>
+&lt;p>Python dis&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://www.youtube.com/@minkoder" target="_blank">码农高天&lt;/a> 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。&lt;/p>
+&lt;pre>&lt;code class="language-python">import dis
+def example():
+with open('file.txt', 'r') as file:
+content = file.read()
+dis.dis(example)
+&lt;/code>&lt;/pre>
+&lt;p>輸出：&lt;/p>
+&lt;pre>&lt;code class="language-sh">(.venv) leo@MBP P5D % python3 t.py
+2 0 RESUME 0
+3 2 LOAD_GLOBAL 1 (NULL + open)
+12 LOAD_CONST 1 ('file.txt')
+14 LOAD_CONST 2 ('r')
+16 CALL 2
+24 BEFORE_WITH
+26 STORE_FAST 0 (file)
+4 28 LOAD_FAST 0 (file)
+30 LOAD_ATTR 3 (NULL|self + read)
+50 CALL 0
+58 STORE_FAST 1 (content)
+3 60 LOAD_CONST 0 (None)
+62 LOAD_CONST 0 (None)
+64 LOAD_CONST 0 (None)
+66 CALL 2
+74 POP_TOP
+76 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 78 PUSH_EXC_INFO
+80 WITH_EXCEPT_START
+82 POP_JUMP_IF_TRUE 1 (to 86)
+84 RERAISE 2
+&amp;gt;&amp;gt; 86 POP_TOP
+88 POP_EXCEPT
+90 POP_TOP
+92 POP_TOP
+94 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 96 COPY 3
+98 POP_EXCEPT
+100 RERAISE 1
+ExceptionTable:
+26 to 58 -&amp;gt; 78 [1] lasti
+78 to 86 -&amp;gt; 96 [3] lasti
+&lt;/code>&lt;/pre>
+&lt;p>簡單解讀：&lt;/p></description></item></channel></rss>

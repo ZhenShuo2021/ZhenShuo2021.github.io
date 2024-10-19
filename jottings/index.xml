@@ -1,1 +1,100 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>隨筆 on ZSL</title><link>https://www.zsl0621.cc/jottings/</link><description>Recent content in 隨筆 on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Mon, 23 Sep 2024 18:17:28 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/jottings/index.xml" rel="self" type="application/rss+xml"/><item><title>20240923</title><link>https://www.zsl0621.cc/posts/20240923/</link><pubDate>Mon, 23 Sep 2024 18:17:28 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240923/</guid><description>一段時間沒碰 Blowfish 了，點開儲存庫還愣了一下。 Thecus，是最近搜尋 pydio 時偶然看到的公司，看起來是掛了但是掛的有道理，點進去看他最貴的產品介紹是這樣： PLEX 多媒</description></item><item><title>20240826</title><link>https://www.zsl0621.cc/posts/20240826/</link><pubDate>Mon, 26 Aug 2024 02:42:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240826/</guid><description>Python dis 码农高天 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。 import dis def example(): with open('file.txt', 'r') as file: content = file.read() dis.dis(example) 輸出： (.venv) leo@MBP P5D % python3 t.py 2 0 RESUME 0 3 2 LOAD_GLOBAL 1 (NULL + open) 12 LOAD_CONST 1</description></item><item><title>20240812</title><link>https://www.zsl0621.cc/posts/20240812/</link><pubDate>Mon, 12 Aug 2024 11:24:31 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240812/</guid><description>到底在幹嘛 寫的小專案告一段落，問 GPT 哪裡可以修改的時候想到可以叫他用罵的可以罵出很多問題（？），於是出現了這篇廢文。 請你罵我（？） 給了這些提示詞後出現神</description></item><item><title>好用的網頁模版也不好找</title><link>https://www.zsl0621.cc/posts/20240803/</link><pubDate>Sat, 03 Aug 2024 15:45:04 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240803/</guid><description>開頭 上一篇寫完那個表格之後感到一股火，對比度實在太低了寫到很不爽，又深深感到 blowfish 配色真的是要大改，有夠不清楚，從問題修復到進階客製化已經改夠多東西了，連</description></item><item><title>AMD 產品命名</title><link>https://www.zsl0621.cc/posts/20240730/</link><pubDate>Tue, 30 Jul 2024 11:18:52 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240730/</guid><description>備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。</description></item><item><title>Page Speed</title><link>https://www.zsl0621.cc/posts/20240728/</link><pubDate>Sun, 28 Jul 2024 23:58:49 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240728/</guid><description>搞了半天的 pagespeed 終於能跑到滿分了，就是東加無障礙西減載入圖片，連我圖片比例不對都要管有夠麻煩，連強迫症的我都受不了惹。 然後 Google Tag Manager 竟然是我網站裡浪費最多載入</description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.zsl0621.cc/posts/20240728/cover.webp"/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>隨筆 on ZSL</title><link>https://www.zsl0621.cc/jottings/</link><description>Recent content in 隨筆 on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Mon, 23 Sep 2024 18:17:28 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/jottings/index.xml" rel="self" type="application/rss+xml"/><item><title>20240923</title><link>https://www.zsl0621.cc/posts/20240923/</link><pubDate>Mon, 23 Sep 2024 18:17:28 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240923/</guid><description>&lt;div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-sm">
+&lt;center> 一段時間沒碰 Blowfish 了，點開儲存庫還愣了一下。 &lt;/center>
+&lt;/div>
+&lt;p>Thecus，是最近搜尋 pydio 時偶然看到的公司，看起來是掛了但是掛的有道理，點進去看他&lt;a href="https://www.thecus.com/product?cat=linux_nas&amp;amp;cat_type=largeBusinessRackmount&amp;amp;PROD_ID=127&amp;amp;language_num=5" target="_blank">最貴的產品&lt;/a>介紹是這樣：&lt;/p>
+&lt;blockquote>
+&lt;h3>PLEX 多媒體伺服器&lt;/h3>
+Plex多媒體伺服器就像是數位多媒體的心臟和大腦。從Thecus® NAS APP Center，下載與安裝免費的Plex軟體到你的NAS。就可透過連接在網路上的各種設備（如您的Xbox 360和行動裝置）來播放存在NAS中的各種多媒體檔案。
+&lt;h3>快照備份&lt;/h3>
+透過BTRFS格式支援，Thecus NAS用戶將可享受快照備份的便利性。快照備份可經由手動或自動設定備份時間生成快照檔案並儲存在快照備份專屬空間，使用者可自行選擇某個時間段的快照備份並輕鬆完成還原工作。
+&lt;h3>Disk Clone、Disk Wipe&lt;/h3>
+透過Disk Clone可將硬碟內容完整複製於另一顆硬碟，而Disk Wipe可徹底並永久銷毀儲存資料、不留痕跡。
+&lt;h3>VPN伺服器&lt;/h3>
+VPN伺服器允許使用者經由加密網路進行遠端登入，而使用VPN伺服器讓企業更有效率的透過高性價比、可擴展性又具備安全防護的私人網路連線管理重要商業機密。
+&lt;h3>支援10GbE Fiber/10G Base-T&lt;/h3>
+10Gb 乙太網路將是企業邁向新世代的標準配備，Thecus網路儲存設備(NAS) 以平實的價格要讓一般使用者皆能輕鬆享受新世代10Gb 乙太網路所帶來的極速快感。
+&lt;h3>隨機附贈Acronis True Image&lt;/h3>
+Acronis Quick Backup軟體讓用戶能手動執行檔案資料備份或執行差異性備份，只需簡單幾個步驟，就能夠將用戶的檔案資料存放在一個安全的地方。此外，透過Acronis True Image Personal Backup，用戶能夠選擇備份完整的檔案資料，或只選擇重要的檔案資料作備份，更方便的是，用戶還能夠針對備份的檔案資料作編輯，再也不會因為備份軟體太過複雜或簡易而有所限制，體驗前所未有的彈性。
+&lt;h3>USB 3.0主控模式接口&lt;/h3>
+最新一代主控模式接口擁有比USB 2.0快10倍的速度。不論連接數位相機或智慧型手機、備份大型的外接硬碟，或者擴充你的網路儲存設備(NAS)的儲存空間，USB 3.0能確保以5 Gbit/s極快的速度完成並也能向下和USB 2.0及USB 1.1 相容。
+&lt;h3>多重磁碟陣列(RAID)&lt;/h3>
+Thecus網路儲存設備(NAS)可以依照使用者對效能和資料保護的不同需求在不同的券冊(Volume)設定各種磁碟陣列(RAID): RAID 0, 1, 5, 6, 10, 50, 60及JBOD。並可使用線上磁碟陣列升級(online RAID migration)、線上擴充磁碟空間(online expansion)、熱備援(hot spare)和自動重建來保護儲存的檔案資料。
+&lt;h3>支援多種檔案系統&lt;/h3>
+Thecus網路儲存伺服器(NAS)支援多種檔案系統: EXT4、Btrfs 及XFS。使用者可在不同的券冊(Volume)中選擇所需的檔案系統格式。
+&lt;h3>iSCSI儲存資源隨需分配 (Thin-Provisioning)&lt;/h3>
+有了高速傳輸的iSCSI及iSCSI資源隨需分配技術，讓企業能夠更有效地運用儲存空間。透過iSCSI連結來快速傳輸資料，提供使用者更多使用彈性並減少儲存空間的浪費。
+&lt;h3>支援iOS/Android系統&lt;/h3>
+現在全球最備受注目的趨勢就是無論在甚麼地方都能存取資料。藉由Thecus T-OnTheGo，使用者能夠管理你的網路儲存設備(NAS)，並透過iOS or Android設備上傳/下載/瀏覽網路儲存設備(NAS)裡的檔案。
+&lt;h3>Rsync備份模組&lt;/h3>
+能夠有效率地管理備份檔案資料，是現今非常重要的課題，而針對不同使用者，大家都有特定的儲存需求。Thecus Rsync備份模組能夠依照用戶的需求提供不同的服務， 例如： 遠端備份功能、彈性的時程安排，同時提供Linux-based傳輸的穩定性。
+&lt;h3>使用者磁碟空間管理&lt;/h3>
+龐大的儲存空間可以分配給Thecus網路儲存設備(NAS)的眾多使用者。無論是兩個或者是100個使用者，都能輕輕鬆鬆地分配並管理硬碟空間。
+&lt;h3>PCI-e插槽&lt;/h3>
+Thecus的網路儲存設備(NAS) 已經擁有豐富的創新技術。如果企業用戶想獲取閃電般的傳輸速度，可自行在PCI-e插槽上安裝10Gb乙太網路卡。
+&lt;/blockquote>
+&lt;p>我真的是無從吐槽，feature 介紹第一個會是最重要的特色吧，這個分類是 &lt;code>企業級網路儲存設備&lt;/code> 的產品第一個 feature 是開源的 Plex 媒體伺服器？？？企業級產品哈囉＝＝？還有開源的 Rsync 也好意思放上去，這到底是什麼腦袋撞到的東西，其他特色就是硬體堆一堆，10G 網路勉強可以談，其他像是 USB 3.0 (???)、RAID (???)、PCI-e插槽 (???)、附贈Acronis True Image (???)，我的天，讓我覺得整間公司都沒人用過 NAS，這跟最近的星鳴特工一樣整間公司沒人敢講話是嗎。配上前面爛成一團的 feature 讓我完全無法相信 &lt;code>無論是兩個或者是100個使用者，都能輕輕鬆鬆地分配並管理硬碟空間&lt;/code> 這個 loading 有被驗證過，還有為什麼一個是中文一個是數字，這些人都只有大學畢業是不是，整個產品像是大學生報告一樣，沒東西寫硬要找東西湊數。&lt;/p></description></item><item><title>20240826</title><link>https://www.zsl0621.cc/posts/20240826/</link><pubDate>Mon, 26 Aug 2024 02:42:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240826/</guid><description>&lt;blockquote>
+&lt;p>Python dis&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://www.youtube.com/@minkoder" target="_blank">码农高天&lt;/a> 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。&lt;/p>
+&lt;pre>&lt;code class="language-python">import dis
+def example():
+with open('file.txt', 'r') as file:
+content = file.read()
+dis.dis(example)
+&lt;/code>&lt;/pre>
+&lt;p>輸出：&lt;/p>
+&lt;pre>&lt;code class="language-sh">(.venv) leo@MBP P5D % python3 t.py
+2 0 RESUME 0
+3 2 LOAD_GLOBAL 1 (NULL + open)
+12 LOAD_CONST 1 ('file.txt')
+14 LOAD_CONST 2 ('r')
+16 CALL 2
+24 BEFORE_WITH
+26 STORE_FAST 0 (file)
+4 28 LOAD_FAST 0 (file)
+30 LOAD_ATTR 3 (NULL|self + read)
+50 CALL 0
+58 STORE_FAST 1 (content)
+3 60 LOAD_CONST 0 (None)
+62 LOAD_CONST 0 (None)
+64 LOAD_CONST 0 (None)
+66 CALL 2
+74 POP_TOP
+76 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 78 PUSH_EXC_INFO
+80 WITH_EXCEPT_START
+82 POP_JUMP_IF_TRUE 1 (to 86)
+84 RERAISE 2
+&amp;gt;&amp;gt; 86 POP_TOP
+88 POP_EXCEPT
+90 POP_TOP
+92 POP_TOP
+94 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 96 COPY 3
+98 POP_EXCEPT
+100 RERAISE 1
+ExceptionTable:
+26 to 58 -&amp;gt; 78 [1] lasti
+78 to 86 -&amp;gt; 96 [3] lasti
+&lt;/code>&lt;/pre>
+&lt;p>簡單解讀：&lt;/p></description></item><item><title>20240812</title><link>https://www.zsl0621.cc/posts/20240812/</link><pubDate>Mon, 12 Aug 2024 11:24:31 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240812/</guid><description>&lt;h1 class="relative group">到底在幹嘛
+&lt;div id="%E5%88%B0%E5%BA%95%E5%9C%A8%E5%B9%B9%E5%98%9B" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>寫的小專案告一段落，問 GPT 哪裡可以修改的時候想到可以叫他用罵的可以罵出很多問題（？），於是出現了這篇廢文。&lt;/p>
+&lt;h2 class="relative group">請你罵我（？）
+&lt;div id="%E8%AB%8B%E4%BD%A0%E7%BD%B5%E6%88%91" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;p>給了這些提示詞後出現神奇的語言XD，果然提示詞也要夠瘋，雖然還是比不過網路上那些瘋子就是啦&lt;/p></description></item><item><title>好用的網頁模版也不好找</title><link>https://www.zsl0621.cc/posts/20240803/</link><pubDate>Sat, 03 Aug 2024 15:45:04 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240803/</guid><description>&lt;h1 class="relative group">開頭
+&lt;div id="%E9%96%8B%E9%A0%AD" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>&lt;a href="https://www.zsl0621.cc/posts/20240730/">上一篇&lt;/a>寫完那個表格之後感到一股火，對比度實在太低了寫到很不爽，又深深感到 blowfish 配色真的是要大改，有夠不清楚，從&lt;a href="https://www.zsl0621.cc/hugo-blowfish-fix/">問題修復&lt;/a>到&lt;a href="https://www.zsl0621.cc/hugo-blowfish-features/">進階客製化&lt;/a>已經改夠多東西了，連基礎的語法渲染都改成 highlight.js，現在還有表格，之後不知道還會發現多少東西要改，才想到我幹嘛不直接找一個配色正常的模版來用，改 code 就算了調整配色我完全不會啊。除此之外也發現對於知識網站來說 blowfish 沒有左側 list 可以方便查詢。&lt;/p></description></item><item><title>AMD 產品命名</title><link>https://www.zsl0621.cc/posts/20240730/</link><pubDate>Tue, 30 Jul 2024 11:18:52 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240730/</guid><description>備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。</description></item><item><title>Page Speed</title><link>https://www.zsl0621.cc/posts/20240728/</link><pubDate>Sun, 28 Jul 2024 23:58:49 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240728/</guid><description>&lt;p>搞了半天的 &lt;a href="https://pagespeed.web.dev/" target="_blank">pagespeed&lt;/a> 終於能跑到滿分了，就是東加無障礙西減載入圖片，連我圖片比例不對都要管有夠麻煩，連強迫症的我都受不了惹。&lt;br>
+&lt;figure>
+&lt;img
+class="my-0 rounded-md"
+loading="lazy"
+src="https://www.zsl0621.cc/posts/20240728/cover.webp"
+alt="pagespeed"
+/>
+&lt;/figure>
+&lt;/p>
+&lt;p>然後 Google Tag Manager 竟然是我網站裡浪費最多載入時間的 js，原本還想說要不要刪了，但想想刪了速度我也沒感覺，但是看不到報表我很有感覺，就算不看放在那也爽。&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.zsl0621.cc/posts/20240728/cover.webp"/></item></channel></rss>
