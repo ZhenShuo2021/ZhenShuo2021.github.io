@@ -1,13 +1,83 @@
-/* Safari filter */ 
+/* 
+ * 基礎變數設定
+ * 放在 :root 可以讓所有元素都能使用這些變數
+ */
+:root {
+    --base-font-size: 16px;
+    --base-line-height: 1.6;
+    --letter-spacing: 0.025em;
+}
+
+
+/* 
+ * HTML 設定
+ * 1. 設定基礎字體大小
+ * 2. 確保 rem 單位的正確計算
+ * 3. 設定全域的字體平滑度
+ */
+/* Safari filter */
 /* https://www.zhangxinxu.com/wordpress/2024/07/css-safari-detect/ */
 @supports not (image-rendering: optimizeSpeed) {
-html {
-    font-family: 'LXGW WenKai Screen', Arial, sans-serif;
+    html {
+        /* 基礎字體設定 - 會影響所有使用 rem 單位的元素 */
+        font-size: var(--base-font-size);
+        font-weight: 500;
+
+        /* 字體平滑度設定 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        /* 確保螢幕縮放時的文字行為正常 */
+        text-size-adjust: 100%;
+
+        /* 設定基本字體堆疊，作為後備 */
+        font-family: sans-serif;
+    }
 }
+
+/* 
+* Body 設定
+* 1. 具體的字體設定
+* 2. 行高和字距
+* 3. 特定的排版規則
+*/
+body {
+    /* 主要中文字體設定 */
+    font-family:
+        /* Windows 系統字體 */
+        "Microsoft JhengHei",
+        "PMingLiU",
+
+        /* macOS 系統字體 */
+        "PingFang TC",
+        "Heiti TC",
+
+        /* 通用後備字體 */
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+    /* 繼承 html 的字體大小，但可以用比例調整 */
+    font-size: 1rem;
+
+    /* 行高和字距設定 */
+    line-height: var(--base-line-height);
+    letter-spacing: var(--letter-spacing);
+
+    /* 文字排版設定 */
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 
-strong, b {
+
+
+strong,
+b {
     font-weight: 700;
     -webkit-text-stroke: 0.1px;
 }
@@ -16,41 +86,51 @@ p {
     word-wrap: break-word;
 }
 
+h1.relative.group,
+h2.relative.group {
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
 /* larger font for screen > 768px */
 @media (min-width: 768px) {
     .article-content {
         --font-size: 0.9rem;
     }
-      
-    p, li, ol, ul {
+
+    p,
+    li,
+    ol,
+    ul {
         font-size: var(--font-size);
     }
-    
+
     h1.relative.group {
         font-size: 1.85rem;
+
     }
-    
+
     h2.relative.group {
         font-size: 1.55rem;
     }
-    
+
     h3.relative.group {
         font-size: 1.45rem;
     }
-    
+
     h4.relative.group {
         font-size: 1.3rem;
     }
-    
+
     h5.relative.group {
         font-size: 1.15rem;
     }
-    
+
     h6.relative.group {
         font-size: 1rem;
     }
 }
-  
+
 
 .prose {
     --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
