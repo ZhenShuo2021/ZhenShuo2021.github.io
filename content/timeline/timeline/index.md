@@ -16,6 +16,9 @@ progress_bar: true
 
 這是一個隱藏頁面，比廢話更廢話的地方。
 
+- 20241030
+看了 [這個事情就是台灣麥當勞的錯！](https://www.youtube.com/watch?v=H-8ix1dSi4g) 做錯事發個口是心非的道歉聲明，最愚蠢的是開小號嗆網友，其實到這裡我都覺得沒差，結果去 [網紅獎典禮發文](https://www.instagram.com/p/DBqng-zyA0Q/?utm_source=ig_web_copy_link) 「保持善良 繼續努力」，之後他的錢肯定還是能繼續賺啦，賣大麻（吸跟賣完全兩回事自己翻刑法）的都能萬人大台了，台灣人是不是又傻又蠢。
+
 - 20241012
 連 [yt-dlp](https://github.com/yt-dlp/yt-dlp/issues/1918) 將近 100k stars 都沒有做多執行緒了，我當時想幫我的 P5D 寫多執行緒還真是想太多了啊。
 

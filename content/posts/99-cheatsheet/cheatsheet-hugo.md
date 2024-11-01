@@ -159,8 +159,8 @@ Text
 
 # 6. 部落格參考
 
-[Code and Me](https://blog.kyomind.tw/)
-[伊果的沒人看筆記本](https://igouist.github.io/)
+[Code and Me](https://blog.kyomind.tw/)  
+[伊果的沒人看筆記本](https://igouist.github.io/)  
 [大大的小蜗牛](https://www.eallion.com/)  
 [拆解整合的旅人 by Ernest Chiang](https://www.ernestchiang.com/zh/)  
 [CRE0809's Blog](https://blog.cre0809.com/)  

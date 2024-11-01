@@ -21,9 +21,11 @@ magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 
 # Python
 
-## pip 一次刪除所有套件
+## pip 刪除所有套件和快取
+支援 win/mac
 ```sh
-pip freeze | xargs pip uninstall -y && rm -rf build
+pip freeze > unins && pip uninstall -y -r unins && rm unins
+pip cache purge
 ```
 
 ## 從原始碼構建程式
