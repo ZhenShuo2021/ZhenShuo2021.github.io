@@ -1,5 +1,5 @@
 ---
-title: 第一次幫 TrueNAS 買硬碟就翻車
+title: 第一次幫 NAS 買硬碟就翻車
 date: 2024-09-24T22:10:43+08:00
 draft: false
 summary: 
@@ -34,7 +34,7 @@ progress_bar: true
 2. `zpool status -v` `zfs clear` `zfs scrub <pool>` 的使用，其中 scrub 有點類似 `fsck` 但不一樣，網路上說一樣的是錯誤資訊，詳情請見這份[文檔](https://illumos.org/books/zfs-admin/gavwg.html)，簡單來說 fsck 檢查文件系統結構性故障，zfs scrub 使用 checksum 修復數據層面故障
 3. oracle 建議每個月 scrub 一次硬碟
 4. 原來 TrueNAS 可以用 zfs 指令，剛學的時候沒加 sudo 不能就以為他鎖住了（packages 相關的全被鎖住）
-5. 既然可以用之後可以限制一下 zfs 記憶體用量，甚至還有過 free mem 0 Bytes (24.04.0 版[這個方法](https://jose.scjtqs.com/truenas/2023-10-08-1972/truenas-scale-%E8%B0%83%E6%95%B4%E9%BB%98%E8%AE%A4%E7%9A%84-arc%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E8%A7%84%E5%88%99.html)沒用)
+5. 既然可以用之後可以[限制 zfs 記憶體用量](https://jose.scjtqs.com/truenas/2023-10-08-1972/truenas-scale-%E8%B0%83%E6%95%B4%E9%BB%98%E8%AE%A4%E7%9A%84-arc%E5%86%85%E5%AD%98%E5%8D%A0%E7%94%A8%E8%A7%84%E5%88%99.html)，甚至還有過 free mem 0 Bytes。
 
 ## 硬碟
 1. 即使全盤掃描無壞軌，S.M.A.R.T. 資訊也良好，硬碟也可能有問題
