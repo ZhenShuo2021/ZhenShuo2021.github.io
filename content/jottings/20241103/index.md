@@ -11,11 +11,16 @@ series_order:
 progress_bar: true
 ---
 
-之前發現 Queue 原來可以拿來配合 threading 作為一個任務監聽器使用的，原本想寫一個 Python Queue 的小介紹，結果码农高天也剛好拍了[一部影片](https://www.youtube.com/watch?v=Qsa3xZgDUh4)來介紹 Queue，難道我除了[天使模式](https://docs.zsl0621.cc/memo/python/first-attempt-strategy-pattern#%E5%BE%8C%E8%A9%B1)以外還有共時性嗎！！！好可怕啊 Python。
+最近發現 Queue 原來可以配合多線程作為任務監聽器使用，就想寫一個 Python Queue 簡單介紹文章，結果码农高天也剛好拍了[一部影片](https://www.youtube.com/watch?v=Qsa3xZgDUh4)來介紹 Queue，難道這就是共時性嗎！！！好可怕啊 Python。
+
+
+<div align="center">
 
 ![共時性](共時性.jpg)
 
-會想寫文章介紹 Queue 的原因不意外的又是網路上的教學錯了，尼馬ㄉ給我說 Queue 不是 thread-safe，bro 你寫教學前敢不敢先看一下文檔...
+</div>
+
+會想寫文章的原因不意外的又是網路上的教學錯了，說 Queue 不是 thread-safe，bro 你寫教學前敢不敢先看一下文檔...
 
 既然文章沒得寫了這裡丟一下自己寫的任務監聽器。
 
@@ -26,70 +31,86 @@ TR = TypeVar("TR", bound=Any)
 
 
 @dataclass
-class ThreadJob(Generic[TI]):
+class Task(Generic[TI]):
     """Generic task container."""
 
     task_id: str
-    params: TI
-    job: Union[Callable[..., TR], Any] = None  # type: ignore
+    func: Callable[..., Any]
+    args: tuple[Any, ...] = ()
+    kwargs: dict[str, Any] | None = None
+
+    def __post_init__(self) -> None:
+        self.kwargs = self.kwargs or {}
 
 
 class ThreadingService(Generic[TI, TR]):
     """Generic service for processing tasks with multiple workers."""
 
-    def __init__(self, logger: logging.Logger, num_workers: int = 1):
-        self.task_queue: Queue[Optional[ThreadJob[TI]]] = Queue()
+    def __init__(self, logger: Logger, max_workers: int = 5):
+        self.task_queue: Queue[Task | None] = Queue()
         self.logger = logger
-        self.num_workers = num_workers
-        self.worker_threads: list[threading.Thread] = []
-        self.results: dict[str, TR] = {}
+        self.max_workers = max_workers
+        self.workers: list[threading.Thread] = []
+        self.results: dict[str, Any] = {}
         self._lock = threading.Lock()
+        self.is_running = False
 
-    def start_workers(self):
-        """Start up multiple worker threads to listen for tasks."""
-        for _ in range(self.num_workers):
-            worker = threading.Thread(target=self._task_worker, daemon=True)
-            self.worker_threads.append(worker)
-            worker.start()
+    def start(self) -> None:
+        if not self.is_running:
+            self.is_running = True
+            for _ in range(self.max_workers):
+                worker = threading.Thread(target=self._process_tasks, daemon=True)
+                self.workers.append(worker)
+                worker.start()
 
-    def _task_worker(self):
-        """Worker function to process tasks from the queue."""
+    def add_task(self, task: Task) -> None:
+        self.task_queue.put(task)
+        if not self.is_running:
+            self.start()
+
+    def add_tasks(self, tasks: list[Task]) -> None:
+        for task in tasks:
+            self.task_queue.put(task)
+        if not self.is_running:
+            self.start()
+
+    def get_result(self, task_id: str) -> Any | None:
+        with self._lock:
+            return self.results.pop(task_id, None)
+
+    def get_results(self, max_results: int = 0) -> dict[str, Any]:
+        with self._lock:
+            if max_results <= 0:
+                results_to_return = self.results.copy()
+                self.results.clear()
+                return results_to_return
+
+            keys = list(self.results.keys())[:max_results]
+            return {key: self.results.pop(key) for key in keys}
+
+    def stop(self, timeout: int | None = None) -> None:
+        self.task_queue.join()
+        for _ in range(self.max_workers):
+            self.task_queue.put(None)
+        for worker in self.workers:
+            worker.join(timeout=timeout)
+        self.workers.clear()
+        self.is_running = False
+
+    def _process_tasks(self) -> None:
         while True:
             task = self.task_queue.get()
             if task is None:
-                break  # exit signal received
+                break
 
             try:
-                if task.job:
-                    result: Any = task.job(task.task_id, task.params, self.logger)
-                    with self._lock:
-                        self.results[task.task_id] = result
+                result = task.func(*task.args, **task.kwargs)  # type: ignore
+                with self._lock:
+                    self.results[task.task_id] = result
             except Exception as e:
                 self.logger.error("Error processing task %s: %s", task.task_id, e)
             finally:
                 self.task_queue.task_done()
-
-    def add_task(self, task_id: str, params: TI, job: Any) -> None:
-        """Add task to queue with specific parameters and job."""
-        task = ThreadJob(task_id=task_id, params=params, job=job)
-        self.task_queue.put(task)
-
-    def get_result(self, task_id: str) -> Optional[TR]:
-        """Get the result of a specific task."""
-        with self._lock:
-            return self.results.get(task_id)
-
-    def wait_completion(self):
-        """Block until all tasks are done and stop all workers."""
-        self.task_queue.join()
-
-        # Signal all workers to exit
-        for _ in range(self.num_workers):
-            self.task_queue.put(None)
-
-        # Wait for all worker threads to finish
-        for worker in self.worker_threads:
-            worker.join()
 ```
 
 使用方式
