@@ -11,11 +11,11 @@ series_order:
 progress_bar: true
 ---
 
-之前發現 Queue 原來可以拿來配合 threading 作為一個任務監聽器使用的，原本想寫一個 Python Queue 的小介紹，結果码农高天也剛好拍了[一部影片](https://www.youtube.com/watch?v=Qsa3xZgDUh4)來介紹 Queue，難道我除了[天使模式](https://docs.zsl0621.cc/memo/python/first-attempt-strategy-pattern#%E5%BE%8C%E8%A9%B1)以外還有共時性嗎！！！好可怕啊 Python。
+最近 Queue 原來可以配合多線程作為任務監聽器使用，就想寫一個 Python Queue 簡單介紹文章，結果码农高天也剛好拍了[一部影片](https://www.youtube.com/watch?v=Qsa3xZgDUh4)來介紹 Queue，難道這就是共時性嗎！！！好可怕啊 Python。
 
 ![共時性](共時性.jpg)
 
-會想寫文章介紹 Queue 的原因不意外的又是網路上的教學錯了，尼馬ㄉ給我說 Queue 不是 thread-safe，bro 你寫教學前敢不敢先看一下文檔...
+會想寫文章的原因不意外的又是網路上的教學錯了，說 Queue 不是 thread-safe，bro 你寫教學前敢不敢先看一下文檔...
 
 既然文章沒得寫了這裡丟一下自己寫的任務監聽器。
 
