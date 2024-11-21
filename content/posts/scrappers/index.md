@@ -23,10 +23,10 @@ progress_bar: true
 最基本的爬蟲形式。發送 HTTP 請求獲取 HTML 資料後，使用如 BeautifulSoup 的工具進行解析。適用內容完全嵌入 HTML 的網頁。
 
 2. AJAX 技術  
-透過 JavaScript 發送非同步請求的技術。要爬取此類網頁，需要分析其網路請求（如 XHR 請求）的來源，額外處理懶加載或延遲載入的資源。
+向伺服器發送請求並獲取資料的非同步技術，本質是主動的、由 JavaScript 發起資料要求，目的是提高使用體驗，讓網頁動態更新不需刷新整頁。爬取 AJAX 頁面的核心在於模擬該主動請求，找到資料傳遞的接口並抓取其回應。
 
 3. 懶加載（Lazy Loading）  
-為了優化效能在滑動到特定區域時才載入資源的技術。需要透過檢查資源載入的觸發條件以及資源來源來爬取內容。
+懶加載是針對效能優化的設計模式，資源載入的行為是被動的，僅在用戶操作（如滾動）或資源進入可視範圍時觸發。它的本質是延遲載入，並非直接發起請求。爬取時，需重現觸發條件（如模擬滾動）或直接解析網頁的資源載入邏輯。
 
 4. 網頁自動化爬蟲   
 使用 selenium、puppeteer 或 playwright 等工具進行的爬蟲，適合處理含大量 JavaScript 的網站，例如懶加載網站或受 Cloudflare 防護的頁面。不管用哪種語言撰寫，只要是同一種工具都是調用相同底層，網路文章討論語言的又在亂講。
@@ -36,16 +36,17 @@ progress_bar: true
 
 [^cf]: 問 GPT 會告訴你用 undetected-chromedriver 或是 cloudscraper，在 2024/11 這些都沒更新了，開源軟體要打贏 big tech 還是很困難。這兩個套件還是有提交新的 commit 但內容都是語法而不是架構更新，相對的 Cloudflare 天天在進化所以這些工具大家可以直接跳過不用浪費時間了。比如我用 cloudscrapper 前兩次正常運行回傳還很開心，結果才發第三次請求就被鎖了，而且是直接 ban IP 到現在都還沒解鎖，我還是用自家 IP + 正常的 header 發送請求不是用奇怪的代理欸。
 
-3. API 爬蟲   
+6. API 爬蟲   
 用網站自訂的 API 介面爬蟲，例如 [twitter API](https://developer.x.com/en/docs/x-api) 或是 GraphQL 等等，網站會自定好哪些資料可存取，透過這個 API 和他互動。
 
-4. 進階逆向工程   
+7. 進階逆向工程   
 網站沒有提供 API 且限制嚴格，需要進階的逆向技術。例如透過分析 URL 結構或網路請求規律找到可用的數據介面。困難，例如[這篇文章](https://blog.huli.tw/2019/07/12/medium-crawler/)說明有人使用 `@${username}?format=json`，需要更進階的逆向知識才知道怎麼找到這方法。
 
 
 # 應該如何選擇爬蟲工具
 常見的工具從 requests+bs4 / selenium / scrappy 等等令人有點眼花撩亂，選擇前要先搞清楚自己是被哪種方式擋下，再根據上面選符合自己的。其實只分兩種：會不會遇到 JS 封鎖問題還有該網站有沒有用 API。
 
+- 基本靜態網頁 → requests
 - 網站使用 API → requests + API  
 - 網站需要 JS 互動 → requests + 自動化工具
 - 需要爬取大量網站 → scrappy
@@ -95,11 +96,13 @@ progress_bar: true
 
 - urllib 是內建的低階套件，基本上不會有人用。
 - requests 高階的老套件，不支援非同步和 HTTP/2。
-- httpx 新套件，兩個都支援，除此之外基本相同，效能也差不多。
-- aiohttp 不支援 HTTP/2，但是效能[比 httpx 好](https://github.com/encode/httpx/issues/3215)。
+- httpx 新套件，兩個都支援，除此之外基本相同，效能比 requests 稍好。
+- aiohttp 不支援 HTTP/2，但是效能比 httpx 更好，要會寫非同步語法。
 - grequests 基於 Requests 的非同步實現，不如直接用 aiohttp。
-- pycurl 基於 C 的 libcurl，要手動處理和本機的 libcurl 路徑解析才能正常安裝，在檔案下載情境中，HTTP 請求數量少數據吞吐量大的情況下特別高效。
+- pycurl 基於 C 的 libcurl，要手動處理和本機的 libcurl 路徑解析才能正常安裝，在檔案下載這種 HTTP 請求數量少數據吞吐量大的情況下特別高效。
 - Twisted 窩不知道，問了 GPT 才第一次看到。
+
+[參考資料](https://medium.com/@jkishan421/requests-vs-aiohttp-vs-httpx-choosing-the-right-python-http-libraries-8a06373e9744)
 
 ## HTML 解析套件選擇
 最常用的兩個選手 BeautifulSoup 和 lxml 比較如下 by ChatGPT：
@@ -143,10 +146,11 @@ progress_bar: true
 
 - 通用解析：BeautifulSoup
 - 高性能：lxml
-- 爬蟲：parsel
+- [更高性能](https://medium.com/@yahyamrafe202/in-depth-comparison-of-web-scraping-parsers-lxml-beautifulsoup-and-selectolax-4f268ddea8df)：[Selectolax](https://github.com/rushter/selectolax)
+- [超高性能](https://www.rickyspears.com/scraper/python-html-parsers/)：[html5-parser](https://github.com/kovidgoyal/html5-parser)
 - 簡單 XML：xmltodict
 - 新聞文章：newspaper3k
 - 不規範的複雜 HTML：html5lib
 - jQuery 風格：PyQuery
 
-
+想要有顯著提升並且不會用得很痛苦的話 lxml + httpx 就已經足夠好，語法和常見的美味湯 + requests 基本上沒差太多。再來要更快就要用 aiohttp，已經進入邊際效應不是非常必要，除非本身就很熟非同步語法那寫 aiohttp 當然是更好選擇，最後 Selectolax 和 html5-parser 基本沒人用，搜尋限制繁體中文文章數=0。
