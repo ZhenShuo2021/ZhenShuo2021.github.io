@@ -3,6 +3,19 @@
 <!-- Customize
 
 progress bar 
+
+移除文章留白
+<div class="article-content max-w-prose mb-20">
+
+新增和TOC的距離
+<div class="min-w-0 min-h-0 max-w-fit" style="padding-right: 6em;">
+<style>
+  @media (max-width: 1024px) {
+    .min-w-0.min-h-0.max-w-fit {
+      padding-right: 0 !important;
+    }
+  }
+</style>
 -->
 
 <article>
@@ -82,13 +95,19 @@ progress bar
       </div>
       {{ end }}
 
-      <div class="min-w-0 min-h-0 max-w-fit">
+      <div class="min-w-0 min-h-0 max-w-fit" style="padding-right: 6em;">
         
         {{ partial "series/series.html" . }}
         
+        <style>
+          @media (max-width: 1024px) {
+            .min-w-0.min-h-0.max-w-fit {
+              padding-right: 0 !important;
+            }
+          }
+        </style>
 
-
-        <div class="article-content max-w-prose mb-20">          
+        <div class="article-content mb-20">          
           {{ .Content }}
         </div>
         
