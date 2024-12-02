@@ -223,8 +223,8 @@ def _parse_docid(entryPoint, homepage_response):
     1. 建立 `class homepage_response()` 沒意義，有錯直接在最近的地方解決，而不是讓所有使用 `_get_homepage` 的函式都要錯誤檢查，避免忘了檢查會有一段白白運行但是無用的程式碼，還導致最後排查困難。
 - `_parse_docid` 和 `_parse_identifier`: 
     1. 如果所有 pattern 都不符合會回傳 none，直到 `_get_posts` 才會報錯，應該加上型別檢查讓錯誤離發生處越近越好
-    2. 請用專用套件解析 html，雖然[比較慢](https://stackoverflow.com/questions/16929149/finding-links-fast-regex-vs-lxml)，但你可以看[這個人有多氣](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
-    3. 應將 pattern 寫在函式最前面並且遍歷 list，我們以 `_parse_docid` 為例，可以把他修改成以下，可以看到行數差不多，但是可讀性和可維護性更高，還多加上網路操作一定要的 `try-except`，同時解決濫用 `locals` 語法問題
+    2. 請用專用套件解析 html，因為文字解析的例外[永遠處理不完](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+    3. 應將 pattern 寫在函式最前面並且遍歷 list，下方我們以 `_parse_docid` 為例進行修改，可以看到行數差不多，但是可讀性和可維護性更高，還多加上網路操作一定要的 `try-except`，同時解決濫用 `locals` 語法問題
     ```py
     # 優化後的 _parse_docid
     def parse_docid(entry_point, homepage_response):
