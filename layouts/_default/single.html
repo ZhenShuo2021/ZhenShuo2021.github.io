@@ -40,9 +40,6 @@ progress bar
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/basic.html" (dict "context" . "scope" "single") }}
     </div>
-
-    
-
     
     {{ $authorsData := .Site.Data.authors }}
     {{ $taxonomies := .Site.Taxonomies.authors }}
@@ -66,7 +63,7 @@ progress bar
         {{- if $authorData -}}
           {{ range $taxonomyname, $taxonomy := $taxonomies }}
             {{ if (eq $taxonomyname $author) }}
-              {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+            {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
             {{ end }}
           {{ end }}
           {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -85,7 +82,7 @@ progress bar
     
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
-      class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8" style="padding-bottom: 1em;">
+    class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
       <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky {{ if hasPrefix .Site.Params.header.layout "fixed" -}}
         lg:top-[140px]{{ else }}lg:top-10{{ end }}">
 
@@ -95,7 +92,7 @@ progress bar
       </div>
       {{ end }}
 
-      <div class="min-w-0 min-h-0 max-w-fit" style="padding-right: 6em;">
+      <div class="min-w-0 min-h-0 max-w-fit">
         
         {{ partial "series/series.html" . }}
         
@@ -107,10 +104,20 @@ progress bar
           }
         </style>
 
-        <div class="article-content mb-20">          
+        <div class="article-content max-w-prose mb-20">
           {{ .Content }}
+          {{ $defaultReplyByEmail := .Site.Params.replyByEmail }}
+          {{ $replyByEmail := default $defaultReplyByEmail .Params.replyByEmail }}
+          {{ if $replyByEmail }}
+            <strong class="block mt-8">
+              <a target="_blank" 
+              class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
+              href="mailto:{{ .Site.Params.Author.email }}?subject={{ replace (printf "Reply to %s" .Title) "\"" "'" }}">
+                Reply by Email
+              </a>
+            </strong>
+          {{ end }}
         </div>
-        
         
         {{ if (.Params.showAuthorBottom | default ( .Site.Params.article.showAuthorBottom | default false)) }}
 
@@ -124,7 +131,7 @@ progress bar
             {{- if $authorData -}}
               {{ range $taxonomyname, $taxonomy := $taxonomies }}
                 {{ if (eq $taxonomyname $author) }}
-                  {{ $taxonomyLink = delimit (slice $baseURL "/authors/" $author) "" }}
+                {{ $taxonomyLink = delimit (slice $baseURL "authors/" $author "/") "" }}
                 {{ end }}
               {{ end }}
               {{ partial "author-extra.html" (dict "context" . "data" $authorData "link" $taxonomyLink) }}
@@ -153,10 +160,10 @@ progress bar
         var oid = "views_{{ $path }}"
         var oid_likes = "likes_{{ $path }}"
       </script>
-      {{ end }}
       {{ $jsPage := resources.Get "js/page.js" }}
       {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
       <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+      {{ end }}
   
     </section>
   <footer class="pt-8 max-w-prose print:hidden">

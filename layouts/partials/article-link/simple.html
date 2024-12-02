@@ -56,11 +56,11 @@
     {{- with $featured -}}
     {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
         {{ with . }}
-        <div class="{{ $articleImageClasses }}" alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ else }}
         {{ with .Resize "600x"  }}
-        <div class="{{ $articleImageClasses }}" alt="{{ $.Title }}" loading="lazy" style="background-image:url({{ .RelPermalink }});"></div>
+        <div class="{{ $articleImageClasses }}" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
     {{- else -}}
@@ -111,7 +111,7 @@
       </div>
       {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
       <div class="py-1 max-w-fit prose dark:prose-invert">
-        {{ .Summary }}
+        {{ .Summary | plainify }}
       </div>
       {{ end }}
     </div>
