@@ -27,7 +27,7 @@
 [[main]]
   name = '筆記 {{< icon "link" >}}'
   weight = 30
-  url = "https://docs.zsl0621.cc/docs/intro"
+  url = "https://docs.zsl0621.cc/docs/about"
 
 [[main]]
   name = "Git"
