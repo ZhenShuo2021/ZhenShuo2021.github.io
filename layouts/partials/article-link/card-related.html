@@ -10,8 +10,7 @@
   {{ else }}
   <a href="{{ .RelPermalink }}" class="min-w-full">
     {{ end }} -->
-    <div
-      class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
+    <div class="min-h-full border border-neutral-200 dark:border-neutral-700 border-2 rounded overflow-hidden shadow-2xl relative">
 
       {{- with $.Params.images -}}
       {{- range first 6 . }}
@@ -24,8 +23,7 @@
       {{- $url:= .Params.featureimage -}}
       {{ $featured = resources.GetRemote $url }}
       {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{
-      end -}}
+      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.Get . }}{{ end }}{{ end -}}
       {{- with $featured -}}
       {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
       {{ with . }}
@@ -81,7 +79,12 @@
         <div class="text-sm text-neutral-500 dark:text-neutral-400">
           {{ partial "article-meta/basic.html" . }}
         </div>
-
+        
+        {{ if .Params.showSummary | default (.Site.Params.list.showSummary | default false) }}
+        <div class="py-1 prose dark:prose-invert">
+          {{ .Summary | plainify }}
+        </div>
+        {{ end }}
       </div>
       <div class="px-6 pt-4 pb-2">
 

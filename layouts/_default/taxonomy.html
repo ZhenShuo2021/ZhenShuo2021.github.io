@@ -1,5 +1,9 @@
 {{ define "main" }}
+<!-- 客製化紀錄
 
+增加標籤雲，標籤雲標題置中
+
+-->
 {{ .Scratch.Set "scope" "list" }}
 {{ if .Site.Params.taxonomy.showHero | default false }}
 {{ $heroStyle := print "partials/hero/" .Site.Params.taxonomy.heroStyle ".html" }}
@@ -28,7 +32,6 @@
         {{ .Content }}
       </div>
     </section>
-  {{ end }}
   <script>
     var oid = "views_taxonomy_{{ .Data.Plural }}"
     var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
@@ -36,7 +39,7 @@
   {{ $jsPage := resources.Get "js/page.js" }}
   {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
-  
+  {{ end }}
 
   {{ if .Site.Params.taxonomy.cardView }}
 

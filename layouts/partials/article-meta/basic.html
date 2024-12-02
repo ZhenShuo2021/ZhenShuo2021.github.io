@@ -1,6 +1,8 @@
-<!-- Customize
-<div class="basicHtml-div">
-{{/* delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML */}} 
+<!-- 客製化項目
+
+文章標籤和分類 <div class="basicHtml-div">
+
+顯示分隔符號  {{/* delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML */}} 
 -->
 
 {{/* Determine the correct context and scope */}}
@@ -24,7 +26,7 @@
 {{ end }}
 
 {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
-"functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) }}
+  "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1) }}
   {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
 {{ end }}
 
