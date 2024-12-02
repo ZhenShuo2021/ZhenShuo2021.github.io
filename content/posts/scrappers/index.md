@@ -21,15 +21,15 @@ progress_bar: true
 
 ## A. 靜態內容
 適用於網頁資料直接嵌入 HTML 無需執行 JavaScript，是最基本的爬蟲形式。  
-- 靜態網頁爬取：直接解析 HTML 獲取資料 (`requests`, `BeautifulSoup`)  
-- Sitemap 爬取：透過網站提供的 XML Sitemap 獲取 URL (`xml.etree.ElementTree`)
+- 靜態網頁爬取：直接解析 HTML 獲取資料
+- Sitemap 爬取：透過網站提供的 XML Sitemap 獲取 URL
 
 **特徵**：  
 - 資料就在 HTML 文本中，並且網站不需要處理 JavaScript。  
 
 
 ## B. 結構化資料  
-網站提供 API 介面提供資料存取方式 (`requests`, `httpx`)
+網站提供 API 介面提供資料存取方式
 
 **特徵**：  
 - 官方提供 API 接口回傳 JSON 或 XML 等。  
@@ -38,7 +38,7 @@ progress_bar: true
 
 ## C. 動態內容  
 網頁需要 JavaScript 或進行特定操作後才能獲取資料。  
-- 動態網頁爬取：使用瀏覽器自動化工具爬蟲，模擬瀏覽器執行 JavaScript 獲取資料 (`selenium`, `Playwright`)
+- 動態網頁爬取：使用瀏覽器自動化工具爬蟲，模擬瀏覽器執行 JavaScript 獲取資料
 
 **特徵**：  
 - 內容透過 JavaScript 動態生成後載入。  
@@ -47,8 +47,8 @@ progress_bar: true
 
 ## D. 大規模/高效  
 大規模爬蟲時需要特別注重效率。
-- 非同步：使用非同步套件爬蟲提高效率 (`aiohttp`, `asyncio`)
-- 分散式：多機器協作處理大規模爬蟲 (`Scrapy Cluster`, `Redis`) 
+- 非同步：使用非同步套件爬蟲提高效率
+- 分散式：多機器協作處理大規模爬蟲
 
 ## E. 進階逆向工程   
 網站沒有提供 API 且限制嚴格，需要進階的逆向技術。例如透過分析 URL 結構或網路請求規律找到可用的數據介面。困難，例如[這篇文章](https://blog.huli.tw/2019/07/12/medium-crawler/)說明有人使用 `@${username}?format=json`，需要更進階的逆向知識才知道怎麼找到這方法。
