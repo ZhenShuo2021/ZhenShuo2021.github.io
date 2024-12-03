@@ -180,8 +180,9 @@ git remote set-url [name] [url] # 更改遠端倉庫的 URL
 &lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>20241030
-看了 &lt;a href="https://www.youtube.com/watch?v=H-8ix1dSi4g" target="_blank">這個事情就是台灣麥當勞的錯！&lt;/a> 做錯事發個口是心非的道歉聲明，最愚蠢的是開小號嗆網友，其實到這裡我都覺得沒差，結果去 &lt;a href="https://www.instagram.com/p/DBqng-zyA0Q/?utm_source=ig_web_copy_link" target="_blank">網紅獎典禮發文&lt;/a> 「保持善良 繼續努力」，之後他的錢肯定還是能繼續賺啦，賣大麻（吸跟賣完全兩回事自己翻刑法）的都能萬人大台了，台灣人是不是又傻又蠢。&lt;/p></description></item><item><title>20240812</title><link>https://www.zsl0621.cc/posts/20240812/</link><pubDate>Mon, 12 Aug 2024 11:24:31 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240812/</guid><description>&lt;h1 class="relative group">到底在幹嘛
+&lt;p>20241203&lt;br>
+南韓戒嚴的半小時後發現了兩個白癡。&lt;br>
+第一個是三立，馬上發了一篇垃圾新聞，又在抄網路留言下噁心流量標題。第二個是網友，韓國人都不知道發生什麼事情，就他最清楚，連軍方在想什麼都知道，傻子永遠不會知道自己是傻子，不用多聰明至少嘴巴閉上好嗎。這位網友的臉書毫不意外的又是一堆特定傾向政治文章，這個族群傻子比例真的特別高。&lt;/p></description></item><item><title>20240812</title><link>https://www.zsl0621.cc/posts/20240812/</link><pubDate>Mon, 12 Aug 2024 11:24:31 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240812/</guid><description>&lt;h1 class="relative group">到底在幹嘛
 &lt;div id="%E5%88%B0%E5%BA%95%E5%9C%A8%E5%B9%B9%E5%98%9B" class="anchor">&lt;/div>
 &lt;/h1>
 &lt;p>寫的小專案告一段落，問 GPT 哪裡可以修改的時候想到可以叫他用罵的可以罵出很多問題（？），於是出現了這篇廢文。&lt;/p>
