@@ -16,6 +16,8 @@ progress bar
     }
   }
 </style>
+
+新增baseURL js 參數window.baseURL = "{{ .Site.BaseURL }}";
 -->
 
 <article>
@@ -29,6 +31,9 @@ progress bar
   {{ partial "partials/hero/basic.html" . }}
   {{ end }}
   {{ end }}
+  <script>
+    window.baseURL = "{{ .Site.BaseURL }}";
+  </script>
 
   <header id="single_header" class="mt-5 max-w-prose">
     {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
@@ -79,7 +84,7 @@ progress bar
   </header>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    
+
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
     class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
@@ -95,14 +100,6 @@ progress bar
       <div class="min-w-0 min-h-0 max-w-fit">
         
         {{ partial "series/series.html" . }}
-        
-        <style>
-          @media (max-width: 1024px) {
-            .min-w-0.min-h-0.max-w-fit {
-              padding-right: 0 !important;
-            }
-          }
-        </style>
 
         <div class="article-content max-w-prose mb-20">
           {{ .Content }}
