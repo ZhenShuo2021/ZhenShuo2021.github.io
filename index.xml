@@ -177,7 +177,63 @@ git remote set-url [name] [url] # 更改遠端倉庫的 URL
 &lt;p>這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 &lt;code>assets/css/compiled/main.css&lt;/code> 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。&lt;/p></description></item><item><title>Git 回到過去</title><link>https://www.zsl0621.cc/posts/git-goback/</link><pubDate>Sat, 17 Aug 2024 00:07:33 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-goback/</guid><description>&lt;h1 class="relative group">前言
 &lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
 &lt;/h1>
-&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
+&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;!-- jQuery -->
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;!-- nanogallery2 -->
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">&lt;/link>
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
+&lt;ul>
+&lt;li>20241204&lt;br>
+扣掉發文那個本來就是來亂的以外，某特定族群敏感度特別高，戰鬥慾望特別強烈，理論特別奇怪。&lt;/li>
+&lt;/ul>
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;link rel="stylesheet" href="{{ .Site.BaseURL }}/assets/css/nanogallery.css" />
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;div id="nanogallery">&lt;/div>
+&lt;script>
+(function () {
+jQuery("#nanogallery").nanogallery2({
+itemsBaseURL: window.baseURL + "posts/timeline/",
+thumbnailWidth: "auto",
+thumbnailHeight: 200,
+galleryDisplayMode: "moreButton",
+galleryDisplayMoreStep: 1,
+viewerGallery: "none",
+imageTransition: "swipe",
+thumbnailLabel: {
+position: "onBottom",
+displayDescription: false,
+displayTitle: false,
+titleMultiLine: true
+},
+viewerToolbar: { display: false, standard: 'minimizeButton, label', minimized: 'minimizeButton, label, fullscreenButton, downloadButton, infoButton' },
+viewerTools: { topLeft: 'infoButton, label', topRight: 'pageCounter, playPauseButton, zoomButton, fullscreenButton, downloadButton, closeButton' },
+thumbnailBaseGridHeight: 50,
+thumbnailAlignment: 'fillWidth',
+thumbnailToolbarAlbum: null,
+icons: { thumbnailDisplay: '&lt;i class="fa fa-long-arrow-right" aria-hidden="true">&lt;/i> display' },
+thumbnailDisplayTransition: 'slideDown',
+thumbnailDisplayTransitionDuration: 500,
+thumbnailDisplayInterval: 30,
+thumbnailHoverEffect2: 'label_translateY_0px_-20px|image_scale_1.00_1.10|image_rotateZ_0deg_2deg|image_translateY_0px_-20px|tools_opacity_0_1|tools_translateY_30px_0px',
+touchAnimation: true,
+touchAutoOpenDelay: 800,
+locationHash: false,
+items: [
+{ src: "20241204/Screenshot_20241204_193944.webp", srct: "20241204/Screenshot_20241204_193944.webp", description: '1' },
+{ src: "20241204/Screenshot_20241204_194000.webp", srct: "20241204/Screenshot_20241204_194000.webp", description: '2' },
+{ src: "20241204/Screenshot_20241204_194011.webp", srct: "20241204/Screenshot_20241204_194011.webp", description: '3' },
+{ src: "20241204/Screenshot_20241204_194107.webp", srct: "20241204/Screenshot_20241204_194107.webp", description: '4' },
+{ src: "20241204/Screenshot_20241204_194121.webp", srct: "20241204/Screenshot_20241204_194121.webp", description: '5' }
+],
+});
+})();
+&lt;/script>
 &lt;ul>
 &lt;li>
 &lt;p>20241203&lt;br>

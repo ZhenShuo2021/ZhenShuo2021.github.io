@@ -1,4 +1,60 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timelines on ZSL</title><link>https://www.zsl0621.cc/timeline/</link><description>Recent content in Timelines on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Thu, 15 Aug 2024 00:49:30 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/timeline/index.xml" rel="self" type="application/rss+xml"/><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timelines on ZSL</title><link>https://www.zsl0621.cc/timeline/</link><description>Recent content in Timelines on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2024 ZSL</copyright><lastBuildDate>Thu, 15 Aug 2024 00:49:30 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/timeline/index.xml" rel="self" type="application/rss+xml"/><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;!-- jQuery -->
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;!-- nanogallery2 -->
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">&lt;/link>
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
+&lt;ul>
+&lt;li>20241204&lt;br>
+扣掉發文那個本來就是來亂的以外，某特定族群敏感度特別高，戰鬥慾望特別強烈，理論特別奇怪。&lt;/li>
+&lt;/ul>
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;link rel="stylesheet" href="{{ .Site.BaseURL }}/assets/css/nanogallery.css" />
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;div id="nanogallery">&lt;/div>
+&lt;script>
+(function () {
+jQuery("#nanogallery").nanogallery2({
+itemsBaseURL: window.baseURL + "posts/timeline/",
+thumbnailWidth: "auto",
+thumbnailHeight: 200,
+galleryDisplayMode: "moreButton",
+galleryDisplayMoreStep: 1,
+viewerGallery: "none",
+imageTransition: "swipe",
+thumbnailLabel: {
+position: "onBottom",
+displayDescription: false,
+displayTitle: false,
+titleMultiLine: true
+},
+viewerToolbar: { display: false, standard: 'minimizeButton, label', minimized: 'minimizeButton, label, fullscreenButton, downloadButton, infoButton' },
+viewerTools: { topLeft: 'infoButton, label', topRight: 'pageCounter, playPauseButton, zoomButton, fullscreenButton, downloadButton, closeButton' },
+thumbnailBaseGridHeight: 50,
+thumbnailAlignment: 'fillWidth',
+thumbnailToolbarAlbum: null,
+icons: { thumbnailDisplay: '&lt;i class="fa fa-long-arrow-right" aria-hidden="true">&lt;/i> display' },
+thumbnailDisplayTransition: 'slideDown',
+thumbnailDisplayTransitionDuration: 500,
+thumbnailDisplayInterval: 30,
+thumbnailHoverEffect2: 'label_translateY_0px_-20px|image_scale_1.00_1.10|image_rotateZ_0deg_2deg|image_translateY_0px_-20px|tools_opacity_0_1|tools_translateY_30px_0px',
+touchAnimation: true,
+touchAutoOpenDelay: 800,
+locationHash: false,
+items: [
+{ src: "20241204/Screenshot_20241204_193944.webp", srct: "20241204/Screenshot_20241204_193944.webp", description: '1' },
+{ src: "20241204/Screenshot_20241204_194000.webp", srct: "20241204/Screenshot_20241204_194000.webp", description: '2' },
+{ src: "20241204/Screenshot_20241204_194011.webp", srct: "20241204/Screenshot_20241204_194011.webp", description: '3' },
+{ src: "20241204/Screenshot_20241204_194107.webp", srct: "20241204/Screenshot_20241204_194107.webp", description: '4' },
+{ src: "20241204/Screenshot_20241204_194121.webp", srct: "20241204/Screenshot_20241204_194121.webp", description: '5' }
+],
+});
+})();
+&lt;/script>
 &lt;ul>
 &lt;li>
 &lt;p>20241203&lt;br>
