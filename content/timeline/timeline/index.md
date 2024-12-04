@@ -13,8 +13,70 @@ series_order:
 progress_bar: true
 ---
 
+<!-- jQuery -->
+<script  type="text/javascript"  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- nanogallery2 -->
+<link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css"></link>
+<script  type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+
 
 這是一個隱藏頁面，比廢話更廢話的地方。
+
+- 20241204  
+扣掉發文那個本來就是來亂的以外，某特定族群敏感度特別高，戰鬥慾望特別強烈，理論特別奇怪。
+
+<link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+<link rel="stylesheet" href="{{ .Site.BaseURL }}/assets/css/nanogallery.css" />
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js"></script>
+
+<div id="nanogallery"></div>
+
+<script>
+    (function () {
+        jQuery("#nanogallery").nanogallery2({
+            itemsBaseURL: window.baseURL + "posts/timeline/",
+            thumbnailWidth: "auto",
+            thumbnailHeight: 200,
+            galleryDisplayMode: "moreButton",
+            galleryDisplayMoreStep: 1,
+            viewerGallery: "none",
+            imageTransition: "swipe",
+            thumbnailLabel: {
+                position: "onBottom",
+                displayDescription: false,
+                displayTitle: false,
+                titleMultiLine: true
+            },
+            viewerToolbar: { display: false, standard: 'minimizeButton, label', minimized: 'minimizeButton, label, fullscreenButton, downloadButton, infoButton' },
+            viewerTools: { topLeft: 'infoButton, label', topRight: 'pageCounter, playPauseButton, zoomButton, fullscreenButton, downloadButton, closeButton' },
+            thumbnailBaseGridHeight: 50,
+            thumbnailAlignment: 'fillWidth',
+            thumbnailToolbarAlbum: null,
+            icons: { thumbnailDisplay: '<i class="fa fa-long-arrow-right" aria-hidden="true"></i> display' },
+            thumbnailDisplayTransition: 'slideDown',
+            thumbnailDisplayTransitionDuration: 500,
+            thumbnailDisplayInterval: 30,
+            thumbnailHoverEffect2: 'label_translateY_0px_-20px|image_scale_1.00_1.10|image_rotateZ_0deg_2deg|image_translateY_0px_-20px|tools_opacity_0_1|tools_translateY_30px_0px',
+            touchAnimation: true,
+            touchAutoOpenDelay: 800,
+            locationHash: false,
+            items: [
+                { src: "20241204/Screenshot_20241204_193944.webp", srct: "20241204/Screenshot_20241204_193944.webp", description: '1' },
+                { src: "20241204/Screenshot_20241204_194000.webp", srct: "20241204/Screenshot_20241204_194000.webp", description: '2' },
+                { src: "20241204/Screenshot_20241204_194011.webp", srct: "20241204/Screenshot_20241204_194011.webp", description: '3' },
+                { src: "20241204/Screenshot_20241204_194107.webp", srct: "20241204/Screenshot_20241204_194107.webp", description: '4' },
+                { src: "20241204/Screenshot_20241204_194121.webp", srct: "20241204/Screenshot_20241204_194121.webp", description: '5' }
+            ],
+        });
+    })();
+</script>
+
+
 
 - 20241203  
 南韓戒嚴的半小時後發現了兩個白癡。  
