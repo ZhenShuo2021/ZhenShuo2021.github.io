@@ -14,15 +14,51 @@ progress_bar: true
 # magick
 
 轉換資料夾到 WebP 加上 crop，crop 參數為 "長x寬+起始寬度+起始高度"
+
 ```sh
 magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 ```
+
 使用範例 [[1]](https://home.gamer.com.tw/creationDetail.php?sn=5897078) [[2]](https://yuliyang.com/imagemagick-bulk-image-processing/)
+
+# Exiftool
+
+我的檔案整理流程，用於將錯誤的 Exif（通常來自於網路下載）轉換成粗略的時間，並且依照時間重新命名。請根據個人需求自行選擇需要的步驟，例如時間是對的就不需要改，檔名使用自己的規範，或者不用 datetimeoriginal 改用別的標籤。
+
+- 時間格式: "YYYY:MM:DD HH:MM:SS"，如 2025:01:01 12:30:00
+- 路徑可以是整個資料夾
+- 在網路磁碟進行此操作可能會有奇怪問題，例如 FileModifyDate 無法修改
+
+```sh
+P=/Path/to/file/dir
+
+# 先把整個資料夾的時間設定成一樣
+exiftool -overwrite_original -datetimeoriginal='時間' -filemodifydate='時間' $P
+
+# 根據檔案名稱依序把時間延後 10 秒（時間完全相同會造成圖片順序隨機，而下載下來的檔案通常包含 suffix 標記順序）
+exiftool -overwrite_original '-FileModifyDate+<0:0:${FileSequence; $_*=10}' '-datetimeoriginal+<0:0:${FileSequence; $_*=10}' -FileOrder Filename $P
+
+# 再根據元資料設定檔案名稱
+exiftool -d %Y%m%d_%H%M%S%%-c'-DEVICE_MODEL'.%%e "-filename<DateTimeOriginal" -fileorder DateTimeOriginal $P
+
+# 如果元資料沒有攝影裝置名稱，可以手動設定
+exiftool -d %Y%m%d_%H%M%S%--iPhone16.%%e "-filename<filemodifydate" -fileorder filemodifydate $P
+```
+
+# 語言模型
+
+翻譯 Prompt
+
+I want you to act as an English translator, spelling corrector and improver. I will speak to you in English, translate it to Traditional Chinese 繁體中文. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations.
+
+Understand?
 
 # Python
 
 ## pip 刪除所有套件和快取
+
 支援 win/mac
+
 ```sh
 pip freeze > unins && pip uninstall -y -r unins && rm unins
 pip cache purge
@@ -31,6 +67,7 @@ pip cache purge
 ## 從原始碼構建程式
 
 以 [gallery-dl](https://github.com/mikf/gallery-dl) 為例
+
 ```sh
 git clone --depth=1 https://github.com/mikf/gallery-dl.git
 cd gallery-dl
@@ -48,6 +85,7 @@ pip install .
 `pip install .` 其實兩種安裝方式都接受，但是 pyproject.toml 優先。可以加上 -e 選項使用開發模式安裝，和正式安裝的差別在於所有改動都會立刻生效，因為正式安裝的程式碼在 python 路經（虛擬環境）中的 site-packages 內。
 
 ## Google Style Docstring
+
 養成寫註解的好習慣。Sphinx 風格難以閱讀並且 VSC 常常偵測錯誤直接剔除，[Numpy 風格](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html?highlight=google%20style)適合更長且深入的說明文件[1](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/index.html?highlight=NumPy%20style#google-vs-numpy)，反之使用 [Google 風格](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html?highlight=google%20style)
 
 ```py
@@ -100,6 +138,7 @@ def update_config(self, options: dict[str, Any]) -> None:
 ```
 
 # Misc
+
 [H.264 and H.265 硬體解碼支援列表](https://www.pugetsystems.com/labs/articles/What-H-264-and-H-265-Hardware-Decoding-is-Supported-in-Premiere-Pro-2120/)
 
 [DDR4 vs. DDR5 on Intel Core i9-12900K Alder Lake Review](https://www.techpowerup.com/review/intel-core-i9-12900k-alder-lake-ddr4-vs-ddr5/2.html) DDR5  isn't worth the money.
@@ -108,59 +147,63 @@ def update_config(self, options: dict[str, Any]) -> None:
 
 VSC 遠端連線[1](https://xenby.com/b/221-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8-visual-studio-code-%E9%80%8F%E9%81%8E-ssh-%E9%80%B2%E8%A1%8C%E9%81%A0%E7%AB%AF%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC)  [2](https://gist.github.com/SHANG-TING/d792af5480492626cf57a50aab4f7776#%e9%83%a8%e5%b1%ac%e5%85%ac%e9%96%8b%e9%87%91%e9%91%b0)
 
-
-
-
-
 # 清理書籤
 
-
 ## MacOS 注音輸入法
+
 - [Yahoo! 輸入法](https://github.com/zonble/ykk_installer)：使用時間約一週，停止更新已久，很難用也很醜。
 - [小麥注音](https://github.com/openvanilla/McBopomofo)：使用時間約三個月，中規中舉，選字位置在字的前一格所以每次選字都要多按一次左鍵，完全不記憶選字偏好，錯的字永遠錯，單詞量非常少，浪費很多時間在字字修正。
 - [鼠鬚管](https://github.com/rime/squirrel)：使用時間約一天，選字框很醜，醜到我忘記他還有什麼特點。
 - [威注音](https://github.com/vChewing/vChewing-macOS)：使用時間至今約兩個月，幾乎沒有記憶選字偏好，單詞量較小麥注音多，出現過一次記憶體異常佔用高達 300MB。
 
 ## KVM 虛擬機
+
 - [KVM 虛擬機參數](https://cloud.tencent.com/developer/article/1766168)  
 - 安裝完後無法偵測到網卡，要安裝[KVM虛擬機驅動程式](https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers)，方式為關機、掛載iso、開機安裝。
 
 ## 翻新硬碟
+
 ServerPartDeals 硬碟：官方翻新硬碟，沒什麼問題，但加上運費後不如去南京梵多買。  
 https://www.reddit.com/r/DataHoarder/comments/13p1y5d/anyone_have_experiences_with_renewed_seagate/  
 https://www.reddit.com/r/DataHoarder/comments/1352drh/whats_the_general_consensus_on_serverpartdeals/  
 
 ## Cloudflare Tunnel CLI 設定
+
 使用 CLI 設定，我原本也是用 CLI 但是在後續更新後 GUI 已經可以正常使用
 [影片教學](https://www.youtube.com/watch?v=7MDIfHR3GGs)  
 [文字教學](https://medium.com/@sam33339999/cloudflared-%E4%BB%8B%E7%B4%B9%E4%BD%BF%E7%94%A8-b76fa4dcd875)  
 [官方文檔1](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel/#5-start-routing-traffic)  
-[官方文檔2](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/as-a-service/linux/)   
+[官方文檔2](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/as-a-service/linux/)
 [官方文檔3](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/tunnel-useful-commands/)  
 
 ## Cloudflare 重導向設定（適用 WAF）
+
 https://www.sakamoto.blog/cloudflare-non-www-to-www/  
 
 ## NOIP 設定
+
 https://lins2000.gitbooks.io/raspberry-pi-installation-guide/content/di-yi-ci-qi-dong/noip-an-zhuang-she-ding.html  
 注意 NOIP 無法將 DNS 伺服器改為 Cloudflare，所以使用 Github Pages 等服務無法使用他的網域名稱。  
 
 ## 在Linux上使用Let’s Encrypt
+
 https://klab.tw/2022/05/get-free-ssl-credentials-with-nginx-with-lets-encrypt-on-linux/  
 使用 Cloudflare Tunnel 或者 Tailscale 可更輕鬆簡單的達成公眾訪問 / 私人訪問伺服器。缺點是 Cloudflare Tunnel 單[檔案大小限制](https://www.google.com/search?q=cloudflare+tunnel+file+size+limit&oq=cloudflare+tunnel+file+&gs_lcrp=EgZjaHJvbWUqBwgBEAAYgAQyBggAEEUYOTIHCAEQABiABDIICAIQABgIGB4yCAgDEAAYCBgeMggIBBAAGAgYHjIICAUQABgIGB4yCggGEAAYgAQYogQyCggHEAAYgAQYogQyCggIEAAYgAQYogQyCggJEAAYgAQYogTSAQk1MDMxNGowajGoAgCwAgA&sourceid=chrome&ie=UTF-8)為 100MB，在使用 [stirling pdf](https://github.com/Stirling-Tools/Stirling-PDF) 可能會無法上傳。
 
 ## TrueNAS TailScale 設定
+
 等 2024/10 的 TrueNAS 24.10 版本更新後 k3s 將替換成 Docker，到時候再看設定是否改變。
 https://www.youtube.com/watch?v=K_0vGr_rvds  
 
 ## SAMBA 安全設定
+
 修正漏洞防止中間人攻擊  
 https://blog.csdn.net/qq_46106285/article/details/130273351  
 
 ## Linux OPNsense 防禦入侵偵測
+
 https://www.sakamoto.blog/opnsense-ids-suricata/  
 
 ## GPG 超詳細設定
+
 https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e  
-
-
