@@ -30,17 +30,19 @@ magick mogrify -format webp -quality 80 -crop 2000x800+300+420 *.png
 - 在網路磁碟進行此操作可能會有奇怪問題，例如 FileModifyDate 無法修改
 
 ```sh
+P=/Path/to/file/dir
+
 # 先把整個資料夾的時間設定成一樣
-exiftool -overwrite_original -datetimeoriginal='時間' -filemodifydate='時間' <路徑>
+exiftool -overwrite_original -datetimeoriginal='時間' -filemodifydate='時間' $P
 
 # 根據檔案名稱依序把時間延後 10 秒（時間完全相同會造成圖片順序隨機，而下載下來的檔案通常包含 suffix 標記順序）
-exiftool -overwrite_original '-FileModifyDate+<0:0:${FileSequence; $_*=10}' '-datetimeoriginal+<0:0:${FileSequence; $_*=10}' -FileOrder Filename <路徑>
+exiftool -overwrite_original '-FileModifyDate+<0:0:${FileSequence; $_*=10}' '-datetimeoriginal+<0:0:${FileSequence; $_*=10}' -FileOrder Filename $P
 
 # 再根據元資料設定檔案名稱
-exiftool -d %Y%m%d_%H%M%S%%-c'-DEVICE_MODEL'.%%e "-filename<DateTimeOriginal" -fileorder DateTimeOriginal <路徑>
+exiftool -d %Y%m%d_%H%M%S%%-c'-DEVICE_MODEL'.%%e "-filename<DateTimeOriginal" -fileorder DateTimeOriginal $P
 
 # 如果元資料沒有攝影裝置名稱，可以手動設定
-exiftool -d %Y%m%d_%H%M%S%--iPhone16.%%e "-filename<filemodifydate" -fileorder filemodifydate <路徑>
+exiftool -d %Y%m%d_%H%M%S%--iPhone16.%%e "-filename<filemodifydate" -fileorder filemodifydate $P
 ```
 
 # Python
