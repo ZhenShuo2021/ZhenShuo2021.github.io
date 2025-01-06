@@ -45,6 +45,14 @@ exiftool -d %Y%m%d_%H%M%S%%-c'-DEVICE_MODEL'.%%e "-filename<DateTimeOriginal" -f
 exiftool -d %Y%m%d_%H%M%S%--iPhone16.%%e "-filename<filemodifydate" -fileorder filemodifydate $P
 ```
 
+# 語言模型
+
+翻譯 Prompt
+
+I want you to act as an English translator, spelling corrector and improver. I will speak to you in English, translate it to Traditional Chinese 繁體中文. I want you to replace my simplified A0-level words and sentences with more beautiful and elegant, upper level English words and sentences. Keep the meaning same. I want you to only reply the correction, the improvements and nothing else, do not write explanations.
+
+Understand?
+
 # Python
 
 ## pip 刪除所有套件和快取
