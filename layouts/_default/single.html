@@ -84,6 +84,8 @@ progress bar
   </header>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+    <!-- <script src='{{ "js/copy.js" | absURL }}'></script> -->
+    {{ partial "custom/copy.html" . }}
 
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
