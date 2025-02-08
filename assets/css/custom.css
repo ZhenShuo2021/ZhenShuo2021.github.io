@@ -429,9 +429,7 @@ body.zen-mode-enable .zen-mode-content {
 }
 
 .expand-inner {
-    margin: -0.5rem 0;
-    /* 使用負邊距縮短內容區域與邊框的距離 */
-    padding: 0.5rem 0;
+    padding: 1.2rem 0;
     color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
 }
 
