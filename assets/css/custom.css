@@ -176,40 +176,34 @@ p {
 
 /* 連結顏色 Link colors */
 .article-content a {
-    text-decoration: none;
-    color: rgba(var(--color-primary-800), 1);
-    background-image: linear-gradient(rgba(var(--color-primary-800), 1), rgba(var(--color-primary-800), 1)),
-        linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1));
-    background-position: 0 100%, 0 100%;
-    background-repeat: no-repeat;
-    background-size: 100% 1px, 0% 0%;
-    transition: background-size 0.30s ease;
+    display: inline-block;
+    /* 固定盒模型，避免重排影響下劃線 */
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    /* 關閉瀏覽器跳避筆劃的行為 */
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(var(--color-primary-900), 0.6);
+    color: rgba(var(--color-primary-900), 1);
 }
 
 .dark .article-content a {
+    text-decoration-color: rgba(var(--color-primary-600), 0.6);
     color: rgba(var(--color-primary-600), 1);
-    background-image: linear-gradient(rgba(var(--color-primary-600), 1), rgba(var(--color-primary-600), 1)),
-        linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1));
 }
 
 .article-content a:hover {
-    color: rgba(var(--color-primary-800), 1);
-    background-size: 100% 1px, 100% 100%;
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-primary-600), 1);
+    color: rgba(var(--color-primary-600), 1);
 }
 
 .dark .article-content a:hover {
-    color: rgba(var(--color-primary-600), 1);
-    background-size: 100% 2px, 100% 100%;
+    text-decoration: underline;
+    text-decoration-color: rgba(var(--color-primary-400), 1);
+    color: rgba(var(--color-primary-400), 1);
 }
 
-
-/* .article-content a[href^="#fnref"] {
-    position: relative;
-    top: 0.35em;
-    left: 0.3em;
-    background: none;
-    padding-bottom: 0;
-} */
 
 
 
