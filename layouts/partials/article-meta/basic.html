@@ -21,12 +21,14 @@
 {{/* Gather partials for this context */}}
 {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
   {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-{{else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
+{{ else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
   {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
 {{ end }}
 
-{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne (partial
-  "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1) }}
+{{ $formattedDate := .Date | time.Format "2006-01-02 15:04:05" }}
+{{ $formattedLastmod := .Lastmod | time.Format "2006-01-02 15:04:05" }}
+
+{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne $formattedDate $formattedLastmod) (gt (.Lastmod | time.Format "2006") 1) }}
   {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
 {{ end }}
 
