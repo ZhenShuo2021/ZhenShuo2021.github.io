@@ -1,7 +1,8 @@
 ---
 title: {{ replace .File.ContentBaseName "-" " " | title }}
 date: {{ .Date }}
-draft: true
+create_data: {{ .Date }}
+draft: false
 summary: 
 showSummary: false
 tags: []
@@ -10,4 +11,3 @@ series: []
 series_order: 
 progress_bar: true
 ---
-# slug: '{{ .File.ContentBaseName }}'
