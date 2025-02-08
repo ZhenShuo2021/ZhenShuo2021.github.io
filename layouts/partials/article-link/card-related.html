@@ -54,6 +54,7 @@
       <div class="px-6 py-4">
 
         {{ with .Params.externalUrl }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer">
         <div>
           <div
             class="text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">
@@ -64,6 +65,7 @@
             </span>
           </div>
         </div>
+        </a>
         {{ else }}
         
         <a href="{{ $link }}" class="block">
