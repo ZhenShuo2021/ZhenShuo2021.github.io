@@ -25,19 +25,19 @@
 
 
 [[main]]
-  name = '筆記 {{< icon "link" >}}'
+  name = '筆記 {{< icon-with-text "link" >}}'
   weight = 30
   url = "https://docs.zsl0621.cc/docs/about"
 
 [[main]]
   name = "Git"
-  parent = '筆記 {{< icon "link" >}}'
+  parent = '筆記 {{< icon-with-text "link" >}}'
   weight = 10
   url = "https://docs.zsl0621.cc/docs/category/git/"
 
 [[main]]
   name = "Linux"
-  parent = '筆記 {{< icon "link" >}}'
+  parent = '筆記 {{< icon-with-text "link" >}}'
   url = "https://docs.zsl0621.cc/docs/category/linux/"
   weight = 20
 
@@ -49,19 +49,19 @@
 
 [[main]]
   name = "免費軟體"
-  parent = '筆記 {{< icon "link" >}}'
+  parent = '筆記 {{< icon-with-text "link" >}}'
   pageRef = "posts/awesome-free-software"
   weight = 90
 
 [[main]]
   name = "Hugo 小抄"
-  parent = '筆記 {{< icon "link" >}}'
+  parent = '筆記 {{< icon-with-text "link" >}}'
   pageRef = "cheatsheet-hugo"
   weight = 100
 
 [[main]]
   name = "各種小抄"
-  parent = '筆記 {{< icon "link" >}}'
+  parent = '筆記 {{< icon-with-text "link" >}}'
   pageRef = "cheatsheet-misc"
   weight = 200
 

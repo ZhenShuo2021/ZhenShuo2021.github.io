@@ -95,7 +95,8 @@ h2.relative.group {
     ul {
         font-size: var(--font-size);
     }
-/* 
+
+    /* 
     h1.relative.group {
         font-size: 1.85rem;
 
@@ -629,4 +630,16 @@ body.zen-mode-enable .zen-mode-content {
     /* font-style: var(--shiki-dark-font-style) !important; */
     /* font-weight: var(--shiki-dark-font-weight) !important; */
     /* text-decoration: var(--shiki-dark-text-decoration) !important; */
+}
+
+
+/* icon-with-text shortcode */
+
+.text__icon svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    top: -0.1em;
 }
