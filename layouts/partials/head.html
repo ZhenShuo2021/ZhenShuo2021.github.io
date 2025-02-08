@@ -6,6 +6,17 @@
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+    as="style" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+    media="print" onload="this.media='all'" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+  </noscript>
+
   {{/* Title */}}
   {{ if .IsHome -}}
   <title>{{ .Site.Title | emojify }}</title>
@@ -15,7 +26,7 @@
   <meta name="title" content="{{ .Title | emojify }} - {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
+  {{ with .Params.Summary | default .Params.Description | default (truncate (int .Site.Params.descriptionLength) .Plain) -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
   {{ with  .Params.Tags | default .Site.Params.keywords -}}
@@ -67,8 +78,6 @@
   {{ $jsRTL := resources.Get "js/rtl.js" }}
   {{ $assets.Add "js" (slice $jsRTL) }}
   {{ end }}
-  {{ $jsMobileMenu := resources.Get "js/mobilemenu.js" }}
-  {{ $assets.Add "js" (slice $jsMobileMenu) }}
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
@@ -101,9 +110,6 @@
   {{ end }}
   {{ with .Site.Params.verification.yandex }}
   <meta name="yandex-verification" content="{{ . }}" />
-  {{ end }}
-  {{ with .Site.Params.verification.fediverse }}
-  <meta name="fediverse:creator" content="{{ . }}" />
   {{ end }}
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
@@ -153,4 +159,7 @@
   </script>
   {{ end }}
   {{ end }}
+
 </head>
+  
+  
