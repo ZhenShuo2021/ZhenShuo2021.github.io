@@ -1,0 +1,14 @@
+<!-- Special shortcode for icon-text alignment -->
+{{ $icon := resources.Get (printf "icons/%s.svg" ($.Get 0)) }}
+{{ if $icon }}
+  <span class="inline-flex items-center">
+    <span class="relative inline-block text__icon">
+      {{ $icon.Content | safeHTML }}
+    </span>
+    {{ with $.Get 1 }}
+      <span class="ml-1">{{ . }}</span>
+    {{ end }}
+  </span>
+{{ else }}
+  {{ errorf `[BLOWFISH] Shortcode "icon-with-text" error in "%s": Resource "%s" not found. Check the path is correct or remove the shortcode.` .Page.Path (printf "icons/%s.svg" ($.Get 0)) }}
+{{ end }}
