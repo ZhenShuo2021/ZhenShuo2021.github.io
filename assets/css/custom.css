@@ -65,11 +65,31 @@ p {
     word-wrap: break-word;
 }
 
+u {
+    text-underline-offset: 3.5px;
+}
+
 h1.relative.group,
 h2.relative.group {
     margin-top: 25px;
     margin-bottom: 25px;
 }
+
+/* font weight of title for LXGW */
+.article-content h1.relative.group,
+.article-content h2.relative.group,
+.article-content h3.relative.group,
+.article-content h4.relative.group,
+.article-content h4.relative.group {
+    -webkit-text-stroke: 0.7px;
+    font-weight: 500;
+}
+
+#single_header h1 {
+    -webkit-text-stroke: 1.3px;
+    font-weight: 500;
+}
+  
 
 /* 主要字體設定 */
 body {
@@ -151,10 +171,6 @@ body {
     width: 20rem;
 }
 
-p {
-    word-wrap: break-word;
-}
-
 /* ToC color */
 .active {
     /* text-decoration-line: underline; */
@@ -167,11 +183,22 @@ p {
     text-decoration-color: rgba(var(--color-primary-800), 1)
 }
 
-/* Scroll bar width */
+/* Scroll bar */
 .scrollbar-thin::-webkit-scrollbar {
-    display: block;
-    width: 10px;
-    height: 8px
+    width: 12.5px;
+}
+
+pre::-webkit-scrollbar {
+    height: 10px !important;
+}
+
+pre::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: rgb(var(--color-neutral-600));
 }
 
 /* 連結顏色 Link colors */
@@ -232,92 +259,21 @@ p {
 
 /* 頁末 footnote */
 /* 縮小 footnote 字體 */
-.footnotes a {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-}
-
-.dark .footnotes a {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
-}
-
-.footnotes,
-.footnotes p,
-.footnotes li,
-.footnotes ol,
-.footnotes ul,
-.footnotes span {
-    font-size: 0.7rem;
-}
-
-/* footnote 引用樣式 */
-.footnote-ref::before {
-    content: "[";
-}
-
-.footnote-ref::after {
-    content: "]";
-}
-
-/* 調整 sup 標籤樣式 */
-sup {
-    vertical-align: super;
-}
-
-/* 移除原本的編號樣式 */
-.footnotes ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* 修改 footnote 列表項的樣式 */
-.footnotes ol li {
-    font-size: 0.75rem;
-    counter-increment: footnote;
-    position: relative;
-    margin-left: 2em;
-    line-height: 1.8;
-    margin-bottom: -1.2em;
-}
-
-.footnotes ol li:before {
-    content: "[" counter(footnote) "]";
-    /* 使用計數器顯示編號 */
-    font-weight: normal;
-    position: absolute;
-    left: -1.2em;
-    /* 將編號設置在列表項的左側 */
-}
-
-/* 將原始編號隱藏 */
-.footnotes ol li a:first-child {
-    display: inline-block;
-    /* 保留超連結的顯示 */
-}
-
 .footnote-backref {
-    /* margin-left: 1em;
-    display: inline-block; */
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-    font-size: 0.75rem;
-    vertical-align: -0.15em;
+    font-size: 0;
+    text-decoration: none !important;
+    border-bottom: 100px;
 }
 
-.dark .footnote-backref {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
+.footnote-backref:before {
+    content: "↩️";
+    font-size: 16px;
 }
 
-.footnote-ref {
-    /* margin-left: 1em;
-    display: inline-block; */
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-    font-size: 0.75rem;
+.footnote-backref:hover:before {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
-
-.dark .footnote-ref {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
-}
-
-
 
 
 
