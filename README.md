@@ -23,11 +23,13 @@ cd blog
 hugo server
 ```
 
-為了速度採用 [shiki](https://github.com/shikijs/shiki) 完成語法上色，所以在 hugo server 時是沒有顏色的。如果想要在編輯時確認顏色，請開啟另一個終端執行
+由於語法上色採用 [shiki](https://github.com/shikijs/shiki) 而不是內建的 Chroma，所以在 hugo server 時是沒有顏色的。如果想要在編輯時確認顏色，請開啟另一個終端執行
 
 ```sh
 npx rehype-cli public -o
 ```
+
+使用 shiki 的好處是快速且正確。Chroma 錯誤百出，highlightjs 和 prismjs 太慢。
 
 使用此腳本可以更新 blowfish 主題，Blowfish 大小高達 0.6GB 用 submodule 你會懷疑人生，用我的腳本安裝只有不到 10MB
 
