@@ -4,13 +4,8 @@
             if (!pre.querySelector(".copy-button")) {
                 const button = document.createElement("button");
                 button.classList.add("copy-button");
-                button.innerHTML = ` <svg aria-hidden="true" viewBox="0 0 16 16" class="octicon octicon-copy" > <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z" ></path> <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z" ></path> </svg> <svg class="check-icon" viewBox="0 0 36 36" > <polygon fill="green" fill-rule="evenodd" points="9.707 14.293 19 5 20.414 6.414 9.707 17.121 4 11.414 5.414 10" /> </svg> `;
+                button.innerHTML = ` <svg aria-hidden="true" viewBox="0 0 24 24" class="octicon octicon-copy" > <path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path> </svg> <svg class="check-icon" viewBox="0 0 24 24" > <path fill="green" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path> </svg> `;
                 pre.appendChild(button);
-
-                const successMessage = document.createElement("span");
-                successMessage.classList.add("copy-success");
-                successMessage.innerText = "Copied!";
-                pre.appendChild(successMessage);
 
                 button.addEventListener("click", function () {
                     const code = pre.querySelector("code").textContent;
@@ -22,22 +17,17 @@
                         copyIcon.style.display = "none";
                         checkIcon.style.display = "block";
 
-                        successMessage.style.display = "block";
-
                         setTimeout(function () {
-                            successMessage.style.display = "none";
                             copyIcon.style.display = "block";
                             checkIcon.style.display = "none";
-                        }
-
-                            , 2000);
+                        }, 2000);
                     });
                 });
             }
         });
     });
-
 </script>
+
 <style>
     pre {
         position: relative;
@@ -74,7 +64,6 @@
         overflow: hidden;
     }
 
-
     .copy-button svg {
         position: absolute;
         top: 50%;
@@ -102,34 +91,14 @@
         background-color: #444c56 !important;
     }
 
-    .copy-button .check-icon {
-        width: 36px;
-        height: 36px;
+    .check-icon {
+        width: 18px;
+        height: 18px;
         position: absolute;
-        top: 80%;
-        left: 70%;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%, -50%);
         fill: green;
         display: none;
-    }
-
-    .copy-success {
-        font-size: 12px;
-        line-height: 24px;
-        color: #ffffff;
-        background-color: #3E444D;
-        position: absolute;
-        top: 8px;
-        right: 46px;
-        transform: translate(0, 0);
-        padding: 2px 8px;
-        border-radius: 5px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-        opacity: 1;
-        visibility: visible;
-        display: none;
-        text-align: center;
-        font-family: 'Arial', sans-serif;
     }
 </style>
