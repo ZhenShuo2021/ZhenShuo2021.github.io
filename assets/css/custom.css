@@ -65,6 +65,10 @@ p {
     word-wrap: break-word;
 }
 
+u {
+    text-underline-offset: 3.5px;
+}
+
 h1.relative.group,
 h2.relative.group {
     margin-top: 25px;
@@ -149,10 +153,6 @@ body {
 
 .album-cover {
     width: 20rem;
-}
-
-p {
-    word-wrap: break-word;
 }
 
 /* ToC color */
