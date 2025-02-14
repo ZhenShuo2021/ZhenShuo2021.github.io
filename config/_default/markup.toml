@@ -5,6 +5,20 @@
 [goldmark.renderer]
   unsafe = true
 
+# https://discourse.gohugo.io/t/smartypants-conversion-issue-with-quotes/47942/2
+[goldmark.extensions.typographer]
+  disable = false
+  apostrophe = '&apos;'
+  ellipsis = '&hellip;'
+  emDash = '&mdash;'
+  enDash = '&ndash;'
+  rightDoubleQuote = '&quot;'
+  leftDoubleQuote = '&quot;'
+  rightSingleQuote = '&apos;'
+  leftSingleQuote = '&apos;'
+  # rightAngleQuote = '&rsaquo;'
+  # leftAngleQuote = '&lsaquo;'
+
 
 [highlight]
   codeFences = false
