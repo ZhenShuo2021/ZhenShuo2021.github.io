@@ -1,8 +1,7 @@
 ---
-title: 時間軸
+title: 2024 時間軸
 date: 2024-08-15T00:49:30+08:00
 draft: false
-slug: timeline
 summary: 
 showSummary: false
 noArchive: true
@@ -80,11 +79,11 @@ progress_bar: true
             touchAutoOpenDelay: 800,
             locationHash: false,
             items: [
-                { src: "20241204/Screenshot_20241204_193944.webp", srct: "20241204/Screenshot_20241204_193944.webp", description: '1' },
-                { src: "20241204/Screenshot_20241204_194000.webp", srct: "20241204/Screenshot_20241204_194000.webp", description: '2' },
-                { src: "20241204/Screenshot_20241204_194011.webp", srct: "20241204/Screenshot_20241204_194011.webp", description: '3' },
-                { src: "20241204/Screenshot_20241204_194107.webp", srct: "20241204/Screenshot_20241204_194107.webp", description: '4' },
-                { src: "20241204/Screenshot_20241204_194121.webp", srct: "20241204/Screenshot_20241204_194121.webp", description: '5' }
+                { src: "data/20241204/Screenshot_20241204_193944.webp", srct: "20241204/Screenshot_20241204_193944.webp", description: '1' },
+                { src: "data/20241204/Screenshot_20241204_194000.webp", srct: "20241204/Screenshot_20241204_194000.webp", description: '2' },
+                { src: "data/20241204/Screenshot_20241204_194011.webp", srct: "20241204/Screenshot_20241204_194011.webp", description: '3' },
+                { src: "data/20241204/Screenshot_20241204_194107.webp", srct: "20241204/Screenshot_20241204_194107.webp", description: '4' },
+                { src: "data/20241204/Screenshot_20241204_194121.webp", srct: "20241204/Screenshot_20241204_194121.webp", description: '5' }
             ],
         });
     })();
