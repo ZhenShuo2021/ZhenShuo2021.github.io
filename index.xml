@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ZSL's blog on ZSL</title><link>https://www.zsl0621.cc/</link><description>Recent content in ZSL's blog on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Mon, 06 Jan 2025 05:10:10 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>程式菜鳥重構紀錄和心得</title><link>https://www.zsl0621.cc/posts/python-refactoring-journey/</link><pubDate>Mon, 06 Jan 2025 05:10:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/python-refactoring-journey/</guid><description>&lt;p>最近看到&lt;a href="https://blog.darkthread.net/" target="_blank">黑暗執行緒&lt;/a>關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ZSL's blog on ZSL</title><link>https://www.zsl0621.cc/</link><description>Recent content in ZSL's blog on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 15 Feb 2025 06:10:46 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 時間軸</title><link>https://www.zsl0621.cc/posts/timeline-2025/</link><pubDate>Sat, 15 Feb 2025 06:10:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline-2025/</guid><description>&lt;h1 class="relative group">20250215
+&lt;div id="20250215" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;blockquote>
+&lt;p>人工智障&lt;/p>
+&lt;/blockquote>
+&lt;p>ChatGPT 和 Claude 都回答 &lt;code>autoload -U&lt;/code> 功能是防止函數名稱被別名影響，不知道吃到哪個錯誤資訊的口水，實際用途是這個：&lt;/p>
+&lt;ol>
+&lt;li>-U: 防止函數中的別名被擴展&lt;/li>
+&lt;li>-z: 使用 zsh 的方式載入函數&lt;/li>
+&lt;/ol>
+&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>撰寫 ZSH 自定義函式以及補全函式</title><link>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</link><pubDate>Sat, 15 Feb 2025 02:46:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</guid><description>&lt;h1 class="relative group">教學
+&lt;div id="%E6%95%99%E5%AD%B8" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>舉例來說，將 &lt;code>hugo new content&lt;/code> 簡寫為 &lt;code>hnc&lt;/code> 並且支援補全，第一步先建立一個檔案名稱為 hnc 的腳本放在 FPATH 裡面，不能用 alias，alias 不給補全，腳本如下：&lt;/p></description></item><item><title>程式菜鳥重構紀錄和心得</title><link>https://www.zsl0621.cc/posts/python-refactoring-journey/</link><pubDate>Mon, 06 Jan 2025 05:10:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/python-refactoring-journey/</guid><description>&lt;p>最近看到&lt;a href="https://blog.darkthread.net/" target="_blank">黑暗執行緒&lt;/a>關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。&lt;/p>
 &lt;p>總共有以下幾篇文章：&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-and-performance/" target="_blank">閒聊 - 「好程式」跟你想的不一樣! 初讀「重構」有感&lt;/a>&lt;/li>
@@ -196,7 +210,7 @@ git remote set-url [name] [url] # 更改遠端倉庫的 URL
 &lt;p>這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 &lt;code>assets/css/compiled/main.css&lt;/code> 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。&lt;/p></description></item><item><title>Git 回到過去</title><link>https://www.zsl0621.cc/posts/git-goback/</link><pubDate>Sat, 17 Aug 2024 00:07:33 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-goback/</guid><description>&lt;h1 class="relative group">前言
 &lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
 &lt;/h1>
-&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>時間軸</title><link>https://www.zsl0621.cc/posts/timeline/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/</guid><description>&lt;!-- jQuery -->
+&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>2024 時間軸</title><link>https://www.zsl0621.cc/posts/timeline-2024/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline-2024/</guid><description>&lt;!-- jQuery -->
 &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
 &lt;!-- nanogallery2 -->
 &lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">&lt;/link>
