@@ -75,6 +75,22 @@ h2.relative.group {
     margin-bottom: 25px;
 }
 
+/* font weight of title for LXGW */
+.article-content h1.relative.group,
+.article-content h2.relative.group,
+.article-content h3.relative.group,
+.article-content h4.relative.group,
+.article-content h4.relative.group {
+    -webkit-text-stroke: 0.7px;
+    font-weight: 500;
+}
+
+#single_header h1 {
+    -webkit-text-stroke: 1.3px;
+    font-weight: 500;
+}
+  
+
 /* 主要字體設定 */
 body {
     font-family:
