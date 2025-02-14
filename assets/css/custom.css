@@ -243,92 +243,21 @@ pre::-webkit-scrollbar-thumb {
 
 /* 頁末 footnote */
 /* 縮小 footnote 字體 */
-.footnotes a {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-}
-
-.dark .footnotes a {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
-}
-
-.footnotes,
-.footnotes p,
-.footnotes li,
-.footnotes ol,
-.footnotes ul,
-.footnotes span {
-    font-size: 0.7rem;
-}
-
-/* footnote 引用樣式 */
-.footnote-ref::before {
-    content: "[";
-}
-
-.footnote-ref::after {
-    content: "]";
-}
-
-/* 調整 sup 標籤樣式 */
-sup {
-    vertical-align: super;
-}
-
-/* 移除原本的編號樣式 */
-.footnotes ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-/* 修改 footnote 列表項的樣式 */
-.footnotes ol li {
-    font-size: 0.75rem;
-    counter-increment: footnote;
-    position: relative;
-    margin-left: 2em;
-    line-height: 1.8;
-    margin-bottom: -1.2em;
-}
-
-.footnotes ol li:before {
-    content: "[" counter(footnote) "]";
-    /* 使用計數器顯示編號 */
-    font-weight: normal;
-    position: absolute;
-    left: -1.2em;
-    /* 將編號設置在列表項的左側 */
-}
-
-/* 將原始編號隱藏 */
-.footnotes ol li a:first-child {
-    display: inline-block;
-    /* 保留超連結的顯示 */
-}
-
 .footnote-backref {
-    /* margin-left: 1em;
-    display: inline-block; */
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-    font-size: 0.75rem;
-    vertical-align: -0.15em;
+    font-size: 0;
+    text-decoration: none !important;
+    border-bottom: 100px;
 }
 
-.dark .footnote-backref {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
+.footnote-backref:before {
+    content: "↩️";
+    font-size: 16px;
 }
 
-.footnote-ref {
-    /* margin-left: 1em;
-    display: inline-block; */
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
-    font-size: 0.75rem;
+.footnote-backref:hover:before {
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
-
-.dark .footnote-ref {
-    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
-}
-
-
 
 
 
