@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timelines on ZSL</title><link>https://www.zsl0621.cc/timeline/</link><description>Recent content in Timelines on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 15 Feb 2025 06:10:46 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/timeline/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/timeline-2025/</link><pubDate>Sat, 15 Feb 2025 06:10:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/timeline-2025/</guid><description>&lt;h1 class="relative group">20250215
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timelines on ZSL</title><link>https://www.zsl0621.cc/timeline/</link><description>Recent content in Timelines on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 15 Feb 2025 06:10:46 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/timeline/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/2025/</link><pubDate>Sat, 15 Feb 2025 06:10:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/2025/</guid><description>&lt;h1 class="relative group">20250215
 &lt;div id="20250215" class="anchor">&lt;/div>
 &lt;/h1>
 &lt;blockquote>
@@ -9,7 +9,7 @@
 &lt;li>-U: 防止函數中的別名被擴展&lt;/li>
 &lt;li>-z: 使用 zsh 的方式載入函數&lt;/li>
 &lt;/ol>
-&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>2024 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/timeline-2024/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/timeline-2024/</guid><description>&lt;!-- jQuery -->
+&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>2024 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/2024/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/2024/</guid><description>&lt;!-- jQuery -->
 &lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
 &lt;!-- nanogallery2 -->
 &lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">&lt;/link>
