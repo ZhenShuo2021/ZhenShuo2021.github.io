@@ -77,4 +77,4 @@ googleAnalytics = "G-GSJ82XXGYD"
   posts = '/posts/:filename/'
   notes = '/posts/:filename/'
   jottings = '/posts/:filename/'
-  timeline = '/posts/:filename/'
+  timeline = '/posts/timeline/:filename/'
