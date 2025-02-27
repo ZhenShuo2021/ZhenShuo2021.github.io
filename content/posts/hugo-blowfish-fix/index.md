@@ -4,7 +4,7 @@ date: 2024-07-01T12:09:01+08:00
 lastmod: 2024-07-22
 draft: false
 summary: 修復 blowfish 相關的功能問題。
-description: "本篇文章針對 Hugo Blowfish 主題常見問題提供詳細的修復步驟，幫助你解決頁面目次、對比度和網站標籤名稱等問題，提升網站使用體驗。"
+description: 
 tags: ["Hugo", "筆記"]
 categories: ["Hugo"]
 series: ["自架 NAS 紀錄"]
@@ -79,25 +79,25 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 4. `custom.css` 加入
 ```css
 .badge {
-  display: inline-block;
-  padding: 0.3em .45em;
-  color: text-color-neutral;
-  background-color: transparent;
-  border-radius: 0.725rem;
-  margin-right: 0.05rem;
-  margin-bottom: 0.05rem;
+    display: inline-block;
+    padding: 0.3em .45em;
+    background-color: transparent;
+    border-radius: 0.725rem;
+    margin-right: 0.05rem;
+    margin-bottom: 0.05rem;
 }
 
 .badge:hover {
-  background-color: rgb(var(--color-primary-100));
+    background-color: rgb(var(--color-primary-200));
 }
 
 .dark .badge:hover {
-  background-color: rgb(var(--color-primary-700));
+    background-color: rgb(var(--color-primary-700));
 }
 
 .basicHtml-div {
-    margin-bottom: -.6em; /* 調整底部間距 */
+    margin-bottom: -.6em;
+    /* 調整底部間距 */
     padding: 0;
 }
 ```

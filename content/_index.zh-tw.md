@@ -10,3 +10,4 @@ description: "ZSL 的筆記空間"
 </style>
 <!-- <div class="place-holder"></div> -->
 {{< typeit lifeLike=true >}} <font size=6em><b>The Empire of Shinonome Umi</b></font> {{< /typeit >}}
+<div style="height: 60px"></div>

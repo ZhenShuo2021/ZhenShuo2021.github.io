@@ -1,6 +1,6 @@
 ---
 title: "Rician Fading生成方式，包含Emil Björnson大師的正解"
-description: "介紹網路各種Rician fading的生成方法，特別強調Emil Björnson的建議。分析了多種方法的差異，並提供MATLAB程式碼範例。適合希望深入了解Rician fading生成的讀者。"
+description: 
 date: 2024-06-14T02:45:40+08:00
 draft: false
 slug: "rician-fading"
@@ -24,13 +24,14 @@ categories: ["通訊原理"]
 [來源](https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab)
 
 有 Emil Björnson 大神回覆可信度最高，他本人也寫了一篇[文章](https://ma-mimo.ellintech.se/2020/03/02/rician-fading-a-channel-model-often-misunderstood/)解釋 rician fading 很多人都做錯。跟[MATLAB](https://www.mathworks.com/help/comm/ug/fading-channels.html)和[這裡](https://web.xidian.edu.cn/bmbai/files/20150129_145929.pdf)的生成方式一樣。
+
 $$
 \footnotesize
-\begin{aligned}
+\begin{align}
 &h_{\text{LOS}} &&= e^{(j2\pi\mathcal{N}(1,1))} \newline
 &h_{\text{NLOS}} &&= \mathcal{CN}(0, \sigma^2) \newline
 &h &&= h_{\text{LOS}}\sqrt{\dfrac{K}{K + 1}} + h_{\text{NLOS}}\sqrt{\frac{1}{K + 1}}
-\end{aligned}
+\end{align}
 $$
 
 # Method 2
@@ -73,7 +74,7 @@ $$
 **測試此篇的nakagami fading是否正確！！**
 {{< /alert >}}
 
-``` MATLAB{class="code-table" id="my-codeblock" lineNos=table tabWidth=2}
+```
 % LOS components
 a = sqrt(K/2);  b = a;
 % in-phase component
@@ -92,10 +93,10 @@ s = (i + 1j*q);
 {{< /alert >}}
 
 
-```MATLAB
-mean = sqrt(k1/(k1+1));  % mean
+```
+mu = sqrt(k1/(k1+1));  % mean
 sigma = sqrt(1/(2*(k1+1)));  %variance
-Nr2 = randn(N, 1)*sigma+mean;
+Nr2 = randn(N, 1)*sigma+mu;
 Ni2 = randn(N, 1)*sigma;
 % To generate the Rician Random Variable
 h_rac = sqrt(Nr2.^2+Ni2.^2);  %Rician fading coefficient

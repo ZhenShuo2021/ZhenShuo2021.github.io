@@ -2,7 +2,7 @@
 title: "About"
 progress_bar: false
 date: 1998-06-21
-exclude: true
+noArchive: true
 summary: 
 tags: []
 categories: []

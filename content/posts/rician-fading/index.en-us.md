@@ -1,6 +1,6 @@
 ---
 title: "Rician Fading"
-description: "Organize infos of Rician fading on the network."
+description: 
 date: 2024-06-14T02:45:40+08:00
 draft: false
 slug: "rician-fading"

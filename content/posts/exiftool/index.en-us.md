@@ -1,6 +1,6 @@
 ---
 Title: "Automatically Update Photo EXIF Information Based on Folder Names Using ExifTool"
-Description: "Use a script to batch modify photo date information based on folder names, perfect for organizing photo albums downloaded from the internet, ensuring the accuracy and consistency of photo dates. Additional EXIF commands are provided to better manage your photos."
+Description: 
 Date: 2024-03-19
 Draft: false
 Summary: A script to modify EXIF information, mainly for photo albums downloaded from the internet.
