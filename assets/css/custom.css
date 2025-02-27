@@ -1,33 +1,132 @@
+/* 基礎顏色設定 Basic color settings */
+/* @font-face {
+    font-family: font;
+    src: url('/fonts/LXGWWenKaiTC-Regular.woff2');
+} */
+
 html {
-    font-size: 13pt;
+    font-size: 1em;
+    font-family: 'LXGW WenKai TC', sans-serif;
 }
+
+strong, b {
+    font-weight: bold;
+    -webkit-text-stroke: 0.25px;   
+}
+
+.article-content{
+    --font-size: 0.85rem;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+p, li, ol, ul {
+    /* remove span for katex */
+    font-size: var(--font-size);
+}
+
+h1.relative.group {
+    font-size: 1.85rem;
+}
+
+h2.relative.group {
+    font-size: 1.55rem;
+}
+
+h3.relative.group {
+    font-size: 1.45rem;
+}
+
+h4.relative.group {
+    font-size: 1.3rem;
+}
+
+h5.relative.group {
+    font-size: 1.15rem;
+}
+
+h6.relative.group {
+    font-size: 1rem;
+}
+
+.prose {
+    --tw-prose-quote-borders:rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-quote-borders:rgba(var(--color-primary-400), 1);
+    /* --tw-prose-code:rgba(var(--color-secondary-700), 1); */
+    --tw-prose-code: rgba(var(--color-neutral-700), var(--tw-text-opacity, 1));
+}
+
+.bg-primary-200 {
+    --tw-bg-opacity:0.95;
+    background-color:rgba(var(--color-primary-400), var(--tw-bg-opacity)); 
+  }
 
 .album-cover {
     width: 20rem;
 }
 
-/* 選擇柔和的連結色調 */
+p {
+    word-wrap: break-word;
+}
+
+/* ToC color */
+.active {
+    /* text-decoration-line: underline; */
+    text-decoration-thickness: 1.5px;
+    /* text-underline-offset: 4px; */
+}
+
+/* ToC underline color */
+.prose :where(a.active):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
+    text-decoration-color:rgba(var(--color-primary-800), 1)
+}
+
+/* Scroll bar width */
+.scrollbar-thin::-webkit-scrollbar {
+    display:block;
+    width:10px;
+    height:8px
+}
+
+/* 連結顏色 Link colors */
 .article-content a {
-    color: rgb(var(--color-primary-600));
-    /* 使用淡藍色 */
+    text-decoration: none;
+    color: rgba(var(--color-primary-800), 1);
+    background-image: linear-gradient(rgba(var(--color-primary-800), 1), rgba(var(--color-primary-800), 1)),
+                     linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1));
+    background-position: 0 100%, 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px, 0% 0%;
+    padding-bottom: 2px;
+    transition: background-size 0.30s ease;
 }
 
-/* 懸停時底線改為粗線並增加距離 */
-.article-content a:hover,
-.article-content a:focus {
-    color: rgb(var(--color-primary-700));
-    /* 設定連結懸停和聚焦狀態下的顏色 */
-    text-decoration: underline;
-    /* 添加連結懸停時的底線 */
-    text-decoration-thickness: 1.82px;
-    /* 設定底線的粗線 */
-    text-decoration-skip-ink: none;
-    /* 避免底線與文字重疊 */
-    text-underline-offset: 4.5px;
-    /* 增加底線與文字的距離*/
+.dark .article-content a {
+    color: rgba(var(--color-primary-600), 1);
+    background-image: linear-gradient(rgba(var(--color-primary-600), 1), rgba(var(--color-primary-600), 1)),
+                     linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1));
+}
+
+.article-content a:hover {
+    color: rgba(var(--color-primary-800), 1);
+    background-size: 100% 1px, 100% 100%;
+}
+
+.dark .article-content a:hover {
+    color: rgba(var(--color-primary-600), 1);
+    background-size: 100% 2px, 100% 100%;
 }
 
 
+/* .article-content a[href^="#fnref"] {
+    position: relative;
+    top: 0.35em;
+    left: 0.3em;
+    background: none;
+    padding-bottom: 0;
+} */
 
 
 
@@ -36,10 +135,19 @@ html {
 
 
 
-/* footnote區 */
+
+/* 頁末 footnote */
 /* 縮小 footnote 字體 */
-.footnotes {
-    font-size: 0.7em;
+.footnotes a {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
+}
+
+.dark .footnotes a {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
+}
+
+.footnotes, .footnotes p, .footnotes li, .footnotes ol, .footnotes ul, .footnotes span {
+     font-size: 0.7rem; 
 }
 
 /* footnote 引用樣式 */
@@ -53,28 +161,24 @@ html {
 
 /* 調整 sup 標籤樣式 */
 sup {
-    font-size: xx-small;
     vertical-align: super;
 }
 
 /* 移除原本的編號樣式 */
 .footnotes ol {
     list-style-type: none;
-    /* 移除原本的編號 */
     padding-left: 0;
 }
 
 /* 修改 footnote 列表項的樣式 */
 .footnotes ol li {
+    font-size: 0.75rem;
     counter-increment: footnote;
     /* 增加計數器 */
     position: relative;
     margin-left: 2em;
-    /* 調整左邊距，使其與文章內容有適當間隔 */
     line-height: 1.8;
-    /* 調整行高，使超連結可以正確顯示 */
     margin-bottom: -1.2em;
-    /* 調整每個 footnote 間的距離 */
 }
 
 .footnotes ol li:before {
@@ -82,7 +186,7 @@ sup {
     /* 使用計數器顯示編號 */
     font-weight: normal;
     position: absolute;
-    left: -1.5em;
+    left: -1.2em;
     /* 將編號設置在列表項的左側 */
 }
 
@@ -92,50 +196,59 @@ sup {
     /* 保留超連結的顯示 */
 }
 
+.footnote-backref {
+    /* margin-left: 1em;
+    display: inline-block; */
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
+    font-size: 0.75rem;
+    vertical-align: -0.15em;
+}
+
+.dark .footnote-backref {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
+}
+
+.footnote-ref {
+    /* margin-left: 1em;
+    display: inline-block; */
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-300), 1), rgba(var(--color-primary-300), 1)) !important;
+    font-size: 0.75rem;
+}
+
+.dark .footnote-ref {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(to right top, rgba(var(--color-primary-100), 1), rgba(var(--color-primary-100), 1)) !important;
+}
 
 
 
 
 
-
-
-
-
-/* Shortcode 區 */
+/* 簡碼 Shortcode 區 */
 /* hint shortcode */
 .book-hint {
     padding: 0.5em 1em;
     margin: 1em 0;
-    border-left: 6px solid;
+    border-left: 3.5px solid;
     border-radius: 4px;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 .book-hint .hint-content {
     margin: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 .book-hint .hint-content>p:first-child {
     margin-top: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
-    font-weight: normal;
-    /* 確保文字不粗體 */
-}
+    font-weight: normal;}
 
 .book-hint .hint-content>p:last-child {
     margin-bottom: 0;
     font-style: normal;
-    /* 確保文字不斜體 */
     font-weight: normal;
-    /* 確保文字不粗體 */
 }
 
 /* 新增針對標題元素的樣式 */
@@ -151,20 +264,26 @@ sup {
 
 /* Info hint */
 .book-hint.info {
-    border-color: #2196f3;
-    background-color: rgba(33, 150, 243, 0.2);
+    --color: 0, 123, 255;
+    --opacity: 0.35;
+    border-color: rgb(var(--color));
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 /* Warning hint */
 .book-hint.warning {
-    border-color: #ffeb3b;
-    background-color: rgba(255, 235, 59, 0.2);
+    --color: 255, 193, 7;
+    --opacity: 0.3;
+    border-color: rgb(var(--color));
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 /* Danger hint */
 .book-hint.danger {
-    border-color: #f44336;
-    background-color: rgba(244, 67, 54, 0.2);
+    --color: 220, 53, 69;
+    --opacity: 0.4;
+    border-color: rgb(var(--color)); 
+    background-color: rgba(var(--color), var(--opacity));
 }
 
 
@@ -177,17 +296,18 @@ sup {
 
 
 /* expand shortcode */
-/* 常規樣式 */
 .expand-wrapper {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
-    /* 預設背景顏色 */
-    width: 100%;
-    transition: max-width 0.3s ease-in-out;
+    width: 100%; /* 確保元素寬度為100% */
+    font-size: var(--font-size);
+    /* 移除 max-width 的限制 */
+    max-width: none; 
 }
+
 
 body.zen-mode-enable .zen-mode-content {
     max-width: 100% !important;
@@ -200,16 +320,12 @@ body.zen-mode-enable .zen-mode-content {
 .expand-title {
     display: flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    /* 調整上下邊距 */
+    padding: 0.5rem 0.75rem;
     background-color: #f7f7f7;
-    /* 預設背景顏色 */
     color: #333;
-    /* 預設文字顏色 */
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
     font-weight: normal;
-    /* 取消粗體樣式 */
 }
 
 .expand-title:hover {
@@ -231,7 +347,6 @@ body.zen-mode-enable .zen-mode-content {
 
 .expand-toggle:checked~.expand-content {
     max-height: 50000px;
-    /* 可以根據需要調整 */
     transition: max-height 0.8s ease-in-out;
 
 }
@@ -240,39 +355,39 @@ body.zen-mode-enable .zen-mode-content {
     margin: -0.5rem 0;
     /* 使用負邊距縮短內容區域與邊框的距離 */
     padding: 0.5rem 0;
-    /* 可根據需要調整 */
     color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
-    /* 預設文字顏色 */
 }
 
 /* 暗色模式樣式 */
 .dark .expand-wrapper {
     border-color: #444;
-    /* 暗色模式下的邊框顏色 */
 }
 
 .dark .expand-title {
-    background-color: rgb(var(--color-neutral-800));
-    /* 暗色模式下的標題背景顏色 */
+    background-color: rgb(var(--color-neutral-900));
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
-    /* 暗色模式下的標題文字顏色 */
 }
 
 .dark .expand-title:hover {
-    background-color: rgb(var(--color-neutral-800), 0.8);
-    /* 暗色模式下的標題懸停背景顏色 */
+    background-color: rgb(var(--color-neutral-900), 0.75);
 }
 
 .dark .expand-content {
-    background-color: rgb(var(--color-neutral-800), 0.7);
-    /* 暗色模式下的內容背景顏色 */
+    background-color: rgb(var(--color-neutral-900), 0.3);
 }
 
 .dark .expand-inner {
     color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
-    /* 暗色模式下的內容文字顏色 */
 }
 
+.expand-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.expand-toggle:checked + .expand-title .expand-icon {
+    transform: rotate(-180deg);
+}
 
 
 
@@ -283,15 +398,13 @@ body.zen-mode-enable .zen-mode-content {
 
 
 /* 進度條 progress bar */
-/* 基本樣式 */
 #progress-bar {
     position: fixed;
     top: 0;
     left: 0;
     width: 0%;
-    height: 2.25px;
-    background-color: #e60000;
-    /* 紅色進度條 */
+    height: 1.8px;
+    background-color: rgb(var(--color-primary-700));
     z-index: 9999;
 }
 
@@ -301,28 +414,23 @@ body.zen-mode-enable .zen-mode-content {
     top: 0;
     left: 0;
     width: 100%;
-    height: 15px;
-    /* 光暈的範圍，可以根據需要調整 */
-    background: linear-gradient(rgba(227, 52, 47, 0.7),
-            rgba(227, 52, 47, 0.5));
-    /* 兩階段漸層光暈 */
-    filter: blur(20px);
-    /* 光暈的模糊度，可以根據需要調整 */
+    height: 10px;
+    /* 光暈範圍 */
+    /* background: linear-gradient(rgba(var(--color-primary-700), 0.7),
+            rgba(var(--color-primary-700), 0.5)); */
+    /* 漸層光暈 */
+    filter: blur(5px);
+    /* 光暈模糊度 */
     z-index: 9999;
 }
 
-/* 暗色模式 */
 .dark #progress-bar {
-    background-color: #20c2db;
-    /* 暗色模式下的進度條顏色 */
+    background-color: rgb(var(--color-primary-50));
 }
 
-.dark #progress-bar::before {
-    background: linear-gradient(rgba(34, 210, 236, 0.7),
-            /* 使用與背景顏色相近的顏色 */
-            rgba(34, 210, 236, 0.5));
-    /* 暗色模式下的兩階段漸層光暈 */
-}
+/* .dark #progress-bar::before {
+    background: linear-gradient(rgba(var(--color-primary-700), 0.7), rgba(var(--color-primary-700), 0.5));
+} */
 
 
 
@@ -334,38 +442,45 @@ body.zen-mode-enable .zen-mode-content {
 
 
 /* series 選輯 選集 */
-/* 普通模式樣式 */
 .summary-current {
-    /* background-color: rgb(var(--color-primary-200)); 淺藍色背景 */
+    /* background-color: rgba(var(--color-primary-200), 0.7); */
     color: #000;
-    /* 黑色文字 */
     font-weight: bold;
-    padding-left: 10px;
-    border-left: 3px solid rgb(var(--color-primary-500));
-    /* 藍色左邊框 */
+    padding-left: 20px;
+    border-left: transparent;
+    position: relative;
+    border-radius: 4px; /* 確保主元素有圓角 */
+}
+
+.summary-current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: rgba(var(--color-primary-400), var(--tw-bg-opacity)); /* Same as .bg-primary-200 */
+    border-radius: 10px;
 }
 
 .summary-other {
-    padding-left: 10px;
     border-left: 3px solid transparent;
-    /* 藍色左邊框 */
 }
 
 /* 深色模式樣式 */
 .dark .summary-current {
-    /* background-color: rgb(var(--color-neutral-900)); 深藍色背景 */
+    /* background-color: rgba(var(--color-primary-800), 0.7); */
     color: #fff;
-    /* 白色文字 */
-    border-left: 3px solid rgb(var(--color-primary-400));
-    /* 藍色左邊框 */
+}
+
+.dark .summary-current::before {
+    background-color: rgba(var(--color-primary-700), var(--tw-bg-opacity));
+    /* border-radius: 10px; */
 }
 
 .dark .summary-other {
     border-left: 3px solid transparent;
-    /* 藍色左邊框 */
 }
-
-
 
 
 
@@ -452,7 +567,8 @@ body.zen-mode-enable .zen-mode-content {
     flex-wrap: wrap;
     justify-content: center;
     color: rgb(var(--color-neutral-800), var(--tw-text-opacity));
-    font-weight: 500; /* 粗體 */
+    font-weight: 500;
+    /* 粗體 */
 }
 
 .dark .tag-cloud-item {
@@ -475,14 +591,13 @@ body.zen-mode-enable .zen-mode-content {
 
 .tag-title {
     text-decoration: none;
-    color: #333;
     transition: color 0.3s ease;
 }
 
 .tag-wrapper:hover {
     transform: scale(1.05);
 }
- 
+
 
 @media (max-width: 768px) {
     .tag-cloud {
@@ -501,3 +616,54 @@ body.zen-mode-enable .zen-mode-content {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+pre {
+    white-space: pre !important;
+    overflow-x: auto !important;
+    tab-size: 2 !important;
+    -moz-tab-size: 2 !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: 1.2px 12px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    border-radius: 0 0 0 10px;
+    background-color: transparent;
+    color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    pointer-events: none;
+}
+
+pre:hover .copy-btn {
+    background-color: rgba(var(--color-neutral-700), 0.3);
+    color: var(--text-color-neutral-700);
+    pointer-events: auto;
+}
+
+.copy-btn:hover {
+    background-color: rgba(var(--color-neutral-700), 0.3);
+}
+
+.dark .copy-btn {
+    background-color: transparent;
+}
+
+.dark .copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}

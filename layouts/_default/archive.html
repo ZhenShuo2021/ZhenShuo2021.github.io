@@ -93,12 +93,12 @@
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
-        background-color: rgba(var(--color-neutral-300), 0.5);
+        background-color: rgba(var(--color-neutral-300), 0.56);
     }
 
     /* 年份標頭 文字與背景 */
     .year {
-        background-color: #d9d4d4 !important;
+        background-color: rgba(var(--color-neutral-400), 0.91);
         padding: 10px 20px;
         font-size: 24px;
         font-weight: bold;
@@ -117,7 +117,7 @@
     }
 
     .content {
-    padding: 20px;
+        padding: 20px;
     }
 
     /* 月份容器 */
@@ -155,19 +155,19 @@
     }
 
     /* 個別文章背景 */
-    .post-item { 
+    .post-item {
         margin-bottom: 10px;
         padding: 10px;
         border-radius: 5px;
         transition: background-color 0.3s;
         transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
-        background: rgba(var(--color-neutral-100), 0.95);
+        background: #ffffff;
     }
 
     /* 個別文章懸浮 */
     .post-item-hover {
         transform: scale(1.01);
-        background: rgba(var(--color-neutral-100), 0.95) !important;
+        /* background: rgba(var(--color-neutral-100), 0.95) !important; */
     }
 
     /* 個別文章內部佈局 */
@@ -189,6 +189,7 @@
         margin-right: 11px;
         margin-left: 4px;
         white-space: nowrap;
+        min-width: 4em;
         /* 防止日期文字換行 */
         grid-area: date;
         /* 這是什麼魔術 */
@@ -230,7 +231,7 @@
     }
 
     .dark .post-item {
-        background-color: rgba(var(--color-neutral-800), 0.4);
+        background-color: rgba(var(--color-neutral-800), 1);
     }
 
     .dark .post-item-hover {
@@ -308,20 +309,16 @@
 <article class="timeline">
 
 <header id="single_header" class="mt-5 max-w-prose">
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        {{ .Title | emojify }}
-    </h1>
+    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
 </header>
 
-<div class="article-content max-w-prose mb-20">
-    <br>
-    {{ .Content }}
-</div>
+<div class="article-content max-w-prose mb-20"><br>{{ .Content }}</div>
 
 <section class="all-posts mt-8 text-neutral">
-{{ range .Site.RegularPages.GroupByDate "2006" }}
+    {{ $filteredPages := where .Site.RegularPages "Params.noArchive" "ne" true }}
+    {{ range $filteredPages.GroupByDate "2006" }}
     <div class="year-container">
-    
+
         <div class="year">
             {{ .Key }}
             <span class="post-count">{{ len .Pages }}</span>
@@ -330,26 +327,27 @@
         <div class="content">
             {{ range .Pages.GroupByDate "January" }}
             <div class="month-container">
-                
+
                 <span class="month-title">{{ index $months .Key }}</span>
-                {{ range where .Pages "Params.exclude" "ne" true }}
                 <ul class="post-list">
-                <li class="post-item">
-                    <div class="post-item-inner">
-                    <div class="post-date">{{ .Date.Format "1月2日" }}</div>
-                    <div class="post-details"><a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a></div>
-                    {{ partial "tag-and-category.html" . }}
-                    </div>
-                </li>
+                    {{ range .Pages }}
+                    <li class="post-item">
+                        <div class="post-item-inner">
+                            <div class="post-date">{{ .Date.Format "1月2日" }}</div>
+                            <div class="post-details"><a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+                            </div>
+                            {{ partial "custom/tag-and-category.html" . }}
+                        </div>
+                    </li>
+                    {{ end }}
                 </ul>
-                {{ end }}
 
             </div>
             {{ end }}
         </div>
-        
+
     </div>
-{{ end }}
+    {{ end }}
 </section>
 
 </article>

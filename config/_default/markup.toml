@@ -8,7 +8,7 @@
 
 [highlight]
   noClasses = false
-  guessSyntax = true # 部分不支持的 code language 使用猜测。
+  codeFences = false
 
 [tableOfContents]
   startLevel = 1

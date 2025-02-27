@@ -19,8 +19,8 @@
           {{ $currentFontSize := (add $smallestFontSize (mul (sub $largestFontSize $smallestFontSize) $weigth) ) }}
           <li>
             <span class="tag-wrapper">
-                <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}" class="tag-title" style="font-size:{{$currentFontSize}}{{$fontUnit}}">
-                  {{ $name }} ({{ .Count }})
+                <a href="{{ .Page.RelPermalink }}" class="tag-title" style="font-size:{{$currentFontSize}}{{$fontUnit}}">
+                  {{ $taxonomy.Page.Title }} ({{ len $taxonomy.Pages }})
                 </a>
               </span>
           </li>

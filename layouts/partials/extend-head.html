@@ -1,0 +1,28 @@
+<!-- In head.html 
+{{/* Extend head - eg. for custom analytics scripts, etc. */}}
+{{/* partialCached "extend-head.html" .Site */}}
+curl -O <URL>
+openssl dgst -sha256 -binary <File Name> | openssl base64 -A
+-->
+<!-- <link rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer"
+    href="https://cdn.jsdelivr.net/npm/@fontsource/lxgw-wenkai-tc@5.0.2/index.min.css"
+    integrity="lemzlp84wIRvAtax+ZFKqjvPKBP24shMNbG10/pdT7k=" /> -->
+
+<link id="light-mode-css" rel="stylesheet" as="style" crossorigin="anonymous" referrerpolicy="no-referrer"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/nnfx-light.min.css"
+    integrity="sha256-roHDdCpzJHruZzg09T0xn8BZQy6PDIWCR2mjy3Sp1iA=" />
+
+<link id="dark-mode-css" rel="stylesheet" as="style" crossorigin="anonymous" referrerpolicy="no-referrer"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/nnfx-dark.min.css"
+    integrity="sha256-aZYmPW0FYMBJ2LAv+S8cuVc7kCUaKqoq12pf4YMakFY="  media="print" onload="this.media='all'" />
+
+<script crossorigin="anonymous" referrerpolicy="no-referrer"
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"
+    integrity="sha256-Rx75rpDEB69ED83Ejt/utWIQazJnvRLZkHHBYvtS7TI="></script>
+    
+<!-- <script crossorigin="anonymous" referrerpolicy="no-referrer" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/languages/matlab.min.js"
+    integrity="sha256-b4Mp6eYO0H7GNjWkL4yUNrSbUg/lKvwuxk9KZWdKtCg="></script> -->
+
+<script>hljs.highlightAll();</script>
+<script src="{{ "js/hljs-copy.js" | absURL }}"></script>

@@ -1,3 +1,4 @@
+<!-- preload fonts -->
 <head>
   <meta charset="utf-8" />
   {{ with .Site.Language.Params.htmlCode | default .Site.LanguageCode }}
@@ -14,17 +15,12 @@
   <meta name="title" content="{{ .Title | emojify }} - {{ .Site.Title | emojify }}" />
   {{- end }}
   {{/* Metadata */}}
-  {{ with (.Params.Description | default .Params.Summary) | default .Site.Params.description -}}
+  {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
   <meta name="description" content="{{ . }}" />
   {{- end }}
-  
-  {{- $mytags := .Params.Tags | default slice -}}
-  {{- $mykeywords := .Params.Keywords | default .Site.Params.keywords -}}
-  {{- $allKeywords := $mytags | append $mykeywords | uniq -}}
-  {{ if $allKeywords }}
-  <meta name="keywords" content="{{ delimit $allKeywords ", " }}" />
-  {{ end }}  
-  
+  {{ with  .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+  {{- end }}
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
@@ -74,12 +70,20 @@
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Serif+TC:wght@200..900&display=swap">
+  <noscript><link rel="stylesheet" crossorigin="anonymous"
+        href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&family=Noto+Serif+TC:wght@200..900&display=swap"></noscript>
+
   <script defer type="text/javascript" id="script-bundle" src="{{ $bundleJS.RelPermalink }}"
     integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
     }}"></script>
   {{ end }}
   {{ if not .Site.Params.disableImageZoom | default true }}
-  <script src="{{ "js/zoom.min.js" | relURL }}"></script>
+  {{ $zoomJS := resources.Get "lib/zoom/zoom.min.js" | resources.Fingerprint "sha512" }}
+  <script src="{{ $zoomJS.RelPermalink }}" integrity="{{ $zoomJS.Data.Integrity }}"></script>
   {{ end }}
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
@@ -151,4 +155,7 @@
   </script>
   {{ end }}
   {{ end }}
+
 </head>
+  
+  

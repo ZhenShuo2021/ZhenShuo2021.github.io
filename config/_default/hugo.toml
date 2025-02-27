@@ -15,7 +15,7 @@ weight = 1
 
 enableRobotsTXT = false
 
-summaryLength = 100
+summaryLength = 75
 hasCJKLanguage = true  # 字數統計才會對
 
 buildDrafts = false
@@ -77,3 +77,4 @@ googleAnalytics = "G-XMT1S11VE4"
   posts = '/posts/:filename/'
   notes = '/posts/:filename/'
   jottings = '/posts/:filename/'
+  timeline = '/posts/:filename/'
