@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ZSL's blog on ZSL</title><link>https://www.zsl0621.cc/</link><description>Recent content in ZSL's blog on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 15 Feb 2025 06:10:46 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/index.xml" rel="self" type="application/rss+xml"/><item><title>2025 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/2025/</link><pubDate>Sat, 15 Feb 2025 06:10:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/2025/</guid><description>&lt;h1 class="relative group">20250215
+&lt;div id="20250215" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;blockquote>
+&lt;p>人工智障&lt;/p>
+&lt;/blockquote>
+&lt;p>ChatGPT 和 Claude 都回答 &lt;code>autoload -U&lt;/code> 功能是防止函數名稱被別名影響，不知道吃到哪個錯誤資訊的口水，實際用途是這個：&lt;/p>
+&lt;ol>
+&lt;li>-U: 防止函數中的別名被擴展&lt;/li>
+&lt;li>-z: 使用 zsh 的方式載入函數&lt;/li>
+&lt;/ol>
+&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>撰寫 ZSH 自定義函式以及補全函式</title><link>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</link><pubDate>Sat, 15 Feb 2025 02:46:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</guid><description>&lt;h1 class="relative group">教學
+&lt;div id="%E6%95%99%E5%AD%B8" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>舉例來說，將 &lt;code>hugo new content&lt;/code> 簡寫為 &lt;code>hnc&lt;/code> 並且支援補全，第一步先建立一個檔案名稱為 hnc 的腳本放在 FPATH 裡面，不能用 alias，alias 不給補全，腳本如下：&lt;/p></description></item><item><title>程式菜鳥重構紀錄和心得</title><link>https://www.zsl0621.cc/posts/python-refactoring-journey/</link><pubDate>Mon, 06 Jan 2025 05:10:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/python-refactoring-journey/</guid><description>&lt;p>最近看到&lt;a href="https://blog.darkthread.net/" target="_blank">黑暗執行緒&lt;/a>關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。&lt;/p>
+&lt;p>總共有以下幾篇文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-and-performance/" target="_blank">閒聊 - 「好程式」跟你想的不一樣! 初讀「重構」有感&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-notes-2-bad-smell/" target="_blank">重構筆記 - 壞味道 (Bad Smell)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-notes-3/" target="_blank">重構筆記 - .NET 壞味道補充包&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/anti-pattern/" target="_blank">能抓耗子的就是好貓？閒談程式碼 Anti-Pattern&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>以及幾篇相關文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://bryanyu.github.io/2018/01/07/RefactorPactice" target="_blank">重構-改善既有的程式的設計-第二版 練習與筆記&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://overreacted.io/goodbye-clean-code/" target="_blank">Goodbye, Clean Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction" target="_blank">The Wrong Abstraction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://programmingisterrible.com/post/173883533613/code-to-debug" target="_blank">Write code that’s easy to delete, and easy to debug too.&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://programmingisterrible.com/post/176657481103/repeat-yourself-do-more-than-one-thing-and" target="_blank">Repeat yourself, do more than one thing, and rewrite everything&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 class="relative group">重構
+&lt;div id="%E9%87%8D%E6%A7%8B" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;p>對於重構這件事我非常有感，因為剛開始寫基本上從零開始，研究所雖然把 Numpy/Numba 摸到估計全台灣也不會有幾個人&lt;a href="https://docs.zsl0621.cc/docs/python/numba-tutorial-accelerate-python-computing" target="_blank">比我還熟&lt;/a>，但是在數值模擬以外就是完全的門外漢。退伍後完成了三個 Python 小專案，從能動進化到掌握各個程式碼品質工具已經進步很多，分別進行以下任務&lt;/p></description></item><item><title>wut 終端機解釋套件</title><link>https://www.zsl0621.cc/posts/20241222-wut/</link><pubDate>Sat, 21 Dec 2024 23:50:04 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20241222-wut/</guid><description>&lt;p>在 Github 逛到這個 900 stars 的終端機解釋套件，用途是解釋終端機的錯誤訊息，第一眼看到想說哇怎麼做到的好強，看了原始碼後發現原來是 call LLM API 啊，到這裡為止都還是想稱讚他寫程式不用多厲害，重點是做出來的東西有沒有用才是關鍵，還有能善用 LLM 幫助生活而不是一昧排斥或完全接受 brabrabra&amp;hellip;結果查了一下 pepy.tech 發現 total downloads 1.64k，連我的破爬蟲工具都有將近 10k 下載了，這個才 1.64k 下載就有 961 stars，我合理懷疑他買星星，附上 star-history 佐證。&lt;/p></description></item><item><title>20241204</title><link>https://www.zsl0621.cc/posts/20241204/</link><pubDate>Wed, 04 Dec 2024 15:52:57 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20241204/</guid><description>&lt;p>很用心的寫完 &lt;a href="https://docs.zsl0621.cc/docs/python/python-uv-complete-guide" target="_blank">UV Python完整教學&lt;/a> 之後不免俗的去 Google Search 搜尋自己排在第幾個搜尋結果，如果關鍵字打 「uv python 教學」會在第四個其實已經不錯了，但是前三個是什麼呢，直接拿 uv 取代 pip 使用&amp;hellip; 他們就是把 uv &lt;u>&lt;strong>最不重要&lt;/strong>&lt;/u> 的一個功能拿出來講就可以放在前面，雖然 Google SEO 很爛是早就知道的事情，但是看到還是覺得滿討厭的。&lt;/p></description></item><item><title>選擇適合的爬蟲技術</title><link>https://www.zsl0621.cc/posts/scrappers/</link><pubDate>Thu, 21 Nov 2024 08:51:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/scrappers/</guid><description>&lt;h1 class="relative group">前言
+&lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>搜尋爬蟲時大家的學習歷程大概都是從 requests 搭配 BeautifulSoup，再來會出現 AJAX，然後會看到 selenium/puppteer/playwright，但我從沒看過整合文章，都只會簡介兩句就開始程式碼，所以本文又是一個小整理，主要說明有哪幾種頁面以及應該如何選擇爬蟲工具。&lt;/p></description></item><item><title>20241103</title><link>https://www.zsl0621.cc/posts/20241103/</link><pubDate>Sun, 03 Nov 2024 19:39:32 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20241103/</guid><description>&lt;p>最近發現 Queue 原來可以配合多線程作為任務監聽器使用，就想寫一個 Python Queue 簡單介紹文章，結果码农高天也剛好拍了&lt;a href="https://www.youtube.com/watch?v=Qsa3xZgDUh4" target="_blank">一部影片&lt;/a>來介紹 Queue，難道這就是共時性嗎！！！好可怕啊 Python。&lt;/p>
+&lt;div align="center">
+&lt;p>
+&lt;figure>
+&lt;img class="my-0 rounded-md" loading="lazy" src="%E5%85%B1%E6%99%82%E6%80%A7.jpg" alt="共時性" />
+&lt;/figure>
+&lt;/p></description></item><item><title>20241030</title><link>https://www.zsl0621.cc/posts/20241030/</link><pubDate>Wed, 30 Oct 2024 16:26:34 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20241030/</guid><description>&lt;h1 class="relative group">當年魔獸爭霸三的小遊戲
+&lt;div id="%E7%95%B6%E5%B9%B4%E9%AD%94%E7%8D%B8%E7%88%AD%E9%9C%B8%E4%B8%89%E7%9A%84%E5%B0%8F%E9%81%8A%E6%88%B2" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>當兵時有和同梯聊到魔獸小遊戲，結果年代太過久遠兩個人都只記得地圖大概，名字是什麼都不記得了XD，只記得是吸血鬼抓人類型的遊戲，地圖右上角有個聖堂，每次打暴聖堂都有莫名的滿足感哈哈哈。最近網路衝浪被我衝到這個網站&lt;/p></description></item><item><title>20241025</title><link>https://www.zsl0621.cc/posts/20241025/</link><pubDate>Fri, 25 Oct 2024 03:38:03 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20241025/</guid><description>&lt;h1 class="relative group">前言
+&lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;h3> 2024: 網路高速發展反而成為資訊阻礙的原因 &lt;/h3>
+&lt;p>過往人類因為資訊封鎖導致階級固化，社會流動緩慢，不過隨著科技發展&amp;hellip;&lt;/p>
+&lt;p>開玩笑的，這篇不是什麼社會文章，只是又一個抱怨：網路上品質低落的教學文章導致資訊取得速度快要比直接讀教科書還慢。&lt;/p></description></item><item><title>Ultimate Numba Guide Speed Up Python Numerical Computation</title><link>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</link><pubDate>Sat, 05 Oct 2024 07:07:20 +0800</pubDate><guid>https://www.zsl0621.cc/posts/ultimate-numba-guide-speed-up-python-numerical-computation/</guid><description>嘔心瀝血超過萬字的終極 Numba 教學指南，絕對是你在中文圈能找到的最好教學。</description></item><item><title>Code Review: facebook_crawler</title><link>https://www.zsl0621.cc/posts/facebook_crawler/</link><pubDate>Sat, 28 Sep 2024 00:13:29 +0800</pubDate><guid>https://www.zsl0621.cc/posts/facebook_crawler/</guid><description>前段時間認真寫了自己的第一個小專案，關注的重點在於可讀性高、可維護性高和可擴展性高的程式碼，版本從研究所時期的等級（能動就好）到最終版我個人還是覺得算不錯了，就想幫自己寫一個 code review 記錄過程，但是一直因為怠惰沒有動筆，直到看到這篇文章</description></item><item><title>第一天學習 Docker 該知道的基礎知識</title><link>https://www.zsl0621.cc/posts/docker-day-one/</link><pubDate>Thu, 26 Sep 2024 21:43:27 +0800</pubDate><guid>https://www.zsl0621.cc/posts/docker-day-one/</guid><description/></item><item><title>第一次幫 NAS 買硬碟就翻車</title><link>https://www.zsl0621.cc/posts/buying-used-hdd-for-truenas/</link><pubDate>Tue, 24 Sep 2024 22:10:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/buying-used-hdd-for-truenas/</guid><description>&lt;blockquote>
+&lt;p>雖然是因為二手硬碟就是了&lt;/p>
+&lt;/blockquote>
+&lt;h1 class="relative group">經過
+&lt;div id="%E7%B6%93%E9%81%8E" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>在二手版逛到 10T 硬碟全盤慢速掃描無壞軌無警告無 info，S.M.A.R.T. 數據除了使用時間長了點也沒什麼問題，才賣 3000 覺得不錯，考慮幾天後就買了，結果裝了兩天之後 TrueNAS 就開始寄信給我&lt;/p></description></item><item><title>好用的免費軟體</title><link>https://www.zsl0621.cc/posts/awesome-free-software/</link><pubDate>Mon, 23 Sep 2024 21:51:36 +0800</pubDate><guid>https://www.zsl0621.cc/posts/awesome-free-software/</guid><description>&lt;p>記錄一些好用的免費軟體/工具/開源項目，😇代表有 GUI。&lt;/p>
+&lt;h1 class="relative group">工具人專屬
+&lt;div id="%E5%B7%A5%E5%85%B7%E4%BA%BA%E5%B0%88%E5%B1%AC" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;h2 class="relative group">OS
+&lt;div id="os" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;ul>
+&lt;li>Ventoy: 多系統開機碟&lt;/li>
+&lt;li>Tiny10: 基於 Win10 LTSC 2021 的精簡版系統，但是中文超難裝！中文超難裝！中文超難裝！&lt;/li>
+&lt;li>TrueNAS: 最好的開源 NAS 系統，但是硬碟事後添加不方便&lt;/li>
+&lt;li>OMV: 開源 NAS 系統，沒用過但是經研究 Bug 算有（NAS 不允許 Bug）&lt;/li>
+&lt;li>Unraid: 讀寫性能孱弱的 NAS 系統，收費，優點在社群友善且 Docker 安裝容易&lt;/li>
+&lt;li>Proxmox: 虛擬機系統&lt;/li>
+&lt;li>&lt;a href="https://github.com/dockur/windows" target="_blank">windows&lt;/a>: 在 Docker 中跑 Windows&lt;/li>
+&lt;li>&lt;a href="https://github.com/sickcodes/Docker-OSX" target="_blank">Docker-OSX&lt;/a>: 在 Docker 中跑 MacOS&lt;/li>
+&lt;li>微PE工具箱: WinPE 修復用系統&lt;/li>
+&lt;li>USBOX: 台灣人做的 WinPE&lt;/li>
+&lt;li>rgadguard: 微軟 iso 集合網站&lt;/li>
+&lt;li>diskgenius: 硬碟用的工具包，&lt;a href="https://www.youtube.com/watch?v=hy4IVjbDQuc" target="_blank">系統遷移範例&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 class="relative group">Windows 設定
+&lt;div id="windows-%E8%A8%AD%E5%AE%9A" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/Aetherinox/windows-update-killer" target="_blank">windows-update-killer&lt;/a>: 暫停 Windows 更新，看起來是可以直接在更新頁面手動更新&lt;/li>
+&lt;li>&lt;a href="https://github.com/tsgrgo/windows-update-disabler" target="_blank">windows-update-disabler&lt;/a>: 停止 Windows 更新，需使用啟用腳本才可更新&lt;/li>
+&lt;li>&lt;a href="https://helpcenter.trendmicro.com/zh-tw/article/tmka-08006/" target="_blank">UAC&lt;/a>: 用過 Linux 真心覺得 Windows 的 UAC 煩到不行&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/chocolatey-scoop-winget/" target="_blank">CLI 軟體安裝&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 class="relative group">File System
+&lt;div id="file-system" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;p>包含所有文件管理和文件伺服器等&lt;/p></description></item><item><title>20240923</title><link>https://www.zsl0621.cc/posts/20240923/</link><pubDate>Mon, 23 Sep 2024 18:17:28 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240923/</guid><description>&lt;div class="lead text-neutral-500 dark:text-neutral-400 !mb-9 text-xl">
+&lt;center> 一段時間沒碰 Blowfish 了，點開儲存庫還愣了一下。 &lt;/center>
+&lt;/div>
+&lt;p>Thecus，是最近搜尋 pydio 時偶然看到的公司，看起來是掛了但是掛的有道理，點進去看他&lt;a href="https://www.thecus.com/product?cat=linux_nas&amp;amp;cat_type=largeBusinessRackmount&amp;amp;PROD_ID=127&amp;amp;language_num=5" target="_blank">最貴的產品&lt;/a>介紹是這樣：&lt;/p>
+&lt;blockquote>
+&lt;h3>PLEX 多媒體伺服器&lt;/h3>
+Plex多媒體伺服器就像是數位多媒體的心臟和大腦。從Thecus® NAS APP Center，下載與安裝免費的Plex軟體到你的NAS。就可透過連接在網路上的各種設備（如您的Xbox 360和行動裝置）來播放存在NAS中的各種多媒體檔案。
+&lt;h3>快照備份&lt;/h3>
+透過BTRFS格式支援，Thecus NAS用戶將可享受快照備份的便利性。快照備份可經由手動或自動設定備份時間生成快照檔案並儲存在快照備份專屬空間，使用者可自行選擇某個時間段的快照備份並輕鬆完成還原工作。
+&lt;h3>Disk Clone、Disk Wipe&lt;/h3>
+透過Disk Clone可將硬碟內容完整複製於另一顆硬碟，而Disk Wipe可徹底並永久銷毀儲存資料、不留痕跡。
+&lt;h3>VPN伺服器&lt;/h3>
+VPN伺服器允許使用者經由加密網路進行遠端登入，而使用VPN伺服器讓企業更有效率的透過高性價比、可擴展性又具備安全防護的私人網路連線管理重要商業機密。
+&lt;h3>支援10GbE Fiber/10G Base-T&lt;/h3>
+10Gb 乙太網路將是企業邁向新世代的標準配備，Thecus網路儲存設備(NAS) 以平實的價格要讓一般使用者皆能輕鬆享受新世代10Gb 乙太網路所帶來的極速快感。
+&lt;h3>隨機附贈Acronis True Image&lt;/h3>
+Acronis Quick Backup軟體讓用戶能手動執行檔案資料備份或執行差異性備份，只需簡單幾個步驟，就能夠將用戶的檔案資料存放在一個安全的地方。此外，透過Acronis True Image Personal Backup，用戶能夠選擇備份完整的檔案資料，或只選擇重要的檔案資料作備份，更方便的是，用戶還能夠針對備份的檔案資料作編輯，再也不會因為備份軟體太過複雜或簡易而有所限制，體驗前所未有的彈性。
+&lt;h3>USB 3.0主控模式接口&lt;/h3>
+最新一代主控模式接口擁有比USB 2.0快10倍的速度。不論連接數位相機或智慧型手機、備份大型的外接硬碟，或者擴充你的網路儲存設備(NAS)的儲存空間，USB 3.0能確保以5 Gbit/s極快的速度完成並也能向下和USB 2.0及USB 1.1 相容。
+&lt;h3>多重磁碟陣列(RAID)&lt;/h3>
+Thecus網路儲存設備(NAS)可以依照使用者對效能和資料保護的不同需求在不同的券冊(Volume)設定各種磁碟陣列(RAID): RAID 0, 1, 5, 6, 10, 50, 60及JBOD。並可使用線上磁碟陣列升級(online RAID migration)、線上擴充磁碟空間(online expansion)、熱備援(hot spare)和自動重建來保護儲存的檔案資料。
+&lt;h3>支援多種檔案系統&lt;/h3>
+Thecus網路儲存伺服器(NAS)支援多種檔案系統: EXT4、Btrfs 及XFS。使用者可在不同的券冊(Volume)中選擇所需的檔案系統格式。
+&lt;h3>iSCSI儲存資源隨需分配 (Thin-Provisioning)&lt;/h3>
+有了高速傳輸的iSCSI及iSCSI資源隨需分配技術，讓企業能夠更有效地運用儲存空間。透過iSCSI連結來快速傳輸資料，提供使用者更多使用彈性並減少儲存空間的浪費。
+&lt;h3>支援iOS/Android系統&lt;/h3>
+現在全球最備受注目的趨勢就是無論在甚麼地方都能存取資料。藉由Thecus T-OnTheGo，使用者能夠管理你的網路儲存設備(NAS)，並透過iOS or Android設備上傳/下載/瀏覽網路儲存設備(NAS)裡的檔案。
+&lt;h3>Rsync備份模組&lt;/h3>
+能夠有效率地管理備份檔案資料，是現今非常重要的課題，而針對不同使用者，大家都有特定的儲存需求。Thecus Rsync備份模組能夠依照用戶的需求提供不同的服務， 例如： 遠端備份功能、彈性的時程安排，同時提供Linux-based傳輸的穩定性。
+&lt;h3>使用者磁碟空間管理&lt;/h3>
+龐大的儲存空間可以分配給Thecus網路儲存設備(NAS)的眾多使用者。無論是兩個或者是100個使用者，都能輕輕鬆鬆地分配並管理硬碟空間。
+&lt;h3>PCI-e插槽&lt;/h3>
+Thecus的網路儲存設備(NAS) 已經擁有豐富的創新技術。如果企業用戶想獲取閃電般的傳輸速度，可自行在PCI-e插槽上安裝10Gb乙太網路卡。
+&lt;/blockquote>
+&lt;p>我真的是無從吐槽，feature 介紹第一個會是最重要的特色吧，這個分類是 &lt;code>企業級網路儲存設備&lt;/code> 的產品第一個 feature 是開源的 Plex 媒體伺服器？？？企業級產品哈囉＝＝？還有開源的 Rsync 也好意思放上去，這到底是什麼腦袋撞到的東西，其他特色就是硬體堆一堆，10G 網路勉強可以談，其他像是 USB 3.0 (???)、RAID (???)、PCI-e插槽 (???)、附贈Acronis True Image (???)，我的天，讓我覺得整間公司都沒人用過 NAS，這跟最近的星鳴特工一樣整間公司沒人敢講話是嗎。配上前面爛成一團的 feature 讓我完全無法相信 &lt;code>無論是兩個或者是100個使用者，都能輕輕鬆鬆地分配並管理硬碟空間&lt;/code> 這個 loading 有被驗證過，還有為什麼一個是中文一個是數字，這些人都只有大學畢業是不是，整個產品像是大學生報告一樣，沒東西寫硬要找東西湊數。&lt;/p></description></item><item><title>Git 修改已提交的內容</title><link>https://www.zsl0621.cc/posts/git-edit-commits/</link><pubDate>Sat, 07 Sep 2024 14:10:12 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-edit-commits/</guid><description>&lt;p>前言&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>hash^&lt;/code> 的那個 &lt;code>^&lt;/code> 代表該 hash 的前一個 hash。&lt;/li>
+&lt;li>&lt;code>--amend&lt;/code> 可以加上 &lt;code>--no-edit&lt;/code> 表示不修改 commit 訊息。&lt;/li>
+&lt;li>rebase 如果是需要跳到以前進行修改的，git 都會自動幫你 checkout ，這時候查看 &lt;code>git status&lt;/code> 會顯示你在互動式 rebase 中，&lt;code>git branch&lt;/code> 則是跳到該 commit 由 rebase 建立並且控制的分支 &lt;code>(no branch, rebasing main)&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;h1 class="relative group">情況一：修改 commit message
+&lt;div id="%E6%83%85%E6%B3%81%E4%B8%80%E4%BF%AE%E6%94%B9-commit-message" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>修改前一個 commit：&lt;code>git commit --amend&lt;/code>&lt;/p></description></item><item><title>20240826</title><link>https://www.zsl0621.cc/posts/20240826/</link><pubDate>Mon, 26 Aug 2024 02:42:43 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240826/</guid><description>&lt;blockquote>
+&lt;p>Python dis&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;a href="https://www.youtube.com/@minkoder" target="_blank">码农高天&lt;/a> 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。&lt;/p>
+&lt;pre>&lt;code class="language-python">import dis
+def example():
+with open('file.txt', 'r') as file:
+content = file.read()
+dis.dis(example)
+&lt;/code>&lt;/pre>
+&lt;p>輸出：&lt;/p>
+&lt;pre>&lt;code class="language-sh">(.venv) leo@MBP P5D % python3 t.py
+2 0 RESUME 0
+3 2 LOAD_GLOBAL 1 (NULL + open)
+12 LOAD_CONST 1 ('file.txt')
+14 LOAD_CONST 2 ('r')
+16 CALL 2
+24 BEFORE_WITH
+26 STORE_FAST 0 (file)
+4 28 LOAD_FAST 0 (file)
+30 LOAD_ATTR 3 (NULL|self + read)
+50 CALL 0
+58 STORE_FAST 1 (content)
+3 60 LOAD_CONST 0 (None)
+62 LOAD_CONST 0 (None)
+64 LOAD_CONST 0 (None)
+66 CALL 2
+74 POP_TOP
+76 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 78 PUSH_EXC_INFO
+80 WITH_EXCEPT_START
+82 POP_JUMP_IF_TRUE 1 (to 86)
+84 RERAISE 2
+&amp;gt;&amp;gt; 86 POP_TOP
+88 POP_EXCEPT
+90 POP_TOP
+92 POP_TOP
+94 RETURN_CONST 0 (None)
+&amp;gt;&amp;gt; 96 COPY 3
+98 POP_EXCEPT
+100 RERAISE 1
+ExceptionTable:
+26 to 58 -&amp;gt; 78 [1] lasti
+78 to 86 -&amp;gt; 96 [3] lasti
+&lt;/code>&lt;/pre>
+&lt;p>簡單解讀：&lt;/p></description></item><item><title>Git 遠端指令</title><link>https://www.zsl0621.cc/posts/git-remote/</link><pubDate>Sun, 25 Aug 2024 22:24:42 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-remote/</guid><description>&lt;p>這篇介紹遠端工作時常用的指令。&lt;br>
+減小克隆空間請見&lt;a href="https://www.zsl0621.cc/posts/git-reduce-size/">這篇文章&lt;/a>。&lt;/p>
+&lt;h1 class="relative group">基本遠端指令
+&lt;div id="%E5%9F%BA%E6%9C%AC%E9%81%A0%E7%AB%AF%E6%8C%87%E4%BB%A4" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>設定遠程倉庫地址，clone 下來後可用&lt;/p>
+&lt;pre>&lt;code class="language-sh">git clone [remote.git] [dir] # 克隆遠端倉庫，dir為可選
+git push [remote-name] [local-branch-name] # 推送到遠端，後兩項可選
+git push [remote-name] [local-branch-name] # 拉取並合併，後兩項可選
+git fetch [remote-name] # 拉取但不合併
+git remote -v # 顯示遠端倉庫
+git remote add [remote-name] [remote.git] # 增加遠端倉庫並指定名稱
+git remote remove [name] # 刪除遠端倉庫
+git remote rename [old-name] [new] # 重命名遠端倉庫
+git remote set-url [name] [url] # 更改遠端倉庫的 URL
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>[問題]找不到遠端可以用以下指令&lt;/p></description></item><item><title>Git 減少 clone 空間</title><link>https://www.zsl0621.cc/posts/git-reduce-size/</link><pubDate>Thu, 22 Aug 2024 21:03:25 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-reduce-size/</guid><description>&lt;p>使用 git clone 遠端儲存庫，當儲存庫過大而你不需要全部資料的時候可以使用以下指令。&lt;/p>
+&lt;pre>&lt;code class="language-sh">--filter=blob:none # 不要下載大文件 blobs
+--depth=1 # 淺克隆，只複製第一層
+--shallow-since=[date] # 淺克隆，限定日期
+--no-checkout # 不會把文件放到工作目錄
+--sparse # 只取出根目錄檔案
+&lt;/code>&lt;/pre>
+&lt;p>也可以設定 &lt;code>--filter=blob:limit=1m&lt;/code> 限制檔案大小為 1MB&lt;/p></description></item><item><title>Git 幫所有過往 commit 加上 GPG 簽名</title><link>https://www.zsl0621.cc/posts/git-batch-sign/</link><pubDate>Thu, 22 Aug 2024 05:31:07 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-batch-sign/</guid><description>&lt;p>一次幫所有 git commit 簽名。&lt;/p>
+&lt;p>寫到一半發現 gpg 認證失敗沒辦法 commit，現在想想可能是 gpg 金鑰過期了，不過那時候腦袋一熱就想著藉此機會把所有以前用錯的金鑰全部移除，移除完新增金鑰一切正常，除了以前所有的簽名資訊全部失敗以外&amp;hellip;因為我把 Github 上面的金鑰也一起刪了導致舊 commit 在遠端上無法驗證。&lt;/p></description></item><item><title>各式各樣的小抄</title><link>https://www.zsl0621.cc/posts/cheatsheet-misc/</link><pubDate>Sat, 17 Aug 2024 11:24:23 +0800</pubDate><guid>https://www.zsl0621.cc/posts/cheatsheet-misc/</guid><description>各種指令用的小抄</description></item><item><title>Hugo 語法上色 Syntax Highlighter</title><link>https://www.zsl0621.cc/posts/hugo-syntax-highlighter/</link><pubDate>Sat, 17 Aug 2024 08:48:26 +0800</pubDate><guid>https://www.zsl0621.cc/posts/hugo-syntax-highlighter/</guid><description>&lt;p>有點能體會到水影片的感覺了，是的這篇文章很水。&lt;/p>
+&lt;p>這是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。&lt;/p>
+&lt;h1 class="relative group">Chroma
+&lt;div id="chroma" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 &lt;code>assets/css/compiled/main.css&lt;/code> 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。&lt;/p></description></item><item><title>Git 回到過去</title><link>https://www.zsl0621.cc/posts/git-goback/</link><pubDate>Sat, 17 Aug 2024 00:07:33 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-goback/</guid><description>&lt;h1 class="relative group">前言
+&lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>2024 時間軸</title><link>https://www.zsl0621.cc/posts/timeline/2024/</link><pubDate>Thu, 15 Aug 2024 00:49:30 +0800</pubDate><guid>https://www.zsl0621.cc/posts/timeline/2024/</guid><description>&lt;!-- jQuery -->
+&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js">&lt;/script>
+&lt;!-- nanogallery2 -->
+&lt;link href="https://unpkg.com/nanogallery2/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">&lt;/link>
+&lt;script type="text/javascript" src="https://unpkg.com/nanogallery2@3.0.5/dist/jquery.nanogallery2.min.js">&lt;/script>
+&lt;p>這是一個隱藏頁面，比廢話更廢話的地方。&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>20250205&lt;br>
+在臉書上講過&lt;a href="https://www.facebook.com/segacheng/posts/10107838498957053" target="_blank">這篇貼文&lt;/a>，在這邊就不再重複講了，只補充一句話，不懂就學會閉嘴，閉嘴當個傻子沒人會在意（謎之音：但是連政府官員和 CNN 都在笑言論審查，這世界完蛋囉）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>20250109&lt;br>
+每次看到有關回應網路腦殘文章或影片 (&lt;a href="https://www.youtube.com/watch?v=GujjTfs8o-M" target="_blank">真相揭曉..我對整起空難的震撼結論&lt;/a>) 心裡都會想，這個世界上正常人絕對比腦殘多，但是腦殘話多加上網路時代所以會覺得這個世界上全是腦殘。這就是為何要寫 &lt;a href="https://github.com/ZhenShuo2021/baha-blacklist" target="_blank">baha-blacklist&lt;/a> 的原因，有能力的話希望寫臉書和 IG 版本的，這兩個是世界上腦殘最多的地方。&lt;/p></description></item><item><title>20240812</title><link>https://www.zsl0621.cc/posts/20240812/</link><pubDate>Mon, 12 Aug 2024 11:24:31 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240812/</guid><description>&lt;h1 class="relative group">到底在幹嘛
+&lt;div id="%E5%88%B0%E5%BA%95%E5%9C%A8%E5%B9%B9%E5%98%9B" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>寫的小專案告一段落，問 GPT 哪裡可以修改的時候想到可以叫他用罵的可以罵出很多問題（？），於是出現了這篇廢文。&lt;/p>
+&lt;h2 class="relative group">請你罵我（？）
+&lt;div id="%E8%AB%8B%E4%BD%A0%E7%BD%B5%E6%88%91" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;p>給了這些提示詞後出現神奇的語言XD，果然提示詞也要夠瘋，雖然還是比不過網路上那些瘋子就是啦&lt;/p></description></item><item><title>好用的網頁模版也不好找</title><link>https://www.zsl0621.cc/posts/20240803/</link><pubDate>Sat, 03 Aug 2024 15:45:04 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240803/</guid><description>&lt;h1 class="relative group">開頭
+&lt;div id="%E9%96%8B%E9%A0%AD" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>&lt;a href="https://www.zsl0621.cc/posts/20240730/">上一篇&lt;/a>寫完那個表格之後感到一股火，對比度實在太低了寫到很不爽，又深深感到 blowfish 配色真的是要大改，有夠不清楚，從&lt;a href="https://www.zsl0621.cc/hugo-blowfish-fix/">問題修復&lt;/a>到&lt;a href="https://www.zsl0621.cc/hugo-blowfish-features/">進階客製化&lt;/a>已經改夠多東西了，連基礎的語法渲染都改成 highlight.js，現在還有表格，之後不知道還會發現多少東西要改，才想到我幹嘛不直接找一個配色正常的模版來用，改 code 就算了調整配色我完全不會啊。除此之外也發現對於知識網站來說 blowfish 沒有左側 list 可以方便查詢。&lt;/p></description></item><item><title>AMD 產品命名</title><link>https://www.zsl0621.cc/posts/20240730/</link><pubDate>Tue, 30 Jul 2024 11:18:52 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240730/</guid><description>備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。</description></item><item><title>Page Speed</title><link>https://www.zsl0621.cc/posts/20240728/</link><pubDate>Sun, 28 Jul 2024 23:58:49 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240728/</guid><description>&lt;p>搞了半天的 &lt;a href="https://pagespeed.web.dev/" target="_blank">pagespeed&lt;/a> 終於能跑到滿分了，就是東加無障礙西減載入圖片，連我圖片比例不對都要管有夠麻煩，連強迫症的我都受不了惹。&lt;br>
+&lt;figure>
+&lt;img
+class="my-0 rounded-md"
+loading="lazy"
+src="https://www.zsl0621.cc/posts/20240728/cover.webp"
+alt="pagespeed"
+/>
+&lt;/figure>
+&lt;/p>
+&lt;p>然後 Google Tag Manager 竟然是我網站裡浪費最多載入時間的 js，原本還想說要不要刪了，但想想刪了速度我也沒感覺，但是看不到報表我很有感覺，就算不看放在那也爽。&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.zsl0621.cc/posts/20240728/cover.webp"/></item><item><title>TrueNAS Docker</title><link>https://www.zsl0621.cc/posts/truenas-docker/</link><pubDate>Sun, 28 Jul 2024 22:52:57 +0800</pubDate><guid>https://www.zsl0621.cc/posts/truenas-docker/</guid><description>列出幾個常見的 docker-compose.yml 以便一鍵部屬。</description></item><item><title>關於本站</title><link>https://www.zsl0621.cc/about/</link><pubDate>Tue, 23 Jul 2024 08:55:01 +0800</pubDate><guid>https://www.zsl0621.cc/about/</guid><description>&lt;p>在網路上搜尋資料時常常遇到各種問題，包括但不限於：過長的前言廢話、無關緊要的搞笑圖片、內容錯誤、資訊散落在各個網站、進入網頁廣告、要求登入、限制付費會員、載入慢、爬蟲垃圾網站、鎖定滑鼠、鎖定複製、寫爛文章還一直彈出視窗要你請他喝咖啡。&lt;/p></description></item><item><title>tmux 使用教學</title><link>https://www.zsl0621.cc/posts/tmux/</link><pubDate>Sun, 21 Jul 2024 07:12:50 +0800</pubDate><guid>https://www.zsl0621.cc/posts/tmux/</guid><description>使用 tmux 管理多視窗，讓程序在 SSH 斷線後繼續運行。介紹 tmux 的安裝、基本使用方法以及整理常用的指令。</description></item><item><title>Hugo 小抄</title><link>https://www.zsl0621.cc/posts/cheatsheet-hugo/</link><pubDate>Fri, 19 Jul 2024 01:00:00 +0800</pubDate><guid>https://www.zsl0621.cc/posts/cheatsheet-hugo/</guid><description>&lt;kbd>Hugo cheatsheets ❤️‍🩹&lt;/kbd></description></item><item><title>為何要寫部落格</title><link>https://www.zsl0621.cc/posts/blog-birth/</link><pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/blog-birth/</guid><description>&lt;h1 class="relative group">緣起
+&lt;div id="%E7%B7%A3%E8%B5%B7" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>從資料庫放到爆炸開始。&lt;/p>
+&lt;p>身為資訊整理大師平常在網路上看到各種有用資訊都會用書籤保存，久了以後發現快爆炸了需要書籤之外的管理方式；一開始先用 Word 複製貼上結果發現更痛苦，沒有連結只能用檔案管理非常麻煩，沒多久就改用 Apple Notes。Apple Notes 有他的優點，在蘋果裝置就是無敵，不過你永遠別踏出蘋果的舒適圈，預設沒有的功能就是永遠沒得用，作為知識庫功能是遠遠不夠，而且很容易會被蘋果生態綁架。這時才開始認真研究其他筆記系統，發現 MarkDown 是個好東西，而且支援 MarkDown 的開源筆記軟體 &lt;a href="https://www.youtube.com/watch?v=oGF_qp10Qtc" target="_blank">超 級 多&lt;/a>，我的需求有以下幾點：&lt;/p></description></item><item><title>Hugo Blowfish 的進階客製化</title><link>https://www.zsl0621.cc/posts/hugo-blowfish-features/</link><pubDate>Mon, 01 Jul 2024 12:45:01 +0800</pubDate><guid>https://www.zsl0621.cc/posts/hugo-blowfish-features/</guid><description>補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。</description></item><item><title>Hugo Blowfish 的問題修復</title><link>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</link><pubDate>Mon, 01 Jul 2024 12:09:01 +0800</pubDate><guid>https://www.zsl0621.cc/posts/hugo-blowfish-fix/</guid><description>修復 blowfish 相關的功能問題。</description></item><item><title>Hugo Blowfish 的基礎設定</title><link>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</link><pubDate>Mon, 01 Jul 2024 12:01:01 +0800</pubDate><guid>https://www.zsl0621.cc/posts/hugo-blowfish-setup/</guid><description>Hugo Blowfish 的基礎設定教學（或者說紀錄）。</description></item><item><title>WebP圖片壓縮與解碼性能</title><link>https://www.zsl0621.cc/posts/webp-performance/</link><pubDate>Thu, 20 Jun 2024 21:30:40 +0800</pubDate><guid>https://www.zsl0621.cc/posts/webp-performance/</guid><description>WebP 與 AVIF 的壓縮率比較</description></item><item><title>Rician Fading生成方式，包含Emil Björnson大師的正解</title><link>https://www.zsl0621.cc/posts/rician-fading/</link><pubDate>Fri, 14 Jun 2024 02:45:40 +0800</pubDate><guid>https://www.zsl0621.cc/posts/rician-fading/</guid><description>整理生成Rician fading的方法</description></item><item><title>FFmpeg筆記</title><link>https://www.zsl0621.cc/posts/ffmpeg/</link><pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/ffmpeg/</guid><description>介紹FFmpeg基本指令，以及轉檔實驗。</description></item><item><title>Git 基礎概念與實戰指令</title><link>https://www.zsl0621.cc/posts/git-intro/</link><pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/git-intro/</guid><description>只講重點，網路上教學廢話好多好煩</description></item><item><title>常用Linux指令</title><link>https://www.zsl0621.cc/posts/useful-linux-commands/</link><pubDate>Thu, 30 May 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/useful-linux-commands/</guid><description>常用的 Linux 指令小抄</description></item><item><title>常用Docker指令</title><link>https://www.zsl0621.cc/posts/useful-docker-commands/</link><pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/useful-docker-commands/</guid><description>常用的 docker 指令小抄</description></item><item><title>利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問</title><link>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</link><pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/cloudflare-tunnel-ddns-guide/</guid><description>紀錄把一台破電腦裝成 NAS 的過程</description></item><item><title>TrueNas SMB 簽名及加密設定</title><link>https://www.zsl0621.cc/posts/truenas-smb/</link><pubDate>Mon, 06 May 2024 00:45:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/truenas-smb/</guid><description>TrueNAS 預設沒有開啟 SMB 簽名及加密，新版又取消了 auxiliary parameters 欄位，所以不要懷疑自己找不到，搞老半天就這個能用。</description></item><item><title>使用ExifTool根據文件夾名稱自動更新照片EXIF資訊</title><link>https://www.zsl0621.cc/posts/exiftool/</link><pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/exiftool/</guid><description>修改 EXIF 資訊的腳本，主要用於網路下載的相簿。</description></item><item><title>別進來💢💢💢，這是測試🥵</title><link>https://www.zsl0621.cc/posts/test-hugo/</link><pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/test-hugo/</guid><description>&lt;kbd>ALT&lt;/kbd> + &lt;kbd>F4&lt;/kbd></description></item></channel></rss>

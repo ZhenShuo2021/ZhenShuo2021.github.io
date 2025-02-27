@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>PageSpeed on ZSL</title><link>https://www.zsl0621.cc/tags/pagespeed/</link><description>Recent content in PageSpeed on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 17 Aug 2024 08:48:26 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/pagespeed/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 語法上色 Syntax Highlighter</title><link>https://www.zsl0621.cc/posts/hugo-syntax-highlighter/</link><pubDate>Sat, 17 Aug 2024 08:48:26 +0800</pubDate><guid>https://www.zsl0621.cc/posts/hugo-syntax-highlighter/</guid><description>&lt;p>有點能體會到水影片的感覺了，是的這篇文章很水。&lt;/p>
+&lt;p>這是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。&lt;/p>
+&lt;h1 class="relative group">Chroma
+&lt;div id="chroma" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 &lt;code>assets/css/compiled/main.css&lt;/code> 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。&lt;/p></description></item><item><title>Page Speed</title><link>https://www.zsl0621.cc/posts/20240728/</link><pubDate>Sun, 28 Jul 2024 23:58:49 +0800</pubDate><guid>https://www.zsl0621.cc/posts/20240728/</guid><description>&lt;p>搞了半天的 &lt;a href="https://pagespeed.web.dev/" target="_blank">pagespeed&lt;/a> 終於能跑到滿分了，就是東加無障礙西減載入圖片，連我圖片比例不對都要管有夠麻煩，連強迫症的我都受不了惹。&lt;br>
+&lt;figure>
+&lt;img
+class="my-0 rounded-md"
+loading="lazy"
+src="https://www.zsl0621.cc/posts/20240728/cover.webp"
+alt="pagespeed"
+/>
+&lt;/figure>
+&lt;/p>
+&lt;p>然後 Google Tag Manager 竟然是我網站裡浪費最多載入時間的 js，原本還想說要不要刪了，但想想刪了速度我也沒感覺，但是看不到報表我很有感覺，就算不看放在那也爽。&lt;/p></description><media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.zsl0621.cc/posts/20240728/cover.webp"/></item></channel></rss>

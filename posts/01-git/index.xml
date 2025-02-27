@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git on ZSL</title><link>https://www.zsl0621.cc/posts/01-git/</link><description>Recent content in Git on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Sat, 17 Aug 2024 00:07:33 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/posts/01-git/index.xml" rel="self" type="application/rss+xml"/><item><title>Git 修改已提交的內容</title><link>https://www.zsl0621.cc/posts/git-edit-commits/</link><pubDate>Sat, 07 Sep 2024 14:10:12 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-edit-commits/</guid><description>&lt;p>前言&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>hash^&lt;/code> 的那個 &lt;code>^&lt;/code> 代表該 hash 的前一個 hash。&lt;/li>
+&lt;li>&lt;code>--amend&lt;/code> 可以加上 &lt;code>--no-edit&lt;/code> 表示不修改 commit 訊息。&lt;/li>
+&lt;li>rebase 如果是需要跳到以前進行修改的，git 都會自動幫你 checkout ，這時候查看 &lt;code>git status&lt;/code> 會顯示你在互動式 rebase 中，&lt;code>git branch&lt;/code> 則是跳到該 commit 由 rebase 建立並且控制的分支 &lt;code>(no branch, rebasing main)&lt;/code>。&lt;/li>
+&lt;/ul>
+&lt;h1 class="relative group">情況一：修改 commit message
+&lt;div id="%E6%83%85%E6%B3%81%E4%B8%80%E4%BF%AE%E6%94%B9-commit-message" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;ol>
+&lt;li>
+&lt;p>修改前一個 commit：&lt;code>git commit --amend&lt;/code>&lt;/p></description></item><item><title>Git 遠端指令</title><link>https://www.zsl0621.cc/posts/git-remote/</link><pubDate>Sun, 25 Aug 2024 22:24:42 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-remote/</guid><description>&lt;p>這篇介紹遠端工作時常用的指令。&lt;br>
+減小克隆空間請見&lt;a href="https://www.zsl0621.cc/posts/git-reduce-size/">這篇文章&lt;/a>。&lt;/p>
+&lt;h1 class="relative group">基本遠端指令
+&lt;div id="%E5%9F%BA%E6%9C%AC%E9%81%A0%E7%AB%AF%E6%8C%87%E4%BB%A4" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>設定遠程倉庫地址，clone 下來後可用&lt;/p>
+&lt;pre>&lt;code class="language-sh">git clone [remote.git] [dir] # 克隆遠端倉庫，dir為可選
+git push [remote-name] [local-branch-name] # 推送到遠端，後兩項可選
+git push [remote-name] [local-branch-name] # 拉取並合併，後兩項可選
+git fetch [remote-name] # 拉取但不合併
+git remote -v # 顯示遠端倉庫
+git remote add [remote-name] [remote.git] # 增加遠端倉庫並指定名稱
+git remote remove [name] # 刪除遠端倉庫
+git remote rename [old-name] [new] # 重命名遠端倉庫
+git remote set-url [name] [url] # 更改遠端倉庫的 URL
+&lt;/code>&lt;/pre>
+&lt;blockquote>
+&lt;p>[問題]找不到遠端可以用以下指令&lt;/p></description></item><item><title>Git 減少 clone 空間</title><link>https://www.zsl0621.cc/posts/git-reduce-size/</link><pubDate>Thu, 22 Aug 2024 21:03:25 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-reduce-size/</guid><description>&lt;p>使用 git clone 遠端儲存庫，當儲存庫過大而你不需要全部資料的時候可以使用以下指令。&lt;/p>
+&lt;pre>&lt;code class="language-sh">--filter=blob:none # 不要下載大文件 blobs
+--depth=1 # 淺克隆，只複製第一層
+--shallow-since=[date] # 淺克隆，限定日期
+--no-checkout # 不會把文件放到工作目錄
+--sparse # 只取出根目錄檔案
+&lt;/code>&lt;/pre>
+&lt;p>也可以設定 &lt;code>--filter=blob:limit=1m&lt;/code> 限制檔案大小為 1MB&lt;/p></description></item><item><title>Git 幫所有過往 commit 加上 GPG 簽名</title><link>https://www.zsl0621.cc/posts/git-batch-sign/</link><pubDate>Thu, 22 Aug 2024 05:31:07 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-batch-sign/</guid><description>&lt;p>一次幫所有 git commit 簽名。&lt;/p>
+&lt;p>寫到一半發現 gpg 認證失敗沒辦法 commit，現在想想可能是 gpg 金鑰過期了，不過那時候腦袋一熱就想著藉此機會把所有以前用錯的金鑰全部移除，移除完新增金鑰一切正常，除了以前所有的簽名資訊全部失敗以外&amp;hellip;因為我把 Github 上面的金鑰也一起刪了導致舊 commit 在遠端上無法驗證。&lt;/p></description></item><item><title>Git 回到過去</title><link>https://www.zsl0621.cc/posts/git-goback/</link><pubDate>Sat, 17 Aug 2024 00:07:33 +0800</pubDate><guid>https://www.zsl0621.cc/posts/git-goback/</guid><description>&lt;h1 class="relative group">前言
+&lt;div id="%E5%89%8D%E8%A8%80" class="anchor">&lt;/div>
+&lt;/h1>
+&lt;p>想加新 feature 時常常會 bug 東一個西一個，沒用 git 的時候就是 &lt;code>ctrl+z&lt;/code> 大法，有了 branch 就不用再做這種蠢事了。本文介紹從舊 commit 新增 feature 的方式，由於新版 git 把 checkout &lt;a href="https://dwye.dev/post/git-checkout-switch-restore/" target="_blank">拆分&lt;/a>為 restore 和 switch，這裡也與時俱進使用新指令。&lt;/p></description></item><item><title>Git 基礎概念與實戰指令</title><link>https://www.zsl0621.cc/posts/git-intro/</link><pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate><guid>https://www.zsl0621.cc/posts/git-intro/</guid><description>只講重點，網路上教學廢話好多好煩</description></item></channel></rss>

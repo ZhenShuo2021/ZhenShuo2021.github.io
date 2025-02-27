@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>閱讀心得 on ZSL</title><link>https://www.zsl0621.cc/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/</link><description>Recent content in 閱讀心得 on ZSL</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><copyright>© 2025 ZSL</copyright><lastBuildDate>Mon, 06 Jan 2025 05:10:10 +0800</lastBuildDate><atom:link href="https://www.zsl0621.cc/tags/%E9%96%B1%E8%AE%80%E5%BF%83%E5%BE%97/index.xml" rel="self" type="application/rss+xml"/><item><title>程式菜鳥重構紀錄和心得</title><link>https://www.zsl0621.cc/posts/python-refactoring-journey/</link><pubDate>Mon, 06 Jan 2025 05:10:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/python-refactoring-journey/</guid><description>&lt;p>最近看到&lt;a href="https://blog.darkthread.net/" target="_blank">黑暗執行緒&lt;/a>關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。&lt;/p>
+&lt;p>總共有以下幾篇文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-and-performance/" target="_blank">閒聊 - 「好程式」跟你想的不一樣! 初讀「重構」有感&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-notes-2-bad-smell/" target="_blank">重構筆記 - 壞味道 (Bad Smell)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/refactoring-notes-3/" target="_blank">重構筆記 - .NET 壞味道補充包&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://blog.darkthread.net/blog/anti-pattern/" target="_blank">能抓耗子的就是好貓？閒談程式碼 Anti-Pattern&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>以及幾篇相關文章：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://bryanyu.github.io/2018/01/07/RefactorPactice" target="_blank">重構-改善既有的程式的設計-第二版 練習與筆記&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://overreacted.io/goodbye-clean-code/" target="_blank">Goodbye, Clean Code&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction" target="_blank">The Wrong Abstraction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://programmingisterrible.com/post/173883533613/code-to-debug" target="_blank">Write code that’s easy to delete, and easy to debug too.&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://programmingisterrible.com/post/176657481103/repeat-yourself-do-more-than-one-thing-and" target="_blank">Repeat yourself, do more than one thing, and rewrite everything&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 class="relative group">重構
+&lt;div id="%E9%87%8D%E6%A7%8B" class="anchor">&lt;/div>
+&lt;/h2>
+&lt;p>對於重構這件事我非常有感，因為剛開始寫基本上從零開始，研究所雖然把 Numpy/Numba 摸到估計全台灣也不會有幾個人&lt;a href="https://docs.zsl0621.cc/docs/python/numba-tutorial-accelerate-python-computing" target="_blank">比我還熟&lt;/a>，但是在數值模擬以外就是完全的門外漢。退伍後完成了三個 Python 小專案，從能動進化到掌握各個程式碼品質工具已經進步很多，分別進行以下任務&lt;/p></description></item></channel></rss>
