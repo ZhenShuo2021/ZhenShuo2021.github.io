@@ -13,7 +13,7 @@ weight = 1
 
 # pluralizeListTitles = "true" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
 
-enableRobotsTXT = false
+enableRobotsTXT = true
 
 summaryLength = 75
 hasCJKLanguage = true  # 字數統計才會對
@@ -37,7 +37,7 @@ googleAnalytics = "G-GSJ82XXGYD"
 
 [sitemap]
   changefreq = 'daily'
-  filename = 'sitemap.xml'
+  filename = 'sitemap-new.xml'
   priority = 0.5
 
 [outputs]
