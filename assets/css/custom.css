@@ -203,7 +203,6 @@ pre::-webkit-scrollbar-thumb {
 
 /* 連結顏色 Link colors */
 .article-content a {
-    display: inline-block;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     text-decoration-thickness: 1px;
