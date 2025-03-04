@@ -10,7 +10,10 @@ categories: [ZSH, Unix]
 series: []
 series_order: 
 progress_bar: true
+externalUrl: https://docs.zsl0621.cc/docs/linux/customize-zsh-function-and-comletion 
 ---
+
+> 此文章已經新在我的[文檔庫](https://docs.zsl0621.cc/docs/linux/customize-zsh-function-and-comletion)中。
 
 # 教學
 
