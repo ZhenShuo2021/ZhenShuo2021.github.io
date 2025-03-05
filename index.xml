@@ -9,7 +9,10 @@
 &lt;li>-U: 防止函數中的別名被擴展&lt;/li>
 &lt;li>-z: 使用 zsh 的方式載入函數&lt;/li>
 &lt;/ol>
-&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>撰寫 ZSH 自定義函式以及補全函式</title><link>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</link><pubDate>Sat, 15 Feb 2025 02:46:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</guid><description>&lt;h1 class="relative group">教學
+&lt;p>autoload 選項有這些，順帶提供參考&lt;/p></description></item><item><title>撰寫 ZSH 自定義函式以及補全函式</title><link>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</link><pubDate>Sat, 15 Feb 2025 02:46:46 +0800</pubDate><guid>https://www.zsl0621.cc/posts/customize-zsh-function-and-comletion/</guid><description>&lt;blockquote>
+&lt;p>此文章已經新在我的&lt;a href="https://docs.zsl0621.cc/docs/linux/customize-zsh-function-and-comletion" target="_blank">文檔庫&lt;/a>中。&lt;/p>
+&lt;/blockquote>
+&lt;h1 class="relative group">教學
 &lt;div id="%E6%95%99%E5%AD%B8" class="anchor">&lt;/div>
 &lt;/h1>
 &lt;p>舉例來說，將 &lt;code>hugo new content&lt;/code> 簡寫為 &lt;code>hnc&lt;/code> 並且支援補全，第一步先建立一個檔案名稱為 hnc 的腳本放在 FPATH 裡面，不能用 alias，alias 不給補全，腳本如下：&lt;/p></description></item><item><title>程式菜鳥重構紀錄和心得</title><link>https://www.zsl0621.cc/posts/python-refactoring-journey/</link><pubDate>Mon, 06 Jan 2025 05:10:10 +0800</pubDate><guid>https://www.zsl0621.cc/posts/python-refactoring-journey/</guid><description>&lt;p>最近看到&lt;a href="https://blog.darkthread.net/" target="_blank">黑暗執行緒&lt;/a>關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。&lt;/p>
