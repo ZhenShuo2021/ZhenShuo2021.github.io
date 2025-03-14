@@ -69,6 +69,18 @@ u {
     text-underline-offset: 3.5px;
 }
 
+hr {
+  background-color: rgb(74, 74, 74);
+  border: none;
+  height: 1px;
+}
+
+.dark hr {
+  background-color: rgb(193, 193, 193);
+  border: none;
+  height: 1px;
+}
+
 h1.relative.group,
 h2.relative.group {
     margin-top: 25px;
@@ -189,7 +201,7 @@ body {
 }
 
 pre::-webkit-scrollbar {
-    height: 10px !important;
+    height: 7.5px !important;
 }
 
 pre::-webkit-scrollbar-track {

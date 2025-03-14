@@ -27,18 +27,18 @@
 [[main]]
   name = '筆記 {{< icon-with-text "link" >}}'
   weight = 30
-  url = "https://docs.zsl0621.cc/docs/about"
+  url = "https://docs.zsl0621.cc/memo/about"
 
 [[main]]
   name = "Git"
   parent = '筆記 {{< icon-with-text "link" >}}'
   weight = 10
-  url = "https://docs.zsl0621.cc/docs/category/git/"
+  url = "https://docs.zsl0621.cc/git/introduction"
 
 [[main]]
   name = "Linux"
   parent = '筆記 {{< icon-with-text "link" >}}'
-  url = "https://docs.zsl0621.cc/docs/category/linux/"
+  url = "https://docs.zsl0621.cc/memo/linux/package"
   weight = 20
 
 # [[main]]
