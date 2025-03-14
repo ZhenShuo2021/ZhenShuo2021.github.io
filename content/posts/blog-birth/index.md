@@ -42,7 +42,7 @@ progress_bar: true
 
 # 過程
 
-一開始從最多人用的 Hexo 開始用，不過想到換筆記系統的一波三折這次決定一步到位，而且 Hexo 繁體中文區實在太多人用，我就是喜歡標新立異跟別人不一樣才爽，於是去網路上查，發現有換過的都是 Google Blog > Hexo > (WordPress) > Hugo，最後決定用 Hugo。架 NAS 時很常看 [Ivonblog](https://ivonblog.com/) 的文章當參考，覺得他的部落格主題 (Blowfish) 滿不錯的就直接抄過來，Blowfish 也是有缺點，不過缺點是比較出來的，其他不是太無聊就是太花或是沒有 ToC，最後就決定用他了。架完又強迫症發作搞了一堆有的沒的，於是有了 [客製化 Hugo](https://www.zsl0621.cc/posts/custom-hugo/) 這篇文章，還提了人生第一次 Github Issue。
+一開始從最多人用的 Hexo 開始用，不過想到換筆記系統的一波三折這次決定一步到位，而且 Hexo 繁體中文區實在太多人用，我就是喜歡標新立異跟別人不一樣才爽，於是去網路上查，發現有換過的都是 Google Blog > Hexo > (WordPress) > Hugo，最後決定用 Hugo。架 NAS 時很常看 [Ivonblog](https://ivonblog.com/) 的文章當參考，覺得他的部落格主題 (Blowfish) 滿不錯的就直接抄過來，Blowfish 也是有缺點，不過缺點是比較出來的，其他不是太無聊就是太花或是沒有 ToC，最後就決定用他了。架完又強迫症發作搞了一堆有的沒的，於是有了 [客製化 Hugo](/posts/hugo-blowfish-features) 這篇文章，還提了人生第一次 Github Issue。
 
 # 胡言亂語
 
