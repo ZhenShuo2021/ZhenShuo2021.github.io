@@ -312,68 +312,181 @@ pre::-webkit-scrollbar-thumb {
 
 /* 簡碼 Shortcode 區 */
 /* hint shortcode */
-.book-hint {
-    padding: 0.5em 1em;
-    margin: 1em 0;
-    border-left: 3.5px solid;
-    border-radius: 4px;
-    font-style: normal;
-    font-weight: normal;
+
+/* 簡碼 Shortcode 區 */
+/* hint shortcode */
+:root {
+    /* --- Admonition Colors - Light Mode --- */
+    --admonition-light-text: #1f2937;
+    /* Note (Gray) */
+    --admonition-note-light-border: #6b7280;
+    --admonition-note-light-bg: #f3f4f6;
+    --admonition-note-light-title: #4b5563;
+    /* Info (Blue) */
+    --admonition-info-light-border: #1e88e5;
+    --admonition-info-light-bg: #e3f2fd;
+    --admonition-info-light-title: #1565c0;
+    /* Tip (Green) */
+    --admonition-tip-light-border: #43a047;
+    --admonition-tip-light-bg: #e8f5e9;
+    --admonition-tip-light-title: #2e7d32;
+    /* Warning (Orange) */
+    --admonition-warning-light-border: #ff9800;
+    --admonition-warning-light-bg: #fff3e0;
+    --admonition-warning-light-title: #ef6c00;
+    /* Danger (Red) */
+    --admonition-danger-light-border: #e53935;
+    --admonition-danger-light-bg: #ffebee;
+    --admonition-danger-light-title: #c62828;
+
+    /* --- Admonition Colors - Dark Mode --- */
+    --admonition-dark-text: #f3f4f6;
+
+    --admonition-note-dark-border: #b0b7c3;
+    --admonition-note-dark-bg: #404854;
+    --admonition-note-dark-title: #c4cbd5;
+
+    --admonition-info-dark-border: #76a9e0;
+    --admonition-info-dark-bg: #273c76;
+    --admonition-info-dark-title: #a0c1f7;
+
+    --admonition-tip-dark-border: #6bcf92;
+    --admonition-tip-dark-bg: #1d4736;
+    --admonition-tip-dark-title: #a2f0b7;
+
+    --admonition-warning-dark-border: #f7c68e;
+    --admonition-warning-dark-bg: #9b4825;
+    --admonition-warning-dark-title: #fed8a4;
+
+    --admonition-danger-dark-border: #f8a3a3;
+    --admonition-danger-dark-bg: #9f2e2e;
+    --admonition-danger-dark-title: #f7b3b3;
 }
 
-.book-hint .hint-content {
-    margin: 0;
-    font-style: normal;
-    font-weight: normal;
+.admonition {
+    padding: 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0.375rem;
+    border-left-width: 5px;
+    border-left-style: solid;
+    overflow: hidden;
+    color: var(--admonition-light-text);
 }
 
-.book-hint .hint-content>p:first-child {
-    margin-top: 0;
-    font-style: normal;
-    font-weight: normal;
-}
-
-.book-hint .hint-content>p:last-child {
-    margin-bottom: 0;
-    font-style: normal;
-    font-weight: normal;
-}
-
-/* 新增針對標題元素的樣式 */
-.book-hint .hint-content>h1,
-.book-hint .hint-content>h2,
-.book-hint .hint-content>h3,
-.book-hint .hint-content>h4,
-.book-hint .hint-content>h5,
-.book-hint .hint-content>h6 {
-    margin-top: 0.5rem;
+.admonition-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
     margin-bottom: 0.5rem;
 }
 
-/* Info hint */
-.book-hint.info {
-    --color: 0, 123, 255;
-    --opacity: 0.35;
-    border-color: rgb(var(--color));
-    background-color: rgba(var(--color), var(--opacity));
+.admonition-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
-/* Warning hint */
-.book-hint.warning {
-    --color: 255, 193, 7;
-    --opacity: 0.3;
-    border-color: rgb(var(--color));
-    background-color: rgba(var(--color), var(--opacity));
+.admonition-icon {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-/* Danger hint */
-.book-hint.danger {
-    --color: 220, 53, 69;
-    --opacity: 0.4;
-    border-color: rgb(var(--color));
-    background-color: rgba(var(--color), var(--opacity));
+.admonition-icon svg {
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
 }
 
+.admonition-content {
+    line-height: 1.6;
+}
+
+/* Light Mode Styles */
+.admonition-note {
+    background-color: var(--admonition-note-light-bg);
+    border-left-color: var(--admonition-note-light-border);
+}
+.admonition-note .admonition-heading {
+    color: var(--admonition-note-light-title);
+}
+
+.admonition-info {
+    background-color: var(--admonition-info-light-bg);
+    border-left-color: var(--admonition-info-light-border);
+}
+.admonition-info .admonition-heading {
+    color: var(--admonition-info-light-title);
+}
+
+.admonition-tip {
+    background-color: var(--admonition-tip-light-bg);
+    border-left-color: var(--admonition-tip-light-border);
+}
+.admonition-tip .admonition-heading {
+    color: var(--admonition-tip-light-title);
+}
+
+.admonition-warning {
+    background-color: var(--admonition-warning-light-bg);
+    border-left-color: var(--admonition-warning-light-border);
+}
+.admonition-warning .admonition-heading {
+    color: var(--admonition-warning-light-title);
+}
+
+.admonition-danger {
+    background-color: var(--admonition-danger-light-bg);
+    border-left-color: var(--admonition-danger-light-border);
+}
+.admonition-danger .admonition-heading {
+    color: var(--admonition-danger-light-title);
+}
+
+/* Dark Mode Styles */
+.dark .admonition {
+    color: var(--admonition-dark-text);
+}
+
+.dark .admonition-note {
+    background-color: var(--admonition-note-dark-bg);
+    border-left-color: var(--admonition-note-dark-border);
+}
+.dark .admonition-note .admonition-heading {
+    color: var(--admonition-note-dark-title);
+}
+
+.dark .admonition-info {
+    background-color: var(--admonition-info-dark-bg);
+    border-left-color: var(--admonition-info-dark-border);
+}
+.dark .admonition-info .admonition-heading {
+    color: var(--admonition-info-dark-title);
+}
+
+.dark .admonition-tip {
+    background-color: var(--admonition-tip-dark-bg);
+    border-left-color: var(--admonition-tip-dark-border);
+}
+.dark .admonition-tip .admonition-heading {
+    color: var(--admonition-tip-dark-title);
+}
+
+.dark .admonition-warning {
+    background-color: var(--admonition-warning-dark-bg);
+    border-left-color: var(--admonition-warning-dark-border);
+}
+.dark .admonition-warning .admonition-heading {
+    color: var(--admonition-warning-dark-title);
+}
+
+.dark .admonition-danger {
+    background-color: var(--admonition-danger-dark-bg);
+    border-left-color: var(--admonition-danger-dark-border);
+}
+.dark .admonition-danger .admonition-heading {
+    color: var(--admonition-danger-dark-title);
+}
 
 
 
