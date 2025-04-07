@@ -73,6 +73,11 @@ googleAnalytics = "G-GSJ82XXGYD"
       type = 'fragments'
       weight = 10
 
+# https://gohugo.io/host-and-deploy/host-on-github-pages/
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [permalinks]
   posts = '/posts/:filename/'
   notes = '/posts/:filename/'
