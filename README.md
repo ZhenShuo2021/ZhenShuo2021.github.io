@@ -29,11 +29,4 @@ hugo server
 npx rehype-cli public -o
 ```
 
-使用 shiki 的好處是快速且正確。Chroma 錯誤百出，highlightjs 和 prismjs 太慢。
-
-使用此腳本可以更新 blowfish 主題，Blowfish 大小高達 0.6GB 用 submodule 你會懷疑人生，用我的腳本安裝只有不到 10MB
-
-```sh
-chmod +x ./update-blowfish.sh
-./update-blowfish.sh
-```
+Blowfish 大小高達 0.6GB 所以我沒有使用 submodule 安裝主題，更新主題的方式則改用腳本，用腳本更新只有不到 10MB，`update-blowfish.sh` `update-blowfish.py` 都可以用功能相同。
