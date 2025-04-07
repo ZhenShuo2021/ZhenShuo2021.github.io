@@ -29,31 +29,44 @@ jobs:
     env:
       HUGO_VERSION: 0.142.0
       HUGO_ENVIRONMENT: production
+      HUGO_CACHEDIR: /tmp/hugo_cache
       TZ: Asia/Taipei
     steps:
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
-      # - name: Install Dart Sass
-      #   run: sudo snap install dart-sass
-
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 1
+        # with:
+        #   submodules: recursive
+        #   fetch-depth: 1
 
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Install Node.js dependencies
-        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.142.0'
+          extended: true
 
-      - name: Cache Restore
-        id: cache-restore
+      # https://github.com/pnpm/action-setup?tab=readme-ov-file#use-cache-to-reduce-installation-time
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          # Do not specify version if field "packageManager" exists in package.json
+          # version: 10
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '23.10.0'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Hugo Cache Restore
+        id: hugo-cache-restore
         uses: actions/cache/restore@v4
         with:
           path: |
@@ -61,25 +74,23 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys: hugo-
 
-      - name: Build with Hugo
+      - name: Build Project (SCSS + Hugo + Highlight)
         run: |
+          pnpm sass assets/scss/main.scss assets/css/custom.css --style compressed
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --baseURL "https://www.zsl0621.cc/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-
-      - name: Code Highlight
-        run: |
           npx rehype-cli public -o
-
-      - name: Cache Save
-        id: cache-save
+          
+      - name: Hugo Cache Save
+        id: hugo-cache-save
         uses: actions/cache/save@v4
         with:
           path: |
             ${{ runner.temp }}/hugo_cache
-          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
+          key: ${{ steps.hugo-cache-restore.outputs.cache-primary-key }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

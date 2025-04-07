@@ -1,7 +1,32 @@
 {
-  "dependencies": {
-    "@shikijs/rehype": "^1.14.1",
-    "rehype-cli": "^12.0.0",
-    "shiki": "^1.22.2"
-  }
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Hugo Blowfish Blog",
+  "keywords": [
+    "hugo",
+    "blowfish",
+    "blog"
+  ],
+  "author": "ZhenShuo2021",
+  "license": "MIT",
+  "scripts": {
+    "serve": "pnpm scss:build && concurrently \"pnpm scss:watch\" \"hugo server --disableKinds RSS --bind 0.0.0.0\"",
+    "build": "pnpm scss:build && hugo --gc --minify && pnpm shiki",
+    "build:cf": "pnpm scss:build && hugo --gc --minify --baseURL https://blog.zsl0621.cc/ && pnpm shiki",
+    "view-build": "serve public -l 1313",
+    "scss:watch": "sass --watch assets/scss/main.scss assets/css/custom.css",
+    "scss:build": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
+    "shiki": "npx rehype-cli public -o",
+    "update-blowfish:py": "python3 update-blowfish.py",
+    "update-blowfish:sh": "./update-blowfish.sh"
+  },
+  "devDependencies": {
+    "@shikijs/rehype": "^3.2.1",
+    "concurrently": "^9.1.0",
+    "rehype-cli": "^12.0.1",
+    "sass": "^1.86.3",
+    "serve": "^14.2.4",
+    "shiki": "^3.2.1"
+  },
+  "packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808"
 }

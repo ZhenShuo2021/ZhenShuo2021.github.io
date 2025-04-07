@@ -1,0 +1,10 @@
+// _base.scss
+// 基礎設定
+
+@use 'variables' as vars;
+
+:root {
+    --base-font-size: #{vars.$base-font-size};
+    --base-line-height: #{vars.$base-line-height};
+    --letter-spacing: #{vars.$letter-spacing};
+}

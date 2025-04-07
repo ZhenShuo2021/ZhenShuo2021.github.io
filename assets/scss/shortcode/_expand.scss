@@ -1,0 +1,97 @@
+// shortcode/_expand.scss
+// 可展開區塊元件樣式
+
+@use '../variables' as vars;
+
+// 可展開區塊容器
+.expand {
+  &-wrapper {
+    border: 1px solid vars.$expand-border-color;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: var(--font-size);
+    max-width: none;
+
+    .dark & {
+      border-color: vars.$expand-border-color-dark;
+    }
+  }
+
+  // 切換按鈕
+  &-toggle {
+    display: none;
+
+    // 切換展開時的內容樣式
+    &:checked {
+      & ~ .expand-content {
+        max-height: 50000px;
+        transition: max-height 0.8s ease-in-out;
+      }
+
+      // 圖標旋轉效果
+      & + .expand-title .expand-icon {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  // 標題樣式
+  &-title {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background-color: vars.$expand-title-bg;
+    color: #333;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    font-weight: normal;
+
+    &:hover {
+      background-color: vars.$expand-title-bg-hover;
+    }
+
+    .dark & {
+      background-color: rgb(var(--color-neutral-900));
+      color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
+
+      &:hover {
+        background-color: rgb(var(--color-neutral-900), 0.75);
+      }
+    }
+  }
+
+  // 內容容器
+  &-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    background-color: rgba(var(--color-neutral), 0.1);
+    padding: 0 1.8rem;
+
+    .dark & {
+      background-color: rgb(var(--color-neutral-900), 0.3);
+    }
+  }
+
+  // 內部內容區塊
+  &-inner {
+    padding: 1.2rem 0;
+    color: rgba(var(--color-neutral-700), var(--tw-text-opacity));
+
+    .dark & {
+      color: rgba(var(--color-neutral-200), var(--tw-text-opacity));
+    }
+  }
+
+  // 展開圖標
+  &-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+}

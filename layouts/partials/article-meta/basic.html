@@ -1,8 +1,8 @@
 <!-- 客製化項目
 
-文章標籤和分類 <div class="basicHtml-div">
+文章標籤和分類 <div class="cardInfo">
 
-顯示分隔符號  {{/* delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML */}} 
+顯示分隔符號  {{/* delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML */}}
 -->
 
 {{/* Determine the correct context and scope */}}
@@ -91,16 +91,16 @@
 <div style="height: .25rem;"></div>
 {{/* Output taxonomies */}}
 {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-<div class="basicHtml-div">
+<div class="cardInfo">
   {{/* Output taxonomies */}}
   {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-  <div class="basicHtml-div">
+  <div class="cardInfo">
     {{ with .Params.categories }}
     <div class="flex flex-wrap items-center mr-4 mb-2">
       <span class="" style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">
         {{ partial "icon.html" "list" }}
       </span>
-      
+
       {{ range . }}
         <span class="mr-1 mb-1">
           <a href="{{ printf "/categories/%s" (urlize . | lower) }}" class="inline-block relative">
@@ -112,7 +112,7 @@
     {{ end }}
   </div>
 
-  <div class="basicHtml-div">
+  <div class="cardInfo">
     {{ with .Params.tags }}
     <div class="flex flex-wrap items-center mr-4 mb-2">
       <span class="" style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">

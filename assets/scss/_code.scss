@@ -1,0 +1,44 @@
+// _code.scss
+// 程式碼區塊與排版相關樣式
+
+// 程式碼樣式設定
+.prose {
+    --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
+    --tw-prose-invert-quote-borders: rgba(var(--color-primary-400), 1);
+    --tw-prose-code: rgba(var(--color-secondary-700), var(--tw-text-opacity, 1));
+}
+
+// 滾動條樣式  
+.scrollbar-thin::-webkit-scrollbar {
+    width: 12.5px;
+}
+
+// 程式碼區塊滾動條
+pre {
+    &::-webkit-scrollbar {
+        height: 7.5px !important;
+
+        &-track {
+            background: transparent;
+        }
+
+        &-thumb {
+            border-radius: 15px;
+            background: rgb(var(--color-neutral-600));
+        }
+    }
+}
+
+// 深色模式程式碼樣式
+.dark {
+
+    .shiki,
+    .shiki span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        /* 可选，用于定义字体样式 */
+        /* font-style: var(--shiki-dark-font-style) !important; */
+        /* font-weight: var(--shiki-dark-font-weight) !important; */
+        /* text-decoration: var(--shiki-dark-text-decoration) !important; */
+    }
+}

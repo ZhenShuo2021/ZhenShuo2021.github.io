@@ -34,6 +34,5 @@ resources/_gen/
 static/.next
 static/node_modules
 .next
-bun.lockb
-pnpm-lock.yaml
-yarn.lock
+assets/css/custom.css.map
+assets/css/custom.css

@@ -1,0 +1,147 @@
+// _typography.scss
+// 字體與排版相關設定
+
+@use 'variables' as vars;
+
+// 字體
+@font-face {
+    font-family: 'LXGW WenKai TC';
+    font-display: swap;
+    font-weight: 500;
+    font-style: normal;
+    src: 'https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css';
+}
+
+// Safari 篩選器
+// https://www.zhangxinxu.com/wordpress/2024/07/css-safari-detect/
+@supports not (image-rendering: optimizeSpeed) {
+    html {
+        // 基礎字體設定 - 會影響所有使用 rem 單位的元素
+        font-size: vars.$base-font-size;
+        font-weight: vars.$font-weight-normal;
+
+        // 字體平滑度設定
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        // 確保螢幕縮放時的文字行為正常
+        text-size-adjust: 100%;
+
+        // 設定基本字體堆疊，作為後備
+        font-family: sans-serif;
+    }
+}
+
+// 基礎排版設定
+html,
+body {
+    font-size: 18px !important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke: 0.2px !important;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+// 主要字體設定
+body {
+    font-family: vars.$font-family-tc;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+// 粗體設定
+.font-semibold,
+strong,
+b {
+    -webkit-text-stroke: 0px;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+u {
+    text-underline-offset: 3.5px;
+}
+
+hr {
+    background-color: rgb(74, 74, 74);
+    border: none;
+    height: 1px;
+
+    .dark & {
+        background-color: rgb(193, 193, 193);
+    }
+}
+
+// 標題樣式
+h1,
+h2 {
+    &.relative.group {
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+}
+
+// LXGW 字體的標題字重設定
+.article-content {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        &.relative.group {
+            -webkit-text-stroke: vars.$text-stroke-title;
+            font-weight: vars.$font-weight-normal;
+        }
+    }
+}
+
+#single_header h1 {
+    -webkit-text-stroke: vars.$text-stroke-header;
+    font-weight: vars.$font-weight-normal;
+}
+
+// 大螢幕上的字體大小設定
+@media (min-width: 768px) {
+    .article-content {
+        --font-size: #{vars.$article-font-size};
+    }
+
+    p,
+    li,
+    ol,
+    ul {
+        font-size: var(--font-size);
+    }
+}
+
+// 頁末 footnote
+.footnote-backref {
+    font-size: 0;
+    text-decoration: none !important;
+    border-bottom: 100px;
+
+    &:before {
+        content: '↩️';
+        font-size: 16px;
+    }
+
+    &:hover:before {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+}
+
+// 自定義高亮顏色
+.bg-color {
+    background-color: rgb(var(--color-primary-300));
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .dark & {
+        background-color: rgb(var(--color-primary-700));
+    }
+}
