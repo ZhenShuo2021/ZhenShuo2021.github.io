@@ -36,3 +36,4 @@ static/node_modules
 .next
 assets/css/custom.css.map
 assets/css/custom.css
+**/*/.*.json

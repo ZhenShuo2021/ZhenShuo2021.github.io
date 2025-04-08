@@ -16,14 +16,14 @@
     "view-build": "serve public -l 1313",
     "scss:watch": "sass --watch assets/scss/main.scss assets/css/custom.css",
     "scss:build": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
-    "shiki": "npx rehype-cli public -o",
+    "shiki": "node scripts/highlight.js",
     "update-blowfish:py": "python3 update-blowfish.py",
     "update-blowfish:sh": "./update-blowfish.sh"
   },
   "devDependencies": {
-    "@shikijs/rehype": "^3.2.1",
+    "cheerio": "^1.0.0",
     "concurrently": "^9.1.0",
-    "rehype-cli": "^12.0.1",
+    "jsdom": "^26.0.0",
     "sass": "^1.86.3",
     "serve": "^14.2.4",
     "shiki": "^3.2.1"
