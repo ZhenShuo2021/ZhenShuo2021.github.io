@@ -16,7 +16,7 @@
     "view-build": "serve public -l 1313",
     "scss:watch": "sass --watch assets/scss/main.scss assets/css/custom.css",
     "scss:build": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
-    "shiki": "node scripts/highlight.js",
+    "shiki": "node scripts/shiki/index.js",
     "update-blowfish:py": "python3 update-blowfish.py",
     "update-blowfish:sh": "./update-blowfish.sh"
   },
