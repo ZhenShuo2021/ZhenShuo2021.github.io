@@ -1,26 +1,28 @@
 const path = require("node:path");
 const { Worker, parentPort } = require("node:worker_threads");
 const fs = require("node:fs").promises;
-const FileCollector = require("./file-collector");
+const { collectHtmlFiles } = require("./file-collector");
 
 const MESSAGE_TYPES = {
   READY: "ready",
   PROCESS: "process",
   COMPLETED: "completed",
   EXIT: "exit",
+  ERROR: "error",
 };
 
 class MainThreadManager {
   constructor(config, workerArgs = []) {
     this.config = config;
     this.workerArgs = workerArgs;
-    this.fileCollector = new FileCollector(config.DEV ? config.TARGETS_DEV : config.TARGETS);
+    this.targets = config.DEV ? config.TARGETS_DEV : config.TARGETS;
     this.mainScriptPath = path.resolve(__dirname, "index.js");
     this.processedFiles = new Map();
     this.recordFilePath = path.join(__dirname, ".processed-files.json");
     this.workers = [];
     this.totalProcessed = 0;
     this.activeWorkers = 0;
+    this.startTime = Date.now();
   }
 
   async initialize() {
@@ -41,7 +43,7 @@ class MainThreadManager {
       }
     } catch (error) {
       if (error.code !== "ENOENT") {
-        console.error("Failed to load processed files records:", error.message);
+        console.error("Failed to load processed files records:", error.stack);
       }
     }
   }
@@ -55,14 +57,20 @@ class MainThreadManager {
         console.log(`Saved records for ${Object.keys(records).length} processed files`);
       }
     } catch (error) {
-      console.error("Failed to save processed files records:", error.message);
+      console.error("Failed to save processed files records:", error.stack);
     }
   }
 
   async runMainThread() {
-    console.log(`Starting HTML syntax highlighting process in ${this.config.TARGET_DIR}`);
+    console.log("Starting HTML syntax highlighting process in:");
+    for (const target of this.targets) {
+      const excludeInfo = target.EXCLUDE?.length
+        ? ` (excluding: ${target.EXCLUDE.join(", ")})`
+        : "";
+      console.log(`- ${target.DIR}${excludeInfo}`);
+    }
 
-    const files = await this.fileCollector.getAllHtmlFiles(this.config.TARGET_DIR);
+    const files = await collectHtmlFiles(this.targets);
     if (!files || files.length === 0) {
       console.log("No HTML files found to process.");
       return;
@@ -76,9 +84,11 @@ class MainThreadManager {
     }
 
     const workerCount = this._calculateOptimalWorkerCount(filteredFiles.length);
-    console.log(
-      `Found ${files.length} HTML files. ${filteredFiles.length} need processing. Starting with ${workerCount} workers.`,
-    );
+    if (!this.config.QUIET) {
+      console.log(
+        `Found ${filteredFiles.length} HTML files. Starting with ${workerCount} workers.`,
+      );
+    }
 
     return this._startWorkerProcessing(filteredFiles, workerCount);
   }
@@ -98,7 +108,7 @@ class MainThreadManager {
             filteredFiles.push(filePath);
           }
         } catch (error) {
-          console.error(`Error checking file status: ${filePath}`, error.code);
+          console.error(`Error checking file status: ${filePath}`, error.stack);
           filteredFiles.push(filePath);
         }
       }),
@@ -149,7 +159,7 @@ class MainThreadManager {
     });
 
     worker.on("error", (error) => {
-      console.error(`[Worker ${workerId}] encountered an error: ${error.message}`);
+      console.error(`[Worker ${workerId}] encountered an error:`, error.stack);
     });
 
     worker.on("exit", (code) => {
@@ -167,7 +177,9 @@ class MainThreadManager {
     this.activeWorkers--;
 
     if (this.activeWorkers === 0) {
-      console.log(`Process completed. Modified ${this.totalProcessed} files.`);
+      console.log(
+        `Process completed. Modified ${this.totalProcessed} files using ${Date.now() - this.startTime} ms`,
+      );
       this.saveProcessedRecords().then(resolvePromise);
     }
   }
@@ -180,6 +192,9 @@ class MainThreadManager {
         break;
       case MESSAGE_TYPES.READY:
         this._assignNextBatch(worker, jobQueue);
+        break;
+      case MESSAGE_TYPES.ERROR:
+        console.error(`[Worker ${message.workerId}] error:`, message.error);
         break;
     }
   }
@@ -220,7 +235,11 @@ class WorkerThreadManager {
       this._setupWorkerMessageHandlers(workerId, highlighter);
       parentPort.postMessage({ type: MESSAGE_TYPES.READY, workerId });
     } catch (error) {
-      console.error(`[Worker ${workerId}] initialization error: ${error.message}`);
+      parentPort.postMessage({
+        type: MESSAGE_TYPES.ERROR,
+        workerId,
+        error: error.stack,
+      });
       process.exit(1);
     }
   }
@@ -229,13 +248,22 @@ class WorkerThreadManager {
     parentPort.on("message", async (message) => {
       switch (message.type) {
         case MESSAGE_TYPES.PROCESS: {
-          const result = await this._processBatch(highlighter, message.files, workerId);
-          parentPort.postMessage({
-            type: MESSAGE_TYPES.COMPLETED,
-            workerId,
-            count: result.count,
-            processedFiles: result.processedFiles,
-          });
+          try {
+            const result = await this._processBatch(highlighter, message.files, workerId);
+            parentPort.postMessage({
+              type: MESSAGE_TYPES.COMPLETED,
+              workerId,
+              count: result.count,
+              processedFiles: result.processedFiles,
+            });
+          } catch (error) {
+            // Send error to main thread
+            parentPort.postMessage({
+              type: MESSAGE_TYPES.ERROR,
+              workerId,
+              error: error.stack,
+            });
+          }
           break;
         }
         case MESSAGE_TYPES.EXIT:
@@ -273,7 +301,11 @@ class WorkerThreadManager {
       const modifications = await this._processFile(highlighter, filePath, workerId);
       return { filePath, modifications };
     } catch (error) {
-      console.error(`[Worker ${workerId}] failed to process ${filePath}: ${error.message}`);
+      parentPort.postMessage({
+        type: MESSAGE_TYPES.ERROR,
+        workerId,
+        error: error.stack,
+      });
       return null;
     }
   }
@@ -283,7 +315,9 @@ class WorkerThreadManager {
     if (modifications > 0) {
       const timestamp = Date.now();
       this.processedFiles.set(filePath, timestamp);
-      console.log(`[Worker ${workerId}] Processed ${modifications} code blocks in: ${filePath}`);
+      if (!this.config.QUIET) {
+        console.log(`[Worker ${workerId}] Processed ${modifications} code blocks in: ${filePath}`);
+      }
     }
 
     return modifications;

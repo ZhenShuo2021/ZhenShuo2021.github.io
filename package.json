@@ -2,11 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Hugo Blowfish Blog",
-  "keywords": [
-    "hugo",
-    "blowfish",
-    "blog"
-  ],
+  "keywords": ["SASS", "shiki"],
   "author": "ZhenShuo2021",
   "license": "MIT",
   "scripts": {
@@ -25,7 +21,6 @@
     "dom-serializer": "^2.0.0",
     "html-entities": "^2.6.0",
     "htmlparser2": "^10.0.0",
-    "jsdom": "^26.0.0",
     "sass": "^1.86.3",
     "serve": "^14.2.4",
     "shiki": "^3.2.1"

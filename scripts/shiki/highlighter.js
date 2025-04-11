@@ -56,7 +56,17 @@ class CodeHighlighter {
       try {
         const highlighted = await this.shiki.codeToHtml(rawCode, { lang, ...this.themeOption });
         const newDom = parseDocument(highlighted, { decodeEntities: false }).children;
-        DomUtils.replaceElement(pre, newDom[0]);
+
+        // Add a wrapper for scrapper, follow vitepress format
+        const wrapperDiv = {
+          type: "tag",
+          name: "div",
+          attribs: { class: `language-${lang}` },
+          children: [newDom[0]],
+          parent: null,
+        };
+        DomUtils.replaceElement(pre, wrapperDiv);
+        // DomUtils.replaceElement(pre, newDom[0]);
         modified++;
       } catch (e) {
         console.error(`Error highlighting code block (${lang}): ${e.message}`);
