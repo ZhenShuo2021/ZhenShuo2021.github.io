@@ -14,6 +14,7 @@ series_order: 2
 # 1. 矩陣乘法
 
 ## 一般方法
+
 <details>
 
   <summary>static inline</summary>
@@ -67,6 +68,7 @@ int main()
 ```
 
 ## 2D malloc
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -121,7 +123,9 @@ int main()
     return 0;
 }
 ```
+
 ## 1D array 模擬 2D array
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>

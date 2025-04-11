@@ -12,6 +12,7 @@ series_order: 1
 ---
 
 # 1. 基礎宣告
+
 |Syntax | Description|
 |---|---|
 |int a | a is an integer|
@@ -30,7 +31,7 @@ series_order: 1
 >
 >  <summary>Ans</summary>
 >
->  `typedef void(*pf)(char *)`
+> `typedef void(*pf)(char *)`
 ></details>
 <br>
 
@@ -38,6 +39,7 @@ series_order: 1
 
 根據自己各種卡的經驗，還是乖乖寫成英文再轉成中文讀最快理解。
 步驟：
+
 1. 從最裡面的括弧開始讀
 2. 往右讀直到沒有運算子，就往左讀
 3. 重複第二步
@@ -46,7 +48,9 @@ series_order: 1
 工具二：[語法轉換器](https://cdecl.org/)
 
 # 3. Const宣告
+
 由右向左念
+
 |   | 讀法 | 內容 |
 |---|---|---|
 |const int* p|pointer to int read-only|改內容x，改指向✓|
@@ -55,15 +59,18 @@ series_order: 1
 |const int * const   p|兩個都唯讀| 兩個都唯讀 |
 
 # 4. static
+
 1. 在函式的變數中，讓變數不會死掉，ex: function counter。
 2. 在全域變數/函式中，無法被其他檔案調用(防止extern)。  
 
 [Source](https://shengyu7697.github.io/cpp-static/)
 
 # 5. Volatile
+
 - 可能會被意想不到地改變，編譯器就不會去假設這個變量的值了。
 - 精確地說：優化器必須每次都小心地重新讀取這個變量的值，而不是使用保存在寄存器裡的備份。下面是volatile變量的幾個例子：
     1. [中斷處理程式](https://hackmd.io/@JDTyeH_URrKEf6JNBF_sZw/ryoaj1Tk9)中(ISR)可能被修改的全域變數（因ISR不可有參數，透過全域變數與主程式或其他函數分享資料可能會改變）
+
     ```c
     volatile int flag = 0;
 
@@ -77,7 +84,9 @@ series_order: 1
         }
     }
     ```
+
     2. [多線程](https://yuchungchuang.wordpress.com/2018/07/24/c-%E5%A4%9A%E5%9F%B7%E8%A1%8C%E7%B7%923-%E4%BA%92%E6%96%A5%E9%8E%96-mutex/)應用程式中(multi-threaded application) 的全域變數；
+
     ```c
     volatile int shared_var = 0;
 
@@ -87,12 +96,15 @@ series_order: 1
         }
     }
     ```
+
     3. [監控某個register](https://newscienceview.blogspot.com/2013/09/c-volatile.html)
 
 ## 5.1 考題  
+
 1. 一個參數既可以是const還可以是volatile嗎？解釋為什麼。
 2. 一個指針可以是volatile 嗎？解釋為什麼。  
 3. 下面的函數有什麼錯誤：
+
 ```c
 int square(volatile int *ptr)
 {return *ptr * *ptr;}
@@ -123,8 +135,10 @@ long square(volatile int *ptr){
 ```
 
 # 6. Function pointer
+
 用法：
-```
+
+```c
 int main() {  
 int (\*op)(int a, int b); // add, mult are two functions  
 op = add;  
@@ -134,24 +148,27 @@ op = mult; printf("op(3,5)=%d\\n", op(3,5)); //15}
 
 使用情境：具有一樣輸入輸出，有共同的使用時機及規範
 舉例：某 BBS 站，決定使用者按鍵的動作就是利用一個 array of FP。例如：
-```
+
+```c
 KeyFunc keys[MAX_KEYNUM];  // KeyFunc 是一種 FP type
 keys['A'] = &keyFuncA;  // 可不寫 &
 keys['B'] = &keyFuncB;
 ```
 
 優點：
+
 1. 靈活性：允許動態選擇和調用不同的函數，增加程式的靈活性。
 2. 可讀性和可維護性：可以通過將常見操作抽象化為回調函數，減少重複代碼。
 3. 增強的模組化：允許將不同的功能模組化，使代碼更容易維護和擴展。  
 
 缺點：
+
 1. 可讀性：過度使用函數指標可能會使程式碼變得難以理解。
 2. 調試困難：因為函數指標在執行時決定要調用的函數，調試時難以追蹤程式的流向。
 3. 性能開銷：使用函數指標會引入間接調用的開銷，可能會影響性能。
 
-
 # 7. Pre-Processor
+
 - #include：在編譯前將指定檔案裡的文字完全複製貼上到 include的地方
 - #define：把整份程式碼中的一段特定文字替換
 - define example:  
@@ -173,15 +190,18 @@ keys['B'] = &keyFuncB;
 | 減少函式呼叫stack的時間 |                      |                  |
 
 # 6. Memory Leak
+
 原因：C沒有garbage collection，導致沒有free掉malloc/calloc的記憶體會持續被佔用。
 
 情境：
+
 1. 單純沒free。
 2. *ptr原本指向A，後來指向B卻沒有free A。
 3. out of scope (大括弧、迴圈)。
 
 解決：
-1. 記得free。 
+
+1. 記得free。
 2. 不修改原始ptr，使用臨時指標存取B
 3. 記得free。
 4. C++ 11: unique_ptr/shared_ptr/weak_ptr

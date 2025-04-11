@@ -37,7 +37,7 @@ Regarding DDNS, do not use the Cloudflare API, it will be frustrating.
 
 This setup requires DDNS and Cloudflare Tunnel, so the tutorial is divided into two parts. Changes needed in the instructions will be framed with <>. Configuration is as follows, please adjust for your environment:
 
-```
+```txt
 USER_NAME=leo # DIR name in ubuntu-server
 TUNNEL_NAME=ubuntu-server
 DomainName=leo-photos.uk
@@ -45,8 +45,6 @@ ServerLocalIP=192.168.50.100
 PortPhotoprism=2342
 PortImmich=2283
 ```
-
-
 
 ## Configuring DDNS
 
@@ -62,20 +60,23 @@ PortImmich=2283
 1. Go to the Cloudflare homepage, click the profile icon in the upper right, then My Profile > API Tokens > Create Token.
 2. Select `Edit zone DNS`, choose your domain in Zone Resources, and proceed to Summary, then next step.
 3. The generated token will be long and used later. The following command can test if the token is valid and active:
-	```sh
-	curl -X GET "https://api.cloudflare.com/client/v4/zones?name=leo-photos.uk" \
-		-H "Authorization: Bearer <your-token>" \
-		-H "Content-Type: application/json"
-	```
+
+    ```sh
+    curl -X GET "https://api.cloudflare.com/client/v4/zones?name=leo-photos.uk" \
+    -H "Authorization: Bearer <your-token>" \
+    -H "Content-Type: application/json"
+    ```
 
 ### III. Configuring DDNS Service
 
 Use [DDNS-GO](https://github.com/jeessy2/ddns-go) for automatic IP retrieval ([Guide](https://zhuanlan.zhihu.com/p/670026839))
 
 1. Deploy DDNS-GO using Docker:
-	```sh
-	docker run -d --name ddns-go --restart=always -p 9876:9876 -v /opt/ddns-go:/root jeessy/ddns-go
-	```
+
+    ```sh
+    docker run -d --name ddns-go --restart=always -p 9876:9876 -v /opt/ddns-go:/root jeessy/ddns-go
+    ```
+
 2. Access `http://<192.168.50.100>:9876`, choose Cloudflare, paste the token, enter the domain, set the username and password, then save.
 
 ## Configuring Cloudflare Tunnel
@@ -85,35 +86,40 @@ Follow the [official tutorial](https://developers.cloudflare.com/cloudflare-one/
 ### I. Install Cloudflared
 
 1. Add GPG key, Cloudflare apt repo, update, and install:
-	```sh
-	sudo mkdir -p --mode=0755 /usr/share/keyrings
-	
-	curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
-	
-	echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
-	
-	sudo apt-get update && sudo apt-get install cloudflared
-	```
+
+    ```sh
+    sudo mkdir -p --mode=0755 /usr/share/keyrings
+
+    curl -fsSL https://pkg.cloudflare.com/cloudflare-main.gpg | sudo tee /usr/share/keyrings/cloudflare-main.gpg >/dev/null
+
+    echo "deb [signed-by=/usr/share/keyrings/cloudflare-main.gpg] https://pkg.cloudflare.com/cloudflared $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflared.list
+
+    sudo apt-get update && sudo apt-get install cloudflared
+    ```
 
 ### II. [Configure Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/get-started/create-local-tunnel)
 
 1. Login to Cloudflared, visit the displayed URL to log in, Cloudflare will automatically add an API Token for the Tunnel:
+
     ```sh
     cloudflared tunnel login
     ```
 
 2. Create the Tunnel:
+
     ```sh
     cloudflared tunnel create <ubuntu-server>
     ```
 
 3. List Tunnel UUID:
+
     ```sh
     cloudflared tunnel list
     ```
 
 4. Create a configuration file
 In `/home/leo`, create a `config.yml` file using `nano`. If only one port is in use, use the following format:
+
     ```yaml
     url: http://<localhost:2283>
     tunnel: <Tunnel-UUID>
@@ -138,6 +144,7 @@ A copy of this file should also be placed in `/etc/cloudflared`. Use the `cp` co
     ```
 
 5. Configure [run as service](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/configure-tunnels/local-management/as-a-service/linux/) to run the tunnel in the background
+
     ```sh
     sudo cloudflared service install
     sudo systemctl start cloudflared
@@ -147,21 +154,25 @@ A copy of this file should also be placed in `/etc/cloudflared`. Use the `cp` co
 
 6. Register route DNS
     Register one route DNS for each CNAME. **Route DNS can only be deleted on the official website**, not locally.
+
     ```sh
     # <Tunnel-Name> / <hostname>
     cloudflared tunnel route dns <ubuntu-server> <immich.leo-photos.uk>
     ```
-    
+
 7. Done
 
     Start the tunnel
+
     ```sh
     # cloudflared tunnel run <ubuntu-server>
     sudo systemctl restart cloudflared
     ```
-    
+
 # Additional Options
+
 The free version on the Cloudflare website also offers many security options. Select the purchased domain:
+
 1. Quick Start Guide, check the necessary options
 2. DNS > DNS Settings > DNSSEC
 3. SSL/TLS > Overview > Encryption Mode: Full (strict)
@@ -183,6 +194,7 @@ The free version on the Cloudflare website also offers many security options. Se
 3. A record = IPv4, AAAA record = IPv6.
 4. It turns out that using no-ip cannot transfer nameservers to Cloudflare.
 5. You can manage Cloudflared with the following commands:
+
     ```sh
     sudo systemctl status cloudflared
     sudo systemctl start cloudflared
@@ -191,6 +203,7 @@ The free version on the Cloudflare website also offers many security options. Se
     ```
 
 6. **Remove Cloudflared**
+
     ```sh
     # Sequentially remove service, auto start, config, cloudflared
     sudo cloudflared service uninstall
@@ -201,6 +214,7 @@ The free version on the Cloudflare website also offers many security options. Se
     ```
 
 7. **Useful commands**
+
     ```sh
     cloudflared tunnel delete <Tunnel-UUID or NAME>
     ```

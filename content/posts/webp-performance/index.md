@@ -10,10 +10,12 @@ categories: ["科技新知"]
 ---
 
 # 快速看完
+
 看完這張圖這篇文章就不用看了。
 ![WebP Performance by Google WebP Project Group](/images/p1.png "")
 
 # 正文
+
 最近用WebP轉存圖片轉得很開心，壓二次元圖隨便都是80%以上壓縮率，現在來關心一下他的解碼性能。
 
 根據 Google Group 上的討論[^1]， WebP 的解碼速度是弱於 JPG 的，畢竟 JPG 都已經發展這麼久了軟硬體都已經很成熟。這麼說來 WebP 除了壓縮率以外沒有優勢嗎？並不是， WebP 是為了網路而生，把下載時間也算進來整體載入速度是提高的，如果有增量解碼載入速度提升更多。
@@ -26,7 +28,6 @@ categories: ["科技新知"]
 {{< /hint >}}
 
 其實這應該是第二篇，第一篇是各種次世代編碼的選擇，不過這篇資料都在手上就先寫出來了。最後[^3][^4]是其他評測。
-
 
 [^1]: [Comparative Analysis on WebP and JPEG Decoding Performance, Google Group, Oct. 2023.](https://groups.google.com/a/webmproject.org/g/webp-discuss/c/hn3LwO6_bS0)
 [^2]: [AVIF and WebP encoding quality settings, cramforce@Github, Feb. 2021.](https://www.industrialempathy.com/posts/avif-webp-quality-settings/)

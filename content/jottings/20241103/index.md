@@ -13,7 +13,6 @@ progress_bar: true
 
 最近發現 Queue 原來可以配合多線程作為任務監聽器使用，就想寫一個 Python Queue 簡單介紹文章，結果码农高天也剛好拍了[一部影片](https://www.youtube.com/watch?v=Qsa3xZgDUh4)來介紹 Queue，難道這就是共時性嗎！！！好可怕啊 Python。
 
-
 <div align="center">
 
 ![共時性](共時性.jpg)
@@ -26,6 +25,8 @@ progress_bar: true
 
 ```py
 # Generic type for task input and task result
+from typing import Any, TypeVar
+
 TI = TypeVar("TI", bound=Any)
 TR = TypeVar("TR", bound=Any)
 
@@ -114,6 +115,7 @@ class ThreadingService(Generic[TI, TR]):
 ```
 
 使用方式
+
 ```py
 self.download_service.add_task(
     task_id="generate task id here",

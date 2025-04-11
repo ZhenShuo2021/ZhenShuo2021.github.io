@@ -13,6 +13,7 @@ externalUrl: https://docs.zsl0621.cc/docs/git/edit-commits
 ---
 
 前言  
+
 - `hash^` 的那個 `^` 代表該 hash 的前一個 hash。
 - `--amend` 可以加上 `--no-edit` 表示不修改 commit 訊息。
 - rebase 如果是需要跳到以前進行修改的，git 都會自動幫你 checkout ，這時候查看 `git status` 會顯示你在互動式 rebase 中，`git branch` 則是跳到該 commit 由 rebase 建立並且控制的分支 `(no branch, rebasing main)`。
@@ -26,7 +27,6 @@ externalUrl: https://docs.zsl0621.cc/docs/git/edit-commits
    - 把想修改 message 的 commit 前面的 `pick` 改成 `r`
    - 跳出 commit message 視窗，直接修改
    - 附帶一提修改順序是從舊到新
-
 
 # 情況二：修改前一個 commit
 
@@ -78,4 +78,5 @@ externalUrl: https://docs.zsl0621.cc/docs/git/edit-commits
 請看[另一篇文章](/posts/git-goback/)
 
 # 結語：
+
 每個情境了不起就五句話，某賣課網站可以把每個情境都寫成一篇文章，還被 Google SEO 洗到很前面，佩服佩服= =

@@ -1,0 +1,16 @@
+repos:
+  - repo: local
+    hooks:
+      - id: markdownlint
+        name: Lint Markdown files
+        entry: pnpm markdownlint-cli2 --config ".markdownlint.json" "#node_modules"
+        language: node
+        files: ^content/.*\.md$
+        description: Run markdownlint-cli2 on markdown files in content directory
+
+      - id: biome-lint
+        name: Lint scripts and SCSS with Biome
+        entry: pnpm biome check
+        language: node
+        files: ^(scripts/|assets/scss/).*\.(js|ts|scss)$
+        description: Run biome check on JS/TS/SCSS files in scripts and assets/scss directories

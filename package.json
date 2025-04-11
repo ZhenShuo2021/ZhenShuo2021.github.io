@@ -2,7 +2,10 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Hugo Blowfish Blog",
-  "keywords": ["SASS", "shiki"],
+  "keywords": [
+    "SASS",
+    "shiki"
+  ],
   "author": "ZhenShuo2021",
   "license": "MIT",
   "scripts": {
@@ -18,10 +21,14 @@
     "update-blowfish:sh": "./update-blowfish.sh"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "chalk": "^5.4.1",
     "concurrently": "^9.1.0",
     "dom-serializer": "^2.0.0",
     "html-entities": "^2.6.0",
     "htmlparser2": "^10.0.0",
+    "markdownlint-cli2": "^0.17.2",
+    "pre-commit": "^1.2.2",
     "sass": "^1.86.3",
     "serve": "^14.2.4",
     "shiki": "^3.2.1"

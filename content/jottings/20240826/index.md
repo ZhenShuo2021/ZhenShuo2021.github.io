@@ -25,6 +25,7 @@ dis.dis(example)
 ```
 
 輸出：
+
 ```sh
 (.venv) leo@MBP P5D % python3 t.py                  
   2           0 RESUME                   0
@@ -64,17 +65,17 @@ ExceptionTable:
   78 to 86 -> 96 [3] lasti
 ```
 
-
 簡單解讀：  
-- 數字 2, 3, 4, 3: 對應 Python 程式碼行數   
-- `CALL 2`: stack 要 pop 的參數數量，pop (NULL + open), ('file.txt'), ('r') 給 `__enter__()`   
+
+- 數字 2, 3, 4, 3: 對應 Python 程式碼行數
+- `CALL 2`: stack 要 pop 的參數數量，pop (NULL + open), ('file.txt'), ('r') 給 `__enter__()`
 - BEFORE_WITH: 載入 with 關鍵字用的 `__exit__()` 和 `__enter__()`  
-- STORE_FAST: 儲存 `STACK.pop()` 的變數   
-- LOAD_ATTR: 載入方法 method   
-- RETURN_CONST: 回傳程式結束碼   
+- STORE_FAST: 儲存 `STACK.pop()` 的變數
+- LOAD_ATTR: 載入方法 method
+- RETURN_CONST: 回傳程式結束碼
 
 名詞：
+
 - [lasti](https://docs.python.org/3/library/dis.html): last instruction  
 - [ExceptionTable](https://stackoverflow.com/questions/77542619/what-is-the-exceptiontable-in-the-output-of-dis): 決定 raised exception 後要跳去哪 ，感覺和 interrupt vector 滿像的
 \>\>: 跳轉位置
-

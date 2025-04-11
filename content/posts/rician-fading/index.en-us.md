@@ -18,11 +18,13 @@ Summarize the methods for generating Rician fading.
 {{< /lead >}}
 
 To summarize:
+
 1. Method 1 is the most reliable as per Emil Björnson's response.
 2. Methods 2/3 lack the LOS path random phase mentioned by Emil, and the difference between methods 2/3 is the \\(\sigma\\) of NLOS paths and the denominator of \\(2k+1\\).
 3. Methods 4/5 are likely different formatting approaches.
 
 # Method 1: Emil Björnson
+
 [https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab](https://www.researchgate.net/post/How_to_compute_Rician_fading_in_matlab)
 
 Emil Björnson's response is the most reliable. He also wrote an [article](https://ma-mimo.ellintech.se/2020/03/02/rician-fading-a-channel-model-often-misunderstood/) explaining that many people misunderstand Rician fading. This method is consistent with the generation methods in [MATLAB](https://www.mathworks.com/help/comm/ug/fading-channels.html) and [this source](https://web.xidian.edu.cn/bmbai/files/20150129_145929.pdf).
@@ -48,6 +50,7 @@ $$
 $$
 
 # Method 3
+
 [https://dsp.stackexchange.com/questions/84493/how-to-code-rician-fading-channel-gains-from-k-factor](https://dsp.stackexchange.com/questions/84493/how-to-code-rician-fading-channel-gains-from-k-factor)
 
 $$
@@ -71,6 +74,7 @@ $$
 $$
 
 # Method 5
+
 [https://github.com/gokhanntosun/multipath-channel-models/blob/main/Rician_Fading.m](https://github.com/gokhanntosun/multipath-channel-models/blob/main/Rician_Fading.m)
 
 {{< alert >}}
@@ -106,6 +110,7 @@ h_rac = sqrt(Nr2.^2+Ni2.^2);  %Rician fading coefficient
 ```
 
 TODO:
+
 1. For Methods 2/3: Check the original texts to confirm if the denominator is \\(k+1\\) or \\(2k+1\\).
 2. For Methods 2/3: Check the original texts for the explanation of Rayleigh fading parameter \\(\sigma\\).
 3. Verify if the Nakagami fading simulation in Method 4 is correct.

@@ -14,12 +14,12 @@ series_order: 6
 此客製化基於 hugo blowfish theme 完成。  
 大部分的程式都由 GPT 完成，偉哉 GPT。  
 
-
 # 1. 超連結
 
 游標移動到連結時變色+底線。[範例](https://example.com/)
 
 在assets/css/custom.css新增以下：
+
 ```css
 .article-content a {
     color: rgb(65, 105, 225); /* 使用淡藍色 */
@@ -36,6 +36,7 @@ series_order: 6
 ```
 
 {{< expand "無聊叫 GPT 生的版本" >}}
+
 ```css
 .article-content a {
   color: rgb(var(--color-primary-600));
@@ -80,6 +81,7 @@ series_order: 6
   }
 }
 ```
+
 {{< /expand >}}
 
 # 2. 文章存檔頁面
@@ -89,6 +91,7 @@ series_order: 6
 在 `layouts/_default/archive.html` 新增以下：
 
 {{< expand 新版>}}
+
 ```html
 {{ define "main" }}
 
@@ -408,9 +411,11 @@ series_order: 6
 
 {{ end }}
 ```
+
 {{< /expand >}}
 
 {{< expand 舊版>}}
+
 ```html
 {{ define "main" }}
 {{ .Scratch.Set "scope" "single" }}
@@ -556,6 +561,7 @@ series_order: 6
 {{< /expand >}}
 
 在 `content/archives` 新增 _index.md：
+
 ```yaml
 ---
 title: "所有文章"
@@ -565,6 +571,7 @@ description: "所有文章列表"
 ```
 
 最後，在menus.zh-tw.toml新增：
+
 ```toml
 [[footer]]
   name = "所有文章"
@@ -577,6 +584,7 @@ description: "所有文章列表"
 加上文章閱讀進度比例。
 
 1. 在 `static/js/progress-bar.js` 貼上
+
 ```js
 document.addEventListener('scroll', function () {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
@@ -589,12 +597,14 @@ document.addEventListener('scroll', function () {
 ```
 
 2. 在 `layouts/_default/single.html` 找到 `<header> <header>` ，在他的前後分別貼上
+
 ```html
 <div id="progress-bar"></div>
 <script src="{{ "js/progress-bar.js" | relURL }}"></script>
 ```
 
 3. 在 `assets/css/custom.css` 貼上
+
 ```css
 #progress-bar {
     position: fixed;
@@ -606,7 +616,6 @@ document.addEventListener('scroll', function () {
     z-index: 50; /* 99999 */
   }
 ```
-
 
 # 4. 簡碼 - hint
 
@@ -628,6 +637,7 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 {{< /hint >}}
 
 在 `assets/css/custom.css` 加入
+
 ```css
 .book-hint {
     padding: 0.5em 1em;
@@ -700,6 +710,7 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 ```
 
 新增 `layouts/shortcodes/hint.html` 並貼上
+
 ```html
 <blockquote class="book-hint {{ .Get 0 }}">
   <div class="hint-content">
@@ -708,33 +719,39 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 </blockquote>
 ```
 
-
 # 5. 簡碼 - expand
 
 比較美觀的 expand UI，一樣從 [alex-shpak/hugo-book](https://hugo-book-demo.netlify.app/docs/shortcodes/expand/) 拿來的，範例如下：
 {{< expand "Example"  >}}
 可用 Markdown 語法
+
 ```c
 int x = 1;
 ```
+
 1. list 1
 1. **list 2 (bold)**
+
 - 5
 
 {{< hint info >}}
 <h2> Title </h2>
 
 支援內部渲染 hint shortcode
+
 ```c
 int x = 1;
 ```
+
 1. list 1
 1. **list 2 (bold)**
+
 - 5
 {{< /hint >}}
 {{< /expand >}}
 
 新增 `layouts/shortcodes/expand.html`
+
 ```html
 <div class="expand-wrapper prose dark:prose-invert max-w-prose zen-mode-content">
   <input id="{{ .Get "id" | default (printf "expand-%d" (.Ordinal)) }}" class="expand-toggle" type="checkbox" {{ if or (.Get "open") (in .Params "open") }}checked{{ end }}>
@@ -756,6 +773,7 @@ int x = 1;
 ```
 
 新增 `assets/css/custom.css`
+
 ```css
 .expand-wrapper {
     border: 1px solid #ddd;
@@ -856,7 +874,6 @@ body.zen-mode-enable .zen-mode-content {
 }
 ```
 
-
 # 6. 自動加上編輯時間
 
 在文章末放上編輯日期提醒。
@@ -878,18 +895,20 @@ body.zen-mode-enable .zen-mode-content {
 記得要把 %% 前面的 / 刪掉。
 
 # 7. ~~修改 metadata~~
+
 Google 以不再用 keywords 為 SEO 關鍵字所以沒必要改這個。
 {{<expand 原文>}}
 Google SEO 會參考 meta name，而 Blowfish 的 tags 優先於 keywords 關鍵字。想要有 SEO 同時不想要 tags 打一堆次要標籤的修改如下：  
 找到 `layouts/partials/head.html` 中的
+
 ```html
 {{ with  .Params.Tags | default .Site.Params.keywords -}}
   <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
   {{- end }}
 ```
 
-
 整段換成
+
 ```html
   {{- $mytags := .Params.Tags | default slice -}}
   {{- $mykeywords := .Params.Keywords | default .Site.Params.keywords -}}
@@ -898,5 +917,5 @@ Google SEO 會參考 meta name，而 Blowfish 的 tags 優先於 keywords 關鍵
   <meta name="keywords" content="{{ delimit $allKeywords ", " }}" />
   {{ end }}  
 ```
-{{</expand >}}
 
+{{</expand >}}

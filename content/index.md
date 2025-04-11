@@ -1,4 +1,5 @@
 v1: vanilla
+
 ```py
 def danbooru(pixiv_id: str) -> dict[str, Any]:
     url = DANBOORU_SEARCH_URL.format(pixiv_id)
@@ -17,6 +18,7 @@ def danbooru(pixiv_id: str) -> dict[str, Any]:
 ```
 
 v2: add retries and logging
+
 ```py
 def danbooru(
     pixiv_id: str, logger: logging.Logger, retries: int = 5, sleep_time: int = 5
@@ -45,8 +47,8 @@ def danbooru(
     return result
 ```
 
-
 v3: standalone retry_request and status code handler
+
 ```py
 def danbooru(
     pixiv_id: str, logger: logging.Logger, retry: int = 5, sleep_time: int = 5
@@ -85,8 +87,8 @@ def retry_request(
     return response
 ```
 
-
 耦合功能問題
+
 ```py
 def get_tagged_path(base_path: Path, file_tags: list[str], tags: dict[str, str]) -> Optional[Path]:
     """Return the target folder path based on the file tags."""

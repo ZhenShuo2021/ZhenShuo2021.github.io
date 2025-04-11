@@ -16,15 +16,17 @@ progress_bar: true
 這是把語法上色從 chroma 改成 prism.js/highlight.js 又改成 shiki 的心得，網路上你哪裡能找到全部試過一輪的心得呢。
 
 # Chroma
+
 這是 Hugo 內建的語法上色方式，以 Blowfish 主題而言，可以在 `assets/css/compiled/main.css` 找到，然後你會發現多到發瘋的高亮選項，哪個正常人會去改這個。想改的原因不外乎就是顏色醜，上色語法錯誤，Blowfish 兩個都發生了於是考慮別的上色方案。
 
 一樣保持著一勞永逸的想法（雖然真的一勞永逸的次數好像滿少的）先去查哪個 highlighter 好，2018 2019年那些文章大概都說 Prism.js，說維護的比較勤 contributor 比較多，那就先選 Prism.js 好了。
 
 # Prism.js 和 Highlight.js
+
 就說是來水文章的，這兩個對我來說根本沒啥差別，Prism.js 裝好沒半小時去官方 Github 看發現上次更新已經是 2022，於是果斷換成 Highlight.js，裝了也很輕鬆兩行 `<link>` `<script>` 就搞定，只是痛苦這裡才開始。首先，我已經知道 PageSpeed Insights 這個邪惡的東西，裝完之後手賤去測試果然慢了不少，因為他是用戶載入頁面後即時渲染的；再來是暗色模式支援，還自己寫了四個 javascript 搞定亮暗主題轉換問題：
 
-
 {{< expand "幫 Highlight.js 加了一堆東西" >}}
+
 ```html
 <!-- partials/extend-head.html -->
 <link id="light-mode-css" rel="stylesheet" as="style" crossorigin="anonymous" referrerpolicy="no-referrer"
@@ -46,7 +48,6 @@ progress_bar: true
 <script>hljs.highlightAll();</script>
 <script src="{{ "js/hljs-copy.js" | absURL }}"></script>
 ```
-
 
 ```js
 // appearance.js
@@ -137,6 +138,7 @@ pre {
     background-color: rgba(255, 255, 255, 0.1); /* 暗黑模式下滑鼠經過時的背景顏色 */
 }
 ```
+
 {{< /expand >}}
 
 奇怪不是兩個 javascript 嗎，哪來的四個？因為還有兩個寫完發現寫太爛打掉重練，單純只加上 Highlight.js 確實是像教學[[1]](https://note.qidong.name/2017/06/24/hugo-highlight/), [[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/), [[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)一樣複製貼上就結束了，但是改成 Highlight.js 後缺失的主題切換和複製按鈕都要重新寫，關於 CSP referrerpolicy, defer/async, crossorigin, integrity 的設定教學也沒講到，查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
@@ -197,8 +199,8 @@ async function handleRequest(request) {
 ![hljs-desktop](hljs-1.webp "Highlight.js 桌面版跑分結果")
 原本的沒有存結果，這是用 Cloudflare Pages Rollbacks 功能留下來的頁面跑分的，應該也享受他們的 CDN 服務，記得剛部屬完 Highlight.js 後手機測速有時候還跑不到50分。
 
-
 # Shiki
+
 我辛苦弄這麼久的結果雖然是好看了但是分數有夠難看，那我之前的努力算什麼，就在我覺得好像沒救的時候看到了[這篇文章](https://www.eallion.com/hugo-syntax-highlight-shiki/)，插入也有夠簡單而且內建亮暗主題切換，重點是純靜態，拿他的網頁去跑分即使程式碼數量比我多的也是輕鬆跑到99, 100，好啊心態沒了，馬上改全刪，於是現在的跑分成績：
 ![shiki-mobile](shiki-2.webp "Shiki 手機版跑分結果")
 ![shiki-desktop](shiki-1.webp "Shiki 桌面版跑分結果")
@@ -206,6 +208,7 @@ async function handleRequest(request) {
 完美，回來了。
 
 # 後記
+
 複製功能自己寫完發現其實是 Blowfish 的 [bug](https://github.com/nunocoracao/blowfish/issues/1691)，暫時就先不放了。
 
 [eallion](https://www.eallion.com) 寫的 Shiki 教學就是我最喜歡的那種，有介紹原因，直接教學，沒有廢話，沒有拖泥帶水，清楚了當。
@@ -220,7 +223,6 @@ async function handleRequest(request) {
 
 當初看了這篇[文章](https://blog.user.today/cloudflare-fonts-boost-website-speed/)把字體從 Cloudflare Fonts 換成 Google Fonts 速度大暴跌，那時沒注意到導致花了很久除錯，這邊附上使用 LXGW 字體各種 CDN 的速度，改完馬上測試，未被 CDN 服務商快取：
 
-
 | 來源                                         | 手機 / 桌面 |
 |---------------------------------------------|-----------|
 | Default font                            | 99 / 100  |
@@ -232,7 +234,6 @@ async function handleRequest(request) {
 | - screen-web                            | 59 / 87   |
 | - screen-web + preload/preconnect       | 86 / 92   |
 | - screen-web + preload/preconnect/CDN cache      | 90 / 99   |
-
 
 網路世界變化很快不到一年就大洗牌，另外幫他的文章勘誤（或者說更新），至少在今天 (2024/8/18) 我的測試結果是這樣的：
 
@@ -254,7 +255,6 @@ async function handleRequest(request) {
 > 憑空產生一個 /cf-fonts/ 的請求路徑
 
 使用 Github Pages 沒有，會跳轉自己設定的 404 錯誤，部署在 Cloudflare Pages 的網站會進 HTTP ERROR 404。
-
 
 > 實測之後得知，在某些條件下，用了 Cloudflare Fonts 不一定會讓網頁變快，反而可能變慢，但是體感可能完全感覺不出來。
 

@@ -19,6 +19,7 @@ series_order: 5
 這超麻煩不過改完後很滿意。我應該是唯一一個修好他的人。  
 
 1. 把 `partials/badge.html` 改成
+
 ```html
 <span class="badge badge-tag
 border border-primary-600 text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
@@ -27,6 +28,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 ```
 
 2. 在 `partials/article-meta/basic.html` 中找到 `{{/* Output taxonomies */}}`，整段改成
+
 ```html
 <div style="height: .25rem;"></div>
 {{/* Output taxonomies */}}
@@ -77,6 +79,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 這太多要改直接放[連結](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/main/layouts/partials/article-link)，其實就是把整個都能按改成只有圖片跟標題能按。
 
 4. `custom.css` 加入
+
 ```css
 .badge {
     display: inline-block;
@@ -102,29 +105,30 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 }
 ```
 
-
 # 2. 文章封面
 
 發現 Blowfish 預設無法單獨設定文章縮圖，於是把 Cover 關鍵字拿來當文章縮圖。文章圖片的關鍵字有四個並分為兩種：  
+
 - cover/thumbnail/featured: 縮圖+進入文章後的照片  
 - background: 只有進入後的照片  
 
 把 `layouts/partials/hero` 中所有的 `*cover*,` 刪掉即可。
 
-
-
 # 3. 改善對比度
 
 在 `assets/css/schemes/blowfish.css` 修改以下三項：
+
 ```css
 --color-neutral-300: 216, 227, 240;  # 文字顏色 
 --color-neutral-500: 88, 102, 122;   # 文章資訊顏色
 --color-neutral-700: 25, 33, 43;     # 文字顏色 
 --color-primary-800: 25, 33, 43;     # 忘了
 ```
+
 數字可以自己調。
 
 在 `/blog/themes/blowfish/assets/css/compiled/main.css` 的 `.prose {` 中，把下面第一行改成第二行，第二行的顏色去上面的 schemes css 中修改
+
 ```css
 --tw-prose-hr:rgba(var(--color-neutral-200), 1);
 --tw-prose-hr:rgba(var(--color-neutral-7), 1);
@@ -135,6 +139,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。順便改放在 /static/image 資料夾中
 
 在 `layouts/partials` 新增 favicons.html ，新增以下：
+
 ```html
 <link rel="icon" type="image/png" sizes="192x192" href="{{ "android-chrome-192x192.png" | absURL }}">
 <link rel="icon" type="image/png" sizes="512x512" href="{{ "android-chrome-512x512.png" | absURL }}">
@@ -151,12 +156,13 @@ favicons 應該直接放在 static 資料夾中就可以直接使用，但不知
 把 blowfish 預設的 dot 改為 dash。
 
 找到 `layouts/partials/head.html` 中以下片段：
+
 ```html
 <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
 <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
 ```
-把 `&middot` 改為 `-`。
 
+把 `&middot` 改為 `-`。
 
 # 6. 註腳（文章引用）
 
@@ -213,13 +219,13 @@ sup {
 }
 ```
 
-
 # 7. 美化選集功能
 
 1. 把選集功能後面的「- 本文屬於一個選集。」刪掉。
 2. 修改選集樣式並把本文也加上超連結。
 
 刪掉「- 本文屬於一個選集。」：找到 `layouts/partials/series/series_base.html` ，修改為
+
 ```html
 {{ if .Params.series }}
     <summary
@@ -249,12 +255,14 @@ sup {
 ```
 
 `$post.Permalink` 裡面就是選集樣式。再去 i18n 中把修改自己語言的檔案，我的改成以下：
+
 ```toml
 part: "#"
 this_article: "[本文]"
 ```
 
 # 8. 關閉相關文章簡介
+
 主目錄想要有文章簡介，但是相關文章也出現簡介就太亂。
 
 在 `layouts/partials/article-link/card-related.html` 註解掉
@@ -267,20 +275,22 @@ this_article: "[本文]"
 {{ end }}
 ```
 
-
 # 9. 文章資訊間隔符號
 
 加上編輯時間就後就顯得凌亂，修改樣式。把 `layouts/partials/article-meta/basic.html` 中的
+
 ```html
 {{ delimit . "<span class=\"px-2 text-primary-500\">&middot;</span>" | safeHTML }}
 ```
 
 改為
+
 ```html
 {{ delimit . "<span class=\"px-2 text-neutral-500\">&VerticalLine;</span>" | safeHTML }}
 ```
 
 # 10. 模糊設定
+
 去主題的 github 搜尋 `backdrop-blur path:*.html` 裡面有所有能調整的頁面，選你想要的調整，內建 .backdrop-blur (8px) .backdrop-blur-sm (4px) .backdrop-blur-2xl (40px)。
 
 相同位置下的 `scroll / 300` 是漸層距離。
@@ -317,4 +327,5 @@ ToC過長時增加滾輪。
   </div>
 </details>
 ```
+
 {{</expand>}}

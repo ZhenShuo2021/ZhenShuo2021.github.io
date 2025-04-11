@@ -16,7 +16,9 @@ externalUrl: https://docs.zsl0621.cc/docs/git/remote-commands
 減小克隆空間請見[這篇文章](/posts/git-reduce-size/)。
 
 # 基本遠端指令
+
 設定遠程倉庫地址，clone 下來後可用
+
 ```sh
 git clone [remote.git] [dir]                  # 克隆遠端倉庫，dir為可選
 git push [remote-name] [local-branch-name]    # 推送到遠端，後兩項可選
@@ -30,6 +32,7 @@ git remote set-url [name] [url]               # 更改遠端倉庫的 URL
 ```
 
 > [問題]找不到遠端可以用以下指令
+
 ```sh
 git remote -v
 git remote add
@@ -37,41 +40,46 @@ git remote set-url
 ```
 
 第一次推送分支時使用此命令，將本地 main 分支與遠程 main 分支關聯起來。
+
 ```sh
 git push --set-upstream origin [branch]
 ```
 
 預防推錯分支，確保推送到遠端同名分支
+
 ```sh
 git config --global push.default simple
 ```
 
 第一次 clone 完後進入 main 以外的分支
+
 ```sh
 git branch -av                    # 列出所有+遠端
 git checkout -b dev origin/dev    # 創建並切換到dev
 ```
 
-
-
 # 子模塊
 
 將P5D新增為 `batch-processing/P5D` 子模塊
+
 ```sh
 git submodule add https://github.com/ZhenShuo2021/P5D batch-processing/P5D
 ```
 
 更新
+
 ```sh
 git submodule update
 ```
 
 查看所有子模塊
+
 ```sh
 git submodule status
 ```
 
 移除
+
 ```sh
 # 編輯 .gitmodules 移除相關模塊
 git config -f .git/config --remove-section submodule.batch-processing/pixiv

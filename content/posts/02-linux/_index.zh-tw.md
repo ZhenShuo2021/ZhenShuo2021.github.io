@@ -7,4 +7,3 @@ robots: "noindex, nofollow"
 ---
 
 先放一些常見linux指令。
-

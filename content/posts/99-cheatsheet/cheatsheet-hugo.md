@@ -11,10 +11,11 @@ categories: ["筆記"]
 很難記所以寫了一份小抄
 
 # 清理資料夾
+
 `hugo --cleanDestinationDir`
 
-
 # 錨點
+
 ```md
 # xxx {#id}
 中間要空格
@@ -22,10 +23,7 @@ categories: ["筆記"]
 [goto](/posts/url#id/)
 ```
 
-
 # 1. Icon
-
-
 
 | Icon name                       | Preview                           | Icon name            | Preview                           |
 | :------------------------------ | :------------------------------: | :-------------------- | :------------------------------:  |
@@ -52,8 +50,8 @@ categories: ["筆記"]
 | moon                            | {{< icon moon >}}                 | sun                  | {{< icon sun >}}                  |
 | star                            | {{< icon star >}}                 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
 
-
 # 2. 圖片
+
 ```go
 ![Alt text](gallery/03.jpg "Image caption")
 {{</* figure
@@ -63,11 +61,13 @@ categories: ["筆記"]
     */>}}
 {{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
 ```
+
 {{< carousel images="{https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8MTYlM0E5fGVufDB8fDB8fHww,https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg}" >}}
 
 <br>
 
 # 3. 數學
+
 ```c
 {{</* katex */>}}
 \\(f(a,b,c) = (a^2+b^2+c^2)^3\\)
@@ -93,20 +93,20 @@ $$
 \end{aligned}
 $$
 
-
-
 # 4. 外站載入
+
 ```go
 {{</* mdimporter url="https://raw.githubusercontent.com/nunocoracao/nunocoracao/master/README.md" */>}}
 {{</* codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/main/layouts/shortcodes/mdimporter.html" type="go" */>}}
 {{</* github repo="nunocoracao/blowfish" */>}}
 {{</* youtubeLite id="yzrb4WA2NRQ" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
 ```
+
 {{< youtubeLite id="yzrb4WA2NRQ" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
 {{< github repo="nunocoracao/blowfish" >}}
 
-
 # 5. 文字強調
+
 ```md
 # 內建
 {{</* keyword >}} keyword {{< /keyword */>}}
@@ -122,7 +122,6 @@ $$
 {{< alert icon="twitter">}}
 **Alert!** text here
 {{< /alert >}}  
-
 
 {{< alert  cardColor="#FF4136" iconColor="#1a1b1d" textColor="#FFFFFF" >}}
 Text here
