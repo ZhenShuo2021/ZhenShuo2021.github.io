@@ -21,8 +21,10 @@
     "update-blowfish:sh": "./update-blowfish.sh"
   },
   "devDependencies": {
-    "cheerio": "^1.0.0",
     "concurrently": "^9.1.0",
+    "dom-serializer": "^2.0.0",
+    "html-entities": "^2.6.0",
+    "htmlparser2": "^10.0.0",
     "jsdom": "^26.0.0",
     "sass": "^1.86.3",
     "serve": "^14.2.4",

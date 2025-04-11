@@ -7,7 +7,15 @@ const CONFIG = {
     },
     {
       DIR: "public/series",
-      EXCLUDE: ["folderNameToExclude"],
+      EXCLUDE: ["folderNameToExclude", "anotherName"],
+    },
+  ],
+
+  // 大型專案在開發時可以縮小範圍
+  TARGETS_DEV: [
+    {
+      DIR: "public/posts",
+      EXCLUDE: ["page"],
     },
   ],
 
@@ -17,6 +25,8 @@ const CONFIG = {
 
   // 色彩主題，如果單主題則只須設定 LIGHT
   // https://shiki.style/themes
+  // THEMES: { LIGHT: "min-light", DARK: "andromeeda" },
+  // THEMES: { LIGHT: "Catppuccin Latte", DARK: "Ayu Dark" },
   THEMES: { LIGHT: "github-light", DARK: "github-dark" },
 
   // 支援的語言

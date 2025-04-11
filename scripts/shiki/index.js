@@ -4,6 +4,7 @@ const CodeHighlighter = require("./highlighter");
 const { MainThreadManager, WorkerThreadManager } = require("./worker");
 
 CONFIG.DEBUG = process.argv.includes("--debug") || false;
+CONFIG.DEV = process.argv.includes("--dev") || false;
 
 async function main() {
   if (isMainThread) {

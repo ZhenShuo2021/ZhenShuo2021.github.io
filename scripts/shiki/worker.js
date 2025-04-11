@@ -14,7 +14,7 @@ class MainThreadManager {
   constructor(config, workerArgs = []) {
     this.config = config;
     this.workerArgs = workerArgs;
-    this.fileCollector = new FileCollector(config.TARGETS);
+    this.fileCollector = new FileCollector(config.DEV ? config.TARGETS_DEV : config.TARGETS);
     this.mainScriptPath = path.resolve(__dirname, "index.js");
     this.processedFiles = new Map();
     this.recordFilePath = path.join(__dirname, ".processed-files.json");
@@ -68,12 +68,43 @@ class MainThreadManager {
       return;
     }
 
-    const workerCount = this._calculateOptimalWorkerCount(files.length);
+    const filteredFiles = await this._filterFile(files);
+
+    if (filteredFiles.length === 0) {
+      console.log("No HTML files need processing.");
+      return;
+    }
+
+    const workerCount = this._calculateOptimalWorkerCount(filteredFiles.length);
     console.log(
-      `Found ${files.length} HTML files. Starting processing with ${workerCount} workers.`,
+      `Found ${files.length} HTML files. ${filteredFiles.length} need processing. Starting with ${workerCount} workers.`,
     );
 
-    return this._startWorkerProcessing(files, workerCount);
+    return this._startWorkerProcessing(filteredFiles, workerCount);
+  }
+
+  async _filterFile(files) {
+    const filteredFiles = [];
+
+    await Promise.all(
+      files.map(async (filePath) => {
+        try {
+          const stats = await fs.stat(filePath);
+          const lastModified = stats.mtimeMs;
+          if (
+            !this.processedFiles.has(filePath) ||
+            this.processedFiles.get(filePath) < lastModified
+          ) {
+            filteredFiles.push(filePath);
+          }
+        } catch (error) {
+          console.error(`Error checking file status: ${filePath}`, error.code);
+          filteredFiles.push(filePath);
+        }
+      }),
+    );
+
+    return filteredFiles;
   }
 
   _calculateOptimalWorkerCount(fileCount) {
@@ -177,7 +208,6 @@ class WorkerThreadManager {
   constructor(config) {
     this.config = config;
     this.processedFiles = new Map();
-    this.cheerio = require("cheerio");
   }
 
   async initializeWorker(workerId, highlighter, cachedProcessedFiles) {
@@ -186,6 +216,7 @@ class WorkerThreadManager {
         this.processedFiles = new Map(cachedProcessedFiles);
       }
 
+      await highlighter.initShiki();
       this._setupWorkerMessageHandlers(workerId, highlighter);
       parentPort.postMessage({ type: MESSAGE_TYPES.READY, workerId });
     } catch (error) {
@@ -212,7 +243,6 @@ class WorkerThreadManager {
             console.log(`[Worker ${workerId}] received exit signal`);
           }
           process.exit(0);
-          break;
       }
     });
   }
@@ -221,11 +251,9 @@ class WorkerThreadManager {
     let processedCount = 0;
     const processedFiles = [];
 
-    const results = await Promise.all(
-      files.map((file) => this._processFileSafe(highlighter, file, workerId)),
-    );
-
-    for (const result of results) {
+    for (const file of files) {
+      // _processFileSafe is CPU bound, do not run it asynchrous
+      const result = await this._processFileSafe(highlighter, file, workerId);
       if (!result) continue;
 
       const { filePath, modifications } = result;
@@ -251,44 +279,14 @@ class WorkerThreadManager {
   }
 
   async _processFile(highlighter, filePath, workerId) {
-    if (!(await this._shouldProcessFile(filePath))) return 0;
-
-    const htmlContent = await fs.readFile(filePath, "utf8");
-
-    if (!htmlContent.includes("<pre><code") || htmlContent.includes('<pre class="shiki')) {
-      return 0;
+    const modifications = await highlighter.processFile(filePath);
+    if (modifications > 0) {
+      const timestamp = Date.now();
+      this.processedFiles.set(filePath, timestamp);
+      console.log(`[Worker ${workerId}] Processed ${modifications} code blocks in: ${filePath}`);
     }
 
-    const $ = this.cheerio.load(htmlContent, { decodeEntities: false });
-    const codeBlocks = $("pre > code");
-
-    if (codeBlocks.length === 0) return 0;
-
-    let modificationsCount = 0;
-    for (let i = 0; i < codeBlocks.length; i++) {
-      const modified = await highlighter.processCodeBlock($, codeBlocks.eq(i));
-      if (modified) modificationsCount++;
-    }
-
-    if (modificationsCount > 0) {
-      await fs.writeFile(filePath, $.html(), "utf8");
-      console.log(
-        `[Worker ${workerId}] Processed ${modificationsCount} code blocks in: ${filePath}`,
-      );
-    }
-
-    return modificationsCount;
-  }
-
-  async _shouldProcessFile(filePath) {
-    try {
-      const stats = await fs.stat(filePath);
-      const lastModified = stats.mtimeMs;
-      return !this.processedFiles.has(filePath) || this.processedFiles.get(filePath) < lastModified;
-    } catch (error) {
-      console.error(`Error checking file status: ${filePath}`, error.code);
-      return true;
-    }
+    return modifications;
   }
 }
 
