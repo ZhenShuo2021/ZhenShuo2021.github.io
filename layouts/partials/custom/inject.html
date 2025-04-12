@@ -1,0 +1,80 @@
+<style>
+    .code-block-wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    .code-block-wrapper pre {
+        margin: 0;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        overflow: auto;
+        white-space: pre;
+        position: relative;
+        z-index: 1;
+    }
+
+    .button-group {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        z-index: 99;
+        display: none;
+        /* 默認隱藏 */
+    }
+
+    .code-block-wrapper:hover .button-group {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .copy-button-svg {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        color: #2f363d;
+        border: 1px solid #a4a4a4c0;
+        padding: 0;
+        font-size: 16px;
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .copy-button-svg svg {
+        width: 18px;
+        height: 18px;
+        fill: #4d4d4d;
+    }
+
+    .dark .copy-button-svg svg {
+        fill: #c8c8c8;
+    }
+
+    .copy-button-svg:hover {
+        background-color: #d1d5da;
+        border-radius: 6px;
+    }
+
+    .copy-button-svg:active {
+        background-color: #b0b6b9;
+    }
+
+    .dark .copy-button-svg:hover {
+        background-color: #444c56;
+    }
+
+    .copy-button-svg .check-icon,
+    .dark .copy-button-svg .check-icon {
+        width: 18px;
+        height: 18px;
+        fill: green;
+        display: none;
+    }
+</style>

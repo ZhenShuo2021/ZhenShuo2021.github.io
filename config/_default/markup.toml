@@ -19,9 +19,26 @@
   # rightAngleQuote = '&rsaquo;'
   # leftAngleQuote = '&lsaquo;'
 
-
+# Syntax Highlighting 相關設定
 [highlight]
+  # 是否啟用code block功能，關了這個後面就全關
+  # 打開的話會渲染成 
+  # 1. <div class="highlight-wrapper">
+  # 2. <div class="highlight">
+  # 3. <pre tabindex="0" class="chroma">
+  # 4. <code class="language-YourCodeLanguage" data-lang="YourCodeLanguage">
+  # 5. <span class="line">從這裡開始放code block內容
+  # 關閉的話就只會渲染<pre><code class="language-YourCodeLanguage">
+  # 
+  # 注意：截至hugo v0.145.0都直接拋棄空格以後的輸入
+  # ```py {[3,5],7} <-- py 之後空格之後的全部拋棄
+  # import sys
+  # sys.exit(0)
+  # ```
   codeFences = false
+
+  # false以啟用hugo內建的line high功能
+  noClasses = false
 
 [tableOfContents]
   startLevel = 1

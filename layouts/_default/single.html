@@ -20,6 +20,9 @@ progress bar
 新增baseURL js 參數window.baseURL = "{{ .Site.BaseURL }}";
 -->
 
+<!-- inject css which must loaded after bundleJS -->
+{{ partial "custom/inject.html" . }}
+
 <article>
   {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
   {{ $heroStyle := .Params.heroStyle }}
@@ -84,9 +87,6 @@ progress bar
   </header>
   
   <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
-    <!-- <script src='{{ "js/copy.js" | absURL }}'></script> -->
-    {{ partial "custom/copy.html" . }}
-
     {{ if or (and (.Params.showTableOfContents | default (.Site.Params.article.showTableOfContents | default false)) (in
     .TableOfContents "<ul")) (.Site.Params.article.showRelatedPosts | default false) }} <div
     class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
