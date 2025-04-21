@@ -36,7 +36,7 @@ pnpm serve
 
 ### 程式碼 highlight
 
-語法上色採用 [shiki](https://github.com/shikijs/shiki) 的好處是正確且快速，內建的 Chroma 錯誤百出，highlightjs 和 prismjs 太慢，不過也因此 pnpm server 預覽時沒有顏色，如果想要在預覽時確認顏色，請開啟另一個終端執行 `pnpm shiki`。
+語法上色採用 [shiki](https://github.com/shikijs/shiki) 的好處是正確且快速，內建的 Chroma 錯誤百出，highlightjs 和 prismjs 太慢，經過優化的 shiki 使用腳本而不是 rehype 完成，速度加快至少 10 倍，使用方式請見 [config.js](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/blob/main/scripts/shiki/config.js)。
 
 ### 版本更新
 
