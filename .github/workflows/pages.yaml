@@ -27,7 +27,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.142.0
+      # HUGO_VERSION: 0.142.0
       HUGO_ENVIRONMENT: production
       HUGO_CACHEDIR: /tmp/hugo_cache
       TZ: Asia/Taipei
@@ -82,7 +82,7 @@ jobs:
             --minify \
             --baseURL "https://www.zsl0621.cc/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
-          npx rehype-cli public -o
+          pnpm shiki
           
       - name: Hugo Cache Save
         id: hugo-cache-save
