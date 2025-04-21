@@ -95,11 +95,27 @@ h2 {
             font-weight: vars.$font-weight-normal;
         }
     }
+
+    ol li,
+    ul li,
+    ol li > p,
+    ul li > p {
+        margin: 0.0em !important;
+        padding: 0.10em;
+        line-height: 1.5;
+    }
 }
 
 #single_header h1 {
     -webkit-text-stroke: vars.$text-stroke-header;
     font-weight: vars.$font-weight-normal;
+}
+
+.prose {
+    --tw-prose-body: #{vars.$font-color};
+    --tw-prose-invert-body: #{vars.$font-color-dark};
+    --tw-prose-bullets: #{vars.$font-color};
+    // --tw-prose-invert-bullets: #{vars.$font-color-dark};
 }
 
 // 大螢幕上的字體大小設定
