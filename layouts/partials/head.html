@@ -78,6 +78,8 @@
   {{ $jsRTL := resources.Get "js/rtl.js" }}
   {{ $assets.Add "js" (slice $jsRTL) }}
   {{ end }}
+  {{ $jsMobileMenu := resources.Get "js/mobilemenu.js" }}
+  {{ $assets.Add "js" (slice $jsMobileMenu) }}
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
@@ -110,6 +112,9 @@
   {{ end }}
   {{ with .Site.Params.verification.yandex }}
   <meta name="yandex-verification" content="{{ . }}" />
+  {{ end }}
+  {{ with .Site.Params.verification.fediverse }}
+  <meta name="fediverse:creator" content="{{ . }}" />
   {{ end }}
   {{/* Social */}}
   {{ template "_internal/opengraph.html" . }}
@@ -161,5 +166,5 @@
   {{ end }}
 
 </head>
-  
-  
+
+
