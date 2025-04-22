@@ -112,11 +112,11 @@ progress_bar: true
 1. 醜不拉基
    - 最大問題是文檔頁面的排版，沒有要給讀者任何喘息空間，文字直接塞滿整個頁面給你滿滿的文字 creampie
    - 部落格右側的 ToC 超窄，文檔頁面的 ToC 寬度明明就正常
-   - 畢竟我不是學前端的，自己改 layout 改 A 錯 B 最後放棄
+   - custom.css 可以解決這些問題，但是要花時間自行修改
 2. 語法上色
    - 內建的 PrismJS syntax highlight 比 Hugo 更爛，語法大錯特錯，錯的比 Hugo Chroma 更誇張，尤其是 shell 語言
    - PrismJS 比 Hugo 更難修改，因為有些插件的功能是基於內建 code block，除非直接不用那些插件
-   - PrismJS 改 HLJS 看起來遙遙無期，並非開發團隊的首要事項
+   - PrismJS 改 HLJS 沒看到有人在討論，改成 Shiki 倒是[很多人討論](https://github.com/facebook/docusaurus/issues/9122)，但是沒有放入規劃
 3. 客觀事實上[不慢](https://docusaurus.io/blog/releases/3.6#docusaurus-faster)，但是每次刷新頁面就看到刷新條在那邊跑，心理上會覺得慢
 
 **樣式範例**
@@ -188,7 +188,7 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
    - Docusaurus: JS/TS + React
    - VitePress: TS + Vue
 2. 依照外觀選擇，在沒有大量客製化的前提下我會選擇 Hugo = VitePress > Docusaurus，和 Hugo 的選擇差別在於要不要寫文檔
-3. 對於進階客製化的擴展能力是 VitePress = Docusaurus > Hugo，如果再考慮除錯能力就遠大於 Hugo，囿於模板功能導致除錯能力非常糟糕
+3. 對於進階客製化的擴展能力是 VitePress = Docusaurus > Hugo，如果再考慮除錯能力這兩個**會遠大於 Hugo，Hugo 囿於模板功能，導致除錯能力非常糟糕**
 4. 依照穩定性選擇，Hugo 仍然在測試階段，其餘兩個都是穩定版本
 5. 如果需要進階客製化，需求的語言能力是高到低 VitePress > Docusaurus > Hugo，VitePress 最難的原因是 Vue 資源少，而 Hugo 雖然需要很多語言，但是每個語言都是基礎用法
 6. 依照金主爸爸選擇，Docusaurus 有臉書，其他都沒有

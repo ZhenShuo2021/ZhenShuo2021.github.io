@@ -13,21 +13,19 @@ series_order:
 progress_bar: true
 ---
 
-本文目標是在 Hugo 中使用 Shiki 取代內建的 Chroma syntax highlight，並且大幅加快執行速度。使用 Shiki 的優點是解析正確，因為 Chroma 的語法解析錯誤百出，再和開箱即用的 HLJS 比較，優點是伺服器端渲染而不是用戶端渲染。
-
-先說本文和大部分使用 shiki 的人無關，這篇的目的是將**已經 build 完的 HTML 檔案加上 shiki highlight**。
+目標是在 Hugo 中使用 Shiki syntax highlighter 取代內建錯誤百出的 Chroma，並且大幅加快 Shiki 執行速度。本文內容和大部分使用 shiki 的人無關，這篇文章的用途是將**已經 build 完的 HTML 檔案加上 shiki highlight**。
 
 # 前言
 
-原本都想好要針對最多人用的 PaperMod 主題為例寫使用教學的，但是實際使用時發現 PaperMod 有修改 code block 的 CSS，也就是說教學內容不會永遠成立，所以就改成寫效能分析了。
+原本都想好要針對最多人用的 PaperMod 主題為例寫使用教學的，但是實際使用時發現 PaperMod 修改了 code block 的 CSS，也就是說教學內容不會永遠成立，所以就改成寫效能分析了。
 
-回到內容，Hugo 內建的 Chroma highlight 語法解析錯誤百出，同樣都是 `指令 --參數` 格式結果上下兩行 highlight 結果不一樣，除此之外主題切換[要這樣用](https://gohugo.io/commands/hugo_gen_chromastyles/)有夠麻煩，後來換成開箱即用的 PrismJS 和 HLJS，但是這是客戶端渲染效能死宅的我不喜歡，之後又看到 eallion 的 [shiki 文章](https://www.eallion.com/hugo-syntax-highlight-shiki/) 二話不說馬上換成 shiki。
+回到內容，Hugo 內建的 Chroma highlighter 語法解析錯誤百出，同樣都是 `指令 --參數` 格式結果上下兩行 highlight 結果不一樣，除此之外主題切換[要這樣用](https://gohugo.io/commands/hugo_gen_chromastyles/)有夠麻煩，後來換成開箱即用的 PrismJS 和 HLJS，但是效能死宅的我不喜歡客戶端渲染，之後看到 eallion 的 [shiki 文章](https://www.eallion.com/hugo-syntax-highlight-shiki/) 二話不說馬上換成 shiki。
 
-本文使用前需要注意幾個問題
+換成 Shiki 前請先注意這些功能問題和使用細節：
 
 1. Code block 的語言務必正確標記，否則會完全沒顏色
-2. 無法使用 Hugo 內建的 line-highlight 功能
-3. 不同 Hugo 主題的 CSS 需要各自處理，本文只提供 Blowfish 和 PaperMod 作為範例
+2. 無法使用 Hugo 內建的 line-highlight 等等的 code block 功能
+3. 不同 Hugo 主題 CSS 需要各自處理，本文只有 Blowfish 和 PaperMod 兩個主題作為範例
 4. Code copy buttom 也很有可能消失，需要自行解決
 5. 開發階段即時預覽的功能不適用於 `hugo server --renderToMemory`
 
@@ -35,13 +33,13 @@ progress_bar: true
 
 ## Eallion 的做法
 
-[eallion 的文章](https://www.eallion.com/hugo-syntax-highlight-shiki/)分成三個步驟
+[eallion 的文章](https://www.eallion.com/hugo-syntax-highlight-shiki/)以 rehype CLI 方式完成，分成三個步驟
 
 1. 關閉 Hugo 內建的渲染
 2. 設定 rehype 和 shiki 的 CLI
 3. 以 rehype 的 CLI 幫已經建立好的 HTML 頁面加上 shiki 語法
 
-這個方案有幾個問題，第一是速度非常慢，我的網站不到 60 個 md 文件就要六秒渲染，eallion 的網站有 600 個 md 文件耗時 191 秒；第二個是記憶體用量，CLI 方式會一次吃目標資料夾裡面的所有全部 HTML 文件，記憶體用量非常大；第三是無法在編輯時預覽，要開啟另外一個終端執行 shiki 指令才可以看到語法上色結果。
+這個方案有幾個問題，第一是速度非常慢，我的網站不到 60 個 md 文件就要六秒渲染，eallion 的網站有 600 個 md 文件耗時 191 秒；第二個是記憶體用量，這個方式會一次處理目標資料夾裡面的所有全部 HTML 文件，記憶體用量非常大；第三是無法在編輯時預覽，要開啟另外一個終端執行 shiki 指令才可以看到語法上色結果。
 
 > 以 eallion 的網站作為測試，在 M1 MacBook Pro 上執行 rehype shiki CLI，耗時 191 秒。
 
@@ -53,15 +51,15 @@ Orta 是 shiki 的 contributor，不只是 contributor，他的部落格也剛�
 
 ## 我的做法
 
-[我的做法](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/502d91463008a86d5284e045e9a98aa0625ba2f0/scripts/shiki)同樣使用腳本完成，並且有幾個優化
+[我的做法](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/shiki)同樣使用腳本完成，並且有幾個優化
 
 1. 更複雜的過濾方式
    1. 可以指定哪些目錄需要修改
    2. 每個目錄可以指定排除的路徑，例如 Hugo 會自動生成 page 頁面，此路徑的 HTML 全數排除
-   3. 對於大型專案，可以設定開發時只監視指定目錄避免不必要的重渲染
-2. 開發階段增量處理：根據觀察，由於本地開發時 Hugo 只會重新渲染和這次修改有關的檔案，所以基於 HTML 檔案的修改時間進行快取，避免不必要的重複處理
-3. 更高效的處理方式
-   1. 使用非同步方式處理檔案 IO，使用多線程完成 shiki 渲染
+   3. 對於大型專案，可以設定開發時只監視指定目錄避免不必要的重複處理
+   4. 增量處理：根據觀察，由於本地開發時 Hugo 只會重新渲染和這次修改有關的檔案，所以基於 HTML 檔案的修改時間進行快取，避免不必要的重複處理
+2. 更高效的處理方式
+   1. 使用非同步方式處理檔案 IO，使用多線程執行 shiki
    2. 根據 CPU 核心數、待處理檔案數量設定線程數
    3. 每個線程批量獲取任務避免通訊開銷
    4. 根據觀察，多數 HTML 頁面其實沒有 code block，因此使用 early return 避免 parser 解析壓根沒有 code block 的頁面
@@ -71,7 +69,7 @@ Orta 是 shiki 的 contributor，不只是 contributor，他的部落格也剛�
 
 # 效能分析
 
-總結三種方式，CLI 方式最簡單但是耗時最久需要 191 秒，而 Orta 只是換成簡單的腳本就可以把時間縮短到 5.9 秒，有 32 倍的效能提升；我的方式經過一堆有的沒的優化之後可以把時間再度壓縮到 1.88 秒，速度提升高達 101 倍，而且在開發階段受惠於快取機制可避免重複處理，所以在 0.8 秒左右就可以完成 highlighting，速度提升高達 240 倍；如果你是個狠人限制 `TARGETS_DEV` 只有正在修改的檔案，開發階段可以在 0.25 秒完成渲染，速度提升 764 倍。
+總結三種方式，CLI 方式最簡單但是耗時最久需要 191 秒，而 Orta 只是換成簡單的腳本就可以把時間縮短到 5.9 秒，有 32 倍的效能提升；我的方式可以把時間再壓縮到 1.88 秒，速度提升高達 101 倍，而且在開發階段受惠於快取機制可避免重複處理，所以在 0.8 秒左右就可以完成 highlighting，速度提升高達 240 倍。
 
 {{< mermaid >}}
 ---
@@ -85,12 +83,14 @@ config:
 ---
 xychart-beta
     title "測試 eallion.com 使用不同方式進行 shiki highlight 的速度提升倍率"
-    x-axis ["My script (cached with limit target)", "My script (cached)", "My script (uncached)", "Orta's script", "Rehype CLI"]
-    y-axis "Speedup Multiplier" 0 --> 800
-    bar [764, 238.75, 101.6, 32.37, 1]
+    x-axis ["My script (cached)", "My script (uncached)", "Orta's script", "Rehype CLI"]
+    y-axis "Speedup Multiplier" 0 --> 250
+    bar [238.75, 101.6, 32.37, 1]
 {{< /mermaid >}}
 
-和不同方案比較之後這裡再對自己的方案分析效能，使用 [CLInic.js](https://github.com/CLInicjs/node-CLInic) 進行效能分析，以 `pnpm clinic flame -- node scripts/shiki/index.js` 測試，完整的火焰圖如下：
+如果你想要在開發階段獲得極致的反應速度，腳本也可以設定 `TARGETS_DEV` 控制開發階段的渲染目標，將其限制為只有正在修改的檔案甚至能 0.25 秒完成渲染，比完整渲染快 764 倍。
+
+和不同方案比較之後這裡再分析自己方案的效能，使用 [CLInic.js](https://github.com/CLInicjs/node-CLInic) 進行效能分析，以 `pnpm clinic flame -- node scripts/shiki/index.js` 測試，完整的火焰圖如下：
 
 ![all](0.webp "包含 V8 引擎開銷的火焰圖")
 
@@ -102,7 +102,7 @@ xychart-beta
 
 ![only-node-and-shiki](2.webp "只剩下 node 和 shiki 的火焰圖")
 
-可以看到腳本一半的耗時在掃描檔案上，因為 eallion 的構建結果有高達 6000 個資料夾 (`find ./public -mindepth 1 -type d | wc -l` 輸出 6451)，所以耗時長是可以預測的。
+紅框處是我的函式耗時，可以看到有一半的時間花在掃描檔案上，因為 eallion 的構建結果有高達 6000 個資料夾 (`find ./public -mindepth 1 -type d | wc -l` 輸出 6451)，所以耗時長是可以預測的。
 
 唯一一個要改的地方是在 dev 階段應該讓線程和 shiki highlighter instance 持續存活，但是現在是直接呼叫腳本重新執行。
 
@@ -110,12 +110,12 @@ xychart-beta
 
 本文的程式碼位置在這裡：
 
-- [scripts/shiki](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/502d91463008a86d5284e045e9a98aa0625ba2f0/scripts/shiki)：highlight 的一次性腳本
-- [dev.js](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/blob/502d91463008a86d5284e045e9a98aa0625ba2f0/scripts/dev.js)：用於開發階段及時預覽
+- [scripts/shiki](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/shiki)：執行 highlight
+- [dev-example.js](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/blob/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/dev-example.js)：用於開發階段及時預覽
 
 ## 設定方式
 
-先做好 Hugo 設定，例如關閉 Hugo 的 code fences 和設定 CSS，[eallion 部落格](https://www.eallion.com/hugo-syntax-highlight-shiki/)有說明如何操作，
+先關閉 Hugo 的 code fences，找到你的 Hugo 設定檔
 
 ```toml
 [markup]
@@ -123,7 +123,24 @@ xychart-beta
     codeFences = false  # 關閉 code fences
 ```
 
-完成設定後複製我的原始碼，修改 CSS，最後使用腳本 `node scripts/shiki/index.js` 就可以幫 HTML highlight 了，修改 CSS 的方式以 Blowfish 為例，`custom.css` 只需要依照 shiki [官方文檔](https://shiki.style/guide/dual-themes)修改：
+接下來安裝依賴套件，以 pnpm 為例
+
+```sh
+pnpm add -D chalk dom-serializer html-entities htmlparser2 serve shiki
+```
+
+<details>
+
+<summary>套件說明</summary>
+
+1. chalk: 日誌工具
+2. dom-serializer html-entities htmlparser2: HTML 解析
+3. serve: 即時預覽
+4. shiki: 語法上色
+
+</details>
+
+下一步是修改 CSS，以 Blowfish 為例，`custom.css` 只需要依照 shiki [官方文檔](https://shiki.style/guide/dual-themes)修改：
 
 ```css
 .dark .shiki,
@@ -133,7 +150,7 @@ xychart-beta
 }
 ```
 
-但是有些主題會修改 code block 的 CSS 導致文檔方式不適用，例如最多人用的 PaperMod 就有這個問題，所以要改成這樣：
+但是有些主題會修改 code block 的 CSS 導致文檔方式不適用，例如很多人用的 PaperMod 就有這個問題，所以在 PaperMod 要改成這樣：
 
 ```css
 /* 在 PaperMod 主題中使用 Shiki */
@@ -158,15 +175,26 @@ xychart-beta
 }
 ```
 
-除此之外由於 PaperMod 主題的背景顏色純白，所以我們不能使用白色背景的 highlight 主題，經過測試我覺得比較柔和識別度又高的主題是 `LIGHT: "solarized-light", DARK: "everforest-dark"`。
+設定完 CSS 後就可以開始 highlight 了，複製腳本到指定位置
+
+- [scripts/shiki](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/tree/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/shiki)：執行 highlight
+- [scripts/dev-example.js](https://github.com/ZhenShuo2021/ZhenShuo2021.github.io/blob/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/dev-example.js)：用於開發階段及時預覽
+
+然後進入 `scripts/shiki/config.js` 修改客製化選項，有幾個重點項目
+
+1. 處理的目標資料夾 `TARGETS`，是 `hugo server` 的輸出目錄
+2. 是否啟用雙主題 `ENABLE_DUAL_THEME`
+3. 主題選擇 `THEMES`
+
+最後使用 `node scripts/dev-example.js` 啟用開發預覽，以 `node scripts/shiki/index.js` 幫建構完成的 HTML 檔案 highlight。
 
 ## 修復 Code Copy
 
-不同主題的設定方式不同，這裡以 Blowfish 主題為例。Blowfish 複製按鈕在 `themes/blowfish/assets/js/code.js` 設定，簡單來說就是找到所有的 `highlight` class，這是 Hugo 內建的 code block 標示，然後每個都加上複製按鈕，把 codeFences 關閉後這個 class 也沒了，所有又要自己處理。
+Code copy 不同主題的設定方式不同，這裡以 Blowfish 主題為例。Blowfish 複製按鈕在 `themes/blowfish/assets/js/code.js` 設定，簡單來說就是找到所有的 `highlight` class，這是 Hugo 內建的 code block 標示，然後每個都加上複製按鈕，前面設定關閉 codeFences 後這個 class 也沒了，所以要自己處理。
 
 廢話不多說，修改程式碼，在 `assets/js/code.js` 貼上以下設定就完成了：
 
-{{< codeimporter "https://raw.githubusercontent.com/ZhenShuo2021/ZhenShuo2021.github.io/502d91463008a86d5284e045e9a98aa0625ba2f0/assets/js/code.js" >}}
+{{< codeimporter "https://raw.githubusercontent.com/ZhenShuo2021/ZhenShuo2021.github.io/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/assets/js/code.js" >}}
 
 ## 使用須知
 
@@ -176,7 +204,7 @@ xychart-beta
 4. `node scripts/shiki/index.js --dev` 可以將目標目錄改為 `TARGETS_DEV` 以便開發時迅速預覽
 5. Shiki 直接修改 HTML，所以你的檔案會變大，Hugo minify 也會不那麼 mini，但是經過測試的結果如下，一樣是 eallion.com：
 
-```txt
+```sh
 ❯ uv run analysis_filesize.py
 +580.0K 108.0K → 688.0K (+537.0%)       public/weasel/index.html
 +140.0K 92.0K → 232.0K  (+152.2%)       public/blog-heatmap/index.html
@@ -190,4 +218,4 @@ xychart-beta
 +36.0K  76.0K → 112.0K  (+47.4%)        public/hugo-redirect-landing-page/index.html
 ```
 
-看似增加很多容量，不過這是 top 10，實際上總容量只多了不到 2MB，增加了 1.3%，分析腳本[在此](https://raw.githubusercontent.com/ZhenShuo2021/ZhenShuo2021.github.io/502d91463008a86d5284e045e9a98aa0625ba2f0/scripts/shiki/analysis_filesize.py)。
+看似增加很多容量，不過這是 top 10，實際上總容量只多了不到 2MB，增加了 1.3%，分析腳本[在此](https://raw.githubusercontent.com/ZhenShuo2021/ZhenShuo2021.github.io/8fad76f43ecb73f96ca6922a8e5143fa3e98dda2/scripts/shiki/analysis_filesize.py)。
