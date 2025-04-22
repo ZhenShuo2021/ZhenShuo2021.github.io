@@ -12,15 +12,13 @@ series_order:
 progress_bar: true
 ---
 
-開始架網站後靜態網站生成器 (SSG) 換了好幾個，由於我不是學前端的所以這是一個非前端專業角度的使用心得，本文包含以下幾個 SSG 工具：
+開始架網站後靜態網站生成器 (SSG) 換了好幾個，由於我不是學前端的所以這是一個非前端用戶的視角，依照使用時間排序，本文包含以下幾個 SSG 工具：
 
 1. Hexo
 2. Hugo
 3. Docusaurus
 4. MkDocs
 5. Vitepress
-
-依照使用時間排序，電腦是 M1 MacBook Pro。
 
 # Hexo
 
@@ -30,7 +28,7 @@ progress_bar: true
 
 1. 完整詳細的中文文檔，新手超級友善
 2. 背景語言是用 js 寫的，適合本來就會 js 的人，也適合剛開始學 js 的
-3. 沒有預設其他框架，不用學 React/Go 等等語言
+3. 沒有預設框架，不用學 React 等等框架
 4. 有很多適合中文生態的插件，例如宅宅 L2D
 
 **缺點**
@@ -39,6 +37,8 @@ progress_bar: true
 2. 慢，才沒寫幾篇文章就已經感覺到開發階段的畫面更新有延遲
 3. 慢，這幾個 SSG 就只有他的網頁瀏覽起來有不流暢的感覺
 
+> 電腦是 M1 MacBook Pro。
+
 **樣式範例**
 
 - [NexT](https://theme-next.js.org/archives/)
@@ -46,7 +46,7 @@ progress_bar: true
 
 # Hugo
 
-到現在都還在用也自定義最多，所以本段內容最豐富。
+因為 Hexo 慢所以找了一個很快的 Hugo，到現在都還在用也自定義最多，所以本段內容最豐富。
 
 **優點**
 
@@ -75,12 +75,14 @@ progress_bar: true
    - 如上述，很難找到完美的主題，因為開發者需要精通全部語言外加 SEO 以及瀏覽器相關的知識，還要喜歡 Hugo 到願意做一個主題
    - 應該沒辦法拿 js 生成頁面，至少我沒看過有人這樣做過
    - 基於客製化困難，頁面效果沒辦法太複雜
-2. **除錯非常愚蠢：由於 Go 模板導致我們要在 themes/layouts 和自己的 layouts 之間來回比較才能除錯。除此之外，因為 partials 是插入功能，所以 trace code 變成使用編輯器的全局搜索功能才能順利找到問題**
+2. **除錯非常愚蠢：由於 Go 模板導致我們要在 themes/layouts 和自己的 layouts 之間來回比較才能除錯。除此之外，因為 partials 是插入，所以 trace code 變成使用編輯器的全局搜索功能才能順利找到問題**
 3. 官方文檔內容陳述方式很爛，Go 模板功能很多人搞錯有一半原因是文檔講的不清不楚，現在改版了不知道寫的如何
 4. 內建的 Chroma syntax highlight 很爛，語法大錯特錯
-5. 沒有插件這種東西，想要新功能就是自己寫一個，還好 Github 有很多開源範例可參考
+5. 沒有插件這種東西，想要新功能就是自己寫，還好 Github 有很多開源範例可參考
 6. 沒有內建 broken link 檢查
 7. 仍舊不是穩定版本
+
+抱怨多是因為用的多，文末有說明我選擇的原因。
 
 **樣式範例**
 
@@ -88,13 +90,16 @@ progress_bar: true
 - [Blowfish](https://blowfish.page/)
 - [reveal-hugo](https://themes.gohugo.io/themes/reveal-hugo/)
 - [Toha](https://hugo-toha.github.io/)
+- [doks](https://github.com/thuliteio/doks)
 
 # Docusaurus
+
+發現 Hugo 要寫文檔不太適合，[hugo-book](https://github.com/alex-shpak/hugo-book) 太醜，[doks](https://github.com/thuliteio/doks) 其實不錯但是當時沒搞懂 Hugo 模板，而且那時候 frontmatter 不支援自訂項目（現在支援了），後來找到 Docusaurus。
 
 **優點**
 
 1. 文檔功能強大，部落格功能也很強大，適合撰寫文檔
-2. 幾乎開箱即用，並且有很多[範例](https://docusaurus.io/showcase)可以找到原始碼開始修改
+2. 幾乎開箱即用，並且有很多[範例](https://docusaurus.io/showcase)可以找到原始碼
 3. 完善的生態系統，甚至給你[配色版](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima)，社群插件也很多
 4. 超級多的可調選項，背後有臉書就是厲害
 5. 可使用 React 建立自訂頁面，例如[朝八晚八](https://from8to8.com/)整個部落格幾乎沒用內建的文檔頁面，以及 Docsaid 的[遊樂場](https://docsaid.org/playground/intro)頁面
@@ -108,10 +113,11 @@ progress_bar: true
    - 最大問題是文檔頁面的排版，沒有要給讀者任何喘息空間，文字直接塞滿整個頁面給你滿滿的文字 creampie
    - 部落格右側的 ToC 超窄，文檔頁面的 ToC 寬度明明就正常
    - 畢竟我不是學前端的，自己改 layout 改 A 錯 B 最後放棄
+2. 語法上色
    - 內建的 PrismJS syntax highlight 比 Hugo 更爛，語法大錯特錯，錯的比 Hugo Chroma 更誇張，尤其是 shell 語言
    - PrismJS 比 Hugo 更難修改，因為有些插件的功能是基於內建 code block，除非直接不用那些插件
    - PrismJS 改 HLJS 看起來遙遙無期，並非開發團隊的首要事項
-2. 客觀事實上[不慢](https://docusaurus.io/blog/releases/3.6#docusaurus-faster)，但是每次刷新頁面就看到刷新條在那邊跑，心理上會覺得慢
+3. 客觀事實上[不慢](https://docusaurus.io/blog/releases/3.6#docusaurus-faster)，但是每次刷新頁面就看到刷新條在那邊跑，心理上會覺得慢
 
 **樣式範例**
 
@@ -123,7 +129,7 @@ progress_bar: true
 
 # MkDocs
 
-MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來建立 Python 文檔就好，不適用於其他地方，有還算豐富的社群插件，略顯老態的 UI，緩慢的構建，幾乎是零的客製化空間。
+MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來建立 Python 文檔就好，其他地方使用不那麼合適，有還算豐富的社群插件，略顯老態的 UI 以及幾乎是零的客製化空間。
 
 **樣式範例**
 
@@ -137,7 +143,7 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
 **優點**
 
 1. 非常好看，就算是文檔風格也是最好看的
-2. 內建超強 syntax highlighting，基於 Shiki 和 TwoSlash 且無須任何設定開箱即用
+2. 內建超強 syntax highlighting，內建 Shiki 和 TwoSlash 且無須任何設定開箱即用
 3. hot update 開發時更新速度超快
 4. 使用 markdown-it 可以輕鬆的擴充功能
 5. 邏輯清晰的文檔，而且還有中文版
@@ -150,8 +156,8 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
 1. 只適合寫文檔，不想寫文檔的話所有功能就要從零寫起
 2. SEO 不佳，有些內容不是靜態的要靠 JS 渲染，例如 code block 內容
 3. MPA 模式粗暴的關閉所有 JS，連切換亮暗模式都不能
-4. 小問題是頁面路由還要自己寫程式，連移除 prefix 都沒有內建支援；大問題是不支援讀取 frontmatter slug
-5. 使用自訂的 markdown-it 而不是一般的 markdown-it，導致客製化時需要額外除錯
+4. 小問題是頁面路由還要自己寫程式，連移除 prefix 都沒有內建支援；大問題是不支援讀取 frontmatter 自訂 slug
+5. 使用自訂而不是一般的 markdown-it，導致客製化時需要額外除錯
 6. 資源非常少
 7. **按下內頁 anchor 後再回到上一頁，應該要回到剛才瀏覽的位置，但錯誤的回到 URL 位置而不是先前的瀏覽進度**
 
@@ -175,17 +181,17 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
 
 # 總結
 
-直接放棄 hexo，因為開發過程修改應用的速度慢，瀏覽體感也慢。Hugo 雖然有諸多缺點，但是每個語言都沒有太多額外框架要學所以倒沒那麼複雜，反而是 VitePress 要學整個 Vue 有點麻煩，因為 Vue 資源比起 Docusaurus 的 React 少太多了。總而言之
+直接放棄 hexo，因為開發過程畫面更新的速度慢，瀏覽體感也慢。Hugo 雖然有諸多缺點，但是每個語言都沒有太多額外框架要學所以倒沒那麼複雜，反而是 VitePress 要學整個 Vue 有點麻煩，因為 Vue 資源比起 Docusaurus 的 React 少太多了。總而言之
 
 1. 依照語言選擇
    - Hugo: HTML + JS + 基礎 Go
    - Docusaurus: JS/TS + React
    - VitePress: TS + Vue
-2. 如果需要進階客製化，需求的語言能力是 VitePress > Docusaurus > Hugo，VitePress 放在最難的原因是 Vue 資源少，而 Hugo 雖然需要很多語言，但是每個語言都是基礎用法
-3. 對於進階客製化的擴展能力是 VitePress = Docusaurus > Hugo，如果再考慮除錯能力就是遠大於 Hugo
-4. 依照外觀選擇，在沒有大量客製化的前提下我會選擇  VitePress > Docusaurus，和 Hugo 的選擇差別在於要不要寫文檔
-5. 依照穩定性選擇，Hugo 仍然在測試階段，其餘兩個都是穩定階段
+2. 依照外觀選擇，在沒有大量客製化的前提下我會選擇 Hugo = VitePress > Docusaurus，和 Hugo 的選擇差別在於要不要寫文檔
+3. 對於進階客製化的擴展能力是 VitePress = Docusaurus > Hugo，如果再考慮除錯能力就遠大於 Hugo，囿於模板功能導致除錯能力非常糟糕
+4. 依照穩定性選擇，Hugo 仍然在測試階段，其餘兩個都是穩定版本
+5. 如果需要進階客製化，需求的語言能力是高到低 VitePress > Docusaurus > Hugo，VitePress 最難的原因是 Vue 資源少，而 Hugo 雖然需要很多語言，但是每個語言都是基礎用法
 6. 依照金主爸爸選擇，Docusaurus 有臉書，其他都沒有
 7. 整篇好像講了 Hugo 很多缺點，但是這個 [thread](https://discourse.gohugo.io/t/hugo-vs-astro-vs-nextjs-which-one-is-better-for-content-focused-website/42858) 很好的說明了為何我還留在 Hugo 的原因
 
-請注意整篇都是非前端專業的心得，並且最重要的是文章內容而不是網站多好看，就算是這種[毫無裝飾](https://programmingisterrible.com/post/173883533613/code-to-debug)的網站文章還是超多人看。
+請注意這是非前端用戶的心得，而且最重要的是文章內容而不是網站多好看，就算是這種[毫無裝飾](https://programmingisterrible.com/post/173883533613/code-to-debug)的網站文章還是超多人看。
