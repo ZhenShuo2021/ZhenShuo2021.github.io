@@ -1,7 +1,9 @@
-// 同時支援內建的和自訂的複製按鈕，除了修改 USE_CUSTOM 以外也要 toggle config/_default/markup.toml/codeFences
+// 替換原始的 code.js，此方案保留原始複製按鈕的支援，需要修改以下
+//   1. USE_CUSTOM
+//   2. toggle config/_default/markup.toml/codeFences
 //
-// 自訂版本用於 codeFences 關閉時使用，因為關閉他等於幾乎完全停止 code block 渲染
-// 關閉的目的是使用 shiki 進行 syntax highlighting
+// 自訂版本於禁用 codeFences 時使用，禁用代表要求 Hugo 停止 code block 渲染
+// 禁用的目的是改用 shiki 進行 syntax highlighting
 const USE_CUSTOM = true;
 
 function CodoCopyCustom() {
