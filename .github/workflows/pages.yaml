@@ -27,9 +27,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # HUGO_VERSION: 0.142.0
-      HUGO_ENVIRONMENT: production
-      HUGO_CACHEDIR: /tmp/hugo_cache
       TZ: Asia/Taipei
     steps:
       - name: Checkout
@@ -75,6 +72,10 @@ jobs:
           restore-keys: hugo-
 
       - name: Build Project (SCSS + Hugo + Highlight)
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
         run: |
           pnpm sass assets/scss/main.scss assets/css/custom.css --style compressed
           hugo \
