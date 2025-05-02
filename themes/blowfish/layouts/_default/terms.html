@@ -1,16 +1,12 @@
 {{ define "main" }}
-<!-- 客製化紀錄
 
-增加標籤雲，標籤雲標題置中
-
--->
 {{ .Scratch.Set "scope" "list" }}
 {{ if .Site.Params.taxonomy.showHero | default false }}
-{{ $heroStyle := print "partials/hero/" .Site.Params.taxonomy.heroStyle ".html" }}
-{{ if templates.Exists $heroStyle }}
+{{ $heroStyle := print "hero/" .Site.Params.taxonomy.heroStyle ".html" }}
+{{ if templates.Exists ( printf "partials/%s" $heroStyle ) }}
 {{ partial $heroStyle . }}
 {{ else }}
-{{ partial "partials/hero/basic.html" . }}
+{{ partial "hero/basic.html" . }}
 {{ end }}
 {{- end -}}
 
@@ -21,7 +17,7 @@
     {{ if .Params.showBreadcrumbs | default (.Site.Params.taxonomy.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral" style="text-align: center;">{{ .Title }}</h1>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title }}</h1>
     <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/taxonomy.html" (dict "context" . "scope" "single") }}
     </div>
@@ -48,12 +44,15 @@
     {{ partial "term-link/card.html" . }}
     {{ end }}
   </section>
-  
+
   {{ else }}
-  
-  <!-- Tag cloud -->
-  {{ partial "custom/tag-cloud.html" . }}
-  
+
+  <section class="flex flex-wrap max-w-prose -mx-2 overflow-hidden">
+    {{ range .Data.Terms }}
+      {{ partial "term-link/text.html" . }}
+    {{ end }}
+  </section>
+
   {{ end }}
 
 

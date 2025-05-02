@@ -12,20 +12,8 @@ $font-color-dark: rgb(235, 235, 235);
 
 // 字體堆疊
 $font-family-tc: (
-    'LXGW WenKai TC',
-    // Windows 系統字體
-    'Microsoft JhengHei',
-    // macOS 系統字體
-    'PingFang TC',
-    'Heiti TC',
-    // 後備字體
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif
+    "LXGW WenKai TC",
+    system-ui
 );
 
 // 警示框(Admonition)顏色設定

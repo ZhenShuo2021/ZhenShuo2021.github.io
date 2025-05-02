@@ -79,6 +79,7 @@ jobs:
         run: |
           pnpm sass assets/scss/main.scss assets/css/custom.css --style compressed
           hugo \
+            --minify \
             --baseURL "https://www.zsl0621.cc/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
           pnpm shiki

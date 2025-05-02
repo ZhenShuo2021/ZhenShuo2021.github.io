@@ -1,19 +1,17 @@
 {{ define "main" }}
 
 {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-{{ $heroStyle := .Params.heroStyle }}
-{{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
-{{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
-{{ if templates.Exists $heroStyle }}
-{{ partial $heroStyle . }}
-{{ else }}
-{{ partial "partials/hero/basic.html" . }}
-{{ end }}
+  {{ $style := .Params.heroStyle | default .Site.Params.article.heroStyle | default "basic" }}
+  {{ $heroPath := print "hero/" $style ".html" }}
+  {{ if templates.Exists (print "partials/" $heroPath) }}
+    {{ partial $heroPath . }}
+  {{ else }}
+    {{ partial "hero/basic.html" . }}
+  {{ end }}
 {{ end }}
 
 {{ $currentLang := $.Site.Language.Lang }}
 {{ $months := index $.Site.Data.months $currentLang }}
-
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -27,66 +25,54 @@
             });
         });
 
-        // 為每個月份標題設置隨機漸變背景
         const monthTitles = document.querySelectorAll('.month-title');
         monthTitles.forEach(title => {
             const [color1, color2, color3] = generateContrastingColors(false);
             const [color4, color5, color6] = generateContrastingColors(true);
             const angle1 = generateRandomAngle();
             const angle2 = generateRandomAngle();
-            // 為每個月份標題設置兩組不同的漸變效果
             title.style.setProperty('--gradient-1', `linear-gradient(${angle1}deg, ${color1}, ${color2})`);
             title.style.setProperty('--gradient-2', `linear-gradient(${angle2}deg, ${color4}, ${color5})`);
         });
     });
 
     function generateContrastingColors(isDarkMode) {
-        // 隨機選擇一個基礎色相
         const baseColor = Math.random() * 360;
-
-        // 在基礎色相的基礎上較大幅度偏移，以產生更顯著不同的顏色
         const c1 = baseColor;
-        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360; // 使第二個顏色與第一個顏色有較大的差異
-        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360; // 增加第三個顏色的偏移
-        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360; // 增加第四個顏色的偏移
+        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360;
+        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360;
+        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360;
 
-        // 將顏色的亮度和飽和度調整為暗色系或亮色系
         const adjustColor = (color, isDarkMode) => {
-            const lightness = isDarkMode ? 40 : 75; // 暗色模式較暗，亮色模式較亮
-            const saturation = 100; // 暗色模式和亮色模式的飽和度
+            const lightness = isDarkMode ? 40 : 75;
+            const saturation = 100;
             return `hsl(${color}, ${saturation}%, ${lightness}%)`;
         };
 
-        // 生成暗色系或亮色系的顏色
         const color1 = adjustColor(c1, isDarkMode);
         const color2 = adjustColor(c2, isDarkMode);
         const color3 = adjustColor(c3, isDarkMode);
 
-        // 返回顏色字符串
         return [color1, color2, color3];
     }
 
     function generateRandomAngle() {
-        const step = 15; // 每個選項的角度步長
-        const minAngle = 30; // 最小角度
-        const maxAngle = 150; // 最大角度
-        const totalSteps = (maxAngle - minAngle) / step + 1; // 計算在此範圍內總共多少個步驟
-        const randomStep = Math.floor(Math.random() * totalSteps); // 隨機選擇一個步驟
-        const randomAngle = minAngle + randomStep * step; // 計算隨機角度
-        return randomAngle;
+        const step = 15;
+        const minAngle = 30;
+        const maxAngle = 150;
+        const totalSteps = (maxAngle - minAngle) / step + 1;
+        const randomStep = Math.floor(Math.random() * totalSteps);
+        return minAngle + randomStep * step;
     }
 </script>
 
-
 <style>
-    /* 全部寬度 */
     .timeline {
         max-width: 850px;
         margin: 0 auto;
         padding: 20px;
     }
 
-    /* 年份容器 */
     .year-container {
         margin-bottom: 40px;
         border: 1px solid #e0e0e0;
@@ -96,7 +82,6 @@
         background-color: rgba(var(--color-neutral-300), 0.56);
     }
 
-    /* 年份標頭 文字與背景 */
     .year {
         background-color: rgba(var(--color-neutral-400), 0.91);
         padding: 10px 20px;
@@ -107,7 +92,6 @@
         align-items: center;
     }
 
-    /* 年文章數 */
     .post-count {
         background-color: #007bff;
         color: white;
@@ -120,12 +104,10 @@
         padding: 20px;
     }
 
-    /* 月份容器 */
     .month-container {
         margin-bottom: 30px;
     }
 
-    /* 月份文字 */
     .month-title {
         font-size: 1.2rem;
         font-weight: 700;
@@ -137,24 +119,17 @@
         padding-bottom: 5px;
         margin-bottom: 15px;
         text-transform: uppercase;
-
-        /* 使用 Flexbox 來居中文本 */
         display: inline-flex;
         align-items: center;
         justify-content: center;
-
-        /* 設定行高，使文字垂直居中 */
         line-height: 1;
-
     }
 
-    /* 個別文章 */
     .post-list {
         list-style-type: none;
         padding: 2px;
     }
 
-    /* 個別文章背景 */
     .post-item {
         margin-bottom: 10px;
         padding: 10px;
@@ -164,13 +139,10 @@
         background: #ffffff;
     }
 
-    /* 個別文章懸浮 */
     .post-item-hover {
         transform: scale(1.01);
-        /* background: rgba(var(--color-neutral-100), 0.95) !important; */
     }
 
-    /* 個別文章內部佈局 */
     .post-item-inner {
         display: grid;
         grid-template-areas:
@@ -182,7 +154,6 @@
         padding-bottom: 0.4em;
     }
 
-    /* 文章日期文字 */
     .post-date {
         font-size: 14px;
         color: rgb(var(--color-neutral-500));
@@ -190,17 +161,13 @@
         margin-left: 4px;
         white-space: nowrap;
         min-width: 4em;
-        /* 防止日期文字換行 */
         grid-area: date;
-        /* 這是什麼魔術 */
     }
 
-    /* 文章標題容器 */
     .post-details {
         grid-area: details;
     }
 
-    /* 文章標題文字(連結部分) */
     .post-title {
         font-size: 20px;
         color: rgb(var(--color-neutral-800)) !important;
@@ -208,13 +175,11 @@
         font-weight: bold;
     }
 
-    /* 文章標籤 */
     .tag-and-category {
         grid-area: category;
         margin-bottom: -20px;
     }
 
-    /* 深色模式樣式 */
     .dark .year {
         background-color: rgba(var(--color-neutral-900), 0.95) !important;
         color: rgb(var(--color-neutral-100));
@@ -283,7 +248,6 @@
             grid-area: date;
             margin-top: -1.2em;
             margin-bottom: -.8em;
-            padding: -3px 0;
             font-size: 0.6em;
             color: rgb(var(--color-neutral-500));
             padding: 0px;
@@ -293,18 +257,15 @@
             grid-area: details;
             margin-bottom: 0.1rem;
             padding: 0px;
-            /* margin-left: 5px; */
         }
 
         .tag-and-category {
             padding: 0px;
             grid-area: category;
             margin-top: 0px;
-            /* margin-left: 5px; */
         }
     }
 </style>
-
 
 <article class="timeline">
 
@@ -318,16 +279,13 @@
     {{ $filteredPages := where .Site.RegularPages "Params.noArchive" "ne" true }}
     {{ range $filteredPages.GroupByDate "2006" }}
     <div class="year-container">
-
         <div class="year">
             {{ .Key }}
             <span class="post-count">{{ len .Pages }}</span>
         </div>
-
         <div class="content">
             {{ range .Pages.GroupByDate "January" }}
             <div class="month-container">
-
                 <span class="month-title">{{ index $months .Key }}</span>
                 <ul class="post-list">
                     {{ range .Pages }}
@@ -352,16 +310,13 @@
                     </li>
                     {{ end }}
                 </ul>
-
             </div>
             {{ end }}
         </div>
-
     </div>
     {{ end }}
 </section>
 
 </article>
-<!-- <script src="{{ "js/archives.js" | relURL }}"></script> -->
 
 {{ end }}
