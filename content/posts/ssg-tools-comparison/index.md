@@ -101,7 +101,7 @@ progress_bar: true
 1. 文檔功能強大，部落格功能也很強大，適合撰寫文檔
 2. 幾乎開箱即用，並且有很多[範例](https://docusaurus.io/showcase)可以找到原始碼
 3. 完善的生態系統，甚至給你[配色版](https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima)，社群插件也很多
-4. 超級多的可調選項，背後有臉書就是厲害
+4. 超級多的可調選項，甚至可以把整個組件 swizzle 出來改，背後有臉書就是厲害
 5. 可使用 React 建立自訂頁面，例如[朝八晚八](https://from8to8.com/)整個部落格幾乎沒用內建的文檔頁面，以及 Docsaid 的[遊樂場](https://docsaid.org/playground/intro)頁面
 6. SEO 功能完善
 7. 內建 broken link 檢查
@@ -117,7 +117,8 @@ progress_bar: true
    - 內建的 PrismJS syntax highlight 比 Hugo 更爛，語法大錯特錯，錯的比 Hugo Chroma 更誇張，尤其是 shell 語言
    - PrismJS 比 Hugo 更難修改，因為有些插件的功能是基於內建 code block，除非直接不用那些插件
    - PrismJS 改 HLJS 沒看到有人在討論，改成 Shiki 倒是[很多人討論](https://github.com/facebook/docusaurus/issues/9122)，但是沒有放入規劃
-3. 客觀事實上[不慢](https://docusaurus.io/blog/releases/3.6#docusaurus-faster)，但是每次刷新頁面就看到刷新條在那邊跑，心理上會覺得慢
+3. **文檔頁面不支援 RSS！！！文檔頁面不支援 RSS！！！文檔頁面不支援 RSS！！！**
+4. 客觀事實上[不慢](https://docusaurus.io/blog/releases/3.6#docusaurus-faster)，但是每次刷新頁面就看到刷新條在那邊跑，心理上會覺得慢
 
 **樣式範例**
 
@@ -150,6 +151,7 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
 6. 支援關閉 SPA 改用 MPA 模式
 7. 就算有一些內建樣式有點醜，也有完整的[社群教學](https://github.com/Yiov/vitepress-doc)教你優化且不難
 8. 使用 TS 撰寫設定檔，超級彈性
+9. **文檔頁面支援 RSS！！！文檔頁面支援 RSS！！！文檔頁面支援 RSS！！！**
 
 **缺點**
 
@@ -188,7 +190,7 @@ MkDocs 本身就是 Python 生態系出來的，我的心得也是把他拿來�
    - Docusaurus: JS/TS + React
    - VitePress: TS + Vue
 2. 依照外觀選擇，在沒有大量客製化的前提下我會選擇 Hugo = VitePress > Docusaurus，和 Hugo 的選擇差別在於要不要寫文檔
-3. 對於進階客製化的擴展能力是 VitePress = Docusaurus > Hugo，如果再考慮除錯能力這兩個**會遠大於 Hugo，Hugo 囿於模板功能，導致除錯能力非常糟糕**
+3. 客製化的擴展能力是 Docusaurus >>> VitePress > Hugo，如果再考慮除錯能力這兩個**會遠大於 Hugo，Hugo 囿於模板功能，導致除錯能力非常糟糕**，如果需要大量客製化用 Hugo 你會中風
 4. 依照穩定性選擇，Hugo 仍然在測試階段，其餘兩個都是穩定版本
 5. 如果需要進階客製化，需求的語言能力是高到低 VitePress > Docusaurus > Hugo，VitePress 最難的原因是 Vue 資源少，而 Hugo 雖然需要很多語言，但是每個語言都是基礎用法
 6. 依照金主爸爸選擇，Docusaurus 有臉書，其他都沒有

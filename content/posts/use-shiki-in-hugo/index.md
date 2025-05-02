@@ -82,7 +82,7 @@ config:
             plotColorPalette: "#00A2ED"
 ---
 xychart-beta
-    title "測試 eallion.com 使用不同方式進行 shiki highlight 的速度提升倍率"
+    title "測試 shiki highlight 速度差距倍率，以 eallion.com 為範例專案"
     x-axis ["My script (cached)", "My script (uncached)", "Orta's script", "Rehype CLI"]
     y-axis "Speedup Multiplier" 0 --> 250
     bar [238.75, 101.6, 32.37, 1]
