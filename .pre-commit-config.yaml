@@ -12,5 +12,5 @@ repos:
         name: Lint scripts and SCSS with Biome
         entry: pnpm biome check
         language: node
-        files: ^(scripts/|assets/scss/).*\.(js|ts|scss)$
+        files: ^(scripts/|assets/scss/).*\.(js|ts|css)$
         description: Run biome check on JS/TS/SCSS files in scripts and assets/scss directories
