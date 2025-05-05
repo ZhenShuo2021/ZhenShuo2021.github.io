@@ -41,7 +41,7 @@ favicon = "favicon.ico"
   showScrollToTop = true
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
+  layout = "custom-background-home" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "/img/global/home.jpeg" # used in: hero, and card
   showRecent = true
   showRecentItems = 9
@@ -60,7 +60,7 @@ favicon = "favicon.ico"
   showAuthor = true
   showAuthorBottom = true
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "custom-background-hero" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
@@ -84,7 +84,7 @@ favicon = "favicon.ico"
 
 [list]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "custom-background-hero" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background
   layoutBackgroundHeaderSpace = false
   showBreadcrumbs = false
@@ -104,7 +104,7 @@ favicon = "favicon.ico"
 [taxonomy]
   showTermCount = true
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "custom-background-hero" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = true
   showViews = false
   showLikes = false
@@ -115,7 +115,7 @@ favicon = "favicon.ico"
 
 [term]
   showHero = true
-  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "I can't find what he modified" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
   showLikes = false
