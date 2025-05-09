@@ -8,7 +8,7 @@
 - 使用 shiki 完成正確且快速的 Syntax Highlighting
 - 標籤和分類使用標籤雲
 - Full responsive 的文章列表
-- 不使用 submodule 安裝主題，更輕量快速
+- 使用自製的 [blowfish-core](https://github.com/ZhenShuo2021/blowfish-core) 安裝主題，輕量快速
 - 支援 SCSS 管理外觀
 - 整合和優化多項外觀和功能，例如增加 shortcode，閱讀進度條、優化標籤和分類外觀等等...
 
@@ -19,7 +19,7 @@
 初次使用
 
 ```sh
-git clone -q --depth=1 https://github.com/ZhenShuo2021/ZhenShuo2021.github.io blog
+git clone --recurse-submodules https://github.com/ZhenShuo2021/ZhenShuo2021.github.io blog
 cd blog
 pnpm install
 pnpm serve
@@ -35,7 +35,7 @@ pnpm serve
 - `pnpm shiki`: 進行程式碼 highlight
 
 > [!NOTE]  
-> 經過一連串 Hugo 更新之後發現 Hugo 真的是在搞，總之現在本專案支援到 0.147.1 版本。
+> 經過一連串 Hugo 更新之後發現 Hugo 真的是在搞，Hugo 支援的版本範圍很窄，總之本專案現在支援到 0.147.1 版本。
 
 ### 程式碼 highlight
 
@@ -43,7 +43,7 @@ pnpm serve
 
 ### 版本更新
 
-Blowfish 大小高達 0.6GB 所以我沒有使用 submodule 安裝主題，改用腳本更新主題容量縮減到只有 10MB，`pnpm update-blowfish:py` `pnpm update-blowfish:sh` 都可以用功能相同。
+Blowfish 大小高達 0.6GB 所以我使用自己的做的 [blowfish-core](https://github.com/ZhenShuo2021/blowfish-core) 安裝主題，經過大量修剪後容量不到 10 MB。
 
 ## Shortcode
 
