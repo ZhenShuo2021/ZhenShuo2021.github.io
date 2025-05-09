@@ -195,15 +195,15 @@ async function handleRequest(request) {
 ```
 
 越搞越多跟想像的三行優雅解決完全不一樣...都破百行了，最重要的是原本用好的[超過100分](/posts/20240728/)經過字體和高亮 CDN 以及我外行人寫的 javascript，速度直接噴到剩下50分：
-![hljs-mobile](hljs-2.webp "Highlight.js 手機版跑分結果")
-![hljs-desktop](hljs-1.webp "Highlight.js 桌面版跑分結果")
+![hljs-mobile](https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-hljs-1---2025-05-09T11-55-20.webp "Highlight.js 手機版跑分結果")
+![hljs-desktop](https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-hljs-2---2025-05-09T11-55-20.webp "Highlight.js 桌面版跑分結果")
 原本的沒有存結果，這是用 Cloudflare Pages Rollbacks 功能留下來的頁面跑分的，應該也享受他們的 CDN 服務，記得剛部屬完 Highlight.js 後手機測速有時候還跑不到50分。
 
 # Shiki
 
 我辛苦弄這麼久的結果雖然是好看了但是分數有夠難看，那我之前的努力算什麼，就在我覺得好像沒救的時候看到了[這篇文章](https://www.eallion.com/hugo-syntax-highlight-shiki/)，插入也有夠簡單而且內建亮暗主題切換，重點是純靜態，拿他的網頁去跑分即使程式碼數量比我多的也是輕鬆跑到99, 100，好啊心態沒了，馬上改全刪，於是現在的跑分成績：
-![shiki-mobile](shiki-2.webp "Shiki 手機版跑分結果")
-![shiki-desktop](shiki-1.webp "Shiki 桌面版跑分結果")
+![shiki-mobile](https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-shiki-2---2025-05-09T11-55-20.webp "Shiki 手機版跑分結果")
+![shiki-desktop](https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-shiki-1---2025-05-09T11-55-20.webp"Shiki 桌面版跑分結果")
 
 完美，回來了。
 
@@ -245,7 +245,7 @@ async function handleRequest(request) {
 
 有。檔案大小以一篇中文 1300 字的文章進行測試，看圖可以知道 Google 和其他 CDN 的策略不同。載入時間單純就是看檔案大小除以傳輸速度，檔案大小已經比較小了，測試都用官方推薦載入語法，測試結果 Google Fonts 至少在這幾天慢於 Cloudflare 的，而且 Cloudflare 還讓了 preconnect/preload 兩個設定。
 
-{{< carousel images="{woff-cdnjs.webp,woff-jsdelivr.webp,woff-google.webp}" aspectRatio="21-9"  interval="500" >}}
+{{< carousel images="{https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-cdnjs---2025-05-09T11-55-20.webp,https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-google---2025-05-09T11-55-20.webp,https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-jsdelivr---2025-05-09T11-55-20.webp}" aspectRatio="21-9"  interval="500" >}}
 {{< lead >}} 三種 CDN 的字體切割，Google Font 策略明顯不同於其他兩者 {{< /lead >}}
 
 > 必須要網站在 Cloudflare 中是設定 Proxied 的狀態

@@ -12,7 +12,7 @@ categories: ["科技新知"]
 # 快速看完
 
 看完這張圖這篇文章就不用看了。
-![WebP Performance by Google WebP Project Group](/images/p1.png "")
+![WebP Performance by Google WebP Project Group](https://cdn.zsl0621.cc/2025/blog/webp-performance---2025-05-09T12-01-03.png)
 
 # 正文
 

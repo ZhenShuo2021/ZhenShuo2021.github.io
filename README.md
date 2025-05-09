@@ -12,7 +12,7 @@
 - 支援 SCSS 管理外觀
 - 整合和優化多項外觀和功能，例如增加 shortcode，閱讀進度條、優化標籤和分類外觀等等...
 
-![PageSpeed](assets/PageSpeed.jpg)
+![PageSpeed](https://cdn.zsl0621.cc/2025/blog/PageSpeed---2025-05-09T12-24-53.jpg)
 
 ## 說明
 

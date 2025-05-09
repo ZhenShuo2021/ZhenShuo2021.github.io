@@ -33,7 +33,7 @@ progress_bar: true
 
 ## 重構
 
-研究所雖然把 Numpy/Numba 摸到估計全台灣也不會有幾個人[比我還熟](https://docs.zsl0621.cc/docs/python/numba-tutorial-accelerate-python-computing)，但是在數值模擬以外完全就是門外漢。退伍後完成了三個 Python 小專案，從能動進化到掌握各個程式碼品質工具已經進步很多，分別進行以下任務
+研究所雖然把 Numpy/Numba 摸到估計全台灣也不會有幾個人[比我還熟](https://zsl0621.cc/python/numba-tutorial-1)，但是在數值模擬以外完全就是門外漢。退伍後完成了三個 Python 小專案，從能動進化到掌握各個程式碼品質工具已經進步很多，分別進行以下任務
 
 1. [PostProcessor](https://github.com/ZhenShuo2021/PostProcess-of-Powerful-Pixiv-Downloader): 檔案分類、整理、爬蟲搜尋遺失檔案、可視化
 2. [V2PH-Downloader](https://github.com/ZhenShuo2021/V2PH-Downloader): 就是個爬蟲專案，不過搞了多線程、抽象模式、策略模式、工廠模式、密碼學套件應用等等程式實作
@@ -67,7 +67,7 @@ progress_bar: true
 
 看到黑暗執行緒說成這樣我也很感興趣就去網路上找 PDF 讀了第一章。單純看黑暗執行緒的描述，如果是我寫八成也會想辦法合併迴圈，這裡就要提醒自己「相同等級的時間複雜度沒必要特別優化」，以及「編譯器比自己還聰明」。拿古老的 duff's device 為例，這種神奇的方式[現代編譯器](https://www.youtube.com/watch?v=-WFtkrhzTtg)開 -O3就沒了沒必要搞這些，最後效能提升可能都 negligible。
 
-效能優化問題就像我自己寫的[效能測試](https://docs.zsl0621.cc/docs/python/false-sharing-in-python)一樣，在優化效能之前先搞清楚瓶頸和優化平台、語言等，而不是被假議題騙了。以 Python 科學運算為例，想都不用想就是改用 Numba 或 pybind11，其他都是徒勞，除此之外還要對現代硬體和編譯器有正確認知，例如 [unconditional writes](https://pythonspeed.com/articles/speeding-up-numba/) 這種略為 tricky 的方式就是很好的實現。這裡也順便推廣[自己的文章](https://docs.zsl0621.cc/docs/python/numba-tutorial-accelerate-python-computing#see-also)，包含各種加速方式的文章蒐集。
+效能優化問題就像我自己寫的[效能測試](https://docs.zsl0621.cc/docs/python/false-sharing-in-python)一樣，在優化效能之前先搞清楚瓶頸和優化平台、語言等，而不是被假議題騙了。以 Python 科學運算為例，想都不用想就是改用 Numba 或 pybind11，其他都是徒勞，除此之外還要對現代硬體和編譯器有正確認知，例如 [unconditional writes](https://pythonspeed.com/articles/speeding-up-numba/) 這種略為 tricky 的方式就是很好的實現。這裡也順便推廣[自己的文章](https://zsl0621.cc/python/numba-tutorial-1#see-also)，包含各種加速方式的文章蒐集。
 
 總結就是搞清楚任務瓶頸、程式語言、硬體平台和編譯器。
 

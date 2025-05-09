@@ -92,15 +92,15 @@ xychart-beta
 
 和不同方案比較之後這裡再分析自己方案的效能，使用 [CLInic.js](https://github.com/CLInicjs/node-CLInic) 進行效能分析，以 `pnpm clinic flame -- node scripts/shiki/index.js` 測試，完整的火焰圖如下：
 
-![all](0.webp "包含 V8 引擎開銷的火焰圖")
+![all](https://cdn.zsl0621.cc/2025/blog/use-shiki-in-hugo-0---2025-05-09T11-59-42.webp "包含 V8 引擎開銷的火焰圖")
 
 可以看到 V8 引擎佔據七成時間，這時如果把我們自己的 shiki 關閉，再來對比上下兩張圖，可以看到差距非常小，代表沒有優化空間了：
 
-![no-shiki](1.webp "只關閉 shiki 的火焰圖")
+![no-shiki](https://cdn.zsl0621.cc/2025/blog/use-shiki-in-hugo-1---2025-05-09T11-59-42.webp "只關閉 shiki 的火焰圖")
 
 不過我們還是簡單觀察一下目前的效能瓶頸，把 V8 和依賴的耗時都關掉，結果如下
 
-![only-node-and-shiki](2.webp "只剩下 node 和 shiki 的火焰圖")
+![only-node-and-shiki](https://cdn.zsl0621.cc/2025/blog/use-shiki-in-hugo-2---2025-05-09T11-59-42.webp "只剩下 node 和 shiki 的火焰圖")
 
 紅框處是我的函式耗時，可以看到有一半的時間花在掃描檔案上，因為 eallion 的構建結果有高達 6000 個資料夾 (`find ./public -mindepth 1 -type d | wc -l` 輸出 6451)，所以耗時長是可以預測的。
 

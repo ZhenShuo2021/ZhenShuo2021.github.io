@@ -15,7 +15,7 @@ progress_bar: true
 
 <div align="center">
 
-![共時性](共時性.jpg)
+![共時性](https://cdn.zsl0621.cc/2025/blog/共時性---2025-05-09T11-51-22.jpg)
 
 </div>
 

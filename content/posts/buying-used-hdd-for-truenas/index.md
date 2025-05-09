@@ -17,7 +17,7 @@ progress_bar: true
 
 在二手版逛到 10T 硬碟全盤慢速掃描無壞軌無警告無 info，S.M.A.R.T. 數據除了使用時間長了點也沒什麼問題，才賣 3000 覺得不錯，考慮幾天後就買了，結果裝了兩天之後 TrueNAS 就開始寄信給我
 
-![zfs alert](alert.png "TrueNAS 系統警告")
+![zfs alert](https://cdn.zsl0621.cc/2025/blog/truenas-disk-alert---2025-05-09T11-54-01.png "TrueNAS 系統警告")
 
 想說還有得救，先進後台管理頁面點了 scrub，結果也沒用，繼續抱著僥倖心態先清除錯誤 `sudo zfs clear`，然後不到 12 小時後半夜四點又寄信給我，心理想說完ㄌ，不信邪手動打 `sudo zfs scrub HGST10T` (註：這裡名稱直接打幫分區取的名字而不是 /dev/sdx) 還是一樣，最後只好跟賣家溝通退貨，還好他是個好人可以退貨。
 

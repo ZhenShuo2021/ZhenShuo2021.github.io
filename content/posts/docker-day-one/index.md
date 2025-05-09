@@ -9,5 +9,5 @@ categories: ["程式語言"]
 series: []
 series_order: 
 progress_bar: true
-externalUrl: https://docs.zsl0621.cc/docs/linux/docker-day-one
+externalUrl: https://zsl0621.cc/memo/others/docker-day-one
 ---
