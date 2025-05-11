@@ -42,7 +42,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.147.1'
+          hugo-version: "0.147.1"
           extended: true
 
       # https://github.com/pnpm/action-setup?tab=readme-ov-file#use-cache-to-reduce-installation-time
@@ -56,8 +56,8 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '23.10.0'
-          cache: 'pnpm'
+          node-version: "23.10.0"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -83,7 +83,7 @@ jobs:
             --baseURL "https://www.zsl0621.cc/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
           pnpm shiki
-          
+
       - name: Hugo Cache Save
         id: hugo-cache-save
         uses: actions/cache/save@v4

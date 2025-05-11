@@ -53,9 +53,7 @@ function CodoCopyCustom() {
 function CodoCopyOriginal() {
   var scriptBundle = document.getElementById("script-bundle");
   var copyText =
-    scriptBundle && scriptBundle.getAttribute("data-copy")
-      ? scriptBundle.getAttribute("data-copy")
-      : "Copy";
+    scriptBundle && scriptBundle.getAttribute("data-copy") ? scriptBundle.getAttribute("data-copy") : "Copy";
   var copiedText =
     scriptBundle && scriptBundle.getAttribute("data-copied")
       ? scriptBundle.getAttribute("data-copied")
@@ -107,7 +105,7 @@ function CodoCopyOriginal() {
   function codeWasCopied(button) {
     button.blur();
     button.innerText = copiedText;
-    setTimeout(function () {
+    setTimeout(() => {
       button.innerText = copyText;
     }, 2000);
   }

@@ -16,122 +16,127 @@
 {{ end }}
 
 {{ with $context }}
-{{ $meta := newScratch }}
+  {{ $meta := newScratch }}
 
-{{/* Gather partials for this context */}}
-{{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-{{ else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
-{{ end }}
-
-{{ $formattedDate := .Date | time.Format "2006-01-02 15:04:05" }}
-{{ $formattedLastmod := .Lastmod | time.Format "2006-01-02 15:04:05" }}
-
-{{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne $formattedDate $formattedLastmod) (gt (.Lastmod | time.Format "2006") 1) }}
-  {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
-{{ end }}
-
-{{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
-  {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
-{{ end }}
-
-{{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0)
-}}
-  {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
-{{ end }}
-
-{{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
-{{ end }}
-
-{{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
-{{ end }}
-
-{{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
-  {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
-{{ end }}
-
-
-<div class="flex flex-row flex-wrap items-center">
-  {{/* Output partials */}}
-  {{ with ($meta.Get "partials") }}
-  {{ delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML }}
+  {{/* Gather partials for this context */}}
+  {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+    {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
+  {{ else if and (eq $scope "single") (.Params.showDateOnlyInArticle | default (.Site.Params.article.showDateOnlyInArticle | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
   {{ end }}
 
-  {{/* Output draft label */}}
-  {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
-  <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
-  {{ end }}
-</div>
+  {{ $formattedDate := .Date | time.Format "2006-01-02 15:04:05" }}
+  {{ $formattedLastmod := .Lastmod | time.Format "2006-01-02 15:04:05" }}
 
-{{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}
-<div class="flex flex-row flex-wrap items-center">
-  {{ range $taxonomy, $terms := .Site.Taxonomies }}
-  {{ if (eq $taxonomy "authors")}}
-  {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
-  {{ range $i, $a := $context.GetTerms $taxonomy }}
-    {{ if not (eq $i 0) }} ,&nbsp; {{ end }} <div style="cursor: pointer;" onclick="window.open({{ $a.RelPermalink }},'_self')">{{ $a.LinkTitle }}</div>
+  {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne $formattedDate $formattedLastmod) (gt (.Lastmod | time.Format "2006") 1) }}
+    {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
   {{ end }}
-  {{ end }}
-  {{ end }}
-  {{ end }}
-</div>
-{{ end }}
 
-<div style="height: .25rem;"></div>
-{{/* Output taxonomies */}}
-{{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-<div class="cardInfo">
+  {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+  {{ end }}
+
+  {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne .ReadingTime 0) }}
+    {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+  {{ end }}
+
+  {{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+  {{ end }}
+
+  {{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+  {{ end }}
+
+  {{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default false)) }}
+    {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
+  {{ end }}
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    {{/* Output partials */}}
+    {{ with ($meta.Get "partials") }}
+      {{ delimit . "<span class=\"px-2 text-neutral-500\">-</span>" | safeHTML }}
+    {{ end }}
+
+    {{/* Output draft label */}}
+    {{ if and (eq $scope "single") (and .Draft .Site.Params.article.showDraftLabel) }}
+      <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+    {{ end }}
+  </div>
+
+  {{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}
+    <div class="flex flex-row flex-wrap items-center">
+      {{ range $taxonomy, $terms := .Site.Taxonomies }}
+        {{ if (eq $taxonomy "authors") }}
+          {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+            {{ range $i, $a := $context.GetTerms $taxonomy }}
+              {{ if not (eq $i 0) }},&nbsp;{{ end }}
+              <div style="cursor: pointer;" onclick="window.open({{ $a.RelPermalink }},'_self')">
+                {{ $a.LinkTitle }}
+              </div>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    </div>
+  {{ end }}
+
+
+  <div style="height: .25rem;"></div>
   {{/* Output taxonomies */}}
   {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
-  <div class="cardInfo">
-    {{ with .Params.categories }}
-    <div class="flex flex-wrap items-center mr-4 mb-2">
-      <span class="" style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">
-        {{ partial "icon.html" "list" }}
-      </span>
+    <div class="cardInfo">
+      {{/* Output taxonomies */}}
+      {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+        <div class="cardInfo">
+          {{ with .Params.categories }}
+            <div class="flex flex-wrap items-center mr-4 mb-2">
+              <span
+                class=""
+                style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">
+                {{ partial "icon.html" "list" }}
+              </span>
 
-      {{ range . }}
-        <span class="mr-1 mb-1">
-          <a href="{{ printf "/categories/%s" (urlize . | lower) }}" class="inline-block relative">
-            {{ partial "badge.html" . }}
-          </a>
-        </span>
+              {{ range . }}
+                <span class="mr-1 mb-1">
+                  <a href="{{ printf "/categories/%s" (urlize . | lower) }}" class="inline-block relative">
+                    {{ partial "badge.html" . }}
+                  </a>
+                </span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+
+        <div class="cardInfo">
+          {{ with .Params.tags }}
+            <div class="flex flex-wrap items-center mr-4 mb-2">
+              <span
+                class=""
+                style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">
+                {{ partial "icon.html" "tag" }}
+              </span>
+              {{ range . }}
+                <span class="mr-1 mb-1">
+                  <a href="{{ printf "/tags/%s" (urlize . | lower) }}" class="inline-block relative">
+                    {{ partial "badge.html" . }}
+                  </a>
+                </span>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
-    {{ end }}
-  </div>
-
-  <div class="cardInfo">
-    {{ with .Params.tags }}
-    <div class="flex flex-wrap items-center mr-4 mb-2">
-      <span class="" style="font-size: 1.1rem; position: relative; top: -0.15em; left: -0.0em; margin-right: .5rem;">
-        {{ partial "icon.html" "tag" }}
-      </span>
-      {{ range . }}
-        <span class="mr-1 mb-1">
-          <a href="{{ printf "/tags/%s" (urlize . | lower) }}" class="inline-block relative">
-            {{ partial "badge.html" . }}
-          </a>
-        </span>
-      {{ end }}
-    </div>
-    {{ end }}
-  </div>
   {{ end }}
-</div>
-{{ end }}
-
-
 
 {{ end }}

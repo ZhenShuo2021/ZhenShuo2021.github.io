@@ -1,26 +1,29 @@
 {{ define "main" }}
-<!-- 客製化紀錄
+  <!-- 客製化紀錄
 
 增加標籤雲，標籤雲標題置中
 
 -->
-{{ .Scratch.Set "scope" "list" }}
-{{ if .Site.Params.taxonomy.showHero | default false }}
-  {{ $hero := print "hero/" .Site.Params.taxonomy.heroStyle ".html" }}
-  {{ if templates.Exists (print "partials/" $hero) }}
-    {{ partial $hero . }}
-  {{ else }}
-    {{ partial "hero/basic.html" . }}
+  {{ .Scratch.Set "scope" "list" }}
+  {{ if .Site.Params.taxonomy.showHero | default false }}
+    {{ $hero := print "hero/" .Site.Params.taxonomy.heroStyle ".html" }}
+    {{ if templates.Exists (print "partials/" $hero) }}
+      {{ partial $hero . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
   {{ end }}
-{{ end }}
 
-{{ $toc := and (.Params.showTableOfContents | default (.Site.Params.taxonomy.showTableOfContents | default false)) (in .TableOfContents "<ul") }} 
+  {{ $toc := and (.Params.showTableOfContents | default (.Site.Params.taxonomy.showTableOfContents | default false)) (in .TableOfContents "<ul") }}
+
 
   <header>
     {{ if .Params.showBreadcrumbs | default (.Site.Params.taxonomy.showBreadcrumbs | default false) }}
       {{ partial "breadcrumbs.html" . }}
     {{ end }}
-    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral" style="text-align: center;">{{ .Title }}</h1>
+    <h1 class="mt-5 text-4xl font-extrabold text-neutral-900 dark:text-neutral" style="text-align: center;">
+      {{ .Title }}
+    </h1>
     <div class="mt-1 mb-2 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       {{ partial "article-meta/taxonomy.html" (dict "context" . "scope" "single") }}
     </div>
@@ -35,10 +38,12 @@
     <script>
       var oid = "views_taxonomy_{{ .Data.Plural }}"
       var oid_likes = "likes_taxonomy_{{ .Data.Plural }}"
-    </script>
-    {{ $jsPage := resources.Get "js/page.js" }}
+    </script> {{ $jsPage := resources.Get "js/page.js" }}
     {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint "sha512" }}
-    <script type="text/javascript" src="{{ $jsPage.RelPermalink }}" integrity="{{ $jsPage.Data.Integrity }}"></script>
+    <script
+      type="text/javascript"
+      src="{{ $jsPage.RelPermalink }}"
+      integrity="{{ $jsPage.Data.Integrity }}"></script>
   {{ end }}
 
   {{ if .Site.Params.taxonomy.cardView }}

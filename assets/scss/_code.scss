@@ -3,42 +3,45 @@
 
 // 程式碼樣式設定
 .prose {
-    --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
-    --tw-prose-invert-quote-borders: rgba(var(--color-primary-400), 1);
-    --tw-prose-code: rgba(var(--color-secondary-700), var(--tw-text-opacity, 1));
+  --tw-prose-quote-borders: rgba(var(--color-primary-900), 1);
+  --tw-prose-invert-quote-borders: rgba(var(--color-primary-400), 1);
+  --tw-prose-code: rgba(var(--color-secondary-700), var(--tw-text-opacity, 1));
 }
 
-// 滾動條樣式  
+// 滾動條樣式
 .scrollbar-thin::-webkit-scrollbar {
-    width: 12.5px;
+  width: 12.5px;
+}
+
+.dark code:not(pre code) {
+  --color-neutral-700: var(--color-neutral-300);
 }
 
 // 程式碼區塊滾動條
 pre {
-    &::-webkit-scrollbar {
-        height: 7.5px !important;
+  &::-webkit-scrollbar {
+    height: 7.5px !important;
 
-        &-track {
-            background: transparent;
-        }
-
-        &-thumb {
-            border-radius: 15px;
-            background: rgb(var(--color-neutral-600));
-        }
+    &-track {
+      background: transparent;
     }
+
+    &-thumb {
+      border-radius: 15px;
+      background: rgb(var(--color-neutral-600));
+    }
+  }
 }
 
 // 深色模式程式碼樣式
 .dark {
-
-    .shiki,
-    .shiki span {
-        color: var(--shiki-dark) !important;
-        background-color: var(--shiki-dark-bg) !important;
-        /* 可選，設定字體樣式 */
-        /* font-style: var(--shiki-dark-font-style) !important; */
-        /* font-weight: var(--shiki-dark-font-weight) !important; */
-        /* text-decoration: var(--shiki-dark-text-decoration) !important; */
-    }
+  .shiki,
+  .shiki span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    /* 可選，設定字體樣式 */
+    /* font-style: var(--shiki-dark-font-style) !important; */
+    /* font-weight: var(--shiki-dark-font-weight) !important; */
+    /* text-decoration: var(--shiki-dark-text-decoration) !important; */
+  }
 }

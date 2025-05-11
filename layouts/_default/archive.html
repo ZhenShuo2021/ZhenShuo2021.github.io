@@ -1,322 +1,331 @@
 {{ define "main" }}
-
-{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-  {{ $style := .Params.heroStyle | default .Site.Params.article.heroStyle | default "basic" }}
-  {{ $heroPath := print "hero/" $style ".html" }}
-  {{ if templates.Exists (print "partials/" $heroPath) }}
-    {{ partial $heroPath . }}
-  {{ else }}
-    {{ partial "hero/basic.html" . }}
+  {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+    {{ $style := .Params.heroStyle | default .Site.Params.article.heroStyle | default "basic" }}
+    {{ $heroPath := print "hero/" $style ".html" }}
+    {{ if templates.Exists (print "partials/" $heroPath) }}
+      {{ partial $heroPath . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
+    {{ end }}
   {{ end }}
-{{ end }}
 
-{{ $currentLang := $.Site.Language.Lang }}
-{{ $months := index $.Site.Data.months $currentLang }}
+  {{ $currentLang := $.Site.Language.Lang }}
+  {{ $months := index $.Site.Data.months $currentLang }}
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const postItems = document.querySelectorAll('.post-item');
-        postItems.forEach(item => {
-            item.addEventListener('mouseenter', function () {
-                this.classList.add('post-item-hover');
-            });
-            item.addEventListener('mouseleave', function () {
-                this.classList.remove('post-item-hover');
-            });
-        });
 
-        const monthTitles = document.querySelectorAll('.month-title');
-        monthTitles.forEach(title => {
-            const [color1, color2, color3] = generateContrastingColors(false);
-            const [color4, color5, color6] = generateContrastingColors(true);
-            const angle1 = generateRandomAngle();
-            const angle2 = generateRandomAngle();
-            title.style.setProperty('--gradient-1', `linear-gradient(${angle1}deg, ${color1}, ${color2})`);
-            title.style.setProperty('--gradient-2', `linear-gradient(${angle2}deg, ${color4}, ${color5})`);
-        });
-    });
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const postItems = document.querySelectorAll(".post-item")
+      postItems.forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          this.classList.add("post-item-hover")
+        })
+        item.addEventListener("mouseleave", function () {
+          this.classList.remove("post-item-hover")
+        })
+      })
+
+      const monthTitles = document.querySelectorAll(".month-title")
+      monthTitles.forEach((title) => {
+        const [color1, color2, color3] = generateContrastingColors(false)
+        const [color4, color5, color6] = generateContrastingColors(true)
+        const angle1 = generateRandomAngle()
+        const angle2 = generateRandomAngle()
+        title.style.setProperty("--gradient-1", `linear-gradient(${angle1}deg, ${color1}, ${color2})`)
+        title.style.setProperty("--gradient-2", `linear-gradient(${angle2}deg, ${color4}, ${color5})`)
+      })
+    })
 
     function generateContrastingColors(isDarkMode) {
-        const baseColor = Math.random() * 360;
-        const c1 = baseColor;
-        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360;
-        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360;
-        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360;
+      const baseColor = Math.random() * 360
+      const c1 = baseColor
+      const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360
+      const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360
+      const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360
 
-        const adjustColor = (color, isDarkMode) => {
-            const lightness = isDarkMode ? 40 : 75;
-            const saturation = 100;
-            return `hsl(${color}, ${saturation}%, ${lightness}%)`;
-        };
+      const adjustColor = (color, isDarkMode) => {
+        const lightness = isDarkMode ? 40 : 75
+        const saturation = 100
+        return `hsl(${color}, ${saturation}%, ${lightness}%)`
+      }
 
-        const color1 = adjustColor(c1, isDarkMode);
-        const color2 = adjustColor(c2, isDarkMode);
-        const color3 = adjustColor(c3, isDarkMode);
+      const color1 = adjustColor(c1, isDarkMode)
+      const color2 = adjustColor(c2, isDarkMode)
+      const color3 = adjustColor(c3, isDarkMode)
 
-        return [color1, color2, color3];
+      return [color1, color2, color3]
     }
 
     function generateRandomAngle() {
-        const step = 15;
-        const minAngle = 30;
-        const maxAngle = 150;
-        const totalSteps = (maxAngle - minAngle) / step + 1;
-        const randomStep = Math.floor(Math.random() * totalSteps);
-        return minAngle + randomStep * step;
+      const step = 15
+      const minAngle = 30
+      const maxAngle = 150
+      const totalSteps = (maxAngle - minAngle) / step + 1
+      const randomStep = Math.floor(Math.random() * totalSteps)
+      return minAngle + randomStep * step
     }
-</script>
+  </script>
 
-<style>
+  <style>
     .timeline {
-        max-width: 850px;
-        margin: 0 auto;
-        padding: 20px;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     .year-container {
-        margin-bottom: 40px;
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
-        background-color: rgba(var(--color-neutral-300), 0.56);
+      margin-bottom: 40px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
+      background-color: rgba(var(--color-neutral-300), 0.56);
     }
 
     .year {
-        background-color: rgba(var(--color-neutral-400), 0.91);
-        padding: 10px 20px;
-        font-size: 24px;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      background-color: rgba(var(--color-neutral-400), 0.91);
+      padding: 10px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .post-count {
-        background-color: #007bff;
-        color: white;
-        padding: 2px 8px;
-        border-radius: 12px;
-        font-size: 14px;
+      background-color: #007bff;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 14px;
     }
 
     .content {
-        padding: 20px;
+      padding: 20px;
     }
 
     .month-container {
-        margin-bottom: 30px;
+      margin-bottom: 30px;
     }
 
     .month-title {
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: #333;
-        background: var(--gradient-1);
-        padding: 0.6rem 1rem;
-        border-radius: 40px;
-        border: transparent;
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        line-height: 1;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #333;
+      background: var(--gradient-1);
+      padding: 0.6rem 1rem;
+      border-radius: 40px;
+      border: transparent;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
     }
 
     .post-list {
-        list-style-type: none;
-        padding: 2px;
+      list-style-type: none;
+      padding: 2px;
     }
 
     .post-item {
-        margin-bottom: 10px;
-        padding: 10px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
-        background: #ffffff;
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      transition:
+        transform 0.3s,
+        z-index 0.3s,
+        box-shadow 0.3s,
+        background-color 0.3s;
+      background: #ffffff;
     }
 
     .post-item-hover {
-        transform: scale(1.01);
+      transform: scale(1.01);
     }
 
     .post-item-inner {
-        display: grid;
-        grid-template-areas:
-            "date details"
-            "date category";
-        grid-template-columns: auto 1fr;
-        gap: 1px;
-        background-color: transparent;
-        padding-bottom: 0.4em;
+      display: grid;
+      grid-template-areas:
+        "date details"
+        "date category";
+      grid-template-columns: auto 1fr;
+      gap: 1px;
+      background-color: transparent;
+      padding-bottom: 0.4em;
     }
 
     .post-date {
-        font-size: 14px;
-        color: rgb(var(--color-neutral-500));
-        margin-right: 11px;
-        margin-left: 4px;
-        white-space: nowrap;
-        min-width: 4em;
-        grid-area: date;
+      font-size: 14px;
+      color: rgb(var(--color-neutral-500));
+      margin-right: 11px;
+      margin-left: 4px;
+      white-space: nowrap;
+      min-width: 4em;
+      grid-area: date;
     }
 
     .post-details {
-        grid-area: details;
+      grid-area: details;
     }
 
     .post-title {
-        font-size: 20px;
-        color: rgb(var(--color-neutral-800)) !important;
-        text-decoration: none;
-        font-weight: bold;
+      font-size: 20px;
+      color: rgb(var(--color-neutral-800)) !important;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .tag-and-category {
-        grid-area: category;
-        margin-bottom: -20px;
+      grid-area: category;
+      margin-bottom: -20px;
     }
 
     .dark .year {
-        background-color: rgba(var(--color-neutral-900), 0.95) !important;
-        color: rgb(var(--color-neutral-100));
+      background-color: rgba(var(--color-neutral-900), 0.95) !important;
+      color: rgb(var(--color-neutral-100));
     }
 
     .dark .year-container {
-        border: 1px solid rgb(var(--color-neutral-900));
-        background-color: rgba(var(--color-neutral-800), 0.3);
+      border: 1px solid rgb(var(--color-neutral-900));
+      background-color: rgba(var(--color-neutral-800), 0.3);
     }
 
     .dark .month-title {
-        color: rgb(var(--color-neutral-100));
-        background: var(--gradient-2);
+      color: rgb(var(--color-neutral-100));
+      background: var(--gradient-2);
     }
 
     .dark .post-item {
-        background-color: rgba(var(--color-neutral-800), 1);
+      background-color: rgba(var(--color-neutral-800), 1);
     }
 
     .dark .post-item-hover {
-        background-color: rgba(var(--color-neutral-800), 0.8) !important;
+      background-color: rgba(var(--color-neutral-800), 0.8) !important;
     }
 
     .dark .post-date {
-        color: rgb(var(--color-neutral-100));
+      color: rgb(var(--color-neutral-100));
     }
 
     .dark .post-title {
-        color: rgb(var(--color-neutral-100)) !important;
+      color: rgb(var(--color-neutral-100)) !important;
     }
 
     @media (max-width: 768px) {
-        .timeline {
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0px;
-        }
+      .timeline {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+      }
 
-        .post-list {
-            padding: 2px;
-        }
+      .post-list {
+        padding: 2px;
+      }
 
-        .post-item {
-            width: 100%;
-            margin-bottom: 12px;
-            background-color: rgba(var(--color-neutral-100), 0.95);
-            border-radius: 8px;
-            overflow: hidden;
-        }
+      .post-item {
+        width: 100%;
+        margin-bottom: 12px;
+        background-color: rgba(var(--color-neutral-100), 0.95);
+        border-radius: 8px;
+        overflow: hidden;
+      }
 
-        .post-item-inner {
-            display: grid;
-            grid-template-areas:
-                "date"
-                "details"
-                "category";
-            grid-template-columns: 1fr;
-            grid-template-rows: auto auto auto;
-            gap: 0;
-            padding: 5.5px;
-            margin-bottom: 1px;
-        }
+      .post-item-inner {
+        display: grid;
+        grid-template-areas:
+          "date"
+          "details"
+          "category";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0;
+        padding: 5.5px;
+        margin-bottom: 1px;
+      }
 
-        .post-date {
-            margin-left: 0px;
-            grid-area: date;
-            margin-top: -1.2em;
-            margin-bottom: -.8em;
-            font-size: 0.6em;
-            color: rgb(var(--color-neutral-500));
-            padding: 0px;
-        }
+      .post-date {
+        margin-left: 0px;
+        grid-area: date;
+        margin-top: -1.2em;
+        margin-bottom: -0.8em;
+        font-size: 0.6em;
+        color: rgb(var(--color-neutral-500));
+        padding: 0px;
+      }
 
-        .post-details {
-            grid-area: details;
-            margin-bottom: 0.1rem;
-            padding: 0px;
-        }
+      .post-details {
+        grid-area: details;
+        margin-bottom: 0.1rem;
+        padding: 0px;
+      }
 
-        .tag-and-category {
-            padding: 0px;
-            grid-area: category;
-            margin-top: 0px;
-        }
+      .tag-and-category {
+        padding: 0px;
+        grid-area: category;
+        margin-top: 0px;
+      }
     }
-</style>
+  </style>
 
-<article class="timeline">
+  <article class="timeline">
+    <header id="single_header" class="mt-5 max-w-prose">
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
+    </header>
 
-<header id="single_header" class="mt-5 max-w-prose">
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
-</header>
+    <div class="article-content max-w-prose mb-20"><br>{{ .Content }}</div>
 
-<div class="article-content max-w-prose mb-20"><br>{{ .Content }}</div>
-
-<section class="all-posts mt-8 text-neutral">
-    {{ $filteredPages := where .Site.RegularPages "Params.noArchive" "ne" true }}
-    {{ range $filteredPages.GroupByDate "2006" }}
-    <div class="year-container">
-        <div class="year">
+    <section class="all-posts mt-8 text-neutral">
+      {{ $filteredPages := where .Site.RegularPages "Params.noArchive" "ne" true }}
+      {{ range $filteredPages.GroupByDate "2006" }}
+        <div class="year-container">
+          <div class="year">
             {{ .Key }}
             <span class="post-count">{{ len .Pages }}</span>
-        </div>
-        <div class="content">
+          </div>
+          <div class="content">
             {{ range .Pages.GroupByDate "January" }}
-            <div class="month-container">
+              <div class="month-container">
                 <span class="month-title">{{ index $months .Key }}</span>
                 <ul class="post-list">
-                    {{ range .Pages }}
+                  {{ range .Pages }}
                     <li class="post-item">
-                        <div class="post-item-inner">
-                            <div class="post-date">{{ .Date.Format "1月2日" }}</div>
-                            <div class="post-details">
-                                {{ if .Params.externalUrl }}
-                                <a href="{{ .Params.externalUrl }}" class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral" target="_blank">
-                                    {{ .Title }}
-                                    <span class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
-                                        <span class="rtl:hidden">&#8599;</span>
-                                        <span class="ltr:hidden">&#8598;</span>
-                                    </span>
-                                </a>
-                                {{ else }}
-                                <a href="{{ .Permalink }}" class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral">{{ .Title }}</a>
-                                {{ end }}
-                            </div>
-                            {{ partial "custom/tag-and-category.html" . }}
+                      <div class="post-item-inner">
+                        <div class="post-date">{{ .Date.Format "1月2日" }}</div>
+                        <div class="post-details">
+                          {{ if .Params.externalUrl }}
+                            <a
+                              href="{{ .Params.externalUrl }}"
+                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                              target="_blank">
+                              {{ .Title }}
+                              <span
+                                class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
+                                <span class="rtl:hidden">&#8599;</span>
+                                <span class="ltr:hidden">&#8598;</span>
+                              </span>
+                            </a>
+                          {{ else }}
+                            <a
+                              href="{{ .Permalink }}"
+                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                              >{{ .Title }}</a
+                            >
+                          {{ end }}
                         </div>
+                        {{ partial "custom/tag-and-category.html" . }}
+                      </div>
                     </li>
-                    {{ end }}
+                  {{ end }}
                 </ul>
-            </div>
+              </div>
             {{ end }}
+          </div>
         </div>
-    </div>
-    {{ end }}
-</section>
-
-</article>
-
+      {{ end }}
+    </section>
+  </article>
 {{ end }}

@@ -9,14 +9,7 @@ const HUGO_OK_FLAG = "Web Server is available"; // 監聽 hugo html 建立完成
 const HUGO_DEBOUNCE_MS = 300; // 避免短時間重複執行 shiki
 const CLEANUP_RETRY_MS = 500; // spawn process 清除失敗的重試等待時間
 
-const EXIT_SIGNALS = [
-  "SIGTERM",
-  "SIGHUP",
-  "SIGQUIT",
-  "SIGABRT",
-  "uncaughtException",
-  "unhandledRejection",
-];
+const EXIT_SIGNALS = ["SIGTERM", "SIGHUP", "SIGQUIT", "SIGABRT", "uncaughtException", "unhandledRejection"];
 
 let debounceTimer;
 let isShikiRunning = false;

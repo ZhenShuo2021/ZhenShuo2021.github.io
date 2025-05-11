@@ -1,8 +1,8 @@
 // shortcode/_admonition.scss
 // 警示框元件樣式
 
-@use '../variables' as vars;
-@use 'sass:map';
+@use "../variables" as vars;
+@use "sass:map";
 
 // 警示框基本樣式
 .admonition {
@@ -77,14 +77,14 @@
 }
 
 // 套用所有警示框樣式
-@include admonition-light-style('note', vars.$admonition-note-light);
-@include admonition-light-style('info', vars.$admonition-info-light);
-@include admonition-light-style('tip', vars.$admonition-tip-light);
-@include admonition-light-style('warning', vars.$admonition-warning-light);
-@include admonition-light-style('danger', vars.$admonition-danger-light);
+@include admonition-light-style("note", vars.$admonition-note-light);
+@include admonition-light-style("info", vars.$admonition-info-light);
+@include admonition-light-style("tip", vars.$admonition-tip-light);
+@include admonition-light-style("warning", vars.$admonition-warning-light);
+@include admonition-light-style("danger", vars.$admonition-danger-light);
 
-@include admonition-dark-style('note', vars.$admonition-note-dark);
-@include admonition-dark-style('info', vars.$admonition-info-dark);
-@include admonition-dark-style('tip', vars.$admonition-tip-dark);
-@include admonition-dark-style('warning', vars.$admonition-warning-dark);
-@include admonition-dark-style('danger', vars.$admonition-danger-dark);
+@include admonition-dark-style("note", vars.$admonition-note-dark);
+@include admonition-dark-style("info", vars.$admonition-info-dark);
+@include admonition-dark-style("tip", vars.$admonition-tip-dark);
+@include admonition-dark-style("warning", vars.$admonition-warning-dark);
+@include admonition-dark-style("danger", vars.$admonition-danger-dark);

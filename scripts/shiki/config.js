@@ -50,7 +50,7 @@ const CONFIG = {
     "tex",
     "php",
     "nginx",
-    "docker"
+    "docker",
   ],
 
   // codeimporter 根據副檔名設定 language，使用字典映射 shiki 接受的副檔名

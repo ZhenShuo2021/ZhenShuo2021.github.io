@@ -64,9 +64,7 @@ class MainThreadManager {
   async runMainThread() {
     console.log("Starting HTML syntax highlighting process in:");
     for (const target of this.targets) {
-      const excludeInfo = target.EXCLUDE?.length
-        ? ` (excluding: ${target.EXCLUDE.join(", ")})`
-        : "";
+      const excludeInfo = target.EXCLUDE?.length ? ` (excluding: ${target.EXCLUDE.join(", ")})` : "";
       console.log(`- ${target.DIR}${excludeInfo}`);
     }
 
@@ -85,9 +83,7 @@ class MainThreadManager {
 
     const workerCount = this._calculateOptimalWorkerCount(filteredFiles.length);
     if (!this.config.QUIET) {
-      console.log(
-        `Found ${filteredFiles.length} HTML files. Starting with ${workerCount} workers.`,
-      );
+      console.log(`Found ${filteredFiles.length} HTML files. Starting with ${workerCount} workers.`);
     }
 
     return this._startWorkerProcessing(filteredFiles, workerCount);
@@ -101,10 +97,7 @@ class MainThreadManager {
         try {
           const stats = await fs.stat(filePath);
           const lastModified = stats.mtimeMs;
-          if (
-            !this.processedFiles.has(filePath) ||
-            this.processedFiles.get(filePath) < lastModified
-          ) {
+          if (!this.processedFiles.has(filePath) || this.processedFiles.get(filePath) < lastModified) {
             filteredFiles.push(filePath);
           }
         } catch (error) {
@@ -119,11 +112,7 @@ class MainThreadManager {
 
   _calculateOptimalWorkerCount(fileCount) {
     const cpuCount = require("node:os").cpus().length;
-    const baseWorkerCount = Math.min(
-      this.config.THREAD_COUNT,
-      Math.ceil(fileCount / 10),
-      cpuCount - 1 || 1,
-    );
+    const baseWorkerCount = Math.min(this.config.THREAD_COUNT, Math.ceil(fileCount / 10), cpuCount - 1 || 1);
     return Math.max(1, baseWorkerCount);
   }
 
