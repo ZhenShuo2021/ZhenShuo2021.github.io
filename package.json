@@ -20,15 +20,26 @@
     "update-blowfish:py": "python3 update-blowfish.py",
     "update-blowfish:sh": "./update-blowfish.sh"
   },
+  "lint-staged": {
+    "**/*": [
+      "prettier --write --list-different",
+      "pnpm biome lint --write --no-errors-on-unmatched"
+    ],
+    "content/*.md": [
+      "markdownlint-cli2 --fix '#node_modules' '#themes'"
+    ]
+  },
   "devDependencies": {
+    "@awmottaz/prettier-plugin-void-html": "^1.8.0",
     "@biomejs/biome": "^1.9.4",
     "chalk": "^5.4.1",
     "concurrently": "^9.1.0",
     "dom-serializer": "^2.0.0",
     "html-entities": "^2.6.0",
     "htmlparser2": "^10.0.0",
+    "lint-staged": "^16.0.0",
     "markdownlint-cli2": "^0.17.2",
-    "pre-commit": "^1.2.2",
+    "prettier-plugin-go-template": "^0.0.15",
     "sass": "^1.86.3",
     "serve": "^14.2.4",
     "shiki": "^3.2.1"

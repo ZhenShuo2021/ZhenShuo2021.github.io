@@ -1,8 +1,17 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "files": {
-    "ignoreUnknown": false,
-    "ignore": ["themes/*", "public/*", "**/*.min.*", "node_modules/*", "*.svg"]
+    "ignoreUnknown": true,
+    "ignore": [
+      "assets/lib",
+      "assets/js/code.js",
+      "themes",
+      "public",
+      "node_modules/*",
+      "static",
+      ".vscode",
+      "*.svg"
+    ]
   },
   "formatter": {
     "enabled": true,
@@ -10,8 +19,25 @@
     "ignore": ["themes/*"],
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 100,
+    "lineWidth": 112,
     "lineEnding": "lf"
+  },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "complexity": {
+        "noForEach": "off"
+      }
+    }
   },
   "javascript": {
     "formatter": {
@@ -21,7 +47,7 @@
       "jsxQuoteStyle": "double",
       "quoteProperties": "asNeeded",
       "quoteStyle": "double",
-      "semicolons": "always",
+      "semicolons": "asNeeded",
       "trailingCommas": "all"
     }
   },
@@ -33,20 +59,6 @@
   "css": {
     "formatter": {
       "enabled": true
-    }
-  },
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
     }
   }
 }

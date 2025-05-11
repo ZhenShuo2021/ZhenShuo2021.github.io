@@ -1,0 +1,31 @@
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+# https://github.com/DavidAnson/markdownlint/tree/main/doc
+globs:
+  - "**.md"
+
+gitignore: true
+
+ignores:
+  - node_modules
+  - themes
+  - .vscode
+
+config:
+  MD002: false  # First header should be a h1 header
+  MD003: false  # heading-style Heading style, conflict with mermaid shortcode
+  MD013: false  # line length
+  MD024:        # multiple headers with the same content
+    siblings_only: true
+  MD025: false  # multiple top level headers
+  MD026: false  # trailing punctuation in header
+  MD028: false  # blank line inside blockquote
+  MD029: false  # ordered list item prefix
+  MD033: false  # inline HTML
+  MD034: false  # bare URL used
+  MD036: false  # emphasis used instead of a header
+  MD041: false  # first line in file should be a top level header
+  MD046: false  # Code block style
+  MD049:        # emphasis style
+    style: asterisk
+  MD050:        # strong style
+    style: asterisk
