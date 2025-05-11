@@ -14,7 +14,8 @@
 }
 
 .dark code:not(pre code) {
-  --color-neutral-700: var(--color-neutral-300);
+  --color-neutral-700: 41, 37, 36;
+  color: #ea590c;
 }
 
 // 程式碼區塊滾動條
