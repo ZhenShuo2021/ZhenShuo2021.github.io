@@ -17,6 +17,10 @@
   pageRef = "posts"
   weight = 10
 
+[[main]]
+  name = "TIL"
+  pageRef = "til"
+  weight = 15
 
 [[main]]
   name = "隨筆"

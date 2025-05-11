@@ -6,6 +6,9 @@ const CONFIG = {
       DIR: "public/posts",
     },
     {
+      DIR: "public/til",
+    },
+    {
       DIR: "public/series",
       EXCLUDE: ["folderNameToExclude", "anotherName"],
     },
@@ -16,6 +19,9 @@ const CONFIG = {
     {
       DIR: "public/posts",
       EXCLUDE: ["page"],
+    },
+    {
+      DIR: "public/til",
     },
   ],
 
@@ -51,6 +57,9 @@ const CONFIG = {
     "php",
     "nginx",
     "docker",
+    "json",
+    "jsonc",
+    "json5",
   ],
 
   // codeimporter 根據副檔名設定 language，使用字典映射 shiki 接受的副檔名
@@ -58,6 +67,7 @@ const CONFIG = {
   LANGUAGE_ALIAS: {
     env: "dotenv",
     node: "js",
+    gitignore: "shell",
   },
 
   // 設定線程數
