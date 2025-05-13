@@ -6,7 +6,7 @@ description:
 summary: 只講重點，網路上教學廢話好多好煩
 tags: ["git", "筆記", "cheatsheet"]
 categories: ["git"]
-externalUrl: https://docs.zsl0621.cc/docs/git/basics
+externalUrl: https://zsl0621.cc/git/basic-knowledge
 ---
 
 {{< lead >}}

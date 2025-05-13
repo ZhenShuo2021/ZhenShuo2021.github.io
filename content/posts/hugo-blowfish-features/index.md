@@ -18,71 +18,32 @@ series_order: 6
 
 游標移動到連結時變色+底線。[範例](https://example.com/)
 
-在assets/css/custom.css新增以下：
+在 `assets/css/custom.css` 新增
 
 ```css
 .article-content a {
-    color: rgb(65, 105, 225); /* 使用淡藍色 */
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(var(--color-primary-900), 0.6);
+  color: rgba(var(--color-primary-900), 1);
 }
-
-/* 懸停時底線改為粗線並增加距離 */
-.article-content a:hover, .article-content a:focus {
-    color: rgb(0, 0, 139); /* 設定連結懸停和聚焦狀態下的顏色 */
-    text-decoration: underline; /* 添加連結懸停時的底線 */
-    text-decoration-thickness: 2px; /* 設定底線的粗線 */
-    text-decoration-skip-ink: none; /* 避免底線與文字重疊 */
-    text-underline-offset: 4.5px; /* 增加底線與文字的距離*/
+.article-content a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--color-primary-600), 1);
+  color: rgba(var(--color-primary-600), 1);
 }
-```
-
-{{< expand "無聊叫 GPT 生的版本" >}}
-
-```css
-.article-content a {
-  color: rgb(var(--color-primary-600));
-  text-decoration: none;
-  background-image: linear-gradient(90deg, 
-    rgba(var(--color-primary-700), 0) 0%, 
-    rgba(var(--color-primary-700), 0) 50%, 
-    rgba(var(--color-primary-700), 1) 50%, 
-    rgba(var(--color-primary-700), 1) 100%
-  );
-  background-size: 200% 2px;
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  transition: color 0.3s ease, background-position 0.5s ease-out;
+.dark .article-content a {
+  text-decoration-color: rgba(var(--color-primary-600), 0.6);
+  color: rgba(var(--color-primary-600), 1);
 }
-
-.article-content a:hover,
-.article-content a:focus {
-  color: rgb(var(--color-primary-700));
-  background-position: 0% 100%;
-  animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
-}
-
-@keyframes glitch {
-  0% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(-2px, -2px);
-  }
-  60% {
-    transform: translate(2px, 2px);
-  }
-  80% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
+.dark .article-content a:hover {
+  text-decoration: underline;
+  text-decoration-color: rgba(var(--color-primary-400), 1);
+  color: rgba(var(--color-primary-400), 1);
 }
 ```
-
-{{< /expand >}}
 
 # 2. 文章存檔頁面
 
@@ -90,471 +51,339 @@ series_order: 6
 
 在 `layouts/_default/archive.html` 新增以下：
 
-{{< expand 新版>}}
+{{< expand archive.html>}}
 
 ```html
 {{ define "main" }}
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const postItems = document.querySelectorAll('.post-item');
-        postItems.forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.classList.add('post-item-hover');
-            });
-            item.addEventListener('mouseleave', function() {
-                this.classList.remove('post-item-hover');
-            });
-        });
-    
-        // 為每個月份標題設置隨機漸變背景
-        const monthTitles = document.querySelectorAll('.month-title');
-        monthTitles.forEach(title => {
-            const [color1, color2, color3] = generateContrastingColors(false);
-            const [color4, color5, color6] = generateContrastingColors(true);
-            const angle1 = generateRandomAngle();
-            const angle2 = generateRandomAngle();
-            // 為每個月份標題設置兩組不同的漸變效果
-            title.style.setProperty('--gradient-1', `linear-gradient(${angle1}deg, ${color1}, ${color2})`);
-            title.style.setProperty('--gradient-2', `linear-gradient(${angle2}deg, ${color4}, ${color5})`);
-        });
-    });
-    
-    function generateContrastingColors(isDarkMode) {
-        // 隨機選擇一個基礎色相
-        const baseColor = Math.random() * 360;
-    
-        // 在基礎色相的基礎上較大幅度偏移，以產生更顯著不同的顏色
-        const c1 = baseColor;
-        const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360; // 使第二個顏色與第一個顏色有較大的差異
-        const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360; // 增加第三個顏色的偏移
-        const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360; // 增加第四個顏色的偏移
-    
-        // 將顏色的亮度和飽和度調整為暗色系或亮色系
-        const adjustColor = (color, isDarkMode) => {
-            const lightness = isDarkMode ? 40 : 75; // 暗色模式較暗，亮色模式較亮
-            const saturation = 100; // 暗色模式和亮色模式的飽和度
-            return `hsl(${color}, ${saturation}%, ${lightness}%)`;
-        };
-    
-        // 生成暗色系或亮色系的顏色
-        const color1 = adjustColor(c1, isDarkMode);
-        const color2 = adjustColor(c2, isDarkMode);
-        const color3 = adjustColor(c3, isDarkMode);
-    
-        // 返回顏色字符串
-        return [color1, color2, color3];
-    }
-    
-    function generateRandomAngle() {
-        const step = 15; // 每個選項的角度步長
-        const minAngle = 30; // 最小角度
-        const maxAngle = 150; // 最大角度
-        const totalSteps = (maxAngle - minAngle) / step + 1; // 計算在此範圍內總共多少個步驟
-        const randomStep = Math.floor(Math.random() * totalSteps); // 隨機選擇一個步驟
-        const randomAngle = minAngle + randomStep * step; // 計算隨機角度
-        return randomAngle;
-    }
-</script>
-
-
-
-
-<style>
-/* 默認樣式 */
-/* 全部寬度 */
-.timeline {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-/* 年份 */
-.year-container {
-    margin-bottom: 40px ;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
-    background-color: rgba(var(--color-neutral-300), 0.5);
-}
-
-/* 年份文字與背景 */
-.year {
-    background-color: #d9d4d4 !important;
-    padding: 10px 20px;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center; 
-}
-
-/* 年文章數 */
-.post-count {
-    background-color: #007bff;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-size: 14px;
-}
-
-/* 月份 */
-.month-container {
-    margin-bottom: 30px;
-}
-
-.month-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    background: var(--gradient-1);
-    padding: 0.6rem 1rem;
-    border-radius: 40px;
-    border: transparent;
-    text-transform: uppercase;
-    
-    /* 使用 Flexbox 來居中文本 */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    /* 設定行高，使文字垂直居中 */
-    line-height: 1;
-    
-}
-
-
-
-.dark .month-title {
-    background: var(--gradient-2);
-}
-
-/* 該月文章 */
-.post-list {
-    list-style-type: none;
-    padding: 2px;
-}
-
-/* 個別文章背景 */
-.post-item {
-    transition: transform 0.3s, z-index 0.3s, box-shadow 0.3s, background-color 0.3s;
-    background: rgba(var(--color-neutral-100), 0.95);
-}
-
-/* 個別文章懸浮 */
-.post-item-hover {
-    transform: scale(1.01);
-    background: rgba(var(--color-neutral-100), 0.95) !important;
-}
-
-.post-item-inner {
-    display: flex;
-    align-items: flex-start;
-    background-color: transparent;
-}
-
-/* 文章日期文字 */
-.post-date {
-    font-size: 14px;
-    color: rgb(var(--color-neutral-500));
-    margin-right: 11px;
-    margin-left: 4px;
-    white-space: nowrap; /* 防止日期文字換行 */
-}
-
-/* 文章標題文字 */
-.post-title {
-    font-size: 20px;
-    color: rgb(var(--color-neutral-800)) !important;
-    text-decoration: none;
-    font-weight: bold;
-} 
-
-/* 深色模式樣式 */
-.dark .year {
-    background-color: rgba(var(--color-neutral-900), 0.95) !important;
-    color: rgb(var(--color-neutral-100));
-}
-
-.dark .year-container {
-    border: 1px solid rgb(var(--color-neutral-900));
-    background-color: rgba(var(--color-neutral-800), 0.3);
-}
-
-.dark .month-title {
-    color: rgb(var(--color-neutral-100));
-}
-
-.dark .post-item {
-    background-color: rgba(var(--color-neutral-800), 0.4);
-}
-
-.dark .post-item-hover {
-    background-color: rgba(var(--color-neutral-800),0.8) !important;
-}
-
-.dark .post-date {
-    color: rgb(var(--color-neutral-100));
-}
-
-.dark .post-title {
-    color: rgb(var(--color-neutral-100)) !important;
-}
-
-</style>
-
-
-{{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-{{ $heroStyle := .Params.heroStyle }}
-{{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
-{{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
-{{ if templates.Exists $heroStyle }}
-{{ partial $heroStyle . }}
-{{ else }}
-{{ partial "partials/hero/basic.html" . }}
-{{ end }}
-{{ end }}
-
-{{ $currentLang := $.Site.Language.Lang }}
-{{ $months := index $.Site.Data.months $currentLang }}
-
-<article class="timeline">
-
-<header id="single_header" class="mt-5 max-w-prose">
-    <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-        {{ .Title | emojify }}
-    </h1>
-</header>
-
-
-<div class="article-content max-w-prose mb-20">          
-    <br>
-    {{ .Content }}
-</div>
-
-<section class="all-posts mt-8 text-neutral">
-{{ range .Site.RegularPages.GroupByDate "2006" }}
-    <div class="year-container">
-
-    <div class="year">
-        {{ .Key }}
-        <span class="post-count">{{ len .Pages }}</span>
-    </div>
-
-    <div class="content">
-    {{ range .Pages.GroupByDate "January" }}
-    <div class="month-container">
-        <span class="month-title">
-            {{ index $months .Key }}
-        </span>
-
-        <ul class="post-list">
-            {{ range where .Pages "Params.exclude" "ne" true }}
-            <li class="post-item">
-            <div class="post-item-inner">
-                <span class="post-date">{{ .Date.Format "1月2日" }}</span>
-                <div class="post-details">
-                    <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
-
-                    <div class="">
-                    <div class="basicHtml-div">
-                        {{ with .Params.categories }}
-                        <div class="flex flex-wrap items-center mr-4 mb-2">
-                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.10em; left: -0.0em; margin-right: .5rem;">
-                        {{ partial "icon.html" "list" }}
-                        </span>
-                        {{ range . }}
-                        <span class="mr-1 mb-1">
-                        <a href="{{ printf "/categories/%s" (urlize . | lower) }}" class="inline-block relative">
-                        {{ partial "badge.html" . }}
-                        </a>
-                        </span>
-                        {{ end }}
-                        </div>
-                        {{ end }}
-                    </div>
-                    <div class="basicHtml-div">
-                        {{ with .Params.tags }}
-                        <div class="flex flex-wrap items-center mr-4 mb-2">
-                        <span class="text-sm text-neutral-500 dark:text-neutral-400" style="font-size: 1rem; position: relative; top: -0.1em; left: -0.0em; margin-right: .5rem;">
-                        {{ partial "icon.html" "tag" }}
-                        </span>
-                        {{ range . }}
-                        <span class="mr-1 mb-1">
-                        <a href="{{ printf "/tags/%s" (urlize . | lower) }}" class="inline-block relative">
-                        {{ partial "badge.html" . }}
-                        </a>
-                        </span>
-                        {{ end }}
-                        </div>
-                        {{ end }}
-                    </div>
-
-                    </div>
-                </div>
-            </div>
-            </li>
-            {{ end }}
-        </ul>
-
-    </div>
+  {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
+    {{ $style := .Params.heroStyle | default .Site.Params.article.heroStyle | default "basic" }}
+    {{ $heroPath := print "hero/" $style ".html" }}
+    {{ if templates.Exists (print "partials/" $heroPath) }}
+      {{ partial $heroPath . }}
+    {{ else }}
+      {{ partial "hero/basic.html" . }}
     {{ end }}
-    </div>
-    </div>
-{{ end }}
-</section>
+  {{ end }}
 
-</article>
+  {{ $currentLang := $.Site.Language.Lang }}
+  {{ $months := index $.Site.Data.months $currentLang }}
 
-    
-<!-- <script src="{{ "js/archives.js" | relURL }}"></script> -->
 
-{{ end }}
-```
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const postItems = document.querySelectorAll(".post-item")
+      postItems.forEach((item) => {
+        item.addEventListener("mouseenter", function () {
+          this.classList.add("post-item-hover")
+        })
+        item.addEventListener("mouseleave", function () {
+          this.classList.remove("post-item-hover")
+        })
+      })
 
-{{< /expand >}}
+      const monthTitles = document.querySelectorAll(".month-title")
+      monthTitles.forEach((title) => {
+        const [color1, color2, color3] = generateContrastingColors(false)
+        const [color4, color5, color6] = generateContrastingColors(true)
+        const angle1 = generateRandomAngle()
+        const angle2 = generateRandomAngle()
+        title.style.setProperty("--gradient-1", `linear-gradient(${angle1}deg, ${color1}, ${color2})`)
+        title.style.setProperty("--gradient-2", `linear-gradient(${angle2}deg, ${color4}, ${color5})`)
+      })
+    })
 
-{{< expand 舊版>}}
+    function generateContrastingColors(isDarkMode) {
+      const baseColor = Math.random() * 360
+      const c1 = baseColor
+      const c2 = (baseColor + 180 + Math.random() * 60 - 15) % 360
+      const c3 = (baseColor + 90 + Math.random() * 60 - 15) % 360
+      const c4 = (baseColor + 270 + Math.random() * 60 - 15) % 360
 
-```html
-{{ define "main" }}
-{{ .Scratch.Set "scope" "single" }}
+      const adjustColor = (color, isDarkMode) => {
+        const lightness = isDarkMode ? 40 : 75
+        const saturation = 100
+        return `hsl(${color}, ${saturation}%, ${lightness}%)`
+      }
 
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f5f5f5;
-        color: #333;
+      const color1 = adjustColor(c1, isDarkMode)
+      const color2 = adjustColor(c2, isDarkMode)
+      const color3 = adjustColor(c3, isDarkMode)
+
+      return [color1, color2, color3]
     }
 
+    function generateRandomAngle() {
+      const step = 15
+      const minAngle = 30
+      const maxAngle = 150
+      const totalSteps = (maxAngle - minAngle) / step + 1
+      const randomStep = Math.floor(Math.random() * totalSteps)
+      return minAngle + randomStep * step
+    }
+  </script>
+
+  <style>
     .timeline {
-        max-width: 800px;
-        margin: 0 auto;
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .container {
-        padding: 10px 0;
-        background-color: inherit;
-        width: 100%;
-        margin-bottom: 20px;
+    .year-container {
+      margin-bottom: 40px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
+      background-color: rgba(var(--color-neutral-300), 0.56);
     }
 
-    .date {
-        padding: 15px;
-        color: #000000;
-        font-weight: bold;
-        font-size: 1.8em;
-        text-align: left;
-        border-radius: 6px;
+    .year {
+      background-color: rgba(var(--color-neutral-400), 0.91);
+      padding: 10px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .post-count {
+      background-color: #007bff;
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 14px;
     }
 
     .content {
-        padding: 20px 30px;
-        background-color: white;
-        border-radius: 6px;
+      padding: 20px;
     }
 
-    .content h2 {
-        margin-top: 0;
+    .month-container {
+      margin-bottom: 30px;
     }
 
-    .content p {
-        margin: 10px 0;
+    .month-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #333;
+      background: var(--gradient-1);
+      padding: 0.6rem 1rem;
+      border-radius: 40px;
+      border: transparent;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .post-list {
+      list-style-type: none;
+      padding: 2px;
+    }
+
+    .post-item {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      transition:
+        transform 0.3s,
+        z-index 0.3s,
+        box-shadow 0.3s,
+        background-color 0.3s;
+      background: #ffffff;
+    }
+
+    .post-item-hover {
+      transform: scale(1.01);
+    }
+
+    .post-item-inner {
+      display: grid;
+      grid-template-areas:
+        "date details"
+        "date category";
+      grid-template-columns: auto 1fr;
+      gap: 1px;
+      background-color: transparent;
+      padding-bottom: 0.4em;
     }
 
     .post-date {
-        color: #6e6e6e;
-        margin-right: 10px;
+      font-size: 14px;
+      color: rgb(var(--color-neutral-500));
+      margin-right: 11px;
+      margin-left: 4px;
+      white-space: nowrap;
+      min-width: 4em;
+      grid-area: date;
     }
 
-    /* 深色模式样式 */
-    .dark body {
-        background-color: #1a1a1a;
-        color: #e0e0e0;
+    .post-details {
+      grid-area: details;
     }
 
-    .dark .container {
-        background-color: inherit;
+    .post-title {
+      font-size: 20px;
+      color: rgb(var(--color-neutral-800)) !important;
+      text-decoration: none;
+      font-weight: bold;
     }
 
-    .dark .date {
-        color: #ffffff;
+    .tag-and-category {
+      grid-area: category;
+      margin-bottom: -20px;
     }
 
-    .dark .content {
-        background-color: #2a2a2a;
+    .dark .year {
+      background-color: rgba(var(--color-neutral-900), 0.95) !important;
+      color: rgb(var(--color-neutral-100));
     }
 
-    .dark .content h2 {
-        color: #f0f0f0;
+    .dark .year-container {
+      border: 1px solid rgb(var(--color-neutral-900));
+      background-color: rgba(var(--color-neutral-800), 0.3);
+    }
+
+    .dark .month-title {
+      color: rgb(var(--color-neutral-100));
+      background: var(--gradient-2);
+    }
+
+    .dark .post-item {
+      background-color: rgba(var(--color-neutral-800), 1);
+    }
+
+    .dark .post-item-hover {
+      background-color: rgba(var(--color-neutral-800), 0.8) !important;
     }
 
     .dark .post-date {
-        color: #bbbbbb;
+      color: rgb(var(--color-neutral-100));
     }
-</style>
 
-<article class="timeline">
-    {{ if .Params.showHero | default (.Site.Params.article.showHero | default false) }}
-    {{ $heroStyle := .Params.heroStyle }}
-    {{ if not $heroStyle }}{{ $heroStyle = .Site.Params.article.heroStyle }}{{ end }}
-    {{ $heroStyle := print "partials/hero/" $heroStyle ".html" }}
-    {{ if templates.Exists $heroStyle }}
-    {{ partial $heroStyle . }}
-    {{ else }}
-    {{ partial "partials/hero/basic.html" . }}
-    {{ end }}
-    {{ end }}
+    .dark .post-title {
+      color: rgb(var(--color-neutral-100)) !important;
+    }
 
+    @media (max-width: 768px) {
+      .timeline {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+      }
+
+      .post-list {
+        padding: 2px;
+      }
+
+      .post-item {
+        width: 100%;
+        margin-bottom: 12px;
+        background-color: rgba(var(--color-neutral-100), 0.95);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .post-item-inner {
+        display: grid;
+        grid-template-areas:
+          "date"
+          "details"
+          "category";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 0;
+        padding: 5.5px;
+        margin-bottom: 1px;
+      }
+
+      .post-date {
+        margin-left: 0px;
+        grid-area: date;
+        margin-top: -1.2em;
+        margin-bottom: -0.8em;
+        font-size: 0.6em;
+        color: rgb(var(--color-neutral-500));
+        padding: 0px;
+      }
+
+      .post-details {
+        grid-area: details;
+        margin-bottom: 0.1rem;
+        padding: 0px;
+      }
+
+      .tag-and-category {
+        padding: 0px;
+        grid-area: category;
+        margin-top: 0px;
+      }
+    }
+  </style>
+
+  <article class="timeline">
     <header id="single_header" class="mt-5 max-w-prose">
-        {{ if .Params.showBreadcrumbs | default (.Site.Params.article.showBreadcrumbs | default false) }}
-        {{ partial "breadcrumbs.html" . }}
-        {{ end }}
-        <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-            {{ .Title | emojify }}
-        </h1>
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">{{ .Title | emojify }}</h1>
     </header>
 
-    <section class="all-posts mt-8 article-content">
-        {{ range .Site.RegularPages.GroupByDate "2006" }}
-        <div class="container">
-            <div class="date">{{ .Key }}</div>
-            <div class="content">
-                {{ range .Pages.GroupByDate "January" }}
-                <h3 class="text-xl font-semibold mt-6 mb-3">
-                    {{ index $.Site.Data.month (printf "%d" .Key) }}
-                </h3>
-                <ul class="list-none" style="padding-left: 1.2em;">
-                    {{ range .Pages }}
-                    <li class="mb-3 flex items-start">
-                        <span class="post-date">{{ .Date.Format "01-02" }}</span>
-                        <a href="{{ .Permalink }}" class="text-primary-600 dark:text-primary-400 hover:underline">{{ .Title }}</a>
-                    </li>
-                    {{ end }}
-                </ul>
-                {{ end }}
-            </div>
-        </div>
-        {{ end }}
-    </section>
-    
-    <footer class="pt-8 max-w-prose print:hidden">
-        {{ partial "article-pagination.html" . }}
-        {{ if .Params.showComments | default (.Site.Params.article.showComments | default false) }}
-        {{ if templates.Exists "partials/comments.html" }}
-        <div class="pt-3">
-            <hr class="border-dotted border-neutral-300 dark:border-neutral-600" />
-            <div class="pt-3">
-                {{ partial "comments.html" . }}
-            </div>
-        </div>
-        {{ else }}
-        {{ warnf "[BLOWFISH] Comments are enabled for %s but no comments partial exists." .File.Path }}
-        {{ end }}
-        {{ end }}
-    </footer>
-</article>
+    <div class="article-content max-w-prose mb-20"><br>{{ .Content }}</div>
 
+    <section class="all-posts mt-8 text-neutral">
+      {{ $filteredPages := where .Site.RegularPages "Params.noArchive" "ne" true }}
+      {{ range $filteredPages.GroupByDate "2006" }}
+        <div class="year-container">
+          <div class="year">
+            {{ .Key }}
+            <span class="post-count">{{ len .Pages }}</span>
+          </div>
+          <div class="content">
+            {{ range .Pages.GroupByDate "January" }}
+              <div class="month-container">
+                <span class="month-title">{{ index $months .Key }}</span>
+                <ul class="post-list">
+                  {{ range .Pages }}
+                    <li class="post-item">
+                      <div class="post-item-inner">
+                        <div class="post-date">{{ .Date.Format "1月2日" }}</div>
+                        <div class="post-details">
+                          {{ if .Params.externalUrl }}
+                            <a
+                              href="{{ .Params.externalUrl }}"
+                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                              target="_blank">
+                              {{ .Title }}
+                              <span
+                                class="text-xs align-top cursor-default text-neutral-400 dark:text-neutral-500">
+                                <span class="rtl:hidden">&#8599;</span>
+                                <span class="ltr:hidden">&#8598;</span>
+                              </span>
+                            </a>
+                          {{ else }}
+                            <a
+                              href="{{ .Permalink }}"
+                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                              >{{ .Title }}</a
+                            >
+                          {{ end }}
+                        </div>
+                        {{ partial "custom/tag-and-category.html" . }}
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+      {{ end }}
+    </section>
+  </article>
 {{ end }}
 ```
 
@@ -619,7 +448,8 @@ document.addEventListener('scroll', function () {
 
 # 4. 簡碼 - hint
 
-移植 [alex-shpak/hugo-book](https://github.com/alex-shpak/hugo-book) 的 [hint shortcode](https://hugo-book-demo.netlify.app/docs/shortcodes/hints/)。
+仿照 Docusaurus 的 [admonitions](https://docusaurus.io/zh-CN/docs/markdown-features/admonitions) 完成。
+
 {{< hint info >}}
 **Markdown content**  
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
@@ -638,86 +468,166 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 
 在 `assets/css/custom.css` 加入
 
+{{< expand custom.css >}}
+
 ```css
-.book-hint {
-    padding: 0.5em 1em;
-    margin: 1em 0;
-    border-left: 6px solid;
-    border-radius: 4px;
-    font-style: normal; /* 確保文字不斜體 */
-    font-weight: normal; /* 確保文字不粗體 */
+.admonition {
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border-radius: 0.375rem;
+  border-left-width: 5px;
+  border-left-style: solid;
+  overflow: hidden;
+  color: #1f2937;
+}
+.dark .admonition {
+  color: #f3f4f6;
+}
+.admonition-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.admonition-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.admonition-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.admonition-icon svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+}
+.admonition-content {
+  line-height: 1.6;
 }
 
-.book-hint .hint-content {
-    margin: 0;
-    font-style: normal; /* 確保文字不斜體 */
-    font-weight: normal; /* 確保文字不粗體 */
+.admonition-note {
+  background-color: #f3f4f6;
+  border-left-color: #6b7280;
+}
+.admonition-note .admonition-heading {
+  color: #4b5563;
 }
 
-.book-hint .hint-content > p:first-child {
-    margin-top: 0;
-    font-style: normal; /* 確保文字不斜體 */
-    font-weight: normal; /* 確保文字不粗體 */
+.admonition-info {
+  background-color: #e3f2fd;
+  border-left-color: #1e88e5;
+}
+.admonition-info .admonition-heading {
+  color: #1565c0;
 }
 
-.book-hint .hint-content > p:last-child {
-    margin-bottom: 0;
-    font-style: normal; /* 確保文字不斜體 */
-    font-weight: normal; /* 確保文字不粗體 */
+.admonition-tip {
+  background-color: #e8f5e9;
+  border-left-color: #43a047;
+}
+.admonition-tip .admonition-heading {
+  color: #2e7d32;
 }
 
-
-/* Info hint */
-.book-hint.info {
-    border-color: #2196f3;
-    background-color: rgba(33, 150, 243, 0.1);
+.admonition-warning {
+  background-color: #fff3e0;
+  border-left-color: #ff9800;
+}
+.admonition-warning .admonition-heading {
+  color: #ef6c00;
 }
 
-/* Warning hint */
-.book-hint.warning {
-    border-color: #ffeb3b;
-    background-color: rgba(255, 235, 59, 0.1);
+.admonition-danger {
+  background-color: #ffebee;
+  border-left-color: #e53935;
+}
+.admonition-danger .admonition-heading {
+  color: #c62828;
 }
 
-/* Danger hint */
-.book-hint.danger {
-    border-color: #f44336;
-    background-color: rgba(244, 67, 54, 0.1);
+.dark .admonition-note {
+  background-color: #404854;
+  border-left-color: #b0b7c3;
+}
+.dark .admonition-note .admonition-heading {
+  color: #c4cbd5;
 }
 
-.book-hint .expand-wrapper {
-    margin-top: 1em;
-    /* 為所有在 hint 內的 expand 添加上邊距 */
+.dark .admonition-info {
+  background-color: #273c76;
+  border-left-color: #76a9e0;
+}
+.dark .admonition-info .admonition-heading {
+  color: #a0c1f7;
 }
 
-.book-hint>p:first-child+.expand-wrapper,
-.book-hint>.expand-wrapper:first-child {
-    margin-top: 0;
-    /* 如果 expand 是 hint 中的第一個元素或緊跟在第一個段落後面，則移除頂部邊距 */
+.dark .admonition-tip {
+  background-color: #1d4736;
+  border-left-color: #6bcf92;
+}
+.dark .admonition-tip .admonition-heading {
+  color: #a2f0b7;
 }
 
-.book-hint .hint-content > h1,
-.book-hint .hint-content > h2,
-.book-hint .hint-content > h3,
-.book-hint .hint-content > h4,
-.book-hint .hint-content > h5,
-.book-hint .hint-content > h6 {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+.dark .admonition-warning {
+  background-color: #9b4825;
+  border-left-color: #f7c68e;
+}
+.dark .admonition-warning .admonition-heading {
+  color: #fed8a4;
 }
 
-
+.dark .admonition-danger {
+  background-color: #9f2e2e;
+  border-left-color: #f8a3a3;
+}
+.dark .admonition-danger .admonition-heading {
+  color: #f7b3b3;
+}
 ```
+
+{{</expand>}}
 
 新增 `layouts/shortcodes/hint.html` 並貼上
 
+{{< expand hint.html >}}
+
 ```html
-<blockquote class="book-hint {{ .Get 0 }}">
-  <div class="hint-content">
-    {{ .Inner | .Page.RenderString }}
+{{ $type := .Get 0 | default "tip" | lower }}
+{{ $title := .Get 1 }}
+
+{{ $admonitionTypes := dict
+  "note"    (dict "defaultTitle" "Note"    "icon" `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>` "class" "note")
+  "tip"     (dict "defaultTitle" "Tip"     "icon" `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>` "class" "tip")
+  "info"    (dict "defaultTitle" "Info"    "icon" `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg>` "class" "info")
+  "warning" (dict "defaultTitle" "Warning" "icon" `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"></path></svg>` "class" "warning")
+  "danger"  (dict "defaultTitle" "Danger"  "icon" `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>` "class" "danger")
+}}
+
+{{ $config := index $admonitionTypes $type | default (index $admonitionTypes "note") }}
+
+{{ $finalTitle := $title | default $config.defaultTitle }}
+{{ $finalIcon := $config.icon | safeHTML }}
+{{ $finalClass := $config.class }}
+
+
+<div class="admonition admonition-{{ $type }}">
+  {{ if $finalTitle }}
+    <div class="admonition-heading">
+      <span class="admonition-icon">{{ $finalIcon }}</span>
+      <span class="admonition-title">{{ $finalTitle }}</span>
+    </div>
+  {{ end }}
+  <div class="admonition-content">
+    {{ .Inner | markdownify }}
   </div>
-</blockquote>
+</div>
 ```
+
+{{< /expand >}}
 
 # 5. 簡碼 - expand
 

@@ -9,7 +9,7 @@ categories: ["NAS"]
 series: ["自架 NAS 紀錄"]
 series_order: 2
 progress_bar: true
-externalUrl: https://docs.zsl0621.cc/docs/nas/smb-signing
+externalUrl: https://zsl0621.cc/memo/nas/smb-signing
 ---
 
 TrueNAS 預設沒有開啟 SMB 簽名及加密，新版又取消了 auxiliary parameters 欄位，所以不要懷疑怎麼找不到，因為真的沒有這個選項。

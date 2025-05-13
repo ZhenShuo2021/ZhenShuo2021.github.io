@@ -2,7 +2,7 @@
 title: "使用ExifTool根據文件夾名稱自動更新照片EXIF資訊"
 description: 
 date: 2024-03-19
-draft: false
+draft: true
 summary: 修改 EXIF 資訊的腳本，主要用於網路下載的相簿。
 tags: ["指令筆記", "實用工具", "Exiftool", "照片", "筆記", "cheatsheet"]
 categories: ["工具"]

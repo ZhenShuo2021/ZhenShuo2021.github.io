@@ -2,7 +2,7 @@
 Title: "Automatically Update Photo EXIF Information Based on Folder Names Using ExifTool"
 Description: 
 Date: 2024-03-19
-Draft: false
+Draft: true
 Summary: A script to modify EXIF information, mainly for photo albums downloaded from the internet.
 Tags: ["Command Notes", "Utility Tools", "Exiftool", "Photos", "Notes", "cheatsheet"]
 Categories: ["Tools"]

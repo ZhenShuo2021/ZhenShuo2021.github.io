@@ -22,13 +22,9 @@ TIL (today I learned) 是一個新系列，隨手寫今天學到了什麼，今�
 - 有些有 semicolon 有些沒有
 - 完全沒有 markdownlint
 
-以及拜 go template 所賜 VS Code 無法 syntax highlight，開發起來異常痛苦，所以搞了一下設定，並且流水帳做記錄。
+光是這些問題就很難讀程式碼了，還有 go template 導致 VS Code 無法 syntax highlight 也無法判斷 if-else/with-else 範圍，開發起來極度痛苦，所以搞了一下設定，並且流水帳做記錄。
 
-# 設定
-
-設定包含一般用戶的 markdown 語法設定以及面對開發者的 Hugo layouts 資料夾的語法高亮。
-
-## 一般用戶
+# 一般用戶
 
 設定 markdown 語法檢查和 editorconfig，editorconfig 用途是告訴編輯器怎麼處理該語言的文件，以 VS Code 為例，要安裝插件
 
@@ -94,9 +90,9 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = false
 ```
 
-一般用戶的設定比較簡單，三個步驟就完成了。
+一般用戶的設定比較簡單，三個步驟就完成了，值得注意的是 indent_style 可以設定 `tab` 或是 `space`，我以往都用 space，最近覺得 tab 好像也不錯，不需修改檔案就可以控制顯示的 indent 距離。
 
-## 開發者：全套 linter
+# 開發者
 
 開發者就要超多工具，使用以下指令安裝
 
@@ -113,7 +109,12 @@ pnpm add -D husky lint-staged @biomejs/biome markdownlint-cli2 prettier prettier
 
 要分成這樣的原因是 prettier 可以使用 override 讓他以 go-template 語法辨識 HTML 文件，否則完全無法格式化，這也是 [Hugo 官方的使用方式](https://github.com/gohugoio/hugo/blob/c745a3e10849198a401c600232ceda5d8cf7381f/docs/.prettierrc)；biome 雖然可以 lint+format 但是我懶的研究怎麼在 biome 裡面做到一樣的事情；不使用 prettier format markdown 的原因是他無法判讀 shortcode 會打亂文件，而且 markdownlint 的規則非常淺顯易懂且貼近實務。
 
-### husky
+最後還有開發者用的擴充功能：
+
+- [Hugo Shortcode Syntax Highlighting](https://marketplace.visualstudio.com/items?itemName=kaellarkin.hugo-shortcode-syntax)
+- [Hugo Language and Syntax Support](https://marketplace.visualstudio.com/items?itemName=budparr.language-hugo-vscode)
+
+## husky
 
 接下來啟動 husky `pnpm husky init`，然後把自動建立的 `.husky/pre-commit` 內容改為 `pnpm exec lint-staged`，再到 `package.json` 設定 lint-staged 的任務：
 
@@ -131,7 +132,7 @@ pnpm add -D husky lint-staged @biomejs/biome markdownlint-cli2 prettier prettier
 
 請注意這裡不要使用 `.`，這會導致不是 staged 的文件也被 format，要 format 全部文件就在指令最後加上 "." 即可，例如 `prettier --write --list-different .`。
 
-### 其餘工具設定
+## 其餘工具設定
 
 剩下的工具就沒什麼好說的，不廢話上全套設定
 

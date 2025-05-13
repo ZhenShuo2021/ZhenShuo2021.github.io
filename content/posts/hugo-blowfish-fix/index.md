@@ -116,7 +116,7 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 
 # 3. 改善對比度
 
-在 `assets/css/schemes/blowfish.css` 修改以下三項：
+在 `assets/css/schemes/你使用的顏色主題.css` 修改以下三項：
 
 ```css
 --color-neutral-300: 216, 227, 240;  # 文字顏色 
@@ -127,16 +127,9 @@ border border-primary-600 text-xs font-normal text-primary-700 dark:border-prima
 
 數字可以自己調。
 
-在 `/blog/themes/blowfish/assets/css/compiled/main.css` 的 `.prose {` 中，把下面第一行改成第二行，第二行的顏色去上面的 schemes css 中修改
-
-```css
---tw-prose-hr:rgba(var(--color-neutral-200), 1);
---tw-prose-hr:rgba(var(--color-neutral-7), 1);
-```
-
 # 4. 網站 logo
 
-favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。順便改放在 /static/image 資料夾中
+favicons 應該直接放在 static 資料夾中就可以直接使用，但不知為何要把相同的程式碼再貼成 custom favicon 才可用。順便改放在 `static/image` 資料夾中
 
 在 `layouts/partials` 新增 favicons.html ，新增以下：
 
