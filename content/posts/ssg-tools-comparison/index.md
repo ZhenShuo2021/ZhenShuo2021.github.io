@@ -5,9 +5,15 @@ create_data: 2025-04-21T16:19:36+08:00
 draft: false
 summary: 本文從非前端專業角度，分享作者使用 Hexo, Hugo, Docusaurus, VitePress, MkDocs 等 SSG 的心得與比較，涵蓋優缺點、速度、客製化難度、主題等面向，提供選擇參考。
 showSummary: false
-tags: ["網站架設", "靜態網站生成器", "Hugo"]
-categories: ["網站架設", "工具", "Hugo"]
-series: []
+tags:
+  - 網站架設
+  - 靜態網站生成器
+  - Hugo
+categories:
+  - 網站架設
+  - 工具
+  - Hugo
+series:
 series_order: 
 progress_bar: true
 ---

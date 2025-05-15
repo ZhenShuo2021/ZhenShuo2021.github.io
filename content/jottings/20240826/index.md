@@ -1,12 +1,16 @@
 ---
-title: '20240826'
+title: 20240826
 date: 2024-08-26T02:42:43+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["廢文", "Python"]
-categories: ["隨筆", "程式語言"]
-series: []
+tags: 
+  - 廢文
+  - Python
+categories:
+  - 隨筆
+  - 程式語言
+series:
 series_order: 
 progress_bar: true
 ---

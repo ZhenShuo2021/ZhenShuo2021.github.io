@@ -4,9 +4,13 @@ date: 2024-11-03T19:39:32+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["隨筆", 廢文, 程式語言]
-categories: ["隨筆"]
-series: []
+tags:
+  - 隨筆
+  - 廢文
+  - 程式語言
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

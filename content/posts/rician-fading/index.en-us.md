@@ -3,10 +3,14 @@ title: "Rician Fading"
 description: 
 date: 2024-06-14T02:45:40+08:00
 draft: false
-slug: "rician-fading"
+slug:
+  - rician-fading
 summary: Methods of Rician fading generation founds on the internet.
-tags: ["Theoretical Knowledge", "cheatsheet"]
-categories: ["Wireless Communication"]
+tags:
+  - Theoretical Knowledge
+  - Cheatsheet
+categories:
+  - Wireless Communication
 # series_order: 1
 ---
 {{< katex >}}

@@ -1,13 +1,17 @@
 ---
-title: "Hugo Blowfish 的基礎設定"
+title: Hugo Blowfish 的基礎設定
 date: 2024-07-01T12:01:01+08:00
 lastmod: 2024-07-28
 draft: false
 summary: Hugo Blowfish 的基礎設定教學（或者說紀錄）。
 description: 
-tags: ["Hugo", "筆記"]
-categories: ["Hugo"]
-series: ["自架 NAS 紀錄"]
+tags:
+  - Hugo
+  - 筆記
+categories:
+  - Hugo
+series:
+  - 自架 NAS 紀錄
 series_order: 4
 ---
 

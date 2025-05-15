@@ -1,12 +1,14 @@
 ---
-title: '20240812'
+title: 20240812
 date: 2024-08-12T11:24:31+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["廢文"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - 廢文
+categories: 
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

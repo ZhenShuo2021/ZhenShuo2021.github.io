@@ -4,9 +4,13 @@ date: 2024-09-28T00:13:29+08:00
 draft: false
 summary: 前段時間認真寫了自己的第一個小專案，關注的重點在於可讀性高、可維護性高和可擴展性高的程式碼，版本從研究所時期的等級（能動就好）到最終版我個人還是覺得算不錯了，就想幫自己寫一個 code review 記錄過程，但是一直因為怠惰沒有動筆，直到看到這篇文章
 showSummary: false
-tags: [程式語言, code-review, Python]
-categories: [程式語言]
-series: []
+tags:
+  - 程式語言
+  - code-review
+  - Python
+categories: 
+  - 程式語言
+series:
 series_order: 
 progress_bar: true
 ---

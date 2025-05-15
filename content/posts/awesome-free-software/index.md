@@ -4,9 +4,11 @@ date: 2024-09-23T21:51:36+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["實用工具"]
-categories: ["工具"]
-series: []
+tags:
+  - 實用工具
+categories:
+  - 工具
+series:
 series_order: 
 progress_bar: true
 ---
@@ -69,7 +71,7 @@ progress_bar: true
 
 - 😇 FastStone: 高效 Raw 檔檢視軟體
 - 😇 Photopea: 開源的 PhotoShop 替代者
-- LightRoom: 替代者候補中[[1]](https://www.techradar.com/best/best-lightroom-alternatives)[[2]](https://opensource.com/alternatives/adobe-lightroom)
+- LightRoom: 替代者候補中[[1]][https://www.techradar.com/best/best-lightroom-alternatives]([2)](https://opensource.com/alternatives/adobe-lightroom)
 
 ## Remote Access
 

@@ -5,8 +5,13 @@ lastmod: 2024-07-25
 draft: false
 description: 
 summary: 介紹FFmpeg基本指令，以及轉檔實驗。
-tags: ["指令筆記","實用工具","影像處理", "cheatsheet"]
-categories: ["工具"]
+tags:
+  - 指令筆記
+  - 實用工具
+  - 影像處理
+  - Cheatsheet
+categories:
+  - 工具
 # series_order: 1
 ---
 

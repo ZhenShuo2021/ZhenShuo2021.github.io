@@ -1,13 +1,17 @@
 ---
-title: "Hugo Blowfish 的問題修復"
+title: Hugo Blowfish 的問題修復
 date: 2024-07-01T12:09:01+08:00
 lastmod: 2024-07-22
 draft: false
 summary: 修復 blowfish 相關的功能問題。
 description: 
-tags: ["Hugo", "筆記"]
-categories: ["Hugo"]
-series: ["自架 NAS 紀錄"]
+tags:
+  - Hugo
+  - 筆記
+categories:
+  - Hugo
+series:
+  - 自架 NAS 紀錄
 series_order: 5
 ---
 

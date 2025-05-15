@@ -3,11 +3,14 @@ title: 基礎練習
 date: 2024-06-27
 draft: true
 summary: 簡單程式
-description: "C practice"
-slug: "C-practice-2"
-tags: ["C語言"]
-categories: ["筆記"]
-series: ["基礎C語言"]
+description: C practice
+slug: C-practice-2
+tags:
+  - C語言
+categories:
+  - 筆記
+series:
+  - 基礎C語言
 series_order: 2
 ---
 

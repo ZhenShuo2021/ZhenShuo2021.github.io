@@ -5,9 +5,13 @@ create_data: 2025-05-14T13:28:28+08:00
 draft: false
 summary: 
 showSummary: false
-tags: [Hugo, 隨筆]
-categories: [Hugo, 隨筆]
-series: []
+tags: 
+  - Hugo
+  - 隨筆
+categories:
+  - Hugo
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

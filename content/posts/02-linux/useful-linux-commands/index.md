@@ -3,10 +3,14 @@ title: 常用Linux指令
 date: 2024-05-30
 lastmod: 2024-07-21T07:12:50+08:00
 draft: false
-description: "常用 Linux 指令小抄，包含硬碟監視，記憶體佔用查詢，開機自動執行以及SMB掛載。"
+description: 常用 Linux 指令小抄，包含硬碟監視，記憶體佔用查詢，開機自動執行以及SMB掛載。
 summary: 常用的 Linux 指令小抄
-tags: ["Linux", "指令筆記", "cheatsheet"]
-categories: ["筆記"]
+tags:
+  - Linux
+  - 指令筆記
+  - cheatsheet
+categories:
+  - 筆記
 externalUrl: https://zsl0621.cc/memo/linux/useful-linux-commands
 ---
 

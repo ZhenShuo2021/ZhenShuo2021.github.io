@@ -5,9 +5,13 @@ lastmod: 2025-01-07T03:11:10+08:00
 draft: false
 summary: 
 showSummary: false
-tags: [程式語言, 閱讀心得]
-categories: [程式語言, 閱讀心得]
-series: []
+tags:
+  - 程式語言
+  - 閱讀心得
+categories:
+  - 程式語言
+  - 閱讀心得
+series:
 series_order: 
 progress_bar: true
 ---

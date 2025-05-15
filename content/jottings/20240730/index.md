@@ -1,12 +1,14 @@
 ---
-title: 'AMD 產品命名'
+title: AMD 產品命名
 date: 2024-07-30T11:18:52+08:00
 draft: false
 summary: 備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。  
 showSummary: false
-tags: ["備份"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - 備份
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

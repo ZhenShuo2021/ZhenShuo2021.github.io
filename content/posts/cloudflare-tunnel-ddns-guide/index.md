@@ -1,13 +1,18 @@
 ---
 title: 利用 Cloudflare Tunnel 和 DDNS 無需開放端口實現安全外網訪問
 lastmod: 2025-03-04T15:48:36+08:00
-date: "2024-05-08"
+date: 2024-05-08
 draft: false
 description: 
 summary: 紀錄把一台破電腦裝成 NAS 的過程
-tags: ["Cloudflare", "教學", "筆記"]
-categories: ["NAS"]
-series: ["自架 NAS 紀錄"]
+tags:
+  - Cloudflare
+  - 教學
+  - 筆記
+categories:
+  - NAS
+series:
+  - 自架 NAS 紀錄
 series_order: 1
 ---
 

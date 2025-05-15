@@ -4,9 +4,11 @@ date: 2024-09-24T22:10:43+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["NAS"]
-categories: ["隨筆"]
-series: []
+tags:
+  - NAS
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

@@ -1,12 +1,15 @@
 ---
-title: '20240923'
+title: 20240923
 date: 2024-09-23T18:17:28+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["廢文", "碎唸"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - 廢文
+  - 碎唸
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

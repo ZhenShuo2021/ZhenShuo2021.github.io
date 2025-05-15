@@ -1,12 +1,15 @@
 ---
-title: 'Git 遠端指令'
+title: Git 遠端指令
 date: 2024-08-25T22:24:42+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["筆記", "git"]
-categories: ["git"]
-series: []
+tags:
+  - 筆記
+  - Git
+categories:
+  - Git
+series:
 series_order: 
 progress_bar: true
 externalUrl: https://docs.zsl0621.cc/docs/git/remote-commands

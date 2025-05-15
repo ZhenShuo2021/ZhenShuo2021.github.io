@@ -1,12 +1,15 @@
 ---
-title: 'Git 減少 clone 空間'
+title: Git 減少 clone 空間
 date: 2024-08-22T21:03:25+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["git","筆記"]
-categories: ["git"]
-series: []
+tags: 
+  - Git
+  - 筆記
+categories: 
+  - Git
+series:
 series_order: 
 progress_bar: true
 externalUrl: https://docs.zsl0621.cc/docs/git/reduce-size

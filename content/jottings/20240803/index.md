@@ -1,12 +1,14 @@
 ---
-title: '好用的網頁模版也不好找'
+title: 好用的網頁模版也不好找
 date: 2024-08-03T15:45:04+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["Hugo"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - Hugo
+categories: 
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

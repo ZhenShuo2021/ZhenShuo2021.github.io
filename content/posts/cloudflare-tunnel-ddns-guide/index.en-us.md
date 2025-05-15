@@ -4,9 +4,14 @@ date: 2024-05-08
 draft: false
 description: 
 summary: My log of setting old PC as NAS.
-tags: ["Site Setup Log", "Cloudflare", "Notes"]
-categories: ["NAS"]
-series: ["Deployment Records"]
+tags:
+  - Site Setup Log
+  - Cloudflare
+  - Notes
+categories:
+  - NAS
+series:
+  - Deployment Records
 series_order: 1
 ---
 

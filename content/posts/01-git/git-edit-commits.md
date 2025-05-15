@@ -1,11 +1,14 @@
 ---
-title: 'Git 修改已提交的內容'
+title: Git 修改已提交的內容
 date: 2024-09-07T14:10:12+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["git", "筆記"]
-categories: ["git"]
+tags:
+  - Git
+  - 筆記
+categories: 
+  - Git
 series: []
 series_order: 
 progress_bar: true

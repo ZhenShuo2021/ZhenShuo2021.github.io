@@ -1,12 +1,18 @@
 ---
-title: 'Hugo 語法上色 Syntax Highlighter'
+title: Hugo 語法上色 Syntax Highlighter
 date: 2024-08-17T08:48:26+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["筆記","Hugo","PageSpeed","Cloudflare", "CDN"]
-categories: ["Hugo"]
-series: []
+tags:
+  - 筆記
+  - Hugo
+  - PageSpeed
+  - Cloudflare
+  - CDN
+categories:
+  - Hugo
+series:
 series_order: 
 progress_bar: true
 ---

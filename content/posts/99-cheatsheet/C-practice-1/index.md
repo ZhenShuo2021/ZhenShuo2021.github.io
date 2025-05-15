@@ -3,11 +3,14 @@ title: C 變數宣告
 date: 2024-06-27
 draft: true
 summary: C 變數宣告
-description: "C practice"
-slug: "C-practice1"
-tags: ["C語言"]
-categories: ["筆記"]
-series: ["基礎C語言"]
+description: C practice
+slug: C-practice1
+tags:
+  - C語言
+categories:
+  - 筆記
+series:
+  - 基礎C語言
 series_order: 1
 ---
 
@@ -20,10 +23,10 @@ series_order: 1
 |int **a |a is a pointer to a pointer to an integer|
 |int a[10] |a is an array of 10 integers|
 |int *a[10] |a is an array of 10 pointers to integers|
-|int (*a)[10] |a is a pointer to an array of 10 integers|
+|int [*a](10) |a is a pointer to an array of 10 integers|
 |int (*a)(int) |a is a pointer to a function that takes an integer argument and returns an integer|
 |int (*a[10])(int) |a is an array of 10 pointers to functions, each taking an integer argument and returning an integer|
-|void (\*(\*papf)[3])(char\*) |papf is a pointer to an array of 3 pointers to functions, each taking a char* argument and returning void|
+|void (\*[\*papf](3))(char\*) |papf is a pointer to an array of 3 pointers to functions, each taking a char* argument and returning void|
 
 > Quiz: Rewrite `void(*(*papf)[3])(char*)` with typedef, the new declaration would be `pf (*papf)[3]`  
 >

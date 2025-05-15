@@ -4,9 +4,14 @@ date: 2024-11-21T08:51:43+08:00
 draft: false
 summary: 
 showSummary: false
-tags: [程式語言, 爬蟲, Python]
-categories: [程式語言, Python]
-series: []
+tags:
+  - 程式語言
+  - 爬蟲
+  - Python
+categories:
+  - 程式語言
+  - Python
+series:
 series_order: 
 progress_bar: true
 ---

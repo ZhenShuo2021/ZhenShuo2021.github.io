@@ -5,9 +5,13 @@ create_data: 2025-03-14T04:33:24+08:00
 draft: false
 summary: 
 showSummary: false
-tags: [macOS, 碎唸]
-categories: [macOS, 碎唸]
-series: []
+tags:
+  - macOS
+  - 碎唸
+categories:
+  - macOS
+  - 碎唸
+series:
 series_order: 
 progress_bar: true
 ---

@@ -4,8 +4,12 @@ date: 2024-06-02
 draft: false
 description: 
 summary: 只講重點，網路上教學廢話好多好煩
-tags: ["git", "筆記", "cheatsheet"]
-categories: ["git"]
+tags:
+  - Git
+  - 筆記
+  - Cheatsheet
+categories: 
+  - Git
 externalUrl: https://zsl0621.cc/git/basic-knowledge
 ---
 

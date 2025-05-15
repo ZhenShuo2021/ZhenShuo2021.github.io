@@ -1,12 +1,14 @@
 ---
-title: '各式各樣的小抄'
+title: 各式各樣的小抄
 date: 2024-08-17T11:24:23+08:00
 draft: false
-summary: "各種指令用的小抄"
+summary: 各種指令用的小抄
 showSummary: true
-tags: ["cheatsheet"]
-categories: ["筆記"]
-series: []
+tags:
+  - cheatsheet
+categories:
+  - 筆記
+series:
 series_order: 
 progress_bar: true
 ---

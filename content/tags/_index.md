@@ -1,6 +1,6 @@
 ---
-title: "標籤"
-description: ""
+title: 標籤
+description:
 
 cascade:
   showDate: false

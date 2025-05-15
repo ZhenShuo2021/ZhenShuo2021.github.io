@@ -1,12 +1,15 @@
 ---
-title: '清除 Linux 殘存設定'
+title: 清除 Linux 殘存設定
 date: 2024-07-19T07:07:30+08:00
 draft: true
-slug: 'clean-linux-settings'
+slug: clean-linux-settings
 summary: 
-tags: ["Linux", "指令筆記"]
-categories: ["筆記"]
-series: []
+tags:
+  - Linux
+  - 指令筆記
+categories:
+  - 筆記
+series:
 series_order: 
 externalUrl: https://docs.zsl0621.cc/docs/Linux/clean-settings
 ---

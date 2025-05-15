@@ -1,13 +1,15 @@
 ---
-title: 'Page Speed'
+title: Page Speed
 date: 2024-07-28T23:58:49+08:00
 lastmod: 2024-08-14T23:58:49+08:00
 draft: false
 description: 
 showSummary: false
-tags: ["pagespeed"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - pagespeed
+categories: 
+  - 隨筆 
+series:
 series_order: 
 progress_bar: true
 ---

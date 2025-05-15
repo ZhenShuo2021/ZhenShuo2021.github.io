@@ -1,13 +1,17 @@
 ---
-title: "Hugo Blowfish 的進階客製化"
+title: Hugo Blowfish 的進階客製化
 date: 2024-07-01T12:45:01+08:00
 lastmod: 2024-07-25
 draft: false
 summary: 補足各種功能，例如文章存檔頁面、閱讀進度、文章編輯時間。
 description: 
-tags: ["Hugo", "筆記"]
-categories: ["Hugo"]
-series: ["自架 NAS 紀錄"]
+tags:
+  - Hugo
+  - 筆記
+categories:
+  - Hugo
+series:
+  - 自架 NAS 紀錄
 series_order: 6
 ---
 

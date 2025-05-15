@@ -1,17 +1,17 @@
 ---
-title: "關於本站"
+title: 關於本站
 date: 2024-07-23T08:55:01+08:00
 exclude: true
 showZenMode: false
 noArchive: true
 summary: 
 slug: 
-tags: []
-categories: []
-series: []
+tags:
+categories:
+series:
 series_order: 
 progress_bar: false
-_menu: "footer"
+_menu: footer
 weight: 
 ---
 

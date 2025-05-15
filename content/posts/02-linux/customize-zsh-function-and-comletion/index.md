@@ -5,9 +5,13 @@ create_data: 2025-02-15T02:46:46+08:00
 draft: false
 description: 使用 _path_files 函式完成自動補全，舉例來說，將 `hugo new content` 簡寫為 `hnc` 並且支援補全，第一步先建立一個檔案名稱為 hnc 的腳本放在 FPATH 裡面，不能用 alias，alias 不給補全，腳本如下：...
 showSummary: false
-tags: [ZSH, autocompletion]
-categories: [ZSH, Unix]
-series: []
+tags:
+  - ZSH
+  - autocompletion
+categories:
+  - ZSH
+  - Unix
+series:
 series_order: 
 progress_bar: true
 externalUrl: https://docs.zsl0621.cc/memo/linux/custom-zsh-completion

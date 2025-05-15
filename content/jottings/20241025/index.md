@@ -4,9 +4,12 @@ date: 2024-10-25T03:38:03+08:00
 draft: false
 summary: 
 showSummary: false
-tags: ["廢文", "碎唸"]
-categories: ["隨筆"]
-series: []
+tags: 
+  - 廢文
+  - 碎唸
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

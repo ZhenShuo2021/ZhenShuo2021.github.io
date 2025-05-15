@@ -1,12 +1,16 @@
 ---
-title: "Rician Fading生成方式，包含Emil Björnson大師的正解"
+title: Rician Fading生成方式，包含Emil Björnson大師的正解
 description: 
 date: 2024-06-14T02:45:40+08:00
 draft: false
-slug: "rician-fading"
+slug: rician-fading
 summary: 整理生成Rician fading的方法
-tags: ["理論知識", "筆記", "cheatsheet"]
-categories: ["通訊原理"]
+tags:
+  - 理論知識
+  - 筆記
+  - Cheatsheet
+categories:
+  - 通訊原理
 # series_order: 1
 ---
 {{< katex >}}

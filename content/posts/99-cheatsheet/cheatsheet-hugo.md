@@ -1,11 +1,13 @@
 ---
-title: "Hugo 小抄"
+title: Hugo 小抄
 date: 2024-07-19T01:00:00+08:00
 draft: false
-description: "Hugo Blowfish cheatsheet，包含文字強調，shortcode，圖片，數學渲染，還有外站載入程式和MarkDown。"
+description: Hugo Blowfish cheatsheet，包含文字強調，shortcode，圖片，數學渲染，還有外站載入程式和MarkDown。
 summary: <kbd>Hugo cheatsheets ❤️‍🩹</kbd>
-tags: ["Hugo"]
-categories: ["筆記"]
+tags: 
+  - Hugo
+categories:
+  - 筆記
 ---
 
 很難記所以寫了一份小抄

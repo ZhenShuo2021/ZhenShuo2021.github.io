@@ -3,10 +3,15 @@ title: TrueNas SMB 簽名及加密設定
 date: 2024-05-06T00:45:10+08:00
 lastmod: 2025-03-04T14:40:10+08:00
 draft: false
-summary: "TrueNAS 預設沒有開啟 SMB 簽名及加密，新版又取消了 auxiliary parameters 欄位，所以不要懷疑自己找不到，搞老半天就這個能用。"
-tags: ["NAS", "Linux", "SMB"]
-categories: ["NAS"]
-series: ["自架 NAS 紀錄"]
+summary: TrueNAS 預設沒有開啟 SMB 簽名及加密，新版又取消了 auxiliary parameters 欄位，所以不要懷疑自己找不到，搞老半天就這個能用。
+tags:
+  - NAS
+  - Linux
+  - SMB
+categories:
+  - NAS
+series:
+  - 自架 NAS 紀錄
 series_order: 2
 progress_bar: true
 externalUrl: https://zsl0621.cc/memo/nas/smb-signing

@@ -6,9 +6,15 @@ create_data: 2025-04-21T21:48:21+08:00
 draft: false
 summary: 在 Hugo 靜態網站中整合 Shiki 語法高亮腳本，實現240倍高效的速度提升，實測三種作法效能差異，從191秒壓到1.88秒，開發階段甚至只要0.8秒。
 showSummary: false
-tags: [Hugo, Shiki, 效能, 教學]
-categories: [Hugo, 網站架設]
-series: []
+tags: 
+  - Hugo
+  - Shiki
+  - 效能
+  - 教學
+categories:
+  - Hugo
+  - 網站架設
+series:
 series_order: 
 progress_bar: true
 ---
@@ -73,6 +79,7 @@ Orta 是 shiki 的 contributor，不只是 contributor，他的部落格也剛�
 
 {{< mermaid >}}
 ---
+
 config:
     xyChart:
         width: 1000
@@ -81,6 +88,7 @@ config:
         xyChart:
             plotColorPalette: "#00A2ED"
 ---
+
 xychart-beta
     title "測試 shiki highlight 速度差距倍率，以 eallion.com 為範例專案"
     x-axis ["My script (cached)", "My script (uncached)", "Orta's script", "Rehype CLI"]

@@ -1,7 +1,7 @@
 ---
-title: "所有文章"
-layout: "archive"
-description: "所有文章列表"
+title: 所有文章
+layout: archive
+description: 所有文章列表
 ---
 
 {{< lead >}}

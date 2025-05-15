@@ -1,12 +1,14 @@
 ---
-title: "為何要寫部落格"
+title: 為何要寫部落格
 date: 2024-07-17
 draft: false
 description: 
 showSummary: false
-tags: ["碎念"]
-categories: ["隨筆"]
-series: []
+tags:
+  - 碎念
+categories:
+  - 隨筆
+series:
 series_order: 
 progress_bar: true
 ---

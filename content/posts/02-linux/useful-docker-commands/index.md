@@ -2,10 +2,15 @@
 title: 常用Docker指令
 date: 2024-05-27
 draft: false
-slug: "docker"
+slug: docker
 summary: 常用的 docker 指令小抄
-tags: ["Linux", "Docker", "指令筆記", "cheatsheet"]
-categories: ["筆記"]
+tags:
+  - Linux
+  - Docker
+  - 指令筆記
+  - Cheatsheet
+categories: 
+  - 筆記
 externalUrl: https://zsl0621.cc/memo/others/docker-day-one
 ---
 

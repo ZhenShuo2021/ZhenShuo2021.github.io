@@ -5,9 +5,13 @@ create_data: 2025-05-11T16:16:31+08:00
 draft: false
 summary: 
 showSummary: false
-tags: [Hugo, 網站架設]
-categories: [Hugo, 教學]
-series: []
+tags:
+  - Hugo
+  - 網站架設
+categories:
+  - Hugo
+  - 教學
+series:
 series_order: 
 progress_bar: true
 ---

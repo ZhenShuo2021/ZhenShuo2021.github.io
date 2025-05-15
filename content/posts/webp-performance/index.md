@@ -1,11 +1,14 @@
 ---
-title: "WebP圖片壓縮與解碼性能"
+title: WebP圖片壓縮與解碼性能
 date: 2024-06-20T21:30:40+08:00
 draft: false
 description: 
 summary: WebP 與 AVIF 的壓縮率比較
-tags: ["影像處理", "筆記"]
-categories: ["科技新知"]
+tags:
+  - 影像處理
+  - 筆記
+categories:
+  - 科技新知
 # series_order: 1
 ---
 
