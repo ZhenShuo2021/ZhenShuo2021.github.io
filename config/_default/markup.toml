@@ -10,8 +10,8 @@
   disable = false
   apostrophe = '&apos;'
   ellipsis = '&hellip;'
-  emDash = '&mdash;'
-  enDash = '&ndash;'
+  emDash = '---'
+  enDash = '--'
   rightDoubleQuote = '&quot;'
   leftDoubleQuote = '&quot;'
   rightSingleQuote = '&apos;'
