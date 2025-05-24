@@ -21,6 +21,7 @@ static
 *.md
 
 # invalid node
+layouts/_default/list-for-more-articles.html
 layouts/_default/_markup/_render-heading.html
 layouts/partials/article-link/card.html
 layouts/partials/article-link/simple.html
