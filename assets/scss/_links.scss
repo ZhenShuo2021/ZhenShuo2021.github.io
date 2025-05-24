@@ -4,7 +4,7 @@
 @use "variables" as vars;
 
 // 文章內連結樣式
-.article-content a {
+.article-content :not([class*="-card-wrapper"]) a {
   text-decoration: underline;
   text-decoration-skip-ink: none;
   text-decoration-thickness: vars.$link-decoration-thickness;
@@ -13,7 +13,6 @@
   color: rgba(var(--color-primary-900), 1);
 
   &:hover {
-    text-decoration: underline;
     text-decoration-color: rgba(var(--color-primary-600), 1);
     color: rgba(var(--color-primary-600), 1);
   }
@@ -23,7 +22,6 @@
     color: rgba(var(--color-primary-600), 1);
 
     &:hover {
-      text-decoration: underline;
       text-decoration-color: rgba(var(--color-primary-400), 1);
       color: rgba(var(--color-primary-400), 1);
     }
@@ -31,7 +29,8 @@
 }
 
 // 標題連結 hover 效果
-.text-xl.text-neutral-800.decoration-primary-500 {
+.decoration-primary-500,
+.group-hover\:decoration-primary-500 {
   text-decoration: none;
   display: inline-block;
 

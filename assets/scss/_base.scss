@@ -17,3 +17,38 @@
   // background color
   --color-neutral-800: 18, 18, 18;
 }
+
+// // 用於生成從 100 到 900 的 border 和 text
+// @mixin generate-color-classes($mode-prefix: '', $color-map-overrides: ()) {
+//   $color-properties: (
+//     "border": "border-color",
+//     "text": "color"
+//   );
+//   $color-shades: (100, 200, 300, 400, 500, 600, 700, 800, 900);
+
+//   @each $property-name, $css-property in $color-properties {
+//     @each $shade in $color-shades {
+//       $class-name: #{$mode-prefix}#{$property-name}-primary-#{$shade};
+//       $color-variable-shade: $shade;
+
+//       @if map-has-key($color-map-overrides, $property-name) {
+//         $property-overrides: map-get($color-map-overrides, $property-name);
+//         @if map-has-key($property-overrides, $shade) {
+//           $color-variable-shade: map-get($property-overrides, $shade);
+//         }
+//       }
+
+//       .#{$class-name} {
+//         #{$css-property}: rgb(var(--color-primary-#{$color-variable-shade}));
+//       }
+//     }
+//   }
+// }
+
+// // 執行 mixin，設定 light mode
+// @include generate-color-classes();
+
+// // 執行 mixin，設定 light mode
+// .dark {
+//   @include generate-color-classes($mode-prefix: 'dark\\:');
+// }

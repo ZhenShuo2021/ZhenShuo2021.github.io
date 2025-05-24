@@ -299,7 +299,7 @@
                           {{ if .Params.externalUrl }}
                             <a
                               href="{{ .Params.externalUrl }}"
-                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                              class="post-title font-bold text-xl text-neutral-800"
                               target="_blank">
                               {{ .Title }}
                               <span
@@ -309,9 +309,7 @@
                               </span>
                             </a>
                           {{ else }}
-                            <a
-                              href="{{ .Permalink }}"
-                              class="post-title font-bold text-xl text-neutral-800 decoration-primary-500 hover:underline hover:underline-offset-2 dark:text-neutral"
+                            <a href="{{ .Permalink }}" class="post-title font-bold text-xl text-neutral-800"
                               >{{ .Title }}</a
                             >
                           {{ end }}
