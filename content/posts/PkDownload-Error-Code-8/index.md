@@ -11,8 +11,8 @@ tags:
 categories:
   - macOS
   - 碎唸
-series:
-series_order: 
+series: [吐槽付費軟體]
+series_order: 1
 progress_bar: true
 ---
 
