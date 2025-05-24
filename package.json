@@ -9,16 +9,14 @@
   "author": "ZhenShuo2021",
   "license": "MIT",
   "scripts": {
-    "serve": "node scripts/dev.js",
-    "serve:bak": "pnpm css && concurrently \"hugo server --disableKinds RSS --bind 0.0.0.0\" \"pnpm css:watch\"",
+    "dev": "node scripts/dev.js",
     "build": "pnpm css && hugo --gc --minify && pnpm shiki",
     "build:cf": "pnpm css && hugo --gc --minify --baseURL https://blog.zsl0621.cc/ && pnpm shiki",
-    "build:serve": "serve public -l 1313",
-    "css": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
+    "build:preview": "serve public -l 1313",
+    "build:shiki": "node scripts/shiki/index.js",
+    "build:css": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
     "css:watch": "sass --watch assets/scss/main.scss assets/css/custom.css",
-    "shiki": "node scripts/shiki/index.js",
-    "update-blowfish:py": "python3 update-blowfish.py",
-    "update-blowfish:sh": "./update-blowfish.sh"
+    "clear": "rimraf assets/css public resources/_gen"
   },
   "lint-staged": {
     "**/*": [
@@ -40,6 +38,7 @@
     "lint-staged": "^16.0.0",
     "markdownlint-cli2": "^0.17.2",
     "prettier-plugin-go-template": "^0.0.15",
+    "rimraf": "^6.0.1",
     "sass": "^1.86.3",
     "serve": "^14.2.4",
     "shiki": "^3.2.1"

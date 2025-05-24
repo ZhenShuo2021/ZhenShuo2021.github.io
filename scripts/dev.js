@@ -2,8 +2,8 @@ const { spawn, execSync } = require("node:child_process");
 
 const SHIKI_COMMAND = "node scripts/shiki/index.js --dev --quiet";
 const HUGO_COMMAND = ["server", "--disableKinds", "RSS", "-p", "1313"];
-const SASS_INIT = "pnpm css";
-const SASS_WATCH = "pnpm css:watch";
+const SASS_INIT = "pnpm run build:css";
+const SASS_WATCH = "pnpm run css:watch";
 
 const HUGO_OK_FLAG = "Web Server is available"; // 監聽 hugo html 建立完成
 const HUGO_DEBOUNCE_MS = 300; // 避免短時間重複執行 shiki
