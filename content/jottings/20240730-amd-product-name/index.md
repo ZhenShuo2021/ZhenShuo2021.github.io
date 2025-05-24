@@ -1,5 +1,5 @@
 ---
-title: AMD 產品命名
+title: 20240730 AMD 產品命名
 date: 2024-07-30T11:18:52+08:00
 draft: false
 summary: 備份一下，我真的也沒搞懂過 AMD 命名，這搞人式的命名方式讓我從來不組 AMD。  

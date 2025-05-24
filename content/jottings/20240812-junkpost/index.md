@@ -1,5 +1,5 @@
 ---
-title: 20240812
+title: 20240812 純粹就是一篇廢文
 date: 2024-08-12T11:24:31+08:00
 draft: false
 summary: 

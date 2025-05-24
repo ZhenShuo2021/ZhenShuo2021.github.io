@@ -37,12 +37,12 @@
   name = "Git"
   parent = '筆記 {{< icon-with-text "link" >}}'
   weight = 10
-  url = "https://docs.zsl0621.cc/git/introduction"
+  url = "https://zsl0621.cc/ripgit/"
 
 [[main]]
   name = "Linux"
   parent = '筆記 {{< icon-with-text "link" >}}'
-  url = "https://docs.zsl0621.cc/memo/linux/package"
+  url = "https://zsl0621.cc/linux-command/intro"
   weight = 20
 
 # [[main]]

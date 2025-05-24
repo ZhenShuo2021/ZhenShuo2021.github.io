@@ -79,7 +79,7 @@ googleAnalytics = "G-GSJ82XXGYD"
     dir = ':cacheDir/images'
 
 [permalinks]
-  posts = '/posts/:contentbasename/'
-  notes = '/posts/:contentbasename/'
-  jottings = '/posts/:contentbasename/'
-  timeline = '/posts/timeline/:contentbasename/'
+  posts = '/posts/:slugorcontentbasename/'
+  notes = '/posts/:slugorcontentbasename/'
+  jottings = '/posts/:year:month:day/'
+  timeline = '/posts/timeline/:slugorcontentbasename/'

@@ -1,5 +1,5 @@
 ---
-title: 記錄一次失敗的提問經驗
+title: 20250514 記錄一次失敗的提問經驗
 date: 2025-05-14T13:28:28+08:00
 create_data: 2025-05-14T13:28:28+08:00
 draft: false
@@ -9,7 +9,6 @@ tags:
   - Hugo
   - 隨筆
 categories:
-  - Hugo
   - 隨筆
 series:
 series_order: 

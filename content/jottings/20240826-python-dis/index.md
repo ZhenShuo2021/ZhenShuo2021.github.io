@@ -1,5 +1,5 @@
 ---
-title: 20240826
+title: 20240826 Python dis
 date: 2024-08-26T02:42:43+08:00
 draft: false
 summary: 
@@ -14,8 +14,6 @@ series:
 series_order: 
 progress_bar: true
 ---
-
-> Python dis
 
 [码农高天](https://www.youtube.com/@minkoder) 常常會用 dis 函數來解釋底層語法，看了但從來沒用過，紀念一下第一次用。
 

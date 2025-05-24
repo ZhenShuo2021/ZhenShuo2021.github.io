@@ -1,5 +1,5 @@
 ---
-title: 20241030
+title: 20241030 當年魔獸爭霸三的小遊戲
 date: 2024-10-30T16:26:34+08:00
 draft: false
 summary: 

@@ -1,11 +1,10 @@
 ---
-title: 20241103
+title: 20241103 Python Queue
 date: 2024-11-03T19:39:32+08:00
 draft: false
 summary: 
 showSummary: false
 tags:
-  - 隨筆
   - 廢文
   - 程式語言
 categories:

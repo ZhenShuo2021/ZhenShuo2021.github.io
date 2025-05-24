@@ -115,7 +115,7 @@ favicon = "favicon.ico"
 
 [term]
   showHero = true
-  heroStyle = "I can't find what he modified" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "custom-background-hero" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
   showLikes = false

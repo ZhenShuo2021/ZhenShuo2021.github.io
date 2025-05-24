@@ -5,6 +5,10 @@
 [goldmark.renderer]
   unsafe = true
 
+# https://gohugo.io/configuration/markup/#extras
+# [goldmark.extensions.extras.mark]
+#   enable = true
+
 # https://discourse.gohugo.io/t/smartypants-conversion-issue-with-quotes/47942/2
 [goldmark.extensions.typographer]
   disable = false
