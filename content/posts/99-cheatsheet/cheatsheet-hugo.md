@@ -145,16 +145,19 @@ Text
 {{< expand "expand"  >}}  
 expand
 {{< /expand >}}
+{{< hint note >}}  
+Text
+{{< /hint >}}
+{{< hint tip >}}  
+Text
+{{< /hint >}}
 {{< hint info >}}  
-**⚠️ info**<br>
 Text
 {{< /hint >}}
 {{< hint warning >}}  
-**⚠️ warning**<br>
 Text
 {{< /hint >}}
 {{< hint danger >}}  
-**⚠️ danger**<br>
 Text
 {{< /hint >}}
 

@@ -18,66 +18,66 @@ $font-family-tc: ("LXGW WenKai TC", system-ui);
 $admonition-light-text: #1f2937;
 
 $admonition-note-light: (
-  border: #6b7280,
-  bg: #f3f4f6,
-  title: #4b5563,
+  border: #d3d5d8,
+  bg: #fdfdfe,
+  title: #474748,
 );
 
 $admonition-info-light: (
-  border: #1e88e5,
-  bg: #e3f2fd,
-  title: #1565c0,
+  border: #4db3d4,
+  bg: #eef9fd,
+  title: #193c47,
 );
 
 $admonition-tip-light: (
-  border: #43a047,
-  bg: #e8f5e9,
-  title: #2e7d32,
+  border: #009400,
+  bg: #e6f6e6,
+  title: #003100,
 );
 
 $admonition-warning-light: (
-  border: #ff9800,
-  bg: #fff3e0,
-  title: #ef6c00,
+  border: #e6a701,
+  bg: #fff8e6,
+  title: #4d3800,
 );
 
 $admonition-danger-light: (
-  border: #e53935,
-  bg: #ffebee,
-  title: #c62828,
+  border: #e13239,
+  bg: #ffebec,
+  title: #4b1114,
 );
 
 // 深色模式
 $admonition-dark-text: #f3f4f6;
 
 $admonition-note-dark: (
-  border: #b0b7c3,
-  bg: #404854,
-  title: #c4cbd5,
+  border: #d3d5d8,
+  bg: #474748,
+  title: #fdfdfe,
 );
 
 $admonition-info-dark: (
-  border: #76a9e0,
-  bg: #273c76,
-  title: #a0c1f7,
+  border: #4db3d4,
+  bg: #193c47,
+  title: #eef9fd,
 );
 
 $admonition-tip-dark: (
-  border: #6bcf92,
-  bg: #1d4736,
-  title: #a2f0b7,
+  border: #009400,
+  bg: #003100,
+  title: #e6f6e6,
 );
 
 $admonition-warning-dark: (
-  border: #f7c68e,
-  bg: #9b4825,
-  title: #fed8a4,
+  border: #e6a701,
+  bg: #4d3800,
+  title: #fff8e6,
 );
 
 $admonition-danger-dark: (
-  border: #f8a3a3,
-  bg: #9f2e2e,
-  title: #f7b3b3,
+  border: #e13239,
+  bg: #4b1114,
+  title: #ffebec,
 );
 
 // 擴展框相關設定
