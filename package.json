@@ -1,21 +1,14 @@
 {
   "name": "blog",
   "version": "1.0.0",
-  "description": "Hugo Blowfish Blog",
-  "keywords": [
-    "SASS",
-    "shiki"
-  ],
+  "description": "Hugo Blog",
   "author": "ZhenShuo2021",
   "license": "MIT",
   "scripts": {
-    "dev": "node scripts/dev.js",
-    "build": "pnpm run build:css && hugo --gc --minify && pnpm run build:shiki",
-    "build:cf": "pnpm run build:css && hugo --gc --minify --baseURL https://blog.zsl0621.cc/ && pnpm run build:shiki",
+    "dev": "hugo server -DEF",
+    "build": "hugo --minify --baseURL https://blog.zsl0621.cc/",
     "build:preview": "serve public -l 1313",
     "build:shiki": "node scripts/shiki/index.js",
-    "build:css": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
-    "css:watch": "sass --watch assets/scss/main.scss assets/css/custom.css",
     "clear": "rimraf assets/css public resources/_gen"
   },
   "lint-staged": {
@@ -30,18 +23,9 @@
   "devDependencies": {
     "@awmottaz/prettier-plugin-void-html": "^1.8.0",
     "@biomejs/biome": "^1.9.4",
-    "chalk": "^5.4.1",
-    "concurrently": "^9.1.0",
-    "dom-serializer": "^2.0.0",
-    "html-entities": "^2.6.0",
-    "htmlparser2": "^10.0.0",
     "lint-staged": "^16.0.0",
     "markdownlint-cli2": "^0.17.2",
-    "prettier-plugin-go-template": "^0.0.15",
-    "rimraf": "^6.0.1",
-    "sass": "^1.86.3",
-    "serve": "^14.2.4",
-    "shiki": "^3.2.1"
+    "prettier-plugin-go-template": "^0.0.15"
   },
   "packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808"
 }
