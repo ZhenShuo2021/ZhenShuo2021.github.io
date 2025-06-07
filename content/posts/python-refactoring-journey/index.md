@@ -16,8 +16,6 @@ series_order:
 progress_bar: true
 ---
 
-{{< katex >}}
-
 最近看到[黑暗執行緒](https://blog.darkthread.net/)關於重構的文章很感興趣，存了一陣子終於有機會搬出來稍微整理一下，本文不會有真正的討論，只是個人紀錄和閱讀心得而已。
 
 總共有以下幾篇文章：

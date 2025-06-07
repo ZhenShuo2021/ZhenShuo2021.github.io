@@ -17,10 +17,6 @@ progress_bar: true
 externalUrl: https://docs.zsl0621.cc/docs/Linux/tmux
 ---
 
-{{<lead>}}
-tmux cheatsheet
-{{</lead>}}
-
 # tmux 使用教學
 
 使用 tmux 能讓你

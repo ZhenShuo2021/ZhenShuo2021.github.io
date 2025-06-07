@@ -251,8 +251,13 @@ async function handleRequest(request) {
 
 有。檔案大小以一篇中文 1300 字的文章進行測試，看圖可以知道 Google 和其他 CDN 的策略不同。載入時間單純就是看檔案大小除以傳輸速度，檔案大小已經比較小了，測試都用官方推薦載入語法，測試結果 Google Fonts 至少在這幾天慢於 Cloudflare 的，而且 Cloudflare 還讓了 preconnect/preload 兩個設定。
 
-{{< carousel images="{https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-cdnjs---2025-05-09T11-55-20.webp,https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-google---2025-05-09T11-55-20.webp,https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-jsdelivr---2025-05-09T11-55-20.webp}" aspectRatio="21-9"  interval="500" >}}
-{{< lead >}} 三種 CDN 的字體切割，Google Font 策略明顯不同於其他兩者 {{< /lead >}}
+{{< slide >}}
+src=https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-cdnjs---2025-05-09T11-55-20.webp
+src=https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-google---2025-05-09T11-55-20.webp
+src=https://cdn.zsl0621.cc/2025/blog/hugo-syntax-highlighter-woff-jsdelivr---2025-05-09T11-55-20.webp
+{{< /slide >}}
+
+> 三種 CDN 的字體切割，Google Font 策略明顯不同於其他兩者
 
 > 必須要網站在 Cloudflare 中是設定 Proxied 的狀態
 

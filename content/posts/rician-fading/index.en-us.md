@@ -12,14 +12,10 @@ tags:
 categories:
   - Wireless Communication
 # series_order: 1
+katex: true
 ---
-{{< katex >}}
 
 Translated by ChatGPT GPT4o-mini.
-
-{{< lead >}}
-Summarize the methods for generating Rician fading.
-{{< /lead >}}
 
 To summarize:
 
@@ -81,9 +77,9 @@ $$
 
 [https://github.com/gokhanntosun/multipath-channel-models/blob/main/Rician_Fading.m](https://github.com/gokhanntosun/multipath-channel-models/blob/main/Rician_Fading.m)
 
-{{< alert >}}
+{{< hint danger >}}
 **Test if the Nakagami fading in this method is correct!!**
-{{< /alert >}}
+{{< /hint >}}
 
 ```matlab
 % LOS components
@@ -99,10 +95,6 @@ s = (i + 1j*q);
 # Method 6
 
 [https://github.com/Deeshant2234/QAM-Simulation-MATLAB/blob/main/QAM_BER.m](https://github.com/Deeshant2234/QAM-Simulation-MATLAB/blob/main/QAM_BER.m)
-
-{{< alert cardColor="#e63946" iconColor="#1d3557" textColor="#000000" >}}
-Theoretical values differ from simulation results in this method. Need to check why!
-{{< /alert >}}
 
 ```matlab
 mean = sqrt(k1/(k1+1));  % mean

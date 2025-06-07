@@ -1,0 +1,46 @@
+@import 'variables';
+
+// Code styling
+code {
+  background-color: var(--my-code-bg);
+  color: var(--my-code-text);
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+// Post body links
+.post-body {
+  a {
+    color: var(--my-link-color) !important;
+    text-decoration: underline;
+    text-decoration-color: var(--my-primary-300);
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: var(--my-link-hover) !important;
+      text-decoration-color: var(--my-link-hover);
+    }
+
+    &:visited {
+      color: var(--my-link-visited);
+    }
+
+    &:focus {
+      outline: 2px solid var(--my-link-color);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    a {
+      color: inherit !important;
+
+      &:hover {
+        color: var(--my-link-hover) !important;
+        text-decoration-color: var(--my-link-hover);
+      }
+    }
+  }
+}

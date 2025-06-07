@@ -8,6 +8,7 @@ tags:
   - Hugo
 categories:
   - 筆記
+katex: true
 ---
 
 很難記所以寫了一份小抄
@@ -25,33 +26,6 @@ categories:
 [goto](/posts/url#id/)
 ```
 
-# 1. Icon
-
-| Icon name                       | Preview                           | Icon name            | Preview                           |
-| :------------------------------ | :------------------------------: | :-------------------- | :------------------------------:  |
-| <span class="bg-color">triangle-exclamation</span> | {{< icon triangle-exclamation >}} | <span class="bg-color">circle-info</span> | {{< icon circle-info >}} |
-| <span class="bg-color">check</span> | {{< icon check >}} | <span class="bg-color">xmark</span> | {{< icon xmark >}} |
-| <span class="bg-color">lightbulb</span> | {{< icon lightbulb >}} | <span class="bg-color">fire</span> | {{< icon fire >}} |
-| <span class="bg-color">search</span> | {{< icon search >}} | <span class="bg-color">globe</span> | {{< icon globe >}} |
-| <span class="bg-color">location-dot</span> | {{< icon location-dot >}} | <span class="bg-color">lock</span> | {{< icon lock >}} |
-| <span class="bg-color">code</span> | {{< icon code >}} | <span class="bg-color">link</span> | {{< icon link >}}                |
-| list                            | {{< icon list >}}                 | bars                 | {{< icon bars >}}                 |
-| heart                           | {{< icon heart >}}                | heart-empty          | {{< icon heart-empty >}}          |
-| bomb                            | {{< icon bomb >}}                 | bug                  | {{< icon bug >}}                  |
-| download                        | {{< icon download >}}             | comment              | {{< icon comment >}}              |
-| email                           | {{< icon email >}}                | edit                 | {{< icon edit >}}                 |
-| expand                          | {{< icon expand >}}               | eye                  | {{< icon eye >}}                  |
-| ghost                           | {{< icon ghost >}}                | fork                 | {{< icon fork >}}                 |
-| graduation-cap                  | {{< icon graduation-cap >}}       | language             | {{< icon language >}}             |
-| image                           | {{< icon image >}}                | shield               | {{< icon shield >}}               |
-| mug-hot                         | {{< icon mug-hot >}}              | music                | {{< icon music >}}                |
-| pencil                          | {{< icon pencil >}}               | pgpkey               | {{< icon pgpkey >}}               |
-| phone                           | {{< icon phone >}}                | poo                  | {{< icon poo >}}                  |
-| rss                             | {{< icon rss >}}                  | rss-square           | {{< icon rss-square >}}           |
-| scale-balanced                  | {{< icon scale-balanced >}}       | skull-crossbones     | {{< icon skull-crossbones >}}     |
-| moon                            | {{< icon moon >}}                 | sun                  | {{< icon sun >}}                  |
-| star                            | {{< icon star >}}                 | wand-magic-sparkles  | {{< icon wand-magic-sparkles >}}  |
-
 # 2. 圖片
 
 ```go
@@ -63,8 +37,6 @@ categories:
     */>}}
 {{</* carousel images="{https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg, gallery/03.jpg, gallery/01.jpg, gallery/02.jpg, gallery/04.jpg}" */>}}
 ```
-
-{{< carousel images="{https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8MTYlM0E5fGVufDB8fDB8fHww,https://cdn.pixabay.com/photo/2016/12/11/12/02/mountains-1899264_960_720.jpg}" >}}
 
 <br>
 
@@ -84,7 +56,6 @@ $$
 $$
 ```
 
-{{< katex >}}
 \\(f(a,b,c) = (a^2+b^2+c^2)^3\\)
 $$
 \footnotesize
@@ -104,9 +75,6 @@ $$
 {{</* youtubeLite id="yzrb4WA2NRQ" label="Blowfish-tools demo" params="start=130&end=10&controls=0" */>}}
 ```
 
-{{< youtubeLite id="yzrb4WA2NRQ" label="Blowfish-tools demo" params="start=130&end=10&controls=0" >}}
-{{< github repo="nunocoracao/blowfish" >}}
-
 # 5. 文字強調
 
 ```md
@@ -119,16 +87,6 @@ $$
 
 <kbd>ALT</kbd>+<kbd>F4</kbd>
 ```
-
-{{< keyword >}} keyword {{< /keyword >}}<br>
-{{< alert icon="twitter">}}
-**Alert!** text here
-{{< /alert >}}  
-
-{{< alert  cardColor="#FF4136" iconColor="#1a1b1d" textColor="#FFFFFF" >}}
-Text here
-{{< /alert >}}  
-<kbd>ALT</kbd> + <kbd>F4</kbd>
 
 ```md
 # 新增

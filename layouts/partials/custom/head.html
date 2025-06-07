@@ -1,0 +1,16 @@
+{{- if .Page.HasShortcode "slide" -}}
+	{{- $slideCSS := resources.Get "scss/custom/shortcode/slide.css" | resources.Minify | resources.Fingerprint "sha256" -}}
+	{{ $slideJS := resources.Get "js/shortcodes/slide.js" | resources.Minify | resources.Fingerprint }}
+	<link rel="stylesheet" href="{{ $slideCSS.RelPermalink }}" integrity="{{ $slideCSS.Data.Integrity }}">
+	<script defer src="{{ $slideJS.RelPermalink }}" integrity="{{ $slideJS.Data.Integrity }}"></script>
+	<script defer src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
+{{- end -}}
+
+{{ if .Store.Get "hasMermaid" }}
+	{{ $jsMermaid := resources.Get "js/shortcodes/mermaid.js" }}
+	{{- $jsMermaid = $jsMermaid | resources.Minify | resources.Fingerprint "sha256" -}}
+	<script
+		type="module"
+		src="{{ $jsMermaid.RelPermalink }}"
+		integrity="{{ $jsMermaid.Data.Integrity }}"></script>
+{{ end }}

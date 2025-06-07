@@ -1,0 +1,27 @@
+:root {
+  --my-primary-50: #f5faff;
+  --my-primary-100: #e0f2ff;
+  --my-primary-200: #b9e3ff;
+  --my-primary-300: #7ccfff;
+  --my-primary-400: #38bdf8;
+  --my-primary-500: #0ea5e9;
+  --my-primary-600: #0284c7;
+  --my-primary-700: #0369a1;
+  --my-primary-800: #075985;
+  --my-primary-900: #0c4a6e;
+  --my-primary-950: #082f49;
+
+  --my-code-bg: #e0f2ff;
+  --my-code-text: #075985;
+  --my-link-color: #0284c7;
+  --my-link-hover: #0369a1;
+  --my-link-visited: #075985;
+}
+
+[data-theme="dark"] {
+  --my-code-bg: #0c4a6e;
+  --my-code-text: #b9e3ff;
+  --my-link-color: #38bdf8;
+  --my-link-hover: #7ccfff;
+  --my-link-visited: #0ea5e9;
+}

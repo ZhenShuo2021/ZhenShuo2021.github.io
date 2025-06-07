@@ -14,9 +14,9 @@ series_order:
 progress_bar: true
 ---
 
-{{< lead >}}
-<center> 一段時間沒碰 Blowfish 了，點開儲存庫還愣了一下。 </center>
-{{< /lead >}}
+<div style="text-align:center">
+一段時間沒碰 Blowfish 了，點開儲存庫還愣了一下。
+</div>
 
 Thecus，是最近搜尋 pydio 時偶然看到的公司，看起來是掛了但是掛的有道理，點進去看他[最貴的產品](https://www.thecus.com/product?cat=linux_nas&cat_type=largeBusinessRackmount&PROD_ID=127&language_num=5)介紹是這樣：
 

@@ -12,12 +12,8 @@ tags:
 categories:
   - 通訊原理
 # series_order: 1
+katex: true
 ---
-{{< katex >}}
-
-{{< lead >}}
-整理生成Rician fading的方法。
-{{< /lead >}}
 
 先說結論：
 
@@ -80,10 +76,6 @@ $$
 
 [來源](https://github.com/gokhanntosun/multipath-channel-models/blob/main/Rician_Fading.m)
 
-{{< alert >}}
-**測試此篇的nakagami fading是否正確！！**
-{{< /alert >}}
-
 ```matlab
 % LOS components
 a = sqrt(K/2);  b = a;
@@ -99,9 +91,9 @@ s = (i + 1j*q);
 
 [來源](https://github.com/Deeshant2234/QAM-Simulation-MATLAB/blob/main/QAM_BER.m)
 
-{{< alert cardColor="#FF4136" iconColor="#1d3557" textColor="#000000" >}}
+{{< hint danger >}}
 **此篇理論值與模擬不同，需要檢查為何錯誤！！**
-{{< /alert >}}
+{{< /hint >}}
 
 ```matlab
 mu = sqrt(k1/(k1+1));  % mean

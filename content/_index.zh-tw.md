@@ -3,12 +3,35 @@ title: ZSL's blog
 description: ZSL 的筆記空間
 ---
 
-<style>
-    .place-holder {
-        height: 2px;
-        width: 10px;
-    }
-</style>
-<!-- <div class="place-holder"></div> -->
-{{< typeit lifeLike=true >}} <font size=6em><b>The Empire of Shinonome Umi</b></font> {{< /typeit >}}
+<div id="typeit-empire" style="font-size:2.25em; font-weight:bold;"></div>
+
+<script
+  defer
+  src="https://cdnjs.cloudflare.com/ajax/libs/typeit/8.8.7/index.umd.min.js"
+  integrity="sha512-w9+WtnRcS5TEPBd/CalFufJcL86KNh81FYMLkH9jbW46+XnKmdciHk+qhueq+thFd11nt2cV6JSX+nvfFLylgw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer">
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new TypeIt("#typeit-empire", {
+      strings: ["The Empire of Shinonome Umi"],
+      speed: 100,
+      lifeLike: true,
+      startDelay: 0,
+      breakLines: true,
+      waitUntilVisible: true,
+      loop: false
+    }).go();
+  });
+</script>
+
 <div style="height: 60px"></div>
+{{< slide >}}
+src=/img/feature-crop.webp
+src=/img/umi-1.jpg
+src=/img/umi-2.jpg
+src=/img/umi-3-gfpgan.webp
+src=/img/umi-4-expand.jpeg
+src=/img/umi-5.jpg
+{{< /slide >}}
