@@ -1,42 +1,21 @@
-<!-- In head.html 
-{{/* Extend head - eg. for custom analytics scripts, etc. */}}
-{{/* partialCached "extend-head.html" .Site */}}
-curl -O <URL>
-openssl dgst -sha256 -binary <File Name> | openssl base64 -A
--->
-
-<!-- 
-<script>
-  function addCopyButtons() {
-    document.body.addEventListener('click', function (event) {
-      if (event.target.matches('.copy-btn')) {
-        handleCopy(event.target);
-      }
-    });
-
-    const codeBlocks = document.querySelectorAll('pre');
-    codeBlocks.forEach((block) => {
-      const button = document.createElement('button');
-      button.textContent = 'Copy';
-      button.classList.add('copy-btn');
-      block.appendChild(button);
-    });
-  }
-
-  function handleCopy(button) {
-    const pre = button.closest('pre');
-    const code = pre.querySelector('code').textContent;
-    navigator.clipboard.writeText(code).then(() => {
-      button.textContent = 'Copied!';
-      setTimeout(() => {
-        button.textContent = 'Copy';
-      }, 2000);
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addCopyButtons);
-  } else {
-    addCopyButtons();
-  }
-</script> -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous">
+<link
+  rel="preload"
+  href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+  as="style"
+  crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+  media="print"
+  onload="this.media='all'"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer">
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-web@latest/lxgwwenkaitc-regular/result.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+</noscript>

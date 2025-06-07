@@ -21,11 +21,11 @@ static
 *.md
 
 # invalid node
-layouts/_default/list-for-more-articles.html
 layouts/_default/_markup/_render-heading.html
 layouts/partials/article-link/card.html
 layouts/partials/article-link/simple.html
 layouts/partials/custom/tag-and-category.html
 layouts/partials/hero/custom-background-hero.html
+layouts/partials/list-for-more-articles.html
 
 assets/js/appearance.js

@@ -16,7 +16,7 @@ article:
     other: "{{ .Count }} 字"
   part_of_series: "本文屬於一個選集。"
   part: "#"
-  this_article: ""
+  this_article: "本文"
   related_articles: "相關文章"
 
 author:
