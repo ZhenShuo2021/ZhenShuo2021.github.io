@@ -542,7 +542,7 @@ uglyURLs = false
     #      這意味著某些文件可能已經過時。
     #      如有需要，請提 Issue。
 
-    themeColor = "#ff0000"
+    themeColor = "#fff"
     themeColorDark = "#16171d"
 
 
@@ -1207,7 +1207,6 @@ uglyURLs = false
         "linkedin",
         "telegram",
         "hackernews",
-        "qrcode",
         "email",
     ]
 
