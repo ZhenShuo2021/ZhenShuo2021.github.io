@@ -10,8 +10,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "node scripts/dev.js",
-    "build": "pnpm css && hugo --gc --minify && pnpm shiki",
-    "build:cf": "pnpm css && hugo --gc --minify --baseURL https://blog.zsl0621.cc/ && pnpm shiki",
+    "build": "pnpm run build:css && hugo --gc --minify && pnpm run build:shiki",
+    "build:cf": "pnpm run build:css && hugo --gc --minify --baseURL https://blog.zsl0621.cc/ && pnpm run build:shiki",
     "build:preview": "serve public -l 1313",
     "build:shiki": "node scripts/shiki/index.js",
     "build:css": "sass assets/scss/main.scss assets/css/custom.css --style compressed",
