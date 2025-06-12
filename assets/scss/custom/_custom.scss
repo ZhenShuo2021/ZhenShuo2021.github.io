@@ -64,3 +64,51 @@
 .footer a {
     color: rgba(var(--color-contrast-high), 0.9);
 }
+
+details {
+    border: 1px solid var(--color-contrast-low);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem 1rem;
+    color: var(--color-contrast-higher);
+    background: transparent;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-contrast-higher);
+    user-select: none;
+    margin: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    position: relative;
+}
+
+summary::marker {
+    display: none;
+}
+
+summary::before {
+    content: "▶";
+    display: inline-block;
+    color: var(--color-primary);
+    transform: rotate(0deg);
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+details[open] summary {
+    border-bottom: 1px solid var(--color-contrast-low);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
