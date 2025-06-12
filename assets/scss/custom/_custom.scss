@@ -1,6 +1,7 @@
 @import "shortcode/admonition";
 @import "links";
 @import "toc";
+@import "series";
 
 :root[data-theme="dark"] {
     --color-contrast-medium: hsl(0, 0%, 78%);
@@ -32,6 +33,11 @@
 .menu-item a,
 .menu-item button svg {
     color: var(--color-contrast-higher);
+    font-size: 0.9rem;
+}
+
+.site-brand {
+    font-size: 1.1rem;
 }
 
 // Fix SVG size

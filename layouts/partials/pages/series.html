@@ -1,0 +1,77 @@
+<section class="post-series">
+    <button class="post-series-toggle" aria-expanded="true" aria-controls="post-series-content" type="button">
+        系列文章：{{ index .Params.series 0 }}
+        <span class="toggle-icon" aria-hidden="true">▸</span>
+    </button>
+    <div class="post-series-wrapper">
+        <nav id="post-series-content" class="post-series-nav" aria-hidden="false">
+            {{ $seriesName := strings.ToLower (index .Params.series 0) }}
+            {{ $counter := 1 }}
+            {{ range $post := sort (index .Site.Taxonomies.series $seriesName) "Params.series_order" }}
+                {{ if eq $post.Permalink $.Page.Permalink }}
+                    <div class="post-series-entry active">
+                        <span class="entry-index">{{ printf "%02d" $counter }}</span>
+                        <span class="entry-title">{{ $post.Title }}</span>
+                    </div>
+                {{ else }}
+                    <div class="post-series-entry">
+                        <span class="entry-index">{{ printf "%02d" $counter }}</span>
+                        <a href="{{ $post.RelPermalink }}" class="entry-title">{{ $post.Title }}</a>
+                    </div>
+                {{ end }}
+                {{ $counter = add $counter 1 }}
+            {{ end }}
+        </nav>
+    </div>
+</section>
+
+<script>
+    ;(() => {
+        const toggleBtn = document.querySelector(".post-series-toggle")
+        const content = document.getElementById("post-series-content")
+        const icon = toggleBtn.querySelector(".toggle-icon")
+        const focusableSelectors = 'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+
+        function setFocusable(enabled) {
+            const focusableElements = content.querySelectorAll(focusableSelectors)
+            focusableElements.forEach((el) => {
+                if (enabled) {
+                    el.removeAttribute("tabindex")
+                    if (el.hasAttribute("data-old-tabindex")) {
+                        el.setAttribute("tabindex", el.getAttribute("data-old-tabindex"))
+                        el.removeAttribute("data-old-tabindex")
+                    }
+                } else {
+                    if (el.hasAttribute("tabindex")) {
+                        el.setAttribute("data-old-tabindex", el.getAttribute("tabindex"))
+                    }
+                    el.setAttribute("tabindex", "-1")
+                }
+            })
+        }
+
+        content.classList.add("collapsed")
+        content.style.maxHeight = "0"
+        toggleBtn.setAttribute("aria-expanded", "false")
+        icon.classList.remove("rotated")
+        content.setAttribute("aria-hidden", "true")
+        setFocusable(false)
+
+        toggleBtn.addEventListener("click", () => {
+            const expanded = toggleBtn.getAttribute("aria-expanded") === "true"
+            toggleBtn.setAttribute("aria-expanded", String(!expanded))
+            content.setAttribute("aria-hidden", String(expanded))
+            icon.classList.toggle("rotated", !expanded)
+
+            if (!expanded) {
+                content.classList.remove("collapsed")
+                content.style.maxHeight = content.scrollHeight + "px"
+                setFocusable(true)
+            } else {
+                content.style.maxHeight = "0"
+                content.classList.add("collapsed")
+                setFocusable(false)
+            }
+        })
+    })()
+</script>

@@ -58,6 +58,7 @@ uglyURLs = false
 [taxonomies]
     category = "categories"
     tag = "tags"
+    series = "series"
 
 # 修改時間
 [frontmatter]
