@@ -1,0 +1,27 @@
+:root {
+    --my-primary-50: #e3f2fd;
+    --my-primary-100: #bbdefb;
+    --my-primary-200: #90caf9;
+    --my-primary-300: #64b5f6;
+    --my-primary-400: #42a5f5;
+    --my-primary-500: #1976d2;
+    --my-primary-600: #1565c0;
+    --my-primary-700: #0d47a1;
+    --my-primary-800: #093170;
+    --my-primary-900: #061f49;
+    --my-primary-950: #021226;
+}
+
+[data-theme="dark"] {
+    --my-primary-50: #07214d;
+    --my-primary-100: #0b327a;
+    --my-primary-200: #1044a3;
+    --my-primary-300: #1557cc;
+    --my-primary-400: #1e6fff;
+    --my-primary-500: #4a8aff;
+    --my-primary-600: #72a4ff;
+    --my-primary-700: #a0c2ff;
+    --my-primary-800: #c9ddff;
+    --my-primary-900: #e8f1ff;
+    --my-primary-950: #ffffff;
+}

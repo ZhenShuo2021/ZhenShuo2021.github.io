@@ -1,0 +1,51 @@
+@import "variables";
+
+// Code styling
+code {
+    background-color: var(--my-primary-100);
+    color: var(--my-primary-800);
+    border-radius: 6px;
+    padding: 2px 6px;
+    font-size: 0.875em;
+    font-weight: 500;
+}
+
+// Post body links
+.post-body {
+    a {
+        color: var(--my-primary-600) !important;
+        text-decoration: underline;
+        text-decoration-color: var(--my-primary-600);
+        text-underline-offset: 3px;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: var(--my-primary-900) !important;
+            text-decoration-color: var(--my-primary-900);
+        }
+
+        &:visited {
+            color: var(--my-primary-800);
+        }
+
+        &:focus {
+            outline: 2px solid var(--my-primary-800);
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        a {
+            color: inherit !important;
+
+            &:hover {
+                color: var(--my-primary-900) !important;
+                text-decoration-color: var(--my-primary-900);
+            }
+        }
+    }
+}

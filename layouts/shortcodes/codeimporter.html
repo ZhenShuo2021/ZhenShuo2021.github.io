@@ -1,0 +1,40 @@
+{{ $url := .Get "url" | default (.Get 0) }}
+{{ $lang := .Get "lang" | default (.Get 1) | default (path.Ext $url | strings.TrimPrefix ".") }}
+{{ $linesParam := .Get "line" | default (.Get 2) }}
+
+{{ with resources.GetRemote $url | try }}
+    {{ if .Err }}
+        <pre><code class="language-{{ $lang }}">// Failed to fetch or unable to load resource: {{ $url }}</code></pre>
+    {{ else }}
+        {{ $content := .Value.Content }}
+        {{ if $linesParam }}
+            {{ $lines := split $content "\n" }}
+            {{ $start := 1 }}
+            {{ $end := len $lines }}
+
+            {{ if in $linesParam "-" }}
+                {{ $parts := split $linesParam "-" }}
+                {{ if eq (len $parts) 2 }}
+                    {{ $s := index $parts 0 }}
+                    {{ $e := index $parts 1 }}
+                    {{ if ne $s "" }}{{ $start = int $s }}{{ end }}
+                    {{ if ne $e "" }}{{ $end = int $e }}{{ end }}
+                {{ end }}
+            {{ end }}
+
+            {{ $slice := slice }}
+            {{ range $i, $l := $lines }}
+                {{ $lineNum := add $i 1 }}
+                {{ if and (ge $lineNum $start) (le $lineNum $end) }}
+                    {{ $slice = $slice | append $l }}
+                {{ end }}
+            {{ end }}
+            {{ $content = delimit $slice "\n" }}
+        {{ end }}
+        {{ $opts := dict "linenos" "table" "style" "monokai" }}
+        {{ $result := transform.Highlight $content $lang $opts }}
+        {{ $result }}
+    {{ end }}
+{{ else }}
+    <pre><code class="language-{{ $lang }}">// Unable to load resource: {{ $url }}</code></pre>
+{{ end }}

@@ -1,0 +1,60 @@
+@import "shortcode/admonition";
+@import "links";
+@import "toc";
+
+:root[data-theme="dark"] {
+    --color-contrast-medium: hsl(0, 0%, 78%);
+}
+
+:root[data-theme="light"] {
+    --color-contrast-medium: hsl(0, 0%, 31%);
+}
+
+.post-tags-link {
+    color: var(--color-contrast-medium);
+}
+
+// Fix katex display
+.katex-display {
+    overflow: auto hidden;
+}
+
+.katex-display {
+    padding-right: 2px;
+    width: calc(100% - 2px);
+}
+
+.header-wrapper {
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+}
+
+.menu-item a,
+.menu-item button svg {
+    color: var(--color-contrast-higher);
+}
+
+// Fix SVG size
+#theme-switcher {
+    font-size: inherit;
+}
+
+// tree-categories
+.category-item,
+.category-post {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+}
+
+.category-post:hover {
+    color: var(--color-primary);
+}
+
+.footer,
+.footer a {
+    color: rgba(var(--color-contrast-high), 0.9);
+}

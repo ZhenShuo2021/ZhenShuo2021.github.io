@@ -1,0 +1,118 @@
+{{ $lines := split (replaceRE `\r` "" .Inner) "\n" }}
+{{ $width := "100%" }}
+{{ $images := slice }}
+{{ $captions := slice }}
+{{ $page := .Page }}
+{{ $dir := "" }}
+
+{{ $imgTagRegex := `<img\s+[^>]*>` }}
+{{ $imgTags := findRE $imgTagRegex .Inner }}
+
+{{ range $lines }}
+    {{ $line := trim . " \t" }}
+    {{ if hasPrefix $line "width=" }}
+        {{ $width = trim (replace $line "width=" "") " " }}
+    {{ else if hasPrefix $line "dir=" }}
+        {{ $dir = trim (replace $line "dir=" "") " " }}
+    {{ else if hasPrefix $line "caption=" }}
+        {{ $cap := trim (replace $line "caption=" "") " " }}
+        {{ $captions = $captions | append $cap }}
+    {{ else if hasPrefix $line "src=" }}
+        {{ $src := trim (replace $line "src=" "") " " }}
+        {{ $finalSrc := $src }}
+        {{ $isExternal := or (hasPrefix $src "http://") (hasPrefix $src "https://") }}
+        {{ if not $isExternal }}
+            {{ with $page.Resources.GetMatch $src }}
+                {{ $finalSrc = .RelPermalink }}
+            {{ else }}
+                {{ with resources.GetMatch $src }}
+                    {{ $finalSrc = .RelPermalink }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ $images = $images | append $finalSrc }}
+    {{ end }}
+{{ end }}
+
+{{ if $imgTags }}
+    {{ range $imgTags }}
+        {{ $src := "" }}
+        {{ $alt := "" }}
+        {{ with findRESubmatch `src=['"]([^'"]+)['"]` . }}
+            {{ $src = index (index . 0) 1 }}
+        {{ end }}
+        {{ with findRESubmatch `alt=['"]([^'"]+)['"]` . }}
+            {{ $alt = index (index . 0) 1 }}
+        {{ end }}
+        {{ $finalSrc := $src }}
+        {{ $isExternal := or (hasPrefix $src "http://") (hasPrefix $src "https://") }}
+        {{ if not $isExternal }}
+            {{ with $page.Resources.GetMatch $src }}
+                {{ $finalSrc = .RelPermalink }}
+            {{ else }}
+                {{ with resources.GetMatch $src }}
+                    {{ $finalSrc = .RelPermalink }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ $images = $images | append $finalSrc }}
+        {{ $captions = $captions | append $alt }}
+    {{ end }}
+{{ end }}
+
+{{ if ne $dir "" }}
+    {{ with $page.Resources.Match (printf "%s/*" $dir) }}
+        {{ range sort . "Name" }}
+            {{ $images = $images | append .RelPermalink }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+
+<div class="embla" style="max-width: {{ $width }}; margin: 0 auto;">
+    <div class="embla__viewport">
+        <div class="embla__container">
+            {{ range $index, $image := $images }}
+                <div class="embla__slide">
+                    <div class="embla__slide__inner">
+                        <img
+                            src="{{ $image }}"
+                            alt="{{ index $captions $index | default (printf "Slide %d" (add $index 1)) }}"
+                            class="embla__slide__img"
+                            loading="lazy"
+                            decoding="async"
+                            fetchpriority="low">
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    </div>
+
+    {{ range $index, $caption := $captions }}
+        <div class="embla__caption" data-caption-index="{{ $index }}">{{ $caption }}</div>
+    {{ end }}
+
+
+    <button class="embla__button embla__button--prev" aria-label="Previous slide">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="4.5"
+            stroke="currentColor"
+            class="embla__icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5l-7.5-7.5 7.5-7.5" />
+        </svg>
+    </button>
+    <button class="embla__button embla__button--next" aria-label="Next slide">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="4.5"
+            stroke="currentColor"
+            class="embla__icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+    </button>
+</div>

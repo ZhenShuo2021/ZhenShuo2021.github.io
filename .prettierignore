@@ -1,0 +1,31 @@
+# https://github.com/gohugoio/hugo/blob/b39b24962350090122b5f3927456dde710cffb57/docs/.prettierignore
+# https://github.com/gohugoio/hugo/blob/b39b24962350090122b5f3927456dde710cffb57/docs/.prettierrc
+
+# IDE
+.markdownlint-cli2.yaml
+
+
+# js
+node_modules
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Hugo
+assets/lib
+assets/css/compiled
+content
+themes
+public
+static
+*.md
+
+# invalid node
+layouts/_default/_markup/_render-heading.html
+layouts/partials/article-link/card.html
+layouts/partials/article-link/simple.html
+layouts/partials/custom/tag-and-category.html
+layouts/partials/hero/custom-background-hero.html
+layouts/partials/list-for-more-articles.html
+
+assets/js/appearance.js

@@ -1,0 +1,15 @@
+{{- $toc := .TableOfContents -}}
+
+{{- if ne (plainify $toc) "" -}}
+    <aside class="toc-floating">
+        <div class="toc-container">
+            <div class="toc-header">
+                <span class="toc-title">目錄</span>
+                <button class="toc-toggle" title="切換固定顯示"></button>
+            </div>
+            <div class="toc-content">
+                {{ .TableOfContents | emojify }}
+            </div>
+        </div>
+    </aside>
+{{- end -}}
