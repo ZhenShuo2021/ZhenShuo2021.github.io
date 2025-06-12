@@ -68,12 +68,14 @@ done
 
 ### Two-Pass Conversion
 
-{{< expand "What is two-pass?" >}}
+<details>
+
+<summary>What is two-pass?</summary>
 
 我昨天研究了一下，根據國外論壇的討論，發現 multi-pass 並非是用來增強畫質，而是用來控制流量而已。
 > 簡單地說，如果用 CRF（恒定質量）壓出一個 1GB 的影片，再用 2-pass 壓出同樣大小的影片，兩者畫質是幾乎沒有分別的。2-pass 畫質比較好是指和 CBR、ABR 的比較。如果沒有需要精確的流量控制，事實上並不需要用 multi-pass。而 pass 越多次，會越接近設定的流量。[Source](https://www.pcdvd.com.tw/printthread.php?t=1109930&page=2&pp=10)
 
-{{< /expand >}}
+</details>
 
 ```sh
 for file in *.mov; do

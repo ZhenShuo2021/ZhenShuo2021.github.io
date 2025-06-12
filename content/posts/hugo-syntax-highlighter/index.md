@@ -31,7 +31,9 @@ progress_bar: true
 
 就說是來水文章的，這兩個對我來說根本沒啥差別，Prism.js 裝好沒半小時去官方 Github 看發現上次更新已經是 2022，於是果斷換成 Highlight.js，裝了也很輕鬆兩行 `<link>` `<script>` 就搞定，只是痛苦這裡才開始。首先，我已經知道 PageSpeed Insights 這個邪惡的東西，裝完之後手賤去測試果然慢了不少，因為他是用戶載入頁面後即時渲染的；再來是暗色模式支援，還自己寫了四個 javascript 搞定亮暗主題轉換問題：
 
-{{< expand "幫 Highlight.js 加了一堆東西" >}}
+<details>
+
+<summary>幫 Highlight.js 加了一堆東西</summary>
 
 ```html
 <!-- partials/extend-head.html -->
@@ -145,7 +147,7 @@ pre {
 }
 ```
 
-{{< /expand >}}
+</details>
 
 奇怪不是兩個 javascript 嗎，哪來的四個？因為還有兩個寫完發現寫太爛打掉重練，單純只加上 Highlight.js 確實是像教學[[1]](https://note.qidong.name/2017/06/24/hugo-highlight/), [[2]](https://sujingjhong.com/posts/switch-prismjs-to-highlightjs-in-hugo/), [[3]](https://blog.xpgreat.com/p/hugo_add_highlight/)一樣複製貼上就結束了，但是改成 Highlight.js 後缺失的主題切換和複製按鈕都要重新寫，關於 CSP referrerpolicy, defer/async, crossorigin, integrity 的設定教學也沒講到，查到 CSP 之後又用 Cloudflare Workers 寫了一個修改 HTTP headers 的程式：
 

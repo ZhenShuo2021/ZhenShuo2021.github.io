@@ -190,7 +190,9 @@ Cloudflare 免費版提供很多安全選項
 
 剛開始用很多都邊設定邊學，有些是錯誤的但還是有參考價值 aka 不忍心直接刪除所以放在這，這些內容是正確的，只是使用 cloudflare tunnel 功能其實不需要設定這些東西。
 
-{{< expand 備份 >}}
+<details>
+
+<summary>備份已經棄用的做法</summary>
 
 # 1. 思路
 
@@ -226,4 +228,4 @@ Cloudflare 免費版提供很多安全選項
 
 2. 進入 `http://<192.168.50.100>:9876`，選擇Cloudflare，貼上剛剛的Token，Domains填申請的域名，設定帳號密碼後儲存。
 
-{{< /expand >}}
+</details>

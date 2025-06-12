@@ -1,7 +1,6 @@
 ---
 title: 清除 Linux 殘存設定
 date: 2024-07-19T07:07:30+08:00
-draft: true
 slug: clean-linux-settings
 summary: 
 tags:
@@ -16,7 +15,7 @@ externalUrl: https://docs.zsl0621.cc/docs/Linux/clean-settings
 
 在 ubunutu server 安裝 gallery-dl 時，由於之前有安裝過導致錯誤的設定殘留，在網路上查老半天都找不到要怎麼清除，最後還是請出 GPT 大神，基礎操作類他還是很擅長的。這裡也給其他網路上的資訊 https://ivonblog.com/posts/linux-uninstall-application/。
 
-{{< expand "看 Claude 3.5 sonnet 的回答 " >}}
+## Claude 3.5 sonnet 的回答
 
 好的，讓我們徹底清理所有 gallery-dl 的安裝和設定。以下是完整的步驟：
 
@@ -82,5 +81,3 @@ sudo visudo
 檢查並移除任何與 gallery-dl 相關的路徑。
 
 完成這些步驟後，你的系統應該已經完全清除了 gallery-dl 的所有痕跡。之後，你可以重新安裝乾淨的版本，如果需要的話。
-
-{{< /expand >}}

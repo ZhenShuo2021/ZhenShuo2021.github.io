@@ -264,7 +264,9 @@ Translated by a language model. If there are any copyright issues, please contac
 
 https://programmingisterrible.com/post/176657481103/repeat-yourself-do-more-than-one-thing-and
 
-{{< expand "Repeat yourself, do more than one thing, and rewrite everything" >}}
+<details>
+
+<summary>Repeat yourself, do more than one thing, and rewrite everything</summary>
 
 # 重複自己，做超過一件事，並且重寫所有內容
 
@@ -390,13 +392,15 @@ MVC的目的不僅僅是將所有資料庫程式碼放在一個地方，還要�
 
 最終，我們將我們的好決定稱為「乾淨的程式碼」，將壞決定稱為「技術債務」，儘管遵循相同的規則和實踐來達到那裡。
 
-{{< /expand >}}
+</details>
 
 ### Easy Debug
 
 https://programmingisterrible.com/post/173883533613/code-to-debug
 
-{{< expand "Write code that’s easy to delete, and easy to debug too." >}}
+<details>
+
+<summary>Write code that’s easy to delete, and easy to debug too</summary>
 
 ## 撰寫程式碼時，應著重於簡單易刪與易除錯
 
@@ -537,4 +541,4 @@ Google 最嚴重的 DoS 攻擊往往來自自身系統，這是因為我們擁�
 
 畢竟，這並不是編譯器的錯。
 
-{{< /expand >}}
+</details>

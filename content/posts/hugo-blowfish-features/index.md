@@ -55,7 +55,9 @@ series_order: 6
 
 在 `layouts/_default/archive.html` 新增以下：
 
-{{< expand archive.html>}}
+<details>
+
+<summary>archive.html</summary>
 
 ```html
 {{ define "main" }}
@@ -391,7 +393,7 @@ series_order: 6
 {{ end }}
 ```
 
-{{< /expand >}}
+</details>
 
 在 `content/archives` 新增 _index.md：
 
@@ -472,7 +474,9 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 
 在 `assets/css/custom.css` 加入
 
-{{< expand custom.css >}}
+<details>
+
+<summary>custom.css</summary>
 
 ```css
 .admonition {
@@ -593,11 +597,13 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 }
 ```
 
-{{</expand>}}
+</details>
 
 新增 `layouts/shortcodes/hint.html` 並貼上
 
-{{< expand hint.html >}}
+<details>
+
+<summary>hint.html</summary>
 
 ```html
 {{ $type := .Get 0 | default "tip" | lower }}
@@ -631,162 +637,26 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
 </div>
 ```
 
-{{< /expand >}}
+</summary>
+
+</details>
 
 # 5. 簡碼 - expand
 
-比較美觀的 expand UI，一樣從 [alex-shpak/hugo-book](https://hugo-book-demo.netlify.app/docs/shortcodes/expand/) 拿來的，範例如下：
-{{< expand "Example"  >}}
-可用 Markdown 語法
+{{< hint danger 警告 >}}
 
-```c
-int x = 1;
-```
+請愛用原生 HTML 語法而不是 shortcode！否則你將失去 Markdown 跨平台的優勢！
 
-1. list 1
-1. **list 2 (bold)**
-
-- 5
-
-{{< hint info >}}
-<h2> Title </h2>
-
-支援內部渲染 hint shortcode
-
-```c
-int x = 1;
-```
-
-1. list 1
-1. **list 2 (bold)**
-
-- 5
-{{< /hint >}}
-{{< /expand >}}
-
-新增 `layouts/shortcodes/expand.html`
+請直接在 Markdown 裡面這樣寫：
 
 ```html
-<div class="expand-wrapper prose dark:prose-invert max-w-prose zen-mode-content">
-  <input id="{{ .Get "id" | default (printf "expand-%d" (.Ordinal)) }}" class="expand-toggle" type="checkbox" {{ if or (.Get "open") (in .Params "open") }}checked{{ end }}>
-  <label for="{{ .Get "id" | default (printf "expand-%d" (.Ordinal)) }}" class="expand-title">
-    <span class="expand-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </span>
-    {{- $summary := cond .IsNamedParams (.Get "title") (.Get 0) -}}
-    {{ $summary | .Page.RenderString }}
-  </label>
-  <div class="expand-content">
-    <div class="expand-inner">
-      {{ .Inner | .Page.RenderString }}
-    </div>
-  </div>
-</div>
+<details>
+  <summary>展開的標題</summary>
+  內容
+</details>
 ```
 
-新增 `assets/css/custom.css`
-
-```css
-.expand-wrapper {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
-    background-color: #fff;
-    /* 預設背景顏色 */
-    width: 100%;
-    transition: max-width 0.3s ease-in-out;
-}
-
-body.zen-mode-enable .zen-mode-content {
-  max-width: 100% !important;
-}
-
-.expand-toggle {
-    display: none;
-}
-
-.expand-title {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    /* 調整上下邊距 */
-    background-color: #f7f7f7;
-    /* 預設背景顏色 */
-    color: #333;
-    /* 預設文字顏色 */
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: normal;
-    /* 取消粗體樣式 */
-}
-
-.expand-title:hover {
-    background-color: #e0e0e0;
-}
-
-.expand-title .expand-icon {
-    margin-right: 0.5rem;
-    /* 調整圖標與文字之間的距離 */
-}
-
-.expand-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
-    background-color: #fff;
-    padding: 0 1.8rem;
-}
-
-.expand-toggle:checked~.expand-content {
-    max-height: 8000px;
-    /* 可以根據需要調整 */
-    transition: max-height 0.8s ease-in-out;
-
-}
-
-.expand-inner {
-    margin: -0.5rem 0;
-    /* 使用負邊距縮短內容區域與邊框的距離 */
-    padding: 0.5rem 0;
-    /* 可根據需要調整 */
-    color: #333;
-    /* 預設文字顏色 */
-}
-
-/* 暗色模式樣式 */
-.dark .expand-wrapper {
-    border-color: #444;
-    /* 暗色模式下的邊框顏色 */
-    background-color: #222;
-    /* 暗色模式下的背景顏色 */
-}
-
-.dark .expand-title {
-    background-color: #333;
-    /* 暗色模式下的標題背景顏色 */
-    color: #e0e0e0;
-    /* 暗色模式下的標題文字顏色 */
-}
-
-.dark .expand-title:hover {
-    background-color: #444;
-    /* 暗色模式下的標題懸停背景顏色 */
-}
-
-.dark .expand-content {
-    background-color: #2c2c2c;
-    /* 暗色模式下的內容背景顏色 */
-}
-
-.dark .expand-inner {
-    color: #e0e0e0;
-    /* 暗色模式下的內容文字顏色 */
-}
-```
+{{< /hint >}}
 
 # 6. 自動加上編輯時間
 
@@ -811,7 +681,11 @@ body.zen-mode-enable .zen-mode-content {
 # 7. ~~修改 metadata~~
 
 Google 以不再用 keywords 為 SEO 關鍵字所以沒必要改這個。
-{{<expand 原文>}}
+
+<details>
+
+<summary>原文</summary>
+
 Google SEO 會參考 meta name，而 Blowfish 的 tags 優先於 keywords 關鍵字。想要有 SEO 同時不想要 tags 打一堆次要標籤的修改如下：  
 找到 `layouts/partials/head.html` 中的
 
@@ -832,4 +706,4 @@ Google SEO 會參考 meta name，而 Blowfish 的 tags 優先於 keywords 關鍵
   {{ end }}  
 ```
 
-{{</expand >}}
+</details>

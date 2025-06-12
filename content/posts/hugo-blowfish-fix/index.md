@@ -295,7 +295,10 @@ this_article: "[本文]"
 # 11. ~~頁面目次 ToC~~
 
 此問題官方已於 blowfish v2.71.0 修正，不過ToC官方目前還沒有很完整。
-{{<expand 原文>}}
+<details>
+
+<summary>原文</summary>
+
 ToC過長時增加滾輪。
 
 把 `layouts/partials/toc.html` 中 `<details open class>` 整段換成以下：
@@ -325,4 +328,4 @@ ToC過長時增加滾輪。
 </details>
 ```
 
-{{</expand>}}
+</details>

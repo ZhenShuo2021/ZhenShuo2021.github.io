@@ -18,11 +18,11 @@ hugo server
 
 ## Shortcode
 
-Shortcode 是使用 go 模板把複雜內容或功能嵌入到 html 頁面的功能，本專案有以下自製的 shortcode。
+Shortcode 是把複雜內容或功能嵌入到頁面的功能，此部落格有以下 shortcode。
 
 ### Mermaid
 
-根據一番市場調查，我是為數不多幾個按照 Hugo 官方文檔實作 mermaid 的 Hugo 部落格，不再需要 shortcode 和 frontmatter，直接使用和 Github 上一樣的語法即可：
+按照 Hugo 官方文檔實作，不再需要 shortcode 或是 frontmatter 設定，可以直接使用和 Github 一樣的語法：
 
 `````txt
 ```mermaid
@@ -61,7 +61,7 @@ Text Here
 
 ### Slide
 
-啟發自 Blowfish carousel 但是完全重寫的滑動式畫廊，從使用到展示效果都大幅度優化，使用 embla 完成，使用方式是
+啟發自 Blowfish carousel 但是完全重寫的滑動式畫廊，使用 embla 完成，從使用方式到展示效果都大幅度優化：
 
 ```text
 {{< slide >}}
@@ -75,7 +75,7 @@ caption="Image from assets directory"
 {{< /slide >}}
 ```
 
-或者直接載入資料夾
+或者載入整個資料夾
 
 ```text
 {{< slide >}}
@@ -88,7 +88,9 @@ dir=gallery
 
 從 Blowfish 原封不動搬過來的，使用方式是
 
+```txt
 {{< youtubeLite id="XifmeRdJCjo" label="爆弾魔 Bomber (Re-Recording)" params="start=130" >}}
+```
 
 ### codeimporter
 
@@ -105,17 +107,4 @@ Example usage:
 
 // 除了 positional arguments 也支援 named arguments
 {{< codeimporter url="https://raw.githubusercontent.com/nunocoracao/blowfish/refs/heads/main/netlify.toml" line="5-7" >}}
-```
-
-### Expand
-
-展開功能
-
-```md
-
-{{< expand "See the details" >}}
-
-{{< codeimporter "https://raw.githubusercontent.com/nunocoracao/blowfish/refs/heads/main/netlify.toml" >}}
-
-{{< /expand >}}
 ```

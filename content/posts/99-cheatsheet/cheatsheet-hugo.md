@@ -89,20 +89,12 @@ $$
 ```
 
 ```md
-# 新增
-{{</* expand "expand"  >}}
-expand
-{{< /expand */>}}
-
 {{</* hint info >}}
 **info/warning/danger**<br>
 Text
 {{< /hint */>}}
 ```
 
-{{< expand "expand"  >}}  
-expand
-{{< /expand >}}
 {{< hint note >}}  
 Text
 {{< /hint >}}

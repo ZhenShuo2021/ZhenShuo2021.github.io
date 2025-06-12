@@ -112,7 +112,9 @@ Mac SMB 使用簽名會慢到不行，使用此指令修正 Mac 本身的 SMB �
 
 3. 開啟 SMB 服務
 
-{{< expand "重新啟動 Mac OS X smb 服務" >}}
+<details>
+
+<summary>重新啟動 Mac OS X smb 服務</summary>
 
 在這裡不會用到但是順便把指令放上來
 
@@ -124,7 +126,7 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server.plist EnabledServices -array disk
 ```
 
-{{< /expand >}}
+</details>
 
 ### 客戶端
 
